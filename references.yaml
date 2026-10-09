@@ -1,4 +1,694 @@
-# Works cited in Report.md. The reference list on the page is generated from this file.
-# Format and fields: FORMAT.md, "Citations and references". Every entry needs a doi or a url,
-# checked to resolve, and is cited only after it has been opened and read.
-[]
+# Works cited in Report.md: the cited entries of Attachments/wordalisation-paper/reference_nature.bib,
+# converted by Code/bib_to_yaml.py. Do not edit by hand; change the script and re-run it.
+- id: davenport2020beyond
+  type: article
+  author:
+  - Davenport, Thomas
+  title: 'Beyond unicorns: Educating, classifying, and certifying business data scientists'
+  year: '2020'
+  container: Harvard Data Science Review
+  volume: '2'
+  pages: '5'
+  issue: '2'
+  doi: 10.1162/99608f92.55546b4a
+- id: greener2022guide
+  type: article
+  author:
+  - Greener, Joe G
+  - Kandathil, Shaun M
+  - Moffat, Lewis
+  - Jones, David T
+  title: A guide to machine learning for biologists
+  year: '2022'
+  container: Nature Reviews Molecular Cell Biology
+  volume: '23'
+  pages: 40–55
+  publisher: Nature Publishing Group UK
+  issue: '1'
+  doi: 10.1038/s41580-021-00407-0
+- id: latif2020leveraging
+  type: article
+  author:
+  - Latif, Siddique
+  - Usman, Muhammad
+  - Manzoor, Sanaullah
+  - Iqbal, Waleed
+  - Qadir, Junaid
+  - Tyson, Gareth
+  - Castro, Ignacio
+  - Razi, Adeel
+  - Boulos, Maged N Kamel
+  - Weller, Adrian
+  - others
+  title: 'Leveraging data science to combat COVID-19: A comprehensive review'
+  year: '2020'
+  container: IEEE Transactions on Artificial Intelligence
+  volume: '1'
+  pages: 85–103
+  publisher: IEEE
+  issue: '1'
+  doi: 10.1109/tai.2020.3020521
+- id: cairo2016truthful
+  type: book
+  author:
+  - Cairo, Alberto
+  title: 'The truthful art: Data, charts, and maps for communication'
+  year: '2016'
+  publisher: New Riders
+  url: https://www.peachpit.com/store/truthful-art-data-charts-and-maps-for-communication-9780321934079
+- id: zhang2020data
+  type: article
+  author:
+  - Zhang, Amy X
+  - Muller, Michael
+  - Wang, Dakuo
+  title: How do data science workers collaborate? Roles, workflows, and tools
+  year: '2020'
+  container: Proceedings of the ACM on Human-Computer Interaction
+  volume: '4'
+  pages: 1–23
+  publisher: ACM
+  issue: CSCW1
+  doi: 10.1145/3392826
+- id: mintzer-sweeney_muth_2024
+  type: web
+  author:
+  - Mintzer-Sweeney, Rose
+  - Muth, Lisa Charlotte
+  title: Data Vis Do's and Don'ts
+  year: '2024'
+  url: https://blog.datawrapper.de/category/datavis-dos-and-donts/
+- id: kennedy2016work
+  type: article
+  author:
+  - Kennedy, Helen
+  - Hill, Rosemary Lucy
+  - Aiello, Giorgia
+  - Allen, William
+  title: The work that visualisation conventions do
+  year: '2016'
+  container: Information, Communication & Society
+  volume: '19'
+  pages: 715–735
+  publisher: Taylor & Francis
+  issue: '6'
+  doi: 10.1080/1369118x.2016.1153126
+- id: yang2025number
+  type: preprint
+  author:
+  - Yang, Haotong
+  - Hu, Yi
+  - Kang, Shijia
+  - Lin, Zhouchen
+  - Zhang, Muhan
+  title: 'Number Cookbook: Number Understanding of Language Models and How to Improve It'
+  year: '2025'
+  container: arXiv
+  number: '2411.03766'
+  url: https://arxiv.org/abs/2411.03766
+- id: li2025exposing
+  type: preprint
+  author:
+  - Li, Haoyang
+  - Chen, Xuejia
+  - Xu, Zhanchao
+  - Li, Darian
+  - Hu, Nicole
+  - Teng, Fei
+  - Li, Yiming
+  - Qiu, Luyu
+  - Zhang, Chen Jason
+  - Li, Qing
+  - Chen, Lei
+  title: 'Exposing Numeracy Gaps: A Benchmark to Evaluate Fundamental Numerical Abilities in Large Language Models'
+  year: '2025'
+  container: arXiv
+  number: '2502.11075'
+  url: https://arxiv.org/abs/2502.11075
+- id: brown2020language
+  type: article
+  author:
+  - Brown, Tom
+  - Mann, Benjamin
+  - Ryder, Nick
+  - Subbiah, Melanie
+  - Kaplan, Jared D
+  - Dhariwal, Prafulla
+  - Neelakantan, Arvind
+  - Shyam, Pranav
+  - Sastry, Girish
+  - Askell, Amanda
+  - others
+  title: Language models are few-shot learners
+  year: '2020'
+  container: Advances in Neural Information Processing Systems
+  volume: '33'
+  pages: 1877–1901
+  url: https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+- id: lin2024survey
+  type: article
+  author:
+  - Lin, Yupian
+  - Ruan, Tong
+  - Liu, Jingping
+  - Wang, Haofen
+  title: A Survey on Neural Data-to-Text Generation
+  year: '2024'
+  container: IEEE Transactions on Knowledge and Data Engineering
+  volume: '36'
+  pages: 1431-1449
+  issue: '4'
+  doi: 10.1109/TKDE.2023.3304385
+- id: puduppully2022data
+  type: article
+  author:
+  - Puduppully, Ratish
+  - Fu, Yao
+  - Lapata, Mirella
+  title: Data-to-text Generation with Variational Sequential Planning
+  year: '2022'
+  container: Transactions of the Association for Computational Linguistics
+  volume: '10'
+  pages: 697-715
+  doi: 10.1162/tacl_a_00484
+  url: https://doi.org/10.1162/tacl_a_00484
+- id: osuji2024systematic
+  type: preprint
+  author:
+  - Osuji, Chinonso Cynthia
+  - Ferreira, Thiago Castro
+  - Davis, Brian
+  title: A Systematic Review of Data-to-Text NLG
+  year: '2024'
+  container: arXiv
+  number: '2402.08496'
+  url: https://arxiv.org/abs/2402.08496
+- id: wiseman2019learning
+  type: preprint
+  author:
+  - Wiseman, Sam
+  - Shieber, Stuart M.
+  - Rush, Alexander M.
+  title: Learning Neural Templates for Text Generation
+  year: '2019'
+  container: arXiv
+  number: '1808.10122'
+  url: https://arxiv.org/abs/1808.10122
+- id: Iso2019learning
+  type: chapter
+  author:
+  - Iso, Hayate
+  - Uehara, Yui
+  - Ishigaki, Tatsuya
+  - Noji, Hiroshi
+  - Aramaki, Eiji
+  - Kobayashi, Ichiro
+  - Miyao, Yusuke
+  - Okazaki, Naoaki
+  - Takamura, Hiroya
+  title: Learning to Select, Track, and Generate for Data-to-Text
+  year: '2019'
+  container: Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics
+  pages: 2102–2113
+  publisher: Association for Computational Linguistics
+  doi: 10.18653/v1/p19-1202
+  url: http://dx.doi.org/10.18653/v1/P19-1202
+- id: kasner2024traditionalbenchmarks
+  type: preprint
+  author:
+  - Kasner, Zdeněk
+  - Dušek, Ondřej
+  title: 'Beyond Traditional Benchmarks: Analyzing Behaviors of Open LLMs on Data-to-Text Generation'
+  year: '2024'
+  container: arXiv
+  number: '2401.10186'
+  url: https://arxiv.org/abs/2401.10186
+- id: schroder2023telling
+  type: preprint
+  author:
+  - Schröder, Kay
+  - Eberhardt, Wiebke
+  - Belavadi, Poornima
+  - Ajdadilish, Batoul
+  - van Haften, Nanette
+  - Overes, Ed
+  - Brouns, Taryn
+  - Valdez, André Calero
+  title: Telling stories with data – A systematic review
+  year: '2023'
+  container: arXiv
+  number: '2312.01164'
+  url: https://arxiv.org/abs/2312.01164
+- id: shao2024data
+  type: chapter
+  author:
+  - Shao, Hongbo
+  - Martinez-Maldonado, Roberto
+  - Echeverria, Vanessa
+  - Yan, Lixiang
+  - Gasevic, Dragan
+  title: 'Data Storytelling in Data Visualisation: Does it Enhance the Efficiency and Effectiveness of Information Retrieval and Insights Comprehension?'
+  year: '2024'
+  publisher: Association for Computing Machinery
+  doi: 10.1145/3613904.3643022
+  url: https://doi.org/10.1145/3613904.3643022
+- id: zhao2023stories
+  type: article
+  author:
+  - Zhao, Zhenpeng
+  - Elmqvist, Niklas
+  title: 'The Stories We Tell About Data: Surveying Data-Driven Storytelling Using Visualization'
+  year: '2023'
+  container: IEEE Computer Graphics and Applications
+  volume: '43'
+  pages: 97-110
+  issue: '4'
+  doi: 10.1109/MCG.2023.3269850
+- id: you2016image
+  type: chapter
+  author:
+  - You, Quanzeng
+  - Jin, Hailin
+  - Wang, Zhaowen
+  - Fang, Chen
+  - Luo, Jiebo
+  title: Image Captioning with Semantic Attention
+  year: '2016'
+  container: 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+  pages: 4651-4659
+  doi: 10.1109/CVPR.2016.503
+- id: Hossain2019comprehensive
+  type: article
+  author:
+  - Hossain, MD. Zakir
+  - Sohel, Ferdous
+  - Shiratuddin, Mohd Fairuz
+  - Laga, Hamid
+  title: A Comprehensive Survey of Deep Learning for Image Captioning
+  year: '2019'
+  container: ACM Comput. Surv.
+  volume: '51'
+  publisher: Association for Computing Machinery
+  issue: '6'
+  doi: 10.1145/3295748
+  url: https://doi.org/10.1145/3295748
+- id: herdade2020image
+  type: preprint
+  author:
+  - Herdade, Simao
+  - Kappeler, Armin
+  - Boakye, Kofi
+  - Soares, Joao
+  title: 'Image Captioning: Transforming Objects into Words'
+  year: '2020'
+  container: arXiv
+  number: '1906.05963'
+  url: https://arxiv.org/abs/1906.05963
+- id: ahmed2024prompt
+  type: chapter
+  author:
+  - Ahmed, Awais
+  - Hou, Mengshu
+  - Xi, Rui
+  - Zeng, Xiaoyang
+  - Shah, Syed Attique
+  title: 'Prompt-Eng: Healthcare Prompt Engineering: Revolutionizing Healthcare Applications with Precision Prompts'
+  year: '2024'
+  container: Companion Proceedings of the ACM Web Conference 2024
+  publisher: Association for Computing Machinery
+  doi: 10.1145/3589335.3651904
+  url: https://doi.org/10.1145/3589335.3651904
+- id: liu2025fewshot
+  type: preprint
+  author:
+  - Liu, Haoxin
+  - Zhang, Wenli
+  - Xie, Jiaheng
+  - Kim, Buomsoo
+  - Zhang, Zhu
+  - Chai, Yidong
+  - Ram, Sudha
+  title: 'Few-Shot Learning for Mental Disorder Detection: A Continuous Multi-Prompt Engineering Approach with Medical Knowledge Injection'
+  year: '2025'
+  container: arXiv
+  number: '2401.12988'
+  url: https://arxiv.org/abs/2401.12988
+- id: song2025injecting
+  type: preprint
+  author:
+  - Song, Zirui
+  - Yan, Bin
+  - Liu, Yuhan
+  - Fang, Miao
+  - Li, Mingzhe
+  - Yan, Rui
+  - Chen, Xiuying
+  title: 'Injecting Domain-Specific Knowledge into Large Language Models: A Comprehensive Survey'
+  year: '2025'
+  container: arXiv
+  number: '2502.10708'
+  url: https://arxiv.org/abs/2502.10708
+- id: chen2024unleashing
+  type: preprint
+  author:
+  - Chen, Banghao
+  - Zhang, Zhaofeng
+  - Langrené, Nicolas
+  - Zhu, Shengxin
+  title: 'Unleashing the potential of prompt engineering in Large Language Models: a comprehensive review'
+  year: '2024'
+  container: arXiv
+  number: '2310.14735'
+  url: https://arxiv.org/abs/2310.14735
+- id: amatriain2024prompt
+  type: preprint
+  author:
+  - Amatriain, Xavier
+  title: 'Prompt Design and Engineering: Introduction and Advanced Methods'
+  year: '2024'
+  container: arXiv
+  number: '2401.14423'
+  url: https://arxiv.org/abs/2401.14423
+- id: schulhoff2024prompt
+  type: preprint
+  author:
+  - Schulhoff, Sander
+  - Ilie, Michael
+  - Balepur, Nishant
+  - Kahadze, Konstantine
+  - Liu, Amanda
+  - Si, Chenglei
+  - Li, Yinheng
+  - Gupta, Aayush
+  - Han, HyoJung
+  - Schulhoff, Sevien
+  - Dulepet, Pranav Sandeep
+  - Vidyadhara, Saurav
+  - Ki, Dayeon
+  - Agrawal, Sweta
+  - Pham, Chau
+  - Kroiz, Gerson
+  - Li, Feileen
+  - Tao, Hudson
+  - Srivastava, Ashay
+  - Costa, Hevander Da
+  - Gupta, Saloni
+  - Rogers, Megan L.
+  - Goncearenco, Inna
+  - Sarli, Giuseppe
+  - Galynker, Igor
+  - Peskoff, Denis
+  - Carpuat, Marine
+  - White, Jules
+  - Anadkat, Shyamal
+  - Hoyle, Alexander
+  - Resnik, Philip
+  title: 'The Prompt Report: A Systematic Survey of Prompting Techniques'
+  year: '2024'
+  container: arXiv
+  number: '2406.06608'
+  url: https://arxiv.org/abs/2406.06608
+- id: liu2023pre
+  type: article
+  author:
+  - Liu, Pengfei
+  - Yuan, Weizhe
+  - Fu, Jinlan
+  - Jiang, Zhengbao
+  - Hayashi, Hiroaki
+  - Neubig, Graham
+  title: 'Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing'
+  year: '2023'
+  container: ACM Computing Surveys
+  volume: '55'
+  pages: 1–35
+  publisher: ACM
+  issue: '9'
+  doi: 10.1145/3560815
+- id: liu2022few
+  type: article
+  author:
+  - Liu, Haokun
+  - Tam, Derek
+  - Muqeeth, Mohammed
+  - Mohta, Jay
+  - Huang, Tenghao
+  - Bansal, Mohit
+  - Raffel, Colin A
+  title: Few-shot parameter-efficient fine-tuning is better and cheaper than in-context learning
+  year: '2022'
+  container: Advances in Neural Information Processing Systems
+  volume: '35'
+  pages: 1950–1965
+  doi: 10.52202/068431-0142
+- id: context_engineering
+  type: web
+  author:
+  - LangChain Blog
+  title: The rise of context engineering
+  year: n.d.
+  url: https://blog.langchain.com/the-rise-of-context-engineering/
+- id: richards2023streamlit
+  type: book
+  author:
+  - Richards, Tyler
+  title: 'Streamlit for Data Science: Create interactive data apps in Python'
+  year: '2023'
+  publisher: Packt Publishing Ltd
+  url: https://openlibrary.org/isbn/9781803248226
+- id: lewis2020retrieval
+  type: article
+  author:
+  - Lewis, Patrick
+  - Perez, Ethan
+  - Piktus, Aleksandra
+  - Petroni, Fabio
+  - Karpukhin, Vladimir
+  - Goyal, Naman
+  - Küttler, Heinrich
+  - Lewis, Mike
+  - Yih, Wen-tau
+  - Rocktäschel, Tim
+  - others
+  title: Retrieval-augmented generation for knowledge-intensive NLP tasks
+  year: '2020'
+  container: Advances in Neural Information Processing Systems
+  volume: '33'
+  pages: 9459–9474
+  url: https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+- id: matthews2003personality
+  type: book
+  author:
+  - Matthews, Gerald
+  - Deary, Ian J
+  - Whiteman, Martha C
+  title: Personality traits
+  year: '2003'
+  publisher: Cambridge University Press
+  doi: 10.1017/cbo9780511812743
+- id: raji2021ai
+  type: preprint
+  author:
+  - Raji, Inioluwa Deborah
+  - Bender, Emily M
+  - Paullada, Amandalynne
+  - Denton, Emily
+  - Hanna, Alex
+  title: AI and the everything in the whole wide world benchmark
+  year: '2021'
+  container: arXiv preprint arXiv:2111.15366
+  url: https://arxiv.org/abs/2111.15366
+- id: kaddour2023challengesapplicationslargelanguage
+  type: preprint
+  author:
+  - Kaddour, Jean
+  - Harris, Joshua
+  - Mozes, Maximilian
+  - Bradley, Herbie
+  - Raileanu, Roberta
+  - McHardy, Robert
+  title: Challenges and Applications of Large Language Models
+  year: '2023'
+  container: arXiv
+  number: '2307.10169'
+  url: https://arxiv.org/abs/2307.10169
+- id: vendrow2024large
+  type: chapter
+  author:
+  - Vendrow, Joshua
+  - Vendrow, Edward
+  - Beery, Sara
+  - Madry, Aleksander
+  title: Large Language Model Benchmarks Do Not Test Reliability
+  year: '2024'
+  container: NeurIPS Safe Generative AI Workshop 2024
+  url: https://openreview.net/forum?id=XSeN6xZtZ9
+- id: gu2024survey
+  type: preprint
+  author:
+  - Gu, Jiawei
+  - Jiang, Xuhui
+  - Shi, Zhichao
+  - Tan, Hexiang
+  - Zhai, Xuehao
+  - Xu, Chengjin
+  - Li, Wei
+  - Shen, Yinghan
+  - Ma, Shengjie
+  - Liu, Honghao
+  - others
+  title: A survey on LLM-as-a-judge
+  year: '2024'
+  container: arXiv preprint arXiv:2411.15594
+  url: https://arxiv.org/abs/2411.15594
+- id: li2024generation
+  type: preprint
+  author:
+  - Li, Dawei
+  - Jiang, Bohan
+  - Huang, Liangjie
+  - Beigi, Alimohammad
+  - Zhao, Chengshuai
+  - Tan, Zhen
+  - Bhattacharjee, Amrita
+  - Jiang, Yuxuan
+  - Chen, Canyu
+  - Wu, Tianhao
+  - others
+  title: 'From generation to judgment: Opportunities and challenges of LLM-as-a-judge'
+  year: '2024'
+  container: arXiv preprint arXiv:2411.16594
+  url: https://arxiv.org/abs/2411.16594
+- id: mitchell2019model
+  type: chapter
+  author:
+  - Mitchell, Margaret
+  - Wu, Simone
+  - Zaldivar, Andrew
+  - Barnes, Parker
+  - Vasserman, Lucy
+  - Hutchinson, Ben
+  - Spitzer, Elena
+  - Raji, Inioluwa Deborah
+  - Gebru, Timnit
+  title: Model cards for model reporting
+  year: '2019'
+  container: Proceedings of the Conference on Fairness, Accountability, and Transparency
+  pages: 220–229
+  doi: 10.1145/3287560.3287596
+- id: crisan2022interactive
+  type: chapter
+  author:
+  - Crisan, Anamaria
+  - Drouhard, Margaret
+  - Vig, Jesse
+  - Rajani, Nazneen
+  title: 'Interactive model cards: A human-centered approach to model documentation'
+  year: '2022'
+  container: Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency
+  pages: 427–439
+  doi: 10.1145/3531146.3533108
+- id: gebru2021datasheets
+  type: article
+  author:
+  - Gebru, Timnit
+  - Morgenstern, Jamie
+  - Vecchione, Briana
+  - Vaughan, Jennifer Wortman
+  - Wallach, Hanna
+  - Daumé III, Hal
+  - Crawford, Kate
+  title: Datasheets for datasets
+  year: '2021'
+  container: Communications of the ACM
+  volume: '64'
+  pages: 86–92
+  publisher: ACM
+  issue: '12'
+  doi: 10.1145/3458723
+- id: crawford2021atlas
+  type: book
+  author:
+  - Crawford, Kate
+  title: 'The Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence'
+  year: '2021'
+  publisher: Yale University Press
+  doi: 10.12987/9780300252392
+- id: tang2024ai
+  type: chapter
+  author:
+  - Tang, Ningjing
+  - Zhi, Jiayin
+  - Kuo, Tzu-Sheng
+  - Kainaroi, Calla
+  - Northup, Jeremy J
+  - Holstein, Kenneth
+  - Zhu, Haiyi
+  - Heidari, Hoda
+  - Shen, Hong
+  title: 'AI Failure Cards: Understanding and Supporting Grassroots Efforts to Mitigate AI Failures in Homeless Services'
+  year: '2024'
+  container: The 2024 ACM Conference on Fairness, Accountability, and Transparency
+  pages: 713–732
+  doi: 10.1145/3630106.3658935
+- id: li2021prefix
+  type: preprint
+  author:
+  - Li, Xiang Lisa
+  - Liang, Percy
+  title: 'Prefix-tuning: Optimizing continuous prompts for generation'
+  year: '2021'
+  container: arXiv preprint arXiv:2101.00190
+  url: https://arxiv.org/abs/2101.00190
+- id: jia2022visual
+  type: chapter
+  author:
+  - Jia, Menglin
+  - Tang, Luming
+  - Chen, Bor-Chun
+  - Cardie, Claire
+  - Belongie, Serge
+  - Hariharan, Bharath
+  - Lim, Ser-Nam
+  title: Visual prompt tuning
+  year: '2022'
+  container: European Conference on Computer Vision
+  pages: 709–727
+  doi: 10.1007/978-3-031-19827-4_41
+- id: radford2019language
+  type: article
+  author:
+  - Radford, Alec
+  - Wu, Jeffrey
+  - Child, Rewon
+  - Luan, David
+  - Amodei, Dario
+  - Sutskever, Ilya
+  - others
+  title: Language models are unsupervised multitask learners
+  year: '2019'
+  container: OpenAI Blog
+  volume: '1'
+  pages: '9'
+  issue: '8'
+  url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+- id: tong2021inapplicability
+  type: article
+  author:
+  - Tong, Jingrong
+  - Zuo, Landong
+  title: 'The inapplicability of objectivity: Understanding the work of data journalism'
+  year: '2021'
+  container: Journalism Practice
+  volume: '15'
+  pages: 153–169
+  publisher: Taylor & Francis
+  issue: '2'
+  doi: 10.1080/17512786.2019.1698974
+- id: ieee_chatgpt
+  type: web
+  author:
+  - Smith, M.S.
+  title: Google and Microsoft Race to unveil AI-based search
+  year: '2023'
+  url: https://spectrum.ieee.org/chatgpt
