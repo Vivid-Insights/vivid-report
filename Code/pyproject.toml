@@ -1,0 +1,28 @@
+# Python environment for a Vivid Insights research report.
+# Managed by uv (https://docs.astral.sh/uv/). Do not edit uv.lock by hand.
+#
+#   ./setup_env.sh                       # create the environment
+#   uv run python tools/build.py         # build the report web page
+#   uv run python my_figure.py           # run a figure script
+#
+[project]
+name = "vivid-report"
+version = "0.1.0"
+description = "Write, review and publish a Vivid Insights research report as a web page"
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    # Building the report page (tools/build.py)
+    "markdown-it-py>=3.0",
+    "mdit-py-plugins>=0.4",
+    "pyyaml>=6.0",
+    # Figures, video figures and the data behind them
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.5",   # bundles an ffmpeg binary, so video figures need no system install
+]
+
+[tool.uv]
+package = false

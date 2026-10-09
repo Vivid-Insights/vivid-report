@@ -1,0 +1,12 @@
+{
+  "attachmentFolderPath": "Attachments",
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "Code/.venv",
+    "build",
+    "site"
+  ]
+}

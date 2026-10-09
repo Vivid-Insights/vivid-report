@@ -1,0 +1,15 @@
+# Where approved reports are published. Template-level: shared by every report.
+#
+# Reports go to <site-repo>/<reports-path>/<slug>/ and are listed in <site-repo>/<reports-path>/index.html.
+# publish.py copies them there; a person then commits and pushes the site repository.
+
+site-repo: ../Vivid-Insights-Profile        # the website's git checkout, relative to this workspace
+reports-path: reports
+home-url: ../../vivid-insights.html          # the brand link in the report's top bar, relative to a report page
+
+# The public address of the site. Leave empty until the site is served from a known address: it is
+# used only for the canonical link and the url in the BibTeX entry. [CHECK: set once hosting is decided]
+base-url: ""
+
+contact: info@vividinsights.se
+katex-version: 0.16.11

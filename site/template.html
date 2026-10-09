@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} — Vivid Insights</title>
+<meta name="description" content="{{description}}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:site_name" content="Vivid Insights">
+{{citation_meta}}
+<link rel="icon" href="assets/vivid-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vivid-report.css">
+<script>
+  /* before first paint: theme and embed mode, so the page never flashes the wrong one */
+  (function () {
+    var r = document.documentElement;
+    try { var t = localStorage.getItem("vr-theme"); if (t === "light" || t === "dark") r.setAttribute("data-theme", t); } catch (e) {}
+    if (/[?&]embed\b/.test(location.search)) r.classList.add("vr-embed");
+    var th = /[?&]theme=(light|dark)\b/.exec(location.search); if (th) r.setAttribute("data-theme", th[1]);
+  })();
+</script>
+{{katex}}
+</head>
+<body data-state="{{state}}">
+
+<header class="vr-topbar">
+  <div class="vr-topbar-inner">
+    <a class="vr-brand" href="{{home}}" aria-label="Vivid Insights home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 L13.6 9.2 L20.8 8 L14.6 12 L20.8 16 L13.6 14.8 L12 22 L10.4 14.8 L3.2 16 L9.4 12 L3.2 8 L10.4 9.2 Z" fill="#8B5CF6"/></svg>
+      Vivid Insights
+    </a>
+    <span class="vr-divider"></span>
+    <span class="vr-series">{{kicker}}</span>
+    <div class="vr-top-actions">
+      <a class="vr-btn" href="#vr-cite">Cite</a>
+      <button class="vr-btn vr-btn-print" type="button" data-vr-print>Print / PDF</button>
+      <button class="vr-btn vr-icon" type="button" data-vr-theme aria-label="Switch between light and dark">◐</button>
+    </div>
+  </div>
+</header>
+{{banner}}
+
+<div class="vr-layout">
+  <aside class="vr-toc" aria-label="Contents">
+    <nav>
+      <h2>Contents</h2>
+      <ol>{{toc_html}}</ol>
+    </nav>
+  </aside>
+
+  <main class="vr-article">
+    <header class="vr-titleblock">
+      <div class="vr-kicker">{{kicker}}</div>
+      <h1 class="vr-title">{{title_html}}</h1>
+      {{subtitle_html}}
+      <div class="vr-authors">{{authors_html}}</div>
+      <ol class="vr-affils">{{affiliations_html}}</ol>
+      <div class="vr-dateline"><span>{{date}}</span><span>Version {{version}}</span><span class="vr-badge {{badge_class}}">{{badge_text}}</span></div>
+      <section class="vr-abstract" aria-label="Abstract">
+        <h2>Abstract</h2>
+        {{abstract_html}}
+      </section>
+      {{keywords_html}}
+      <hr class="vr-title-rule">
+    </header>
+
+    <article class="vr-body">
+{{body_html}}
+    </article>
+
+    <section class="vr-endmatter" id="vr-cite">
+      <h3>Cite this report</h3>
+      <p class="vr-cite-line">{{cite_line}}</p>
+      <div class="vr-bibtex"><button class="vr-copy" type="button" data-vr-copy>Copy BibTeX</button><pre>{{bibtex}}</pre></div>
+      {{review_html}}
+      <h3>{{provenance_heading}}</h3>
+      <p class="vr-provenance">{{licence_html}}Version <code>{{hash}}</code>, built {{built}}{{repository}}.</p>
+    </section>
+  </main>
+</div>
+
+<footer class="vr-footer">
+  <div class="vr-footer-inner">
+    <a class="vr-brand" href="{{home}}">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 L13.6 9.2 L20.8 8 L14.6 12 L20.8 16 L13.6 14.8 L12 22 L10.4 14.8 L3.2 16 L9.4 12 L3.2 8 L10.4 9.2 Z" fill="#8B5CF6"/></svg>
+      Vivid Insights
+    </a>
+    <span>A non-profit research incubator · <a href="mailto:{{contact}}">{{contact}}</a></span>
+    <span class="vr-footer-meta">{{report_number}}</span>
+  </div>
+</footer>
+
+<script src="assets/vivid-report.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# References for the specimen. Every entry was checked against the source on 9 October 2026.
+# Format: FORMAT.md, "References".
+
+- id: caut2025
+  type: preprint
+  author: ["Caut, Amandine M.", "Rouillard, Amy", "Zenebe, Beimnet", "Green, Matthias", "Morthens, Ágúst Pálmason", "Sumpter, David J. T."]
+  title: "Representing data in words: A context engineering approach"
+  year: 2025
+  container: arXiv
+  number: "2503.15509"
+  url: https://arxiv.org/abs/2503.15509
+  note: Preprint, not peer reviewed. Title as of the version current on 9 October 2026.

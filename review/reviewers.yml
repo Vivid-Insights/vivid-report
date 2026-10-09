@@ -1,0 +1,24 @@
+# The Vivid Insights review team, and the policy a report must meet before it is published.
+# REVIEW.md describes the process. Template-level: shared by every report.
+#
+# id      the name a reviewer uses with review.py (form, approve) and for their files
+# email   the address they commit with; an approval only counts if their own commit added it
+# role    editor or reviewer
+
+policy:
+  required_approvals: 2      # approvals needed for the current version
+  require_editor: true       # at least one of them from an editor
+  authors_may_not_approve: true
+
+team:
+  - id: dsumpter
+    name: David Sumpter
+    email: david.sumpter@it.uu.se
+    role: editor
+
+  # [CHECK: add the rest of the review team. Until at least two people are listed, review.py
+  # request refuses, because the policy above cannot be met. For example:]
+  # - id: vsitati
+  #   name: Victoria Sitati
+  #   email: <the address she commits with>
+  #   role: editor

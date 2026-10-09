@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Create or update the Python environment for this report workspace.
+#
+# Usage:  cd Code && ./setup_env.sh
+#
+# Reads:    pyproject.toml, uv.lock, .python-version
+# Produces: Code/.venv/  (git-ignored)
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+if ! command -v uv >/dev/null 2>&1; then
+    cat >&2 <<'MSG'
+Error: uv is not installed.
+
+uv manages the Python version and all packages for this workspace. Install it with:
+
+    curl -LsSf https://astral.sh/uv/install.sh | sh     # macOS / Linux
+
+then re-run this script. See https://docs.astral.sh/uv/getting-started/installation/
+MSG
+    exit 1
+fi
+
+echo "Syncing environment from uv.lock ..."
+uv sync --frozen 2>/dev/null || {
+    echo "No usable lockfile found; resolving from pyproject.toml instead."
+    uv sync
+}
+
+echo
+uv run python check_env.py
+
+cat <<'MSG'
+
+Environment ready at Code/.venv
+
+Build the report page:       cd Code && uv run python tools/build.py --open
+Build the specimen:          cd Code && uv run python tools/build.py "../Sample Report/Specimen.md" --open
+Run a figure script:         cd Code && uv run python my_figure.py
+Add a package:               cd Code && uv add <package>   (updates uv.lock)
+MSG

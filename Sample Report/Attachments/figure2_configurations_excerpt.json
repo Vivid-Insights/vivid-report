@@ -1,0 +1,27 @@
+[
+ {
+  "id": 3366,
+  "label": "Low-risk woman, 42",
+  "labels": [
+   "Age",
+   "Body mass index",
+   "Systolic blood pressure",
+   "Diastolic blood pressure",
+   "Cholesterol",
+   "Physical activity"
+  ],
+  "shown": [
+   "42 years",
+   "20.8",
+   "110 mmHg",
+   "70 mmHg",
+   "normal",
+   "active"
+  ],
+  "texts": [
+   "Your overall risk of heart and blood vessel problems is strongly reduced compared with other patients at the clinic. The strongest protective factor is your systolic blood pressure of 110, which strongly lowers your risk, and your age of 42 also reduces risk, though to a lesser extent. Your BMI 20.83, diastolic BP 70, normal cholesterol and active lifestyle do not significantly change your risk on their own. There are no measurements here that would raise your risk. To keep this favorable profile, continue your healthy habits and schedule periodic check-ups to monitor your blood pressure and other cardiovascular factors.",
+   "Compared with other patients at the clinic, your overall risk of heart and blood vessel problems is strongly reduced. Your age of 42, BMI of 20.83, and systolic blood pressure of 110 all strongly reduce your risk, and your diastolic blood pressure of 70 reinforces that protection. Having normal cholesterol levels implies a moderately reduced risk. Having an active lifestyle implies no significant effect on the risk of developing cardio issues in this model. To maintain this favorable outlook, keep up your healthy habits and have regular checks of your blood pressure and cholesterol, and discuss any concerns with your clinician.",
+   "Your overall odds of developing heart and blood vessel problems are strongly reduced compared with other patients at the clinic, and your risk is equivalent to that of someone younger than 30, the youngest age in the data. Your systolic blood pressure of 110 is the strongest protective factor, lowering your odds by about 60% and reducing your risk age by roughly 18 years. A body mass index of 20.83 also helps, decreasing your odds by about 16% and lowering your risk age by about 3.6 years. A diastolic blood pressure of 70 further reduces your odds by about 13.6% and your risk age by roughly 2.9 years, and normal cholesterol lowers your risk age by about 3.3 years while an active lifestyle cuts odds by about 23% and risk age by about 1 year. In sum, there are no factors listed that increase your risk; your profile is favorable thanks to these protective factors. To maintain this, keep up regular physical activity, monitor blood pressure and cholesterol, and discuss any changes with your clinician."
+  ]
+ }
+]
