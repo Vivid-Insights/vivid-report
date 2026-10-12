@@ -1,6 +1,7 @@
 ---
 title: "Turning a number into words: a specimen of the Vivid Insights report format"
 slug: specimen
+folder: papers/0000-specimen
 report-number: VI-2026-000
 authors:
   - name: David Sumpter

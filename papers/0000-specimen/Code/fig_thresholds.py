@@ -3,7 +3,7 @@
 The normative model is the function `words()` below: it maps a z-score to a phrase using four
 thresholds. The thresholds are choices, stated in the specimen's Method section, not estimates.
 
-    cd Code && uv run python "../Sample Report/Code/fig_thresholds.py"
+    cd Code && uv run python ../papers/0000-specimen/Code/fig_thresholds.py
 """
 
 import math
@@ -12,12 +12,10 @@ from pathlib import Path
 
 import numpy as np
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "Code"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "Code"))   # the workspace's shared Code/
 import viz_style as vs  # noqa: E402
 
-vs.FIGURES = HERE / "outputs" / "figures"
-vs.VIDEOS = HERE / "outputs" / "videos"
+vs.for_paper(__file__)
 
 THRESHOLDS = [-2.0, -1.0, -0.5, 0.5, 1.0, 2.0]
 PHRASES = ["far below average", "below average", "slightly below average", "average",

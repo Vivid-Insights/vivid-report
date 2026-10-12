@@ -6,19 +6,25 @@ Vivid Insights reports are about methods: wordalisation, storyboarding, converse
 
 ## Workspace Contract
 
-Use this folder as the single source of truth for the report. Keep work in the locations below.
+One paper per folder. Everything belonging to a paper is in its folder, `papers/NNNN-slug/`; everything shared by all papers is at the top of the workspace. The paper being worked on has its Markdown at the top as `Report.md`, and only one paper is open at a time.
 
 | Location | Purpose |
 | --- | --- |
-| `Report.md` | The report, built up across the steps rather than written at the end. Its Markdown is the source of the published web page; `FORMAT.md` gives the syntax. Nothing enters a section before the step that owns it. |
-| `Appendix.md` | The running record, written as you go from the first step: `Source Material`, `Framing`, `Method Facts`, `Workings`, `Log`, `Code Summary`, `References`. Not published as part of the page; it is what a reviewer reads to check the page. |
-| `references.yaml` | Every work the report cites, with a link. The reference list on the page is generated from it. |
-| `Attachments/` | Source material supplied for the report: saved model outputs, transcripts, prompt files copied from an app, screen recordings (`Attachments/media/`), literature (`Attachments/literature/`, not committed). Never modified. Each item has its provenance recorded in `Source Material`. |
-| `Code/` | Every script that makes a figure, a video figure or a number in the report, with its outputs under `Code/outputs/`. `Code/interactives/` holds interactive figures, one folder each. `Code/viz_style.py` carries the figure conventions. `Code/tools/` is the build, check, review and publish tooling: template-level, not edited for a report. |
-| `review/` | The review: `reviewers.yml` (the team and the approval policy), one `round-NN/` folder per round. `REVIEW.md` says who writes what. The agent never writes in `reviews/` or `approvals/`. |
-| `site/` | The Vivid Insights report design: page template, stylesheet, fonts, and `site.yml`, which says where reports are published. Template-level. |
+| `Report.md` | The paper being worked on: its Markdown, which is the source of its web page; `FORMAT.md` gives the syntax. Built up across the steps rather than written at the end; nothing enters a section before the step that owns it. Its front matter names its folder (`folder: papers/NNNN-slug`), and every path in it is relative to that folder. When another paper is opened, it moves back into its folder. |
+| `papers/NNNN-slug/` | One paper and everything it needs. The number is the paper's report number. |
+| `papers/…/Appendix.md` | The paper's running record, written as you go from the first step: `Source Material`, `Framing`, `Method Facts`, `Workings`, `Log`, `Code Summary`, `References`. Not published; it is what a reviewer reads to check the page. |
+| `papers/…/references.yaml` | Every work the paper cites, with a link. The reference list on the page is generated from it. |
+| `papers/…/Attachments/` | Source material for the paper: saved model outputs, transcripts, prompt files copied from an app, the paper's source if it exists elsewhere, screen recordings (`Attachments/media/`), literature (`Attachments/literature/`, not committed). Never modified. Each item has its provenance in `Source Material`. |
+| `papers/…/Code/` | Every script that makes a figure, a video figure or a number in the paper, with its outputs under `Code/outputs/`, and interactive figures in `Code/interactives/`, one folder each. A figure script starts with `viz_style.for_paper(__file__)` so its output lands here. |
+| `papers/…/review/` | The paper's review rounds, one `round-NN/` folder each. `REVIEW.md` says who writes what. The agent never writes in `reviews/` or `approvals/`. |
+| `papers/0000-specimen/` | A specimen paper that uses every kind of block. It is there to show what the format looks like; it is not edited as part of another paper. |
+| `Code/` | Shared: `tools/` (build, check, paper, review and publish tooling), `tests/`, `viz_style.py` with the figure conventions, and the Python environment. Not edited for a single paper. |
+| `review/reviewers.yml` | Shared: the review team and the approval policy. |
+| `templates/` | Shared: the empty paper that `tools/paper.py new` copies, and the reviewers' forms. |
+| `site/` | Shared: the Vivid Insights report design, and `site.yml`, which says where papers are published. |
 | `build/` | Built pages. Generated, never edited, not committed. |
-| `Sample Report/` | A specimen report that uses every kind of block, with its own code, attachments and references. It is there to show what the format looks like; it is not edited as part of a new report. |
+
+Move between papers only with `tools/paper.py`: `list` shows every paper and which is open, `open <number>` puts the open paper back in its folder and brings another one to the top, `park` puts the open paper away, and `new <slug>` creates the next numbered paper from `templates/paper/` and opens it. It never overwrites a file. Never copy a paper's Markdown by hand: two copies of the same paper drift apart.
 
 ## Step-by-Step Working
 
@@ -34,7 +40,7 @@ This workspace is for writing a report **one step at a time, with the user direc
   - **Name the next step only after the user has closed the current one**, then say what it involves and wait again.
   - **Being ready to move on is not a reason to move on.**
   - **Wait for an answer rather than an absence of objection.** A user who replies about one item has not closed the others.
-- **From step 3 onwards, compare with the specimen before asking.** Open the part of `Sample Report/Specimen.md` and its built page that corresponds to the step just finished — the method section and its definition and equation for step 3, the figures, video, interactive and quoted outputs for step 4, the discussion and limitations for step 6, the abstract for step 7, the whole page for step 8 — and compare the form with what this report now has: how much a caption explains, whether a generated text is quoted as an `output` block from its file, whether a video has a poster and an interactive a fallback, where a limitation sits. Compare the shape, never the content. A difference is not a fault; say what the comparison found, including when it found nothing, and leave the decision to the user.
+- **From step 3 onwards, compare with the specimen before asking.** Open the part of `papers/0000-specimen/Report.md` and its built page that corresponds to the step just finished — the method section and its definition and equation for step 3, the figures, video, interactive and quoted outputs for step 4, the discussion and limitations for step 6, the abstract for step 7, the whole page for step 8 — and compare the form with what this report now has: how much a caption explains, whether a generated text is quoted as an `output` block from its file, whether a video has a poster and an interactive a fallback, where a limitation sits. Compare the shape, never the content. A difference is not a fault; say what the comparison found, including when it found nothing, and leave the decision to the user.
 - **Agree the approach before applying it.** For a figure, an example, an evaluation or a new section structure, say what you propose and why, and get agreement before producing it.
 - **`Report.md` is built up as the work proceeds.** Each step adds only its own part. Interim workings go in `Appendix.md`.
 - **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 10 will not publish until the user has confirmed they have read it.
@@ -58,15 +64,15 @@ When the user prefixes a message with **FRAMEWORK**, they are changing the templ
 - Keep the template edit in its own commit, touching no report content, so it can be promoted cleanly.
 - If the change conflicts with something already written here, say so rather than leaving the contract self-contradictory.
 
-### Promoting template changes to `main`
+### Shared changes and paper changes
 
-`main` is the template branch. Each report lives on its own branch, or in its own clone in a parallel folder.
+All papers live together on `main`, one folder each. A change to something shared (the contract, the tools, the design, the templates, the specimen) and a change to a paper are different kinds of change, and they never go in the same commit.
 
-- **Promote a template change to `main` in the same sitting.** Cherry-pick the commit onto `main`, and ask before pushing either branch.
-- **Template-level files:** `CLAUDE.md`, `instructions.md`, `WRITING.md`, `FORMAT.md`, `REVIEW.md`, `README.md`, `Setup.md`, `.gitignore`, `.claude/`, `Code/tools/`, `Code/tests/`, `Code/viz_style.py`, `Code/pyproject.toml`, `Code/uv.lock`, `Code/setup_env.sh`, `Code/check_env.py`, `site/`, `review/templates/`, `review/reviewers.yml`, `Sample Report/`, and the empty templates of `Report.md`, `Appendix.md` and `references.yaml`.
-- **Report content is never promoted:** `Attachments/`, figure scripts and outputs, interactives, `review/round-*`, and the filled-in `Report.md`, `Appendix.md` and `references.yaml`.
-- **Corrections in `WRITING.md`** are template-level when they are about how the user writes, and report-level when they are about one report's terms. The `Terms` table belongs to the report; the corrections log to the template.
-- **Say what was promoted**: the commit, the branches it is on, and whether each was pushed.
+- **Shared:** `CLAUDE.md`, `instructions.md`, `WRITING.md`, `FORMAT.md`, `REVIEW.md`, `README.md`, `Setup.md`, `.gitignore`, `.claude/`, `Code/`, `review/reviewers.yml`, `templates/`, `site/` and `papers/0000-specimen/`.
+- **A paper:** everything in its folder, and `Report.md` while it is open.
+- **Commit each paper on its own.** A commit touches one paper's folder (and `Report.md` when that paper is open), so a paper's history can be read without the others.
+- **Corrections in `WRITING.md`** are shared when they are about how the user writes. A paper's own terms go in its `Appendix.md`.
+- **Say what was committed**, and whether it was pushed. Push only when the user asks.
 
 ## The Ten Steps
 
@@ -172,7 +178,7 @@ Every report is reviewed by the Vivid Insights team before it is published. `REV
 - **Do not edit the report while a round is open.** Any change to the report, its references or any file it shows or quotes changes the content hash, and an approval only counts for the hash it names. If the user wants to change something during review, say so before doing it.
 - **Never write in `review/*/reviews/` or `review/*/approvals/`, and never run `review.py form` or `review.py approve`.** Those belong to the reviewers. A hook in `.claude/` blocks it; the rule stands whether or not the hook does. Do not create, edit, move or delete a review or an approval, do not commit one, and do not impersonate a reviewer in git.
 - **When reviews arrive, read them all, then list every point** — each with the reviewer, a quote, and what it asks for. Propose for each whether to change the report, and how, or why not. The user decides.
-- **Make the agreed changes one at a time**, under the usual rules, and write `review/round-NN/response.md`: each point quoted, followed by what was done and where, or why nothing was. This is the author's reply; write it in the first person plural.
+- **Make the agreed changes one at a time**, under the usual rules, and write the paper's `review/round-NN/response.md`: each point quoted, followed by what was done and where, or why nothing was. This is the author's reply; write it in the first person plural.
 - **Then request the next round.** Reviewers approve the revised version, not the one they first read.
 - `cd Code && uv run python tools/review.py status` says where the report stands and why. Use it rather than reading the folder.
 
@@ -223,12 +229,12 @@ A `403` from a publisher is a bot block, not a dead link. Ask the user for the d
 
 ## The Specimen
 
-`Sample Report/Specimen.md` is a short report that uses every kind of block: figure, video, interactive, equation, definition, table, quoted output, conversation, citations and cross-references. Build it with `cd Code && uv run python tools/build.py "../Sample Report/Specimen.md"`.
+`papers/0000-specimen/Report.md` is a short paper that uses every kind of block: figure, video, interactive, equation, definition, table, quoted output, conversation, citations and cross-references. Build it where it lies with `cd Code && uv run python tools/build.py ../papers/0000-specimen/Report.md`; there is no need to open it.
 
 - **Offer it when the user is unsure what a part of the report looks like**, and point them at the part of the built page.
 - **Read it before closing a step, from step 3**, as `Step-by-Step Working` says.
 - **It is an example of form, not of content.** It makes no empirical claim, and a real report has more to say than it does. Never copy its prose, numbers or figures.
-- **Never edit it as part of a new report.** Where it and this contract disagree, the contract is right.
+- **Never edit it as part of another paper.** Where it and this contract disagree, the contract is right.
 
 ## Agent Operating Rules
 

@@ -51,9 +51,9 @@ def write_approval(rnd: Path, rid: str, h: str):
 def main():
     tmp = Path(tempfile.mkdtemp(prefix="vivid-review-test-"))
     repo = tmp / "report"
-    shutil.copytree(ROOT / "Sample Report", repo, ignore=shutil.ignore_patterns("build", ".DS_Store"))
-    report = repo / "Specimen.md"
-    (repo / "review").mkdir()
+    shutil.copytree(ROOT / "papers" / "0000-specimen", repo, ignore=shutil.ignore_patterns("build", ".DS_Store"))
+    report = repo / "Report.md"
+    (repo / "review").mkdir(exist_ok=True)
     (repo / "review" / "reviewers.yml").write_text(TEAM)
     git(repo, "init", "-q")
     git(repo, "add", ".")

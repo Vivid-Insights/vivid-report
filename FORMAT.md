@@ -1,6 +1,6 @@
 # Report format
 
-How to write `Report.md` so it builds into a Vivid Insights web paper. Ordinary Markdown works as usual; this file covers what is added. `Sample Report/Specimen.md` uses every part, and its built page shows the result.
+How to write `Report.md` so it builds into a Vivid Insights web paper. Ordinary Markdown works as usual; this file covers what is added. `papers/0000-specimen/Report.md` uses every part, and its built page shows the result.
 
 Build with `cd Code && uv run python tools/build.py` (add `--open` to open it). The page goes to `build/<slug>/index.html`, a self-contained folder.
 
@@ -11,6 +11,7 @@ Build with `cd Code && uv run python tools/build.py` (add `--open` to open it). 
 title: "The title, plain and literal"
 subtitle: ""                          # optional
 slug: short-name                      # the page's address: reports/<slug>/
+folder: papers/0002-short-name        # the paper's folder; every path in the file is relative to it
 report-number: VI-2026-001            # the Vivid Insights series; ask before assigning
 authors:
   - name: Ada Lovelace
@@ -41,7 +42,7 @@ references: references.yaml
 
 ## Figures, videos and interactive figures
 
-All three are numbered as figures, in the order they appear. The block's text is the caption. Paths are relative to the report's folder.
+All three are numbered as figures, in the order they appear. The block's text is the caption. Paths are relative to the paper's folder (`folder:` in the front matter), wherever the Markdown file happens to be.
 
 ```markdown
 ::: figure {#fig-pipeline src="Code/outputs/figures/pipeline.png" alt="What the image shows, for screen readers"}
@@ -70,7 +71,7 @@ Caption.
 
 - The whole folder of the `index.html` is published. It must be self-contained: no build step, no keys, no calls to an LLM or a paid API.
 - `fallback=` is the still shown in print.
-- To follow the page's light or dark theme, listen for the message the page sends: `window.addEventListener("message", e => { if (e.data && e.data.vividTheme) document.documentElement.dataset.theme = e.data.vividTheme; })`. `Sample Report/interactives/threshold-explorer/` does this.
+- To follow the page's light or dark theme, listen for the message the page sends: `window.addEventListener("message", e => { if (e.data && e.data.vividTheme) document.documentElement.dataset.theme = e.data.vividTheme; })`. `papers/0000-specimen/interactives/threshold-explorer/` does this.
 
 ### Figures with panels
 

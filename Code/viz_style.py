@@ -16,6 +16,9 @@ resolution and shows it so that its 11 pt text comes out the same size as the bo
 
 Video figures: `vs.save_video(frames_fn, n_frames, "name", fps=24)` renders an mp4 for each theme
 with the ffmpeg bundled by imageio-ffmpeg, plus a poster PNG.
+
+A figure script lives in its paper's `Code/` folder and starts with `vs.for_paper(__file__)`, so its
+figures and videos go to that paper's `Code/outputs/`.
 """
 
 from __future__ import annotations
@@ -67,6 +70,14 @@ class Theme:
 LIGHT = Theme("light", "#FDFDFB", "#2F3E50", "#5C6270", "#E4E4EA", "#A3A6B0", PALETTE)
 DARK = Theme("dark", "#15151A", "#E6E8EF", "#A3A6B5", "#2A2A33", "#6C6F7D", DARK_PALETTE)
 _active = LIGHT
+
+
+def for_paper(script: str) -> Path:
+    """Send this script's figures and videos to its own paper's Code/outputs/. Returns the paper folder."""
+    global FIGURES, VIDEOS
+    code = Path(script).resolve().parent
+    FIGURES, VIDEOS = code / "outputs" / "figures", code / "outputs" / "videos"
+    return code.parent
 
 
 def theme() -> Theme:

@@ -27,7 +27,7 @@ This reads `Code/uv.lock`, creates `Code/.venv`, and prints the versions it inst
 ## 4. Check it works
 
 ```bash
-cd Code && uv run python tools/build.py "../Sample Report/Specimen.md" --open
+cd Code && uv run python tools/build.py ../papers/0000-specimen/Report.md --open
 ```
 
 The specimen should open in your browser with a yellow "Draft" banner, four figures (one of them a video and one interactive), and no errors.
@@ -37,7 +37,10 @@ The specimen should open in your browser with a yellow "Draft" banner, four figu
 All from `Code/`:
 
 ```bash
-uv run python tools/build.py --open               # build Report.md and open it
+uv run python tools/paper.py list                 # every paper, and which one is open as Report.md
+uv run python tools/paper.py open 2               # put the open paper away and open paper 0002
+uv run python tools/paper.py new <slug>           # start the next numbered paper and open it
+uv run python tools/build.py --open               # build the open paper and look at it
 uv run python tools/check.py                      # errors, warnings and writing-style hints
 uv run python tools/check.py --release            # as review and publishing will: unfinished work is an error
 uv run python tools/review.py status              # where the report stands in review

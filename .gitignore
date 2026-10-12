@@ -23,11 +23,11 @@ __pycache__/
 .DS_Store
 
 # Literature PDFs: licensed material, cited but not redistributed
-Attachments/literature/
+papers/*/Attachments/literature/
 
 # App secrets copied in by mistake
 .env
 secrets.toml
 
 # The Overleaf download of the Wordalisation paper: it also holds a cover letter and a rebuttal
-Wordalisation.zip
+papers/0001-representing-data-in-words/Attachments/Wordalisation.zip

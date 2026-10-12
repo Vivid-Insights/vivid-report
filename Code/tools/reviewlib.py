@@ -5,10 +5,10 @@ approved. An approval names a content hash — of the report's Markdown, its ref
 file the page shows or quotes — so any edit after approval, however small, makes the approval stale
 and the report has to go back to its reviewers.
 
-Layout, beside the report's Markdown file:
+Layout: the team is shared, the rounds belong to the paper.
 
-    review/reviewers.yml                     the team, their roles, and the approval policy
-    review/round-01/request.md               written by `review.py request` (author side)
+    review/reviewers.yml                     (top of the workspace) the team, their roles, the policy
+    papers/<paper>/review/round-01/request.md               written by `review.py request` (author side)
     review/round-01/reviews/<id>.md          written by the reviewer, by hand, from the template
     review/round-01/response.md              the author's point-by-point reply
     review/round-01/approvals/<id>.yml       written by the reviewer with `review.py approve`
@@ -25,21 +25,22 @@ from pathlib import Path
 
 import yaml
 
-from common import FRONT_RE, ROOT, load_report, load_yaml
+from common import FRONT_RE, ROOT, load_report, load_yaml, paper_dir
 
 BLOCK_HDR_RE = re.compile(r"^:{3,}[ \t]*(\w+)[ \t]*(\{[^\n]*\})", re.M)
 PATH_ATTRS = ("src", "dark", "poster", "fallback", "source")
 
 
 def review_dir(report: Path) -> Path:
-    return report.parent / "review"
+    meta, _ = load_report(report)
+    return paper_dir(meta, report) / "review"
 
 
 def referenced_files(report: Path) -> list[Path]:
     """Every file the report page shows or quotes, so that changing any of them changes the hash."""
     from build import parse_attrs  # local import: build imports this module too
     meta, body = load_report(report)
-    base = report.parent
+    base = paper_dir(meta, report)
     files = {report, base / meta.get("references", "references.yaml")}
     for m in BLOCK_HDR_RE.finditer(body):
         a = parse_attrs(m.group(2))
@@ -59,7 +60,7 @@ def referenced_files(report: Path) -> list[Path]:
 
 def content_hash(report: Path) -> str:
     h = hashlib.sha256()
-    base = report.parent.resolve()
+    base = paper_dir(load_report(report)[0], report)
     for f in referenced_files(report):
         h.update(str(f.relative_to(base) if f.is_relative_to(base) else f.name).encode())
         h.update(b"\0")
@@ -79,7 +80,9 @@ def front(path: Path) -> dict:
 
 
 def team(report: Path) -> tuple[dict, dict]:
-    cfg = load_yaml(review_dir(report) / "reviewers.yml", {}) or {}
+    # A paper may carry its own team file (the review-gate test does); otherwise the shared one.
+    own = review_dir(report) / "reviewers.yml"
+    cfg = load_yaml(own if own.exists() else ROOT / "review" / "reviewers.yml", {}) or {}
     members = {m["id"]: m for m in cfg.get("team", []) if m.get("id")}
     policy = {"required_approvals": 2, "require_editor": True, "authors_may_not_approve": True}
     policy.update(cfg.get("policy") or {})

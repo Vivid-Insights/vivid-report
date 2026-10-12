@@ -43,7 +43,7 @@ from mdit_py_plugins.dollarmath import dollarmath_plugin
 from mdit_py_plugins.footnote import footnote_plugin
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import ROOT, SITE, ReportError, load_report, load_yaml, rel, resolve_report, site_config, slug_of  # noqa: E402
+from common import ROOT, SITE, ReportError, load_report, load_yaml, paper_dir, rel, resolve_report, site_config, slug_of  # noqa: E402
 
 XREF_KINDS = {"fig": "Figure", "tab": "Table", "eq": "Equation", "sec": "Section", "def": "Definition"}
 UNNUMBERED = {"abstract", "disclaimer", "references", "acknowledgements", "acknowledgments", "appendix",
@@ -298,7 +298,6 @@ class Bibliography:
 class Builder:
     def __init__(self, report: Path, out_dir: Path | None = None, release: bool = False, status: dict | None = None):
         self.report = report
-        self.base = report.parent
         self.release = release
         self.status = status or {"state": "draft"}
         self.issues: list[Issue] = []
@@ -310,6 +309,7 @@ class Builder:
         self.cited: list[str] = []
         self.referenced_ids: set[str] = set()
         self.meta, self.body = load_report(report)
+        self.base = paper_dir(self.meta, report)
         self.slug = slug_of(self.meta, report)
         self.out_dir = out_dir or (ROOT / "build" / self.slug)
         self.md = (MarkdownIt("commonmark", {"html": True, "typographer": True})

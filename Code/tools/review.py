@@ -20,7 +20,7 @@ from common import ROOT, rel, resolve_report, slug_of, load_report  # noqa: E402
 from reviewlib import (content_hash, front, git, referenced_files, review_dir, review_status,  # noqa: E402
                        rounds, team, today)
 
-TEMPLATES = ROOT / "review" / "templates"
+TEMPLATES = ROOT / "templates" / "review"
 
 
 def cmd_status(report: Path) -> int:
@@ -93,7 +93,8 @@ def cmd_request(report: Path, force_dirty: bool) -> int:
     meta, _ = load_report(report)
     who = git("config", "user.name", cwd=repo) or ""
     commit = git("rev-parse", "--short", "HEAD", cwd=repo) or ""
-    files = "\n".join(f"  - {f.relative_to(report.parent) if f.is_relative_to(report.parent) else f.name}" for f in referenced_files(report))
+    base = review_dir(report).parent
+    files = "\n".join(f"  - {f.relative_to(base) if f.is_relative_to(base) else f.name}" for f in referenced_files(report))
     changes = ("" if n == 1 else
                "\n## Changes since round {p}\n\n[TO WRITE: what changed in response to round {p}, pointing to review/round-{p:02d}/response.md]\n".format(p=n - 1))
     (rnd / "request.md").write_text(

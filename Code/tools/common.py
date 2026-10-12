@@ -1,8 +1,14 @@
 """Shared paths and loaders for the report tools.
 
-Every tool takes the path of a report's Markdown file. The folder that file sits in is the
-report's own root: figure paths, `references.yaml` and `review/` are all resolved against it,
-so `Report.md` at the top of the workspace and `Sample Report/Specimen.md` build the same way.
+One paper per folder: `papers/NNNN-slug/` holds everything for that paper. The paper being worked
+on has its Markdown at the top of the workspace as `Report.md`; the others keep theirs inside their
+folders, and `tools/paper.py` moves a paper's `Report.md` in and out.
+
+Every tool takes the path of a paper's Markdown file and resolves the paper's folder with
+`paper_dir()`: for the top-level `Report.md` it is the `folder:` named in the front matter, and
+for a Markdown file inside a folder it is that folder. Figure paths, `references.yaml` and the
+paper's `review/` rounds are all relative to the paper's folder, so the file can move without
+any of its paths changing.
 """
 
 from __future__ import annotations
@@ -15,6 +21,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
+PAPERS = ROOT / "papers"
+TEMPLATES = ROOT / "templates"
 DEFAULT_REPORT = ROOT / "Report.md"
 
 FRONT_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
@@ -30,8 +38,25 @@ def resolve_report(arg: str | None) -> Path:
         p = (Path.cwd() / p) if (Path.cwd() / p).exists() else (ROOT / p)
     p = p.resolve()
     if not p.exists():
+        if p == DEFAULT_REPORT:
+            raise SystemExit("No paper is open: there is no Report.md at the top of the workspace.\n"
+                             "Open one with `cd Code && uv run python tools/paper.py open <number>`, "
+                             "or start one with `tools/paper.py new <slug>`.")
         raise SystemExit(f"No report at {p}")
     return p
+
+
+def paper_dir(meta: dict, report: Path) -> Path:
+    """The paper's own folder: where its figures, references, attachments and review rounds live."""
+    if report.parent.resolve() == ROOT.resolve():
+        folder = meta.get("folder")
+        if not folder:
+            raise ReportError(f"{report.name} is at the top of the workspace but its front matter names no `folder:`")
+        d = (ROOT / folder).resolve()
+        if not d.is_dir():
+            raise ReportError(f"the folder named in {report.name}, {folder}, does not exist")
+        return d
+    return report.parent.resolve()
 
 
 def load_report(path: Path) -> tuple[dict, str]:

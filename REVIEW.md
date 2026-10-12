@@ -10,7 +10,7 @@ Every version of a report has a content hash, computed from `Report.md`, `refere
 
 ## Who
 
-`review/reviewers.yml` lists the team, each with an id, a name, the email address they commit with, and a role: `editor` or `reviewer`. It also sets the policy. By default:
+`review/reviewers.yml`, at the top of the workspace and shared by every paper, lists the team, each with an id, a name, the email address they commit with, and a role: `editor` or `reviewer`. It also sets the policy. By default:
 
 - two approvals are needed,
 - at least one of them from an editor,
@@ -19,6 +19,8 @@ Every version of a report has a content hash, computed from `Report.md`, `refere
 The author chooses the reviewers with the editor when they request review. At least one should know the method well and one should not, since the report has to work for a reader who was not in the room.
 
 ## How a round works
+
+Each paper keeps its own rounds in its folder: `papers/NNNN-slug/review/round-01/`, `round-02/`, and so on. The paths below are inside that folder. The commands act on the paper that is open as `Report.md`.
 
 1. **The author requests review** after the read-through (step 8 of `instructions.md`). The report must pass the release check and be committed. `cd Code && uv run python tools/review.py request` freezes the version, opens `review/round-01/`, writes `request.md` with the hash, and builds a review copy in `build/<slug>-review-round-01/`, marked as a review copy with its hash in the banner. The author commits `review/` and sends the review copy to the reviewers — as the folder, through the pushed branch, or however the team prefers.
 2. **The author does not change the report while it is being reviewed.**
