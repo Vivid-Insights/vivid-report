@@ -1,6 +1,6 @@
 """Check that the built page says exactly what the paper's LaTeX source says.
 
-    cd Code && uv run python tools/build.py && uv run python check_against_source.py
+    cd Code && uv run python tools/build.py && uv run python ../papers/0001-representing-data-in-words/Code/check_against_source.py
 
 Extracts the words of `Attachments/wordalisation-paper/neurips_2026.tex` (abstract to bibliography;
 comments, the NeurIPS checklist and LaTeX markup removed) and the words of the built page (title
@@ -25,9 +25,10 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-TEX = ROOT / "Attachments" / "wordalisation-paper" / "neurips_2026.tex"
-PAGE = ROOT / "build" / "representing-data-in-words" / "index.html"
+PAPER = Path(__file__).resolve().parents[1]          # this paper's folder
+WORKSPACE = PAPER.parents[1]
+TEX = PAPER / "Attachments" / "wordalisation-paper" / "neurips_2026.tex"
+PAGE = WORKSPACE / "build" / "representing-data-in-words" / "index.html"
 
 
 def unify(s: str) -> str:

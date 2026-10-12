@@ -1,7 +1,7 @@
 """Convert the cited entries of the paper's BibTeX file into references.yaml.
 
-    cd Code && uv run python bib_to_yaml.py            # writes ../references.yaml
-    cd Code && uv run python bib_to_yaml.py --list     # show the parsed entries, write nothing
+    cd Code && uv run python ../papers/0001-representing-data-in-words/Code/bib_to_yaml.py          # writes the paper's references.yaml
+    cd Code && uv run python ../papers/0001-representing-data-in-words/Code/bib_to_yaml.py --list   # show the parsed entries, write nothing
 
 Reads `Attachments/wordalisation-paper/neurips_2026.tex` for the keys actually cited (commented-out
 LaTeX ignored) and `reference_nature.bib` for their details. Authors, titles, venues and years are
@@ -21,7 +21,7 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]          # this paper's folder
 SRC = ROOT / "Attachments" / "wordalisation-paper"
 TEX = SRC / "neurips_2026.tex"
 BIB = SRC / "reference_nature.bib"
