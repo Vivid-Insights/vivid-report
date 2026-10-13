@@ -40,6 +40,18 @@ The reason is the argument of Mitchell, Ghosh and Passi (2026), [*AI Agents Push
 - **Question what is written.** Read the user's text, and your own, against the code, the saved outputs and the literature you have read. Say where a claim goes beyond its source, where a cited paper says something different, where a paper you have read disagrees, and where a point has no support yet. Separate an error from a phrasing you would not have chosen.
 - **Write report text only when asked.** "Add that", "write it", "draft the paragraph" are instructions to write; agreeing with a proposal is not. When you write, say which of the three points the text serves and where it sits.
 
+### What the friction is for
+
+**The friction above applies to what the report says. It does not apply to how the workspace runs.** The rules in this section exist because an agent that drafts prose faster than anyone can read it takes the writing away from the user. That reason does not extend to formatting, tooling, file layout or anything else where the user has asked for a working result rather than a judgement about the paper.
+
+- **Writing decisions are the user's**, and get the full friction: which three points, which papers, what a paragraph says, what a result means, what an example shows, what a limitation is, which figure makes a case, whether the evidence supports a claim. Propose, wait, ask them to go first.
+- **Workspace problems are yours to solve**, when the user asks: Markdown and block syntax, how a thing renders, running the build and reading its errors, where a file sits, what a tool does, git, the environment. Work out the answer and do it. A user who asks for a fix has made the decision; the decision was to have it fixed.
+- **When a request is a task rather than a judgement, carry it out.** Investigate, find the route, and report what you did. If the obvious route does not exist, find another or say plainly that there is none — do not hand the problem back as a menu.
+- **Ask about a task only when doing it would be destructive, would change shared tooling or the contract, or would alter what the report claims.** Those are real decisions. Preferring a particular syntax is not.
+- **Do not borrow authority from the writing rules to slow down a task.** "The decisions are yours" is about the paper's argument. Quoting it at someone who asked you to make a block render is a way of not doing the work.
+
+> "There is meant to be friction, but only in the writing process, not in decisions about formatting or how the directory is structured." — David, 13 October 2026
+
 ## The Structure of a Report
 
 Every report has the same structure, in this order. The section names are fixed.
@@ -62,7 +74,7 @@ This workspace is for writing a report **one step at a time, with the user direc
 
 - **Do one step per request.** When it is done, say what changed and what you found. Then ask whether the step is finished, and stop and wait for direction.
 - **Do not run ahead.** Do not add sections, examples, figures, evaluations, conclusions or prose that were not asked for — even when the next step looks obvious, and even when you can see the whole report.
-- **Stop and ask** when a step turns out to be bigger than it looked, when the material forces a choice between approaches, or when a request is ambiguous. A question is cheaper than unpicking unwanted work.
+- **Stop and ask** when a step turns out to be bigger than it looked, when the material forces a choice between approaches, or when a request is ambiguous. A question is cheaper than unpicking unwanted work. This is about the report's content; a request to fix, format or run something is answered by doing it (`What the friction is for`).
 - **Prefer the smallest honest step.** If asked to look at a repository, look at it and say what is there; do not start describing the method in report prose.
 - **Say which step you are on, and announce every transition.** When a step's work is finished, name what was completed, name the step now beginning, and say what it involves before starting it. If you believe a step is finished and the user has not said so, propose closing it rather than moving on.
 - **Ask whether the step is complete; do not propose the next one.** The question is *"have we thought of everything in step 3?"*, not *"shall we move on to step 4?"*. The second invites a yes.
@@ -71,7 +83,7 @@ This workspace is for writing a report **one step at a time, with the user direc
   - **Being ready to move on is not a reason to move on.**
   - **Wait for an answer rather than an absence of objection.** A user who replies about one item has not closed the others.
 - **From step 3 onwards, compare with the specimen before asking.** Open the part of `papers/0000-specimen/Report.md` and its built page that corresponds to the step just finished — the citations for step 3, the definition and equation for step 4, the figures, video, interactive and quoted outputs for step 5, the discussion and its limitations for step 6, the abstract for step 7, the whole page for step 8 — and compare the form with what this report now has: how much a caption explains, whether a generated text is quoted as an `output` block from its file, whether a video has a poster and an interactive a fallback, where a limitation sits. Compare the shape, never the content. A difference is not a fault; say what the comparison found, including when it found nothing, and leave the decision to the user.
-- **Agree the approach before applying it.** For a figure, an example, an evaluation or a new section structure, say what you propose and why, and get agreement before producing it.
+- **Agree the approach before applying it.** For a figure, an example, an evaluation or a new section structure, say what you propose and why, and get agreement before producing it. These are claims the report makes. Formatting, tooling and file layout are not: do those when asked.
 - **`Report.md` is built up as the work proceeds.** Each step adds only its own part. Interim workings go in `Appendix.md`.
 - **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 10 will not publish until the user has confirmed they have read it.
 - **Do not leave markers in the report for work that was not done.** If an example is dropped or an evaluation abandoned, take it out of `Report.md` completely and record it in the `Log`.
@@ -90,6 +102,7 @@ This workspace is for writing a report **one step at a time, with the user direc
 When the user prefixes a message with **FRAMEWORK**, they are changing the template rather than the report.
 
 - Apply the change to `instructions.md` (or `WRITING.md`, `FORMAT.md`, `REVIEW.md`, the tools or the design) immediately.
+- **None of the friction rules apply to a FRAMEWORK message.** Do not propose, wait, ask the user to go first, or ask whether to change shared tooling or the contract: the prefix is the decision. Carry the change out in full, including anything it needs in the tools, the templates and the specimen, and report what was done.
 - Apply it to the report in progress as well, retrospectively where it affects work already done.
 - Keep the template edit in its own commit, touching no report content, so it can be promoted cleanly.
 - If the change conflicts with something already written here, say so rather than leaving the contract self-contradictory.
@@ -172,7 +185,7 @@ Show the method working, and say how well it works if the report claims that it 
   - **Interactive figures** are one self-contained folder in `Code/interactives/` with an `index.html`, no build step and no calls to an LLM or a paid API from the page. Each has a still `fallback=` image for print. They follow the page theme (see `FORMAT.md`).
 - **Figures follow `Code/viz_style.py`**: David's style (10 × 8 cm, 11 pt text, no top or right spine, steel blue before coral, 300 dpi), light and dark versions, opaque. One script per figure, reading only saved data. Assign a colour to a variable, not to a rank. Put nothing on the figure but its title, axes, legend and data. Tie every label to the thing it names.
 - **Captions say what the figure shows, not what it means.** Interpretation belongs in the `Discussion`.
-- **Keep the figures visible in Obsidian.** After adding a figure, video or interactive, or changing its file, run `cd Code && uv run python tools/obsidian.py`, which puts an embed of the file on the block's first line.
+- **Keep the figures and quoted text visible in Obsidian.** After adding a figure, video or interactive, or changing its file, or after adding or editing an `output`, `prompt` or `conversation` block, run `cd Code && uv run python tools/obsidian.py`. It puts an embed of the file on a media block's first line, and a `> ` on each line of a quoted block so Obsidian shows it as a blockquote; the build takes the prefix off again before it checks the text against its source.
 - **If the report claims the method works, propose the evaluation before running it.** What it measures, on what sample, against what, and what result would count against the method. LLM-as-a-judge, reconstruction of the data from the text, human ratings, comparison across configurations, a pilot with users: each measures something different. Say which, and what it cannot show. If the report makes no such claim, say so in the `Framing`.
 - **Do not grade your own outputs and call it evaluation.** An agent reading generated texts and deciding they are good is not evidence. Use a stated procedure, applied the same way to every text, with the scores saved.
 - **Every number comes from a saved output**, never from memory, never read off a figure. Report the estimate, its uncertainty and the sample. A judge score from twenty texts is a small sample, and the report says so.

@@ -1,4 +1,4 @@
-"""Make a report's figures visible inline in Obsidian.
+"""Make a report's figures and quoted text visible inline in Obsidian.
 
     cd Code && uv run python tools/obsidian.py                 # the open paper, Report.md
     cd Code && uv run python tools/obsidian.py ../papers/0000-specimen/Report.md
@@ -9,8 +9,13 @@ block, so the image (the video, or an interactive's still) appears where the rea
 path is from the top of the vault, so it stays right when the paper moves between `Report.md` and
 its folder. The build drops these lines and warns when one no longer matches its block.
 
-Only the embed lines are touched: an existing one is replaced, a missing one added. Run it again
-after changing a block's `src=`, `poster=` or `fallback=`.
+An `output`, `prompt` or `conversation` block is shown as its bare text, so it runs together with
+the prose around it. This puts a `> ` on each of its lines, which Obsidian renders as a blockquote.
+The build takes the prefix off again before it checks the text against its source file and before it
+publishes, so the quote stays word for word.
+
+Only the embed lines and the blockquote prefixes are touched: an existing one is replaced, a missing
+one added. Run it again after changing a block's `src=`, `poster=` or `fallback=`, or its text.
 """
 
 from __future__ import annotations
@@ -21,7 +26,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build import BLOCK_RE, MEDIA_KINDS, PREVIEW_RE, parse_attrs  # noqa: E402
+from build import BLOCK_RE, MEDIA_KINDS, PREVIEW_RE, QUOTE_KINDS, parse_attrs, unquote_md  # noqa: E402
 from common import FRONT_RE, ROOT, load_report, paper_dir, rel, resolve_report  # noqa: E402
 
 
@@ -32,6 +37,13 @@ def target(kind: str, attrs: dict) -> str | None:
 def with_previews(text: str, base: Path, counts: dict) -> str:
     def sub(m: re.Match) -> str:
         kind, attrs, body = m.group("kind"), parse_attrs(m.group("attrs")), m.group("body")
+        if kind in QUOTE_KINDS:
+            plain = unquote_md(body)
+            quoted = "\n".join(f"> {ln}" if ln.strip() else ">" for ln in plain.split("\n"))
+            counts["set"] += 0 if quoted == body else 1
+            head = m.group(0)[: m.start("body") - m.start()]
+            tail = m.group(0)[m.end("body") - m.start():]
+            return head + quoted + tail
         if kind not in MEDIA_KINDS and kind != "panel":
             return m.group(0)
         if kind == "figure":

@@ -51,6 +51,15 @@ UNNUMBERED = {"abstract", "disclaimer", "references", "acknowledgements", "ackno
 MEDIA_KINDS = {"figure", "video", "interactive"}
 PREVIEW_RE = re.compile(r"[ \t]*!\[\[([^\]\n]+)\]\][ \t]*(?:\n|$)")
 QUOTE_KINDS = {"output", "prompt", "conversation"}
+# Obsidian renders a quoted block as a blockquote; `tools/obsidian.py` writes the `> ` prefixes and
+# this takes them off again, so the text verified and published is what the source file says.
+BQ_RE = re.compile(r"^> ?", re.M)
+
+
+def unquote_md(text: str) -> str:
+    """Drop a uniform blockquote prefix from a quoted block's body."""
+    lines = [ln for ln in text.split("\n") if ln.strip()]
+    return BQ_RE.sub("", text) if lines and all(ln.lstrip().startswith(">") for ln in lines) else text
 ALL_KINDS = MEDIA_KINDS | QUOTE_KINDS | {"table", "definition", "box", "panel"}
 
 FENCE_RE = re.compile(r"^(```|~~~)[^\n]*\n.*?^\1\s*$", re.S | re.M)
@@ -583,7 +592,7 @@ class Builder:
             self.issue("error", f"{kind} block needs source= (a file it is quoted from, or source=\"hand-written\")", where)
             source = "unknown"
         hand = source == "hand-written"
-        text = content.strip("\n")
+        text = unquote_md(content.strip("\n")).strip("\n")
         turns = []
         if kind == "conversation":
             for line in text.splitlines():
