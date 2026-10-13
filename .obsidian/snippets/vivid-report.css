@@ -1,0 +1,53 @@
+/* Vivid Insights reports in Obsidian.
+   The build turns `::: figure {...}` fences into real figures, numbered captions and
+   verified quotes. Obsidian does not know about those fences, so a report reads as a
+   wall of text while it is being written. This styles what Obsidian *does* parse.
+   It changes nothing the build sees: no Markdown is added to Report.md for it. */
+
+/* ---------- Quoted model output ----------
+   tools/obsidian.py puts `> ` on every line of an output, prompt or conversation
+   block, so Obsidian renders them as blockquotes. Make them look quoted. */
+.markdown-preview-view blockquote,
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--color-accent);
+  background: var(--background-secondary);
+  border-radius: 0 6px 6px 0;
+  padding: 0.6em 1em;
+  margin: 0.8em 0;
+  font-size: 0.94em;
+  color: var(--text-normal);
+}
+
+/* ---------- Figures ----------
+   An embed sits on the first line of every media block, written by tools/obsidian.py.
+   Centre it, cap its height, and give diagrams a white ground so dark themes do not
+   swallow an SVG drawn in black. */
+.markdown-preview-view .internal-embed img,
+.markdown-rendered .internal-embed img,
+.cm-s-obsidian .internal-embed img {
+  display: block;
+  margin: 0.7em auto;
+  max-height: 440px;
+  width: auto;
+  background: #fff;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+/* ---------- Readable measure ----------
+   A report is prose. Long lines are hard to read and hard to edit. */
+.markdown-preview-view, .markdown-rendered { line-height: 1.6; }
+
+/* ---------- Headings ----------
+   Section boundaries matter more here than in notes: the three points repeat their
+   sub-headings in Methods, Results and Discussion. */
+.markdown-preview-view h2, .markdown-rendered h2 {
+  border-bottom: 2px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+  margin-top: 1.8em;
+}
+.markdown-preview-view h3, .markdown-rendered h3 { color: var(--color-accent); margin-top: 1.4em; }
+
+/* ---------- Tables ---------- */
+.markdown-preview-view table, .markdown-rendered table { font-size: 0.92em; }

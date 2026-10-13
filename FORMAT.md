@@ -131,6 +131,8 @@ Ask Afya: Your systolic blood pressure of 110 is ...
 - One `Speaker: text` per turn. The speaker named in `assistant=` is drawn as the agent. Each turn must appear in the source file.
 - Add `{#fig-name caption="…"}` to any of these blocks to number it as a figure with a caption.
 
+`.obsidian/snippets/vivid-report.css` styles a report while it is being written: quoted blocks as blockquotes, figures centred and capped in height on a white ground so a black SVG survives a dark theme, and section headings marked. It is enabled in `.obsidian/appearance.json` and adds nothing to `Report.md`, so the build neither sees it nor depends on it. Obsidian still shows the `:::` fence lines themselves as plain text; they are the price of a build that checks every quote.
+
 Obsidian shows one of these blocks as bare text, running it together with the prose around it. `cd Code && uv run python tools/obsidian.py` puts a `> ` on each line of every `output`, `prompt` and `conversation` block, which Obsidian renders as a blockquote; the build takes the prefix off again before it checks the text and before it publishes, so the quote stays word for word. Write the text either way and run the tool; it adds what is missing and leaves what is already right.
 
 ## Tables
