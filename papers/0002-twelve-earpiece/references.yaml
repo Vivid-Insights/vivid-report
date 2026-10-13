@@ -112,3 +112,179 @@
   container: arXiv
   number: "2406.06608"
   url: https://arxiv.org/abs/2406.06608
+
+- id: lewis2020
+  type: article
+  author: ["Lewis, Patrick", "Perez, Ethan", "Piktus, Aleksandra", "Petroni, Fabio", "Karpukhin, Vladimir", "Goyal, Naman", "Küttler, Heinrich", "Lewis, Mike", "Yih, Wen-tau", "Rocktäschel, Tim", "Riedel, Sebastian", "Kiela, Douwe"]
+  title: "Retrieval-augmented generation for knowledge-intensive NLP tasks"
+  year: 2020
+  container: Advances in Neural Information Processing Systems 33 (NeurIPS 2020)
+  url: https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+
+- id: li2024
+  type: article
+  author: ["Li, Zhuowan", "Li, Cheng", "Zhang, Mingyang", "Mei, Qiaozhu", "Bendersky, Michael"]
+  title: "Retrieval augmented generation or long-context LLMs? A comprehensive study and hybrid approach"
+  year: 2024
+  container: "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track"
+  pages: "881–893"
+  doi: 10.18653/v1/2024.emnlp-industry.66
+
+- id: li2025lara
+  type: preprint
+  author: ["Li, Kuan", "Zhang, Liwen", "Jiang, Yong", "Xie, Pengjun", "Huang, Fei", "Wang, Shuai", "Cheng, Minhao"]
+  title: "LaRA: Benchmarking retrieval-augmented generation and long-context LLMs — no silver bullet for LC or RAG routing"
+  year: 2025
+  container: arXiv
+  number: "2502.09977"
+  url: https://arxiv.org/abs/2502.09977
+  note: Preprint, not peer reviewed.
+
+- id: claudecode2026
+  type: software
+  author: ["Anthropic"]
+  title: "Claude Code documentation"
+  year: 2026
+  container: Anthropic
+  url: https://code.claude.com/docs/en/tools-reference
+  note: Read 13 October 2026, when the tools reference listed 46 built-in tools. The documentation is not versioned; the installed release was 2.1.227.
+
+- id: yao2023
+  type: chapter
+  author: ["Yao, Shunyu", "Zhao, Jeffrey", "Yu, Dian", "Du, Nan", "Shafran, Izhak", "Narasimhan, Karthik", "Cao, Yuan"]
+  title: "ReAct: Synergizing reasoning and acting in language models"
+  year: 2023
+  container: "Proceedings of the 11th International Conference on Learning Representations (ICLR)"
+  url: https://arxiv.org/abs/2210.03629
+
+- id: liu2023lost
+  type: article
+  author: ["Liu, Nelson F.", "Lin, Kevin", "Hewitt, John", "Paranjape, Ashwin", "Bevilacqua, Michele", "Petroni, Fabio", "Liang, Percy"]
+  title: "Lost in the middle: How language models use long contexts"
+  year: 2024
+  container: Transactions of the Association for Computational Linguistics
+  volume: "12"
+  pages: "157–173"
+  doi: 10.1162/tacl_a_00638
+
+- id: paramanayakam2025
+  type: chapter
+  author: ["Paramanayakam, Varatheepan", "Karatzas, Andreas", "Anagnostopoulos, Iraklis", "Stamoulis, Dimitrios"]
+  title: "Less is more: Optimizing function calling for LLM execution on edge devices"
+  year: 2025
+  container: "Design, Automation and Test in Europe Conference (DATE 2025)"
+  url: https://arxiv.org/abs/2411.15399
+
+- id: repantis2026
+  type: preprint
+  author: ["Repantis, Vyzantinos", "Gawde, Ameya", "Singh, Harshvardhan", "Blackwell II, Joey"]
+  title: "How many tools should an LLM agent see? A chance-corrected answer"
+  year: 2026
+  container: arXiv
+  number: "2605.24660"
+  url: https://arxiv.org/abs/2605.24660
+  note: Preprint, not peer reviewed.
+
+- id: piebald2026
+  type: software
+  author: ["Piebald AI"]
+  title: "Claude Code system prompts"
+  year: 2026
+  container: GitHub
+  url: https://github.com/Piebald-AI/claude-code-system-prompts
+  note: Prompts extracted from Claude Code's compiled source; version 2.1.296, read 13 October 2026. Not an Anthropic publication.
+
+- id: chase2025
+  type: web
+  author: ["Chase, Harrison"]
+  title: "The rise of context engineering"
+  year: 2025
+  publisher: LangChain
+  url: https://www.langchain.com/blog/the-rise-of-context-engineering
+  note: Blog post, 23 June 2025. Read 13 October 2026.
+
+- id: mei2025
+  type: preprint
+  author: ["Mei, Lingrui", "Yao, Jiayu", "Ge, Yuyao", "Wang, Yiwei", "Bi, Baolong", "others"]
+  title: "A survey of context engineering for large language models"
+  year: 2025
+  container: arXiv
+  number: "2507.13334"
+  url: https://arxiv.org/abs/2507.13334
+  note: Preprint, not peer reviewed.
+
+- id: yao2024tau
+  type: preprint
+  author: ["Yao, Shunyu", "Shinn, Noah", "Razavi, Pedram", "Narasimhan, Karthik"]
+  title: "τ-bench: A benchmark for tool-agent-user interaction in real-world domains"
+  year: 2024
+  container: arXiv
+  number: "2406.12045"
+  url: https://arxiv.org/abs/2406.12045
+  note: Preprint, not peer reviewed.
+
+- id: barres2025
+  type: preprint
+  author: ["Barres, Victor", "Dong, Honghua", "Ray, Soham", "Si, Xujie", "Narasimhan, Karthik"]
+  title: "τ²-bench: Evaluating conversational agents in a dual-control environment"
+  year: 2025
+  container: arXiv
+  number: "2506.07982"
+  url: https://arxiv.org/abs/2506.07982
+  note: Preprint, not peer reviewed.
+
+- id: wang2026humans
+  type: preprint
+  author: ["Wang, Zora Z.", "Yang, John", "Lieret, Kilian", "Tartaglini, Alexa", "Chen, Valerie", "others"]
+  title: "Humans are missing from AI coding agent research"
+  year: 2026
+  container: arXiv
+  number: "2608.12355"
+  url: https://arxiv.org/abs/2608.12355
+  note: Preprint, not peer reviewed.
+
+- id: masson2024
+  type: chapter
+  author: ["Masson, Damien", "Malacria, Sylvain", "Casiez, Géry", "Vogel, Daniel"]
+  title: "DirectGPT: A direct manipulation interface to interact with large language models"
+  year: 2024
+  container: "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems"
+  doi: 10.1145/3613904.3642462
+
+- id: ziegler2026
+  type: article
+  author: ["Ziegler, Parker", "Cao, David Minh-Duy", "Lubin, Justin", "Chasins, Sarah E."]
+  title: "Direct manipulation and natural language programming, together at last?"
+  year: 2026
+  container: "Proceedings of the ACM on Programming Languages (OOPSLA2)"
+  url: https://arxiv.org/abs/2608.26359
+
+- id: ma2023
+  type: preprint
+  author: ["Ma, Xiao", "Mishra, Swaroop", "Liu, Ariel", "Su, Sophie", "Chen, Jilin", "others"]
+  title: "Beyond ChatBots: ExploreLLM for structured thoughts and personalized model responses"
+  year: 2023
+  container: arXiv
+  number: "2312.00763"
+  url: https://arxiv.org/abs/2312.00763
+  note: Preprint, not peer reviewed.
+
+- id: dong2024practiq
+  type: preprint
+  author: ["Dong, Mingwen", "Kumar, Nischal Ashok", "Hu, Yiqun", "Chauhan, Anuj", "Hang, Chung-Wei", "others"]
+  title: "PRACTIQ: A practical conversational text-to-SQL dataset with ambiguous and unanswerable queries"
+  year: 2024
+  container: arXiv
+  number: "2410.11076"
+  url: https://arxiv.org/abs/2410.11076
+  note: Preprint, not peer reviewed.
+
+- id: li2026underspec
+  type: preprint
+  author: ["Li, Wen-Zhi", "Gong, Yue", "Kanellis, Konstantinos", "Narayanaswamy, Balakrishnan Murali"]
+  title: "Beyond correctness: Resolving underspecification in agentic text-to-SQL"
+  year: 2026
+  container: arXiv
+  number: "2610.02739"
+  url: https://arxiv.org/abs/2610.02739
+  note: Preprint, not peer reviewed.
