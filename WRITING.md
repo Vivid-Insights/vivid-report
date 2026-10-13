@@ -12,7 +12,7 @@ They are adapted from three places: the article rules in `communicating-individu
 
 ## Editing the report
 
-**Only edit `Report.md` when an author asks for the edit in that turn.** Agreeing that a proposal is good, or saying "yes", is not the instruction to write it in. Wait for "add that", "make the edit", "do it". The exception is the steps in `instructions.md` that say a section is yours to write.
+**Only edit `Report.md` when an author asks for the edit in that turn.** Agreeing that a proposal is good, or saying "yes", is not the instruction to write it in. Wait for "add that", "make the edit", "do it". No step makes a section yours to write: you help the user write, and they decide (`Helping the User Write` in `instructions.md`).
 
 **When someone asks for a change, make that change and nothing else.** The failure has a shape: it starts from a real defect, such as a number that is now wrong, and instead of repairing it rewrites the surrounding prose so the repair sits comfortably. The result reads well, which is why it slips past. Reading well is not the test.
 
@@ -40,13 +40,13 @@ They are adapted from three places: the article rules in `communicating-individu
 
 **Contractions are fine.** "so we can't say which direction the relationship runs".
 
-**Prose, not bullet points**, in the body. A list is for something that is genuinely a list, such as the contributions or the four prompt steps.
+**Prose, not bullet points**, in the body. A list is for something that is genuinely a list, such as the four prompt steps. The three points of the paper are stated in prose, in the `Abstract`.
 
 **British spelling**: wordalisation, visualisation, behaviour, modelling, organisation, analyse. A quoted output keeps its own spelling.
 
 ## The concrete case comes first
 
-Open on the real example and let the general claim follow. In a Vivid report the concrete cases are the player, patient or mentee, the text written about them, the configuration that changed it, and the specific mistake the model made.
+Within a paragraph, and in the `Results`, open on the real example and let the general claim follow. The `Introduction` is the exception in its order of paragraphs, which build from the general to the specific; a paragraph within it can still open on a case. In a Vivid report the concrete cases are the player, patient or mentee, the text written about them, the configuration that changed it, and the specific mistake the model made.
 
 > **Before (abstract):** Feature-specific thresholding over-emphasised the effects of categorical or low-variance features.
 > **After (concrete first):** For an obese woman of 54 with normal blood pressure, the global scale says her body-mass index has no significant effect on its own; the feature-specific scale says it strongly increases her risk.
@@ -115,6 +115,8 @@ Open on the real example and let the general claim follow. In a Vivid report the
 
 **Draft at about half the length that seems natural.** A methods section went from 782 to 319 words on David's instruction ("Half the length"), and a data paragraph to two sentences ("at most 2 sentences! One about data removed and observations removed and one about stepwise regression"). Keep only what the reader needs to follow the figure. Both corrections recur.
 
+**Thorough is not long.** The `Methods` covers everything a reader needs to rebuild the method with the repository; it does that in short sentences, and the half-length rule still applies to each paragraph.
+
 **Keep it the length asked for.** A summary is a sentence or two; three paragraphs means three.
 
 ## Terms used in this report
@@ -139,6 +141,8 @@ Use these consistently. If an author changes one, change it here in the same tur
 ## Corrections log
 
 New rules from the authors' corrections go here, newest first, each with the date, who made it, and the sentence before and after. Say whether it was seen once or recurs.
+
+- **13 October 2026, David: every report has the same structure, built on three points.** Abstract, an optional What We Have Built, Introduction, Methods, Results, Discussion. The three points are found early, put in a drafted abstract that serves as the template, given one background paragraph each in an Introduction of four to six paragraphs citing at least 20 papers, covered in the same order in the Methods and Results, and answered in a Discussion of ideally five paragraphs (one per point, limitations, looking ahead) that links back to the Introduction's literature. Before: Introduction, Method, Examples, Evaluation, Discussion, Limitations, with the background written last. After: `The Structure of a Report` in `instructions.md`. Also: the agent helps the user write and the user decides; the agent adds text when asked, never by default. *Seen once.*
 
 The entries below were carried over from the health-risk article, where they were made, because they are about how David writes rather than about that article.
 

@@ -11,37 +11,28 @@ affiliations:
 date: 2026-10-09
 version: "0.1"
 keywords: []
-licence: CC BY 4.0
 references: references.yaml
 ---
 
 ## Abstract
 
-*Step 7 writes this last, once every other section is final.*
+*Step 2 drafts this early: one paragraph stating the three points of the paper, in order. It is the template for every other section. Step 7 revises it against the finished report.*
 
 ## Introduction
 
-*Step 7 adds the background and prior work here. Step 2 writes the framing below it: the problem in its most concrete form, what the method does about it, and the contributions as a numbered list.*
+*Step 3: a review of the area in four to six paragraphs, citing at least 20 papers, building from the general to the specific, with one paragraph of background for each of the three points, in order.*
 
-## Method
+## Methods
 
-*Step 3 writes this from the code, in the method's own terms and order, naming every normative choice.*
+*Step 4: written from the code and repository, thoroughly, with one sub-heading per point in the order of the Introduction, and every normative choice named.*
 
-## Examples
+## Results
 
-*Step 4 adds the concrete cases one at a time: figures, video figures, interactive figures and quoted outputs, each with a caption.*
-
-## Evaluation
-
-*Step 5 writes this if the report claims the method works; otherwise step 5 removes this section and the framing says why.*
+*Step 5: the examples and evidence, under the same sub-headings as the Methods.*
 
 ## Discussion
 
-*Step 6 writes this, organised by theme rather than by example.*
-
-## Limitations
-
-*Step 6 writes this alongside the discussion: what qualifies the report's claims taken together.*
+*Step 6: where the three points are answered. Ideally five paragraphs: one per point under the Methods sub-headings, then Limitations, then Looking ahead, linking back to the literature in the Introduction.*
 
 ## Data and code availability
 

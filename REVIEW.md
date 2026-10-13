@@ -35,6 +35,7 @@ Each paper keeps its own rounds in its folder: `papers/NNNN-slug/review/round-01
 
 The review form lists these. A reviewer is not asked to rewrite the report; they are asked whether it is right, whether it can be followed, and whether Vivid Insights should put its name to it.
 
+- **Structure and the three points.** Does the report have the standard structure (Abstract, Introduction, Methods, Results, Discussion)? Are its three points stated in the abstract, given background in the Introduction, and answered in the Discussion, in the same order? Does the Introduction review the area properly, with at least 20 works, including ones that disagree?
 - **Claims.** Is every claim about the method true of the code? Is every number traceable to a saved output? Does the report claim anything its examples or evaluation do not show?
 - **Generated text.** Is every output, prompt and conversation quoted from a file (the build checks the words; the reviewer checks the file is what the report says it is)? Are hand-written examples labelled? Are the model's errors reported, not hidden?
 - **Normative choices.** Does the report say where a person made a choice — a threshold, a persona, a few-shot example, a comparison group — and what the alternatives were?

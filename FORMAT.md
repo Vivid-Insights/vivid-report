@@ -34,7 +34,9 @@ references: references.yaml
 
 ## Sections
 
-`##` is a numbered section, `###` a numbered sub-section, `####` an unnumbered heading. These are never numbered: `Abstract`, `Disclaimer`, `References`, `Acknowledgements`, `Appendix`, `Data and code availability`, `Funding`. Add `{-}` to the end of any other heading to leave it unnumbered, and `{#sec-name}` to give it an id for cross-references.
+Every report has the same sections, in this order: `Abstract`, an optional `What We Have Built`, `Introduction`, `Methods`, `Results`, `Discussion`, `Data and code availability`, `Disclaimer`, `References`. The `Methods`, `Results` and `Discussion` share their `###` sub-headings, one per point of the paper; the `Discussion` ends with `### Limitations` and `### Looking ahead`. `instructions.md` (`The Structure of a Report`) says what goes in each.
+
+`##` is a numbered section, `###` a numbered sub-section, `####` an unnumbered heading. These are never numbered: `Abstract`, `What We Have Built`, `Disclaimer`, `References`, `Acknowledgements`, `Appendix`, `Data and code availability`, `Funding`. Add `{-}` to the end of any other heading to leave it unnumbered, and `{#sec-name}` to give it an id for cross-references.
 
 - `## Abstract` is lifted out of the body into the title block.
 - `## Disclaimer` is required. The build fails without it.
@@ -43,6 +45,8 @@ references: references.yaml
 ## Figures, videos and interactive figures
 
 All three are numbered as figures, in the order they appear. The block's text is the caption. Paths are relative to the paper's folder (`folder:` in the front matter), wherever the Markdown file happens to be.
+
+In Obsidian a block shows only its caption, so its first line can be an embed of its file from the top of the vault, `![[papers/NNNN-slug/Code/outputs/figures/pipeline.png]]`: the image, the video, or an interactive's `fallback=` still. The page ignores the line, and the build warns when it no longer matches the block. `cd Code && uv run python tools/obsidian.py` writes and refreshes these lines for every figure, video, interactive and panel block, and touches nothing else.
 
 ```markdown
 ::: figure {#fig-pipeline src="Code/outputs/figures/pipeline.png" alt="What the image shows, for screen readers"}

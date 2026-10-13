@@ -13,20 +13,22 @@ uv run python tools/build.py ../papers/0000-specimen/Report.md --open
 
 ## How it works
 
-The agent's working contract is [instructions.md](instructions.md), and the writing rules are [WRITING.md](WRITING.md); `CLAUDE.md` loads both. The agent does one step per request and then stops. It agrees each figure, example and evaluation with you before making it, quotes generated text rather than writing it, and ties every fact about a method to the place in the code that makes it true. The parts that need judgement stay with you.
+The agent's working contract is [instructions.md](instructions.md), and the writing rules are [WRITING.md](WRITING.md); `CLAUDE.md` loads both. The agent's role is to help you write; the decisions are yours. It does one step per request and then stops, asks for your view before offering its own, adds text to the report when you ask for it, and questions what is written against the code and the literature. This is the strategic friction of Mitchell, Ghosh and Passi (2026), [*AI Agents Push Humans Out of the Loop*](https://arxiv.org/abs/2608.23642). It agrees each figure, example and evaluation with you before making it, quotes generated text rather than writing it, and ties every fact about a method to the place in the code that makes it true. The parts that need judgement stay with you.
 
 | Step | What happens | What it fills in |
 | --- | --- | --- |
 | 1 | Gather the material: code, apps, prompts, saved outputs, transcripts | `Source Material` in the appendix |
-| 2 | Frame the report: the reader, the kind of report, the contributions | `Framing`; the `Introduction` |
-| 3 | Describe the method from the code, naming every normative choice | `Method`; `Method Facts` |
-| 4 | Examples: figures, video and interactive figures, quoted outputs | `Examples` |
-| 5 | Evidence, if the report claims the method works | `Evaluation` |
-| 6 | Discussion and limitations | `Discussion`, `Limitations` |
-| 7 | Background, abstract and title | `Introduction`, `Abstract` |
+| 2 | The three points of the paper, and a drafted abstract to use as the template | `Framing`; the `Abstract` |
+| 3 | Introduction: a review of the area, general to specific, at least 20 papers, one paragraph per point | `Introduction`; `Literature` |
+| 4 | Methods, from the code and repository, one sub-heading per point | `Methods`; `Method Facts` |
+| 5 | Results: examples and evidence, under the same sub-headings | `Results` |
+| 6 | Discussion: each point answered, then limitations and a look ahead | `Discussion` |
+| 7 | Abstract revised, title, front matter | `Abstract` |
 | 8 | Read through the built page | A list of what is still wrong |
 | 9 | Review by the Vivid Insights team | the paper's `review/round-NN/` |
 | 10 | Publish to the Vivid Insights site | `reports/<slug>/` on the site |
+
+Every report has the same structure: `Abstract`, an optional `What We Have Built`, `Introduction`, `Methods`, `Results`, `Discussion`, built around three points that run through all of them in the same order.
 
 Ask for the next step when you are ready. `/where-are-we` asks the agent to say which step it thinks you are on, and `/build` builds and opens the page.
 

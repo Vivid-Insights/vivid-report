@@ -123,7 +123,7 @@ def main():
     check("the site index lists the report", "specimen/" in (target / "index.html").read_text())
 
     text = report.read_text()
-    report.write_text(text.replace("We use a single small example throughout.", "We use one small example throughout."))
+    report.write_text(text.replace("This specimen makes no empirical claim.", "The specimen makes no empirical claim."))
     st = review_status(report, strict=True)
     check("one edit after approval makes the approvals stale", st["state"] != "approved" and any("changed after approval" in p for p in st["problems"]))
     check("publish refuses the edited version", publish.main([str(report), "--target", str(target)]) == 1)

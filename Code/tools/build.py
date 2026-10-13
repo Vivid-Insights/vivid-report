@@ -47,8 +47,9 @@ from common import ROOT, SITE, ReportError, load_report, load_yaml, paper_dir, r
 
 XREF_KINDS = {"fig": "Figure", "tab": "Table", "eq": "Equation", "sec": "Section", "def": "Definition"}
 UNNUMBERED = {"abstract", "disclaimer", "references", "acknowledgements", "acknowledgments", "appendix",
-              "notes", "data and code availability", "author contributions", "funding"}
+              "notes", "data and code availability", "author contributions", "funding", "what we have built"}
 MEDIA_KINDS = {"figure", "video", "interactive"}
+PREVIEW_RE = re.compile(r"[ \t]*!\[\[([^\]\n]+)\]\][ \t]*(?:\n|$)")
 QUOTE_KINDS = {"output", "prompt", "conversation"}
 ALL_KINDS = MEDIA_KINDS | QUOTE_KINDS | {"table", "definition", "box", "panel"}
 
@@ -377,6 +378,22 @@ class Builder:
         return self.md.renderInline(text) if "\n\n" not in text else self.md.render(text)
 
     # ---- blocks
+    def strip_preview(self, kind: str, attrs: dict, content: str, where: str) -> str:
+        """An Obsidian embed, `![[papers/NNNN-slug/path]]`, on the first line of a figure, video,
+        interactive or panel block shows the image in Obsidian. The page draws the block itself, so
+        the line is dropped here, after checking it still points at the block's file."""
+        m = PREVIEW_RE.match(content)
+        if not m:
+            return content
+        target = attrs.get("fallback") if kind == "interactive" else attrs.get("src")
+        if target:
+            want = (self.base / target).resolve()
+            got = (ROOT / m.group(1).split("|")[0]).resolve()
+            if got != want:
+                self.issue("warning", f"the Obsidian preview {m.group(0).strip()} does not show this block's file "
+                                      f"({target}); run tools/obsidian.py to refresh it", where)
+        return content[m.end():]
+
     def render_block(self, kind: str, attrs: dict, content: str, where: str) -> str:
         ident = attrs.get("id")
         cls = " ".join(attrs["classes"])
@@ -388,6 +405,9 @@ class Builder:
         if kind == "panel":
             self.issue("error", "a panel block belongs inside a figure block, whose fence has more colons", where)
             return ""
+
+        if kind in MEDIA_KINDS:
+            content = self.strip_preview(kind, attrs, content, where)
 
         if kind == "figure" and re.search(r"^:{3,}[ \t]*panel\b", content, re.M):
             return self.render_panels(attrs, content, where)
@@ -438,7 +458,8 @@ class Builder:
             if m.group("kind") != "panel":
                 caption.append(m.group(0))
                 continue
-            panels.append((parse_attrs(m.group("attrs")), m.group("body")))
+            pa = parse_attrs(m.group("attrs"))
+            panels.append((pa, self.strip_preview("panel", pa, m.group("body"), where)))
         caption.append(content[last:])
         cap = self.caption_html("".join(caption))
         cells = []
@@ -676,9 +697,10 @@ class Builder:
     def number_sections(self, html_: str, toc: list) -> str:
         h2 = h3 = 0
         current_unnumbered = False
+        current_h2 = ""
 
         def sub(m):
-            nonlocal h2, h3, current_unnumbered
+            nonlocal h2, h3, current_unnumbered, current_h2
             level, inner = int(m.group(1)), m.group(2)
             ident = None
             mm = re.search(r"\s*\{(#[\w-]+)?\s*(-|\.unnumbered)?\s*\}\s*$", inner)
@@ -689,6 +711,7 @@ class Builder:
                 inner = inner[:mm.start()]
             plain = re.sub(r"<[^>]+>", "", inner).strip()
             if level == 2:
+                current_h2 = slugify(plain)
                 unnumbered = unnumbered or plain.lower() in UNNUMBERED
                 current_unnumbered = unnumbered
                 if not unnumbered:
@@ -700,7 +723,12 @@ class Builder:
                 if not unnumbered:
                     h3 += 1
                 num = "" if unnumbered else f"{h2}.{h3}"
-            ident = ident or f"sec-{slugify(plain)}"
+            if not ident:
+                # Methods, Results and Discussion share their sub-headings, so a repeated
+                # sub-heading takes its section's name rather than clashing.
+                ident = f"sec-{slugify(plain)}"
+                if level > 2 and ident in self.labels:
+                    ident = f"sec-{current_h2}-{slugify(plain)}"
             if ident in self.labels:
                 self.issue("error", f"section id '{ident}' is used twice")
             self.labels[ident] = ("Section", num or plain)

@@ -41,6 +41,7 @@ uv run python tools/paper.py list                 # every paper, and which one i
 uv run python tools/paper.py open 2               # put the open paper away and open paper 0002
 uv run python tools/paper.py new <slug>           # start the next numbered paper and open it
 uv run python tools/build.py --open               # build the open paper and look at it
+uv run python tools/obsidian.py                   # show the open paper's figures inline in Obsidian
 uv run python tools/check.py                      # errors, warnings and writing-style hints
 uv run python tools/check.py --release            # as review and publishing will: unfinished work is an error
 uv run python tools/review.py status              # where the report stands in review

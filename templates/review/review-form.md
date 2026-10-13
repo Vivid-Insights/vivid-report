@@ -18,6 +18,7 @@ In two or three sentences: what the report claims, and whether it shows it.
 
 Mark each `yes`, `no` or `n/a`, and explain every `no` under Comments. REVIEW.md says what each means.
 
+- [ ] The report has the standard structure, and its three points run in the same order from the abstract through the Introduction (at least 20 works cited) to the Discussion, where each is answered.
 - [ ] Every claim about the method is true of the code, and every number traces to a saved output.
 - [ ] Every generated text, prompt and conversation is quoted from a file; hand-written examples are labelled; the model's errors are reported.
 - [ ] The normative choices are named, with their alternatives.

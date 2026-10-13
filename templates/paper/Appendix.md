@@ -8,18 +8,25 @@
 
 ## Framing
 
-*Step 2. The reader, the kind of report (method, application, evaluation), the contributions and what will show each, and what was considered and set aside.*
+*Step 2. The reader, the kind of report (method, application, evaluation), the three points of the paper and what will show each, whether the report has a `What We Have Built` section, and what was considered and set aside.*
+
+## Literature
+
+*Step 3, and step 6 for anything new. One row per work considered: which of the three points or which paragraph it belongs to, who found it (the user or the agent), whether it was opened in full or rests on an abstract, and whether it is cited.*
+
+| Work | Point or paragraph | Found by | Read | Cited |
+| --- | --- | --- | --- | --- |
 
 ## Method Facts
 
-*Step 3. One row per fact the report states about the method, with the place in the code that makes it true. Re-checked in step 8 against the commit recorded here.*
+*Step 4. One row per fact the report states about the method, with the place in the code that makes it true. Re-checked in step 8 against the commit recorded here.*
 
 | Fact | Where in the code | Commit |
 | --- | --- | --- |
 
 ## Workings
 
-*Steps 4 and 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration, the diagnostics, and anything made but not used.*
+*Step 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration, the diagnostics, and anything made but not used.*
 
 ## Log
 
