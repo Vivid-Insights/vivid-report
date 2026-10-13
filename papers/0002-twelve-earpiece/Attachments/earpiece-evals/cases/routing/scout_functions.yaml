@@ -1,0 +1,93 @@
+# Nothing here asks about the player's foot, age, position, club or competition:
+# describe_selection() already puts those in the system prompt, so the model
+# answers from context and whether it calls a tool is undetermined.
+suite: scout/function-triggers
+threshold: 0.94
+analyst: scout
+context: griezmann_laliga_2024
+
+cases:
+  - id: explain-xg
+    query: "How do you measure xG?"
+    expect: {tool: explain_data_analysis}
+
+  - id: pitch-actions
+    query: "Where does he carry out most actions on the pitch?"
+    expect: {tool: player_pitch_description}
+
+  - id: strengths-and-weaknesses
+    query: "What are his strengths and weaknesses?"
+    expect: {tool: strengths_and_weaknesses}
+
+  - id: skills-question
+    query: "Is he good playing out from the back?"
+    expect:
+      tool: [player_answer_skills_question, player_quality_description]
+
+  - id: switch-position-full-back
+    query: "How would he perform playing as a full back?"
+    expect:
+      tool: switch_position
+      args:
+        alternative_position: [FULL_BACK, Full back, full back]
+
+  - id: passing-quality
+    query: "Tell me about his passing quality."
+    expect:
+      tool: player_quality_description
+      also_tools: [player_pitch_description]
+      args:
+        quality: [PASSING_QUALITY]
+
+  - id: data-height
+    query: "How tall is he?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-weight
+    query: "What's his weight?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-minutes
+    query: "How many minutes has he played?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-nationality
+    query: "Which country is he from?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-red-cards
+    query: "How many red cards has he received?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-yellow-cards
+    query: "How many yellow cards has he received?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-xg
+    query: "What's his xG this season?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-goals
+    query: "How many goals has he scored?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-passing-value
+    query: "What's his value for passing quality?"
+    expect:
+      tool: [get_complete_player_data, player_quality_description]
+
+  - id: data-disputed
+    query: "This looks wrong to me. His xG can't be that high."
+    expect: {tool: get_complete_player_data}
+
+  - id: data-market-value
+    query: "What's his market value?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-contract
+    query: "When does his contract expire?"
+    expect: {tool: get_complete_player_data}
+
+  - id: data-assists
+    query: "How many assists does he have?"
+    expect: {tool: get_complete_player_data}

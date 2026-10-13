@@ -1,0 +1,79 @@
+# Appendix
+
+*The running record, filled from the first step. Everything a reviewer needs to check the report and that does not belong in it: where the material came from, what was decided and why, the workings, and what was tried and abandoned. Not published as part of the page.*
+
+## Source Material
+
+Requested by David, 12 October 2026: "Use sections 5 and 6 of context-engineering to write a short paper about the approach used to build Twelve Earpiece." Then: "For section 5, look at how I use the examples in the LLMMethods in Context-Engineering-Course example code. This should just give a brief background of the methods." The Earpiece code base follows after the first round.
+
+| Source | Where | Version | Copied to |
+| --- | --- | --- | --- |
+| Section 6, "Conversational context" (2 099 words, 16 screenshots) | `Vivid-Insights/context-engineering` | commit `dc7c387` (2026-08-20); file last changed `fabbc08` (2026-08-19); SHA-256 `be52d807…ba738e` | `Attachments/context-engineering/` with the 16 images it embeds |
+| Section 5, "Embedding, annotation and function calling" (73 words: headings, three arXiv links and one unfinished paragraph on RAG) | same | same; SHA-256 `cb4242a6…cfb968` | `Attachments/context-engineering/` |
+| `LLMMethods/` example notebooks: embeddings, annotation, function calling, on the 50 newest Guardian football articles | `Twelve-Educational/Context-Engineering-Course` | commit `cecf4c8` (2026-06-21); SHA-256 embeddings `94ce9f41…`, annotation `a8fb439a…`, functions `dc7b90dc…` | `Attachments/LLMMethods/` (the notebooks only; the `.pkl` files of Guardian article text are not copied). Checked: no API keys in the saved outputs. |
+
+| Earlier draft, *Context Engineering for Large Language Models: A Case Study of a Football Analyst* (authors listed as Lars Ekman, Ágúst, Matthias Green, David J. T. Sumpter; about half written), with a screenshot of the stateless chat and a bibliography | `Attachments/ContextEngineering (1).zip`, added by David on 13 October 2026; SHA-256 `18468356…3df2aef96963` | — | extracted to `Attachments/context-engineering-paper/` |
+| Nightly LLM evaluation of `twelve-earpiece-api`: the 81 cases, and the results of the last ten runs | `tests/eval/cases/` at `ff2349b4`; GitHub Actions runs `38329773577` (13 October) to `37167948096` (4 October), read with `gh` | — | `Attachments/earpiece-evals/` (`cases/`, `nightly-runs.txt`) |
+| Three Earpiece source files the paper quotes | `twelve-earpiece-api` at `ff2349b4` | — | `Attachments/earpiece-code/` (private code; see its `SOURCE.md`) |
+
+Section 5 supplies the structure of the Background section and three references; the notebooks supply its examples and numbers. Section 6 supplies the architecture. Screenshots are dated June–July 2025 by their file names.
+
+Permissions to settle: the screenshots and prompts are Twelve's product; section 6 links to Twelve's private repository `twelvefootball/twelve-chat-api-prototype`, which the paper does not cite; the Guardian sentences quoted are short extracts.
+
+## Framing
+
+A short method paper: the architecture behind Twelve Earpiece. Reader: someone building a conversational agent on LLM services, technical but not necessarily in football. Contributions, as in the Introduction: (1) analysts as a context object plus about ten functions, coordinated by a receptionist through redirect functions, shown by Figures 1–2 and the receptionist prompt; (2) name resolution in two LLM steps around a fuzzy search, shown by Figure 3; (3) three types of function, shown by the synthetic text and Figure 5. No evaluation: said in the Abstract and Limitations. Draft order departs from the ten steps at David's request: a first full draft from the course material, then a check against the code.
+
+## Method Facts
+
+*Step 3. One row per fact the report states about the method, with the place in the code that makes it true. Re-checked in step 8 against the commit recorded here.*
+
+| Fact | Where in the code | Commit |
+| --- | --- | --- |
+| Each analyst has about ten functions | [round 2] | |
+| Analyst = context object + list of functions; Scout Player Analyst (season), Match Analyst (match) | [round 2] | |
+| The Scout Player Analyst calls a Compare Player analyst without telling the user | [round 2] | |
+| Receptionist: first analyst; redirect functions to all others; analysts redirect back to it on a context switch | [round 2] | |
+| Receptionist instructions as quoted; the rest restrict it to analysts the user can access | `api/src/analysts/receptionist/analyst.py` per section 6 | [round 2] |
+| WhatsApp version offers only scouting and hides the switches | [round 2] | |
+| Around a hundred thousand players in the databases | [round 2] | |
+| Name resolution: GPT-4o returns a name string, fuzzy search gives candidates, GPT-4o chooses; teams the same way | [round 2]: which model now | |
+| Talent Discovery context fields as quoted | [round 2] | |
+| Opposition Analyst with opposition and hero team contexts | [round 2] | |
+| Functions designed in Figma; three types | [round 2] | |
+| Scout summary sequence: basic stats, summary, strengths and weaknesses | [round 2] | |
+| Match synthetic text as quoted; it lists 3 goals for a 4–0 win | [round 2] | |
+| Question answering: one long document from data and texts, found with embedding search | [round 2] | |
+
+## Workings
+
+*Steps 4 and 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration, the diagnostics, and anything made but not used.*
+
+## Log
+
+*A numbered row per step taken, added as the work happens: what was done, what it changed, and where the output is. Superseded decisions stay, marked as such. Review rounds, the disclaimer confirmation and publication are recorded here too.*
+
+| # | What was done | Output |
+| --- | --- | --- |
+| 1 | Created paper 0002 with `paper.py new`; paper 0001 put back in its folder. Copied the sources listed above. | this folder |
+| 2 | Checked the references section 6 cites. OpenAI's guide says "Aim for fewer than 20 functions available at the start of a turn at any one time, though this is just a soft suggestion": the number of functions, not of enumerated parameter values as section 6 says; the paper cites it for functions. MetaTool (arXiv 2310.03128) is about choosing tools; its abstract says nothing about the number of parameter values, so it is cited only for "most LLMs still struggle to select tools". 10.1145/3698590 is a survey of knowledge editing and was not cited. The OpenReview paper `LNxVGPedFW` could not be opened (browser check) and is not cited; David to download it if wanted. Wang et al. is dated 2026 by Crossref (section 6 says 2025); its authors were taken from Crossref after a first, wrong, set typed from memory. Read: arXiv abstracts of Brown, Gilardi, Zhu, Huang; the OpenAI guide; Crossref records of Wang and the knowledge-editing survey; the ACL Anthology record of Reimers. No full papers read. Gilardi et al. is also published in PNAS 120(30), 2023; the arXiv version is cited because that is what was opened. | `references.yaml` |
+| 3 | Wrote the first draft from section 6, the notebooks and the references. Quoted the receptionist prompt, the Talent Discovery context and the match synthetic text from section 6, and two gpt-4o-mini outputs from the function-calling notebook; the build checks each against its file. Reported two errors found: the merged news answer adds that four fixtures are away matches; the match synthetic text lists three goals for a 4–0 win. | `Report.md` |
+| 4 | *Partly superseded by row 5.* Assumed, to confirm with David: David J. T. Sumpter as first author; affiliations and emails of Matthias Green and Ágúst Pálmason as in paper 0001 (Ágúst's name as in paper 0001, not "Pálmason Morthens"); Lars Ekman's affiliation unknown; licence CC BY 4.0, the template default; the title is a working title. | `Report.md` |
+| 5 | David, 12 October 2026: Matthias Green, Lars Ekman and Ágúst Pálmason are all at Twelve Football, Bränkyrkagatan 95 ("Stockholm, Sweden" added; to confirm); no licence for this paper, and no licence by default in new papers (`templates/paper/Report.md`); title "A choose your own adventure approach to context engineering". David confirmed as first author; Matthias's email is matthias@twelve.football. | `Report.md` |
+| 6 | David, 12 October 2026: his affiliation is Department of Information Technology, Uppsala University, Box 524, 751 20 Uppsala, Sweden; Twelve is in Stockholm; all in Sweden. | `Report.md` |
+| 7 | Wrote `Earpiece architecture report.md` from the code, at David's request ("First write a report on the 'choose your own adventure' architecture for Earpiece before incorporating it into the paper"). Pulled `twelve-earpiece-api` (`dev`, `cf42a0f3` → `ff2349b4`, 9 October 2026; fast-forward only, no local changes) and read `twelve-workspace` at `6fe657d`. Core read in full; name resolution, the analyst inventory, and question answering and the match text traced by search agents; key claims re-checked by hand, including `twelve-sql` 2.0.3 on GitHub. The report checks the 14 facts in `Method Facts` against the code: 7 confirmed, 4 corrected, 2 wrong (the hidden Compare Player call; WhatsApp only scouting), 1 unverifiable (a hundred thousand players). The paper is not yet revised. | `Earpiece architecture report.md` |
+| 8 | At David's request (13 October 2026), Figures 1–4 redrawn in the report's style as SVG by `Code/diagrams.py`, in light and dark versions that follow the reader's theme. Content and wording are those of the course diagrams, unchanged; corrections from the architecture report wait for David's go-ahead. Figure 5, a screenshot of the product, is unchanged. | `Code/outputs/figures/diagram_*.svg` |
+| 9 | Added the material of the earlier draft at David's request ("Can you add this material to the paper too"), checked against the code report: the naive one-function-per-question design and the SQL alternative; the looser design wordalisation allows; model calls made outside the conversation; strict mode against invented enum values (confirmed: every schema is strict, and the code notes that without an enum strict mode lets the model invent a quality); the tests (confirmed and measured, row 10); LLMs for language, models for analysis. Its claims the code contradicts were not used: specialists first redirect to the receptionist; the WhatsApp version hides the switches; over a hundred thousand players; fewer than 20 enumerated parameter values; a limit of 10–12 functions. Its references checked: BFCL (PMLR 267, read on PMLR) is cited for memory and multi-step decisions being open problems, which its abstract says, not for incorrect choices beyond ten or twenty functions, which it does not; CallNavi's abstract does not give a number of functions either, so it is cited for difficulty growing with task complexity; Rahimian et al. confirmed on Crossref (doi 10.1177/22150218251353089); the Prompt Report's current arXiv title used; the knowledge-editing survey not cited. Author order in that draft (Ekman, Ágúst, Green, Sumpter) differs from David's (Sumpter, Green, Ekman, Pálmason); David's kept. | `Report.md`, `references.yaml` |
+| 10 | Evaluation from the nightly test: 81 cases (41 routing, 40 resolution) in nine suites, thresholds 93–100%, three repeats, a case failing only when most attempts fail. Run of 13 October: all nine suites 100%, one known failure excluded (a Serie D player refused by the transfer-model guard). Ten runs, 4–13 October: nine passed; on 10 October "How did Moussa dembele play in 2022/23?" resolved to the 2026 season, and the player-and-season suite scored 5/6 (83%) against 95%. | `Attachments/earpiece-evals/nightly-runs.txt` |
+| 11 | Revised the paper (version 0.2), applying the code report's corrections, which adding the earlier draft's material required: the hub with direct hand-overs; function counts as a range (most 8–16, Scout 24); name resolution as the code does it; the receptionist prompt and the Search analyst's context quoted from the current code; the three-goals example explained; a section on keeping chains finite and enforcing access by withholding functions; an Evaluation section. Dropped: the hidden Compare Player call, WhatsApp only scouting, a hundred thousand players. Figures corrected against the code (function name, context fields, analysts) and a stateless-chat figure added, redrawn from the earlier draft's screenshot. The paper is about 1 000 words longer than version 0.1, mostly the introduction's material from the earlier draft and the new evaluation. | `Report.md`, `Code/diagrams.py` |
+| 12 | David, 13 October 2026: "The background and the introduction should swap places. What you have as an intro is an overview." Sections swapped: Background: the methods is now section 1, and the former Introduction follows as section 2, renamed Overview. No other text changed. | `Report.md` |
+
+## Code Summary
+
+| Script | What it does | Run |
+| --- | --- | --- |
+| `Code/diagrams.py` | Draws Figures 1–4 as SVG, light and dark, in the colours of the workspace's `Code/viz_style.py`. | From the workspace's `Code/`: `uv run python ../papers/0002-twelve-earpiece/Code/diagrams.py` |
+
+## References
+
+*Sources behind the material, as distinct from the works the report cites.*

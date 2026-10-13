@@ -1,0 +1,48 @@
+suite: resolution/player-only
+recency_decides: true
+threshold: 0.95
+analyst: receptionist
+
+cases:
+  # At Inter Milan since July 2026; Wyscout still has him in the PL.
+  - id: john-stones
+    query: "John Stones"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 9380, competition_id: [364, 524]}
+
+  - id: alex-pritchard
+    query: "Alex Pritchard"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 8290, competition_id: [843]}
+
+  - id: victor-gyokeres
+    query: "Victor Gyökeres"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 388986, competition_id: [364]}
+
+  - id: messi
+    query: "Messi"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 3359, competition_id: [869]}
+
+  - id: alexander-isak
+    query: "Alexander Isak"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 399599, competition_id: [364]}
+
+  - id: lamine-yamal
+    query: "Lamine Yamal"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 770398, competition_id: [795]}
+
+  - id: soren-rieks
+    query: "Sören Rieks"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 55963, competition_id: [808]}

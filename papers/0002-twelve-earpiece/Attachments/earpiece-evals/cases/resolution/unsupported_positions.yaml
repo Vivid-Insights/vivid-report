@@ -1,0 +1,17 @@
+# Which way it refuses varies run to run — the receptionist can decline up front,
+# or redirect and have context resolution reject the player — so neither is
+# asserted.
+suite: resolution/unsupported-positions
+threshold: 1.0
+analyst: receptionist
+
+cases:
+  - id: mamardashvili-goalkeeper
+    query: "Giorgi Mamardashvili"
+    expect:
+      no_redirect: true
+
+  - id: de-gea-goalkeeper
+    query: "David De Gea"
+    expect:
+      no_redirect: true

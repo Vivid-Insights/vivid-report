@@ -1,0 +1,23 @@
+suite: analysts/in-context-follow-ups
+threshold: 0.95
+
+cases:
+  - id: comparison-aerial-threat
+    analyst: comparison
+    context: griezmann_vs_isak
+    query: "Who is a higher threat in the air?"
+    expect: {tool: answer_comparison_question}
+
+  - id: comparison-who-is-better
+    analyst: comparison
+    context: griezmann_vs_isak
+    query: "Who is the better finisher?"
+    expect: {tool: answer_comparison_question}
+
+  # An empty opening message runs the analyst's initial_function_calls, so no
+  # model is consulted — this guards the wiring, not the prompt.
+  - id: match-opens-with-describe-match
+    analyst: match
+    context: arsenal_liverpool
+    query: ""
+    expect: {tool: describe_match}

@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref} % Useful for potential future additions like clickable links, not strictly required for current content
+
+\title{Context Engineering for Large Language Models: A Case Study of a Football Analyst}
+\author{Lars Ekman, Agust , Matthias Green and David J. T. Sumpter} 
+
+\date{} % Removes the date from the title page
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Despite impressive progress in large-language models, there remain limitations in their ability to understand and keep track of the context of a conversation. Assuming this situation does not substantially change, then building conversational agents requires software engineering solutions that bypass these limitations. We detail an architectural approach to building intelligent conversational agents, using a chatbot which discusses football data as an example. We introduce, what we refer to as, Context Engineering, as a method to maintain conversational state, while providing LLMs with dynamically relevant information, i.e. context which allows them to answer questions. The approach we adopt builds separate LLM agents, each of which can answer about ten different questions (i.e. has ten functions), and that are coordinated by a Receptionist for seamless context switching. We combine this agent architecture with a wordalisation approach, which turns data into engaging sentences, and text embeddings, which ensures the most relevant context is provided to the agents. The result is a conversational agent that can move seemlessly between contexts and answer a wider-range of questions accurately.
+\end{abstract}
+
+\section*{Introduction}
+
+The most common way to utilise large language models is through chat completion\footnote{\url{https://huggingface.co/docs/inference-providers/tasks/chat-completion}}. Suppliers such as OpenAI, Google Gemini and Anthropic Claude provide an API, to which an application sends a conversation history (or its beginning) and receives generated tokens. This conversation history consists of system messages --- which define the LLM's behavior and personality (e.g., "You're a helpful assistant"), then a series of user questions and assistant answers (known as few shot prompts), which reflect the type of questions and answers we might expect from the application and/or previous interactions with the application. 
+
+Language model APIs are also capable of function calling \footnote{\url{https://cookbook.openai.com/examples/fine_tuning_for_function_calling}}, where a list of predefined functions is provided along with a chat history with a user, and the API returns the function that the user most likely wants to activate (for a recent review see \cite{wang2025function}). Function calling can be accompanied by parameter extraction, where the model identifies the required arguments for that function. A further capability of these services is embedding search, which involves converting text into high-dimensional vector representations (embeddings) that capture semantic meaning, allowing to identify similarity of sentences or short segments of text \cite{reimers2019sentence}. 
+
+Together, these four LLM services --- chat completion, function calling, parameter extraction, and embedding search --- can facilitate highly interactive and seemingly intelligent applications. However, an inherent limitation of all of them is their statelessness. Each request to the API is treated as new, with no memory of previous interactions. Enabling coherent conversations involves storing all message—user inputs and LLM responses—associated with a unique user ID and chat ID and resubmitting this to the API each time the user makes a new query (Figure 1a). In addition to statelessness, LLMs have a knowledge problem: they operate with a training cut-off date and lack specific, real-time, or proprietary data. The challenge then, in building an application, is to use LLM services in a way that brings new and relevant information into the conversation in a structured way \cite{wang2024knowledge}.
+
+One naive approach might be to write functions for each potential user query. For example, if the user asks "How many goals has Messi scored this season?" then we call a function {\it getgoals}, parameterised with the player id and the current season. Similar functions could be constructed for passes, yellow cards etc. with information fetched from up to date databases. Such an approach is hampered by known limitations to how many functions can be reliably discriminated. Indeed, while benchmarking this problem is difficult, those tests which have been carried out suggest that even state-of-the-art models often make incorrect choices \cite{patilberkeley}, specifically when there are more than about ten or twenty functions to choose between \cite{song2025callnavi}.  Similar limitations to those found for function calling are observed in parameter estimation. There are, for example, over one hundred thousand professional football players registered in player databases, but Open AI recommend having less than 20 enumerated parameter values when calling a function \footnote{https://platform.openai.com/docs/guides/function-calling?api-mode=responses} and benchmarks again indicate that success falls off rapidly as number of possible values increases \cite{huang2024metatoolbenchmarklargelanguage}. A more sophisticated solution might be to ask the LLM to return an SQL database query to find this information in an up-to-date database. In addition to difficulties translating human language into SQL, a limitation here is that it fails to answer many (to humans) obvious questions such as "Do you think Messi will perform well now he is playing in the USA?".
+
+In earlier work we gave an approach, which we call Wordalisation, for transforming raw statistics into natural, descriptive narratives, much like how visualisations simplify complex data \cite{caut2025representing,rahimian2025automated}. The Wordalisation approach first produces a synthesized text about data, then, using chat completion together with few-shot prompts \cite{schulhoff2024prompt}, write engaging texts. So, for example, to describe football players we first write an automated text comparing their statistics to other players, then use the chat completion to lift out the important points that can be inferred from the statistical description.
+
+The Wordalisation approach suggests a much looser architecture for data retrieval than is typically used in function calling. Instead of building functions that answer specific questions (such as number of goals), we build functions which answer general questions (such as how a player will perform in a new league based on the availability of data). It is this approach we outline now.  We build on the biggest strengths of chat completion services, namely summarising texts in plain language, on the strengths of function calling, namely working out roughly what the user wants and on embedding search, finding relevant background information to answer the users' questions. We use this combined approach to engineer contexts that ensure reliable and engaging answers to users' queries to a football analyst application.
+
+\section*{Methods}
+
+In this section, we describe the components in our approach.
+
+% Figure
+
+\begin{figure}
+    \centering 
+    \includegraphics[width=0.9\linewidth]{images/wordalisation_process.png}
+    \caption{Example  }
+\end{figure}
+
+
+\subsection{Agents}
+
+We call the agents 
+
+The Earpiece system employs an Analyst (Agent) Architecture to effectively manage conversational flow and domain-specific knowledge. An Analyst is defined as a combination of a Context Object—which tracks the subject of the conversation with uniquely identifiable information like a player ID or match ID—and a list of functions that can be executed based on user queries. Different analysts are specialized for distinct subjects; for example, a "player analyst" manages player-related queries with a player context, while a "match analyst" handles match-specific discussions with its own context object and functions. To facilitate fluid conversation and manage switches between these specialized analysts, Redirect Functions are utilized. If the LLM detects a change in the conversation's subject, a redirect function is triggered to establish the new context and instantiate the appropriate analyst. A central Receptionist analyst coordinates these transitions; it is the first analyst a user interacts with and contains redirect functions to all other analysts. If a specialized analyst detects a context switch, it first redirects to the Receptionist, which then directs to the new appropriate analyst, creating a hierarchical management system for seamless context switching. This architecture allows the "earpiece" to abstract complex data interactions and provide a coherent user experience across different platforms, even though these analyst transitions are visually represented in the "earpiece hub" but hidden in the WhatsApp version.
+
+\subsection{Setting function parameters}
+
+
+\subsection{Generating wordalisations}
+
+\subsection{Answering questions}
+
+Embedding search.
+
+\subsection{Receptionist Agent}
+
+
+
+
+
+\subsection{Function Calling}
+To bridge this gap, "earpiece" employs Function Calling. Function calling is a mechanism where the LLM, under certain conditions, requests the client (the application's API) to execute a predefined function, rather than executing it itself. The application provides the LLM with system instructions (e.g., "if the user asks about Xg value, call the get\_Xg function") and a "tool" section defining the function and its parameters. When a user query triggers a function (e.g., "what's the Xg of Jude Bellingham?"), the LLM returns a "tool call" payload with the function name and parsed arguments (e.g., player name). The client then executes the function, retrieves the data (e.g., Xg value), and inserts this result into the subsequent call to the LLM. This enables LLMs to query external and proprietary data sources.
+
+\subsection{Context Objects}
+A challenge with function calling is that the LLM often provides only string values (e.g., a player's name), which can lead to disambiguation issues (e.g., multiple players with the same name). To overcome this, "earpiece" introduces the concept of a Context Object. This object tracks "the something" the conversation is about, providing uniquely identifiable information for functions. Examples include a player ID, competition ID, and season for a player context, or a match ID for a match context. This context object is made available to all relevant functions, eliminating the need for complex string parsing on every function invocation and providing readily available subject information.
+
+\subsection{Analyst (Agent) Architecture}
+The combination of a context object and a list of functions forms what "earpiece" calls an Analyst (also known as an agent). Different analysts are specialized for different subjects, each with its own context object and set of functions (e.g., a "player analyst" with a player context, a "match analyst" with a match context).
+
+\subsection{The Receptionist and Redirect Functions}
+Managing switches between these specialized analysts is crucial for a fluid conversation. This is achieved through Redirect Functions. If an LLM detects a shift in the conversation's subject (e.g., from a match to a player), a redirect function is triggered. This function's purpose is to establish the new context and instantiate the appropriate analyst (e.g., a "player analyst" with the identified player's context). To coordinate these transitions, a central Receptionist analyst is introduced. This receptionist is the first analyst a user interacts with and contains redirect functions to all other analysts. If a specialized analyst detects a context switch, it first redirects to the receptionist, which then directs to the new appropriate analyst. This creates a hierarchical management system, allowing for seamless context switching and a coherent user experience. The "earpiece hub" visually represents these analyst transitions, though they are hidden in the WhatsApp version.
+
+\section{Advanced LLM Utilization Beyond Core Conversation}
+
+
+\subsection{Outside-the-Loop LLM Calls}
+The architecture allows for LLM utilization beyond the main conversational flow through "outside-the-loop" utility calls made within functions. This means a function, after being requested by the main LLM conversation, can make its own separate calls to the LLM API to perform specific tasks. The result of these utility calls can then be integrated back into the main conversation as an assistant message, making it appear as if the LLM generated it directly in that conversation.
+
+\subsection{Context Disambiguation}
+A key use case for these utility calls is context establishment and disambiguation within redirect functions. When a user asks about an ambiguous entity (e.g., a player name that might refer to multiple individuals), the system performs an initial full-text search to generate a list of plausible alternatives (mapped to unique IDs). This list, along with the user's original query, is then presented to an LLM in an outside-the-loop call, asking the LLM to determine the most likely entity the user is interested in.
+
+\subsection{Natural Language Generation from Data}
+Another significant application is transforming structured data into engaging natural language descriptions. For instance, to describe a player's performance, the system fetches player data and calculates "set scores" (e.g., for qualities). These scores are used to construct a "boring text" – a simple, programmatically generated description. This "boring text" is then sent to an LLM via an outside-the-loop call, along with a long list of examples of "boring texts" and their "engaging rewrites". The LLM, instructed to turn boring text into engaging text, uses this few-shot prompting to generate a more articulate and compelling description of the player's performance.
+
+\subsection{Semantic Search with Embeddings}
+The system also leverages embeddings for semantic similarity search. When a user's query is passed to a function, it is embedded using an OpenAI API endpoint. This embedding is then used to search an internal embeddings database for semantically similar strings. If a match is found that is associated with a specific metric or quality, the system can understand the user's intent, even if the exact phrasing wasn't used. This allows for more flexible and robust parsing of user queries. While embeddings could be used for enum resolution, the LLM is often "good enough" at parsing positions, though qualities are more challenging due to varied user phrasing. Lars notes a mixed approach where embeddings are sometimes used within functions.
+
+\section{Testing and Quality Assurance}
+Automated testing is crucial for maintaining and updating the LLM-powered application, preventing unexpected breaks and inadvertent errors. "earpiece" implements several types of tests:
+\begin{itemize}
+    \item Trigger Accuracy: Verifies whether specific user prompts correctly trigger the intended functions, especially after modifications to system instructions or analysts.
+    \item Parameter Accuracy: Ensures the LLM correctly parses user input into the expected function call parameters, catching issues that might arise from modifying parameter descriptions.
+    \item Context Resolution: Confirms that string parameters provided to functions (e.g., player names, team names) correctly resolve to their corresponding unique IDs in the database.
+\end{itemize}
+These tests are integrated into the development workflow, running automatically upon changes to the main branch to provide rapid feedback on potential failures.
+
+\section{Challenges and Practical Solutions}
+\subsection{Enum Parameter Hallucination}
+A notable issue encountered was enum parameter hallucination, where the LLM would generate non-existent options for parameters defined as enums (lists of acceptable choices). The solution implemented was OpenAI's strict mode for the chat completions API, which forces an additional validation step before a tool call is returned, preventing the LLM from fabricating enum members.
+
+\subsection{Cost Optimization}
+LLM usage incurs costs, with different models having varying price points. To manage this, "earpiece" adopted a strategy of model switching: cheaper models like GPT-4o Mini are used for simpler tasks, while more expensive models like GPT-4o are reserved for more complex operations, optimizing overall cost.
+
+\subsection{Function Limit}
+The OpenAI API has a practical limitation on the number of functions that can be provided to the LLM (around 10-12 functions), beyond which the LLM's ability to execute the correct function degrades significantly. Solutions for this problem include fine-tuning the models or, more centrally to the "earpiece" architecture, the receptionist setup. The receptionist acts as a central figure for redirects, holding the majority of redirect functions, while individual analysts only contain the specific functions needed for data fetching related to their domain. This approach effectively manages the total number of functions presented to any single LLM interaction, thereby overcoming the limitation.
+
+\section{Conclusion and Future Outlook}
+The "earpiece" project exemplifies how to build sophisticated LLM-powered applications by strategically combining LLMs with robust software engineering principles. The core idea is to use LLMs for language conversion and expression, while proprietary models and external data sources handle data crunching and analysis. The LLM's role is to convert insights into language and manage conversational flow, including tone of voice and speaking style, rather than performing the core data modeling. The overall application architecture extends beyond just the LLM API, incorporating external services for user authentication (Auth0), messaging (Twilio/Sinch for WhatsApp), visualization APIs for image generation, and various databases for statistics, chat conversations, and user data. Looking ahead, the team is exploring emerging standards such as the Model Context Protocol (MCP) from Anthropic and the Agent-to-Agent (A2A) protocol from Google. These initiatives aim to formalize tool calling and inter-agent communication, potentially enabling a "web of analysts". While not fully formalized yet, these standards are expected to drive significant changes in the LLM ecosystem. Longer-term aspirations include the possibility of developing a self-hosted LLM for Twelve, or at least adopting a "plug and play" approach to integrate different LLMs easily. The "earpiece" product continues to evolve, with the web-based "Hub" offering more features than the lightweight WhatsApp version. The underlying API is shared, meaning new functionalities developed for the web version become theoretically available for WhatsApp with minimal additional work. Future developments also include exploring multimodal inputs like voice and even generating podcast-like summaries.
+
+\end{document}

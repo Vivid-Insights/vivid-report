@@ -1,0 +1,114 @@
+# Works cited in paper 0002. Every entry was looked up on 12 October 2026; what was opened is in the
+# Log in Appendix.md. Format: FORMAT.md, "Citations and references".
+
+- id: brown2020
+  type: preprint
+  author: ["Brown, Tom B.", "Mann, Benjamin", "Ryder, Nick", "Subbiah, Melanie", "Kaplan, Jared", "others"]
+  title: "Language models are few-shot learners"
+  year: 2020
+  container: arXiv
+  number: "2005.14165"
+  url: https://arxiv.org/abs/2005.14165
+
+- id: caut2025
+  type: preprint
+  author: ["Caut, Amandine M.", "Rouillard, Amy", "Zenebe, Beimnet", "Green, Matthias", "Morthens, Ágúst Pálmason", "Sumpter, David J. T."]
+  title: "Representing data in words: A context engineering approach"
+  year: 2025
+  container: arXiv
+  number: "2503.15509"
+  url: https://arxiv.org/abs/2503.15509
+  note: Preprint, not peer reviewed.
+
+- id: gilardi2023
+  type: preprint
+  author: ["Gilardi, Fabrizio", "Alizadeh, Meysam", "Kubli, Maël"]
+  title: "ChatGPT outperforms crowd-workers for text-annotation tasks"
+  year: 2023
+  container: arXiv
+  number: "2303.15056"
+  url: https://arxiv.org/abs/2303.15056
+
+- id: huang2023
+  type: preprint
+  author: ["Huang, Yue", "Shi, Jiawen", "Li, Yuan", "Fan, Chenrui", "Wu, Siyuan", "others"]
+  title: "MetaTool benchmark for large language models: Deciding whether to use tools and which to use"
+  year: 2023
+  container: arXiv
+  number: "2310.03128"
+  url: https://arxiv.org/abs/2310.03128
+
+- id: openai2026
+  type: web
+  author: ["OpenAI"]
+  title: "Function calling"
+  year: 2026
+  publisher: OpenAI API documentation
+  url: https://developers.openai.com/api/docs/guides/function-calling
+  note: Accessed 12 October 2026.
+
+- id: reimers2019
+  type: chapter
+  author: ["Reimers, Nils", "Gurevych, Iryna"]
+  title: "Sentence-BERT: Sentence embeddings using Siamese BERT-networks"
+  year: 2019
+  container: "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+  pages: "3982–3992"
+  publisher: Association for Computational Linguistics
+  doi: 10.18653/v1/D19-1410
+
+- id: wang2026
+  type: article
+  author: ["Wang, Maolin", "Zhang, Yingyi", "Yu, Bowen", "Hao, Bingguang", "Peng, Cunyin", "Chen, Yicheng", "Zhou, Wei", "Gu, Jinjie", "Zhuang, Chenyi", "Guo, Ruocheng", "Wang, Wanyu", "Zhao, Xiangyu"]
+  title: "Function calling in large language models: Industrial practices, challenges, and future directions"
+  year: 2026
+  container: ACM Computing Surveys
+  volume: "58"
+  issue: "9"
+  pages: "1–37"
+  doi: 10.1145/3788284
+
+- id: zhu2023
+  type: preprint
+  author: ["Zhu, Yiming", "Zhang, Peixian", "Haq, Ehsan-Ul", "Hui, Pan", "Tyson, Gareth"]
+  title: "Can ChatGPT reproduce human-generated labels? A study of social computing tasks"
+  year: 2023
+  container: arXiv
+  number: "2304.10145"
+  url: https://arxiv.org/abs/2304.10145
+
+- id: patil2025
+  type: chapter
+  author: ["Patil, Shishir G.", "Mao, Huanzhi", "Yan, Fanjia", "Ji, Charlie Cheng-Jie", "Suresh, Vishnu", "Stoica, Ion", "Gonzalez, Joseph E."]
+  title: "The Berkeley Function Calling Leaderboard (BFCL): From tool use to agentic evaluation of large language models"
+  year: 2025
+  container: "Proceedings of the 42nd International Conference on Machine Learning, PMLR 267"
+  pages: "48371–48392"
+  url: https://proceedings.mlr.press/v267/patil25a.html
+
+- id: song2025
+  type: preprint
+  author: ["Song, Yewei", "Tang, Xunzhu", "Lothritz, Cedric", "Ezzini, Saad", "others"]
+  title: "CallNavi, a challenge and empirical study on LLM function calling and routing"
+  year: 2025
+  container: arXiv
+  number: "2501.05255"
+  url: https://arxiv.org/abs/2501.05255
+
+- id: rahimian2025
+  type: article
+  author: ["Rahimian, Pegah", "Flisar, Jernej", "Sumpter, David J. T."]
+  title: "Automated explanation of machine learning models of footballing actions in words"
+  year: 2025
+  container: Journal of Sports Analytics
+  volume: "11"
+  doi: 10.1177/22150218251353089
+
+- id: schulhoff2024
+  type: preprint
+  author: ["Schulhoff, Sander", "Ilie, Michael", "Balepur, Nishant", "Kahadze, Konstantine", "others"]
+  title: "The Prompt Report: A systematic survey of prompt engineering techniques"
+  year: 2024
+  container: arXiv
+  number: "2406.06608"
+  url: https://arxiv.org/abs/2406.06608
