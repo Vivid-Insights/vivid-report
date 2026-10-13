@@ -30,9 +30,7 @@ Chatbots built on large language models (LLMs) are asked about data the models h
 
 ## Introduction
 
-Four services offered by LLM providers do the work in Earpiece: chat completion, embedding search, annotation and function calling. We illustrate each on the same small dataset, the 50 most recent football articles from The Guardian's API, using the example notebooks of our course on context engineering.
-
-In chat completion, the application sends a conversation history to the model and receives a reply. The history starts with system messages, which set the model's role and behaviour, followed by pairs of user questions and assistant answers. These can be earlier turns of the conversation or few-shot examples of the questions and answers the application expects [@brown2020].
+Four of the most important uses of large language models are: chat completion, embedding search, annotation and function calling (or tool use). In chat completion, the application sends a conversation history to the model and receives a reply. The history starts with system messages, which set the model's role and behaviour, followed by pairs of user questions and assistant answers. These can be earlier turns of the conversation or few-shot examples of the questions and answers the application expects [@brown2020].
 
 Embedding search turns a piece of text into a vector chosen so that texts with similar meaning lie close together [@reimers2019]. We split the 50 articles into 3 101 sentences and embedded each one with OpenAI's text-embedding-3-large model, which gives a vector of 3 072 numbers per sentence. A question is embedded the same way and compared with every sentence by cosine similarity. For the question "Why is there so much fuss about Manchester City?", the closest sentence (similarity 0.51) was "Unlike United, a club that 13 years later still has shaky foundations, City are a slickly-run organisation."
 
@@ -40,16 +38,19 @@ Annotation uses an LLM to label text. LLMs have been found to match or exceed cr
 
 Function calling gives the model a list of functions, each with a description and parameters, and the model returns the function the user most likely wants together with the values of its parameters [@wang2026]. Extracting those values is annotation of the user's message. Our news assistant has five functions: how many articles mention a name, a summary of a team, a summary of a player, and an answer to a question about a team or about a player. Its system prompt sets rules for choosing between them and ends "Always call tools — never answer from your own knowledge." A second call merges the results of the functions into one reply.
 
+We illustrate each on the same small dataset, the 50 most recent football articles from The Guardian's API, using the example notebooks of our course on context engineering.
+
+
 The merging step shows how these pipelines go wrong. Asked "What are the main problems Arsenal are facing?", the team summary returned, among other things:
 
 ::: output {source="Attachments/LLMMethods/GuardianFootballFunctions.ipynb" model="gpt-4o-mini"}
-Arsenal's next match is at home against Newcastle, with further fixtures against Fulham, West Ham, Burnley and Crystal Palace.
+> Arsenal's next match is at home against Newcastle, with further fixtures against Fulham, West Ham, Burnley and Crystal Palace.
 :::
 
 and the merged reply ended:
 
 ::: output {source="Attachments/LLMMethods/GuardianFootballFunctions.ipynb" model="gpt-4o-mini"}
-Their remaining fixtures include home to Newcastle, and trips to Fulham, West Ham, Burnley, and Crystal Palace.
+> Their remaining fixtures include home to Newcastle, and trips to Fulham, West Ham, Burnley, and Crystal Palace.
 :::
 
 The merge prompt says "do not expand or add new facts", but the reply states that the last four matches are away from home, which the function's result did not say.
@@ -99,14 +100,14 @@ How the analysts are connected. Each solid arrow is a pair of redirects: from th
 When an analyst sees that the user wants something outside its context, it redirects back to the receptionist, which receives a summary of the conversation and the user's last message:
 
 ::: prompt {source="Attachments/earpiece-code/receptionist_analyst.py"}
-f"You have been called because another analyst in the platform was unable to give the user the information they were looking for."
-f"The analyst provided the following summary of the previous conversation: '{self.context.summary}'.",
-f"The very last thing the user said, which caused the analyst to call you, was: '{self.context.query}'.",
-"Your ONLY valid actions are: (1) call the most appropriate analyst immediately, ",
-"OR (2) ask the user a specific clarifying question to determine which analyst is appropriate, ",
-"OR (3) explain how the platform works, if the user asks a question about the platform.",
-"You MUST NOT greet the user, chit-chat, or respond in any other way. ",
-"Prioritise calling the appropriate analyst directly (option 1) over the other two options.",
+> f"You have been called because another analyst in the platform was unable to give the user the information they were looking for."
+> f"The analyst provided the following summary of the previous conversation: '{self.context.summary}'.",
+> f"The very last thing the user said, which caused the analyst to call you, was: '{self.context.query}'.",
+> "Your ONLY valid actions are: (1) call the most appropriate analyst immediately, ",
+> "OR (2) ask the user a specific clarifying question to determine which analyst is appropriate, ",
+> "OR (3) explain how the platform works, if the user asks a question about the platform.",
+> "You MUST NOT greet the user, chit-chat, or respond in any other way. ",
+> "Prioritise calling the appropriate analyst directly (option 1) over the other two options.",
 :::
 
 When the subject stays the same, the hand-over is direct. A user who asks the Scout how the same player would do in another league is sent straight to the Transfer analyst, which reuses the player already resolved. One way of describing the result is as a choose-your-own-adventure: the receptionist sends the user off with the Match Analyst, the Match Analyst sends them back when they ask about something else, and the receptionist finds the analyst who can answer.
@@ -142,19 +143,19 @@ Contexts for a player, a match and a team, as Earpiece stores them (abbreviated)
 A context can be richer than identifiers. The parameters of a redirect are described to the model in words, and the descriptions double as instructions. Part of the context of the Search analyst, which finds players with given qualities in one league, is:
 
 ::: prompt {source="Attachments/earpiece-code/player_search_context.py"}
-gender: GenderType = Field(description="The gender of the players to search for.")
-position: str = Field(
-    description=(
-        "The position of the players to search for. "
-        "This should be the position that the user is interested in. "
-        "If the user does not specify a position, ask them to do so."
-        "Never assume a position, always ask the user to clarify. "
-        "If the user asks for Goalkeepers, answer that you do not include analysis on goalkeepers. "
-    ),
-)
-competition: CompetitionSeason = Field(
-    description="The competition in which to search for players. If the user specifies more than one competition, ask them to clarify which one they want to use."
-)
+> gender: GenderType = Field(description="The gender of the players to search for.")
+> position: str = Field(
+>     description=(
+>         "The position of the players to search for. "
+>         "This should be the position that the user is interested in. "
+>         "If the user does not specify a position, ask them to do so."
+>         "Never assume a position, always ask the user to clarify. "
+>         "If the user asks for Goalkeepers, answer that you do not include analysis on goalkeepers. "
+>     ),
+> )
+> competition: CompetitionSeason = Field(
+>     description="The competition in which to search for players. If the user specifies more than one competition, ask them to clarify which one they want to use."
+> )
 :::
 
 A context is a footballing question made explicit. The Opposition Analyst's context has two teams, an opponent and a "hero team", so that it can answer a question such as how Arsenal attack against teams that defend like Liverpool.
