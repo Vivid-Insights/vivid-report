@@ -40,7 +40,7 @@ Annotation uses an LLM to label text. LLMs have been found to match or exceed cr
 
 Agentic coding tools, like Claude Code, are built upon these same methods [@claudecode2026]. Indeed, Claude is chat completion, with the tool calls happening as part of the reply. Along with the usual text tokens, function calls are are also output: it writes the name and the arguments, then it runs the function and appends what comes back as another message in the history. As a result agentic coding tools carry on from a conversation that now contains the answer [@openai2026]. The program that holds the conversation, declares the functions, executes the ones the model names, and calls the model again is often referred to as the harness. The 46 functions defined as part of Claude Code include `Glob` which lists the files matching a pattern, `Grep` which searches their text, `Read` which returns numbered lines, and `Edit` and `Bash` change the repository and run commands in it [@claudecode2026]. Delegation is itself one of the functions: `Agent` starts a second model, with its own context window and a narrowed set of the same tools, whose result returns to the first as a function result. A catalogue extracted from Claude Code's compiled source lists 896 separate prompt strings, together around 488 000 tokens, of which 229 are descriptions of the tools [@piebald2026]. No conversation sees all of this at once, since the harness assembles a prompt from the parts a session needs, but the instructions for using the functions are longer than the functions themselves.
 
-Beyond agentic coding tools, there are many other potential new ways in which LLM methods can be combined to build software applications. In this article we refer to combining LLM methods with other software engineering approaches as *context engineering*, a term that came into use in mid-2025 (after being promoted in an X post by Andrej Kaparthy). @chase2025 fram context engineering as building dynamic systems that provide the right information and tools, in the right format, for the model to accomplish the task; @mei2025 survey the field and treat the context as components that are sourced, filtered, formatted and assembled. 
+Beyond agentic coding tools, there are many other potential new ways in which LLM methods can be combined to build software applications. In this article we refer to combining LLM methods with other software engineering approaches as *context engineering*, a term proposed by Tobi Lütke in June 2025, as "the art of providing all the context for the task to be plausibly solvable by the LLM" [@lutke2025], and taken up a week later by Andrej Karpathy [@karpathy2025]. @chase2025 fram context engineering as building dynamic systems that provide the right information and tools, in the right format, for the model to accomplish the task; @mei2025 survey the field and treat the context as components that are sourced, filtered, formatted and assembled. 
 
 LATER ADD MORE REFERENCES HERE FOR SIMILAR APPROACHS
 
@@ -56,19 +56,27 @@ Some of our earlier work proposed a method, we called wordalisation, turns stati
 
 We also report an automated test of routing and name resolution, run nightly, which is how we know whether the design holds.
 
-## What it does 
+## The Earpiece Application
+
+Twelve Earpiece answers questions about football data in conversation, for scouts, analysts and coaches at clubs. The user talks to a set of specialised analysts, and the application moves between them as the subject changes. A scout looking at a Hammarby midfielder asks four questions in a row, and is answered by three analysts without naming any of them (@fig-walk). The first question names the player, the competition and the season, and the receptionist redirects to the Scout, which reports what she did this season. "Could she play in WSL?" is a question about another league, which the Scout has no function for, so it hands over to the Transfer analyst; the player is already resolved, so the hand-over is direct rather than back through the receptionist, and "she" is never ambiguous because the player is in the context rather than in the conversation. "How would she fit in at Arsenal?" stays with the same analyst and adds a club to compare against, so the prediction is made against Arsenal's own midfielders rather than the league as a whole. The fourth question drops the player altogether and asks about Arsenal's season, which moves the conversation to the Season analyst and replaces a player context with a team one. The right-hand pane changes with it, from the player's profile to the league table.
 
 
+
+::: figure {#fig-walk src="Code/outputs/figures/fig_conversation_walk.png" width=wide alt="Four screenshots of Earpiece in a two by two grid, each headed by the question asked and the analyst that answered it: the Scout on a player, the Transfer analyst on a move to the WSL, the Transfer analyst on Arsenal's midfielders, and the Season analyst on Arsenal's season."}
+![[papers/0002-twelve-earpiece/Code/outputs/figures/fig_conversation_walk.png]]
+Four questions, three analysts. Each panel is one screen of the same conversation, headed by the question the user typed and the analyst that answered it. The player is resolved once, in the first question, and carried through the second and third without being named again. The fourth question names a team instead, and the context switches from the player to Arsenal in the Women's Super League.
+:::
 
 ## Methods {#sec-architecture}
 
-Earpiece is built around two constraints that every application on LLM services has. The first is that the services are stateless. Each request is treated as new, so a conversation exists only because the application stores every message and sends the whole chat again on every turn (@fig-stateless). Current models handle a single call well, but memory and decisions over many steps remain open problems [@patil2025]. The second is that a model knows nothing beyond its training data, which has a cut-off date and none of a club's data. The application has to bring the right information into the conversation, at the right moment, in a form the model can use.
+Earpiece is built around two constraints that every application on LLM services has. The first is that the services are stateless [@patil2025]. Each request is treated as new, so a conversation exists only because the application stores every message and sends the whole chat again on every turn (@fig-stateless).  The second is that a model knows nothing beyond its training data, which has a cut-off date and none of a club's data. The application has to bring the right information into the conversation, at the right moment, in a form the model can use. 
 
 ::: figure {#fig-stateless src="Code/outputs/figures/diagram_stateless.svg" width=wide alt="The client sends a chat id and a new message to the Earpiece API, which reads the stored chat from its database and sends the whole chat to the LLM API, which returns the next message."}
 ![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_stateless.svg]]
 Where the state lives. The client sends only the chat's identifier and the new message. The Earpiece API reads the stored chat from its database and sends all of it to the LLM API, which returns the next message.
 :::
 
+We now describe how we overcome these limitations.
 ### Analysts and redirects
 
 #### Analysts
@@ -105,8 +113,6 @@ When an analyst sees that the user wants something outside its context, it redir
 When the subject stays the same, the hand-over is direct. A user who asks the Scout how the same player would do in another league is sent straight to the Transfer analyst, which reuses the player already resolved. One way of describing the result is as a choose-your-own-adventure: the receptionist sends the user off with the Match Analyst, the Match Analyst sends them back when they ask about something else, and the receptionist finds the analyst who can answer.
 
 No single call has to choose among many functions: the receptionist chooses an analyst, and the analyst chooses among its own functions. The cost is in the receptionist's prompt, most of which draws the boundaries between analysts — the Match Analyst is for teams and the Match Scout for players; one match goes to the Match Analyst, several against one opponent to the Opposition Analyst — and the more analysts there are, the more boundaries it has to be told about.
-
-#### Keeping it finite
 
 A chain of hand-overs could go on forever, since a newly opened chat reads only its instructions and context and can make the same choice again. A request may therefore be handed on at most five times, a hand-over to an analyst and context already visited in the same request ends the chain, and the last analyst in a chain is offered no redirect functions and told that the request "cannot be passed on again". On the turn a redirect opens, the new analyst is not offered a redirect back to itself, because the name it carries has already been resolved and resolving it a second time can give a different answer. The resolution that creates a chat is the one that chat keeps.
 

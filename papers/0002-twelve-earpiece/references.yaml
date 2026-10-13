@@ -104,15 +104,6 @@
   volume: "11"
   doi: 10.1177/22150218251353089
 
-- id: schulhoff2024
-  type: preprint
-  author: ["Schulhoff, Sander", "Ilie, Michael", "Balepur, Nishant", "Kahadze, Konstantine", "others"]
-  title: "The Prompt Report: A systematic survey of prompt engineering techniques"
-  year: 2024
-  container: arXiv
-  number: "2406.06608"
-  url: https://arxiv.org/abs/2406.06608
-
 - id: lewis2020
   type: article
   author: ["Lewis, Patrick", "Perez, Ethan", "Piktus, Aleksandra", "Petroni, Fabio", "Karpukhin, Vladimir", "Goyal, Naman", "Küttler, Heinrich", "Lewis, Mike", "Yih, Wen-tau", "Rocktäschel, Tim", "Riedel, Sebastian", "Kiela, Douwe"]
@@ -166,14 +157,6 @@
   volume: "12"
   pages: "157–173"
   doi: 10.1162/tacl_a_00638
-
-- id: paramanayakam2025
-  type: chapter
-  author: ["Paramanayakam, Varatheepan", "Karatzas, Andreas", "Anagnostopoulos, Iraklis", "Stamoulis, Dimitrios"]
-  title: "Less is more: Optimizing function calling for LLM execution on edge devices"
-  year: 2025
-  container: "Design, Automation and Test in Europe Conference (DATE 2025)"
-  url: https://arxiv.org/abs/2411.15399
 
 - id: repantis2026
   type: preprint
@@ -243,22 +226,6 @@
   url: https://arxiv.org/abs/2608.12355
   note: Preprint, not peer reviewed.
 
-- id: masson2024
-  type: chapter
-  author: ["Masson, Damien", "Malacria, Sylvain", "Casiez, Géry", "Vogel, Daniel"]
-  title: "DirectGPT: A direct manipulation interface to interact with large language models"
-  year: 2024
-  container: "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems"
-  doi: 10.1145/3613904.3642462
-
-- id: ziegler2026
-  type: article
-  author: ["Ziegler, Parker", "Cao, David Minh-Duy", "Lubin, Justin", "Chasins, Sarah E."]
-  title: "Direct manipulation and natural language programming, together at last?"
-  year: 2026
-  container: "Proceedings of the ACM on Programming Languages (OOPSLA2)"
-  url: https://arxiv.org/abs/2608.26359
-
 - id: ma2023
   type: preprint
   author: ["Ma, Xiao", "Mishra, Swaroop", "Liu, Ariel", "Su, Sophie", "Chen, Jilin", "others"]
@@ -288,3 +255,21 @@
   number: "2610.02739"
   url: https://arxiv.org/abs/2610.02739
   note: Preprint, not peer reviewed.
+
+- id: lutke2025
+  type: web
+  author: ["Lütke, Tobi"]
+  title: "I really like the term 'context engineering' over prompt engineering"
+  year: 2025
+  publisher: X
+  url: https://x.com/tobi/status/1935533422589399127
+  note: Post, 19 June 2025. Read 13 October 2026.
+
+- id: karpathy2025
+  type: web
+  author: ["Karpathy, Andrej"]
+  title: "+1 for 'context engineering' over 'prompt engineering'"
+  year: 2025
+  publisher: X
+  url: https://x.com/karpathy/status/1937902205765607626
+  note: Post quoting Lütke, 25 June 2025. Read 13 October 2026.
