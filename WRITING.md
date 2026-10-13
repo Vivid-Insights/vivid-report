@@ -113,6 +113,8 @@ Within a paragraph, and in the `Results`, open on the real example and let the g
 
 ## Length
 
+**Cut the length at the end.** Phase 6 of the drafting order is simplify and revise, and that is where a report gets shorter. Do not write short to begin with and then pad; write, then cut.
+
 **Draft at about half the length that seems natural.** A methods section went from 782 to 319 words on David's instruction ("Half the length"), and a data paragraph to two sentences ("at most 2 sentences! One about data removed and observations removed and one about stepwise regression"). Keep only what the reader needs to follow the figure. Both corrections recur.
 
 **Thorough is not long.** The `Methods` covers everything a reader needs to rebuild the method with the repository; it does that in short sentences, and the half-length rule still applies to each paragraph.
@@ -141,6 +143,8 @@ Use these consistently. If an author changes one, change it here in the same tur
 ## Corrections log
 
 New rules from the authors' corrections go here, newest first, each with the date, who made it, and the sentence before and after. Say whether it was seen once or recurs.
+
+- **13 October 2026, David: the six-phase drafting order.** From David's `Writing workflow` keynote. Sketch; sketch the abstract; revise; write the start and end together; revise the abstract; simplify and revise. The ten steps now sit inside these six phases, and the paragraph plans for the `Abstract` (seven moves), `Introduction` (five paragraphs) and `Discussion` (five paragraphs) come from the same deck. The three points are called A, B and C when planning, equal by default, with a weighted shape allowed where the material needs it. `The Six Phases and the Ten Steps` in `instructions.md`. *Seen once.*
 
 - **13 October 2026, David: FRAMEWORK suspends the friction rules.** Told to make every block visible in Obsidian, the agent had already asked twice and was about to ask a third time whether to change the build. Before: a FRAMEWORK message answered with a proposal and a question. After: the prefix is the decision; carry the change out in full, including the tools, the templates and the specimen, and report what was done. `Changing This Contract` in `instructions.md`. *Seen once.*
 
