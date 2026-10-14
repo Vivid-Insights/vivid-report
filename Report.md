@@ -48,13 +48,11 @@ Although coding agents are flexible, they are not always (or even most of the ti
 
 Context engineering requires software design which is aware of the weaknesses of agentic AI in certain situations. For example, a naive solution to answering footballing questions is to build a function for every question. If the user asks "How many goals has Messi scored this season?", the model calls a function `get_goals` with the player and the season, and so on for passes, cards and every other statistic. This fails as the number of functions increases. OpenAI advises keeping fewer than twenty available at any one time [@openai2026], and models are measurably worse at choosing when shown a long list than a short one picked for the question [@huang2023; @repantis2026]. Choosing well also gets harder as the task gets more complicated [@song2025]. The difficulty is not going away as models improve: on benchmarks where an agent must use tools under written policies while talking to a user, the best models still fail more tasks than they complete, and lose ground again when the user has to be guided rather than simply informed [@yao2024tau; @barres2025]. Asking the model to write a database query instead does not help with many of the questions people actually ask, such as "Do you think Messi will perform well now he is playing in the USA?". Real questions are often ambiguous, in that more than one query would answer them, or unanswerable from the data at hand, and systems handle neither well [@dong2024practiq]. The failure is often quiet rather than obvious: an agent that could ask the user what they meant will instead settle on an assumption of its own and return a result that looks like an answer [@li2026underspec]. 
 
-Some of our earlier work proposed a method, we called wordalisation, turns statistics into an engaging text [@caut2025; @rahimian2025]. These provide a special type of function, which is built to answer general questions — how a player performs, how he would do in another league — instead of fetching single numbers. In this article, we describe how we use the methods decribed above to ensure that the correct wordalisation is provided for a given question. In doing so, we describe how this works in Twelve Earpiece, an AI scouting and performance application. The contributions are as follows:
-
-1. Analysts and redirects. Rather than give one model every function, we split them between specialised analysts, each with a short list and a context of its own, and let a receptionist move the user between them through redirect functions. The model never sees a long list, and what it is allowed to do is enforced by withholding functions rather than by instructing it.
-2. Contexts and names. A question names a player or a team in words; the data has identifiers. We fill the context by searching the database for candidates and asking the model to choose among them, or to ask the user when it cannot. The ambiguity is resolved openly, where the user can see and correct it, instead of being assumed.
-3. Functions that answer in words. The functions reply with wordalisations rather than numbers, and open questions are answered from documents assembled with embedding search, so the user can see which data an answer came from.
-
-We also report an automated test of routing and name resolution, run nightly, which is how we know whether the design holds.
+Some of our earlier work proposed a method, we called wordalisation, turns statistics into an engaging text [@caut2025; @rahimian2025]. These provide a special type of function, which is built to answer general questions — how a player performs, how he would do in another league — instead of fetching single number. In this work we build on that approach by looking at 
+1. How context can be organised through a distinct system of analysts with redirects between them.
+2. How we resolve names in databases consisting of tens of thousands of potential names. 
+3. Managing multiple wordalisation functions and answering open questions from documents assembled with embedding search.
+We report on testing of these features and discuss possible future developments of this approach.
 
 ## The Earpiece Application
 
@@ -71,14 +69,14 @@ Four questions, three analysts. Each panel is one screen of the same conversatio
 
 ## Methods {#sec-architecture}
 
-Earpiece is built around two constraints that every application on LLM services has. The first is that the services are stateless [@patil2025]. Each request is treated as new, so a conversation exists only because the application stores every message and sends the whole chat again on every turn (@fig-stateless).  The second is that a model knows nothing beyond its training data, which has a cut-off date and none of a club's data. The application has to bring the right information into the conversation, at the right moment, in a form the model can use. 
+Earpiece is built around two constraints that every application on LLM services has. The first is that the services are stateless [@patil2025]. Each request is treated as new, so a conversation exists only because the application stores every message and sends the whole chat again on every turn (@fig-stateless).  The second is that a model knows nothing beyond its training data, which has a cut-off date and none of a club's data. The application has to bring the right information into the conversation, at the right moment, in a form the model can use. We now describe how we deal with these limitations in certain settings.
 
 ::: figure {#fig-stateless src="Code/outputs/figures/diagram_stateless.svg" width=wide alt="The client sends a chat id and a new message to the Earpiece API, which reads the stored chat from its database and sends the whole chat to the LLM API, which returns the next message."}
 ![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_stateless.svg]]
 Where the state lives. The client sends only the chat's identifier and the new message. The Earpiece API reads the stored chat from its database and sends all of it to the LLM API, which returns the next message.
 :::
 
-We now describe how we overcome these limitations.
+
 ### Analysts and redirects
 
 #### Analysts
@@ -183,7 +181,14 @@ The functions of each analyst, by type, apart from the redirects. The general fu
 
 #### Structured wordalisations
 
-Twenty-one functions answer questions that can be anticipated from the context alone: a summary of a player, one quality, where on the pitch the player acts, the statistics of a match. The code fetches the data for the context and writes a synthetic text from it, with fixed rules turning values into words, as in the wordalisation method of @caut2025. The function then makes a chat-completion call of its own, outside the conversation. Its prompt opens with question–answer pairs that explain the data and few-shot examples of good replies, both read from Twelve's knowledge store as user and assistant turns, and ends with the synthetic text. The reply is streamed straight to the user, usually beside a chart. The analyst's model chooses the function and its arguments, such as a quality from a listed set, but does not write the reply.
+The majority of pre-defined functions answer questions that can be anticipated from the context alone. These include, for example, "Does she get involved in games?", "Where does he carry out most actions on the pitch?", "How would he perform playing as a full back?", "Could she play in WSL?", "How has Arsenal performed this season?" and "How did Arsenal play against Liverpool?". 
+
+The structure of the answers is already tightly defined. Once the question is identified, the code fetches the data for the context and writes a synthetic text from it, with fixed rules turning values into words. The function then makes a chat-completion call of its own, outside the conversation, and builds its prompt in the four steps of @caut2025.  Figure @fig-prompt illustrates these steps: a system message tells the model who it is; it is told what it knows in the form of a long list of human expert-written question and answer pairs; a second system message and worked few-shot examples of a synthetic text and the reply we want tell it how to answer; and the synthetic text for the player in the context comes last, telling it what data to use.  The reply is streamed straight to the user, usually beside a chart. 
+
+::: figure {#fig-prompt src="Code/outputs/figures/diagram_prompt_structure.svg" width=wide alt="Four rows, one per step. Each names the step and how many messages it contributes, and shows an excerpt of those messages: the system message, a question-answer pair about box threat, a worked example for another player, and the synthetic text for Vilma Koivisto."}
+![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_prompt_structure.svg]]
+The prompt of the transfer function, in the four steps of @caut2025, as it was sent for the Hammarby player of @fig-walk. The excerpts are from the saved call in `Code/outputs/function-examples/transfer-1.json`; the counts of question–answer and worked pairs are read from the same file. The last step, highlighted, is the synthetic text for this player.
+:::
 
 #### Search, then answer
 
@@ -218,7 +223,7 @@ The nightly test on 13 October 2026, with each case run three times. The one kno
 | Unsupported positions | 2 | 100% | 100% |
 :::
 
-### Contexts and names
+### Resolving context
 
 Over the ten nights from 4 to 13 October 2026, every suite met its threshold on nine nights. On 10 October, "How did Moussa dembele play in 2022/23?" resolved to the right player but to the 2026 season, so the player-and-season suite scored five cases out of six. The test shows that routing and resolution work for the questions it contains. It says nothing about questions outside it, and it does not judge whether the replies themselves are right.
 
@@ -228,27 +233,7 @@ Apart from the match summary of Internazionale, the examples in this section wer
 
 #### Structured wordalisations
 
-For Internazionale's 4–0 win over Atalanta on 30 August 2024 (@fig-match), the synthetic text of the match summary began with the result, the date and the competition, and continued:
 
-::: box {label="Synthetic text:" source="Attachments/context-engineering/6. Conversational context.md"}
-Here is some background context:
-We look at the game from the perspective of Internazionale.
-Compared to their other matches, Internazionale can be satisfied with the outcome of the match.
-Internazionale did not concede any goals. Internazionale scored 3 goals: at 56 minutes, 47 minutes and 10 minutes.
-Internazionale had the upper hand during the opening 15 minutes of the first half.
-Atalanta had the upper hand during the middle of the first half.
-Atalanta completely dominated during the last part of the first half.
-Internazionale completely dominated during the opening 15 minutes of the second half.
-Atalanta dominated during the middle of the second half.
-Internazionale dominated during the last part of the second half.
-:::
-
-The text lists three goals for a 4–0 win. The score comes from the table of results and the goals from the match's shot events, and nothing checks that the two agree, so a goal missing from the events disappears from the text while the score stays right.
-
-::: figure {#fig-match src="Attachments/context-engineering/Images/Screenshot_2025-07-30_at_12.36.55.png" width=wide alt="Earpiece showing Internazionale's overall performance against Atalanta: a distribution plot of seven phases of play against the team's other matches, a wordalisation below it, and a side pane with the context, win probability and match statistics."}
-![[papers/0002-twelve-earpiece/Attachments/context-engineering/Images/Screenshot_2025-07-30_at_12.36.55.png]]
-The Match Analyst's summary of Internazionale 4–0 Atalanta (July 2025). Left: Internazionale's performance in seven phases of play, as a dot against their other matches, and the wordalisation below. Right: the context (date, time and competition), the pre-match win probability and match statistics.
-:::
 
 Asked "Does she get involved in games?", the Scout called `player_quality_description` for involvement, Vilma Koivisto's highest-rated quality. The function's synthetic text was:
 

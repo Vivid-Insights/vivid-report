@@ -173,8 +173,38 @@ def contexts(t):
     return c.svg()
 
 
+
+def prompt_structure(t):
+    """The four steps of Caut and colleagues, as the transfer function's prompt builds them.
+
+    Counts and wording are read from the saved call in outputs/function-examples/transfer-1.json.
+    """
+    import json
+    call = json.loads((Path(__file__).resolve().parent / "outputs" / "function-examples"
+                       / "transfer-1.json").read_text())["model_calls"][1]
+    msgs = call["messages"]
+    qa = sum(1 for m in msgs[1:59] if m["role"] == "user")
+    shots = sum(1 for m in msgs[60:92] if m["role"] == "user")
+
+    c = Canvas(960, 560, t)
+    rows = [
+        ("Tell it who it is", f"system message", "You are the Twelve Earpiece Scout\nanalyst. Your job is going to be\nto give a concise, 4 sentence\nsummary of a midfielder's\ntransfer potential.", False),
+        ("Tell it what it knows", f"{qa} question-answer pairs", "user: What are the metric which\n  measure if a midfielder has\n  box threat?\nassistant: The key to a midfielder\n  having high box threat is ...", False),
+        ("Tell it how to answer", f"system message, then {shots} pairs", "user: <synthetic text for\n  another player>\nassistant: Moving to the\n  Premiership from the 1. HNL,\n  21-year-old Baturina ...", False),
+        ("Tell it what data to use", "the final user message", "Vilma Koivisto is a unknown footed\n23-year-old midfielder ... playing\nfor Hammarby in the Damallsvenskan.\nLet's consider a move from the\nSwedish Damallsvenskan to the ...", True),
+    ]
+    for i, (step, what, body, accent) in enumerate(rows):
+        y = 12 + i * 136
+        c.rect(14, y, 300, 118, c.box_fill, c.accent if accent else c.line, width=2 if accent else 1.4)
+        c.text_block(32, y + 40, [step], size=18, weight=600, anchor="start")
+        c.text_block(32, y + 72, [what], size=13, weight=500, family=MONO, fill=c.muted, anchor="start")
+        c.arrow(322, y + 59, 368, y + 59)
+        c.code(384, y, 562, 118, "", [(ln, accent) for ln in body.split("\n")], size=12)
+    return c.svg()
+
 FIGURES = {"diagram_stateless": stateless, "diagram_context_switch": context_switch, "diagram_receptionist": receptionist,
-           "diagram_resolve_names": resolve_names, "diagram_contexts": contexts}
+           "diagram_resolve_names": resolve_names, "diagram_contexts": contexts,
+           "diagram_prompt_structure": prompt_structure}
 
 if __name__ == "__main__":
     for theme_name in ("light", "dark"):
