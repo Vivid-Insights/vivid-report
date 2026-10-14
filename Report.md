@@ -120,9 +120,9 @@ A chain of hand-overs could go on forever, since a newly opened chat reads only 
 
 The same principle enforces access. An analyst only offers redirects to analysts the user may use, and the receptionist's prompt describes the others as available from Twelve. A prompt saying "do not call this" can lose to another prompt saying "always call this"; a function that is not offered cannot be called.
 
-### Contexts and names
+### Resolving context
 
-#### Resolving names
+#### Identifying names
 
 The model fills a redirect's parameters from what the user wrote, and where the set of possible values is small, it is shown the whole set: the positions and qualities a club uses are listed as the only allowed values. Strict mode, in which the provider checks every tool call against its schema, stops the model inventing values outside such a list. Players, teams and matches are far too many to list, so the model gives a name as text and the name is resolved afterwards, in four steps (@fig-resolve). A full-text search over names, which also favours players with higher market values, returns up to 20 candidates; if it finds none it tries again without the team, then without the competition. The candidates are written out as sentences — the player, the team, the competition — and a second model call, given the user's own words, picks one. It is told: "If you cannot confidently determine a match, do not guess." If nothing is picked, the redirect fails, and the model is told to ask the user for the missing or incorrect information.
 
