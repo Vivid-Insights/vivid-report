@@ -733,7 +733,7 @@ class Builder:
                     h3 += 1
                 num = "" if unnumbered else f"{h2}.{h3}"
             if not ident:
-                # Methods, Results and Discussion share their sub-headings, so a repeated
+                # Methods and Results share their sub-headings, so a repeated
                 # sub-heading takes its section's name rather than clashing.
                 ident = f"sec-{slugify(plain)}"
                 if level > 2 and ident in self.labels:

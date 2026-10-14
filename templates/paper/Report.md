@@ -32,7 +32,7 @@ references: references.yaml
 
 ## Discussion
 
-*Step 6: where the three points are answered. Ideally five paragraphs: one per point under the Methods sub-headings, then Limitations, then Looking ahead, linking back to the literature in the Introduction.*
+*Step 6: where the three points are answered. Ideally five paragraphs and no sub-headings: one per point in the order of the Methods, then the limitations, then looking ahead, linking back to the literature in the Introduction.*
 
 ## Data and code availability
 

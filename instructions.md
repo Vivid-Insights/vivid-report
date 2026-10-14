@@ -63,12 +63,12 @@ Every report has the same structure, in this order. The section names are fixed.
 | `Introduction` | A review of the area in four to six paragraphs, citing at least 20 papers. It builds from the general to the specific and gives the background for the three points, one paragraph each, in order. |
 | `Methods` | What was built and how, thoroughly, written from the code and repository where there is one. It covers the three points in the order of the `Introduction`. |
 | `Results` | The examples and the evidence, under the same sub-headings as the `Methods`, in the same order. |
-| `Discussion` | Where the three points are answered. Ideally five paragraphs: one per point, under the `Methods` sub-headings, then `Limitations`, then `Looking ahead`. It links back to the literature of the `Introduction`. |
+| `Discussion` | Where the three points are answered. Ideally five paragraphs: one per point, in the order of the `Methods`, then the limitations, then looking ahead. It has no sub-headings; it runs as continuous prose. It links back to the literature of the `Introduction`. |
 | `Data and code availability`, `Disclaimer`, `References` | The back matter. The `Disclaimer` is already written and stays. |
 
-The three points thread through every section: stated in the `Abstract`, given their background in the `Introduction`, built in the `Methods`, shown in the `Results`, answered in the `Discussion`, always in the same order. The `Methods`, `Results` and `Discussion` share their sub-headings, one `###` per point. The `Methods` may open with one sub-heading for what all three points share, such as the data or the system as a whole, and finer divisions go under a point as `####`. Do not add other top-level sections. If material does not fit, it belongs in a sub-section, the appendix, or nowhere.
+The three points thread through every section: stated in the `Abstract`, given their background in the `Introduction`, built in the `Methods`, shown in the `Results`, answered in the `Discussion`, always in the same order. The `Methods` and `Results` share their sub-headings, one `###` per point. The `Discussion` has no sub-headings: it answers the points in the same order, as continuous prose, one paragraph each. The `Methods` may open with one sub-heading for what all three points share, such as the data or the system as a whole, and finer divisions go under a point as `####`. Do not add other top-level sections. If material does not fit, it belongs in a sub-section, the appendix, or nowhere.
 
-**Treat the three points as equal by default.** Call them A, B and C when planning, and give each the same room: one background paragraph, one `###` in each of the three sections, one paragraph in the `Discussion`.
+**Treat the three points as equal by default.** Call them A, B and C when planning, and give each the same room: one background paragraph, one `###` in each of the `Methods` and `Results`, one paragraph in the `Discussion`.
 
 **Where the material will not carry three equal points, a weighted shape is allowed**: A the big one, B a specific detailed one, and C a side point that is smaller than the others. The order and the sub-headings do not change; only how much each gets. Decide this with the user in step 2 and record it in `Framing`. A point too small to carry a sub-heading of its own is a limitation or a sentence, not a third point.
 
@@ -80,7 +80,7 @@ These are David's paragraph plans. Follow them unless the user says otherwise.
 | --- | --- |
 | `Abstract` | One paragraph in seven moves: the general area; a specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. |
 | `Introduction` | Five paragraphs: introduce the area; background to A; background to B; background to C; roughly what this report does, in the order A, B, C. |
-| `Discussion` | Five paragraphs: what was found about A and B, then C; what is good about it; the problems with it (`Limitations`); looking forward (`Looking ahead`). |
+| `Discussion` | Five paragraphs, with no sub-headings: what was found about A and B, then C; what is good about it; the problems with it; looking forward. |
 
 ## Step-by-Step Working
 
@@ -193,7 +193,7 @@ A review of the area in five paragraphs, citing at least 20 papers, building fro
 
 Write the `Methods` thoroughly, from the code, covering the three points in the order of the `Introduction`, one `###` sub-heading each.
 
-- **Propose the sub-headings first**, named after the three points, with an opening sub-heading for what they share if it is needed. These sub-headings will be reused in the `Results` and the `Discussion`, so agree them carefully.
+- **Propose the sub-headings first**, named after the three points, with an opening sub-heading for what they share if it is needed. These sub-headings will be reused in the `Results`, so agree them carefully. The `Discussion` does not use them: it is continuous prose.
 - **Build on the repository.** Where there is a GitHub repository for what was built, the `Methods` is written from it: its structure, its prompts, its configuration, its data flow. Thorough means a reader could rebuild the method from the section and the repository together, not that the sentences are long.
 - **Describe the method in its authors' terms and order.** Where the method has published stages — the wordalisation steps of Caut and colleagues: the statistical model, the normative model and synthetic text, tell it who it is, what it knows, what data to use, how to answer — follow them, and attribute them. Other people's methods stay theirs.
 - **Every fact about the method has one place in the code.** Before writing, or checking, a sentence about what the method does, find where the code does it. Record each in `Method Facts` in `Appendix.md`: the fact, the file and line or function, and the commit. Name the file next to the fact.
@@ -229,13 +229,13 @@ Show the method working, and say how well it works if the report claims that it 
 
 ### Step 6 — Discussion
 
-The `Discussion` is where the three points are answered, in five paragraphs: what was found about A and B, then C, under the same sub-headings as the `Methods`; what is good about it; `Limitations`; `Looking ahead`. Write it together with the `Introduction` open beside it (phase 4), so the paper answers what it asked.
+The `Discussion` is where the three points are answered, in five paragraphs: what was found about A and B, then C, in the order of the `Methods`; what is good about it; the limitations; looking ahead. It has no sub-headings — the paragraphs run on, and each one's subject is clear from its first sentence. Write it together with the `Introduction` open beside it (phase 4), so the paper answers what it asked.
 
 - **Ask the user to say, in a sentence each, how they would now answer the three points**, before anything is drafted. Then read their answers against the `Results` and say where an answer goes beyond what was shown.
 - **Each point's paragraph links back to the `Introduction`.** It says what the result means against the literature its background paragraph cited: which papers it agrees with, which it qualifies, which it contradicts. New literature may come in here when a result makes it relevant; the same rules for finding and reading sources apply.
 - **Interpret what the results support, and state plainly what they do not.** Keep the two distinguishable.
-- **`Limitations` is one paragraph**: what the method cannot do, what the examples cannot show, what was not evaluated, what depends on a particular model or provider, what the normative choices assume about readers. A defect of one component stays beside that component in the `Methods`.
-- **`Looking ahead` is one paragraph**: what should be done next, by whom, and what it would settle. No promises on the authors' behalf that the user has not made.
+- **The limitations are one paragraph**: what the method cannot do, what the examples cannot show, what was not evaluated, what depends on a particular model or provider, what the normative choices assume about readers. A defect of one component stays beside that component in the `Methods`.
+- **Looking ahead is one paragraph**: what should be done next, by whom, and what it would settle. No promises on the authors' behalf that the user has not made.
 - **No new results or analysis.** If something needs doing, say so and stop. Nothing enters the `Discussion` that is not already in the report, the appendix or a source you have opened.
 
 ## Phase 5 — Revise the abstract
@@ -255,7 +255,7 @@ The `Discussion` is where the three points are answered, in five paragraphs: wha
 Read the finished report from beginning to end, in the built page, as a reader would, and list what is wrong with it. This is where the report gets shorter: phase 6 is simplify and revise, and cutting length comes before anything else.
 
 - **Read it in one pass, in order.** A term defined twice, a claim in the `Results` contradicted in the `Discussion`, a figure discussed before it appears.
-- **Check the three points run end to end.** Each is stated in the `Abstract`, has its background paragraph in the `Introduction`, its sub-heading in the `Methods`, `Results` and `Discussion`, in the same order everywhere, and is answered in the `Discussion`. Check the structure is the one in `The Structure of a Report`, and that the `Introduction` cites at least 20 works.
+- **Check the three points run end to end.** Each is stated in the `Abstract`, has its background paragraph in the `Introduction`, its sub-heading in the `Methods` and `Results`, in the same order everywhere, and is answered in its own paragraph of the `Discussion`, in that same order and without a sub-heading. Check the structure is the one in `The Structure of a Report`, and that the `Introduction` cites at least 20 works.
 - **Re-check everything that goes stale**: every quoted output against its file (the build does this), every fact about the method against the code at the commit recorded, every number against its output, every cross-reference.
 - **Check nothing is orphaned**: a figure never referred to, a reference never cited (the build warns of both), a term used once.
 - **Check the references properly**: each cited where it is used, each detail verified against the source, each link resolving.

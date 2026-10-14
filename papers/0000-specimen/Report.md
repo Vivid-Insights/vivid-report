@@ -121,23 +121,13 @@ An interactive caption says what the controls do. Here: the upper slider sets th
 
 ## Discussion
 
-### The first point
+The Discussion has no sub-headings. It answers the three points in the order they were made, one paragraph each, and each paragraph's subject is clear from its first sentence. Here we answer the first point: what the results under its sub-heading in the Results support, and what they do not, kept distinguishable. We link the answer back to the literature of its Introduction paragraph, saying which work it agrees with, which it qualifies and which it contradicts, as with @caut2025. New literature can come in here when a result makes it relevant.
 
-Here we answer the first point: what the results in its sub-heading support, and what they do not, kept distinguishable. We link the answer back to the literature of its Introduction paragraph, saying which work it agrees with, which it qualifies and which it contradicts, as with @caut2025. New literature can come in here when a result makes it relevant.
-
-### The second point
-
-Here we answer the second point in one paragraph, under the same sub-heading as in the Methods and Results.
-
-### The third point
+Here we answer the second point in one paragraph, in the same order as the Methods and Results.
 
 Here we answer the third point in one paragraph, linking back to the Introduction.
 
-### Limitations
-
 Here, in one paragraph, we say what the method cannot do, what the examples cannot show, what was not evaluated, what depends on a particular model or provider, and what the normative choices assume about readers. A defect of one component stays beside that component in the Methods.
-
-### Looking ahead
 
 Here, in one paragraph, we say what should be done next, by whom, and what it would settle.
 
