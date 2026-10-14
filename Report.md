@@ -320,25 +320,15 @@ All three runs end with the offer.
 
 ## Discussion
 
-### Analysts and redirects
-
 Most of what keeps Earpiece reliable is done in code rather than in prompts. Small sets of values are listed for the model and large ones looked up afterwards; access and the end of a chain are enforced by not offering functions; a name is resolved once per chat. Prompts are still where the boundaries between analysts are drawn, and those boundaries grow with the number of analysts.
 
-### Contexts and names
-
 The two places where the model is least controlled are the choice of candidate when resolving a name and the answers to open questions, which depend on what the embedding search retrieves. The night the test failed, the choice of season went wrong. The course example in the background shows a merging step adding a fact. [CHECK: the background is now part of the Introduction.] This is where we would expect most errors, and where the evaluation should be extended next.
-
-### Functions
 
 The design gives the language model two jobs: converting insight into language, and managing the conversation. The analysis is done elsewhere, by statistical models and databases, and reaches the model as text. This is what keeps each function general enough that a few of them cover a subject, and what lets a function's reply be traced back to its synthetic text and so to the data.
 
 The Complex Player Questions analyst, to which the Scout redirects questions about trends, seasons, single matches or a career, answers in three model calls. The first annotates the question with one of eight labels, such as `stats`, `form` or `season_comparison`. The second is a tool-use loop over the tools of a separate server, which give it data, explanations of the metrics and Earpiece's own descriptions, guided by instructions written for the label: for `stats`, which tools to call in which order, and which are cheap. It ends with a research summary in a fixed format, which the user does not see. The third call writes the reply from the question, the research summary, a writing prompt for the label and question–answer pairs found by embedding search.
 
-### Limitations
-
 The architecture is described from Earpiece's code as of 9 October 2026. The test covers routing and name resolution for 81 fixed queries; it does not measure how often real users' questions are routed or resolved correctly, nor whether the replies are accurate. Earpiece logs each player search as attempted, succeeded or failed, which could give a success rate on real traffic, but we have not analysed those logs here. The limit of about twenty functions is a provider's suggestion, and the benchmarks we cite tested tool selection in general rather than our analysts; the Scout exceeds it for users with access to everything. The background examples use Guardian articles, not Earpiece's data.
-
-### Looking ahead
 
 [TO WRITE: one paragraph on what should be done next, by whom, and what it would settle.]
 
