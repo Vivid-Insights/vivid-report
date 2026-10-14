@@ -162,11 +162,40 @@ A context is a footballing question made explicit. The Opposition Analyst's cont
 
 ### Functions
 
-With the context set, an analyst's functions are the questions it can answer, and they are of three kinds.
+Besides the redirects, the twelve analysts offer 54 distinct functions between them (@tab-functions). Every analyst has the same three general functions, and some functions are shared, such as `find_similar_players`, which four player analysts offer. Function calling chooses the function in every case. What differs is how the reply is written, and by that we divide the functions into four types: structured wordalisations, which are chat completion from a text the code writes; search then answer, which adds embedding search; answers in several stages, which add annotation and a loop of tool calls; and other functions.
 
-The first is a summary, which the analyst's prompt tells it to give when the user has only named the subject: for the Scout, a short description of the player. The second describes one quality, one area of the pitch or one development over time, with a chart. Both are wordalisations [@caut2025]. The code turns the data into a synthetic text, and the function makes its own model call, outside the conversation, with question–answer pairs that explain the data, few-shot examples of good replies, and the synthetic text; the reply is streamed straight to the user.
+::: table {#tab-functions width=wide}
+The functions of each analyst, by type, apart from the redirects. The general functions are offered by every analyst, the receptionist included. Answers in several stages are not a column: they are given by the Complex Player Questions analyst, which has no functions of its own, and by the functions marked with an asterisk, whose reply is rewritten in a second model call when the team analysed is the user's own club.
+| Analyst | Structured wordalisation | Search, then answer | Other |
+| --- | --- | --- | --- |
+| General | | `explain_data_analysis` | `get_data_coverage`, `get_team_fixtures` |
+| Scout | `short_description`, `short_summary`, `short_strengths`, `short_weaknesses`, `player_summary_description`, `player_quality_description`, `player_pitch_description`, `switch_position` | `player_answer_skills_question`, `strengths_and_weaknesses`, `get_complete_player_data` | `find_similar_players`, `short_visualization`, `save_scout_report` |
+| Comparison | `comparison_summary_description` | `answer_comparison_question` | `find_similar_players` |
+| Transfer | `transfer_summary_description` | `answer_transfer_question` | `find_similar_players` |
+| Team Fit | `describe_team_fit`, `describe_squad_comparison` | `answer_team_fit_question`, `answer_comparison_question` | `find_similar_players` |
+| Search | `player_search` | `player_search_query` | |
+| Talent Discovery | | | `talent_discovery` |
+| Match Analyst | `describe_match`\*, `describe_match_quality`\*, `describe_match_time`\*, `describe_match_momentum`\*, `describe_match_pitch`\*, `get_match_stats`, `get_match_lineups` | `answer_match_questions`\*, `get_team_strengths_weaknesses`\* | `save_match_report` |
+| Match Scout | `describe_match_player` | `answer_match_player_question` | |
+| Opposition Analyst | `describe_opposition_strategy`, `describe_opposition_pitch`, `describe_opposition_pitch_secondary`, `describe_opposition_lineup` | `answer_opposition_question` | `save_opposition_report` |
+| Season Analyst | `describe_season`\*, `describe_season_stats`, `describe_season_quality`\*, `describe_season_style`\*, `describe_season_style_quality`\*, `describe_season_quality_trend`\* | `answer_season_questions`\*, `get_season_strengths_weaknesses`\* | `save_season_report` |
+:::
 
-The third kind answers a question directly. Its synthetic text is a document assembled for the question: an embedding search over example questions picks the qualities the question is about, the data for those qualities is fetched, and explanatory passages found by embedding search are added to each before the model is asked to answer.
+#### Structured wordalisations
+
+Thirty-one functions answer questions that can be anticipated from the context alone: a summary of a player, one quality, where on the pitch the player acts, how a match swung. The code fetches the data for the context and writes a synthetic text from it, with fixed rules turning values into words, as in the wordalisation method of @caut2025. The function then makes a chat-completion call of its own, outside the conversation. Its prompt opens with question–answer pairs that explain the data and few-shot examples of good replies, both read from Twelve's knowledge store as user and assistant turns, and ends with the synthetic text. The reply is streamed straight to the user, usually beside a chart. The analyst's model chooses the function and its arguments, such as a quality from a listed set, but does not write the reply.
+
+#### Search, then answer
+
+Fourteen functions answer open questions, such as "Do you think they would struggle playing out from the back?". The model passes the user's question to the function word for word. An embedding search over example questions, each labelled with a quality, picks the qualities the question is about. The data for each quality is fetched and written as a synthetic text, and passages found by a second embedding search are added to it: what the quality measures, how it relates to the others, and how live scouts' observations relate to it. Each search returns only passages within a set distance of the question. The document ends with the question and the instruction to answer in no more than three sentences from the information given, and one model call answers it as for a wordalisation. Three variants depart from this. The strengths-and-weaknesses functions build their search query from the data ("What can we say about a player who is …") rather than from the user's words. `explain_data_analysis` returns the passages it finds to the analyst's own model, which answers in the conversation. The Opposition Analyst's question function uses no search, and answers from the synthetic text of its strategy function.
+
+#### Answers in several stages
+
+The Complex Player Questions analyst, to which the Scout redirects questions about trends, seasons, single matches or a career, answers in three model calls. The first annotates the question with one of eight labels, such as `stats`, `form` or `season_comparison`. The second is a tool-use loop over the tools of a separate server, which give it data, explanations of the metrics and Earpiece's own descriptions, guided by instructions written for the label: for `stats`, which tools to call in which order, and which are cheap. It ends with a research summary in a fixed format, which the user does not see. The third call writes the reply from the question, the research summary, a writing prompt for the label and question–answer pairs found by embedding search. The fourteen team functions marked in @tab-functions have a second stage of a simpler kind. When the team analysed is the user's own club and the club has entered its style of play, the wordalisation is written in full and a second call adjusts its wording to that style, and to the club's objectives where they are given, keeping "all of the original information in the same order and same number of sentences".
+
+#### Other functions
+
+Nine functions are none of these. Three are lookups whose result goes back to the analyst's own model, which writes the reply in the conversation: which competitions are covered, a team's next fixtures, and the three players most similar to the one in the context, after which the model offers a search for more. `talent_discovery` sends the user's filters to an endpoint whose ranked table is shown directly, and a model call writes up to three sentences describing the selection. `short_visualization` draws a radar chart and writes nothing. The four save functions store a request for a report on the current context, and reply from a template that suggests two follow-up questions. The report itself is a set of pages, each a chart and a structured wordalisation.
 
 ## Results
 
