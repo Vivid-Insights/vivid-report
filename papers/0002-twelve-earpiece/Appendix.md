@@ -31,6 +31,8 @@ A short method paper: the architecture behind Twelve Earpiece. Reader: someone b
 | Fact | Where in the code | Commit |
 | --- | --- | --- |
 | Each analyst has about ten functions | [round 2] | |
+| The receptionist offers ten redirects, each gated on a permission; they group into five subjects (player, match, search, season, opposition), so with the receptionist the user meets six | `Attachments/earpiece-code/receptionist_analyst.py` lines 417–543; the grouping is the one drawn in `Code/diagrams.py` lines 135–139 | `ff2349b4` |
+| Talent Discovery and Search are the same slot, chosen by whether the user is on WhatsApp, not two analysts the user picks between | `receptionist_analyst.py` lines 465–492 (`is_whatsapp` False → Talent Discovery, True → Search) | `ff2349b4` |
 | Analyst = context object + list of functions; Scout Player Analyst (season), Match Analyst (match) | [round 2] | |
 | The Scout Player Analyst calls a Compare Player analyst without telling the user | [round 2] | |
 | Receptionist: first analyst; redirect functions to all others; analysts redirect back to it on a context switch | [round 2] | |
