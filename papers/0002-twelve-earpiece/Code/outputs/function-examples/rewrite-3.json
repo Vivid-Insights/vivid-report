@@ -1,0 +1,1066 @@
+{
+  "example": "rewrite",
+  "run": 3,
+  "question": "How has Arsenal's season progressed?",
+  "analyst": "SEASON_ANALYST",
+  "context": {
+    "version": "1",
+    "competition": {
+      "id": 368,
+      "year": 2026
+    },
+    "team": {
+      "id": 1934
+    }
+  },
+  "date": "2026-10-14T04:25:40+00:00",
+  "earpiece_api_commit": "736867f5",
+  "workspace": "wksp_aWsUNyFPMrVh5N",
+  "standin_workspace": {
+    "name": "Arsenal",
+    "style_of_play": "Control play.",
+    "objectives": "Win the league.",
+    "provider_teams": [
+      {
+        "provider_key": "wyscout",
+        "provider_team_id": "1934"
+      }
+    ]
+  },
+  "functions_offered": [
+    "describe_season",
+    "describe_season_stats",
+    "describe_season_quality",
+    "describe_season_style",
+    "describe_season_style_quality",
+    "describe_season_quality_trend",
+    "get_season_strengths_weaknesses",
+    "answer_season_questions",
+    "redirect_to_receptionist",
+    "redirect_to_season_analyst",
+    "explain_data_analysis",
+    "get_data_coverage",
+    "get_team_fixtures",
+    "save_season_report"
+  ],
+  "tool_calls": [
+    {
+      "id": "call_tO9qsPnNDAY5NZtjcuuipwD3",
+      "type": "function",
+      "function": {
+        "name": "describe_season_quality_trend",
+        "arguments": "{\"quality\": \"OUTCOME\"}"
+      }
+    }
+  ],
+  "tool_results": [
+    {
+      "index": 3,
+      "role": "tool",
+      "content": "Arsenal are playing in the ongoing Barclays Women's Super League during the 2026/2027 season. Arsenal got an average number of points in the league. We now look at how the outcome quality has developed. \n\nOver the last 10 matches, Arsenal varied a bit between matches in outcome. Over the last 10 matches, there has been a significant decrease in outcome for Arsenal (which is a decline in performance). Note that this includes the last 5 matches from last season. ",
+      "bundle_id": "0502de21-1c6c-439a-ba25-069d40f53d66",
+      "plots": [
+        {
+          "url": "/season/trend/line",
+          "json_body": {
+            "version": "1",
+            "competition": {
+              "id": 368,
+              "year": 2026
+            },
+            "team": {
+              "id": 1934
+            },
+            "quality": "OUTCOME"
+          }
+        }
+      ],
+      "tool_call_id": "call_tO9qsPnNDAY5NZtjcuuipwD3"
+    }
+  ],
+  "reply_shown_to_user": "Over the longer term, Arsenal's performance has shown some inconsistency, with fluctuations impacting their overall outcome, leading to an average points tally in the league. More recently, however, the team has experienced a significant decrease in outcome quality, indicating a troubling decline in their performances as they've struggled to maintain control in their matches. Overall, this downward trend in performance raises concerns about their ability to reclaim a competitive edge in their pursuit of the league title, and the variations suggest that improvement may be needed to stabilize their outcomes moving forward.",
+  "replies": [
+    "Over the longer term, Arsenal's performance has shown some inconsistency, with fluctuations impacting their overall outcome, leading to an average points tally in the league. More recently, however, the team has experienced a significant decrease in outcome quality, indicating a troubling decline in their performances as they've struggled to maintain control in their matches. Overall, this downward trend in performance raises concerns about their ability to reclaim a competitive edge in their pursuit of the league title, and the variations suggest that improvement may be needed to stabilize their outcomes moving forward."
+  ],
+  "model_calls": [
+    {
+      "kind": "stream",
+      "model": "azure_openai/gpt-4o (alias azure-4o)",
+      "temperature": 0.2,
+      "tools": [],
+      "messages": [
+        {
+          "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Season Analyst in the Twelve Earpiece scouting platform. You are interacting with a user of the platform and providing information about a team over a single season. The reason you were initially called was that the user wrote: 'None'. Here's a summary of the previous conversation: 'None'. Based on the previous conversation you must immediately call the appropriate function. The conditions for when to call which function are described below. If the user has started out with an empty message, you should not ask them for more information, but rely on the previous conversation to make a decision about which function to call. Here are the conditions for when to call which function:  - If the user has asked about the performance of a team, you should call describe_season *and* describe_season_style *and* save_season_report functions at the same time -- in parallel.  - If the user asks about basic statistics from a team's season, you should call describe_season_stats function.  - If the user asks about a specific season quality, you should call the describe_season_quality *and* describe_season_style_quality *and* describe_season_quality_trend functions at the same time -- in parallel.  - If the user asks about Opposition chance creation you should call the describe_season_quality *and* describe_season_quality_trend functions at the same time -- in parallel, NOT describe_season_style_quality.  - If the user asks about Opposition chance creation trends you should only call the describe_season_quality_trend function.  - If the user asks about how the team's style of play in a specific quality you should call describe_season_style_quality function.  - If the user asks about the team's style of play in Opposition chance creation tell the user that we don't have that information available, and then call the describe_season_style function.  - If the user asks about how the team's performance has changed over the season overall and not for a specific quality, you should call the describe_season_quality_trend function for the Outcome quality.  - If the user asks about how the team's performance has changed over the season for a specific quality or asks for the trends for a specific quality, you should call the describe_season_quality_trend function.  - If the user asks about what a team did well or why they performed well or badly then you should call the get_season_strengths_weaknesses function.  - If the user asks about a team's performance, but in general terms instead of specific metrics, you should call the answer_season_questions function.  - If the user asks about the style of play of the team, you should call the describe_season_style function.  - If the user asks a general question about about football data analysis and metrics, qualities, unrelated to a specific team, you should call the explain_data_analysis function. - If the user asks a question about how this platform works, or what its capabilities are, or asks for information about Twelve Football (the company behind the platform), you should call explain_data_analysis. - If the user asks for instructions or how to use the platform, you should also call explain_data_analysis. - If the user starts asking about a different team than the one you have been discussing, you should call redirect_to_season_analyst.  - If the user starts asking about a team in a different competition, you should call redirect_to_season_analyst.  - If the user asks for a comparison of two teams, you should reply that you cannot offer this functionality.  - If the user asks for a comparison of a team's different seasons, you should reply that you cannot offer this functionality.  - If the user asks for an opposition analysis on the team, you should call redirect_to_opposition_analyst . From then on, for each user query, you should check very carefully that query is about the team which the user has selected. With the exception of very simple queries you should always call one of the available functions in response to a user query.If the user asks a question about the season that can be easily answered without calling a function then you can answer that question directly. But only if the question is about the season and you have already provided information that can be used to answer the question. The user may ask a question which does not relate to a performance of a team over a season. In these cases, you should call redirect_to_receptionist.Furthermore, if the user asks about the performance of a team in specific matches or for parts of a season, you should call redirect_to_receptionist.Examples of such questions include, but are not limited to:- Questions about how a player performed over a season.- Questions about how a team or a player performed in a single match.If the user asks any question about how the platform works, what it can do, how it makes its analyses, or how something is defined, make sure that you always call explain_data_analysis instead of answering yourself.For any question about football data, metrics, definitions, or platform functionality, ALWAYS call explain_data_analysis — even if this function was already called earlier in the conversation. Never answer these questions from the conversation history.If the user's queries can't be answered, tell them that you are going to hand them back to the receptionist and call redirect_to_receptionist.These are all the available functions. Remember to always use them (unless the query is really simple).\n## Visualizations\nYour functions produce visualizations (distribution charts, style of play charts, trend lines) that are automatically displayed to the user alongside your text response. You do not need to do anything extra to show them — they appear when you call the function. Each function's description notes what visual it produces.\nThe user has selected the following team: The team is named Arsenal and plays in the English Barclays Women's Super League in the 2026/2027 season, which is on-going.\n",
+          "role": "system",
+          "bundle_id": "8d7f8a9c-6f41-4b47-abc5-13f450613523"
+        },
+        {
+          "content": "How has Arsenal's season progressed?",
+          "role": "user",
+          "bundle_id": "390531de-5bf6-46a5-9685-4650b54ac340"
+        }
+      ],
+      "output": "",
+      "tool_calls": []
+    },
+    {
+      "kind": "stream",
+      "model": "azure_openai/gpt-4o-mini (alias azure-4o-mini)",
+      "temperature": 1.0,
+      "tools": [],
+      "messages": [
+        {
+          "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Season Analyst in the Earpiece platform. Your job is to provide a concise three sentence summary of a team's performance has evolved during the season, in terms of the outcome quality. To start off with you will be given some background information about analysing football with data. This background information is used as context and is not directly about the team you will later analyse. These answers show how you should talk in footballing terms about the statistical descriptions of a team. It is very important then that you learn to answer, not by simply repeating back the statistical information, but by using the footballing terms you have learned to describe the performance. Avoid simply listing statistics; instead, use footballing insights to describe their impact. Use varied and dynamic language throughout.",
+          "role": "system"
+        },
+        {
+          "content": "What does it mean when we write that there was a significant decrease in a metric corresponding to an improvement?",
+          "role": "user"
+        },
+        {
+          "content": "When we write that there was a significant decrease in a metric corresponding to an improvement this means that it is one of the metrics where a decrease in this metric is bad for the team. ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have seen a small increase in the metric? ",
+          "role": "user"
+        },
+        {
+          "content": "If over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have seen a small increase in the metric then the team have got gradually better, seeing a steady long-term improvement in the metric.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have not seen much change in the metric.",
+          "role": "user"
+        },
+        {
+          "content": "If over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have not seen much change in the metric then we say that improvements appear to have stagnated.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team has seen a small decrease in a metric, but the metric for the team has varied a lot between matches?",
+          "role": "user"
+        },
+        {
+          "content": "If a team has seen a small decrease in a metric, but the metric for the team has varied a lot between matches then the overall trend looks to be downwards, but we should be aware that this is a lot of variations between matches i this metric, so we should be cautious about drawing strong conclusions.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were below average or poor in the league in terms of attacking transition and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were below average or poor in the league in terms of attacking transition and several of the team's underlying metrics have declined then we can say that the team seem to have become lethargic when it comes to transitions. They were previously slow to take advantage of ball losses by the opponents, but their ability to make transitions has got even worse.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league in terms of attacking transition and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in terms of attacking transition and several of the team's underlying metrics have improved then the team has started to get the hang of winning the ball back and quickly generating danger. The team has lifted this side of their game, although still has work to do.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team has seen a significant increase in a metric (implying an improvement), but the metric for the team has varied a lot between matches?",
+          "role": "user"
+        },
+        {
+          "content": "If a team has had a significant increase in a metric (implying an improvement), but the metric for the team has varied a lot between matches, then we can say that despite a lot of variation between matches the underlying trends show an increase for this metric.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were outstanding or good in terms of defensive transition and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were good or outstanding in terms of defensive transition and several of the teams underlying metrics have improved then we say that this team have developed a sense for how to control the immediate danger generated by opposition counterattacks.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have also seen a significant increase in the metric?",
+          "role": "user"
+        },
+        {
+          "content": "If over the longer term a team has seen a significant increase in a metric (implying an improvement), but the most recent matches have seen a significant increase in the metric then the team have made sustained improvements in the metric. The team can be said to be going from strength to strength in that metric.",
+          "role": "assistant"
+        },
+        {
+          "content": "What does it mean when a metric has significantly decreased but an improvement is implied by this change?",
+          "role": "user"
+        },
+        {
+          "content": "We have to pay special attention to situations where a metric has significantly decreased but an improvement is implied by this change, because even though the metric has gone down, the performance of the team has improved. When a such a metric goes down, the team is performing better overall. ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league in terms of defensive transition and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in terms of defensive transition and several of the team's underlying metrics have declined, then we should be concerned that the team is not quick enough to respond when they lose the ball. The team don't seem to be keeping up their ability to react to changes in the play.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team has seen a small increase in a metric, but the metric for the team has varied a lot between matches?",
+          "role": "user"
+        },
+        {
+          "content": "If a team has seen a small increase in a metric, but the metric for the team has varied a lot between matches then the overall trend looks as if its upward, but we should be aware that this is a lot of variations between matches i this metric, so we should be cautious about drawing strong conclusions.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were outstanding or good in terms of attacking transition and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were good or outstanding in terms of attacking transition and several of the teams underlying metrics have improved then we say that this team have developed a sense for how to win back the ball and cause the opposition a lot of trouble on the transition. Their counter attacking prowess has evolved throughout the season.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league in terms of attacking transition and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in terms of attacking transition and several of the team's underlying metrics have declined, then we should be concerned that the team has lost their attacking spark. The team don't seem to be keeping up their ability to challenge the opponent for the ball and  create dangerous transitions.",
+          "role": "assistant"
+        },
+        {
+          "content": "What does it mean when we write that there was a significant increase in a metric corresponding to a decline in performance?        ",
+          "role": "user"
+        },
+        {
+          "content": "If there was a significant increase in a metric corresponding to a decline in performance then this means that the metric is one of those for which an increase is bad for the team in question.         ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant decrease in a metric (corresponding to a decline in performance), but the most recent matches have seen a small increase in the metric?",
+          "role": "user"
+        },
+        {
+          "content": "If over the longer term a team has seen a significant decrease in a metric, but the most recent matches have seen a small increase in the metric then the team may well have turned the corner in terms of that metric. Their ability in that metric has declined, but things seem to be getting a bit better now. ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league in terms of defensive transition and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in terms of defensive transition and several of the team's underlying metrics have improved then the team has started to get the hang of preventing opposition counterattacks. The team has lifted this side of their game, although still has work to do.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league overall in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have declined, then we should be concerned that this quality is moving in the wrong direction. We can say, for example, that their defence is starting to leak, their ability to attack is flailing or they are becoming less able to create chances. ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were below average or poor in the league in terms of defensive transition and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were below average or poor in the league in terms of defensive transition and several of the team's underlying metrics have declined then we can say that the team seem to have lost their way when it comes to reacting to ball losses. They were previously slow to react when they lost the ball, and now the situation has got even worse.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team has seen a significant decrease in a metric  (corresponding to a decline in performance), but the metric for the team has varied a lot between matches?",
+          "role": "user"
+        },
+        {
+          "content": "If a team has had a significant increase in a metric, but the metric for the team has varied a lot between matches, then we can say that despite a lot of variation between matches the underlying trends show an increase for this metric.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant decrease in a metric  (corresponding to a decline in performance), but the most recent matches have not seen much change in the metric.",
+          "role": "user"
+        },
+        {
+          "content": "If over the longer term a team has seen a significant decrease in a metric, but the most recent matches have not seen much change in the metric then we say that the team has experienced problem with the metric but now appears to have stopped the rot. ",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if over the longer term a team has seen a significant decrease in a metric  (corresponding to a decline in performance), and the most recent matches have also seen a significant decrease in the metric?",
+          "role": "user"
+        },
+        {
+          "content": "if over the longer term a team has seen a significant decrease in a metric, and the most recent matches have also seen a significant decrease in the metric then, if the decrease means a decline in performance, the the team's performance in that metric can be said to be in free fall. ",
+          "role": "assistant"
+        },
+        {
+          "content": "Here is a list of metrics:  Opp. Goals; Opp. xG; PPDA; Opp. Possessions to final third %; Opp. Final third to box %; Opp. xT; Turnovers; Time to defensive action (s); Time to recovery (s); Opp. Final third entries within 10s after recovery; Opp. Box entries within 10s after recovery; Opp. xG within 10s after recovery; Opp. xT within 10s after recovery; Yellow cards; Red cards; Opp. Penalties;Opp. Corners; Opp. Final third throw-ins Long ball %. What do these have in common?",
+          "role": "user"
+        },
+        {
+          "content": "Consider the following list of metrics: Opp. Goals; Opp. xG; PPDA; Opp. Possessions to final third %; Opp. Final third to box %; Opp. xT; Turnovers; Time to defensive action (s); Time to recovery (s); Opp. Final third entries within 10s after recovery; Opp. Box entries within 10s after recovery; Opp. xG within 10s after recovery; Opp. xT within 10s after recovery; Yellow cards; Red cards; Opp. Penalties;Opp. Corners; Opp. Final third throw-ins Long ball %.    What these metrics have in common is that an increase in these metrics for a team implies their performance has got worse. In these metrics Opp. is short for opposition and if xT and xG improve for a team's opposition then this means that the team is not performing as well. Visa versa, if these metrics decrease for a team then it implies they are performing better.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were typical for the league overall in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were typical for the league in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have improved then the team has developed in that quality overall. For example, we might say that their defence is going in the right direction, or that their attack is starting to take shape or their ability to create chances has been lifted.",
+          "role": "assistant"
+        },
+        {
+          "content": "Why should we be careful with the following metrics? Opp. Goals; Opp. xG; PPDA; Opp. Possessions to final third %; Opp. Final third to box %; Opp. xT; Turnovers; Time to defensive action (s); Time to recovery (s); Opp. Possessions to final third within 10s after recovery; Opp. Possessions within box within 10s after recovery; Opp. xG within 10s after recovery; Opp. xT within 10s after recovery; Yellow cards; Red cards; Opp. Penalties;Opp. Corners; Opp. Final third throw-ins Long ball %. ",
+          "role": "user"
+        },
+        {
+          "content": "We should be careful writing about the following metrics --- Opp. Goals; Opp. xG; PPDA; Opp. Possessions to final third %; Opp. Final third to box %; Opp. xT; Turnovers; Time to defensive action (s); Time to recovery (s); Opp. Possessions to final third within 10s after recovery; Opp. Possessions to final third within 10s after recovery; Opp. xG within 10s after recovery; Opp. xT within 10s after recovery; Yellow cards; Red cards; Opp. Penalties;Opp. Corners; Opp. Final third throw-ins Long ball % --- because a decrease in these metrics is typically good for a team and (vice versa) an increase in these metrics is typically bad for a team.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were outstanding or good in the league overall in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have improved?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were good or outstanding in the league overall in a quality (such as defence, attack or chances created)  and several of the team's underlying metrics have improved then we say that this team have progressed significantly in that quality. For example, we say that overall their defence has improved, their attack has improved or their ability to create chances has improved.",
+          "role": "assistant"
+        },
+        {
+          "content": "What do we write if a team were below average or poor in the league overall in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have declined?",
+          "role": "user"
+        },
+        {
+          "content": "If a team were below average or poor in the league in a quality (such as defence, attack or chances created) and several of the team's underlying metrics have declined then we can say that the team seem to have really lost their way. For example, we can say that their attack has reached a new low point in effectiveness, or that their defence has lost its shape and structure or that in terms of chances created they are increasingly unable to trouble the opposition's goal.",
+          "role": "assistant"
+        },
+        {
+          "content": "In the examples above, you have provided answers demonstrating how you should discuss the team's performance in outcome over different time periods in the season. From now on, you will be given season statistics. Write a three sentence description of how a team's performance has evolved during the season in terms of outcome. The first sentence should describe how the team has developed over the longer term (either during the season or over the last year).The second should describe more recent developments. The third sentence should give an overall summary of whether outcome is improving or getting worse, also describing fluctuations. After you're done describing the team's performance trends, check the text provided to you to see if there has been a manager change. If there has been a manager change, write a sentence describing how the team's performance has changed since the manager took over. If you aren't given any information about manager change, then that means there hasn't been a manager change, so don't mention anything about the manager unless asked specifically. For small changes, use the amount of variation to explain the level of caution we should have about drawing conclusions. Don't be scared to make judgements about whether the trends are going in the right direction. Do not speculate about the intentions of the team, but rather describe how the team played, based on the information provided. Throughout the summary, use the data to provide footballing insights. Use varied language and footballing terms to make judgements on their overall play. ",
+          "role": "system"
+        },
+        {
+          "content": "Arsenal are playing in the ongoing Barclays Women's Super League during the 2026/2027 season. Arsenal got an average number of points in the league. We now look at how the outcome quality has developed. \n\nOver the last 10 matches, Arsenal varied a bit between matches in outcome. Over the last 10 matches, there has been a significant decrease in outcome for Arsenal (which is a decline in performance). Note that this includes the last 5 matches from last season. ",
+          "role": "user"
+        }
+      ],
+      "output": "Over the longer term, Arsenal's performance has shown some inconsistency, with fluctuations impacting their overall outcome, leading to an average points tally in the league. More recently, however, the team has experienced a significant decrease in outcome quality, indicating a troubling decline in their performances as they've struggled to find consistency in their match results. Overall, this downward trend in performance raises concerns about their ability to reclaim a competitive edge, and the variations suggest that improvement may be needed to stabilize their outcomes moving forward.",
+      "tool_calls": []
+    },
+    {
+      "kind": "stream",
+      "model": "azure_openai/gpt-4o-mini (alias azure-4o-mini)",
+      "temperature": 0.7,
+      "tools": [],
+      "messages": [
+        {
+          "content": "You are the Season Analyst. You have just completed an analysis of how their Outcome has evolved through the season for Arsenal. Your job is to frame your analysis in the context of Arsenal's ambition and style-of-play.\n\nHere are three pieces of information to use:\n\n1. **Arsenal's ambition**: Win the league.\n\n2. **Arsenal's style of play**: Control play.\n\n3. **Team report**:\nOver the longer term, Arsenal's performance has shown some inconsistency, with fluctuations impacting their overall outcome, leading to an average points tally in the league. More recently, however, the team has experienced a significant decrease in outcome quality, indicating a troubling decline in their performances as they've struggled to find consistency in their match results. Overall, this downward trend in performance raises concerns about their ability to reclaim a competitive edge, and the variations suggest that improvement may be needed to stabilize their outcomes moving forward.\n\n---\n\nYour task: Subtly adjust the wording of the team report to reflect the season objectives and style-of-play. The report is by far the most important of these three pieces of information. **It is very important that you do not change the meaning of the report, only subtly adjust the context. Only make changes where necessary.**\n\nKeep all of the original information in the same order and same number of sentences, but (by a few small number of changes and without repeating the same information) make it relevant to Arsenal.",
+          "role": "system"
+        },
+        {
+          "content": "Rewrite the report above.",
+          "role": "user"
+        }
+      ],
+      "output": "Over the longer term, Arsenal's performance has shown some inconsistency, with fluctuations impacting their overall outcome, leading to an average points tally in the league. More recently, however, the team has experienced a significant decrease in outcome quality, indicating a troubling decline in their performances as they've struggled to maintain control in their matches. Overall, this downward trend in performance raises concerns about their ability to reclaim a competitive edge in their pursuit of the league title, and the variations suggest that improvement may be needed to stabilize their outcomes moving forward.",
+      "tool_calls": []
+    }
+  ],
+  "stream": [
+    {
+      "index": 0,
+      "role": "system",
+      "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Season Analyst in the Twelve Earpiece scouting platform. You are interacting with a user of the platform and providing information about a team over a single season. The reason you were initially called was that the user wrote: 'None'. Here's a summary of the previous conversation: 'None'. Based on the previous conversation you must immediately call the appropriate function. The conditions for when to call which function are described below. If the user has started out with an empty message, you should not ask them for more information, but rely on the previous conversation to make a decision about which function to call. Here are the conditions for when to call which function:  - If the user has asked about the performance of a team, you should call describe_season *and* describe_season_style *and* save_season_report functions at the same time -- in parallel.  - If the user asks about basic statistics from a team's season, you should call describe_season_stats function.  - If the user asks about a specific season quality, you should call the describe_season_quality *and* describe_season_style_quality *and* describe_season_quality_trend functions at the same time -- in parallel.  - If the user asks about Opposition chance creation you should call the describe_season_quality *and* describe_season_quality_trend functions at the same time -- in parallel, NOT describe_season_style_quality.  - If the user asks about Opposition chance creation trends you should only call the describe_season_quality_trend function.  - If the user asks about how the team's style of play in a specific quality you should call describe_season_style_quality function.  - If the user asks about the team's style of play in Opposition chance creation tell the user that we don't have that information available, and then call the describe_season_style function.  - If the user asks about how the team's performance has changed over the season overall and not for a specific quality, you should call the describe_season_quality_trend function for the Outcome quality.  - If the user asks about how the team's performance has changed over the season for a specific quality or asks for the trends for a specific quality, you should call the describe_season_quality_trend function.  - If the user asks about what a team did well or why they performed well or badly then you should call the get_season_strengths_weaknesses function.  - If the user asks about a team's performance, but in general terms instead of specific metrics, you should call the answer_season_questions function.  - If the user asks about the style of play of the team, you should call the describe_season_style function.  - If the user asks a general question about about football data analysis and metrics, qualities, unrelated to a specific team, you should call the explain_data_analysis function. - If the user asks a question about how this platform works, or what its capabilities are, or asks for information about Twelve Football (the company behind the platform), you should call explain_data_analysis. - If the user asks for instructions or how to use the platform, you should also call explain_data_analysis. - If the user starts asking about a different team than the one you have been discussing, you should call redirect_to_season_analyst.  - If the user starts asking about a team in a different competition, you should call redirect_to_season_analyst.  - If the user asks for a comparison of two teams, you should reply that you cannot offer this functionality.  - If the user asks for a comparison of a team's different seasons, you should reply that you cannot offer this functionality.  - If the user asks for an opposition analysis on the team, you should call redirect_to_opposition_analyst . From then on, for each user query, you should check very carefully that query is about the team which the user has selected. With the exception of very simple queries you should always call one of the available functions in response to a user query.If the user asks a question about the season that can be easily answered without calling a function then you can answer that question directly. But only if the question is about the season and you have already provided information that can be used to answer the question. The user may ask a question which does not relate to a performance of a team over a season. In these cases, you should call redirect_to_receptionist.Furthermore, if the user asks about the performance of a team in specific matches or for parts of a season, you should call redirect_to_receptionist.Examples of such questions include, but are not limited to:- Questions about how a player performed over a season.- Questions about how a team or a player performed in a single match.If the user asks any question about how the platform works, what it can do, how it makes its analyses, or how something is defined, make sure that you always call explain_data_analysis instead of answering yourself.For any question about football data, metrics, definitions, or platform functionality, ALWAYS call explain_data_analysis — even if this function was already called earlier in the conversation. Never answer these questions from the conversation history.If the user's queries can't be answered, tell them that you are going to hand them back to the receptionist and call redirect_to_receptionist.These are all the available functions. Remember to always use them (unless the query is really simple).\n## Visualizations\nYour functions produce visualizations (distribution charts, style of play charts, trend lines) that are automatically displayed to the user alongside your text response. You do not need to do anything extra to show them — they appear when you call the function. Each function's description notes what visual it produces.\nThe user has selected the following team: The team is named Arsenal and plays in the English Barclays Women's Super League in the 2026/2027 season, which is on-going.\n",
+      "bundle_id": "fc115908-60e6-4ab1-a4ae-e35f4613952d"
+    },
+    {
+      "index": 0,
+      "role": "user",
+      "content": "How has Arsenal's season progressed?",
+      "bundle_id": "4b87546d-2622-41e5-934f-cf8ca29cbcd5"
+    },
+    {
+      "index": 2,
+      "role": "assistant",
+      "bundle_id": "5adcefbe-9bba-476e-b960-d075f10b5603",
+      "tool_calls": [
+        {
+          "id": "call_tO9qsPnNDAY5NZtjcuuipwD3",
+          "type": "function",
+          "function": {
+            "name": "describe_season_quality_trend",
+            "arguments": "{\"quality\": \"OUTCOME\"}"
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "content": "Arsenal are playing in the ongoing Barclays Women's Super League during the 2026/2027 season. Arsenal got an average number of points in the league. We now look at how the outcome quality has developed. \n\nOver the last 10 matches, Arsenal varied a bit between matches in outcome. Over the last 10 matches, there has been a significant decrease in outcome for Arsenal (which is a decline in performance). Note that this includes the last 5 matches from last season. ",
+      "bundle_id": "0502de21-1c6c-439a-ba25-069d40f53d66",
+      "plots": [
+        {
+          "url": "/season/trend/line",
+          "json_body": {
+            "version": "1",
+            "competition": {
+              "id": 368,
+              "year": 2026
+            },
+            "team": {
+              "id": 1934
+            },
+            "quality": "OUTCOME"
+          }
+        }
+      ],
+      "tool_call_id": "call_tO9qsPnNDAY5NZtjcuuipwD3"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f",
+      "plots": [
+        {
+          "url": "/season/trend/line",
+          "json_body": {
+            "version": "1",
+            "competition": {
+              "id": 368,
+              "year": 2026
+            },
+            "team": {
+              "id": 1934
+            },
+            "quality": "OUTCOME"
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "Over",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " the",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " longer",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " term",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Arsenal",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "'s",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " performance",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " has",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " shown",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " some",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " incons",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "istency",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " with",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " fluctuations",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " impacting",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " overall",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " outcome",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " leading",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " to",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " an",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " average",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " points",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " tally",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " the",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " league",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ".",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " More",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " recently",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " however",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " the",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " team",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " has",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " experienced",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " a",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " significant",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " decrease",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " outcome",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " quality",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " indicating",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " a",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " troubling",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " decline",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " performances",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " as",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " they've",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " struggled",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " to",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " maintain",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " control",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " matches",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ".",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Overall",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " this",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " downward",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " trend",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " performance",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " raises",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " concerns",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " about",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " ability",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " to",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " reclaim",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " a",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " competitive",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " edge",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " pursuit",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " of",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " the",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " league",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " title",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " and",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " the",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " variations",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " suggest",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " that",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " improvement",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " may",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " be",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " needed",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " to",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " stabilize",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " their",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " outcomes",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " moving",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " forward",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ".",
+      "bundle_id": "a0878388-c27e-4660-be72-b9f6224cef4f"
+    }
+  ]
+}

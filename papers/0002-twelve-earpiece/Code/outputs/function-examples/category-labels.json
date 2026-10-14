@@ -1,0 +1,85 @@
+{
+  "question": "Do you think they would struggle playing out from the back?",
+  "knowledge_api": "knowledge-api-dev.twelve.football",
+  "search_hits": [
+    {
+      "question": "Do you think he would struggle playing out from the back?",
+      "distance": 0.10886881401910875,
+      "properties": {
+        "category": "Passing quality"
+      }
+    },
+    {
+      "question": "Are the opposition scared of losing the ball to the player?",
+      "distance": 0.4641772810487881,
+      "properties": {
+        "category": "Pressing"
+      }
+    },
+    {
+      "question": "Does the player challenge opposition defences when deep?",
+      "distance": 0.46541233406650373,
+      "properties": {
+        "category": "Run quality"
+      }
+    },
+    {
+      "question": "Does the player challenge opposition defences in the middle of the pitch?",
+      "distance": 0.4704443388648962,
+      "properties": {
+        "category": "Passing quality"
+      }
+    },
+    {
+      "question": "Is the player poor when it comes to defending against opposition passes?",
+      "distance": 0.5070544179031693,
+      "properties": {
+        "category": "Territorial dominance"
+      }
+    }
+  ],
+  "category_labels": {
+    "Active defence": 5,
+    "Aerial threat": 6,
+    "Box threat": 5,
+    "Chance prevention": 5,
+    "Composure": 5,
+    "Defensive heading": 6,
+    "Dribbling": 5,
+    "Finishing": 6,
+    "Hold-up play": 4,
+    "Intelligent defence": 9,
+    "Involvement": 5,
+    "Passing quality": 11,
+    "Poaching": 4,
+    "Pressing": 9,
+    "Progression": 5,
+    "Providing teammates": 9,
+    "Run quality": 7,
+    "Territorial dominance": 4,
+    "Winning duels": 5,
+    "Effectiveness": 4
+  },
+  "registry_player_quality_keys": [
+    "ACTIVE_DEFENCE",
+    "AERIAL_THREAT",
+    "BOX_THREAT",
+    "CHANCE_PREVENTION",
+    "COMPOSURE",
+    "DEFENSIVE_HEADING",
+    "DRIBBLING",
+    "EFFECTIVENESS",
+    "FINISHING",
+    "HOLD_UP_PLAY",
+    "INTELLIGENT_DEFENCE",
+    "INVOLVEMENT",
+    "PASSING_QUALITY",
+    "POACHING",
+    "PRESSING",
+    "PROGRESSION",
+    "PROVIDING_TEAMMATES",
+    "RUN_QUALITY",
+    "TERRITORIAL_DOMINANCE",
+    "WINNING_DUELS"
+  ]
+}
