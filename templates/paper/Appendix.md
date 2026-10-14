@@ -26,11 +26,11 @@
 
 ## Workings
 
-*Step 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration, the diagnostics, and anything made but not used.*
+*Step 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration. Only what serves the writing: no bugs, set-up problems or debugging.*
 
 ## Log
 
-*A numbered row per step taken, added as the work happens: what was done, what it changed, and where the output is. Superseded decisions stay, marked as such. Review rounds, the disclaimer confirmation and publication are recorded here too.*
+*A numbered row per step taken, added as the work happens: what was done, what it changed, and where the output is. Decisions about the paper, not the troubleshooting behind them. Superseded decisions stay, marked as such. Review rounds, the disclaimer confirmation and publication are recorded here too.*
 
 | # | What was done | Output |
 | --- | --- | --- |

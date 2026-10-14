@@ -212,7 +212,7 @@ Show the method working, and say how well it works if the report claims that it 
 - **Propose each example before making it**: which case, chosen by what rule, shown how. *"Three held-out patients, not few-shot examples, chosen to differ in risk"* is a rule. Say the rule in the report.
 - **Quote generated text, never write it.** Every LLM output, prompt and conversation in the report is an `output`, `prompt` or `conversation` block that names its source file; the build checks that it is word for word. A hand-written example is marked `source="hand-written"` and the page labels it so. Never paraphrase an output and present it as what the model wrote.
 - **Tie saved outputs to everything that made them.** Record, in the `Log`, the model, prompt files, configuration and date for each output used, and keep the file in `Attachments/` or `Code/outputs/`.
-- **Report the errors the model makes.** If an output contradicts its input, leaves something out, or says something the normative model does not support, say so in the caption or the text. A demonstration that hides its failures is not evidence.
+- **Report the errors the model makes.** This means errors in the text a model wrote, not bugs met in the software or the set-up along the way (`Working Method`). If an output contradicts its input, leaves something out, or says something the normative model does not support, say so in the caption or the text. A demonstration that hides its failures is not evidence.
 - **Choose the medium from what has to be shown.** A still figure for a comparison; a video for something that happens in time — a conversation unfolding, an app being used, a value crossing a threshold; an interactive figure when the reader learns by changing something. Propose the medium along with the example.
   - **Video figures** are made by a script with `viz_style.save_video`, or recorded from an app (`Attachments/media/`). Each has a poster image. Keep them short, silent unless sound is the point, and under about 20 MB; longer recordings go on YouTube or Vimeo and are embedded.
   - **Interactive figures** are one self-contained folder in `Code/interactives/` with an `index.html`, no build step and no calls to an LLM or a paid API from the page. Each has a still `fallback=` image for print. They follow the page theme (see `FORMAT.md`).
@@ -297,7 +297,7 @@ A changed prompt, a refit model, a new configuration or a regenerated output mak
 
 1. Inspect the relevant material before making claims about it.
 2. Put all code that makes a figure, a video, an interactive or a number in `Code/`, one script per output, reading only saved inputs.
-3. Record the work in `Appendix.md` as it happens, from the first step.
+3. Record the work in `Appendix.md` as it happens, from the first step, and only what serves the writing: sources, framing, method facts, how each example was made, decisions and their reasons. Bugs, setup problems, workarounds and debugging met along the way are not recorded there, in the `Log` or in the report. If one bears on what the report can claim, say so once in the reply and let the user decide.
 4. Write `Report.md` only as the steps direct.
 5. Update the `Code Summary` whenever code is added or changed: what each file does, how to run it, what it reads and produces.
 
