@@ -224,6 +224,10 @@ Over the ten nights from 4 to 13 October 2026, every suite met its threshold on 
 
 ### Functions
 
+Apart from the match summary of Internazionale, the examples in this section were made for this report, on the player and club of @fig-walk. We put five questions to an analyst in its context, as a user would type them after a redirect, through Earpiece's own code (commit `736867f5`), and the analyst's model chose the function. The analysts ran on GPT-4o and the functions on GPT-4o-mini. Each question was run three times; we quote the first run and say where the other two differ. Every model call is saved in `Code/outputs/function-examples/`.
+
+#### Structured wordalisations
+
 For Internazionale's 4–0 win over Atalanta on 30 August 2024 (@fig-match), the synthetic text of the match summary began with the result, the date and the competition, and continued:
 
 ::: box {label="Synthetic text:" source="Attachments/context-engineering/6. Conversational context.md"}
@@ -245,6 +249,74 @@ The text lists three goals for a 4–0 win. The score comes from the table of re
 ![[papers/0002-twelve-earpiece/Attachments/context-engineering/Images/Screenshot_2025-07-30_at_12.36.55.png]]
 The Match Analyst's summary of Internazionale 4–0 Atalanta (July 2025). Left: Internazionale's performance in seven phases of play, as a dot against their other matches, and the wordalisation below. Right: the context (date, time and competition), the pre-match win probability and match statistics.
 :::
+
+Asked "Does she get involved in games?", the Scout called `player_quality_description` for involvement, Vilma Koivisto's highest-rated quality. The function's synthetic text was:
+
+::: box {label="Synthetic text:" source="Code/outputs/function-examples/quality-1.json" key="tool_results.0.content"}
+Vilma Koivisto is outstanding at involvement compared to other midfielders. She is outstanding at expected goals buildup, touches and defensive actions won compared to other midfielders. She is average at aerials compared to other midfielders.
+:::
+
+and the reply:
+
+::: output {source="Code/outputs/function-examples/quality-1.json" key="replies.0" model="GPT-4o-mini, 14 October 2026"}
+> Vilma Koivisto is a dynamic midfielder who's heavily involved in both the build-up and defensive phases of the game. Her impressive ability to accumulate touches and consistently win defensive actions makes her a fundamental player for her team, while her aerial contributions remain average but do not detract from her overall influence.
+:::
+
+The reply keeps to the three sentences of the synthetic text and adds a judgement of its own, that she is "a fundamental player for her team". The other two runs say the same things in other words.
+
+Asked "Could she play in WSL?", the Transfer analyst called `transfer_summary_description`, whose synthetic text predicts how she would perform in the WSL from how players of her age perform after the same move:
+
+::: box {label="Synthetic text:" source="Code/outputs/function-examples/transfer-1.json" key="tool_results.0.content"}
+Vilma Koivisto is a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan. At 23 years old, she is still developing. Let's consider a move from the Swedish Damallsvenskan to the English Barclays Women's Super League. Typically a move of a player of this age from Swedish Damallsvenskan to English Barclays Women's Super League would lead her to perform a lot worse in intelligent defence, active defence, effectiveness, box threat, involvement, passing quality, progression and providing teammates over the next year. Overall, if Vilma Koivisto was playing in the Barclays Women's Super League she would be outstanding in involvement, intelligent defence and active defence. She would be excellent in passing quality. She would be average in progression, providing teammates and effectiveness. She would be poor in box threat.
+:::
+
+::: output {source="Code/outputs/function-examples/transfer-1.json" key="replies.0" model="GPT-4o-mini, 14 October 2026"}
+> The young Koivisto, 23, could find her transition from the Damallsvenskan to the highly competitive Barclays Women's Super League challenging, particularly in aspects of her game that require high intensity. Despite the anticipated drop in her performance metrics like passing quality, effectiveness and how she provides for teammates, it's essential to note that her traits as a defensive midfielder will shine through. She is expected to stand out for her strong defensive capabilities, particularly in intelligent and active defence, which will be crucial in the high-pressure environment of the WSL. While she may struggle to threaten the opposition's box, her ability to get involved in the game could still make her a valuable asset to any team in England.  With an opportunity to develop further, Koivisto is a player to keep an eye on in the coming seasons.
+:::
+
+The reply keeps the predictions and adds what the synthetic text does not contain: that the WSL will test "aspects of her game that require high intensity", and that she is "a player to keep an eye on". The third run credits her with a "strong work ethic and tactical awareness", for which there is no data.
+
+#### Search, then answer
+
+Asked "What are the player's weaknesses?", the Scout called `strengths_and_weaknesses`. Its synthetic text names her three strongest and three weakest qualities, each followed by passages from the knowledge store on what the quality means. The part on her third weakness begins:
+
+::: box {label="Synthetic text:" source="Code/outputs/function-examples/skills2-1.md"}
+Vilma Koivisto third weakest quality lies in dribbling. She is average at dribbling compared to other midfielders.
+:::
+
+::: output {source="Code/outputs/function-examples/skills2-1.json" key="replies.0" model="GPT-4o-mini, 14 October 2026"}
+> Vilma Koivisto's weaknesses lie in her run quality, box threat, and dribbling abilities, where she performs below average. This suggests she may struggle to create dangerous situations through her movement off the ball, has limited scoring potential within the opponent's penalty area, and may not effectively beat defenders, which could reduce her overall impact in attacking transitions and create fewer opportunities for her team.
+:::
+
+The reply says she is below average at dribbling, where the synthetic text says average; the other two runs say average.
+
+#### Answers in several stages
+
+No workspace we may publish has Arsenal as its club, so for this example we gave the Season Analyst a workspace of our own, named Arsenal, with the style of play "Control play." and the objectives "Win the league.". Everything else is Earpiece's code and data. Asked "How has Arsenal's season progressed?", the analyst called `describe_season_quality_trend` for outcome. The first call wrote:
+
+::: output {source="Code/outputs/function-examples/rewrite-1.json" key="model_calls.1.output" model="GPT-4o-mini, 14 October 2026"}
+> Over the longer term, Arsenal has struggled to find consistency, as evidenced by their average points tally, which reflects a lack of decisive performances throughout the season. In their last 10 matches, the team's outcome has shown significant decline, marked by fluctuations that suggest they are having difficulty maintaining a competitive edge in key moments. Overall, while Arsenal's performance is presently in a downward trend, the underlying variability indicates that they have the potential to turn things around if they can stabilize their game.
+:::
+
+This was not shown. The second call rewrote it as:
+
+::: output {source="Code/outputs/function-examples/rewrite-1.json" key="replies.0" model="GPT-4o-mini, 14 October 2026"}
+> Over the longer term, Arsenal has struggled to find consistency in their pursuit of winning the league, as evidenced by their average points tally, which reflects a lack of decisive performances throughout the season. In their last 10 matches, the team's outcome has shown significant decline, marked by fluctuations that suggest they are having difficulty maintaining control in key moments. Overall, while Arsenal's performance is presently in a downward trend, the underlying variability indicates that they have the potential to turn things around if they can stabilize their style of play and regain control of matches.
+:::
+
+The rewrite keeps the three sentences in their order and works in the club's terms: "maintaining a competitive edge" becomes "maintaining control", and "in their pursuit of winning the league" is added. All three runs bring in control and the league title.
+
+#### Other functions
+
+Asked "Can you find players similar to her?", the Scout called `find_similar_players`, which gave the Scout's own model her three highest-rated qualities and the instruction to name them and offer a search. The model replied:
+
+::: output {source="Code/outputs/function-examples/similar-1.json" key="replies.0" model="GPT-4o, 14 October 2026"}
+> Vilma Koivisto excels in her involvement in play, her passing quality, and her active defensive contributions. Specifically, her top qualities are Involvement, Passing Quality, and Active Defence.
+>
+> Would you like me to find similar players based on these qualities?
+:::
+
+All three runs end with the offer.
 
 ## Discussion
 

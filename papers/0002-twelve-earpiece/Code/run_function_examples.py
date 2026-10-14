@@ -101,22 +101,13 @@ EXAMPLES = {
         ),
         "Could she play in WSL?",
     ),
-    "skills": (
-        Scout,
-        lambda top: PlayerEvaluationContext(
-            query=None, summary=None,
-            competition=DAMALLSVENSKAN_2026, player=KOIVISTO,
-        ),
-        # From the function's own description in player_answer_skills_question.
-        "Do you think they would struggle playing out from the back?",
-    ),
     "skills2": (
         Scout,
         lambda top: PlayerEvaluationContext(
             query=None, summary=None,
             competition=DAMALLSVENSKAN_2026, player=KOIVISTO,
         ),
-        # The other example question in player_answer_skills_question's description.
+        # An example question from player_answer_skills_question's description.
         "What are the player's weaknesses?",
     ),
     "rewrite": (
