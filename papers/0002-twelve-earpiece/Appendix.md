@@ -106,6 +106,7 @@ Agreed with David, 17 October 2026: 400 players (300 men, 100 women) from less-k
 | `Code/name_test_misspell.py` | Misspells each name by the error model in `Workings`. Workspace environment: `cd Code && uv run python ../papers/0002-twelve-earpiece/Code/name_test_misspell.py` | reads `sample.csv`, writes `misspellings.csv` |
 | `Code/name_test_teams.py` | Adds each player's team and an informal or misspelled form of it. Earpiece API environment. | reads `sample.csv`, writes `teams.csv` |
 | `Code/name_test_run.py` | Asks the receptionist about each player, misspelled and correct, and scores the redirect; resumable. Earpiece API environment. | appends to `outputs/name-test/runs.jsonl` |
+| `Code/name_test_wrong_players.py` | Names the player each wrong-player run resolved to (full and playing name, team). Earpiece API environment. | reads `runs-name.jsonl`, `runs-team.jsonl`; writes `wrong-players.csv` |
 | `Code/name_test_summary.py` | Outcome rates with 95% Wilson intervals. Workspace environment. | writes `outputs/name-test/summary.json` |
 
 ## References

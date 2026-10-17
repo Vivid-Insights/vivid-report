@@ -227,6 +227,23 @@ The nightly test on 13 October 2026, with each case run three times. The one kno
 
 Over the ten nights from 4 to 13 October 2026, every suite met its threshold on nine nights. On 10 October, "How did Moussa dembele play in 2022/23?" resolved to the right player but to the 2026 season, so the player-and-season suite scored five cases out of six. The test shows that routing and resolution work for the questions it contains. It says nothing about questions outside it, and it does not judge whether the replies themselves are right.
 
+Asked "How has Robinho played this season?", meaning the Robinho who plays in the Portuguese Primeira Liga, the receptionist resolved the name to Robson Azevedo da Silva of Mohun Bagan. To see how often this happens, we asked about 400 players from less well-known leagues, 300 men and 100 women. They were drawn from Earpiece's own data, so that each came with the identifier a correct resolution must reach: domestic adult leagues outside the men's Big Five and the women's top divisions of England, the United States, Spain, Germany and France, at least 450 minutes in the 2025 or 2026 season, and at most three players from each of 136 competitions in 64 countries.
+
+Each player was asked about twice, "How has {name} played this season?", once with the name as the data spells it and once misspelled. The misspellings followed a study of errors in patient names reported by @christen2006: 36% of errors were an added or missing name word, 39% a single wrong, missing, extra or swapped letter, 14% several letters changed, and 12% punctuation and spacing, and we used these shares. Names are often misspelled worse than this, and @udupa2010 found that misspellings in a real search log lay 2.33 edits from the name on average, so a quarter of ours were made hard, with three letter edits, or two for a name shorter than ten letters. We then asked the same questions with the player's team, "How has {name} played for {team} this season?", with the team given in an informal or misspelled form in the misspelled case. Three players whose team has no name in the data were left out. Each question was asked once, through Earpiece's code at commit `d2077f55`, and scored by whether the context the receptionist opened held the right player (@tab-names).
+
+::: table {#tab-names}
+Outcomes of the name test. Each column is one question per player: the name alone or with the team, spelled as in the data or misspelled. Right player: the receptionist opened a context with the player we asked about; asked the user: the resolution declined and asked for more; wrong player: it opened a context with another player; other: anything else, such as an error message.
+| | Name only, correct | Name only, misspelled | With team, correct | With team, misspelled |
+| --- | ---: | ---: | ---: | ---: |
+| Right player | 371 (93%) | 250 (62%) | 396 (99.7%) | 334 (84%) |
+| Asked the user | 3 (1%) | 39 (10%) | 0 | 29 (7%) |
+| Wrong player | 26 (7%) | 108 (27%) | 0 | 29 (7%) |
+| Other | 0 | 3 (1%) | 1 (0.3%) | 5 (1%) |
+| Players | 400 | 400 | 397 | 397 |
+:::
+
+Spelled correctly but without a team, 26 of the 400 names led to another player, each known by the same or a similar name. Players known by one name were most affected: 11 of 19, Robinho among them. With the team named, 396 of 397 led to the right player. Misspelled, 62% of names alone reached the right player and 27% another player, against 84% and 7% with the team. A missing or abbreviated name word gained most from the team, from 45% right to 79%, and single-letter errors went from 77% to 90%. The hard misspellings reached the right player in 42% of cases without the team and 61% with it; even with the team, 19 of these 100 led to another player, about as many as were asked to clarify. Each question was asked once, and the shares of error kinds come from hospital records, not from scouts typing names.
+
 ### Functions
 
 Apart from the match summary of Internazionale, the examples in this section were made for this report, on the player and club of @fig-walk. We put five questions to an analyst in its context, as a user would type them after a redirect, through Earpiece's own code (commit `736867f5`), and the analyst's model chose the function. The analysts ran on GPT-4o and the functions on GPT-4o-mini. Each question was run three times; we quote the first run and say where the other two differ. Every model call is saved in `Code/outputs/function-examples/`.

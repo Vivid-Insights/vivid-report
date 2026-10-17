@@ -68,6 +68,8 @@ def main() -> None:
         s = sample[r["player_id"]]
         by[(r["condition"], "all")].append(r)
         by[(r["condition"], s["gender"])].append(r)
+        if len(s["name"].split()) == 1:
+            by[(r["condition"], "one-word name")].append(r)
         if r["condition"] == "misspelled":
             by[("misspelled", s["category"])].append(r)
             by[("misspelled", "hard" if s["hard"] == "True" else "normal")].append(r)

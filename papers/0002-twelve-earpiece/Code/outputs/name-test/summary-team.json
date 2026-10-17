@@ -107,6 +107,41 @@
         ]
       }
     },
+    "correct / one-word name": {
+      "n": 19,
+      "right": {
+        "count": 19,
+        "rate": 1.0,
+        "ci95": [
+          0.832,
+          1.0
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      }
+    },
     "misspelled / all": {
       "n": 397,
       "right": {
@@ -489,6 +524,41 @@
         "ci95": [
           0.003,
           0.029
+        ]
+      }
+    },
+    "misspelled / one-word name": {
+      "n": 19,
+      "right": {
+        "count": 9,
+        "rate": 0.474,
+        "ci95": [
+          0.273,
+          0.683
+        ]
+      },
+      "asked the user": {
+        "count": 4,
+        "rate": 0.211,
+        "ci95": [
+          0.085,
+          0.433
+        ]
+      },
+      "wrong player": {
+        "count": 5,
+        "rate": 0.263,
+        "ci95": [
+          0.118,
+          0.488
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.053,
+        "ci95": [
+          0.009,
+          0.246
         ]
       }
     },

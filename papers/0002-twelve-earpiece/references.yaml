@@ -273,3 +273,23 @@
   publisher: X
   url: https://x.com/karpathy/status/1937902205765607626
   note: Post quoting Lütke, 25 June 2025. Read 13 October 2026.
+
+- id: christen2006
+  type: report
+  author: ["Christen, Peter"]
+  title: "A comparison of personal name matching: Techniques and practical issues"
+  year: 2006
+  container: "Joint Computer Science Technical Report Series, The Australian National University"
+  number: "TR-CS-06-02"
+  publisher: The Australian National University
+  url: https://cs.anu.edu.au/people/Peter.Christen/publications/tr-cs-06-02.pdf
+
+- id: udupa2010
+  type: chapter
+  author: ["Udupa, Raghavendra", "Kumar, Shaishav"]
+  title: "Hashing-based approaches to spelling correction of personal names"
+  year: 2010
+  container: "Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing"
+  pages: "1256–1265"
+  publisher: Association for Computational Linguistics
+  url: https://aclanthology.org/D10-1122/
