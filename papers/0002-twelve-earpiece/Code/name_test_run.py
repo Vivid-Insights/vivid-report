@@ -164,6 +164,7 @@ async def main():
         teams = {r["player_id"]: r for r in csv.DictReader(TEAMS.open(encoding="utf-8"))}
         for row in rows:
             row.update({k: teams[row["player_id"]][k] for k in ("team", "team_error")})
+        rows = [row for row in rows if row["team"]]   # players whose team has no name
     RUNS = DIR / ("runs-team.jsonl" if args.with_team else "runs-name.jsonl")
     done = set()
     if RUNS.exists():

@@ -1,0 +1,401 @@
+player_id,team_id,team,team_error,team_kind,team_detail
+974715,74259,McMaster Marauders,Marauders,informal name,informal name
+1112889,74259,McMaster Marauders,Marauders,informal name,informal name
+1114399,74259,McMaster Marauders,McMster Marauders,misspelled,misspelled: single typing error: deletion
+516383,9625,Penafiel,Penefiel,misspelled,misspelled: spelling variant: a>e
+809318,9707,Benfica II,Benficaii,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+834360,26152,Felgueiras 1932,Felgueiras,informal name,informal name
+837054,14370,Spartak Trnava,Spartak,informal name,informal name
+218904,14371,Trenčín,Trdnčín,misspelled,misspelled: single typing error: substitution
+406092,14371,Trenčín,Trencin,misspelled,"misspelled: punctuation, spacing, accents: accents stripped"
+783785,7098,Molde,molde,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+629771,7099,Bodø / Glimt,Bpdø / Glimt,misspelled,misspelled: single typing error: substitution
+54548,7098,Molde,molde,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+557378,4522,Göztepe,göztepe,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+370093,4681,Erzurumspor FK,Erzurumzpor FK,misspelled,misspelled: spelling variant: s>z
+128587,4498,Konyaspor,Kunyazpor,misspelled,misspelled: spelling variant: o>u s>z
+1295727,15274,Mosta,mosta,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+237149,15265,Floriana,Florriana,misspelled,misspelled: single typing error: insertion
+280398,15300,Birzebbuga,Birzabbuga,misspelled,misspelled: spelling variant: e>a
+727032,13518,Pogoń Szczecin,Szczecin,informal name,informal name
+240034,13520,Zagłębie Lubin,Zagłębielubin,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+237036,69049,Wieczysta Kraków,Wieczysta,informal name,informal name
+122895,16496,Al Adalah,Adalah,informal name,informal name
+349467,16473,Al Ta'ee,Ta'ee,informal name,informal name
+1360013,16500,Jeddah,Jedsah,misspelled,misspelled: single typing error: substitution
+581049,2496,Holstein Kiel,Holstein,informal name,informal name
+527135,2459,Arminia Bielefeld,Arminie Bielefeld,misspelled,misspelled: spelling variant: a>e
+224483,2457,Hertha BSC,hertha bsc,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1071016,14936,Pyunik II,Pyuniu II,misspelled,misspelled: single typing error: substitution
+1078986,14936,Pyunik II,Pyunik,informal name,informal name
+826492,14937,Bentonit Idzhevan,Bentonit ydzhewan,misspelled,misspelled: spelling variant: v>w i>y
+891041,18846,Simba,simba,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+631332,18846,Simba,Simbw,misspelled,misspelled: single typing error: substitution
+1170312,18846,Simba,Symba,misspelled,misspelled: spelling variant: i>y
+648767,9417,Dinamo Zagreb,Dinamo,informal name,informal name
+546834,9420,Varaždin,Varazdin,misspelled,"misspelled: punctuation, spacing, accents: accents stripped"
+680581,9557,Gorica,Gorixa,misspelled,misspelled: single typing error: substitution
+611798,15845,Samtredia,Samtredya,misspelled,misspelled: spelling variant: i>y
+387111,15859,Merani Martvili,Martvili,informal name,informal name
+563223,75388,Shturmi,shturmi,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+810074,5094,Patro Eisden,Eisden,informal name,informal name
+37764,5280,Beerschot-Wilrijk,Beerschot-Wirijk,misspelled,misspelled: single typing error: deletion
+858699,67840,KSC Lokeren-Temse,KSC Lukeren-Temse,misspelled,misspelled: spelling variant: o>u
+1282506,16058,Asyut Petrol,Petrol,informal name,informal name
+874446,69129,Modern Sport,modern sport,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1200374,16050,Al Ittihad,Al Itttihad,misspelled,misspelled: single typing error: insertion
+1227285,24691,Coastal Carolina Chanticleers,Coastal Carolina Chanticleerz,misspelled,misspelled: spelling variant: s>z
+1180059,28799,Old Dominion Monarchs,Dominion,informal name,informal name
+1087224,24691,Coastal Carolina Chanticleers,coastal carolina chanticleers,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1160026,76271,Inter San Carlos,Intr San Carlos,misspelled,misspelled: single typing error: deletion
+141434,16847,San Carlos,San carlos,misspelled,misspelled: spelling variant: c>k k>c
+329207,16836,Cartaginés,cartaginés,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+217086,6723,Brage,Brave,misspelled,misspelled: single typing error: substitution
+51631,6788,Östersunds FK,Östersunds,informal name,informal name
+676713,6790,Sandviken,sandviken,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+685366,28734,Nong Bua Pitchaya FC,nong bua pitchaya fc,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+654119,28734,Nong Bua Pitchaya FC,Nong Bua Pitchaa FC,misspelled,misspelled: single typing error: deletion
+545152,17776,Nakhon Pathom,Nakhon Patom,misspelled,misspelled: spelling variant: th>t
+863808,29026,Astana Res.,Astana,informal name,informal name
+1323905,10980,Ekibastuz,ekibastuz,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+914491,72593,Yelimay Reserve,Yelimay Reserbve,misspelled,misspelled: single typing error: insertion
+425786,64333,Pacific FC,Pacific,informal name,informal name
+377073,64334,Inter Toronto,Toronto,informal name,informal name
+502947,66655,Atlético Ottawa,Ottawa,informal name,informal name
+1060925,66364,Perth Glory Under 21,Part Glory Under 21,misspelled,misspelled: spelling variant: th>t e>a
+145074,69677,Perth RedStar,RedStar,informal name,informal name
+1199681,69677,Perth RedStar,RedStar,informal name,informal name
+932421,27948,Georgetown Hoyas,Georgetownhoyas,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+849535,27948,Georgetown Hoyas,Georgetown,informal name,informal name
+1356262,27995,Xavier Musketeers,Musketeers,informal name,informal name
+235456,75076,Thionville Lusitanos,Thionville,informal name,informal name
+26084,3783,Caen,Cae,misspelled,misspelled: single typing error: deletion
+1277746,3778,Bastia,Bestie,misspelled,misspelled: spelling variant: a>e a>e
+397161,1697,Shrewsbury Town,shrewsbury town,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+545290,1665,Oldham Athletic,Athletic,informal name,informal name
+13315,1648,Gillingham,Gillinngham,misspelled,misspelled: single typing error: insertion
+640133,81166,Luanda,Luenda,misspelled,misspelled: spelling variant: a>e
+1342656,81166,Luanda,luanda,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1342616,81166,Luanda,Luana,misspelled,misspelled: single typing error: deletion
+775201,25,Volendam,Volandam,misspelled,misspelled: spelling variant: e>a
+1064586,23568,Utrecht II,Utrecht,informal name,informal name
+750164,28,Helmond Sport,helmond sport,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1290718,67137,Real Calepina,Rewl Calepina,misspelled,misspelled: single typing error: substitution
+481057,36951,Nibbiano & Valtidone,Nibbieno & Veltidone,misspelled,misspelled: spelling variant: a>e a>e
+694332,74528,ChievoVerona,chievoverona,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+381492,5659,Botafogo,Botfaogo,misspelled,misspelled: single typing error: transposition
+434105,5656,Corinthians,Corinthyens,misspelled,misspelled: spelling variant: i>y a>e
+293251,5648,Fluminense,fluminense,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+903697,13321,Hapoel Kfar Shalem,Hapoel Kfar Shalm,misspelled,misspelled: single typing error: deletion
+892008,60748,Maccabi Bnei Raina,Maccabi,informal name,informal name
+1123416,13364,Hapoel Afula,Hapoal Afula,misspelled,misspelled: spelling variant: e>a
+1185545,33172,New York RB II,New York RB,informal name,informal name
+1343623,28729,Ventura County,ventura county,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1207356,66196,New England II,New England,informal name,informal name
+614616,9619,Alverca,Alvegca,misspelled,misspelled: single typing error: substitution
+518856,9665,Académico de Viseu F.C.,Académico de Viseu ph.C.,misspelled,misspelled: spelling variant: f>ph
+494369,9789,Arouca,arouca,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1377423,728,Peña Sport,Peña,informal name,informal name
+769915,843,Barbastro,Babastro,misspelled,misspelled: single typing error: deletion
+531551,1221,Antoniano,antoniano,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+804276,11250,Příbram,Pribram,misspelled,"misspelled: punctuation, spacing, accents: accents stripped"
+82447,11281,Třinec,Třinsc,misspelled,misspelled: single typing error: substitution
+617176,11258,Kladno,Klednu,misspelled,misspelled: spelling variant: o>u a>e
+1208436,11570,Politehnica Timişoara,Politehnica,informal name,informal name
+1277411,11108,Milsami,milsami,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+807891,80198,Real Sireti,Sireti,informal name,informal name
+597072,6313,Jacuipense,Jasuipense,misspelled,misspelled: single typing error: substitution
+47566,6122,Galícia,galícia,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1194845,5677,Bahia,bahia,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+435470,3182,Ternana,Tegnana,misspelled,misspelled: single typing error: substitution
+323460,29595,ASD Rondinella,AzD Rondinella,misspelled,misspelled: spelling variant: s>z
+548581,76718,FC Siena,Siena,informal name,informal name
+522209,2452,Hansa Rostock,hansa rostock,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+687790,2498,Preußen Münster,Preußen,informal name,informal name
+1084613,2513,Fortuna Köln,Fodrtuna Köln,misspelled,misspelled: single typing error: insertion
+609813,58253,Pärnu JK Vaprus,Pärnu JK waprus,misspelled,misspelled: spelling variant: v>w
+370186,12965,Paide,paide,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1306700,34222,Harju JK,Harju,informal name,informal name
+254333,6018,Costa Rica,Costa Ric,misspelled,misspelled: single typing error: deletion
+40965,5904,Pantanal,Pentanal,misspelled,misspelled: spelling variant: a>e
+802053,79972,Bataguassu,bataguassu,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+449867,35099,Gjilani,Gjilahi,misspelled,misspelled: single typing error: substitution
+822682,35098,Llapi,Llapy,misspelled,misspelled: spelling variant: i>y
+478240,25837,Drita,drita,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1351233,28382,Redcar Athletic,Redcar Athlegic,misspelled,misspelled: single typing error: substitution
+143808,1807,Guiseley,Guyseley,misspelled,misspelled: spelling variant: i>y
+1098999,1786,Cheshunt,cheshunt,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+596736,28487,Lamphun Warrior,Lamphun,informal name,informal name
+379227,28487,Lamphun Warrior,Lamphun Wadrrior,misspelled,misspelled: single typing error: insertion
+602897,28487,Lamphun Warrior,Lamphun varryor,misspelled,misspelled: spelling variant: i>y w>v
+1285776,28440,Air Force Falcons,air force falcons,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1228332,27997,Grand Canyon Lopes,Canyon,informal name,informal name
+964759,67570,Utah Tech Trailblazers,Trailblazers,informal name,informal name
+638684,7732,Breidablik,Breidblik,misspelled,misspelled: single typing error: deletion
+216567,7726,ÍA,Ía,misspelled,misspelled: spelling variant: a>e e>a
+135187,7729,Víkingur Reykjavík,Reykjavík,informal name,informal name
+559684,4776,Haka,haka,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+867899,4814,KäPa,KäPPa,misspelled,misspelled: single typing error: insertion
+830257,38952,PK-35 ry,PK-35,informal name,informal name
+1100998,28442,Stetson Hatters,Stetson,informal name,informal name
+915098,28442,Stetson Hatters,Stetsun Hetters,misspelled,misspelled: spelling variant: a>e o>u
+950163,24484,North Florida Ospreyes,Ospreyes,informal name,informal name
+116492,15649,River Plate,river plate,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+520587,15651,Paysandu FC,Paysendu Fk,misspelled,misspelled: spelling variant: c>k a>e
+492677,15631,Cerrito,Carito,misspelled,misspelled: spelling variant: rr>r e>a
+891524,7453,Brøndby,brøndby,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+451410,7452,København,Købehavn,misspelled,misspelled: single typing error: deletion
+619642,7461,Silkeborg,Silceborg,misspelled,misspelled: spelling variant: k>c
+433100,6433,Lugano,lugano,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+492092,6410,St. Gallen,St. Galle,misspelled,misspelled: single typing error: deletion
+272233,6425,Luzern,Luzarn,misspelled,misspelled: spelling variant: e>a
+1108027,28081,Lees-McRae Bobcats,Lees-McRae,informal name,informal name
+972259,72665,Emmanuel Lions,emmanuel lions,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1364095,72665,Emmanuel Lions,Emmanuel,informal name,informal name
+821646,4793,Mariehamn,Marieahmn,misspelled,misspelled: single typing error: transposition
+15025,4787,HJK,Hyc,misspelled,misspelled: spelling variant: k>c j>y
+1077209,4854,Ilves,ilves,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1066030,7112,Hødd,Hdd,misspelled,misspelled: single typing error: deletion
+853704,7112,Hødd,hødd,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+779349,7205,Sandnes Ulf,sandnes ulf,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+682962,7502,Aarhus Fremad,Aarhuus Fremad,misspelled,misspelled: single typing error: insertion
+678062,7488,Vendsyssel,Vendsysal,misspelled,misspelled: spelling variant: ss>s e>a
+776258,7454,AaB,aab,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1336021,11279,Hranice,Hfanice,misspelled,misspelled: single typing error: substitution
+913212,11247,České Budějovice,České Budějoviche,misspelled,misspelled: spelling variant: ic>ich
+584998,11381,Jiskra Domažlice,Domažlice,informal name,informal name
+644927,1644,Watford,watford,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+546111,1655,Bristol City,Bristol,informal name,informal name
+10303,1680,Lincoln City,Lincoln,informal name,informal name
+1273612,18385,Mathare United,Mathare,informal name,informal name
+1273629,18385,Mathare United,Mathare Unite,misspelled,misspelled: single typing error: deletion
+887193,6082,Nacional SP,Naciunal zP,misspelled,misspelled: spelling variant: s>z o>u
+597960,6322,Barretos,barretos,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+606183,62790,Grêmio Sãocarlense,Grêio Sãocarlense,misspelled,misspelled: single typing error: deletion
+84477,11627,Chindia Târgovişte,Târgovişte,informal name,informal name
+327214,11663,Unirea Slobozia,Slobozia,informal name,informal name
+961054,11654,SCM Râmnicu Vâlcea,Râmnicu,informal name,informal name
+1365653,17735,Al Talaba,Talaba,informal name,informal name
+1365864,17755,Naft Maysan,Maysan,informal name,informal name
+1365619,82013,Golan SC,Golan zC,misspelled,misspelled: spelling variant: s>z
+121621,16344,Mamelodi Sundowns,Mamelodi,informal name,informal name
+763477,16341,Orlando Pirates,Orlandopirates,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+292529,16403,Marumo Gallants,Mxarumo Gallants,misspelled,misspelled: single typing error: insertion
+573691,5655,Santos,Santoz,misspelled,misspelled: spelling variant: s>z
+493492,5638,São Paulo,Paulo,informal name,informal name
+395625,5685,Red Bull Bragantino,Red Bullbragantino,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+447353,1866,Horsham,Hkrsham,misspelled,misspelled: single typing error: substitution
+601849,25730,Darlington 1883,Darlington,informal name,informal name
+406683,36605,Hereford FC,Herefurd phC,misspelled,misspelled: spelling variant: f>ph o>u
+337093,75648,Guangdong GZ-Power,Guangdong,informal name,informal name
+603648,9138,Changchun Yatai,Changchun,informal name,informal name
+1053996,75642,Dalian K'un City,Dalian K'uncity,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+213966,77527,Real Oruro,Real Orhro,misspelled,misspelled: single typing error: substitution
+90785,10477,Blooming,Bluoming,misspelled,misspelled: spelling variant: o>u
+807705,60780,Universitario de Vinto,Universitario devinto,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+426372,22731,Csikszereda Miercurea Ciuc,Csikszereda,informal name,informal name
+779381,11619,Corvinul Hunedoara,Corvinul Hunedara,misspelled,misspelled: single typing error: deletion
+477398,23334,Argeș,Argaș,misspelled,misspelled: spelling variant: e>a
+336450,14631,F91 Dudelange,Dudelange,informal name,informal name
+787968,14638,Wiltz,wiltz,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1346398,14630,Jeunesse d'Esch,Jeunesse,informal name,informal name
+814426,7138,Hønefoss,Hønfefoss,misspelled,misspelled: single typing error: insertion
+560972,7138,Hønefoss,Hønaphoss,misspelled,misspelled: spelling variant: f>ph e>a
+829428,7115,Tromsdalen,tromsdalen,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+650635,64786,Akron Togliatti,Togliatti,informal name,informal name
+447218,64720,Rodina Moskva,Rodina,informal name,informal name
+537822,13917,Baltika,Baltiika,misspelled,misspelled: single typing error: insertion
+1329107,60582,Varteks Varaždin,Vartakz Varaždin,misspelled,misspelled: spelling variant: s>z e>a
+771873,9544,Grobničan Čavle,grobničan čavle,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+919231,9448,Hrvatski Dragovoljac,Hrvatsko Dragovoljac,misspelled,misspelled: single typing error: substitution
+818358,75373,Moreton City Excelsior,Moreton City Excalsior,misspelled,misspelled: spelling variant: e>a
+478251,8457,Gold Coast United,United,informal name,informal name
+448322,8360,Brisbane City,Brisbane,informal name,informal name
+285529,12799,Urawa Reds,urawa reds,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+739665,12864,Fagiano Okayama,Faagiano Okayama,misspelled,misspelled: single typing error: insertion
+560238,12805,Shimizu S-Pulse,Shimizu z-Pulse,misspelled,misspelled: spelling variant: s>z
+363788,12411,Inter Bogotá,Bogotá,informal name,informal name
+896720,12425,Alianza,alianza,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+770285,12413,Águilas Doradas,Águilas,informal name,informal name
+1069891,27954,FAU Owls,Owls,informal name,informal name
+851324,27954,FAU Owls,Owls,informal name,informal name
+1108150,28084,Temple Owls,Temple,informal name,informal name
+900157,12854,Ryūkyū,Rykūyū,misspelled,misspelled: single typing error: transposition
+1049587,30761,Osaka,Osace,misspelled,misspelled: spelling variant: k>c a>e
+1167409,24801,Sagamihara,sagamihara,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+633967,7722,Grindavík,Grindavk,misspelled,misspelled: single typing error: deletion
+613503,7738,ÍR,ír,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1192059,7749,Völsungur,völsungur,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+597230,6149,Ypiranga Erechim,Ypiranga,informal name,informal name
+699206,5644,Internacional,Internasional,misspelled,misspelled: single typing error: substitution
+486024,5761,Novo Hamburgo,Hamburgo,informal name,informal name
+636592,3271,Forlì,Furlì,misspelled,misspelled: spelling variant: o>u
+600085,3218,Bari,bari,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+411305,3362,Scafatese,Scafwatese,misspelled,misspelled: single typing error: insertion
+336432,16909,Guastatoya,Guaztatuya,misspelled,misspelled: spelling variant: o>u s>z
+743978,16882,Comunicaciones ,comunicaciones ,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+363782,16889,Xelajú,Xflajú,misspelled,misspelled: single typing error: substitution
+1314312,77956,Chengdu Rongcheng II,Chengdu Rongcheng,informal name,informal name
+1178599,70691,Haimen Codion,Haiman Codiun,misspelled,misspelled: spelling variant: o>u e>a
+831901,70687,Tai'an Tiankuang,Tiankuang,informal name,informal name
+707369,17582,AGMK,agmk,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+814089,17572,Andijan,Andijjan,misspelled,misspelled: single typing error: insertion
+770525,17563,Neftchi,Neftkhi,misspelled,misspelled: spelling variant: c>k
+445102,8516,Kilmarnock,kilmarnock,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+357712,8508,Celtic,Celic,misspelled,misspelled: single typing error: deletion
+610791,8514,Hibernian,Hybernian,misspelled,misspelled: spelling variant: i>y
+774155,80070,LASK II,lask ii,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1193979,80070,LASK II,LASK,informal name,informal name
+1306066,80070,LASK II,LwSK II,misspelled,misspelled: single typing error: substitution
+683128,80021,Kelantan Red Warrior,Kelantan Red Werriur,misspelled,misspelled: spelling variant: a>e o>u
+424382,72294,Imigresen,imigresen,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1293341,80021,Kelantan Red Warrior,Kelantan,informal name,informal name
+835628,19814,,,no team name,
+1358732,26729,Lynx,Lyx,misspelled,misspelled: single typing error: deletion
+1367667,26729,Lynx,Links,misspelled,misspelled: spelling variant: x>ks y>i
+805322,69463,One Knoxville SC,One Knoxvillesc,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+654929,69463,One Knoxville SC,One Knoxville,informal name,informal name
+511593,80253,Athletic Club Boise,Athletid Club Boise,misspelled,misspelled: single typing error: substitution
+786330,21992,Alashkert,Alashcert,misspelled,misspelled: spelling variant: k>c
+906039,78713,Sardarapat,sardarapat,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+566353,14917,Pyunik,Pynik,misspelled,misspelled: single typing error: deletion
+619496,74610,Dubai United FC,Dubai United,informal name,informal name
+703425,74609,Gulf United,Gulph Unyted,misspelled,misspelled: spelling variant: i>y f>ph
+576846,74610,Dubai United FC,Dubai United,informal name,informal name
+1184901,77797,Fratria II,Fratria,informal name,informal name
+1053138,77797,Fratria II,Fratriaii,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1177818,77797,Fratria II,Fatria II,misspelled,misspelled: single typing error: deletion
+683410,2815,Wiedenbrück,wiedenbrück,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+949434,2619,Borussia M'gladbach II,Borussia M'gladbachii,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+775807,2618,Borussia Dortmund II,Borussia Drtmund II,misspelled,misspelled: single typing error: deletion
+1356189,28347,Loyola Greyhounds,Loiola Greihounds,misspelled,misspelled: spelling variant: y>i y>i
+1088407,27045,Bucknell Bison,Bucknell,informal name,informal name
+700287,27949,Colgate Raiders,Colgate,informal name,informal name
+1181631,68191,AIC Yellow Jackets,aic yellow jackets,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1366799,68191,AIC Yellow Jackets,Jackets,informal name,informal name
+1038792,68191,AIC Yellow Jackets,AIC Yellow Jackes,misspelled,misspelled: single typing error: deletion
+447185,1649,Plymouth Argyle,Plymuth Argyle,misspelled,misspelled: spelling variant: ou>u
+192775,1678,Wycombe Wanderers,Wycombewanderers,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+736990,1679,Mansfield Town,Mansfield Toown,misspelled,misspelled: single typing error: insertion
+1027144,8822,Liefering,Lieferyng,misspelled,misspelled: spelling variant: i>y
+1356042,8869,Admira,admira,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1186721,9018,Austria Salzburg,Austria Salxzburg,misspelled,misspelled: single typing error: insertion
+490692,77470,Tirol,Tirul,misspelled,misspelled: spelling variant: o>u
+651061,5669,Ceará,ceará,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+597256,5743,Ferroviário,Ferroviátio,misspelled,misspelled: single typing error: substitution
+1252587,82562,Atletico Onubense,Atleticho Onubense,misspelled,misspelled: spelling variant: ic>ich
+626227,82562,Atletico Onubense,Atleticoonubense,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1389490,82561,Egabrense,Egbrense,misspelled,misspelled: single typing error: deletion
+483762,5666,Avaí,Aweí,misspelled,misspelled: spelling variant: v>w a>e
+801190,21922,Grêmio Novorizontino,Grêmionovorizontino,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+261048,5643,Goiás,Giás,misspelled,misspelled: single typing error: deletion
+91155,71767,UMECIT,UMEcIT,misspelled,misspelled: spelling variant: c>k k>c
+588211,17925,Tauro,tauro,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+890865,80020,Union Cocle,Uniog Cocle,misspelled,misspelled: single typing error: substitution
+562015,15653,Progreso,Progresu,misspelled,misspelled: spelling variant: o>u
+350675,15642,Defensor Sporting,Defensorsporting,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+661144,15633,Peñarol,Peñaroi,misspelled,misspelled: single typing error: substitution
+693423,5990,Rio Claro,Rio klaro,misspelled,misspelled: spelling variant: c>k
+750616,5692,União São João,União,informal name,informal name
+735094,5990,Rio Claro,Claro,informal name,informal name
+976775,16223,Marsa,marsa,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1228923,68103,Rostov,Rotov,misspelled,misspelled: single typing error: deletion
+672442,14022,Zvezda 2005,Zvezda,informal name,informal name
+682716,14345,Krylya Sovetov,Sovetov,informal name,informal name
+865853,7154,Kolbotn,Kolbutn,misspelled,misspelled: spelling variant: o>u
+677470,71982,Viking,viking,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1311539,71981,Bryne,Bryje,misspelled,misspelled: single typing error: substitution
+968378,74167,Kansas Wesleyan Coyotes,Wesleyan,informal name,informal name
+1093920,74167,Kansas Wesleyan Coyotes,Kansas Wesleyan koiotes,misspelled,misspelled: spelling variant: y>i c>k
+1093947,74167,Kansas Wesleyan Coyotes,Kansas Wesleyancoyotes,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1058613,68491,Kolos Kovalivka,Kolos Kovalivuka,misspelled,misspelled: single typing error: insertion
+992328,76328,Polissya Zhytomyr,Polissya shytomyr,misspelled,misspelled: spelling variant: z>s
+851337,68492,Kryvbas,kryvbas,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+930570,4945,Åland United,United,informal name,informal name
+481522,4945,Åland United,United,informal name,informal name
+926359,4964,Gnistan,Ggnistan,misspelled,misspelled: single typing error: insertion
+844859,7556,Sundby,sundby,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+530101,7701,Østerbro,østerbro,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1057295,7701,Østerbro,Øsferbro,misspelled,misspelled: single typing error: substitution
+944529,21921,Malvik,Malvic,misspelled,misspelled: spelling variant: k>c
+1319405,21921,Malvik,malvik,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1080791,21921,Malvik,Malfik,misspelled,misspelled: single typing error: substitution
+761007,77794,Montreal Roses,Montreal Rosas,misspelled,misspelled: spelling variant: e>a
+762113,76761,AFC Toronto,afc toronto,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+481873,77792,Calgary Wild ,Calgary,informal name,informal name
+760325,62837,León,Len,misspelled,misspelled: single typing error: deletion
+571418,62843,Monterrey,monterrey,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+572196,62841,Pumas UNAM,Pumas,informal name,informal name
+1382869,74348,Queen's Gaels,Queen'sgaels,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1239809,74348,Queen's Gaels,Queen's,informal name,informal name
+997445,74348,Queen's Gaels,Queen's,informal name,informal name
+1239117,67779,UT-Tyler Patriots,UT-Tyler,informal name,informal name
+1239130,67779,UT-Tyler Patriots,UT-Tyler,informal name,informal name
+1114897,67779,UT-Tyler Patriots,UT-Tyler,informal name,informal name
+1100058,73165,Emporia State Hornets,Emporia Staet Hornets,misspelled,misspelled: single typing error: transposition
+1241884,73166,Northwest Missouri State Bearcats,Northwest,informal name,informal name
+1100063,73165,Emporia State Hornets,Emporia,informal name,informal name
+1008262,79407,Puskás FC,Puskás Fk,misspelled,misspelled: spelling variant: c>k
+1153174,79416,Szekszárdi,szekszárdi,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1269206,30783,Budapest Honvéd,Budpaest Honvéd,misspelled,misspelled: single typing error: transposition
+1276117,79651,Atletico London,London,informal name,informal name
+1276107,79651,Atletico London,Atleticho London,misspelled,misspelled: spelling variant: ic>ich
+1162253,79651,Atletico London,London,informal name,informal name
+1176515,77752,Elfsborg,elfsborg,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1064518,6804,KIF Örebro,Örebro,informal name,informal name
+1313790,80288,Husqvarna FF,Husqarna FF,misspelled,misspelled: single typing error: deletion
+1093500,73663,Ferrum Panthers,Panthers,informal name,informal name
+1362814,73663,Ferrum Panthers,Ferrumpanthers,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1233581,73663,Ferrum Panthers,Panthers,informal name,informal name
+1199755,75365,Gold Coast Knights,gold coast knights,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+797508,75365,Gold Coast Knights,Gol Coast Knights,misspelled,misspelled: single typing error: deletion
+644813,33108,Eastern Suburbs,Eastarn Suburbs,misspelled,misspelled: spelling variant: e>a
+1006131,70974,William Jewell Cardinals,William Jewellcardinals,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1125977,68763,Missouri - St. Louis Tritons,Missouri,informal name,informal name
+984728,73008,Drury Panthers,Panthers,informal name,informal name
+1088731,73110,Tampa Spartans,Tmpa Spartans,misspelled,misspelled: single typing error: deletion
+1212848,73008,Drury Panthers,Drury Penthers,misspelled,misspelled: spelling variant: a>e
+1391507,67770,Oklahoma Baptist Bison,Oklahoma,informal name,informal name
+1334145,80871,Ridge City,Ridgecity,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+1334140,80871,Ridge City,Ridge Ctiy,misspelled,misspelled: single typing error: transposition
+1334143,80871,Ridge City,Ridge,informal name,informal name
+835750,74406,,,no team name,
+1374167,74406,,,no team name,
+1113042,74014,Endicott Gulls,Endicott,informal name,informal name
+1231280,74014,Endicott Gulls,Endicott,informal name,informal name
+1231283,74014,Endicott Gulls,Endicott,informal name,informal name
+1392127,76622,Stevens Ducks,Stevens,informal name,informal name
+820884,80134,Inter Bogotá,Inter Bogutá,misspelled,misspelled: spelling variant: o>u
+1050108,80134,Inter Bogotá,Inter Bogota,misspelled,"misspelled: punctuation, spacing, accents: accents stripped"
+1050077,77804,Once Caldas,Caldas,informal name,informal name
+1068210,30654,Botafogo,Botzfogo,misspelled,misspelled: single typing error: substitution
+225419,6221,Santos,santos,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+688425,35074,América Mineiro,América,informal name,informal name
+694788,367,Twente,twente,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1357259,368,Utrecht,Utrecut,misspelled,misspelled: single typing error: substitution
+862297,368,Utrecht,utrecht,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1099052,78720,Lech UAM Poznan,Poznan,informal name,informal name
+908855,81139,Legia Warszawa,Legiawarszawa,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+281864,81139,Legia Warszawa,Lenia Warszawa,misspelled,misspelled: single typing error: substitution
+1187270,78006,Politehnica Timişoara,Politehnica Timyşoara,misspelled,misspelled: spelling variant: i>y
+767176,78006,Politehnica Timişoara,Politehnica,informal name,informal name
+777182,78006,Politehnica Timişoara,Politehnica Timisoara,misspelled,"misspelled: punctuation, spacing, accents: accents stripped"
+861153,72546,NIF / HG,NI / HG,misspelled,misspelled: single typing error: deletion
+546304,72546,NIF / HG,NIph / HG,misspelled,misspelled: spelling variant: f>ph
+1114709,22264,Esbjerg,esbjerg,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1120500,73112,Flagler Saints,Flagler,informal name,informal name
+1085248,73121,USC Beaufort Sand Sharks,USC Beaufort Sand Shafks,misspelled,misspelled: single typing error: substitution
+1372142,73112,Flagler Saints,Flaglar Saynts,misspelled,misspelled: spelling variant: i>y e>a
+1070161,59024,Keilor Park,Keilorpark,misspelled,"misspelled: punctuation, spacing, accents: words joined"
+415528,28723,South Melbourne,South Melborne,misspelled,misspelled: single typing error: deletion
+1070126,28718,Boroondara-Carey,Borundara-Caray,misspelled,misspelled: spelling variant: e>a oo>u
+879230,21921,Malvik,malvik,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1187004,21921,Malvik,Mslvik,misspelled,misspelled: single typing error: substitution
+918586,21921,Malvik,Malvich,misspelled,misspelled: spelling variant: k>c ic>ich
+1232282,72990,Michigan Tech Huskies,michigan tech huskies,misspelled,"misspelled: punctuation, spacing, accents: lower case"
+1232315,72990,Michigan Tech Huskies,Michigan,informal name,informal name
+1232279,72990,Michigan Tech Huskies,Mifhigan Tech Huskies,misspelled,misspelled: single typing error: substitution
+813031,23124,DLR Waves,Waves,informal name,informal name
+258370,23124,DLR Waves,Waves,informal name,informal name
+679862,66884,Bohemian FC,Bohemian,informal name,informal name
+1325663,10895,Derry City,Derry,informal name,informal name
