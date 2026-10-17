@@ -1,0 +1,401 @@
+player_id,name,misspelled,category,hard,steps,letter_edits,edit_distance
+974715,Cristian Alfieri,Cristian Akfieri,single typing error,False,single typing error: substitution,1,1
+1112889,Karl Espiro,Karl Esspiro,single typing error,False,single typing error: insertion,1,1
+1114399,Romain Sordet,Romain Soordet,single typing error,False,single typing error: insertion,1,1
+516383,Davo,Dewo,spelling variant,False,spelling variant: a>e v>w,2,2
+809318,João Fonseca,Juão Fondeka,single typing error,True,single typing error: substitution | spelling variant: o>u c>k,3,3
+834360,Silvino,Silvlno,single typing error,False,single typing error: substitution,1,1
+837054,Timotej Kudlička,tomotej kudlick,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: accents stripped | single typing error: deletion | single typing error: substitution",3,3
+218904,Lukáš Skovajsa,lukáš skovajsa,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+406092,Markus Poom,M. Poom,name words,False,name words: initial for first name,0,5
+783785,Trent Kone-Doherty,t. cune-dogerty,name words,True,"punctuation, spacing, accents: lower case | spelling variant: k>c o>u | single typing error: substitution | name words: initial for first name",3,7
+629771,Ole Blomberg,Ol Blumhberg,single typing error,True,single typing error: deletion | spelling variant: e>a | spelling variant: a>e o>u | single typing error: insertion,3,3
+54548,Martin Linnes,mqartinlines,name words,True,"punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | single typing error: insertion | single typing error: deletion",3,3
+557378,Rhaldney,Rhalldnay,spelling variant,True,spelling variant: y>i | spelling variant: i>y e>a | single typing error: insertion,2,2
+370093,Elisha Owusu,Elisha Ovuz,single typing error,True,single typing error: deletion | spelling variant: w>v s>z,3,3
+128587,Marko Jevtović,Mafko Jevtović,single typing error,False,single typing error: substitution,1,1
+1295727,Charles Yemi Oderinde,Charles Yemi,name words,False,name words: last word dropped,0,9
+237149,Dunstan Vella,Vella,name words,False,name words: surname only,0,8
+280398,Yuri,Yuei,single typing error,False,single typing error: substitution,1,1
+727032,Dimitrios Keramitsis,dimitriuscermaitsis,single typing error,True,"single typing error: transposition | punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | spelling variant: o>u k>c",4,4
+240034,Mateusz Grzybek,Grzybek,name words,False,name words: surname only,0,8
+237036,Lisandro Semedo,Licandriosemedo,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: insertion | single typing error: substitution",3,3
+122895,Ali Al Zaqan,A. Al Zaqan,name words,False,name words: initial for first name,0,2
+349467,Hassan Al Habib,Haszan Al Habib,spelling variant,False,spelling variant: s>z,1,1
+1360013,Mohammed Zamzami,Muhammed Zamzami,spelling variant,False,spelling variant: o>u,1,1
+581049,Phil Harres,Phil Herres,spelling variant,False,spelling variant: a>e,1,1
+527135,Jannik Rochelt,Jannik Rlchelt,single typing error,False,single typing error: substitution,1,1
+224483,Paul Seguin,Paaul Seguin,single typing error,False,single typing error: insertion,1,1
+1071016,Narek Poghosyan,Narekpoghozian,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | spelling variant: y>i s>z",3,3
+1078986,Edmond Hayrapetyan,Edmond Hayrpetyan,single typing error,False,single typing error: deletion,1,1
+826492,Armen Arakelyan,Armen Arakeluan,single typing error,False,single typing error: substitution,1,1
+891041,Elie Mpanzu Kibisawala,E. Mpansukibisawala,name words,True,"spelling variant: ie>ei z>s | punctuation, spacing, accents: words joined | name words: initial for first name",3,5
+631332,Anicet Oura,A. Oura,name words,False,name words: initial for first name,0,5
+1170312,Selemani Mwalimu,Simanijmvalimu,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: deletion | single typing error: insertion | spelling variant: ee>i w>v",5,5
+648767,Lukas Kaĉavenda,Lukas Kaĉavnda,single typing error,False,single typing error: deletion,1,1
+546834,Aleksa Latković,alaksalatkovic,name words,True,"punctuation, spacing, accents: words joined | punctuation, spacing, accents: accents stripped | punctuation, spacing, accents: lower case | spelling variant: e>a",3,3
+680581,Patrik Mijić,patrgyk mijyć,spelling variant,True,"spelling variant: i>y i>y | punctuation, spacing, accents: lower case | spelling variant: y>i | single typing error: insertion | spelling variant: i>y",3,3
+611798,Giorgi Gvishiani,Giorgi Gvishini,single typing error,False,single typing error: deletion,1,1
+387111,Levan Tsotsonava,L. Tsotsonava,name words,False,name words: initial for first name,0,4
+563223,Nikoloz Talakhadze,Talakhadze,name words,False,name words: surname only,0,8
+810074,Tsubasa Kasayanagi,kasayznagi,name words,True,"single typing error: deletion | single typing error: substitution | punctuation, spacing, accents: lower case | spelling variant: a>e | name words: surname only",3,9
+37764,Lukas Van Eenoo,Luas Van Eenoo,single typing error,False,single typing error: deletion,1,1
+858699,Andreas Spegelaere,Andreasspegelaere,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1282506,Abdelrahman El Khamisi,Abdelrahman El Khamisj,single typing error,False,single typing error: substitution,1,1
+874446,Mahmoud Mamdouh,mehmoudmdouh,name words,True,"punctuation, spacing, accents: words joined | single typing error: deletion | punctuation, spacing, accents: lower case | spelling variant: mm>m a>e",4,4
+1200374,Isaac Saviour,Isaac Sawiur,spelling variant,False,spelling variant: v>w ou>u,2,2
+1227285,Theo Butterworth,Theo Butterwporth,single typing error,False,single typing error: insertion,1,1
+1180059,David Chapman,davydkhqapman,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | spelling variant: i>y c>k",4,4
+1087224,Baxter Hurt,Hurt,name words,False,name words: surname only,0,7
+1160026,Ulises Micael Villan,Ulises Micael Vkllan,single typing error,False,single typing error: substitution,1,1
+141434,Yosel Piedra,Ysrel Pieera,single typing error,True,single typing error: deletion | single typing error: substitution | single typing error: insertion,3,3
+329207,Randal Cordero,raand cordero,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: lower case | single typing error: deletion | single typing error: insertion",3,3
+217086,Alexander Zetterström,Zetterström,name words,False,name words: surname only,0,10
+51631,Dennis Widgren,denniswjivgren,single typing error,True,"single typing error: substitution | spelling variant: s>z | spelling variant: z>s w>v | punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | single typing error: insertion",3,3
+676713,Mohammed Abubakari,Mohammed Abubakri,single typing error,False,single typing error: deletion,1,1
+685366,Songchai Thongcham,Thongcham,name words,False,name words: surname only,0,9
+654119,Caio Tailândia,Tailândia,name words,False,name words: surname only,0,5
+545152,Elias,Eliez,name words,True,spelling variant: s>z a>e,2,2
+863808,Ayan Zhakaiym,A. Zhakaiym,name words,False,name words: initial for first name,0,3
+1323905,Diaz Kushkumbaev,Dyas Kushkumbaew,spelling variant,True,spelling variant: v>w i>y | spelling variant: z>s,3,3
+914491,Meyrdzhan Zhumadilov,Meyrdzhan Zhmadilov,single typing error,False,single typing error: deletion,1,1
+425786,Matthew Baldisimo,Matthew Baleisimo,single typing error,False,single typing error: substitution,1,1
+377073,Frank Sturing,Frank String,single typing error,False,single typing error: deletion,1,1
+502947,Julian Dunn,J. Dunn,name words,False,name words: initial for first name,0,5
+1060925,Santiago Flores,Flores,name words,False,name words: surname only,0,9
+145074,Brandon O'Neill,Brendon O'Niell,spelling variant,False,spelling variant: a>e ei>ie,2,2
+1199681,Liam Murray,Liam Murra,single typing error,False,single typing error: deletion,1,1
+932421,Tate Lampman,tate lampman,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+849535,Oliver Stafford,Oliver Stefford,spelling variant,False,spelling variant: a>e,1,1
+1356262,Gerard Lorente,gererdlutrente,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | spelling variant: a>e o>u",4,4
+235456,Samed Kılıç,Kılıç,name words,False,name words: surname only,0,6
+26084,Lionel Carole,Liknel Carole,single typing error,False,single typing error: substitution,1,1
+1277746,Nassim Douce,naxjsm douce,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | single typing error: substitution | single typing error: substitution | single typing error: transposition",3,3
+397161,Tom Sang,Tum zang,spelling variant,True,spelling variant: s>z o>u,2,2
+545290,Keenan Appiah-Forson,Appiah-phorson,name words,True,spelling variant: f>ph e>a | name words: surname only,3,9
+13315,Omar Beckles,Omar Becklws,single typing error,False,single typing error: substitution,1,1
+640133,Filipe Batucissa,Filipebetukissa,name words,True,"punctuation, spacing, accents: words joined | spelling variant: c>k a>e",3,3
+1342656,Paulo Gaspar,Paulu Gaspar,spelling variant,False,spelling variant: o>u,1,1
+1342616,Arnaldo Dielo,Dielo,name words,False,name words: surname only,0,8
+775201,Precious Ugwu,Prekiusugwu,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | spelling variant: c>k | spelling variant: ou>u",3,3
+1064586,Driss Laaouina,drisclaaouinw,single typing error,True,"single typing error: substitution | punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | single typing error: substitution",3,3
+750164,Labinot Bajrami,L. Bajrami,name words,False,name words: initial for first name,0,6
+1290718,Christian Belotti,C. Belotti,name words,False,name words: initial for first name,0,8
+481057,Alberto Boschetti,Alberto Boschehtti,single typing error,False,single typing error: insertion,1,1
+694332,Andrea Carbone,Andraa karbuna,spelling variant,True,spelling variant: e>a e>a | spelling variant: c>k o>u,4,4
+381492,Arthur Cabral,Artur Cebral,spelling variant,False,spelling variant: a>e th>t,2,2
+434105,Raniele,Rajiele,single typing error,False,single typing error: substitution,1,1
+293251,Yeferson Soteldo,Yefferson Soteldo,single typing error,False,single typing error: insertion,1,1
+903697,Idan Weinberg,Idan Weinbrg,single typing error,False,single typing error: deletion,1,1
+892008,Asil Kanani,Kanani,name words,False,name words: surname only,0,5
+1123416,Ahmad Khalaila,Ahmad chelaila,spelling variant,False,spelling variant: k>c a>e,2,2
+1185545,Erick Londoño Viafara,Viafare,name words,True,spelling variant: i>y a>e | single typing error: deletion | name words: surname only,3,15
+1343623,Jeremy Djieze,Djieze,name words,False,name words: surname only,0,7
+1207356,Makai Wells,Macai vellz,spelling variant,True,spelling variant: s>z w>v | spelling variant: k>c,3,3
+614616,Ian Luccas,Ian Luccaas,single typing error,False,single typing error: insertion,1,1
+518856,Robinho,rubinhu,name words,True,"punctuation, spacing, accents: lower case | spelling variant: o>u | spelling variant: o>u",2,2
+494369,Naïs Djouahra,Nïas Djouahra,single typing error,False,single typing error: transposition,1,1
+1377423,Álvaro Velaz,Álvaro Vwlaz,single typing error,False,single typing error: substitution,1,1
+769915,Juande García,juande garcía,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+531551,Álex Carrascal,Á. Carrascal,name words,False,name words: initial for first name,0,3
+804276,Dominik Vott,D. Vott,name words,False,name words: initial for first name,0,6
+82447,Dominik Simerský,Simerský,name words,False,name words: surname only,0,8
+617176,David Jurčenko,d. jurčnku,name words,True,"single typing error: transposition | punctuation, spacing, accents: lower case | single typing error: deletion | spelling variant: i>y o>u | name words: initial for first name",4,6
+1208436,Gandi Samuel Sle,Gandi Samuekl Sle,single typing error,False,single typing error: insertion,1,1
+1277411,Philip Odubia,Philip Odbia,single typing error,False,single typing error: deletion,1,1
+807891,Andrei Sosnovschii,Anrei Sosnovschii,single typing error,False,single typing error: deletion,1,1
+597072,Hugo Moura,Hugu Mure,single typing error,True,single typing error: deletion | spelling variant: o>u a>e,3,3
+47566,Rafael Mineiro,Rafael Mineido,single typing error,False,single typing error: substitution,1,1
+1194845,Kauê Junior,Kauê Jujior,single typing error,False,single typing error: substitution,1,1
+435470,Christian Bonacchi,C. Bonacchi,name words,False,name words: initial for first name,0,8
+323460,Tommaso Degl'innocenti,Tommasu Degl'innocanti,spelling variant,False,spelling variant: e>a o>u,2,2
+548581,Andrea Conti,Andrea Cnti,single typing error,False,single typing error: deletion,1,1
+522209,Leon Dajaku,L. Dajaku,name words,False,name words: initial for first name,0,3
+687790,Antonio Tikvić,Antonio Tikvći,single typing error,False,single typing error: transposition,1,1
+1084613,Nico Thier,Nico Thyer,spelling variant,False,spelling variant: i>y,1,1
+609813,Sten Viidas,Viidas,name words,False,name words: surname only,0,5
+370186,Michael Lilander,Lilander,name words,False,name words: surname only,0,8
+1306700,Joseph-Albert Ndakala,Joseph-Afertndakala,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: words joined | single typing error: substitution",3,3
+254333,Nininho,ninimno,name words,True,"single typing error: substitution | punctuation, spacing, accents: lower case | single typing error: substitution",2,2
+40965,João Lucas,João Lucss,single typing error,False,single typing error: substitution,1,1
+802053,Kauê,Kau,single typing error,False,single typing error: deletion,1,1
+449867,Lorik Boshnjaku,Lorikbishnjjaku,single typing error,True,"single typing error: insertion | punctuation, spacing, accents: words joined | single typing error: substitution",3,3
+822682,Arianit Hasani,Arianit Haseni,spelling variant,False,spelling variant: a>e,1,1
+478240,Jorgo Pëllumbi,Jirgo Pëllumbi,single typing error,False,single typing error: substitution,1,1
+1351233,Ciaran William Banks,Ciaran William,name words,False,name words: last word dropped,0,6
+143808,Jordan Thewlis,Jordannghealis,name words,True,"single typing error: insertion | punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: substitution",3,3
+1098999,Charlie Naylor,Chwrlie Naylor,single typing error,False,single typing error: substitution,1,1
+596736,Luis Felipe,L. Felipe,name words,False,name words: initial for first name,0,3
+379227,Mohammed Osman,Mohammred Osman,single typing error,False,single typing error: insertion,1,1
+602897,Chatmongkol Tongkiri,Cjatmongkol Tongkiri,single typing error,False,single typing error: substitution,1,1
+1285776,Doran Farrell,doranfrrel,name words,True,"spelling variant: f>ph ph>f | single typing error: deletion | single typing error: deletion | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined",3,3
+1228332,Martin Luala,M. Luala,name words,False,name words: initial for first name,0,5
+964759,Tanner Dutra,T. Dutra,name words,False,name words: initial for first name,0,5
+638684,Hlynur Karlsson,Hlynurkarlsson,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+216567,Gísli Eyjólfsson,Gísli Eyjólesson,single typing error,False,single typing error: substitution,1,1
+135187,Elías Már Ómarsson,elías márómarso,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: lower case | single typing error: deletion | punctuation, spacing, accents: words joined",3,3
+559684,Jesper Karlsson,Jesper Karlson,single typing error,False,single typing error: deletion,1,1
+867899,Urho Huhtamäki,Huhtamäki,name words,False,name words: surname only,0,5
+830257,Rasmus Sipi,Rasms Sipi,single typing error,False,single typing error: deletion,1,1
+1100998,Valentin Fontaine,Valentin Fontain,single typing error,False,single typing error: deletion,1,1
+915098,Afonso Conde,Afonzo Conde,spelling variant,False,spelling variant: s>z,1,1
+950163,Mikhail Keise,Mikhail Kfise,single typing error,False,single typing error: substitution,1,1
+116492,Diego Vera,Vera,name words,False,name words: surname only,0,6
+520587,Francisco Ibáñez,Francisco Ibáññez,single typing error,False,single typing error: insertion,1,1
+492677,Owen Falconis,Owen Falkonis,spelling variant,False,spelling variant: c>k,1,1
+891524,Marcus Younis,M. Younis,name words,False,name words: initial for first name,0,5
+451410,Mads Emil Madsen,Mads Emil Madesn,single typing error,False,single typing error: transposition,1,1
+619642,Oliver Ross,Olive Ross,single typing error,False,single typing error: deletion,1,1
+433100,Lukas Mai,Luukas Mai,single typing error,False,single typing error: insertion,1,1
+492092,Hugo Vandermersch,Hugo Vandermerskh,spelling variant,False,spelling variant: c>k,1,1
+272233,Pius Dorn,Pius Dorj,single typing error,False,single typing error: substitution,1,1
+1108027,Oskar Lindegård,Ozcar Lindegård,spelling variant,False,spelling variant: s>z k>c,2,2
+972259,Maddox Driver,maddosdryver,name words,True,"single typing error: substitution | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: i>y z>s",3,3
+1364095,Jacob Monroy,Jzcub Monry,single typing error,True,single typing error: deletion | single typing error: substitution | spelling variant: o>u,3,3
+821646,Adam Stroud,Adsmstrod,name words,True,"punctuation, spacing, accents: words joined | single typing error: deletion | single typing error: substitution",3,3
+15025,Alexander Ring,Aalxender Ring,single typing error,True,single typing error: transposition | spelling variant: a>e e>a,3,3
+1077209,Goudouss Bamba,Gudus Bamba,single typing error,True,single typing error: deletion | spelling variant: ou>u ou>u,3,3
+1066030,Åsmund Roppen,Asumndroppen,"punctuation, spacing, accents",True,"punctuation, spacing, accents: accents stripped | single typing error: transposition | punctuation, spacing, accents: words joined",3,3
+853704,Mirza Mulac,Mulac,name words,False,name words: surname only,0,6
+779349,Filip Botnen,Filip Botben,single typing error,False,single typing error: substitution,1,1
+682962,Marcus Ryberg,Marcusryfbdrg,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: insertion",3,3
+678062,Sebastian Lodberg,Sebagiwn Lodberg,single typing error,True,single typing error: substitution | single typing error: deletion | single typing error: substitution | single typing error: substitution,3,3
+776258,Elison Makolli,Elison Mekolli,spelling variant,False,spelling variant: a>e,1,1
+1336021,David Kolacek,Davidkolacek,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+913212,Dominik Němec,D. Němec,name words,False,name words: initial for first name,0,6
+584998,Kryštof Krátký,kryštof krátký,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+644927,Iker Bravo,iker bravo,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+546111,Lorent Tolaj,L. Tolaj,name words,False,name words: initial for first name,0,5
+10303,Sonny Bradley,Sonny Brsadley,single typing error,False,single typing error: insertion,1,1
+1273612,Brian Ouru,Brianouri,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: substitution",2,2
+1273629,Ian Omondi,I. Omondi,name words,False,name words: initial for first name,0,2
+887193,Roger,Rogeg,single typing error,False,single typing error: substitution,1,1
+597960,Kaio,kko,name words,True,"punctuation, spacing, accents: lower case | single typing error: substitution | single typing error: deletion",2,2
+606183,David Kochem,kuchwm,name words,True,"single typing error: transposition | punctuation, spacing, accents: lower case | single typing error: substitution | spelling variant: o>u | name words: surname only",3,8
+84477,Marius Briceag,Marius Broceag,single typing error,False,single typing error: substitution,1,1
+327214,Rareş Lazăr,Rareş Laxăr,single typing error,False,single typing error: substitution,1,1
+961054,Eduard Croitoru,Croitoru,name words,False,name words: surname only,0,7
+1365653,Chamou Karaboue,chamou karaboue,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+1365864,Mohammed Muhsen,Muhammed Muhzen,spelling variant,False,spelling variant: s>z o>u,2,2
+1365619,Mohammed Jasim,Mohammedjasim,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+121621,Grant Kekana,Kekana,name words,False,name words: surname only,0,6
+763477,Tshepang Morena,Morena,name words,False,name words: surname only,0,9
+292529,Mbhazima Rikhotso,Rikhotso,name words,False,name words: surname only,0,9
+573691,Adonis Frías,Axonis Frías,single typing error,False,single typing error: substitution,1,1
+493492,Marcos Antônio,M. Antônio,name words,False,name words: initial for first name,0,5
+395625,Ariel Sant'Anna,Sxnt'Ana,name words,True,spelling variant: e>a nn>n | single typing error: substitution | name words: surname only,3,8
+447353,Reece Myles-Meekums,Reece Myle-Meekums,single typing error,False,single typing error: deletion,1,1
+601849,Dylan Stephenson,stefensson,name words,True,"punctuation, spacing, accents: lower case | spelling variant: ph>f son>sson | name words: surname only",3,9
+406683,Kyle Howkins,Kye Howkins,single typing error,False,single typing error: deletion,1,1
+337093,Xuan Han,Xuan Ha,single typing error,False,single typing error: deletion,1,1
+603648,Dilyimit Tudi,Tudi,name words,False,name words: surname only,0,9
+1053996,Liu Shiming,Liu Siming,single typing error,False,single typing error: deletion,1,1
+213966,Leandro Corulo,leandrokorulk,name words,True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: substitution | spelling variant: c>k",3,3
+90785,Jhord Garcés,j. garxcés,name words,True,"spelling variant: o>u | single typing error: insertion | punctuation, spacing, accents: lower case | single typing error: insertion | name words: initial for first name",3,5
+807705,Rodrigo Llano,Rodrigollano,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+426372,Raul Palmes,raul palmes,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+779381,Flavius Iacob,Iacob,name words,False,name words: surname only,0,8
+477398,Taylor Luvambo,Taylor Lufambo,single typing error,False,single typing error: substitution,1,1
+336450,Charles Morren,Morren,name words,False,name words: surname only,0,8
+787968,Benjamin Romeyns,Romeyns,name words,False,name words: surname only,0,9
+1346398,Ken Schmitz,Schmitz,name words,False,name words: surname only,0,4
+814426,Artem Nagirnyi,Artem Negirnii,spelling variant,False,spelling variant: y>i a>e,2,2
+560972,Hugo Svensson,H. Svensson,name words,False,name words: initial for first name,0,3
+829428,Sondre Halvorsen,Halvorsen,name words,False,name words: surname only,0,7
+650635,Dudu,Dydu,single typing error,False,single typing error: substitution,1,1
+447218,Iker Pozo,I. Pozo,name words,False,name words: initial for first name,0,3
+537822,Maksim Petrov,Maksym Petrov,spelling variant,False,spelling variant: i>y,1,1
+1329107,Niko Skrlec,N. Skrlec,name words,False,name words: initial for first name,0,3
+771873,Marko Mady,Mady,name words,False,name words: surname only,0,6
+919231,Dario Sivonjić,Dzrio Sivonjić,single typing error,False,single typing error: substitution,1,1
+818358,Jack McInally,Jacu McInally,single typing error,False,single typing error: substitution,1,1
+478251,Jayden Prasad,Prasad,name words,False,name words: surname only,0,7
+448322,Marcus Barnes,Barnes,name words,False,name words: surname only,0,7
+285529,Ryoma Watanabe,Watanabe,name words,False,name words: surname only,0,6
+739665,Kota Kudo,K. Kudo,name words,False,name words: initial for first name,0,3
+560238,Matheus Bueno,Mateuz Bueno,spelling variant,False,spelling variant: th>t s>z,2,2
+363788,Joan Castro,J. Castro,name words,False,name words: initial for first name,0,3
+896720,Juan Viveros,juan viveros,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+770285,Anthony Vásquez,Antony Vásquaz,spelling variant,False,spelling variant: e>a th>t,2,2
+1069891,Jonas Sundli-Härdig,Jonas Sundli-Häedig,single typing error,False,single typing error: substitution,1,1
+851324,Emil Lausten,Eml Lausten,single typing error,False,single typing error: deletion,1,1
+1108150,Luc Haller,Luc Heler,spelling variant,False,spelling variant: ll>l a>e,2,2
+900157,Yuma Kato,Yiuma Kato,single typing error,False,single typing error: insertion,1,1
+1049587,Soichiro Tsutsumi,Soichhhiro Tsutsumi,spelling variant,False,spelling variant: ic>ich ic>ich,2,2
+1167409,Ren Sugimoto,Sugimoto,name words,False,name words: surname only,0,4
+633967,Arnar Gunnarsson,A. Gunnarsson,name words,False,name words: initial for first name,0,4
+613503,Andre Solorzano,Solorzano,name words,False,name words: surname only,0,6
+1192059,Tómas Bjarni Baldursson,Tómas Bjarnibaldursson,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+597230,Danielzinho,Danalxinho,single typing error,True,single typing error: substitution | spelling variant: e>a | single typing error: deletion,3,3
+699206,Braian Aguirre,B. Aguirre,name words,False,name words: initial for first name,0,5
+486024,Romércio,romerrcio,single typing error,True,"single typing error: insertion | punctuation, spacing, accents: lower case | punctuation, spacing, accents: accents stripped",2,2
+636592,Saer Diop,Saer Dyop,spelling variant,False,spelling variant: i>y,1,1
+600085,Ebrima Darboe,Ebria Darboe,single typing error,False,single typing error: deletion,1,1
+411305,Marco Toscano,Toscano,name words,False,name words: surname only,0,6
+336432,Wilson Pineda,Wlisonpinrda,name words,True,"single typing error: substitution | single typing error: transposition | punctuation, spacing, accents: words joined",3,3
+743978,Brayan Castaneda,Brayan Castanexa,single typing error,False,single typing error: substitution,1,1
+363782,Yilton Díaz,Ylton Díaz,single typing error,False,single typing error: deletion,1,1
+1314312,Kongzhi Zhang,Kongzhizhang,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1178599,Jianhua Ding,Jianhuading,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+831901,Kamiran Halimurat,kamiran halimurat,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+707369,Shakhzod Toirov,Shakhzodroirlv,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: substitution",3,3
+814089,Makhmud Makhamadzhonov,mwchmud makhamadshunov,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | spelling variant: k>c | single typing error: substitution | spelling variant: o>u z>s",4,4
+770525,Ibrokhimkhalil Yuldoshev,Yuldoshev,name words,False,name words: surname only,0,15
+445102,Jamie Brandon,Jamid Brandon,single typing error,False,single typing error: substitution,1,1
+357712,Cameron Carter-Vickers,Cemeron Certer-Vickers,spelling variant,False,spelling variant: a>e a>e,2,2
+610791,Josh Mulligan,Joshmulligan,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+774155,Kevin Lebersorger,Leberzorfer,name words,True,spelling variant: i>y | single typing error: substitution | single typing error: substitution | name words: surname only,3,8
+1193979,Naël Lamine Kane,Naël Laminekane,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1306066,Amin Ibrahim,Amin Ibrehim,spelling variant,False,spelling variant: a>e,1,1
+683128,Muhammad Faudzi,Muhamad Faudzi,single typing error,False,single typing error: deletion,1,1
+424382,Pedro Santos,Pedro Sentos,spelling variant,False,spelling variant: a>e,1,1
+1293341,Niam Mulhassan Alias,Niam Mulhassn Alias,single typing error,False,single typing error: deletion,1,1
+835628,Sander Sybrandy,S. Sybrandy,name words,False,name words: initial for first name,0,5
+1358732,Denis Cabeza,ddniscabza,name words,True,"single typing error: substitution | punctuation, spacing, accents: lower case | single typing error: deletion | punctuation, spacing, accents: words joined",3,3
+1367667,Juan Pérez Jiménez,juan perez iimenez,"punctuation, spacing, accents",True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: accents stripped | spelling variant: j>y y>i",3,3
+805322,Denis Krioutchenkov,Denis Krioutchnkov,single typing error,False,single typing error: deletion,1,1
+654929,Eli Conway,E. Conway,name words,False,name words: initial for first name,0,2
+511593,Jake Dengler,Jekadenger,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: words joined | spelling variant: e>a a>e",4,4
+786330,Domi Massoumou,Dumimassumuu,name words,True,"punctuation, spacing, accents: words joined | spelling variant: o>u | spelling variant: ou>u o>u",4,4
+906039,Gor Abrahamyan,gorahrajamyan,name words,True,"single typing error: substitution | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: substitution",3,3
+566353,Sead Islamović,Sead Islamoović,single typing error,False,single typing error: insertion,1,1
+619496,Samuel Pedro,Samuel Padro,spelling variant,False,spelling variant: e>a,1,1
+703425,Miles Fenton,Miles Fentojn,single typing error,False,single typing error: insertion,1,1
+576846,Moustapha Name,Moustpaha Name,single typing error,False,single typing error: transposition,1,1
+1184901,Ivan Vladimirov Pavlov,Ivan Vladimirov Pavlkv,single typing error,False,single typing error: substitution,1,1
+1053138,David Lukanov,Dawidlukanow,spelling variant,True,"spelling variant: v>w v>w | punctuation, spacing, accents: words joined",3,3
+1177818,Nikolay Iliev,Nikolay Iilev,single typing error,False,single typing error: transposition,1,1
+683410,Sebastian Mai,S. Mai,name words,False,name words: initial for first name,0,8
+949434,Elias Vali Fard,Elias wali phard,spelling variant,True,spelling variant: v>w f>ph,3,3
+775807,Arne Wessels,Arme Wessels,single typing error,False,single typing error: substitution,1,1
+1356189,Jeremiah McGuire,McGuire,name words,False,name words: surname only,0,9
+1088407,Kiko Hidalgo,Kiko Hodalgo,single typing error,False,single typing error: substitution,1,1
+700287,Jack Beerling,Beerling,name words,False,name words: surname only,0,5
+1181631,Alfred Levin Nyrén,Alfrd Levin Nren,single typing error,True,"single typing error: deletion | single typing error: deletion | punctuation, spacing, accents: accents stripped",3,3
+1366799,Dani Arias,D. Arias,name words,False,name words: initial for first name,0,3
+1038792,Gonçalo Nolasco,gjçalonolasco,single typing error,True,"single typing error: substitution | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: deletion",3,3
+447185,Wesley Harding,Welsey Harding,single typing error,False,single typing error: transposition,1,1
+192775,Cauley Woodrow,Cauley Woodrosw,single typing error,False,single typing error: insertion,1,1
+736990,Nathan Moriah-Welsh,Nathan Mooriahwalsh,"punctuation, spacing, accents",True,"punctuation, spacing, accents: hyphen to space | punctuation, spacing, accents: words joined | spelling variant: e>a | single typing error: insertion",3,3
+1027144,Julian Hussauf,Julian Hussaud,single typing error,False,single typing error: substitution,1,1
+1356042,Lars de Wit,Lars Wit,name words,False,name words: middle word dropped,0,3
+1186721,Christian Huetz,Christjan Huetz,single typing error,False,single typing error: substitution,1,1
+490692,Wilkson,wilkson,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+651061,Lucca,Luccx,single typing error,False,single typing error: substitution,1,1
+597256,Ramires,Ramirs,single typing error,False,single typing error: deletion,1,1
+1252587,Israel Contioso Mora,Mora,name words,False,name words: surname only,0,16
+626227,David Pecellín,D. Pecellín,name words,False,name words: initial for first name,0,4
+1389490,Raúl Mesa Jiménez,Raúúl Mesa Jiménez,single typing error,False,single typing error: insertion,1,1
+483762,Zé Ricardo,Zé Ricarwo,single typing error,False,single typing error: substitution,1,1
+801190,Tavinho,Tavinoh,single typing error,False,single typing error: transposition,1,1
+261048,Gegé,Gdgé,single typing error,False,single typing error: substitution,1,1
+91155,Leonardo Becerra,Laonardo Bacara,spelling variant,True,spelling variant: e>a e>a | spelling variant: e>a rr>r,4,4
+588211,Wesley Cabrera,Wesley kebrera,spelling variant,False,spelling variant: a>e c>k,2,2
+890865,Yeyson Vásquez,Yeyson Vásqusz,single typing error,False,single typing error: substitution,1,1
+562015,Gian Trasante,Gisn Trsanta,single typing error,True,single typing error: substitution | single typing error: substitution | single typing error: deletion | spelling variant: z>s e>a,3,3
+350675,Brian Lozano,B. Lozano,name words,False,name words: initial for first name,0,4
+661144,Lucas Ferreira,Lucas Feerreira,single typing error,False,single typing error: insertion,1,1
+693423,Jhonnatan Lethieri,Lethieri,name words,False,name words: surname only,0,10
+750616,Ruan Marcos,Rusan Marcos,single typing error,False,single typing error: insertion,1,1
+735094,Gabriel Neto,Gebeil Neo,single typing error,True,single typing error: deletion | single typing error: deletion | spelling variant: a>e ie>ei,4,4
+976775,Mohamed Chaouch,Mohamed Caouch,single typing error,False,single typing error: deletion,1,1
+1228923,Sofia Shabarshina,Soia Shabarshina,single typing error,False,single typing error: deletion,1,1
+672442,Yana Ray,Ray,name words,False,name words: surname only,0,5
+682716,Tatyana Morina,tatyanmuryna,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | spelling variant: o>u i>y",4,4
+865853,Josefine Lefdal,Josefin Lefdal,single typing error,False,single typing error: deletion,1,1
+677470,Sofie Bjørnsen,Sofei Bjørnszfn,single typing error,True,single typing error: substitution | single typing error: insertion | spelling variant: ie>ei s>z,3,3
+1311539,Marthine Bjorland,Marthina Bjorland,spelling variant,False,spelling variant: e>a,1,1
+968378,Carstyn Anderson,carstynendarson,name words,True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: e>a a>e",3,3
+1093920,Abigail Jensen,Abigaijdensen,name words,True,"single typing error: insertion | single typing error: deletion | punctuation, spacing, accents: words joined",3,3
+1093947,Emma Gervy,Gervy,name words,False,name words: surname only,0,5
+1058613,Victoria Ostapiv,Ostapiv,name words,False,name words: surname only,0,9
+992328,Alina Savka,Alinasavka,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+851337,Alina Horodetska,A. Horodetska,name words,False,name words: initial for first name,0,4
+930570,Neelia Pitko,pitko,name words,True,"single typing error: substitution | punctuation, spacing, accents: lower case | spelling variant: ee>i | name words: surname only",3,7
+481522,Monica Hagström,Hagström,name words,False,name words: surname only,0,7
+926359,Hertta Laurinkoski,Hertta Laurinkiski,single typing error,False,single typing error: substitution,1,1
+844859,Emilie Langhorn,Emilya Langhorn,spelling variant,False,spelling variant: e>a i>y,2,2
+530101,Silke Bonnén,silk bpnjnén,single typing error,True,"single typing error: deletion | punctuation, spacing, accents: lower case | single typing error: substitution | single typing error: insertion",3,3
+1057295,Janne Brouer,Janne Bruer,single typing error,False,single typing error: deletion,1,1
+944529,Sanna Øvstebø,Sannaøvstebø,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1319405,Sanne Holmvik,Sanne Hollmvik,single typing error,False,single typing error: insertion,1,1
+1080791,Ane Fagerheim,Fagerheim,name words,False,name words: surname only,0,4
+761007,Noemi Paquin,Noemi Paquon,single typing error,False,single typing error: substitution,1,1
+762113,Colby Barnett,Colbybarbatt,name words,True,"spelling variant: e>a | single typing error: substitution | punctuation, spacing, accents: words joined",3,3
+481873,Taylor Otto,Taylor utto,spelling variant,False,spelling variant: o>u,1,1
+760325,Marissa Garcia,M. Garcia,name words,False,name words: initial for first name,0,6
+571418,Daniela Monroy,Daniela Monnroy,single typing error,False,single typing error: insertion,1,1
+572196,Ximena Rios,ximena rios,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+1382869,Sophie Campbell,Sophie Cmpbell,single typing error,False,single typing error: deletion,1,1
+1239809,Regan Adams,Regan Adam,single typing error,False,single typing error: deletion,1,1
+997445,Lily Coish,Coish,name words,False,name words: surname only,0,5
+1239117,Savanna Clark,Savanna Clrk,single typing error,False,single typing error: deletion,1,1
+1239130,Carson Glenn,Carssson Glenn,spelling variant,False,spelling variant: son>sson son>sson,2,2
+1114897,Ella Anderson,Ella Adnerson,single typing error,False,single typing error: transposition,1,1
+1100058,Madeline Bracy,M. Bracy,name words,False,name words: initial for first name,0,7
+1241884,Lilly Gibler,Gbler,name words,True,single typing error: deletion | spelling variant: y>i | spelling variant: ll>l | name words: surname only,3,7
+1100063,Megan Kephart,megan kephart,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+1008262,Julianna Brekovszki,Juliann Brekovszki,single typing error,False,single typing error: deletion,1,1
+1153174,Melania Mezossy,Melaniamezossy,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1269206,Nagy Panna,Nagy Pane,spelling variant,True,spelling variant: nn>n | spelling variant: a>e,2,2
+1276117,Ammarah Ali,Ammaerahaly,name words,True,"spelling variant: i>y | punctuation, spacing, accents: words joined | single typing error: insertion",3,3
+1276107,Jada McGibbon,McGibbon,name words,False,name words: surname only,0,5
+1162253,Amber Provan,Amberpruven,spelling variant,True,"spelling variant: a>e o>u | punctuation, spacing, accents: words joined",3,3
+1176515,Mollie Josefsson,Mollijosefcsson,spelling variant,True,"spelling variant: son>sson | single typing error: substitution | punctuation, spacing, accents: words joined | single typing error: deletion",3,3
+1064518,Wilma Dahlgren,Wilmadahlran,single typing error,True,"single typing error: deletion | spelling variant: e>a | punctuation, spacing, accents: words joined",3,3
+1313790,Amelia Hallberg,Ameliahallhsrg,single typing error,True,"single typing error: substitution | punctuation, spacing, accents: words joined | single typing error: substitution",3,3
+1093500,Carissa Iriarte,Carissa Irirte,single typing error,False,single typing error: deletion,1,1
+1362814,Breanna McWilliams,breannamswilliiams,name words,True,"punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | single typing error: substitution",3,3
+1233581,Taylin Gimbel,Taylyn Gymbel,spelling variant,False,spelling variant: i>y i>y,2,2
+1199755,Paige Taylor,Pauge Taylor,single typing error,False,single typing error: substitution,1,1
+797508,Rie Kitano,R. Kitano,name words,False,name words: initial for first name,0,2
+644813,Holly McQueen,Holy McQueen,spelling variant,False,spelling variant: ll>l,1,1
+1006131,Brylee Rivera,Brlee Rivera,single typing error,False,single typing error: deletion,1,1
+1125977,Madi Riege,madi riege,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+984728,Bella Hernandez,B. Hernandez,name words,False,name words: initial for first name,0,4
+1088731,Kaleigh Hart,Kaleigh Haart,single typing error,False,single typing error: insertion,1,1
+1212848,Campbell Morgan,C. Morgan,name words,False,name words: initial for first name,0,7
+1391507,Gabi Dover,G. Dover,name words,False,name words: initial for first name,0,3
+1334145,Elizabeth Danso,Elizabth Danso,single typing error,False,single typing error: deletion,1,1
+1334140,Bernice Asomaniwaa,Asomaniwaa,name words,False,name words: surname only,0,8
+1334143,Juliet Gapson,J. Gapson,name words,False,name words: initial for first name,0,5
+835750,Livia Pertl,Lyvia Pertl,spelling variant,False,spelling variant: i>y,1,1
+1374167,Alba Aguado,Aba Aguado,single typing error,False,single typing error: deletion,1,1
+1113042,Emerson Iacovelli,Emerzon Iavoveli,single typing error,True,single typing error: deletion | single typing error: substitution | spelling variant: s>z,3,3
+1231280,Catherine Groth,Cxatherine Groth,single typing error,False,single typing error: insertion,1,1
+1231283,Kailea Silva,Kaileasilva,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1392127,Abigail Davis,Abigaildavis,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+820884,Laura Casamachín,laura casamachín,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+1050108,María Torres,maría torres,"punctuation, spacing, accents",False,"punctuation, spacing, accents: lower case",0,0
+1050077,Kendri Rentería Camacho,Kendri Renteria Camacho,"punctuation, spacing, accents",False,"punctuation, spacing, accents: accents stripped",1,1
+1068210,Débora Bebê,Déborabebê,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+225419,Mariana Larroquette,Mariana Larrooketta,single typing error,True,single typing error: insertion | spelling variant: e>a | spelling variant: qu>k,3,3
+688425,Dani Ortolan,Ortolan,name words,False,name words: surname only,0,5
+694788,Fenna Meijer,F. Meijer,name words,False,name words: initial for first name,0,4
+1357259,Kiki Heshof,kikihashuf,name words,True,"spelling variant: o>u e>a | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined",3,3
+862297,Felice Hermans,Flicahermans,spelling variant,True,"spelling variant: e>a | single typing error: deletion | punctuation, spacing, accents: words joined",3,3
+1099052,Maria Ostopinka,Maria Osropinka,single typing error,False,single typing error: substitution,1,1
+908855,Zofia Dubiel,Z. Dubiel,name words,False,name words: initial for first name,0,4
+281864,Dominika Grabowska,Dminika Grabpwsca,single typing error,True,single typing error: substitution | spelling variant: k>c | single typing error: deletion,3,3
+1187270,Nikoleta Kurja,Nikoleta curya,spelling variant,False,spelling variant: k>c j>y,2,2
+767176,Cristina Botojel,Cristna Botojel,single typing error,False,single typing error: deletion,1,1
+777182,Florentina Ancăș,Ancăș,name words,False,name words: surname only,0,11
+861153,Martha Langskov,Marthalanfskuv,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: substitution | spelling variant: o>u",3,3
+546304,Marta Grosso,M. Grosso,name words,False,name words: initial for first name,0,4
+1114709,Ida Hansen,Ida Hansn,single typing error,False,single typing error: deletion,1,1
+1120500,Keali Foster,Kealifoster,"punctuation, spacing, accents",False,"punctuation, spacing, accents: words joined",1,1
+1085248,Isabella Franco,I. Franco,name words,False,name words: initial for first name,0,7
+1372142,Ava Scott,Scott,name words,False,name words: surname only,0,4
+1070161,Mia Power,Power,name words,False,name words: surname only,0,4
+415528,Tyla Vlajnic,Tyla Vlajnik,spelling variant,False,spelling variant: c>k,1,1
+1070126,Bridie Cooling,Bridiekoling,"punctuation, spacing, accents",True,"punctuation, spacing, accents: words joined | single typing error: substitution | spelling variant: ck>k",3,3
+879230,Vilde Raabel Svensen,Vilwe Raabel Svensen,single typing error,False,single typing error: substitution,1,1
+1187004,Synnøve Tollånes,Sinnøvetollanes,single typing error,True,"single typing error: deletion | spelling variant: y>i | single typing error: insertion | punctuation, spacing, accents: words joined | punctuation, spacing, accents: accents stripped",3,3
+918586,Madelen Rønvik,Madelen Røvnik,single typing error,False,single typing error: transposition,1,1
+1232282,Ryley Winrich,Rilei vinrichh,single typing error,True,single typing error: insertion | spelling variant: y>i | spelling variant: y>i w>v,4,4
+1232315,Sophie Rater,Sophie Ratr,single typing error,False,single typing error: deletion,1,1
+1232279,Allison Millina,Alliso Millina,single typing error,False,single typing error: deletion,1,1
+813031,Siun Murdiff,siunhurdif,name words,True,"single typing error: deletion | punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | single typing error: substitution",3,3
+258370,Rachel Doyle,Doyle,name words,False,name words: surname only,0,7
+679862,Fiona Donnelly,F. Donnelly,name words,False,name words: initial for first name,0,4
+1325663,Leah Craig,Leay Craig,single typing error,False,single typing error: substitution,1,1

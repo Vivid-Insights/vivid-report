@@ -1,0 +1,1443 @@
+{
+  "players": 400,
+  "runs": 800,
+  "groups": {
+    "correct / all": {
+      "n": 400,
+      "right": {
+        "count": 371,
+        "rate": 0.927,
+        "ci95": [
+          0.898,
+          0.949
+        ]
+      },
+      "asked the user": {
+        "count": 3,
+        "rate": 0.007,
+        "ci95": [
+          0.003,
+          0.022
+        ]
+      },
+      "wrong player": {
+        "count": 26,
+        "rate": 0.065,
+        "ci95": [
+          0.045,
+          0.094
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.01
+        ]
+      }
+    },
+    "correct / female": {
+      "n": 100,
+      "right": {
+        "count": 94,
+        "rate": 0.94,
+        "ci95": [
+          0.875,
+          0.972
+        ]
+      },
+      "asked the user": {
+        "count": 2,
+        "rate": 0.02,
+        "ci95": [
+          0.006,
+          0.07
+        ]
+      },
+      "wrong player": {
+        "count": 4,
+        "rate": 0.04,
+        "ci95": [
+          0.016,
+          0.098
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.037
+        ]
+      }
+    },
+    "correct / male": {
+      "n": 300,
+      "right": {
+        "count": 277,
+        "rate": 0.923,
+        "ci95": [
+          0.888,
+          0.948
+        ]
+      },
+      "asked the user": {
+        "count": 1,
+        "rate": 0.003,
+        "ci95": [
+          0.001,
+          0.019
+        ]
+      },
+      "wrong player": {
+        "count": 22,
+        "rate": 0.073,
+        "ci95": [
+          0.049,
+          0.109
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.013
+        ]
+      }
+    },
+    "misspelled / all": {
+      "n": 400,
+      "right": {
+        "count": 250,
+        "rate": 0.625,
+        "ci95": [
+          0.577,
+          0.671
+        ]
+      },
+      "asked the user": {
+        "count": 39,
+        "rate": 0.098,
+        "ci95": [
+          0.072,
+          0.131
+        ]
+      },
+      "wrong player": {
+        "count": 108,
+        "rate": 0.27,
+        "ci95": [
+          0.229,
+          0.316
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.007,
+        "ci95": [
+          0.003,
+          0.022
+        ]
+      }
+    },
+    "misspelled / distance 0": {
+      "n": 15,
+      "right": {
+        "count": 13,
+        "rate": 0.867,
+        "ci95": [
+          0.621,
+          0.963
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.204
+        ]
+      },
+      "wrong player": {
+        "count": 2,
+        "rate": 0.133,
+        "ci95": [
+          0.037,
+          0.379
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.204
+        ]
+      }
+    },
+    "misspelled / distance 1": {
+      "n": 164,
+      "right": {
+        "count": 129,
+        "rate": 0.787,
+        "ci95": [
+          0.718,
+          0.842
+        ]
+      },
+      "asked the user": {
+        "count": 16,
+        "rate": 0.098,
+        "ci95": [
+          0.061,
+          0.153
+        ]
+      },
+      "wrong player": {
+        "count": 19,
+        "rate": 0.116,
+        "ci95": [
+          0.075,
+          0.174
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.023
+        ]
+      }
+    },
+    "misspelled / distance 2": {
+      "n": 32,
+      "right": {
+        "count": 16,
+        "rate": 0.5,
+        "ci95": [
+          0.336,
+          0.664
+        ]
+      },
+      "asked the user": {
+        "count": 2,
+        "rate": 0.062,
+        "ci95": [
+          0.017,
+          0.201
+        ]
+      },
+      "wrong player": {
+        "count": 14,
+        "rate": 0.438,
+        "ci95": [
+          0.282,
+          0.607
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.107
+        ]
+      }
+    },
+    "misspelled / distance 3": {
+      "n": 77,
+      "right": {
+        "count": 39,
+        "rate": 0.506,
+        "ci95": [
+          0.397,
+          0.615
+        ]
+      },
+      "asked the user": {
+        "count": 9,
+        "rate": 0.117,
+        "ci95": [
+          0.063,
+          0.207
+        ]
+      },
+      "wrong player": {
+        "count": 29,
+        "rate": 0.377,
+        "ci95": [
+          0.277,
+          0.488
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.048
+        ]
+      }
+    },
+    "misspelled / distance 4+": {
+      "n": 112,
+      "right": {
+        "count": 53,
+        "rate": 0.473,
+        "ci95": [
+          0.383,
+          0.565
+        ]
+      },
+      "asked the user": {
+        "count": 12,
+        "rate": 0.107,
+        "ci95": [
+          0.062,
+          0.178
+        ]
+      },
+      "wrong player": {
+        "count": 44,
+        "rate": 0.393,
+        "ci95": [
+          0.307,
+          0.485
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.027,
+        "ci95": [
+          0.009,
+          0.076
+        ]
+      }
+    },
+    "misspelled / female": {
+      "n": 100,
+      "right": {
+        "count": 62,
+        "rate": 0.62,
+        "ci95": [
+          0.522,
+          0.709
+        ]
+      },
+      "asked the user": {
+        "count": 9,
+        "rate": 0.09,
+        "ci95": [
+          0.048,
+          0.162
+        ]
+      },
+      "wrong player": {
+        "count": 29,
+        "rate": 0.29,
+        "ci95": [
+          0.21,
+          0.385
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.037
+        ]
+      }
+    },
+    "misspelled / hard": {
+      "n": 100,
+      "right": {
+        "count": 42,
+        "rate": 0.42,
+        "ci95": [
+          0.328,
+          0.518
+        ]
+      },
+      "asked the user": {
+        "count": 14,
+        "rate": 0.14,
+        "ci95": [
+          0.085,
+          0.221
+        ]
+      },
+      "wrong player": {
+        "count": 43,
+        "rate": 0.43,
+        "ci95": [
+          0.337,
+          0.528
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.01,
+        "ci95": [
+          0.002,
+          0.054
+        ]
+      }
+    },
+    "misspelled / male": {
+      "n": 300,
+      "right": {
+        "count": 188,
+        "rate": 0.627,
+        "ci95": [
+          0.571,
+          0.679
+        ]
+      },
+      "asked the user": {
+        "count": 30,
+        "rate": 0.1,
+        "ci95": [
+          0.071,
+          0.139
+        ]
+      },
+      "wrong player": {
+        "count": 79,
+        "rate": 0.263,
+        "ci95": [
+          0.217,
+          0.316
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.01,
+        "ci95": [
+          0.003,
+          0.029
+        ]
+      }
+    },
+    "misspelled / name words": {
+      "n": 139,
+      "right": {
+        "count": 63,
+        "rate": 0.453,
+        "ci95": [
+          0.373,
+          0.536
+        ]
+      },
+      "asked the user": {
+        "count": 14,
+        "rate": 0.101,
+        "ci95": [
+          0.061,
+          0.162
+        ]
+      },
+      "wrong player": {
+        "count": 59,
+        "rate": 0.424,
+        "ci95": [
+          0.345,
+          0.508
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.022,
+        "ci95": [
+          0.007,
+          0.062
+        ]
+      }
+    },
+    "misspelled / normal": {
+      "n": 300,
+      "right": {
+        "count": 208,
+        "rate": 0.693,
+        "ci95": [
+          0.639,
+          0.743
+        ]
+      },
+      "asked the user": {
+        "count": 25,
+        "rate": 0.083,
+        "ci95": [
+          0.057,
+          0.12
+        ]
+      },
+      "wrong player": {
+        "count": 65,
+        "rate": 0.217,
+        "ci95": [
+          0.174,
+          0.267
+        ]
+      },
+      "other": {
+        "count": 2,
+        "rate": 0.007,
+        "ci95": [
+          0.002,
+          0.024
+        ]
+      }
+    },
+    "misspelled / punctuation, spacing, accents": {
+      "n": 50,
+      "right": {
+        "count": 31,
+        "rate": 0.62,
+        "ci95": [
+          0.482,
+          0.741
+        ]
+      },
+      "asked the user": {
+        "count": 8,
+        "rate": 0.16,
+        "ci95": [
+          0.083,
+          0.285
+        ]
+      },
+      "wrong player": {
+        "count": 11,
+        "rate": 0.22,
+        "ci95": [
+          0.128,
+          0.352
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.071
+        ]
+      }
+    },
+    "misspelled / single typing error": {
+      "n": 158,
+      "right": {
+        "count": 122,
+        "rate": 0.772,
+        "ci95": [
+          0.701,
+          0.831
+        ]
+      },
+      "asked the user": {
+        "count": 11,
+        "rate": 0.07,
+        "ci95": [
+          0.039,
+          0.12
+        ]
+      },
+      "wrong player": {
+        "count": 25,
+        "rate": 0.158,
+        "ci95": [
+          0.11,
+          0.223
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.024
+        ]
+      }
+    },
+    "misspelled / spelling variant": {
+      "n": 53,
+      "right": {
+        "count": 34,
+        "rate": 0.642,
+        "ci95": [
+          0.507,
+          0.757
+        ]
+      },
+      "asked the user": {
+        "count": 6,
+        "rate": 0.113,
+        "ci95": [
+          0.053,
+          0.226
+        ]
+      },
+      "wrong player": {
+        "count": 13,
+        "rate": 0.245,
+        "ci95": [
+          0.149,
+          0.376
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.068
+        ]
+      }
+    }
+  },
+  "correct_right_misspelled_wrong_player": [
+    {
+      "player_id": 834360,
+      "name": "Silvino",
+      "misspelled": "Silvlno",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: substitution",
+      "gender": "male",
+      "competition": "Portuguese Segunda Liga"
+    },
+    {
+      "player_id": 783785,
+      "name": "Trent Kone-Doherty",
+      "misspelled": "t. cune-dogerty",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | spelling variant: k>c o>u | single typing error: substitution | name words: initial for first name",
+      "gender": "male",
+      "competition": "Norwegian Eliteserien"
+    },
+    {
+      "player_id": 629771,
+      "name": "Ole Blomberg",
+      "misspelled": "Ol Blumhberg",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | spelling variant: e>a | spelling variant: a>e o>u | single typing error: insertion",
+      "gender": "male",
+      "competition": "Norwegian Eliteserien"
+    },
+    {
+      "player_id": 54548,
+      "name": "Martin Linnes",
+      "misspelled": "mqartinlines",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | punctuation, spacing, accents: lower case | single typing error: insertion | single typing error: deletion",
+      "gender": "male",
+      "competition": "Norwegian Eliteserien"
+    },
+    {
+      "player_id": 631332,
+      "name": "Anicet Oura",
+      "misspelled": "A. Oura",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Ligi kuu Bara"
+    },
+    {
+      "player_id": 1180059,
+      "name": "David Chapman",
+      "misspelled": "davydkhqapman",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | spelling variant: i>y c>k",
+      "gender": "male",
+      "competition": "American NCAA D1 Sun Belt"
+    },
+    {
+      "player_id": 141434,
+      "name": "Yosel Piedra",
+      "misspelled": "Ysrel Pieera",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | single typing error: substitution | single typing error: insertion",
+      "gender": "male",
+      "competition": "Costa Rican Primera División"
+    },
+    {
+      "player_id": 1323905,
+      "name": "Diaz Kushkumbaev",
+      "misspelled": "Dyas Kushkumbaew",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: v>w i>y | spelling variant: z>s",
+      "gender": "male",
+      "competition": "Kazakhstani 1. Division"
+    },
+    {
+      "player_id": 502947,
+      "name": "Julian Dunn",
+      "misspelled": "J. Dunn",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Canadian Premier League"
+    },
+    {
+      "player_id": 145074,
+      "name": "Brandon O'Neill",
+      "misspelled": "Brendon O'Niell",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: a>e ei>ie",
+      "gender": "male",
+      "competition": "Australian Western Australia NPL"
+    },
+    {
+      "player_id": 1356262,
+      "name": "Gerard Lorente",
+      "misspelled": "gererdlutrente",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | spelling variant: a>e o>u",
+      "gender": "male",
+      "competition": "American NCAA D1 Big East"
+    },
+    {
+      "player_id": 235456,
+      "name": "Samed Kılıç",
+      "misspelled": "Kılıç",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "French Ligue 3"
+    },
+    {
+      "player_id": 397161,
+      "name": "Tom Sang",
+      "misspelled": "Tum zang",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: s>z o>u",
+      "gender": "male",
+      "competition": "English League Two"
+    },
+    {
+      "player_id": 750164,
+      "name": "Labinot Bajrami",
+      "misspelled": "L. Bajrami",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Dutch Eerste Divisie"
+    },
+    {
+      "player_id": 1290718,
+      "name": "Christian Belotti",
+      "misspelled": "C. Belotti",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Italian Serie D - Girone B"
+    },
+    {
+      "player_id": 1207356,
+      "name": "Makai Wells",
+      "misspelled": "Macai vellz",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: s>z w>v | spelling variant: k>c",
+      "gender": "male",
+      "competition": "American MLS Next Pro"
+    },
+    {
+      "player_id": 1377423,
+      "name": "Álvaro Velaz",
+      "misspelled": "Álvaro Vwlaz",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: substitution",
+      "gender": "male",
+      "competition": "Spanish Segunda Division RFEF"
+    },
+    {
+      "player_id": 531551,
+      "name": "Álex Carrascal",
+      "misspelled": "Á. Carrascal",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Spanish Segunda Division RFEF"
+    },
+    {
+      "player_id": 1306700,
+      "name": "Joseph-Albert Ndakala",
+      "misspelled": "Joseph-Afertndakala",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "male",
+      "competition": "Estonian A.LeCoq Premium Liiga"
+    },
+    {
+      "player_id": 143808,
+      "name": "Jordan Thewlis",
+      "misspelled": "Jordannghealis",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: insertion | punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: substitution",
+      "gender": "male",
+      "competition": "English Non League Premier"
+    },
+    {
+      "player_id": 1285776,
+      "name": "Doran Farrell",
+      "misspelled": "doranfrrel",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: f>ph ph>f | single typing error: deletion | single typing error: deletion | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined",
+      "gender": "male",
+      "competition": "American NCAA D1 Mountain West"
+    },
+    {
+      "player_id": 964759,
+      "name": "Tanner Dutra",
+      "misspelled": "T. Dutra",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "American NCAA D1 Mountain West"
+    },
+    {
+      "player_id": 116492,
+      "name": "Diego Vera",
+      "misspelled": "Vera",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Uruguayan Segunda División"
+    },
+    {
+      "player_id": 972259,
+      "name": "Maddox Driver",
+      "misspelled": "maddosdryver",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: substitution | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: i>y z>s",
+      "gender": "male",
+      "competition": "American NCAA D2 Conference Carolinas"
+    },
+    {
+      "player_id": 821646,
+      "name": "Adam Stroud",
+      "misspelled": "Adsmstrod",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: deletion | single typing error: substitution",
+      "gender": "male",
+      "competition": "Finnish Veikkausliiga"
+    },
+    {
+      "player_id": 682962,
+      "name": "Marcus Ryberg",
+      "misspelled": "Marcusryfbdrg",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: insertion",
+      "gender": "male",
+      "competition": "Danish 1st Division"
+    },
+    {
+      "player_id": 1273612,
+      "name": "Brian Ouru",
+      "misspelled": "Brianouri",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "male",
+      "competition": "Premier League"
+    },
+    {
+      "player_id": 1273629,
+      "name": "Ian Omondi",
+      "misspelled": "I. Omondi",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Premier League"
+    },
+    {
+      "player_id": 606183,
+      "name": "David Kochem",
+      "misspelled": "kuchwm",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: transposition | punctuation, spacing, accents: lower case | single typing error: substitution | spelling variant: o>u | name words: surname only",
+      "gender": "male",
+      "competition": "Brazilian Paulista A4"
+    },
+    {
+      "player_id": 1365864,
+      "name": "Mohammed Muhsen",
+      "misspelled": "Muhammed Muhzen",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: s>z o>u",
+      "gender": "male",
+      "competition": "Iraqi League"
+    },
+    {
+      "player_id": 395625,
+      "name": "Ariel Sant'Anna",
+      "misspelled": "Sxnt'Ana",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: e>a nn>n | single typing error: substitution | name words: surname only",
+      "gender": "male",
+      "competition": "Brazilian Paulista A1"
+    },
+    {
+      "player_id": 601849,
+      "name": "Dylan Stephenson",
+      "misspelled": "stefensson",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | spelling variant: ph>f son>sson | name words: surname only",
+      "gender": "male",
+      "competition": "English National League N / S"
+    },
+    {
+      "player_id": 807705,
+      "name": "Rodrigo Llano",
+      "misspelled": "Rodrigollano",
+      "category": "punctuation, spacing, accents",
+      "hard": "False",
+      "steps": "punctuation, spacing, accents: words joined",
+      "gender": "male",
+      "competition": "Bolivian LFPB"
+    },
+    {
+      "player_id": 779381,
+      "name": "Flavius Iacob",
+      "misspelled": "Iacob",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Romanian Superliga"
+    },
+    {
+      "player_id": 1346398,
+      "name": "Ken Schmitz",
+      "misspelled": "Schmitz",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Luxembourgish National Division"
+    },
+    {
+      "player_id": 560972,
+      "name": "Hugo Svensson",
+      "misspelled": "H. Svensson",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Norwegian 2. Division"
+    },
+    {
+      "player_id": 829428,
+      "name": "Sondre Halvorsen",
+      "misspelled": "Halvorsen",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Norwegian 2. Division"
+    },
+    {
+      "player_id": 448322,
+      "name": "Marcus Barnes",
+      "misspelled": "Barnes",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Australian Queensland NPL"
+    },
+    {
+      "player_id": 285529,
+      "name": "Ryoma Watanabe",
+      "misspelled": "Watanabe",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Japanese J1 100 Year Vision League"
+    },
+    {
+      "player_id": 896720,
+      "name": "Juan Viveros",
+      "misspelled": "juan viveros",
+      "category": "punctuation, spacing, accents",
+      "hard": "False",
+      "steps": "punctuation, spacing, accents: lower case",
+      "gender": "male",
+      "competition": "Colombian Liga BetPlay"
+    },
+    {
+      "player_id": 770285,
+      "name": "Anthony Vásquez",
+      "misspelled": "Antony Vásquaz",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: e>a th>t",
+      "gender": "male",
+      "competition": "Colombian Liga BetPlay"
+    },
+    {
+      "player_id": 1167409,
+      "name": "Ren Sugimoto",
+      "misspelled": "Sugimoto",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Japanese J2/J3 100 Year Vision League"
+    },
+    {
+      "player_id": 633967,
+      "name": "Arnar Gunnarsson",
+      "misspelled": "A. Gunnarsson",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Icelandic 1. Deild"
+    },
+    {
+      "player_id": 613503,
+      "name": "Andre Solorzano",
+      "misspelled": "Solorzano",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Icelandic 1. Deild"
+    },
+    {
+      "player_id": 699206,
+      "name": "Braian Aguirre",
+      "misspelled": "B. Aguirre",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Brazilian Gaúcho 1"
+    },
+    {
+      "player_id": 707369,
+      "name": "Shakhzod Toirov",
+      "misspelled": "Shakhzodroirlv",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: substitution",
+      "gender": "male",
+      "competition": "Uzbekistani Super League"
+    },
+    {
+      "player_id": 774155,
+      "name": "Kevin Lebersorger",
+      "misspelled": "Leberzorfer",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: i>y | single typing error: substitution | single typing error: substitution | name words: surname only",
+      "gender": "male",
+      "competition": "Austrian Regionalliga"
+    },
+    {
+      "player_id": 1358732,
+      "name": "Denis Cabeza",
+      "misspelled": "ddniscabza",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: substitution | punctuation, spacing, accents: lower case | single typing error: deletion | punctuation, spacing, accents: words joined",
+      "gender": "male",
+      "competition": "Gibraltar Football League"
+    },
+    {
+      "player_id": 654929,
+      "name": "Eli Conway",
+      "misspelled": "E. Conway",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "American USL League 1"
+    },
+    {
+      "player_id": 511593,
+      "name": "Jake Dengler",
+      "misspelled": "Jekadenger",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | punctuation, spacing, accents: words joined | spelling variant: e>a a>e",
+      "gender": "male",
+      "competition": "American USL League 1"
+    },
+    {
+      "player_id": 786330,
+      "name": "Domi Massoumou",
+      "misspelled": "Dumimassumuu",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | spelling variant: o>u | spelling variant: ou>u o>u",
+      "gender": "male",
+      "competition": "Armenian IDBank Premier League"
+    },
+    {
+      "player_id": 619496,
+      "name": "Samuel Pedro",
+      "misspelled": "Samuel Padro",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: e>a",
+      "gender": "male",
+      "competition": "Emirati Division 1"
+    },
+    {
+      "player_id": 683410,
+      "name": "Sebastian Mai",
+      "misspelled": "S. Mai",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "German Regionalliga West"
+    },
+    {
+      "player_id": 1366799,
+      "name": "Dani Arias",
+      "misspelled": "D. Arias",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "American NCAA D2 Northeast-10 Conference"
+    },
+    {
+      "player_id": 801190,
+      "name": "Tavinho",
+      "misspelled": "Tavinoh",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: transposition",
+      "gender": "male",
+      "competition": "Brazilian Serie B"
+    },
+    {
+      "player_id": 91155,
+      "name": "Leonardo Becerra",
+      "misspelled": "Laonardo Bacara",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: e>a e>a | spelling variant: e>a rr>r",
+      "gender": "male",
+      "competition": "Panamanian LPF"
+    },
+    {
+      "player_id": 562015,
+      "name": "Gian Trasante",
+      "misspelled": "Gisn Trsanta",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: substitution | single typing error: substitution | single typing error: deletion | spelling variant: z>s e>a",
+      "gender": "male",
+      "competition": "Uruguayan Primera División"
+    },
+    {
+      "player_id": 350675,
+      "name": "Brian Lozano",
+      "misspelled": "B. Lozano",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Uruguayan Primera División"
+    },
+    {
+      "player_id": 735094,
+      "name": "Gabriel Neto",
+      "misspelled": "Gebeil Neo",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | single typing error: deletion | spelling variant: a>e ie>ei",
+      "gender": "male",
+      "competition": "Brazilian Paulista A3"
+    },
+    {
+      "player_id": 672442,
+      "name": "Yana Ray",
+      "misspelled": "Ray",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "female",
+      "competition": "Russian Super League"
+    },
+    {
+      "player_id": 968378,
+      "name": "Carstyn Anderson",
+      "misspelled": "carstynendarson",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: e>a a>e",
+      "gender": "female",
+      "competition": "American NAIA Kansas Collegiate Athletic Conference (W)"
+    },
+    {
+      "player_id": 1093920,
+      "name": "Abigail Jensen",
+      "misspelled": "Abigaijdensen",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: insertion | single typing error: deletion | punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "American NAIA Kansas Collegiate Athletic Conference (W)"
+    },
+    {
+      "player_id": 530101,
+      "name": "Silke Bonnén",
+      "misspelled": "silk bpnjnén",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | punctuation, spacing, accents: lower case | single typing error: substitution | single typing error: insertion",
+      "gender": "female",
+      "competition": "Danish B-Liga Women"
+    },
+    {
+      "player_id": 762113,
+      "name": "Colby Barnett",
+      "misspelled": "Colbybarbatt",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: e>a | single typing error: substitution | punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "Canadian Northern Super League"
+    },
+    {
+      "player_id": 760325,
+      "name": "Marissa Garcia",
+      "misspelled": "M. Garcia",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Mexican Liga MX Femenil"
+    },
+    {
+      "player_id": 1241884,
+      "name": "Lilly Gibler",
+      "misspelled": "Gbler",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: deletion | spelling variant: y>i | spelling variant: ll>l | name words: surname only",
+      "gender": "female",
+      "competition": "American NCAA D2 Mid-America Intercollegiate Athletics Association (W)"
+    },
+    {
+      "player_id": 1269206,
+      "name": "Nagy Panna",
+      "misspelled": "Nagy Pane",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: nn>n | spelling variant: a>e",
+      "gender": "female",
+      "competition": "Hungarian NB I Women"
+    },
+    {
+      "player_id": 1276117,
+      "name": "Ammarah Ali",
+      "misspelled": "Ammaerahaly",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: i>y | punctuation, spacing, accents: words joined | single typing error: insertion",
+      "gender": "female",
+      "competition": "English Eastern Region Women's Football League"
+    },
+    {
+      "player_id": 1064518,
+      "name": "Wilma Dahlgren",
+      "misspelled": "Wilmadahlran",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | spelling variant: e>a | punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "Swedish Elitettan"
+    },
+    {
+      "player_id": 1313790,
+      "name": "Amelia Hallberg",
+      "misspelled": "Ameliahallhsrg",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: substitution | punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "female",
+      "competition": "Swedish Elitettan"
+    },
+    {
+      "player_id": 797508,
+      "name": "Rie Kitano",
+      "misspelled": "R. Kitano",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Australian Queensland NPL Women"
+    },
+    {
+      "player_id": 984728,
+      "name": "Bella Hernandez",
+      "misspelled": "B. Hernandez",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "American NCAA D2 Great Lakes Valley Conference (W)"
+    },
+    {
+      "player_id": 1212848,
+      "name": "Campbell Morgan",
+      "misspelled": "C. Morgan",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "American NCAA D2 Non-conference matches (W)"
+    },
+    {
+      "player_id": 1231283,
+      "name": "Kailea Silva",
+      "misspelled": "Kaileasilva",
+      "category": "punctuation, spacing, accents",
+      "hard": "False",
+      "steps": "punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "American NCAA D3 Conference of New England (W)"
+    },
+    {
+      "player_id": 694788,
+      "name": "Fenna Meijer",
+      "misspelled": "F. Meijer",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Dutch Eredivisie Women"
+    },
+    {
+      "player_id": 908855,
+      "name": "Zofia Dubiel",
+      "misspelled": "Z. Dubiel",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Polish Ekstraliga Women"
+    },
+    {
+      "player_id": 546304,
+      "name": "Marta Grosso",
+      "misspelled": "M. Grosso",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Danish Women's Play-offs 2/3"
+    },
+    {
+      "player_id": 1120500,
+      "name": "Keali Foster",
+      "misspelled": "Kealifoster",
+      "category": "punctuation, spacing, accents",
+      "hard": "False",
+      "steps": "punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "American NCAA D2 Peach Belt Conference (W)"
+    },
+    {
+      "player_id": 1085248,
+      "name": "Isabella Franco",
+      "misspelled": "I. Franco",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "American NCAA D2 Peach Belt Conference (W)"
+    },
+    {
+      "player_id": 1372142,
+      "name": "Ava Scott",
+      "misspelled": "Scott",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "female",
+      "competition": "American NCAA D2 Peach Belt Conference (W)"
+    },
+    {
+      "player_id": 1070161,
+      "name": "Mia Power",
+      "misspelled": "Power",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "female",
+      "competition": "Australian Victoria NPL Women"
+    },
+    {
+      "player_id": 1070126,
+      "name": "Bridie Cooling",
+      "misspelled": "Bridiekoling",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution | spelling variant: ck>k",
+      "gender": "female",
+      "competition": "Australian Victoria NPL Women"
+    },
+    {
+      "player_id": 258370,
+      "name": "Rachel Doyle",
+      "misspelled": "Doyle",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "female",
+      "competition": "Irish Women's Premier League"
+    },
+    {
+      "player_id": 679862,
+      "name": "Fiona Donnelly",
+      "misspelled": "F. Donnelly",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Irish Women's Premier League"
+    }
+  ]
+}
