@@ -1,0 +1,1360 @@
+# Judging task
+
+You are judging answers written for a scout at a football club, who asked questions
+about one player. Below are the information about the player, the explanations and
+rule-based descriptions for each question, and then 30 answers, each with an id.
+
+Rate each answer on its own, against the information for its question. Do not compare
+answers with each other, and do not try to work out who wrote them.
+
+Rate three criteria, each from 1 (very poor) to 5 (very good):
+- faithfulness: how faithfully the answer represents the information given;
+- engagement: an engaging answer tells the scout about the player in footballing terms,
+  without overwhelming them with numbers and statistics. If it gives a number, it does so
+  in the context of comparing the player with other players;
+- usefulness: an answer is only useful if it compares the player with other, similar
+  players. If it gives numbers, it explains what they mean.
+Also list every hallucination in the answer, that is every unsupported or fabricated claim:
+a statement the information does not support or that contradicts it. Quote each briefly.
+
+Write your ratings to the results file named at the end, one JSON object per line, one
+line per answer, in this form:
+{"id": "...", "faithfulness": 1-5, "engagement": 1-5, "usefulness": 1-5, "hallucinations": ["..."], "reason": "one or two sentences"}
+
+
+## Data about the player
+Player: María Torres (full name María Camila Torres Valerio), central defender, Colombian Liga Femenina BetPlay 2026, 2130 minutes.
+z-scores compare the player with players in the same position in Colombian Liga Femenina BetPlay 2026 (0 = average, positive = above average).
+
+Qualities (z-score):
+- Active Defence: -0.422
+- Aerial Threat: 0.982
+- Box Threat: 1.124
+- Chance Prevention: 0.261
+- Composure: 0.078
+- Defensive Heading: 0.476
+- Dribbling: -0.272
+- Effectiveness: 0.428
+- Finishing: 1.603
+- Hold Up Play: -0.111
+- Intelligent Defence: -1.844
+- Involvement: -0.387
+- Passing Quality: 0.309
+- Poaching: 0.069
+- Pressing: -1.97
+- Progression: 1.0
+- Providing Teammates: -0.24
+- Run Quality: -0.164
+- Territorial Dominance: 0.09
+- Winning Duels: 0.379
+
+Metrics (value per 90 minutes or share, and z-score):
+- Aerials: 2.873 (z = 0.355)
+- Aerials won: 1.817 (z = 0.588)
+- Aerials won %: 0.632 (z = 0.664)
+- Assists: 0.0 (z = -0.466)
+- Attacking aerials: 1.345 (z = 0.424)
+- Attacking aerials won: 0.881 (z = 0.991)
+- Attacking aerials won %: 0.655 (z = 0.725)
+- Ball progression (xT): 0.153 (z = 1.023)
+- Loose ball recoveries: 2.91 (z = -0.174)
+- Ball runs (xT): 0.004 (z = -0.386)
+- Box entries from carries: 0.0 (z = -0.363)
+- Carries: 125.0 (z = 1.467)
+- Carries (xT): 0.035 (z = 0.068)
+- Carries (xT) per 100 receptions: 0.186 (z = 0.388)
+- Counterpressing actions: 0.078 (z = -2.061)
+- Chance creating passes: 0.139 (z = -0.389)
+- Crosses (xT): 0.003 (z = -0.248)
+- Deep completions: 0.881 (z = 1.317)
+- Through ball receptions (xT): 0.0 (z = -0.428)
+- Defending 1v1: 0.466 (z = -0.801)
+- Defending 1v1s won %: 0.583 (z = 0.127)
+- Defensive actions won: 7.179 (z = -1.172)
+- Defensive aerials: 1.94 (z = -0.041)
+- Defensive aerials won: 1.281 (z = 0.159)
+- Defensive aerials won %: 0.66 (z = 0.568)
+- Defensive area adj (m^2): 765.075 (z = 0.344)
+- Defensive area (m^2): 765.075 (z = 0.344)
+- Defensive duels: 4.889 (z = -1.32)
+- Defensive ground duels won: 2.949 (z = -0.981)
+- Defensive ground duels won %: 0.603 (z = 0.696)
+- Defensive intensity: 5.976 (z = -1.549)
+- Defensive action height (m): 27.808 (z = -0.786)
+- Dribbles: 0.186 (z = -0.742)
+- Dribble success %: 1.0 (z = 0.944)
+- Successful dribbles: 0.186 (z = -0.6)
+- Dribbles (xT): 0.002 (z = -0.726)
+- np Goals - np xG: 0.74 (z = 1.79)
+- np Goals per box touch: 0.125 (z = 0.465)
+- Headed plays: 0.51 (z = 0.65)
+- High recoveries: 0.155 (z = -0.732)
+- Low turnovers: 0.51 (z = 0.491)
+- Low turnovers per low reception: 0.038 (z = 0.51)
+- Interceptions: 2.716 (z = -1.421)
+- Key passes: 0.0 (z = -0.651)
+- Linkups: 0.0 (z = -0.169)
+- Long ball receptions: 0.549 (z = -0.174)
+- Long ball receptions (xT): 0.002 (z = -0.37)
+- Ball losses: 4.87 (z = 0.221)
+- Low receptions: 12.339 (z = -0.143)
+- np Goals: 0.093 (z = 1.509)
+- Shots: 0.742 (z = 0.677)
+- Opp. possessions: 2585.0 (z = 1.626)
+- Possessions: 667.0 (z = 0.962)
+- Opp. Pass success % into defensive area: 0.607 (z = 0.751)
+- Opp. Possession %: 0.544 (z = 0.406)
+- Opposition possessions in defensive area: 621.0 (z = 1.479)
+- Opp. Progressive passes from defensive area %: 0.11 (z = 0.322)
+- Opp. touches: 17966.0 (z = 1.818)
+- Opp. xG after defensive action raw: 2.299 (z = -0.696)
+- Opp. xG after defensive action: 0.37 (z = 0.179)
+- Opp. xG from defensive area raw: 2.665 (z = -1.065)
+- Opp. xG from defensive area: 0.429 (z = 0.187)
+- Allowed xT from defensive area: 7.722 (z = -1.125)
+- Opp. xT from defensive area: 1.394 (z = 0.023)
+- Opp. xT into defensive area: 1.378 (z = -0.39)
+- Passes: 705.0 (z = 0.66)
+- Passes into defensive area: 593.0 (z = 1.647)
+- Passes into final third (xT): 0.118 (z = 1.268)
+- Passes in final third (xT): 0.017 (z = -0.206)
+- Passes (xT): 0.247 (z = 0.41)
+- Passes (xT) per 100 receptions: 1.322 (z = 0.613)
+- Box receptions: 1.113 (z = 1.204)
+- Minutes: 2129.87 (z = 1.597)
+- Playmaking passes: 5.334 (z = 0.142)
+- Possession %: 0.456 (z = -0.406)
+- Recoveries: 4.618 (z = -0.161)
+- Recoveries per opponent possession: 0.046 (z = -0.011)
+- Pressure resistance %: 0.708 (z = -0.046)
+- Progressive passes inside: 61.0 (z = 0.557)
+- Receptions: 18.645 (z = -0.358)
+- Second assists: 0.0 (z = -0.284)
+- np Shot conversion %: 0.125 (z = 0.778)
+- Start inside: 554.0 (z = 1.065)
+- Defending 1v1s won: 0.272 (z = -0.583)
+- Successful passes into defensive area: 360.0 (z = 1.449)
+- Tackles won %: 0.745 (z = 0.609)
+- Team touches: 15031.0 (z = 1.252)
+- Touches: 31.493 (z = -0.156)
+- Touches in box: 0.742 (z = 0.946)
+- True tackles: 3.958 (z = -1.157)
+- Tackles won: 2.949 (z = -0.981)
+- Under pressure: 1.113 (z = -1.019)
+- Under pressure retention: 0.788 (z = -0.943)
+- xA: 0.007 (z = -0.454)
+- np xG: 0.058 (z = 0.393)
+- xGBuildup: 0.18 (z = 0.107)
+- xG Chain: 0.224 (z = -0.066)
+- xGChain per possession: 0.008 (z = 0.136)
+- xGCreated: 0.013 (z = -0.296)
+- xGDribble: 0.0 (z = -0.333)
+- xGOT: 0.045 (z = 0.179)
+- np xG per box touch: 0.079 (z = -0.199)
+- np xG per shot: 0.079 (z = -0.105)
+- np xG + xA per 100 touches: 0.207 (z = -0.031)
+- xT Into Area: 8.171 (z = -1.895)
+
+Zones of the pitch: for each quality, the z-score of its pitch metric in each zone, against players in the same position:
+- Intelligent Defence (Loose ball recoveries): defensive right half-space 0.749, opposition penalty area -0.13, own penalty area 0.447, defensive right wing 0.642, defensive left wing -0.656, defensive left half-space -0.81, defensive central midfield 0.259, attacking right wing -0.673, attacking right half-space 0.161, attacking left wing -0.602, attacking left half-space -0.848, attacking central midfield -0.397
+- Passing Quality (Passes (xT)): defensive right wing 1.945, opposition penalty area 1.913, own penalty area -0.029, defensive right half-space 1.274, defensive left wing -0.866, defensive central midfield 0.29, attacking central midfield -0.334, attacking left half-space -0.872, attacking left wing -0.66, attacking right half-space 0.551, attacking right wing -0.212, defensive left half-space -0.927
+- Run Quality (Carries (xT)): own penalty area 0.28, opposition penalty area -0.582, defensive right wing 0.334, defensive right half-space 1.515, defensive left wing -0.625, defensive left half-space -0.871, defensive central midfield 0.501, attacking right wing -0.283, attacking right half-space -0.425, attacking left wing -0.077, attacking left half-space -0.796, attacking central midfield -0.471
+- Aerial Threat (Attacking aerials won): opposition penalty area 1.492, defensive right wing 0.566, defensive right half-space 0.609, defensive left wing -0.42, defensive left half-space -0.743, defensive central midfield 0.469, attacking right wing -0.452, attacking right half-space 1.355, attacking left wing -0.499, attacking left half-space -0.587, attacking central midfield 0.943
+- Winning Duels (Defensive ground duels won): defensive right half-space -0.334, defensive right wing 0.508, opposition penalty area -0.401, own penalty area -0.053, defensive left wing -0.684, defensive left half-space -1.35, defensive central midfield 0.199, attacking right wing -0.176, attacking right half-space -0.39, attacking left wing -0.779, attacking left half-space -0.812, attacking central midfield -0.731
+- Providing Teammates (xGCreated): attacking central midfield -0.25, attacking left half-space -0.345, attacking left wing -0.223, attacking right half-space -0.329, attacking right wing -0.446, defensive central midfield -0.35, defensive left half-space -0.204, defensive left wing -0.127, defensive right half-space -0.289, defensive right wing -0.16, opposition penalty area 0.049, own penalty area 0.816
+- Involvement (xGBuildup): own penalty area -0.847, opposition penalty area -0.283, defensive right wing -0.428, defensive right half-space 1.296, defensive left wing -0.582, defensive left half-space -0.58, defensive central midfield 0.691, attacking right wing -0.472, attacking right half-space 0.578, attacking left wing -0.472, attacking left half-space 0.581, attacking central midfield 1.311
+- Dribbling (Dribbles (xT)): attacking right wing -0.517, attacking right half-space -0.492, attacking left half-space -0.545, attacking central midfield 0.88, attacking left wing -0.441, own penalty area -0.305, defensive left half-space -0.625, defensive central midfield -0.592, opposition penalty area -0.428, defensive right half-space -0.594, defensive left wing -0.496, defensive right wing 0.839
+- Active Defence (Defensive actions won): defensive central midfield -0.012, defensive left half-space -1.129, defensive left wing -0.798, defensive right half-space 0.333, defensive right wing 0.299, opposition penalty area -0.301, own penalty area 0.098, attacking central midfield -0.624, attacking left half-space -0.86, attacking left wing -0.829, attacking right half-space 0.098, attacking right wing -0.427
+- Effectiveness (np xG per shot): attacking right half-space 0.286, attacking central midfield -0.447, opposition penalty area -0.469, golden zone -0.448, left side of the box -0.499, outside of the box -0.405, right side of the box -1.273, six yard box -0.665
+- Hold Up Play (Under pressure retention): attacking right half-space -0.18, attacking right wing -0.624, defensive central midfield -0.808, defensive left half-space -1.087, defensive left wing -0.775, defensive right half-space 0.033, defensive right wing -0.008, own penalty area -0.412, attacking left wing -0.098, attacking left half-space -0.718, attacking central midfield -0.526
+- Pressing (Defensive intensity): defensive central midfield -0.358, defensive left half-space -1.36, defensive left wing -0.863, defensive right half-space 0.067, defensive right wing 0.167, opposition penalty area -0.38, own penalty area 0.048, attacking central midfield -0.881, attacking left half-space -0.897, attacking left wing -0.8, attacking right half-space -0.269, attacking right wing -0.353
+- Poaching (np xG): attacking left half-space -0.446, attacking central midfield -0.01, opposition penalty area 0.38, defensive central midfield -0.127, attacking right wing -0.198, attacking right half-space 0.067, attacking left wing 0.936, left side of the box -0.412, golden zone -0.698, six yard box 0.092, outside of the box -0.389, right side of the box -0.903
+- Progression (Playmaking passes): attacking right half-space 0.032, attacking right wing -0.222, defensive central midfield -0.065, defensive left half-space -0.81, defensive left wing -0.691, defensive right half-space 1.166, defensive right wing 1.82, attacking central midfield -0.219, attacking left half-space -0.879, attacking left wing -0.66, opposition penalty area -0.343, own penalty area 2.454
+- Defensive Heading (Defensive aerials won): own penalty area 0.569, defensive right wing 0.279, defensive right half-space 0.888, attacking central midfield 0.363, attacking left half-space -0.523, attacking left wing -0.462, attacking right half-space 0.948, attacking right wing -0.435, defensive central midfield -0.031, defensive left half-space -0.446, defensive left wing -0.713
+- Composure (Pressure resistance %): attacking left wing -1.132, attacking right half-space 0.698, defensive central midfield 0.9, defensive left wing 1.165, defensive right half-space 0.901, defensive right wing -0.19, own penalty area -0.41
+- Finishing (np Shot conversion %): six yard box -0.747, outside of the box 0.918, left side of the box -0.302, golden zone 1.81
+
+From Twelve's data (get_players_by_id):
+player_id: 1050108; short_name: María Torres; full_name: María Camila Torres Valerio; last_name: Torres Valerio; birth_date: 2005-10-20; age: 20.993839835728952; foot: unknown; image_url: https://cdn5.wyscout.com/photos/players/public/ndplayer_100x130.png; nationality: Colombia; birth_country: Colombia
+
+From Twelve's data (get_player_career):
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 80134; season: 2026; season_minutes: 2129.87; is_domestic_league_competition: True; is_competition_season_completed: True; position: RCB; position_minutes: 2129.87; minutes_pct: 100.0; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 77804; season: 2025; season_minutes: 815.15; is_domestic_league_competition: True; is_competition_season_completed: True; position: LCB; position_minutes: 455.84; minutes_pct: 55.92; current: False; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 77804; season: 2025; season_minutes: 815.15; is_domestic_league_competition: True; is_competition_season_completed: True; position: RCB; position_minutes: 312.01; minutes_pct: 38.28; current: False; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 77804; season: 2025; season_minutes: 815.15; is_domestic_league_competition: True; is_competition_season_completed: True; position: CB; position_minutes: 47.3; minutes_pct: 5.8; current: False; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 58713; season: 2024; season_minutes: 1285.36; is_domestic_league_competition: True; is_competition_season_completed: True; position: LCB; position_minutes: 984.78; minutes_pct: 76.62; current: False; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1050108; competition_id: 3330; competition: 3330; team_id: 58713; season: 2024; season_minutes: 1285.36; is_domestic_league_competition: True; is_competition_season_completed: True; position: RCB; position_minutes: 300.58; minutes_pct: 23.38; current: False; is_national_team_competition: False; is_youth_team_competition: False
+
+From Twelve's data (get_player_match_metrics):
+competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; player_position_match_minutes_p90: 2129.87; possession_pct: 0.45685909090909094; team_events: 15031; opp_team_events: 17966; passes: 705; passes_accurate: 459; pass_accuracy_pct: 0.6511; passes_open_play: 610; passes_accurate_open_play: 410; progressive_passes: 103; passes_into_final_third: 65; through_passes: 14; through_passes_accurate: 5; smart_passes: 0; smart_passes_accurate: 0; crosses: 5; crosses_accurate: 1; key_passes: 0; assists: 0; shot_assists: 3; second_assists: 0; creative_passes: 3; linkups: 0; playmaking_passes: 115; deep_completions: 19; passes_xt: 5.3158; passes_into_third_xt: 2.5484; passes_third_xt: 0.3737; crosses_xt: 0.0663; xa: 0.1441; receptions: 402; low_receptions: 292; penalty_area_receptions: 24; long_ball_receptions: 13; long_ball_receptions_xt: 0.0457; deep_runs_xt: 0.0; shots: 16; np_shots: 16; shots_on_target: 5; shot_on_target_pct: 0.3125; goals: 2; np_goals: 2; own_goals: 0; shot_conversion_pct: 0.125; xg: 1.2596; xg_on_target: 0.9645; goals_minus_xg: 0.7404; xg_per_shot: 0.0787; carries: 125; carries_successful: 125; accelerations: 0; carries_xt: 0.7476; ball_runs_xt: 0.0942; dribbles_xt: 0.0342; ball_progression_xt: 3.3026; box_entries: 0; touches: 679; touches_in_box: 16; goals_per_box_touch: 0.125; xg_per_box_touch: 0.0787; xg_plus_xa_per_100_touches: 0.2067; dribbles: 4; dribbles_successful: 4; dribbles_success_pct: 1.0; interceptions: 70; ball_recoveries: 75; high_recoveries: 4; possessions_won: 119; possessions_won_per_opponent_possession: 0.046; num_opponent_possessions: 2585; num_team_possessions: 2531; possession_count: 5116; clearances: 46; defensive_duels: 126; defensive_duels_won: 76; defensive_duels_won_pct: 0.6032; true_tackles: 102; true_tackles_won: 76; tackle_success_pct: 0.7451; defensive_intensity: 154; defensive_actions: 185; defensive_line_height_m: 27.81; aerials: 68; aerials_won: 43; aerials_won_pct: 0.6324; attacking_aerials: 29; attacking_aerials_won: 19; attacking_aerials_won_pct: 0.6552; defensive_aerials: 50; defensive_aerials_won: 33; defensive_aerials_won_pct: 0.66; headed_plays: 11; losses: 105; high_turnovers: 11; num_low_turnovers: 11; high_turnovers_per_low_reception: 0.0377; num_low_turnovers_per_low_reception: 0.0377; carries_xt_per_100_receptions: 0.186; passes_xt_per_100_receptions: 1.3223; corners: 0; free_kicks: 89; goal_kicks: 7; penalties_taken: 0; penalties_scored: 0; fouls_committed: 14; fouls_suffered: 5; yellow_cards: 2; red_cards: 0; defending_1v1: 12; successful_1v1: 7; defending_1v1_pct: 0.5833; under_pressure_actions: 24; under_pressure_retention: 17; pressure_resistance_pct: 0.7083; counterpressing: 2; num_counterpresses: 2; num_counterpresses_leading_to_recovery: 0; xg_created: 0.2786; xg_dribble: 0.0; xg_buildup: 3.8859; xg_chain: 5.2895; xg_chain_per_possession: 0.0079; num_possessions_involved: 667
+
+From Twelve's data (get_player_match_metrics_defence):
+competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; defensive_area_m2: 765.08; opp_successful_passes_into_defensive_area_pct: 0.6071000099182129; opp_pass_success_pct_into_defensive_area: 0.6071000099182129; opp_progressive_passes_from_defensive_area_pct: 0.11010000109672546; opp_xg_after_defensive_action: 2.2987; opp_xg_from_defensive_area: 2.6648; opp_xg_from_defensive_area_per_100_possessions: 0.4291; opp_xt_from_defensive_area: 7.7218; opp_xt_from_defensive_area_per_100_passes: 1.3938; opp_xt_into_defensive_area: 8.1708; opp_xt_into_defensive_area_per_100_passes: 1.3779; num_opp_passes_into_defensive_area: 593; passes_into_defensive_area: 593; num_opp_successful_passes_into_defensive_area: 360; successful_passes_into_defensive_area: 360; num_opp_progressive_passes_from_defensive_area: 61; progressive_passes_inside: 61; num_opp_possessions_in_defensive_area: 621; opp_possessions_in_defensive_area: 621; num_opp_passes_from_defensive_area: 554; xt_into_defensive_area: 8.1708; start_inside: 554; num_opp_passes_into_defensive_area_poss_adj: 3637.73; num_opp_successful_passes_into_defensive_area_poss_adj: 2212.55; num_opp_passes_from_defensive_area_poss_adj: 3424.54; num_opp_progressive_passes_from_defensive_area_poss_adj: 378.91; num_opp_possessions_in_defensive_area_poss_adj: 3750.28; opp_xt_from_defensive_area_poss_adj: 48.3032; opp_xt_into_defensive_area_poss_adj: 51.2491; opp_xg_from_defensive_area_poss_adj: 18.4325; num_defensive_actions: 347; opp_xg_after_defensive_action_per_100_possessions: 0.6624
+
+From Twelve's data (get_player_match_metrics_by_zone):
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 5; receptions: 2; losses: 1; passes_xt: 0.0038; passes: 5; playmaking_passes: 0; carries_xt: 0.0; carries: 0; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.2612; xg_chain: 0.2612; xg_chain_per_possession: 0.0653; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_WING; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 8; receptions: 2; losses: 2; passes_xt: 0.0; passes: 6; playmaking_passes: 0; carries_xt: 0.02; carries: 1; dribbles_xt: 0.0; dribbles: 0; xg: 0.0085; xg_on_target: 0.0; np_shots: 1; shots_np: 1; goals_np: 0; shot_conversion_pct: 0.0; xg_per_shot: 0.0085; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 1; under_pressure_actions: 2; pressure_resistance_pct: 0.5; xg_buildup: 0.0; xg_chain: 0.0085; xg_chain_per_possession: 0.0012; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_RIGHT_HALF_SPACE; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 37; receptions: 7; losses: 4; passes_xt: 0.6467; passes: 35; playmaking_passes: 12; carries_xt: 0.0171; carries: 2; dribbles_xt: 0.0; dribbles: 0; xg: 0.0312; xg_on_target: 0.3167; np_shots: 1; shots_np: 1; goals_np: 1; shot_conversion_pct: 1.0; xg_per_shot: 0.0312; defensive_actions: 7; defensive_duels: 4; defensive_duels_won: 2; defensive_duels_won_pct: 0.5; defensive_intensity: 5; defensive_aerials: 2; defensive_aerials_won: 2; defensive_aerials_won_pct: 1.0; attacking_aerials: 3; attacking_aerials_won: 3; attacking_aerials_won_pct: 1.0; aerials: 3; ball_recoveries: 3; under_pressure_retention: 1; under_pressure_actions: 1; pressure_resistance_pct: 1.0; xg_buildup: 0.3397; xg_chain: 0.3447; xg_chain_per_possession: 0.0164; xg_created: 0.0228; xg_dribble: 0.0
+zone: ATT_HALF_RIGHT_WING; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 22; receptions: 6; losses: 2; passes_xt: 0.26; passes: 19; playmaking_passes: 9; carries_xt: 0.0235; carries: 3; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 3; defensive_duels: 5; defensive_duels_won: 4; defensive_duels_won_pct: 0.8; defensive_intensity: 5; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_MIDDLE_CENTER; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 19; receptions: 5; losses: 1; passes_xt: 0.1852; passes: 15; playmaking_passes: 5; carries_xt: 0.007; carries: 1; dribbles_xt: 0.0205; dribbles: 1; xg: 0.061; xg_on_target: 0.0877; np_shots: 4; shots_np: 4; goals_np: 0; shot_conversion_pct: 0.0; xg_per_shot: 0.0152; defensive_actions: 2; defensive_duels: 2; defensive_duels_won: 1; defensive_duels_won_pct: 0.5; defensive_intensity: 1; defensive_aerials: 1; defensive_aerials_won: 1; defensive_aerials_won_pct: 1.0; attacking_aerials: 2; attacking_aerials_won: 2; attacking_aerials_won_pct: 1.0; aerials: 2; ball_recoveries: 1; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.4769; xg_chain: 0.5917; xg_chain_per_possession: 0.0329; xg_created: 0.0; xg_dribble: 0.0
+zone: OWN_BOX; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 85; receptions: 54; losses: 9; passes_xt: 0.2302; passes: 65; playmaking_passes: 10; carries_xt: 0.1039; carries: 31; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 50; defensive_duels: 24; defensive_duels_won: 14; defensive_duels_won_pct: 0.5833; defensive_intensity: 47; defensive_aerials: 20; defensive_aerials_won: 12; defensive_aerials_won_pct: 0.6; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 20; ball_recoveries: 12; under_pressure_retention: 2; under_pressure_actions: 4; pressure_resistance_pct: 0.5; xg_buildup: 0.0012; xg_chain: 0.0012; xg_chain_per_possession: 0.0; xg_created: 0.1223; xg_dribble: 0.0
+zone: OWN_HALF_LEFT_HALF_SPACE; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 27; receptions: 7; losses: 3; passes_xt: 0.1223; passes: 30; playmaking_passes: 3; carries_xt: 0.0066; carries: 1; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 9; defensive_duels: 1; defensive_duels_won: 1; defensive_duels_won_pct: 1.0; defensive_intensity: 3; defensive_aerials: 2; defensive_aerials_won: 2; defensive_aerials_won_pct: 1.0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 2; ball_recoveries: 6; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0688; xg_chain: 0.0688; xg_chain_per_possession: 0.0026; xg_created: 0.0; xg_dribble: 0.0
+zone: OWN_HALF_LEFT_WING; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 16; receptions: 0; losses: 1; passes_xt: 0.004; passes: 14; playmaking_passes: 0; carries_xt: 0.0108; carries: 4; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 6; defensive_duels: 6; defensive_duels_won: 5; defensive_duels_won_pct: 0.8333; defensive_intensity: 5; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 2; under_pressure_retention: 1; under_pressure_actions: 1; pressure_resistance_pct: 1.0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: OWN_HALF_RIGHT_HALF_SPACE; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 258; receptions: 165; losses: 36; passes_xt: 1.6426; passes: 234; playmaking_passes: 33; carries_xt: 0.3486; carries: 47; dribbles_xt: 0.0; dribbles: 1; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 38; defensive_duels: 23; defensive_duels_won: 10; defensive_duels_won_pct: 0.4348; defensive_intensity: 28; defensive_aerials: 10; defensive_aerials_won: 7; defensive_aerials_won_pct: 0.7; attacking_aerials: 3; attacking_aerials_won: 2; attacking_aerials_won_pct: 0.6667; aerials: 10; ball_recoveries: 21; under_pressure_retention: 5; under_pressure_actions: 5; pressure_resistance_pct: 1.0; xg_buildup: 1.3411; xg_chain: 1.3411; xg_chain_per_possession: 0.0074; xg_created: 0.0; xg_dribble: 0.0
+zone: OWN_HALF_RIGHT_WING; competition_id: 3330; season: 2026; team_id: 80134; player_id: 1050108; player_position: RCB; team_events: 145; receptions: 61; losses: 34; passes_xt: 1.0381; passes: 143; playmaking_passes: 30; carries_xt: 0.0667; carries: 15; dribbles_xt: 0.0137; dribbles: 2; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 30; defensive_duels: 39; defensive_duels_won: 26; defensive_duels_won_pct: 0.6667; defensive_intensity: 34; defensive_aerials: 3; defensive_aerials_won: 2; defensive_aerials_won_pct: 0.6667; attacking_aerials: 1; attacking_aerials_won: 1; attacking_aerials_won_pct: 1.0; aerials: 3; ball_recoveries: 8; under_pressur
+(cut)
+
+## Question 1: Give me a summary of María Torres's season.
+
+### What the data means
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+### Rule-based description of this player's data for this question
+María Torres is a unknown footed 21-year-old central defender playing for Inter Bogotá in the Liga Femenina BetPlay. She is good at progression compared to other central defenders. She performs well in passes into final third (xt) and ball progression (xt). She is average at composure compared to other central defenders. She is average in every metric in composure. She is good at aerial threat compared to other central defenders. She is average in every metric in aerial threat. She is average at defensive heading compared to other central defenders. She is average in every metric in defensive heading. She is average at chance prevention compared to other central defenders. She is average in every metric in chance prevention. She is average at territorial dominance compared to other central defenders. She is average in every metric in territorial dominance. She is poor at intelligent defence compared to other central defenders. In intelligent defence, she is weakest in counterpressing actions. She is average at active defence compared to other central defenders. She performs poorly in defensive actions won. She is average at involvement compared to other central defenders. She performs poorly in defensive actions won.
+
+## Question 2: What are María Torres's strengths and weaknesses?
+
+### What the data means
+(none)
+
+### Rule-based description of this player's data for this question
+María Torres is a unknown footed 21-year-old central defender playing for Inter Bogotá in the Liga Femenina BetPlay. Let's take a look at the strengths of María Camila Torres Valerio. 
+
+The best skill of María Camila Torres Valerio  is finishing. Indeed, She is outstanding at finishing compared to other central defenders. In finishing, she is strongest in np Goals - np xG. Here is some useful information about what it means for a player to be strong in finishing:What does it mean for a player to be good in finishing?
+Players who are good in finishing make the most out of their goal-scoring opportunities. This means that they have a high shot conversion % and generally also score more than expected given their chances, that is, they outperform their expected goals.
+
+What does it mean for a player to be bad in finishing?
+Players who are bad in finishing struggle to score goals from their chances. This means that they have a low shot conversion % and generally also score less than expected given their chances, that is, they underperform their expected goals.
+
+What does a high shot conversion percentage indicate about a player's finishing ability?
+A high shot conversion percentage indicates that the player is proficient in turning shot opportunities into goals, demonstrating precision, calmness in front of goal, and effective shot placement.
+
+What does a high finishing score indicate about a player's overall offensive contributions?
+A high finishing score indicates that the player excels in scoring goals efficiently, demonstrating strong finishing skills, high shot accuracy, and the ability to consistently convert chances into goals, making them a valuable offensive asset.
+
+The second best skill of María Camila Torres Valerio  is box threat. Indeed, She is excellent at box threat compared to other central defenders. In box threat, she is strongest in np Goals. Here is some useful information about what it means for a player to be strong in box threat:What does it mean for a player to have a high box threat?
+Players with a high box threat are often considered goal-scoring threats and highly involved in the final actions of attacks.
+
+What does it mean for a player to have a low box threat?
+Players with a low box threat do not pose a significant goal-scoring threat and have limited involvement inside of the opposition's penalty area. Players that have a more defensive roles can be expected to have lower box threat. 
+
+How does a player's poaching ability contribute to their box threat?
+Players who are good at poaching enhance their box threat by being in the right place at the right time to score goals. Their instinct for finding scoring opportunities makes them a constant danger in the penalty area.
+
+How do finishing skills contribute to a player's box threat?
+Players who are good at finishing significantly enhance their box threat. Their ability to convert chances into goals makes them a constant danger in the penalty area, capable of capitalizing on scoring opportunities.
+
+The third best skill of María Camila Torres Valerio  is progression. She is good at progression compared to other central defenders. She performs well in Passes into final third (xT) and Ball progression (xT). Here is some useful information about what it means for a player to be strong in progression:What does it mean for a player to be good in progression?
+Players with strong progression skills play a crucial role in building attacks for their team. They can advance the ball into more advanced areas of the pitch through precise passes and ball-carrying, thereby increasing the likelihood of generating goal-scoring opportunities.
+
+What does it mean for a player to be bad in progression?
+Players who rank low in progression might struggle to effectively advance the ball up the field and contribute to their team's attacking play. They may have difficulties executing difficult passes, but it can also be caused by the players being located higher up on the pitch and therefore receiving progressive actions instead of performing them.  
+
+What does a high progression score indicate about a player's overall contributions?
+A high progression score indicates that the player excels in advancing the ball and creating opportunities, demonstrating strong vision, passing accuracy, and the ability to consistently contribute to the team's offensive dynamics.
+
+If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Let's take a look at the weaknesses of María Camila Torres Valerio. 
+
+María Camila Torres Valerio weakest quality lies in pressing. Indeed, she is poor at pressing compared to other central defenders. In pressing, she is weakest in Counterpressing actions. Here is some useful information about what it means for a player to be weak in pressing:What does it mean for a player to be bad in pressing?
+Players who struggle with pressing may contribute less defensively and find it challenging to disrupt the opponent's play, which isn't solely linked to their defensive work rate, as it can result from unsuccessful efforts.
+
+What does it mean for a player to be good in pressing?
+Players who are good in pressing have a high defensive work rate and are skilled in winning possession high up on the pitch, which can generate dangerous offensive transitions.
+
+How can a player increase their pressing?
+A player can increase thier pressing ability by attempting more defensive actions such as tackles and interceptions. 
+
+How can we say if a team has had an effective pressing strategy?
+A team has had an effective pressing strategy if their expected threat within 10 seconds of winning back the ball is high. This would indicate that they are well positioned, to lauch a counter as soon as they get the ball back. Another indicator is....
+
+María Camila Torres Valerio second weakest quality lies in intelligent defence. Indeed, she is poor at intelligent defence compared to other central defenders. In intelligent defence, she is weakest in Counterpressing actions. Here is some useful information about what it means for a player to be weak in intelligent defence:What does it mean for a player to have a low intelligent defence?
+Players who are weak in intelligent defense might struggle to read the game, anticipate their opponent's actions, and make timely decisions to regain possession through interceptions and ball recoveries.
+
+What does it mean for a player to have a high intelligent defence?
+Players with strong intelligent defense skills can read the game well. They are able anticipate their opponent's action to win possession of the ball through interceptions and ball recoveries, and are quick to react to the loss of possession.
+
+If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Can good positioning cause a low intelligent defence?
+Players who position themselves well should not have a low level of intelligent defence. Good positioning does not only entail blocking pathways, but also to keep them open enough so that their opponents are tempted to play the pass, which they can then intercept. Thus, players with exceptional positioning should also excel in intelligent defence.
+
+María Camila Torres Valerio third weakest quality lies in active defence. She is average at active defence compared to other central defenders. She performs poorly in Defensive actions won. Here is some useful information about what it means for a player to be weak in active defence:What does it mean for a player to have a low active defence?
+Players with weak active defense skills seldom successfully break down the opponent's play and regain control of the ball for their team.
+
+What does it mean for a player to have a high active defence?
+Players with strong active defense skills frequently and effectivly break down the opponent's play and regain control of the ball for their team.
+
+If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Why is it important to have a central defender with high active defence?
+It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Use this information to answer the user about the football player. Remember the user wants to know: What are María Torres's strengths and weaknesses?. Answer this query in 2 sentences using the information above. Explain in detail what these strengths and weaknesses mean about what we can expect from the player in terms of style of play and contributions to the team. If the user asks about weaknesses of the player focus only on that, do not write about strengths unless asked. Likewise, if they are interested in strengths focus only on that and not weaknesses. If they do ask specifically about both your answer can be 3 sentences, but otherwise it should be 2 sentences. Make sure to explain what the player's strengths mean in terms of how the player contributes to the team and what weaknesses show about what we should be concerned about in footballing terms. 
+
+## Question 3: How good is María Torres at passing?
+
+### What the data means
+Q: What does it indicate about a player's passing quality when they have high passes in the final third (xT) but low passes into the final third (xT)?
+A: When a player has high passes in the final third (xT) but a low passes into the final third (xT), it suggests that they are proficient in operating within the attacking third of the field, particularly in the build-up to goal-scoring opportunities. However, their involvement in progressing the ball into those advanced areas might be limited.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: What does it mean for a player to have bad passing quality?
+A: Players with bad passing quality often choose safer passing options and struggle to deliver threatening passes.
+
+Q: Would you expect a player with a high amount of chance creating passes to also have a high amount of passes (xT)?
+A: You would expect a player with a high amount of chance creating passes to also have a high amount of passes (xT), as chance creating passes often find teammates in good positions, which inherently generate expected threat. If a player ranks highly in chance creating passes but not in passes (xT), then they are likely getting themselves into difficult positions often, and rely on their passing vision to find any teammate, even if the receiver is not in a more threatening position.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: What does it mean for a player to have good passing quality?
+A: Players with good passing quality have the ability to consistently deliver different types of passes that pose a significant threat to the opposition's defense. Their passes often lead to goal-scoring opportunities or advantageous positions for their teammates.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: What does it mean for a player to have a low crosses (xT)?
+A: A player who has a low crosses (xT) is not creating much threat from their crosses. However, they can still be dangerous passers if they rank highly in other passing xT metrics. For instance, there are many excellent chance creators who rarely cross the ball, but rather create threat from central positions.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: How is passing quality measured?
+A: Passing quality is a weighted sum of a players performance compared to other players in the same position in passes (xT) (30%), crosses (xT) (20%),  passes into the final third (20 %), passes in the final third (20%) and chance passes (10%).
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: What does it mean for a player to have a high passes (xT)?
+A: A player with a high passes (xT) is able to create a lot of expected threat from passes, and is adept at progressing the ball into more dangerous positions.
+
+Q: What is passing quality?
+A: Passing quality refers to a player's ability to deliver a variety of passes that pose a significant threat to the opposition's defense, leading to goal-scoring opportunities or advantageous positions for the receiving player. It is evaluated by how threatening the passes are, rather than the quantity.
+
+Q: How is passing quality calculated?
+A: Passing quality is calculated as the weighted sum of the z-scores of players in passes (xT) (30%), crosses (xT) (20%),  passes into the final third (20 %), passes in the final third (20%) and chance creating passes (10%), among other players who play the same position.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: What does it indicate about a player's passing quality when they have high passes into the final third (xT) but low passes in the final third (xT)?
+A: When a player has high passes into the final third (xT) but a low passes in the final third (xT), it may suggest that they excel in progressing the ball into dangerous areas but may not frequently participate in the final stages of the attacking build-up or goal-scoring opportunities. Their strength lies in initiating attacking moves, often creating opportunities for their teammates to take advantage of the advanced positions they help establish.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: What does it say about a player when they have excellent Passes (xT) adj in the defensive right half-space?
+A: When a player has excellent Passes (xT) adj in the defensive right half-space, they are great in the narrow right zone while moving the game forward. They often allow their team to increase the tempo by playing vertical passes that move the ball into more dangerous areas.
+
+Q: What does it show when a player has poor Passes (xT) adj in the defensive central midfield?
+A: If a player has poor Passes (xT) adj in the defensive central midfield, they are less than ideal while playing as a deep-lying playmaker. They have a tendency to play lateral or reverse passes, and are not very good with breaking opposition lines, either diagonally or vertically, from that space.
+
+Q: When a player has good Passes (xT) adj in the attacking right half-space, what does it mean?
+A: if a player has good Passes (xT) in the attacking right half-space, it tells us that they are solid from the right channels. They are a good outlet for their team to craft chances or second-assists by finding the runs of more attacking players.
+
+Q: What do you say about a player when they have below average Passes (xT) adj in the attacking left wing?
+A: When a player has below average Passes (xT) adj in the attacking left wing, they are unable to create too many good passes from wide left. They either choose to run with the ball or find safer, more lateral, options to lay the ball off to.
+
+Q: What does below average Passes (xT) adj in the defensive left wing show about a player?
+A: Below average Passes (xT) adj on the defensive left wing shows that a player is not good with finding diagonal or vertical passes from that zone. They are probably not comfortable when moved to the left back position and often find themselves struggling to find options for circulating possession.
+
+Q: If a player has good Passes (xT) adj in the defensive left half-space, what does it mean?
+A: When a player has a good Passes (xT) adj in the defensive left half-space, it means that they able to progress the ball from the narrow left zones of their half. They are probably a defensive player with good build-up attributes and help their team move the game forward from deeper areas.
+
+Q: What does excellent Passes (xT) adj in the opposition penalty area show about a player?
+A: Excellent Passes (xT) adj in the opposition penalty area tells us that a player is able to find deft passes even in the tightest of spaces and under most amount of attention. It points to a great vision and close control, not only keeping the ball but creating chances in a zone where the opposition is already crowding.
+
+Q: What does outstanding Passes (xT) adj in the attacking left half-space tell us about a player?
+A: Outstanding Passes (xT) adj in the attacking left half-space tells us that a player is amongst the best in their league at creating chances from the left channel. They take up those dangerous zones in the pockets and often find wingers or fullbacks overlapping, or find a way to send passes to the centre-forward.
+
+Q: What do you say about a player when they have average Passes (xT) adj in the attacking right wing?
+A: When a player has average Passes (xT) adj in the attacking right wing, they are just about alright from the right wing but not a creative force. They can sometimes find threatening passes into more dangerous areas, but have the tendency to fall into safety too.
+
+Q: What does poor Passes (xT) adj in the attacking central midfield tell us about a player?
+A: Poor passes (xT) adj in the attacking central midfield shows that a player is not a good attacking midfielder from the central spaces. They are not able to play enough line-breaking passes or progress the game even from an advanced area of the pitch, and thus slow their team's tempo down by playing it safe.
+
+Q: How do you describe a player when they have average Passes (xT) adj in the defensive right wing?
+A: If a player has average Passes (xT) adj in the defensive right wing, they are solid from the full-back zone without being a threat to the opposition. They can play the dangerous pass here and there, but just as often choose safer options.
+
+### Rule-based description of this player's data for this question
+María Torres is average at passing quality compared to other central defenders. She is excellent at expected threat from passes into the final third compared to other central defenders. She is average at expected threat from passes, expected threat from passes inside of the final third, crosses (xt) and chance creating passes compared to other central defenders.
+
+María Camila Torres Valerio's passes_xt was outstanding in the defensive right wing and opposition penalty area compared to other central defenders. María Camila Torres Valerio performed excellent in the defensive right half-space. María Camila Torres Valerio performed good in the attacking right half-space. María Camila Torres Valerio performed average in the defensive central midfield, own penalty area, attacking right wing and attacking central midfield. María Camila Torres Valerio performed below average in the attacking left wing, defensive left wing, attacking left half-space and defensive left half-space.
+
+## Question 4: How good is María Torres at dribbling?
+
+### What the data means
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What is dribbling?
+A: Dribbling involves the skill of taking on opposing players one-on-one. It's the ability of maneuvering the ball past defenders while maintaining control, often through quick changes in direction, feints, and close ball control.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: How is dribbling measured?
+A: Dribbling is a weighted sum of a players performance compared to other players in the same position in dribbles success % (20%), dribbles (xT) (40%), expected goals created with dribbles (25%) and pressure resistance % (15%).
+
+Q: What makes a good dribler?
+A: Good dribblers consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: What does it mean for a player to be bad in dribbling?
+A: Players who are bad in dribbling either struggle to dribble past defenders or do not attempt to do so.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What does it mean for a player to be good in dribbling?
+A: Players who are good in dribbling consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: How is dribbling calculated?
+A: Dribbling is calculated as the weighted sum of the z-scores of players in dribbles success % (20%), dribbles (xT) (40%), expected goals created with dribbles (25%) and pressure resistance % (15%), among other players who play the same position.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: Why is dribbling not a part of run quality?
+A: Run quality assesses the ability of players to make threatening runs without taking on players. Dribbling past players is a separate quality which is not necessarily correlated with run quality. However, the best players can do both and therefore pose a greater threat.
+
+Q: How would we describe a player who has a good dribbles (xT) in the left half space?
+A: A player who has good dribbles (xT) in the left half space can get inside and threaten the box.
+
+Q: How would we describe a player who has good dribbles (xT)  in the penalty box?
+A: A player who has a high number idribbles (xT) in the penalty box is exceptional at carving out opportunities in the box. These players are able to dribble expertly in tight spaces and often can find a final pass that can generate a shot.
+
+Q: How would we describe a player who has a high number dribbles (xT) on the right attacking wing?
+A: A player who has a high number dribbles (xT) on the right attacking wing is able to create a lot of threat from carrying the ball to wide areas and drawing in the opposition. They should be able to beat players wide then cut the ball in to underlapping midfielders or forwards. Having high dribbles (xT) on one of the wings usually means they can take one or more opposition defenders along with them which opens up space for their team to craft a dangerous chance.
+
+Q: How would we describe a player who has low dribbles (xT) in the central attacking area in front of goal?
+A: A player who has who has low dribbles (xT) in the central attacking area in front of goal is ineffective as an attacking option centrally. They are not proficient at running at the opposition defence.
+
+Q: How would we describe a player who has good dribbles (xT)  in the central area in front of goal?
+A: A player who has good dribbles (xT)  in the central area in front of goal is a serious threat in the final third. They have the ability to cut through the opposition and open up passing options for the left and right half-spaces.
+
+Q: How would we describe a player who has poor dribbles (xT)  on the attacking left wing?
+A: A player who has poor poor dribbles (xT)  the attacking left wing is not able to get past players in the wide areas. The player is not particularly a threat on the wing.
+
+Q: How would we describe a player who has mostly average numbers in different areas on the pitch for dribbles (xT)?
+A: A player who has mostly average numbers in different areas on the pitch for dribbles (xT) doesn't show much creativity in dribbling past the opposition. They would rather look for passing options or lay the ball off to others who have the skills to attack the opposition.
+
+### Rule-based description of this player's data for this question
+María Torres is average at dribbling compared to other central defenders. She is good at dribble success % compared to other central defenders. She is average at pressure resistance % and expected goals created with dribbles compared to other central defenders. She is below average at expected threat from dribbles compared to other central defenders.
+
+María Camila Torres Valerio's dribbles_xt was good in the attacking central midfield and defensive right wing compared to other central defenders. María Camila Torres Valerio performed average in the own penalty area, opposition penalty area, attacking left wing, attacking right half-space and defensive left wing. María Camila Torres Valerio performed below average in the attacking right wing, attacking left half-space, defensive central midfield, defensive right half-space and defensive left half-space.
+
+## Question 5: Is María Torres a threat in the box?
+
+### What the data means
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: Why are assists not a part of box threat?
+A: Box threat focuses on the goal-scoring threat and involvement of players inside of the penalty are, rather than their creation. Metrics such as assists, expected assists and key passes are represented in the quality providing teammates.
+
+Q: How do you describe a player with low np goals per 90?
+A: A player with low np goals per 90 does not score too many goals.
+
+Q: What does it mean for a player to have low box receptions per 90?
+A: A player with low box receptions per 90 is not a constant presence in the opposition penalty box. They are more comfortable playing deeper, possibly as a pivot or playmaker instead of a creative edge high in the midfield.
+
+Q: How is box threat calculated?
+A: Box threat is calculated as the weighted sum of the z-scores of players in touches in box (20%), box entries from carries (10%), non-penalty goals (25%), non-penalty expected goals (25%) and box receptions (20%), among other players who play the same position.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: How do you describe a player with high np xG per 90 but low goals per 90?
+A: A player with high np xG per 90 and low goals per 90 creates and gets a lot of chances for themselves but is not clinical with converting them into goals.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What does it mean for a player to have a low box threat?
+A: Players with a low box threat do not pose a significant goal-scoring threat and have limited involvement inside of the opposition's penalty area. Players that have a more defensive roles can be expected to have lower box threat.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: What does it mean for a player to have a high box threat?
+A: Players with a high box threat are often considered goal-scoring threats and highly involved in the final actions of attacks.
+
+Q: What is box threat?
+A: Box threat assesses a player's ability to make an impact in and around the opposition's penalty area. It considers both the goal-scoring threat and the involvement of players inside of the penalty area.  This quality is particularly relevant for players in attacking roles.
+
+Q: How do you describe a player with high np xG per 90?
+A: A player with high np xG per 90 creates a lot of high-quality chances for themselves in the penalty box. This makes them a goal-scoring threat and a constant worry for the opponent defenders.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What do you say about a player with average box touches per 90?
+A: A player with average touches in box per 90 takes a typical amount of touches in the opposition penalty box. They aren't a marauding attacking midfielder who constantly bombs the box, but they get into the box whenever necessary.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What do you say about a player with high box entries from carries per 90?
+A: A player with high box entries from carries per 90 constantly finds themselves in the penalty box by carrying the ball or It makes them a danger for the opposition because they are in a position to create threatening chances from close to the goal.
+
+Q: Why are expected assists not a part of box threat?
+A: Box threat focuses on the goal-scoring threat and involvement of players inside of the penalty are, rather than their creation. Metrics such as assists, expected assists and key passes are represented in the quality providing teammates.
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: How is box threat measured?
+A: Box threat is a weighted sum of a players performance compared to other players in the same position in touches in box (20%), box entries from carries (10%), goals (25%), expected goals (25%) and penalty area receptions (20%).
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: How do you describe a player who has Outstanding xG adj in the right side of the box?
+A: A player who has outstanding xG adj in the right side of the box is an exceptional attacking threat in the right channels. They like receiving the ball past the opposition defense line and taking shots. It points at great movement and high speed.
+
+Q: How do you describe a player who has poor xG adj from the left side of the box?
+A: A player who has poor xG adj from the left side of the box is not very adept at opening up high quality chances from the left channel. They are probably unable to receive the ball in those zones while carrying a leap on the opposition defenders.
+
+Q: How do you describe a player who has average xG adj from the left side of the box?
+A: A player who has average xG adj from the left side of the box is a solid shot-taker from the left channel. They are able to move into decent angles to take their shots, either by running into that zone from deeper areas or moving diagonally from within the box.
+
+Q: How do you describe a player who has poor xG adj in the golden zone?
+A: A player who has poor xG adj in the golden zone is not very good at finding clear chances in the penalty box. Over a long term, this points at a problem with their off-the-ball movement and stealing a step on the opposition defenders.
+
+Q: How do you describe a player with below average xG adj from outside of the box?
+A: A player who has below average xG adj from outside of the box does find themselves with too many clear shots from distance. They probably get tightly marked, and when they do get the ball, prefer either passing it to an open attacker over shooting from afar.
+
+Q: How do you describe a player who has outstanding xG adj from the golden zone and six yard box?
+A: A player who has outstanding xG adj from the golden zone is a high-quality poacher who gets into great positions to receive chances centrally within the penalty box.
+
+Q: How do you describe a player with good xG adj from outside of the box?
+A: A player with good xG adj from outside the box is very good at taking long shots. They fancy themselves to beat the opposition goalkeeper from distance and are a serious threat when left with space to shoot.
+
+### Rule-based description of this player's data for this question
+María Torres is excellent at box threat compared to other central defenders. She is outstanding at np goals compared to other central defenders. She is excellent at penalty area receptions compared to other central defenders. She is good at touches in the box compared to other central defenders. She is average at np expected goals and box entries from carries compared to other central defenders.
+
+María Camila Torres Valerio's xg was average in the six yard box, outside of the box and left side of the box compared to other central defenders. María Camila Torres Valerio performed below average in the golden zone and right side of the box.
+
+## Question 6: Where on the pitch does María Torres win the ball back?
+
+### What the data means
+Q: How do you describe a player who has a high defensive actions won in attacking right half-space?
+A: A player who has a high defensive actions in the attacking right half-space is a fiesty attacking player when out of possession. They tend to chase down opposition defenders and defensive midfielders during build-up and engage in a lot of tackles and pressures.
+
+Q: How do you describe a player who has average defensive actions won in the Defensive left half-space?
+A: A player who has average defensive actions in the defensive left half space is a sturdy defender in the channels. They are probably not stationed there at all points, but engage in defensive duels when necessary.
+
+Q: How do you describe a player who has below average defensive actions won in the Defensive right half-space?
+A: A player who has below average defensive actions in the defensive right half space is not a good defender in the right-sided channels. They may be more efficient centrally or out wide but let opposition attackers past them in the channels.
+
+Q: How do you describe a player who has excellent defensive actions in the attacking central midfield?
+A: A player who has a excellent defensive actions in the attacking central midfield is an aggressive central midfielder who fights hard for the ball in the middle of the park. They are usually an asset to their team in breaking up opposition build-up.
+
+Q: How do you describe a player who has poor defensive actions won in their defensive left wing?
+A: A player who has poor defensive actions in their defensive left wing is not suited to a left full back role. They are probably more effective defensively in central zones and have a tendency to not make too many defensive duels in the left wide area.
+
+Q: How do you describe a player who has excellent defensive actions on the defensive right wing?
+A: A player who has excellent defensive actions won in the defensive right wing is a combative full back. They engage heavily with opposition wingers and like their 1v1 duels.
+
+Q: How do you describe a player who has excellent defensive actions in the Defensive central midfield?
+A: A player who has a excellent defensive actions in the defensive central midfield breaks the opposition play before they reach the more dangerous areas. They probably operate as defensive midfielders who are asked to shield the defence during an opposition attacking move.
+
+Q: How do you describe a player who has excellent defensive actions won in the attacking right wing?
+A: A player who has a excellent defensive actions in the attacking right wing is a winger with an exceptional defensive work rate. They tackle opposition full backs, winning the ball often, and don't let them just circulate the ball easily.
+
+Q: How do you describe a player who has outstanding defensive actions won in the opposition penalty area?
+A: A player who has outstanding defensive actions in the opposition penalty area is an aggressive pressing forward. They take on the opposition defenders during the build-up play and force them into playing harried passes.
+
+Q: How do you describe a player who has poor defensive actions won in the attacking left half-space?
+A: A player who has poor defensive actions in the attacking left half-space does not engage in too many defensive duels in the left channel. They are probably a forward or a left-sided wide player who don't actively hunt down opposition defensive players during build up.
+
+Q: How do you describe a player who has below average defensive actions won in the attacking left wing?
+A: A player who has below average defensive actions in the attacking left wing is a wide player who doesn't quite contest opposition full backs out of possession. They have a tendency to be slightly lazy without the ball and don't close down or tackle opposition players enough in those areas.
+
+Q: How do you describe a player who has excellent defensive actions won in their Own penalty area?
+A: A player who has excellent defensive actions in their own penalty area engages in a lot of defensive duels inside their box. They are a defensive player (a central defender or a defensive midfielder) and are adept at engaging with opposition attackers when they penetrate into the box.
+
+### Rule-based description of this player's data for this question
+María Camila Torres Valerio's defensive_actions was average in the defensive right half-space, defensive right wing, own penalty area, attacking right half-space, defensive central midfield, opposition penalty area and attacking right wing compared to other central defenders. María Camila Torres Valerio performed below average in the attacking central midfield, defensive left wing, attacking left wing and attacking left half-space. María Camila Torres Valerio performed poor in the defensive left half-space.
+
+## Question 7: Could María Torres play in a different position?
+
+### What the data means
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: Are loose ball recoveries an important metric for full backs?
+A: The loose ball recoveries metric is most important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a full back's anticipation and positioning, that is their intelligent defence.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: How do we measure if a full back provides for their teammates?
+A: A full back who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: How would you describe a full back who is good in almost all metrics?
+A: We would describe a full back who is good in all metrics as well-rounded. They can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: Is dribbling important for a full back?
+A: Dribbling is usually not very important for a full back. However, full backs who can dribble past their markers can create real difficulties for the opposition team and thereby add value to their team.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: What is a full back?
+A: A full back plays on the right or left side of a team's defence with the primary aim of preventing opposition attacks in wide areas of the pitch. It is usually an attacking role too, with many full backs progressing the ball up field and supporting their team's wingers in the opposition half.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: What are the metric which measure if a full back is active defensively?
+A: Metrics that measure if a full back is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: What makes a full back dependable?
+A: A dependable full back is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: Does a full back progress the ball?
+A: It depends on the tactical system used by their team but most full backs, especially those with an attacking role, will progress the ball. As they play in wide areas they have more space for progression than players in the central zones of the pitch.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: What defensive actions are important for a full back?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: What are the metric which measure if a full back is intelligent defensively?
+A: Metrics that measure if a full back is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: How do we measure if a full back creates for others?
+A: A full back who provides for their teammates is considered to be creative. These players ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: Why is it important to have a full back with high active defence?
+A: It is important to have a full back with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring. Opposing wingers will attempt to dribble past them to get into the box and that needs to be prevented.
+
+Q: What are important metrics for assessing a full back's ball progressing ability?
+A: To assess a full back's ball progressing ability we would look at the threat they create with their passes into the final third and ball progression. Furthermore, we would consider how many playmaking passes they make.
+
+Q: Is run quality important for a full back?
+A: Some run quality metrics are always desireble for full backs, like how well they can carry the ball forward, while others depend on their manager's tactics, such as penalty area receptions and threat created with deep runs.
+
+Q: What qualities do we use to evaluate ball progression in full backs?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the full back creates through both passes and carrying the ball.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: What are some attributes of a full back with good passing ability?
+A: Full backs who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: Is winning duels important for a full back?
+A: Winning duels, especially on the ground, is important for full backs. It gives an insight into how well they deal with a direct opponent in an one-on-one situation, which are common for a full back. It shows they can prevent the opposition wingers and full backs from threatening their goal.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: What does it mean for a full back to be reliable?
+A: Consistent high performance in active defense and good ball progression numbers are signs of reliability for a full back.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What does it mean for a full back to be good in defensive heading?
+A: A full back who is good in defensive heading has a strong record for aerials won in their own half. This is important as opposition sides may target them with crosses from the opposite flank.
+
+Q: How would you describe a full back who is both good in run quality and progression?
+A: A full back who is both good at run quality and progression could be described as technical, as they would require good ball control and technique to accomplish those skills.
+
+Q: Is aerial ability important for a full back?
+A: Aerial ability is not a primary aspect of a full back's role but it is important. They may have to cover opposition forwards when defending crosses in open play and often in set piece situations.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What are the important attributes of a full back who has good involvement?
+A: A full back is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What are the most important metrics for a full back?
+A: The most important metric for evaluating full backs depends on whether we are looking for a more attacking or more defensive full back.  Attacking full backs need to be strong in progression and passing and often have high run quality. For defensive qualities the important metrics are those realted to active and intelligent defence.
+
+Q: What makes a full back strong technically?
+A: A full back who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: If a full back is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A full back who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What are some attributes of a full back with a good run quality?
+A: The key to a full back's run quality is making threatening runs with and without the ball and carrying the ball forward.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: What qualities do we use to evaluate creativity in full backs?
+A: We evaluate creativity in full backs by rating their creative and progressive passes, expected goals created and expected assists.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: How would you describe a full back who is not above average in any metrics?
+A: A full back who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What qualities do we use to evaluate a full back?
+A: We evaluate full backs both in terms of their attack qualities going forward and in terms of their defence. Specifically, we look at their involvement, their progression, their passing quality, their ability to provide for teammates, their run quality, thier active defence and their intelligent defence.
+
+Q: Are full backs important in the opposition's penalty box?
+A: They can be very important, since opposition defenders may not expect them to be there. We can measure their impact by assessing their box threat.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+### Rule-based description of this player's data for this question
+María Torres is a unknown footed 21-year-old central defender playing for Inter Bogotá in the Liga Femenina BetPlay. She is average at providing teammates compared to other central defenders. She performs well in deep completions. She is average at run quality compared to other central defenders. She performs well in box receptions. She is average at passing quality compared to other central defenders. She performs well in passes into final third (xt). She is good at progression compared to other central defenders. She performs well in passes into final third (xt) and ball progression (xt). She is average at chance prevention compared to other central defenders. She is average in every metric in chance prevention. She is average at territorial dominance compared to other central defenders. She is average in every metric in territorial dominance. She is poor at intelligent defence compared to other central defenders. In intelligent defence, she is weakest in counterpressing actions. She is average at active defence compared to other central defenders. She performs poorly in defensive actions won. She is average at involvement compared to other central defenders. She performs poorly in defensive actions won.
+
+## Question 8: How good is María Torres at pressing?
+
+### What the data means
+Q: What is the relationship between high recoveries and counterpressures?
+A: Counterpressures are often performed after the team loses possession high up the pitch, so a successfull counterpressure usually results in an interception from that player or a teammate.
+
+Q: What does it mean for a player to be good in pressing?
+A: Players who are good in pressing have a high defensive work rate and are skilled in winning possession high up on the pitch, which can generate dangerous offensive transitions.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: What does it mean for a player to have a high amount of counterpressures but low defensive intensity?
+A: A player with a high amount of counterpressures but low defensive intensity is likely making a lot of defensive efforts immediately after their team loses possession, but overall they do not make many on ball defensive actions.
+
+Q: Why are high recoveries a part of pressing?
+A: The primary reason teams adopt a pressing playing style is that winning the ball high up the pitch often generates threatening situations. Consequently, high recoveries are of great importance when measuring pressing. Equally important is contributing to the press without recovering the ball, but the current dataset lacks information about these efforts.
+
+Q: What is pressing?
+A: Pressing assesses players' proactive defensive efforts to close down, pressure, or engage an opponent with the ball. It takes into account the number of defensive actions players perform, with an emphasis on counterpressing and high recoveries.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: What does it mean for a player to rank highly in counterpressures and defensive intensity?
+A: A player who ranks highly in counterpressures and defensive intensity has a high defensive engagement and agresssion, and has a good work rate to attempt win the ball back.
+
+Q: What does it mean for a player to be bad in pressing?
+A: Players who struggle with pressing may contribute less defensively and find it challenging to disrupt the opponent's play, which isn't solely linked to their defensive work rate, as it can result from unsuccessful efforts.
+
+Q: What about players that don't win the ball but participate in the press?
+A: Pressing is a team effort and, therefore, it cannot be fully attributed to the individual. However, the current dataset does not include information about the players who contribute to the pressure but don't make a defensive action. As a result, their efforts cannot be measured.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: How is pressing calculated?
+A: Pressing is calculated as the weighted sum of the z-scores of players in defensive intensity (25%), high recoveries (35%), interceptions (10%) and counterpressing recoveries (30%), among other players who play the same position.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: How is pressing  measured?
+A: Pressing  is a weighted sum of a players performance compared to other players in the same position in defensive intensity (25%), high recoveries (35%), interceptions (10%) and counterpressing recoveries (30%).
+
+Q: How do you describe a player who has below average defensive intensity in the attacking left wing?
+A: A player with below average defensive intensity in the attacking right wing is a right-sided wide player who barely engages with opposition full backs. They mostly let the play pass them by, only rarely getting into tackles and pressures on that side.
+
+Q: What does poor defensive intensity in the defensive right wing tell us about a player?
+A: When a player has poor defensive intensity in the defensive right wing, they are quite passive when opposition attacks from their left hand side. They are probably right-sided midfielders or wingers who are somewhat lazy at tracking opposition runners and retrieving the ball.
+
+Q: How do you describe a player with excellent defensive intensity in the attacking left half-space?
+A: A player with excellent defensive intensity in the attacking left half-space is good at defending vigorously in the left channel, using their energy and tactical intelligence to disrupt the opposition's right-sided defenders any rhythm and regain control of the ball.
+
+Q: How do you describe a player with below-average defensive intensity in the opposition penalty area?
+A: A player with below-average defensive intensity in the opposition penalty area may not apply sufficient pressure on opposition defenders, potentially allowing them more space and time to make decisive passes, which could lead to build-up opportunities.
+
+Q: How do you describe a player with outstanding defensive intensity in the defensive central midfield?
+A: A player with outstanding defensive intensity in the defensive central midfield is the heart of the team's defensive efforts in the attacking third, showing exceptional work rate, fierce tackling, and determination to recover possession.
+
+Q: When a player has average defensive intensity in the attacking right half space, what does it mean?
+A: If a player has average defensive intensity in the attacking right half-space, it means that they are quick to press opposition players in the right channels without necessarily being relentless. They are not lazy, and indeed press, but once the ball is played past them, might cool off.
+
+Q: What does excellent defensive intensity in the defensive left wing tell us about a player?
+A: Excellent defensive intensity in the left wing tells us that a player engages in a lot of tackles and pressures from the left back area. They are a dominant defensive presence in the team and don't let opponents go past without a fight.
+
+Q: How do you describe a player who has excellent defensive intensity in the attacking left wing?
+A: A player with excellent defensive intensity in the attacking left wing is a wide player with excellent work rate. They track opposition fullbacks and defenders with vigor and engage in duels whenever possible.
+
+Q: How do you describe a player who shows poor defensive intensity in the attacking central midfield?
+A: A player who shows poor defensive intensity in the attacking central midfield may struggle to effectively contribute to the team's defensive shape high in the central areas. They are often being bypassed or outmaneuvered by opponents, highlighting a critical area for improvement in their overall defensive game.
+
+### Rule-based description of this player's data for this question
+María Torres is poor at pressing compared to other central defenders. She is below average at high recoveries compared to other central defenders. She is poor at interceptions, defensive intensity and counterpressing actions compared to other central defenders.
+
+María Camila Torres Valerio's defensive_intensity was average in the defensive right wing, defensive right half-space, own penalty area, attacking right half-space, attacking right wing, defensive central midfield and opposition penalty area compared to other central defenders. María Camila Torres Valerio performed below average in the attacking left wing, defensive left wing, attacking central midfield and attacking left half-space. María Camila Torres Valerio performed poor in the defensive left half-space.
+
+## Question 9: How good is María Torres in the air?
+
+### What the data means
+Q: What qualities do we use to evaluate a central defender?
+A: We evaluate central defenders by their involvement, their progression, their composure, their aerial threat, their defensive heading, their active defence and their intelligent defence.
+
+Q: What does it mean for a central defender to be good in defensive heading?
+A: A central defender who is good in defensive heading would have a strong record for aerials won in their own half. This is important as opposition sides may try to get the ball to their forwards with long high passes and crosses.
+
+Q: How do 'attacking aerials won' and 'attacking aerials won %' together shape a player's aerial profile in front of the goal?
+A: Together, these aspects shape a player's aerial profile in front of the goal by highlighting their effectiveness and efficiency in offensive aerial situations, crucial for scoring or creating chances in the air.
+
+Q: How would you describe a central defender who is good in almost all metrics?
+A: We could describe a central defender who is good in all metrics as a well-rounded central defender, who can complete their primary defensive role while also helping their side progress the ball towards the opposition goal.
+
+Q: What are the metric which measure if a central defender is active defensively?
+A: Metrics that measure if a central defender is active defensively include their frequency of successful defensive actions and their ability to recover possession effectively. Additionally, a key indicator is their high success rate in defensive efforts.
+
+Q: What metrics do we use to evaluate heading in central defenders?
+A: We evaluate central defender's heading both offensively and defensively. In attack we evaluate the threat that they pose in offensive aerials, whereas in defensive heading we evaluate how well they perform in aerial duels close to their own goal. We factor in how many duals they win as well as their success rate.
+
+Q: What does it mean for a player to be an aerial threat?
+A: Players who rank highly in aerial threat are threatining in the air offensively. They win a high percentage of their aerial duels, especially in the attacking 60 % of the field, and frequently make headed passes or headed shots.
+
+Q: What qualities do we use to evaluate ball progression in central defenders?
+A: To evaluate ball progression we look at how well they progress the ball with passes and ball carries. We also count playmaking passes, which include progressive passes, smart passes and through passes. We look to see how much danger the central defender creates through both passes and carrying the ball.
+
+Q: What are the important attributes of a central defender who has good involvement?
+A: A central defender is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in the build-up of attacks ending with shots.
+
+Q: What is aerial threat?
+A: Aerial threat refers to a player's ability to pose a danger and get into scoring opportunities in the air, often in set-pieces.
+
+Q: How important are 'attacking aerials won' for a player's aerial threat?
+A: Attacking aerials won'  are crucial for a player, indicating their ability to win headers in offensive situations, particularly in creating scoring opportunities or directing headers on target.
+
+Q: What qualities do we use to evaluate composure in central defenders?
+A: To evaluate the composure of central defenders we look at how well they retain possession under pressure and how often they lose the ball, especially close to their own goal.
+
+Q: What are the metric which measure if a central defender is intelligent defensively?
+A: Metrics that measure if a central defender is intelligent defensively include their frequency of successfully recovering the ball without making an active defensive action or through interceptions. Additionally, a key indicator is their ability to react quickly to the loss of possession and winning back the ball through counterpressing.
+
+Q: How would you describe a central defender who is not above average in any metrics?
+A: A central defender who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: How does a player's overall 'aerial threat' influence their role in set-pieces?
+A: A player's overall 'aerial threat' directly influences their role in set-pieces. Players with high skill in aerial threat are often targeted in offensive set-pieces for headers.
+
+Q: What does it mean for a player to have a low aerial threat?
+A: Players who rank badly in aerial threat rarely win offensive aerial duels and usually do not pose a goal-scoring danger in the air.
+
+Q: What is a central defender?
+A: Central defenders play in the middle of the defence, either in a pair or trio depending on the formation deployed by the manager. Their primary role is to prevent opposition attackers from having shots, by using their skills of positioning and anticipation to help regain possession, as well as blocking shots which occur.
+
+Q: Are loose ball recoveries an important metric for central defenders?
+A: The loose ball recoveries metric is more important for midfielders. However, it does demonstrate how frequently a player is in the right place to collect a loose ball. It gives an indication of a central defender's anticipation and positioning.
+
+Q: Why are aerials won a part of aerial threat?
+A: While aerial threat primarily assesses a player's offensive danger in the air, it's important to consider their overall aerial strength. Players who consistently win aerial duels demonstrate greater aerial prowess and, consequently, a heightened aerial threat.
+
+Q: Is aerial ability important for a central defender?
+A: Heading is one of the most important part of a central defender's role. They have to duel an opposition forward in the air and are vital for defending crosses in set piece situations.
+
+Q: What does it mean for a central defender to be reliable?
+A: Consistent high performance in active defence, defensive heading and composure are signs of reliability for a central defender
+
+Q: How is aerial threat calculated?
+A: Aerial threat is calculated as the weighted sum of the z-scores of players in aerials won (10%), aerials won % (15%), attacking aerials won (20%), attacking aerials won % (35%) and headed plays (20%), among other players who play the same position.
+
+Q: What defensive actions are important for a central defender?
+A: We would look at defensive duels, tackles, interceptions, recoveries and clearances.
+
+Q: What makes a central defender strong technically?
+A: A central defender who is good at generating expected threat from ball progression and completing playmaking passes would be defined as strong technically, as they demonstrate good technique on the ball.
+
+Q: How would we describe a player who is average at aerial threat?
+A: This player shows moderate ability in aerial challenges, occasionally winning headers but may lack consistency or physical dominance in these aerial duels.
+
+Q: Does a central defender progress the ball?
+A: This depends on the tactical system used by their team. Many central defenders do progress the ball up field but those without the required passing or carrying skills will play simple passes to their teammates.
+
+Q: What are the most important quality for a central defender?
+A: The most important quality for central defenders is their active defence, which encompasses their ability to proactively intervene the oppositions attack and recovering the possession. They will also need to be strong with aerials and defensive duels and well composed, so that they do not lose the ball in dangerous situations.
+
+Q: What metrics do we use to evaluate defensive heading in central defenders?
+A: To evaluate the defensive heading of central defenders, we mostly focus on how many aerial duels they win and their success rate aerials closer to their own goal. Their overall aerial performance is also factored in, since players who win aerials duels in other parts of the pitch as well have a good aerial ability.
+
+Q: How do we measure if a central defender is an aerial threat?
+A: A central defender who has a good success rate in aerials, wins many aerial dules and frequently makes headed plays, especially in the attacking half, is considered to be an aerial threat.
+
+Q: How is aerial threat measured?
+A: Aerial threat is a weighted sum of a players performance compared to other players in the same position in aerials won (10%), aerials won % (15%), attacking aerials won (20%), attacking aerials won % (35%) and headed plays (20%).
+
+Q: Why are headed plays a part of aerial threat?
+A: A player's ability to successfully pass the ball with their head and head the ball towards the goal is indicative of their aerial threat. It shows that they are able to control the ball with their head and to get into goal-scoring positions.
+
+Q: How would we describe a player who is outstanding at aerial threat?
+A: An outstanding player in this area is highly effective in winning aerial battles, arriving with good timing to balls from crosses, and contributing significantly to aerial dominance.
+
+Q: If a central defender is strong in active defence but does not rank highly in progression, how do we characterise them?
+A: A central defender who is strong in active defence but does not rank highly in progression can be described as defensively solid while offering little going forward.
+
+Q: What makes a central defender dependable?
+A: A dependable central defender is a consistent performer in all important aspects of their role regardless of different tactical systems.
+
+Q: Is winning duels important for a central defender?
+A: Winning duels is important for central defender. It gives an insight into how well they deal with a direct opponent in an one-on-one situation. Good central defenders are both strong in duels on the ground and in the air.
+
+Q: Why is it important to have a central defender with high active defence?
+A: It is important to have a central defender with high active defence as they will be vital in regaining possession, which prevents the opposition from scoring.
+
+Q: What does excellent attacking aerials won adj in the attacking left half-space tell us about a player?
+A: A player with excellent attacking aerials won adj in the attacking left half-space is highly effective at leveraging their aerial strength to gain control and create opportunities, often setting up chances or scoring goals from aerial situations from second balls.
+
+Q: How do you describe a player with below average attacking aerials won adj in the opposition penalty area?
+A: A player with below average attacking aerials won adj in the opposition penalty area might struggle with the physical or technical aspects of aerial play, often getting outmatched by defenders, which diminishes their effectiveness in creating scoring opportunities.
+
+Q: How do you describe a player who has poor attacking aerials won adj in the attacking central midfield?
+A: A player who has poor attacking aerials won adj in the attacking central midfield may not effectively utilize their aerial opportunities to advance play or might be physically outmatched, resulting in a loss of key battles that could otherwise pivot the game in their team's favor.
+
+Q: What does poor attacking aerials won adj in the attacking central midfield and good attacking aerials won adj in the opposition penalty box show us about a player?
+A: Poor attacking aerials won adj in the attacking central midfield and good attacking aerials won adj in the opposition penalty box shows that a player is comfortable contesting 1v1 headers from deep crosses, but might struggle to play as a target forward who receives the ball high on the pitch from lofted deliveries. It could be down to a comfort from lateral movement of the ball compared to the more vertical movement of a long ball from the defence.
+
+### Rule-based description of this player's data for this question
+María Torres is good at aerial threat compared to other central defenders. She is good at attacking aerials won, attacking aerials won %, aerials won %, headed plays and aerials won compared to other central defenders.
+
+María Camila Torres Valerio's attacking_aerials_won was excellent in the opposition penalty area and attacking right half-space compared to other central defenders. María Camila Torres Valerio performed good in the attacking central midfield, defensive right half-space and defensive right wing. María Camila Torres Valerio performed average in the defensive central midfield, defensive left wing, attacking right wing and attacking left wing. María Camila Torres Valerio performed below average in the attacking left half-space and defensive left half-space.
+
+## Question 10: Does María Torres get involved in games?
+
+### What the data means
+(none)
+
+### Rule-based description of this player's data for this question
+(none)
+
+## Answers to rate
+
+### Answer b01-51296f (to question 9)
+María Torres is strong in the air: in about 2,130 minutes at right centre-back she contested 68 aerial duels and won 43 of them, a 63% success rate. That works out to roughly 2.9 aerial duels and 1.8 wins per 90 minutes, and she was just as good defending her own box (33 of 50, 66%) as attacking set pieces (19 of 29, 66%). The only centre-backs I could compare her with all play for one other club (team 58712), because the league-wide data came back cut off. Against them she holds up well, with similar win rates to the busiest of them (54 duels at 63%) while contesting more headers, but without a full league comparison I can't say where she ranks.
+
+### Answer b01-d012c0 (to question 6)
+María Torres, who plays at right centre-back, wins the ball back almost entirely in her own half: 71 of her 75 recoveries this season came there, mostly in the central own-half zone (22) and the right half-space (21), with another 12 in her own box. She rarely wins it back higher up, with only 4 recoveries in the opposition half (3 in the right half-space and 1 centrally), and a few more on the right wing (8) and the left side of her own half (6 in the half-space, 2 on the wing).
+
+### Answer b01-7736f9 (to question 7)
+María Torres has consistently played as a central defender, particularly in the roles of right center-back (RCB), left center-back (LCB), and center-back (CB). Over the 2026 Colombian Liga Femenina BetPlay season, she played exclusively as an RCB, logging 100% of her minutes in this role. While her historical versatility across these defensive center positions suggests adaptability, her recent single-position focus in 2026 indicates specialization rather than likelihood of playing elsewhere.
+
+### Answer b01-3726ca (to question 2)
+Unfortunately, data is not available for Maria Torres's overall performance or defensive metrics in the Colombian Liga Femenina BetPlay during the 2026 season. This limits a detailed assessment of her strengths and weaknesses.
+
+### Answer b01-6a26af (to question 8)
+Pressing isn't María Torres's strength: she defends deep and reacts to play rather than pressing high, but she wins the ball well when it comes into her zone. In 2,130 minutes at right centre-back, she has made only 2 counterpresses all season, neither of which won the ball back, and just 4 high recoveries (about 0.2 per 90), with an average defensive line height of 27.8 m. She is much more effective defending her own zone, with about 7.8 defensive actions, 4.3 tackles (74.5% won), 3.0 interceptions and 5.0 possessions won per 90. I haven't compared these numbers with other centre-backs in the league, so they describe her style rather than rank her, but they point to a positionally sound defender who intercepts well rather than a front-foot presser.
+
+### Answer b01-c7d2cb (to question 2)
+María Torres's main strength is reading the game and winning the ball back, based on about 2,130 minutes at right centre-back: she averages roughly 3.0 interceptions and 5.0 possessions won per 90, wins 75% of her tackles and 63% of her aerials, and adds a goal threat at set pieces with 2 goals from 1.26 xG. Her biggest weakness is keeping the ball, since only 65% of her passes are accurate even though she plays about 4.4 progressive passes per 90, and she's also vulnerable when isolated, winning only 7 of 12 one-on-one defensive situations (58%).
+
+### Answer b01-620e0b (to question 5)
+María Torres is a remarkable central defender who poses a significant goal-scoring threat, standing out with her impressive number of np goals. Her ability to receive the ball in the penalty area and maintain a strong presence in box-related metrics further showcases her attacking capabilities, although her box entries from carries and expected goals remain on par with her peers.
+
+María Camila Torres Valerio has displayed an average capacity to generate scoring opportunities from the six-yard box, outside of the box, and the left side of the box among central defenders. However, she struggled in critical areas, performing below average in both the golden zone and the right side of the box, indicating areas where she could sharpen her attacking threat.
+
+### Answer b01-46ef2c (to question 10)
+María Torres has no recorded involvement in matches as a central defender during the 2026 season of the Colombian Liga Femenina BetPlay.
+
+### Answer b01-44f16b (to question 4)
+There is currently no available data on María Torres' dribbling performance as a central defender in the Colombian Liga Femenina BetPlay for the 2026 season. Without statistical insights, evaluating her dribbling ability would require qualitative scouting or additional match footage analysis.
+
+### Answer b01-fc922f (to question 8)
+María Torres struggles significantly in her pressing game, failing to make an impact in key areas like interceptions and defensive intensity. Her ability to recover the ball is also lacking, making her contribution to the team's defensive efforts insufficient.
+
+María Camila Torres Valerio has shown a consistent average defensive intensity across multiple positions, particularly in the right defensive areas and in both penalty boxes. However, her performances suffer significantly on the left side of the pitch, where intensity notably drops, reflecting a clear vulnerability when tasked with defending in those zones.
+
+### Answer b01-35939e (to question 5)
+The data available for María Torres in the 2026 Colombian Liga Femenina BetPlay suggests she spent her time as a central defender (right-sided) for her team, playing every available minute. However, the provided shot location data does not include any records for her contributing shots or goals. This implies that she might not pose a significant goal-scoring threat in the box in her current defensive role, which is expected given her position.
+
+### Answer b01-ea8811 (to question 6)
+María Camila Torres Valerio delivers a solid and steady defensive performance across several areas, particularly on the right side and in her own penalty area. However, she struggles in wider and left-sided areas, lacking the ability to contribute effectively when pressing the opposition, which could expose her team's left flank.
+
+### Answer b01-038f97 (to question 3)
+María Torres is a progressive, high-volume passer but not a reliable one, and her completion rate is her biggest weakness. Over about 2,130 minutes at right centre-back she attempted 705 passes (around 30 per 90) and completed only 65.1% (67.2% in open play), which is low for a centre-back. Her forward passing is the strong part of her game: 103 progressive passes (about 4.4 per 90), 65 passes into the final third (about 2.7 per 90) and 19 deep completions added 5.3 expected threat (xT, a measure of how much a pass raises the chance of scoring), with a solid 1.32 xT per 100 balls received. Some of the low accuracy probably comes from her role, since she took 89 free kicks and tried riskier balls such as through passes, completing just 5 of 14. She kept the ball 71% of the time under pressure (17 of 24 actions), but she created almost nothing directly, with 0 key passes and only 0.14 expected assists (xA), and I haven't compared her numbers with other centre-backs in the league.
+
+### Answer b01-e8b434 (to question 8)
+No data is available on María Torres's pressing metrics for the 2026 Colombian Liga Femenina BetPlay season.
+
+### Answer b01-f5a260 (to question 1)
+María Camila Torres Valerio is a 20-year-old Colombian centre-back who has played about 2,130 minutes at right centre-back in the 2026 Liga Femenina BetPlay, roughly 24 full matches' worth, for a team that has averaged only about 46% possession. Defensively she has been busy and reliable, with 185 defensive actions (about 7.8 per 90 minutes), including 70 interceptions, 75 ball recoveries and 46 clearances. She has won 60% of her 126 defensive duels, 75% of her tackles and 63% of her 68 aerial duels, though she was beaten 5 times in 12 one-on-one defensive situations. Her passing has been the weak part of her game: she completed only 65% of her 705 passes, which is low for a centre-back, even though she was ambitious with 103 progressive passes and 65 passes into the final third. She has also been a threat in the opposition box, scoring 2 goals from 16 shots worth 1.26 expected goals (xG) and winning 19 of 29 attacking aerials, mostly from set pieces. Overall it has been a solid season for such a young defender, with good discipline (14 fouls and 2 yellow cards, no reds), and keeping the ball better is the clearest area to improve.
+
+### Answer b01-3d5642 (to question 6)
+There is currently no data available about where María Torres wins the ball back on the pitch in Colombian Liga Femenina BetPlay during the 2026 season.
+
+### Answer b01-f5dbe9 (to question 1)
+María Torres had a standout season playing as a right central defender (RCB) for her team in the 2026 season of the Colombian Liga Femenina BetPlay. She played every possible minute, accumulating a total of 2129.87 minutes, showcasing her reliability and consistency in the squad. Her defensive statistics reveal a significant defensive involvement, with 347 open-play defensive actions over the season. Her defensive zone saw 593 passes from the opposition, 360 of which were successful, with her territory recording an average opposing xG contribution of 0.4291 per 100 possessions. Despite this, Torres's defensive actions limited further offensive opportunities in her area, curbing progressive passes and threats from the opposition. Overall, her contribution as a central defender highlights her significance to the team’s defense.
+
+### Answer b01-fcedd2 (to question 3)
+Torres showcases an impressive ability to create expected threat through her passes into the final third. While she is reliable overall, her performance in other passing metrics does not stand out as strongly.
+
+María Camila Torres Valerio has demonstrated exceptional ability in advancing the play from the defensive right wing and delivering incisive passes in the opposition penalty area. She also excels in the defensive right half-space, contributing effectively to build-up play. However, her influence diminishes in wider areas on the left side and she struggles to create in the left half-spaces.
+
+### Answer b01-bcf6f1 (to question 7)
+María Torres demonstrates strengths in ball progression and deep completions that could serve her well in a full back role, particularly in transitioning the ball upfield and providing support in the attacking third. However, her weaknesses in intelligent defence, especially in counterpressing and defensive actions won, may hinder her ability to effectively halt opposition attacks from a wide position. This assessment is based on her current performance as a central defender, where the primary focus is on aerial duels and positional play, contrasting with the expected offensive contributions and nuanced defensive responsibilities of a full back.
+
+### Answer b01-db4a27 (to question 1)
+María Torres is a promising young central defender demonstrating solid skills in ball progression. This season, she has showcased her ability to advance play effectively, particularly excelling in passes into the final third and ball progression metrics. In other areas such as composure, aerial threat, and defensive heading, she maintains an average standing among her peers. However, she struggles with intelligent defence, particularly in counterpressing actions, and her active defence is limited by a low number of defensive actions won, which may hinder her overall impact on the game. While she's decent in terms of involvement and chance prevention, her performance as a whole suggests she still has areas to develop. Overall, María Torres shows promise in progression but will need to enhance her defensive capabilities and intelligent decision-making to elevate her game further.
+
+### Answer b01-5df3a4 (to question 4)
+María Torres is a competent dribbler among central defenders, showing a solid rate of success when taking on opponents. However, while she can retain possession well, her ability to create chances through dribbling is less impactful, marking her as a standard option rather than a game-changer in attack.
+
+María Camila Torres Valerio showed solid dribbling skills in the attacking central midfield and defensive right wing, indicating her capability to contribute to both offensive flows and defensive transitions. However, her performances in other areas such as the penalty boxes, the left wing, and various defensive positions have been mostly average to below average, suggesting she may need to enhance her ball-carrying ability across different phases of play.
+
+### Answer b01-0177c3 (to question 9)
+María Torres displays solid aerial ability across the board, being a reliable option in both offensive and defensive aerial duels. Her performance demonstrates she can consistently win headers, contributing significantly to her team's aerial strength.
+
+María Camila Torres Valerio has showcased outstanding aerial ability in both the opposition penalty area and the attacking right half-space, making her a significant threat during set-pieces and attacking phases. She also competently contributes in various other areas, including attacking central midfield and defensively on the right side, but she falls short in the left channels, indicating some room for improvement in those zones.
+
+### Answer b01-7d6160 (to question 10)
+There was an error getting the data.
+
+### Answer b01-2edd2a (to question 9)
+I couldn't find any aerial duel statistics for María Torres in the Colombian Liga Femenina BetPlay 2026 season. This may indicate that the data isn't available or recorded for her performances in this competition.
+
+### Answer b01-0d4073 (to question 4)
+María Torres hardly dribbles, so there's very little evidence about how good she is at it: in about 2,130 minutes at right centre-back this season she tried just 4 take-ons (about 0.17 per 90) and completed all 4. Those dribbles added almost no attacking threat (0.03 xT, measured by expected threat) and led to no shots, so the 100% success rate comes from too few attempts to mean much. She does carry the ball tidily, with 125 carries and none lost, but they added only 0.75 xT, which means she mostly moves the ball short distances rather than driving forward past opponents. She kept the ball in 17 of 24 actions under pressure (71%), so she's composed but not a ball-carrying centre-back, and she moves the ball up the pitch far more by passing (103 progressive passes, 5.3 xT) than by dribbling.
+
+### Answer b01-ee949c (to question 5)
+Yes, María Torres is a real box threat for a centre-back. In about 2,130 minutes at right centre-back in the 2026 Liga Femenina BetPlay season, she took 16 non-penalty shots (around 0.68 per 90) worth 1.26 xG and scored 2 goals, beating her xG by 0.74. Her threat comes mostly from set pieces and aerial duels: she won 19 of 29 attacking aerials (66%), and she had 24 receptions and 16 touches in the opposition box. The quality of her chances is modest, though, at 0.08 xG per shot and only 5 of 16 shots on target, so she's a useful secondary threat at set pieces rather than a regular goalscorer.
+
+### Answer b01-c0d33d (to question 10)
+Yes, María Torres is heavily involved, especially for a centre-back: over about 2,130 minutes at right centre-back in 2026 she has played a part in 667 of her team's 2,531 possessions (about 26%), averaging about 29 touches, 30 passes and 8 defensive actions per 90 minutes (185 in total, including 70 interceptions and 75 ball recoveries), while also chipping in 16 shots and 2 goals.
+
+### Answer b01-e75287 (to question 2)
+María Camila Torres Valerio's strengths lie in her finishing, box threat, and progression, which indicate she is a unique central defender capable of contributing offensively, scoring goals efficiently, and advancing the ball effectively during attacks. However, her weaknesses in pressing and intelligent defense suggest that while she may excel offensively, her ability to disrupt the opponent’s play and anticipate their movements could be a concern, potentially leaving her team vulnerable defensively.
+
+### Answer b01-3a3167 (to question 3)
+María Torres shows mixed passing statistics, with an average passing accuracy around 53%. Her passes are conservative, as seen in her limited key passes and assists output, but she contributes progressively by attempting passes into the final third and progressive passes in several games. In matches, she tries to generate expected threat (xT) with her passes, achieving modest values per game but lacking game-changing creativity like smart passes or through balls. Torres also executes a fair number of defensive passes, including those into deeper areas, complementing her defensive role. Overall, while her passing numbers indicate functionality as a central defender, there is scope for improvement in reliability and creativity in her passing.
+
+### Answer b01-869fc5 (to question 7)
+María Torres has only ever played centre-back, but she has played both sides of it: she was mostly a left centre-back in 2024 (77% of minutes) and 2025 (56%), then played all 2,130 minutes at right centre-back in 2026. That makes her a strong option on either side of a back two or as a wide centre-back in a back three, especially since she won 75% of her tackles and 63% of her aerials, with about 3 interceptions and 5 possessions won per 90. A move further forward looks less likely to suit her, because her 65% pass accuracy is low for a holding midfielder, and she made only 5 crosses, 4 dribbles and 125 carries all season, which doesn't fit a full-back. Her best use is still in central defence, though her 2 goals from 16 shots and 63 completed passes into the final third show she can help out of position in an attacking set-piece role or late in a game.
+
+## Results file
+Write your ratings to: /Users/davsu428/GitHub/vivid-report/papers/0002-twelve-earpiece/Code/outputs/wordalisation-test/agent-judge/results-01.jsonl

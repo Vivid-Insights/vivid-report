@@ -1,0 +1,1318 @@
+# Judging task
+
+You are judging answers written for a scout at a football club, who asked questions
+about one player. Below are the information about the player, the explanations and
+rule-based descriptions for each question, and then 30 answers, each with an id.
+
+Rate each answer on its own, against the information for its question. Do not compare
+answers with each other, and do not try to work out who wrote them.
+
+Rate three criteria, each from 1 (very poor) to 5 (very good):
+- faithfulness: how faithfully the answer represents the information given;
+- engagement: an engaging answer tells the scout about the player in footballing terms,
+  without overwhelming them with numbers and statistics. If it gives a number, it does so
+  in the context of comparing the player with other players;
+- usefulness: an answer is only useful if it compares the player with other, similar
+  players. If it gives numbers, it explains what they mean.
+Also list every hallucination in the answer, that is every unsupported or fabricated claim:
+a statement the information does not support or that contradicts it. Quote each briefly.
+
+Write your ratings to the results file named at the end, one JSON object per line, one
+line per answer, in this form:
+{"id": "...", "faithfulness": 1-5, "engagement": 1-5, "usefulness": 1-5, "hallucinations": ["..."], "reason": "one or two sentences"}
+
+
+## Data about the player
+Player: Makai Wells, winger, American MLS Next Pro 2026, 1095 minutes.
+z-scores compare the player with players in the same position in American MLS Next Pro 2026 (0 = average, positive = above average).
+
+Qualities (z-score):
+- Active Defence: -0.57
+- Aerial Threat: 0.774
+- Box Threat: -0.533
+- Chance Prevention: -1.235
+- Composure: 0.027
+- Defensive Heading: 0.124
+- Dribbling: 0.312
+- Effectiveness: -0.581
+- Finishing: -0.689
+- Hold Up Play: -0.011
+- Intelligent Defence: -0.458
+- Involvement: -0.622
+- Passing Quality: -1.226
+- Poaching: -0.526
+- Pressing: -0.299
+- Progression: -0.686
+- Providing Teammates: -0.793
+- Run Quality: 0.239
+- Territorial Dominance: -1.526
+- Winning Duels: -0.149
+
+Metrics (value per 90 minutes or share, and z-score):
+- Aerials: 0.986 (z = -0.794)
+- Aerials won: 0.493 (z = -0.328)
+- Aerials won %: 0.5 (z = 0.76)
+- Assists: 0.171 (z = 0.106)
+- Attacking aerials: 0.513 (z = -1.016)
+- Attacking aerials won: 0.342 (z = -0.357)
+- Attacking aerials won %: 0.667 (z = 1.754)
+- Ball progression (xT): 0.195 (z = -0.177)
+- Loose ball recoveries: 0.554 (z = -0.956)
+- Ball runs (xT): 0.121 (z = 0.687)
+- Box entries from carries: 1.54 (z = 0.428)
+- Carries: 96.0 (z = 0.255)
+- Carries (xT): 0.18 (z = 0.578)
+- Carries (xT) per 100 receptions: 0.649 (z = 0.874)
+- Counterpressing actions: 0.633 (z = -0.567)
+- Chance creating passes: 0.513 (z = -1.207)
+- Crosses (xT): 0.032 (z = -0.092)
+- Deep completions: 0.171 (z = -1.217)
+- Through ball receptions (xT): 0.007 (z = -0.24)
+- Defending 1v1: 0.633 (z = -0.057)
+- Defending 1v1s won %: 0.125 (z = -1.277)
+- Defensive actions won: 4.272 (z = -0.046)
+- Defensive aerials: 0.712 (z = -0.329)
+- Defensive aerials won: 0.316 (z = -0.135)
+- Defensive aerials won %: 0.444 (z = 0.183)
+- Defensive area adj (m^2): 1029.474 (z = 1.603)
+- Defensive area (m^2): 1029.474 (z = 1.603)
+- Defensive duels: 5.934 (z = -0.181)
+- Defensive ground duels won: 2.453 (z = -0.2)
+- Defensive ground duels won %: 0.413 (z = -0.048)
+- Defensive intensity: 6.013 (z = 0.154)
+- Defensive action height (m): 43.898 (z = -0.863)
+- Dribbles: 4.192 (z = 0.627)
+- Dribble success %: 0.796 (z = 0.006)
+- Successful dribbles: 3.336 (z = 0.596)
+- Dribbles (xT): 0.116 (z = 0.511)
+- np Goals - np xG: -0.751 (z = -0.404)
+- np Goals per box touch: 0.031 (z = -0.822)
+- Headed plays: 0.342 (z = -0.045)
+- High recoveries: 0.396 (z = -0.439)
+- Low turnovers: 0.513 (z = 0.153)
+- Low turnovers per low reception: 0.118 (z = -0.119)
+- Interceptions: 2.848 (z = 0.748)
+- Key passes: 0.513 (z = -0.622)
+- Linkups: 0.257 (z = -0.7)
+- Long ball receptions: 2.795 (z = 0.091)
+- Long ball receptions (xT): 0.077 (z = 0.037)
+- Ball losses: 5.988 (z = 1.055)
+- Low receptions: 4.193 (z = -0.492)
+- np Goals: 0.086 (z = -0.737)
+- Shots: 1.112 (z = -0.993)
+- Opp. possessions: 1226.0 (z = -0.113)
+- Possessions: 352.0 (z = -0.351)
+- Opp. Pass success % into defensive area: 0.85 (z = -1.537)
+- Opp. Possession %: 0.52 (z = 0.131)
+- Opposition possessions in defensive area: 131.0 (z = 0.664)
+- Opp. Progressive passes from defensive area %: 0.205 (z = -2.374)
+- Opp. touches: 10139.0 (z = -0.131)
+- Opp. xG after defensive action raw: 0.0 (z = 0.334)
+- Opp. xG after defensive action: 0.0 (z = 0.285)
+- Opp. xG from defensive area raw: 0.754 (z = -0.702)
+- Opp. xG from defensive area: 0.576 (z = -1.394)
+- Allowed xT from defensive area: 2.079 (z = -0.501)
+- Opp. xT from defensive area: 1.066 (z = -1.511)
+- Opp. xT into defensive area: 1.345 (z = -2.034)
+- Passes: 291.0 (z = -0.525)
+- Passes into defensive area: 120.0 (z = 0.595)
+- Passes into final third (xT): 0.031 (z = -0.702)
+- Passes in final third (xT): 0.115 (z = -1.211)
+- Passes (xT): 0.195 (z = -1.321)
+- Passes (xT) per 100 receptions: 0.703 (z = -1.391)
+- Box receptions: 1.54 (z = -0.528)
+- Minutes: 1094.79 (z = -0.191)
+- Playmaking passes: 2.31 (z = -1.475)
+- Possession %: 0.48 (z = -0.131)
+- Recoveries: 1.503 (z = -0.489)
+- Recoveries per opponent possession: 0.015 (z = -0.559)
+- Pressure resistance %: 0.688 (z = -0.651)
+- Progressive passes inside: 40.0 (z = 0.801)
+- Receptions: 27.803 (z = -0.733)
+- Second assists: 0.0 (z = -0.792)
+- np Shot conversion %: 0.077 (z = -0.474)
+- Start inside: 195.0 (z = 0.502)
+- Defending 1v1s won: 0.079 (z = -0.972)
+- Successful passes into defensive area: 102.0 (z = 0.614)
+- Tackles won %: 0.484 (z = -0.33)
+- Team touches: 9377.0 (z = -0.157)
+- Touches: 31.139 (z = -0.748)
+- Touches in box: 2.738 (z = -0.18)
+- True tackles: 5.064 (z = -0.042)
+- Tackles won: 2.453 (z = -0.2)
+- Under pressure: 5.475 (z = 0.48)
+- Under pressure retention: 3.764 (z = 0.213)
+- xA: 0.087 (z = -0.736)
+- np xG: 0.15 (z = -0.64)
+- xGBuildup: 0.329 (z = 0.173)
+- xG Chain: 0.544 (z = -0.624)
+- xGChain per possession: 0.019 (z = -0.403)
+- xGCreated: 0.164 (z = -0.265)
+- xGDribble: 0.118 (z = 0.465)
+- xGOT: 0.04 (z = -1.158)
+- np xG per box touch: 0.055 (z = -0.807)
+- np xG per shot: 0.135 (z = 0.205)
+- np xG + xA per 100 touches: 0.762 (z = -0.602)
+- xT Into Area: 1.614 (z = -0.818)
+
+Zones of the pitch: for each quality, the z-score of its pitch metric in each zone, against players in the same position:
+- Run Quality (Carries (xT)): opposition penalty area -0.943, defensive right half-space -0.604, own penalty area -0.382, defensive right wing -0.288, defensive left wing 0.82, defensive left half-space -0.657, attacking central midfield -0.349, attacking left half-space -0.01, attacking left wing 1.272, attacking right half-space -0.27, attacking right wing 0.24, defensive central midfield 0.31
+- Defensive Heading (Defensive aerials won): attacking central midfield -0.313, attacking left half-space 1.526, attacking left wing -0.39, attacking right half-space -0.427, attacking right wing 1.089, defensive central midfield 0.838, defensive left half-space -0.556, defensive left wing -0.558, defensive right half-space -0.529, defensive right wing -0.594, own penalty area 0.137
+- Dribbling (Dribbles (xT)): defensive left wing 1.359, attacking central midfield -0.871, attacking left half-space -0.033, attacking left wing 0.988, attacking right half-space -0.326, attacking right wing -0.255, defensive central midfield -0.606, defensive left half-space -0.55, defensive right wing -0.2, opposition penalty area 0.555, own penalty area -0.212, defensive right half-space -0.522
+- Intelligent Defence (Loose ball recoveries): attacking right wing 0.429, attacking right half-space -0.079, attacking left wing -0.15, attacking left half-space -0.834, attacking central midfield -0.143, defensive central midfield -0.106, defensive left half-space -0.829, defensive left wing -0.743, defensive right half-space -0.74, own penalty area -0.648, opposition penalty area -0.629, defensive right wing -0.242
+- Involvement (xGBuildup): defensive right half-space -0.734, defensive left wing 0.291, defensive left half-space 0.032, defensive central midfield -0.147, attacking right wing -0.828, attacking right half-space 0.109, attacking left wing 2.135, attacking left half-space 0.363, attacking central midfield -0.569, own penalty area -0.344, opposition penalty area -0.768, defensive right wing -0.718
+- Pressing (Defensive intensity): opposition penalty area -0.151, own penalty area -0.34, defensive right wing -0.416, defensive right half-space -0.22, defensive left wing 0.772, defensive left half-space 0.463, defensive central midfield -0.306, attacking right wing 0.097, attacking right half-space -0.473, attacking left wing 1.19, attacking left half-space -0.446, attacking central midfield -1.287
+- Passing Quality (Passes (xT)): attacking central midfield -1.179, attacking left half-space -0.627, attacking left wing 0.523, attacking right half-space -1.012, attacking right wing -0.704, defensive central midfield -0.67, defensive left half-space 0.782, defensive left wing 0.153, defensive right half-space -1.047, defensive right wing -0.556, opposition penalty area -0.737, own penalty area -0.71
+- Poaching (np xG): attacking central midfield -0.456, attacking left half-space -0.697, opposition penalty area -0.531, defensive left wing -0.077, defensive left half-space -0.077, defensive central midfield -0.087, attacking right wing -0.148, attacking right half-space -0.57, attacking left wing -0.163, golden zone -0.443, left side of the box 0.067, outside of the box -0.736, six yard box -0.765
+- Progression (Playmaking passes): attacking right wing -0.974, attacking right half-space -0.857, attacking left wing 0.062, attacking left half-space -0.591, attacking central midfield -1.22, own penalty area -0.29, opposition penalty area -0.727, defensive central midfield -0.235, defensive left half-space -0.14, defensive left wing -0.106, defensive right half-space -0.914, defensive right wing -0.709
+- Hold Up Play (Under pressure retention): attacking central midfield -1.06, own penalty area -0.627, defensive right wing -0.285, defensive right half-space -0.806, defensive left wing 0.672, defensive left half-space -0.554, defensive central midfield -0.725, attacking right wing -0.006, attacking right half-space -0.915, attacking left wing 2.396, attacking left half-space 0.841
+- Aerial Threat (Attacking aerials won): attacking central midfield -0.498, attacking left half-space 1.521, attacking left wing 0.137, attacking right half-space -0.594, attacking right wing 0.196, defensive central midfield -0.383, defensive left wing -0.41, defensive right half-space -0.371, defensive right wing -0.491, opposition penalty area -0.658, defensive left half-space -0.316
+- Effectiveness (np xG per shot): opposition penalty area -0.292, attacking central midfield 0.468, golden zone 0.234, six yard box -0.959, outside of the box 1.092, left side of the box -0.182
+- Composure (Pressure resistance %): attacking left half-space 0.869, attacking left wing -0.178, attacking right wing 0.414, defensive central midfield -0.627, defensive left half-space -0.436, defensive left wing 0.323, defensive right half-space -1.795, defensive right wing -0.602, attacking central midfield -2.534
+- Winning Duels (Defensive ground duels won): defensive right half-space -0.554, defensive left wing 1.053, defensive left half-space 0.54, defensive central midfield -0.447, attacking right wing -0.392, attacking right half-space -0.99, attacking left wing 0.858, attacking left half-space -0.237, attacking central midfield -0.263, defensive right wing -0.679, opposition penalty area -0.854, own penalty area -0.889
+- Providing Teammates (xGCreated): own penalty area -0.088, opposition penalty area -0.388, defensive right wing -0.077, defensive right half-space -0.143, defensive left wing -0.124, defensive left half-space -0.156, defensive central midfield -0.177, attacking right wing 0.329, attacking right half-space -0.477, attacking left wing 0.421, attacking left half-space -0.098, attacking central midfield -0.311
+- Active Defence (Defensive actions won): opposition penalty area -0.952, own penalty area -0.222, defensive right wing -0.451, defensive right half-space -0.546, defensive left wing 0.899, defensive left half-space -0.169, attacking left wing 1.029, attacking right half-space -0.706, attacking right wing 0.23, defensive central midfield -0.181, attacking left half-space -0.653, attacking central midfield -0.831
+- Finishing (np Shot conversion %): golden zone -1.047, left side of the box 0.658, six yard box -0.877, outside of the box -0.436
+
+From Twelve's data (get_players_by_id):
+player_id: 1207356; short_name: Makai Wells; full_name: Makai Wells; last_name: Wells; birth_date: 2009-01-02; age: 17.790554414784395; foot: unknown; image_url: https://cdn5.wyscout.com/photos/players/public/ndplayer_100x130.png; nationality: United States; birth_country: United States
+
+From Twelve's data (get_player_career):
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: LWB; position_minutes: 197.27; minutes_pct: 18.02; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: LW; position_minutes: 194.22; minutes_pct: 17.74; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: RWF; position_minutes: 188.89; minutes_pct: 17.25; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: RWB; position_minutes: 178.69; minutes_pct: 16.32; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: LAMF; position_minutes: 120.56; minutes_pct: 11.01; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: LWF; position_minutes: 64.36; minutes_pct: 5.88; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: LCMF; position_minutes: 47.2; minutes_pct: 4.31; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: AMF; position_minutes: 46.05; minutes_pct: 4.21; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: RCMF; position_minutes: 30.97; minutes_pct: 2.83; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: RCMF3; position_minutes: 17.43; minutes_pct: 1.59; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2026; season_minutes: 1094.79; is_domestic_league_competition: True; is_competition_season_completed: False; position: RW; position_minutes: 9.15; minutes_pct: 0.84; current: True; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 3354; competition: 3354; team_id: 8137; season: 2025; season_minutes: 47.35; is_domestic_league_competition: False; is_competition_season_completed: True; position: LW; position_minutes: 47.35; minutes_pct: 100.0; current: False; is_national_team_competition: True; is_youth_team_competition: True
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2025; season_minutes: 26.28; is_domestic_league_competition: True; is_competition_season_completed: True; position: LWF; position_minutes: 14.33; minutes_pct: 54.53; current: False; is_national_team_competition: False; is_youth_team_competition: False
+player_id: 1207356; competition_id: 43383; competition: 43383; team_id: 66196; season: 2025; season_minutes: 26.28; is_domestic_league_competition: True; is_competition_season_completed: True; position: LW; position_minutes: 11.95; minutes_pct: 45.47; current: False; is_national_team_competition: False; is_youth_team_competition: False
+
+From Twelve's data (get_player_match_metrics):
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: AMF; player_position_match_minutes_p90: 46.05; possession_pct: 0.5356; team_events: 467; opp_team_events: 405; passes: 15; passes_accurate: 12; pass_accuracy_pct: 0.8; passes_open_play: 15; passes_accurate_open_play: 12; progressive_passes: 0; passes_into_final_third: 1; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 2; crosses_accurate: 0; key_passes: 0; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 0; linkups: 0; playmaking_passes: 1; deep_completions: 0; passes_xt: 0.0874; passes_into_third_xt: 0.0105; passes_third_xt: 0.0556; crosses_xt: 0.0; xa: 0.0; receptions: 17; low_receptions: 4; penalty_area_receptions: 0; long_ball_receptions: 0; long_ball_receptions_xt: 0.0; deep_runs_xt: 0.0; shots: 1; np_shots: 1; shots_on_target: 1; shot_on_target_pct: 1.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.1027; xg_on_target: 0.0301; goals_minus_xg: -0.1027; xg_per_shot: 0.1027; carries: 3; carries_successful: 3; accelerations: 0; carries_xt: 0.0316; ball_runs_xt: 0.0185; dribbles_xt: 0.0447; ball_progression_xt: 0.0185; box_entries: 0; touches: 19; touches_in_box: 0; xg_plus_xa_per_100_touches: 0.5405; dribbles: 2; dribbles_successful: 2; dribbles_success_pct: 1.0; interceptions: 3; ball_recoveries: 0; high_recoveries: 0; possessions_won: 1; possessions_won_per_opponent_possession: 0.0238; num_opponent_possessions: 42; num_team_possessions: 44; possession_count: 86; clearances: 0; defensive_duels: 2; defensive_duels_won: 2; defensive_duels_won_pct: 1.0; true_tackles: 2; true_tackles_won: 2; tackle_success_pct: 1.0; defensive_intensity: 2; defensive_actions: 2; defensive_line_height_m: 56.18; aerials: 0; aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 6; high_turnovers: 0; num_low_turnovers: 0; high_turnovers_per_low_reception: 0.0; num_low_turnovers_per_low_reception: 0.0; carries_xt_per_100_receptions: 0.1859; passes_xt_per_100_receptions: 0.5141; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 0; fouls_suffered: 2; yellow_cards: 0; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 3; under_pressure_retention: 3; pressure_resistance_pct: 1.0; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.0; xg_dribble: 0.0; xg_buildup: 0.3049; xg_chain: 0.4076; xg_chain_per_possession: 0.0226; num_possessions_involved: 18
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LAMF; player_position_match_minutes_p90: 120.56; possession_pct: 0.469; team_events: 908; opp_team_events: 1065; passes: 24; passes_accurate: 20; pass_accuracy_pct: 0.8333; passes_open_play: 24; passes_accurate_open_play: 20; progressive_passes: 2; passes_into_final_third: 1; through_passes: 1; through_passes_accurate: 1; smart_passes: 1; smart_passes_accurate: 1; crosses: 2; crosses_accurate: 1; key_passes: 1; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 1; linkups: 1; playmaking_passes: 2; deep_completions: 0; passes_xt: 0.242; passes_into_third_xt: 0.077; passes_third_xt: 0.1081; crosses_xt: 0.0643; xa: 0.0; receptions: 29; low_receptions: 6; penalty_area_receptions: 1; long_ball_receptions: 6; long_ball_receptions_xt: 0.2066; deep_runs_xt: 0.0; shots: 1; np_shots: 1; shots_on_target: 1; shot_on_target_pct: 1.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.1209; xg_on_target: 0.1411; goals_minus_xg: -0.1209; xg_per_shot: 0.1209; carries: 9; carries_successful: 9; accelerations: 0; carries_xt: 0.149; ball_runs_xt: 0.1133; dribbles_xt: 0.0973; ball_progression_xt: 0.2546; box_entries: 1; touches: 34; touches_in_box: 2; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0605; xg_plus_xa_per_100_touches: 0.3556; dribbles: 4; dribbles_successful: 4; dribbles_success_pct: 1.0; interceptions: 2; ball_recoveries: 0; high_recoveries: 0; possessions_won: 3; possessions_won_per_opponent_possession: 0.0242; num_opponent_possessions: 124; num_team_possessions: 122; possession_count: 246; clearances: 0; defensive_duels: 9; defensive_duels_won: 4; defensive_duels_won_pct: 0.4444; true_tackles: 6; true_tackles_won: 4; tackle_success_pct: 0.6667; defensive_intensity: 7; defensive_actions: 4; defensive_line_height_m: 40.28; aerials: 1; aerials_won: 0; aerials_won_pct: 0.0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 1; defensive_aerials_won: 0; defensive_aerials_won_pct: 0.0; headed_plays: 1; losses: 7; high_turnovers: 0; num_low_turnovers: 0; high_turnovers_per_low_reception: 0.0; num_low_turnovers_per_low_reception: 0.0; carries_xt_per_100_receptions: 0.5138; passes_xt_per_100_receptions: 0.8345; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 1; fouls_suffered: 4; yellow_cards: 0; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 10; under_pressure_retention: 9; pressure_resistance_pct: 0.9; counterpressing: 2; num_counterpresses: 2; num_counterpresses_leading_to_recovery: 0; xg_created: 0.1139; xg_dribble: 0.0; xg_buildup: 0.3251; xg_chain: 0.446; xg_chain_per_possession: 0.0144; num_possessions_involved: 31
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LCMF; player_position_match_minutes_p90: 47.199999999999996; possession_pct: 0.4436; team_events: 365; opp_team_events: 455; passes: 9; passes_accurate: 8; pass_accuracy_pct: 0.8889; passes_open_play: 9; passes_accurate_open_play: 8; progressive_passes: 0; passes_into_final_third: 0; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 1; crosses_accurate: 0; key_passes: 1; assists: 1; shot_assists: 1; second_assists: 0; creative_passes: 1; linkups: 0; playmaking_passes: 0; deep_completions: 1; passes_xt: 0.0942; passes_into_third_xt: 0.0; passes_third_xt: 0.0712; crosses_xt: 0.0; xa: 0.1767; receptions: 9; low_receptions: 0; penalty_area_receptions: 1; long_ball_receptions: 1; long_ball_receptions_xt: 0.008; deep_runs_xt: 0.0; shots: 0; np_shots: 0; shots_on_target: 0; goals: 0; np_goals: 0; own_goals: 0; xg: 0.0; xg_on_target: 0.0; goals_minus_xg: 0.0; carries: 4; carries_successful: 4; accelerations: 0; carries_xt: 0.1663; ball_runs_xt: 0.0717; dribbles_xt: 0.0986; ball_progression_xt: 0.0717; box_entries: 1; touches: 13; touches_in_box: 1; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0; xg_plus_xa_per_100_touches: 1.3592; dribbles: 2; dribbles_successful: 2; dribbles_success_pct: 1.0; interceptions: 1; ball_recoveries: 1; high_recoveries: 1; possessions_won: 1; possessions_won_per_opponent_possession: 0.0196; num_opponent_possessions: 51; num_team_possessions: 46; possession_count: 97; clearances: 0; defensive_duels: 4; defensive_duels_won: 1; defensive_duels_won_pct: 0.25; true_tackles: 4; true_tackles_won: 1; tackle_success_pct: 0.25; defensive_intensity: 4; defensive_actions: 2; defensive_line_height_m: 54.39; aerials: 1; aerials_won: 1; aerials_won_pct: 1.0; attacking_aerials: 1; attacking_aerials_won: 1; attacking_aerials_won_pct: 1.0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 1; high_turnovers: 0; num_low_turnovers: 0; carries_xt_per_100_receptions: 1.8478; passes_xt_per_100_receptions: 1.0467; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 1; fouls_suffered: 1; yellow_cards: 0; red_cards: 0; defending_1v1: 2; successful_1v1: 0; defending_1v1_pct: 0.0; under_pressure_actions: 2; under_pressure_retention: 2; pressure_resistance_pct: 1.0; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.1767; xg_dribble: 0.0; xg_buildup: 0.0; xg_chain: 0.1767; xg_chain_per_possession: 0.0161; num_possessions_involved: 11
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LW; player_position_match_minutes_p90: 194.22000000000003; possession_pct: 0.4755; team_events: 1714; opp_team_events: 1876; passes: 52; passes_accurate: 46; pass_accuracy_pct: 0.8846; passes_open_play: 49; passes_accurate_open_play: 43; progressive_passes: 9; passes_into_final_third: 5; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 1; crosses_accurate: 0; key_passes: 0; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 0; linkups: 0; playmaking_passes: 10; deep_completions: 0; passes_xt: 0.5731; passes_into_third_xt: 0.2088; passes_third_xt: 0.2528; crosses_xt: 0.0; xa: 0.0; receptions: 66; low_receptions: 8; penalty_area_receptions: 4; long_ball_receptions: 4; long_ball_receptions_xt: 0.0668; deep_runs_xt: 0.0; shots: 4; np_shots: 4; shots_on_target: 1; shot_on_target_pct: 0.25; goals: 1; np_goals: 1; own_goals: 0; shot_conversion_pct: 0.25; xg: 0.6978; xg_on_target: 0.2908; goals_minus_xg: 0.3022; xg_per_shot: 0.1745; carries: 18; carries_successful: 18; accelerations: 0; carries_xt: 0.2726; ball_runs_xt: 0.1697; dribbles_xt: 0.1928; ball_progression_xt: 0.4578; box_entries: 3; touches: 71; touches_in_box: 7; goals_per_box_touch: 0.1429; xg_per_box_touch: 0.0997; xg_plus_xa_per_100_touches: 0.9828; dribbles: 6; dribbles_successful: 6; dribbles_success_pct: 1.0; interceptions: 8; ball_recoveries: 0; high_recoveries: 0; possessions_won: 2; possessions_won_per_opponent_possession: 0.009; num_opponent_possessions: 222; num_team_possessions: 213; possession_count: 435; clearances: 1; defensive_duels: 16; defensive_duels_won: 6; defensive_duels_won_pct: 0.375; true_tackles: 14; true_tackles_won: 6; tackle_success_pct: 0.4286; defensive_intensity: 13; defensive_actions: 9; defensive_line_height_m: 40.98; aerials: 4; aerials_won: 2; aerials_won_pct: 0.5; attacking_aerials: 4; attacking_aerials_won: 2; attacking_aerials_won_pct: 0.5; defensive_aerials: 2; defensive_aerials_won: 1; defensive_aerials_won_pct: 0.5; headed_plays: 2; losses: 10; high_turnovers: 2; num_low_turnovers: 2; high_turnovers_per_low_reception: 0.25; num_low_turnovers_per_low_reception: 0.25; carries_xt_per_100_receptions: 0.413; passes_xt_per_100_receptions: 0.8683; corners: 0; free_kicks: 1; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 5; fouls_suffered: 4; yellow_cards: 0; red_cards: 0; defending_1v1: 2; successful_1v1: 1; defending_1v1_pct: 0.5; under_pressure_actions: 10; under_pressure_retention: 8; pressure_resistance_pct: 0.8; counterpressing: 1; num_counterpresses: 1; num_counterpresses_leading_to_recovery: 0; xg_created: 0.3851; xg_dribble: 0.1807; xg_buildup: 0.9753; xg_chain: 1.6731; xg_chain_per_possession: 0.025; num_possessions_involved: 67
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LWB; player_position_match_minutes_p90: 197.26999999999998; possession_pct: 0.50708; team_events: 1948; opp_team_events: 1731; passes: 73; passes_accurate: 63; pass_accuracy_pct: 0.863; passes_open_play: 63; passes_accurate_open_play: 54; progressive_passes: 8; passes_into_final_third: 2; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 7; crosses_accurate: 4; key_passes: 1; assists: 1; shot_assists: 1; second_assists: 0; creative_passes: 1; linkups: 0; playmaking_passes: 9; deep_completions: 0; passes_xt: 0.605; passes_into_third_xt: 0.0362; passes_third_xt: 0.414; crosses_xt: 0.2104; xa: 0.3934; receptions: 71; low_receptions: 9; penalty_area_receptions: 2; long_ball_receptions: 5; long_ball_receptions_xt: 0.1748; deep_runs_xt: 0.0; shots: 3; np_shots: 3; shots_on_target: 0; shot_on_target_pct: 0.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.1442; xg_on_target: 0.0; goals_minus_xg: -0.1442; xg_per_shot: 0.0481; carries: 26; carries_successful: 26; accelerations: 1; carries_xt: 0.5907; ball_runs_xt: 0.4245; dribbles_xt: 0.3805; ball_progression_xt: 0.7423; box_entries: 6; touches: 88; touches_in_box: 8; goals_per_box_touch: 0.0; xg_per_box_touch: 0.018; xg_plus_xa_per_100_touches: 0.6109; dribbles: 14; dribbles_successful: 11; dribbles_success_pct: 0.7857; interceptions: 9; ball_recoveries: 1; high_recoveries: 0; possessions_won: 4; possessions_won_per_opponent_possession: 0.0179; num_opponent_possessions: 223; num_team_possessions: 221; possession_count: 444; clearances: 0; defensive_duels: 13; defensive_duels_won: 9; defensive_duels_won_pct: 0.6923; true_tackles: 13; true_tackles_won: 9; tackle_success_pct: 0.6923; defensive_intensity: 16; defensive_actions: 14; defensive_line_height_m: 33.09; aerials: 4; aerials_won: 2; aerials_won_pct: 0.5; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 4; defensive_aerials_won: 2; defensive_aerials_won_pct: 0.5; headed_plays: 0; losses: 12; high_turnovers: 0; num_low_turnovers: 0; high_turnovers_per_low_reception: 0.0; num_low_turnovers_per_low_reception: 0.0; carries_xt_per_100_receptions: 0.832; passes_xt_per_100_receptions: 0.8521; corners: 0; free_kicks: 2; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 2; fouls_suffered: 6; yellow_cards: 1; red_cards: 1; defending_1v1: 1; successful_1v1: 0; defending_1v1_pct: 0.0; under_pressure_actions: 11; under_pressure_retention: 8; pressure_resistance_pct: 0.7273; counterpressing: 1; num_counterpresses: 1; num_counterpresses_leading_to_recovery: 0; xg_created: 0.5098; xg_dribble: 0.5184; xg_buildup: 1.2268; xg_chain: 1.7644; xg_chain_per_possession: 0.0218; num_possessions_involved: 81
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LWF; player_position_match_minutes_p90: 64.36; possession_pct: 0.4398; team_events: 680; opp_team_events: 866; passes: 20; passes_accurate: 16; pass_accuracy_pct: 0.8; passes_open_play: 19; passes_accurate_open_play: 15; progressive_passes: 0; passes_into_final_third: 0; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 1; crosses_accurate: 0; key_passes: 0; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 0; linkups: 1; playmaking_passes: 0; deep_completions: 0; passes_xt: 0.1032; passes_into_third_xt: 0.0; passes_third_xt: 0.0587; crosses_xt: 0.0; xa: 0.0; receptions: 23; low_receptions: 0; penalty_area_receptions: 4; long_ball_receptions: 2; long_ball_receptions_xt: 0.1567; deep_runs_xt: 0.0; shots: 2; np_shots: 2; shots_on_target: 0; shot_on_target_pct: 0.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.3611; xg_on_target: 0.0; goals_minus_xg: -0.3611; xg_per_shot: 0.1805; carries: 4; carries_successful: 4; accelerations: 1; carries_xt: 0.0689; ball_runs_xt: 0.0589; dribbles_xt: 0.096; ball_progression_xt: 0.0589; box_entries: 1; touches: 24; touches_in_box: 4; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0903; xg_plus_xa_per_100_touches: 1.5046; dribbles: 2; dribbles_successful: 2; dribbles_success_pct: 1.0; interceptions: 1; ball_recoveries: 1; high_recoveries: 1; possessions_won: 1; possessions_won_per_opponent_possession: 0.0093; num_opponent_possessions: 107; num_team_possessions: 91; possession_count: 198; clearances: 0; defensive_duels: 3; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; true_tackles: 2; true_tackles_won: 0; tackle_success_pct: 0.0; defensive_intensity: 1; defensive_actions: 1; defensive_line_height_m: 45.15; aerials: 1; aerials_won: 0; aerials_won_pct: 0.0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 1; defensive_aerials_won: 0; defensive_aerials_won_pct: 0.0; headed_plays: 1; losses: 4; high_turnovers: 1; num_low_turnovers: 1; carries_xt_per_100_receptions: 0.2996; passes_xt_per_100_receptions: 0.4487; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 1; fouls_suffered: 0; yellow_cards: 1; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 5; under_pressure_retention: 1; pressure_resistance_pct: 0.2; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.0446; xg_dribble: 0.0; xg_buildup: 0.1003; xg_chain: 0.4614; xg_chain_per_possession: 0.0231; num_possessions_involved: 20
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RCMF; player_position_match_minutes_p90: 30.97; possession_pct: 0.552; team_events: 313; opp_team_events: 254; passes: 8; passes_accurate: 6; pass_accuracy_pct: 0.75; passes_open_play: 8; passes_accurate_open_play: 6; progressive_passes: 0; passes_into_final_third: 0; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 2; crosses_accurate: 0; key_passes: 0; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 0; linkups: 1; playmaking_passes: 0; deep_completions: 0; passes_xt: 0.1155; passes_into_third_xt: 0.0; passes_third_xt: 0.1001; crosses_xt: 0.0; xa: 0.0; receptions: 11; low_receptions: 0; penalty_area_receptions: 2; long_ball_receptions: 0; long_ball_receptions_xt: 0.0; deep_runs_xt: 0.0; shots: 0; np_shots: 0; shots_on_target: 0; goals: 0; np_goals: 0; own_goals: 0; xg: 0.0; xg_on_target: 0.0; goals_minus_xg: 0.0; carries: 4; carries_successful: 4; accelerations: 1; carries_xt: 0.1185; ball_runs_xt: 0.0914; dribbles_xt: 0.0792; ball_progression_xt: 0.0914; box_entries: 1; touches: 12; touches_in_box: 2; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0; xg_plus_xa_per_100_touches: 0.0; dribbles: 4; dribbles_successful: 2; dribbles_success_pct: 0.5; interceptions: 1; ball_recoveries: 0; high_recoveries: 0; possessions_won: 0; possessions_won_per_opponent_possession: 0.0; num_opponent_possessions: 29; num_team_possessions: 29; possession_count: 58; clearances: 0; defensive_duels: 1; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; true_tackles: 0; true_tackles_won: 0; defensive_intensity: 1; defensive_actions: 1; defensive_line_height_m: 63.53; aerials: 0; aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 1; high_turnovers: 0; num_low_turnovers: 0; carries_xt_per_100_receptions: 1.0773; passes_xt_per_100_receptions: 1.05; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 1; fouls_suffered: 0; yellow_cards: 0; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 2; under_pressure_retention: 1; pressure_resistance_pct: 0.5; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.0; xg_dribble: 0.0; xg_buildup: 0.0593; xg_chain: 0.0593; xg_chain_per_possession: 0.0054; num_possessions_involved: 11
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RCMF3; player_position_match_minutes_p90: 17.43; possession_pct: 0.5297; team_events: 98; opp_team_events: 87; passes: 5; passes_accurate: 5; pass_accuracy_pct: 1.0; passes_open_play: 5; passes_accurate_open_play: 5; progressive_passes: 1; passes_into_final_third: 0; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 0; crosses_accurate: 0; key_passes: 1; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 1; linkups: 0; playmaking_passes: 1; deep_completions: 1; passes_xt: 0.0725; passes_into_third_xt: 0.0; passes_third_xt: 0.0624; crosses_xt: 0.0; xa: 0.0; receptions: 5; low_receptions: 0; penalty_area_receptions: 0; long_ball_receptions: 1; long_ball_receptions_xt: 0.0855; deep_runs_xt: 0.0855; shots: 0; np_shots: 0; shots_on_target: 0; goals: 0; np_goals: 0; own_goals: 0; xg: 0.0; xg_on_target: 0.0; goals_minus_xg: 0.0; carries: 2; carries_successful: 2; accelerations: 0; carries_xt: 0.0748; ball_runs_xt: 0.0; dribbles_xt: 0.0655; ball_progression_xt: 0.0058; box_entries: 1; touches: 7; touches_in_box: 1; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0; xg_plus_xa_per_100_touches: 0.0; dribbles: 1; dribbles_successful: 1; dribbles_success_pct: 1.0; interceptions: 0; ball_recoveries: 0; high_recoveries: 0; possessions_won: 0; possessions_won_per_opponent_possession: 0.0; num_opponent_possessions: 17; num_team_possessions: 17; possession_count: 34; clearances: 0; defensive_duels: 1; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; true_tackles: 1; true_tackles_won: 0; tackle_success_pct: 0.0; defensive_intensity: 1; defensive_actions: 0; defensive_line_height_m: 31.5; aerials: 0; aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 1; high_turnovers: 0; num_low_turnovers: 0; carries_xt_per_100_receptions: 1.496; passes_xt_per_100_receptions: 1.45; corners: 0; free_kicks: 0; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 1; fouls_suffered: 1; yellow_cards: 0; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 0; under_pressure_retention: 0; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.235; xg_dribble: 0.1756; xg_buildup: 0.235; xg_chain: 0.235; xg_chain_per_possession: 0.0588; num_possessions_involved: 4
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RW; player_position_match_minutes_p90: 9.15; possession_pct: 0.6224; team_events: 89; opp_team_events: 54; passes: 4; passes_accurate: 3; pass_accuracy_pct: 0.75; passes_open_play: 1; passes_accurate_open_play: 0; progressive_passes: 0; passes_into_final_third: 0; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 0; crosses_accurate: 0; key_passes: 0; assists: 0; shot_assists: 0; second_assists: 0; creative_passes: 0; linkups: 0; playmaking_passes: 0; deep_completions: 0; passes_xt: 0.0; passes_into_third_xt: 0.0; passes_third_xt: 0.0; crosses_xt: 0.0; xa: 0.0; receptions: 2; low_receptions: 0; penalty_area_receptions: 0; long_ball_receptions: 0; long_ball_receptions_xt: 0.0; deep_runs_xt: 0.0; shots: 0; np_shots: 0; shots_on_target: 0; goals: 0; np_goals: 0; own_goals: 0; xg: 0.0; xg_on_target: 0.0; goals_minus_xg: 0.0; carries: 1; carries_successful: 1; accelerations: 0; carries_xt: 0.0122; ball_runs_xt: 0.0122; dribbles_xt: 0.0; ball_progression_xt: 0.0122; box_entries: 0; touches: 2; touches_in_box: 0; xg_plus_xa_per_100_touches: 0.0; dribbles: 0; dribbles_successful: 0; interceptions: 0; ball_recoveries: 0; high_recoveries: 0; possessions_won: 0; possessions_won_per_opponent_possession: 0.0; num_opponent_possessions: 6; num_team_possessions: 10; possession_count: 16; clearances: 0; defensive_duels: 1; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; true_tackles: 1; true_tackles_won: 0; tackle_success_pct: 0.0; defensive_intensity: 0; defensive_actions: 0; aerials: 0; aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 3; high_turnovers: 0; num_low_turnovers: 0; carries_xt_per_100_receptions: 0.61; passes_xt_per_100_receptions: 0.0; corners: 1; free_kicks: 2; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 0; fouls_suffered: 1; yellow_cards: 0; red_cards: 0; defending_1v1: 0; successful_1v1: 0; under_pressure_actions: 1; under_pressure_retention: 0; pressure_resistance_pct: 0.0; counterpressing: 0; num_counterpresses: 0; num_counterpresses_leading_to_recovery: 0; xg_created: 0.0; xg_dribble: 0.0; xg_buildup: 0.3398; xg_chain: 0.3398; xg_chain_per_possession: 0.0566; num_possessions_involved: 6
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RWB; player_position_match_minutes_p90: 178.69; possession_pct: 0.4267333333333334; team_events: 1180; opp_team_events: 1574; passes: 47; passes_accurate: 39; pass_accuracy_pct: 0.8298; passes_open_play: 37; passes_accurate_open_play: 29; progressive_passes: 2; passes_into_final_third: 2; through_passes: 0; through_passes_accurate: 0; smart_passes: 0; smart_passes_accurate: 0; crosses: 2; crosses_accurate: 1; key_passes: 1; assists: 0; shot_assists: 1; second_assists: 0; creative_passes: 1; linkups: 0; playmaking_passes: 3; deep_completions: 0; passes_xt: 0.2248; passes_into_third_xt: 0.0254; passes_third_xt: 0.1049; crosses_xt: 0.0652; xa: 0.3992; receptions: 48; low_receptions: 20; penalty_area_receptions: 1; long_ball_receptions: 7; long_ball_receptions_xt: 0.078; deep_runs_xt: 0.0; shots: 1; np_shots: 1; shots_on_target: 0; shot_on_target_pct: 0.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.2735; xg_on_target: 0.0; goals_minus_xg: -0.2735; xg_per_shot: 0.2735; carries: 10; carries_successful: 10; accelerations: 0; carries_xt: 0.1651; ball_runs_xt: 0.1209; dribbles_xt: 0.0863; ball_progression_xt: 0.1969; box_entries: 0; touches: 47; touches_in_box: 2; goals_per_box_touch: 0.0; xg_per_box_touch: 0.1368; xg_plus_xa_per_100_touches: 1.4313; dribbles: 3; dribbles_successful: 3; dribbles_success_pct: 1.0; interceptions: 7; ball_recoveries: 4; high_recoveries: 3; possessions_won: 5; possessions_won_per_opponent_possession: 0.0289; num_opponent_possessions: 173; num_team_possessions: 180; possession_count: 353; clearances: 0; defensive_duels: 14; defensive_duels_won: 5; defensive_duels_won_pct: 0.3571; true_tackles: 11; true_tackles_won: 5; tackle_success_pct: 0.4545; defensive_intensity: 19; defensive_actions: 15; defensive_line_height_m: 43.16; aerials: 0; aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; defensive_aerials: 0; defensive_aerials_won: 0; headed_plays: 0; losses: 12; high_turnovers: 3; num_low_turnovers: 3; high_turnovers_per_low_reception: 0.15; num_low_turnovers_per_low_reception: 0.15; carries_xt_per_100_receptions: 0.344; passes_xt_per_100_receptions: 0.4683; corners: 0; free_kicks: 2; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 4; fouls_suffered: 8; yellow_cards: 1; red_cards: 0; defending_1v1: 2; successful_1v1: 0; defending_1v1_pct: 0.0; under_pressure_actions: 11; under_pressure_retention: 8; pressure_resistance_pct: 0.7273; counterpressing: 1; num_counterpresses: 1; num_counterpresses_leading_to_recovery: 0; xg_created: 0.3992; xg_dribble: 0.3992; xg_buildup: 0.1776; xg_chain: 0.8503; xg_chain_per_possession: 0.0152; num_possessions_involved: 56
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RWF; player_position_match_minutes_p90: 188.89000000000001; possession_pct: 0.5063; team_events: 1615; opp_team_events: 1772; passes: 34; passes_accurate: 21; pass_accuracy_pct: 0.6176; passes_open_play: 31; passes_accurate_open_play: 19; progressive_passes: 1; passes_into_final_third: 0; through_passes: 1; through_passes_accurate: 0; smart_passes: 1; smart_passes_accurate: 0; crosses: 5; crosses_accurate: 2; key_passes: 1; assists: 0; shot_assists: 1; second_assists: 0; creative_passes: 1; linkups: 0; playmaking_passes: 1; deep_completions: 0; passes_xt: 0.1661; passes_into_third_xt: 0.0; passes_third_xt: 0.1143; crosses_xt: 0.0334; xa: 0.0519; receptions: 44; low_receptions: 4; penalty_area_receptions: 3; long_ball_receptions: 8; long_ball_receptions_xt: 0.1648; deep_runs_xt: 0.0; shots: 1; np_shots: 1; shots_on_target: 0; shot_on_target_pct: 0.0; goals: 0; np_goals: 0; own_goals: 0; shot_conversion_pct: 0.0; xg: 0.0511; xg_on_target: 0.0; goals_minus_xg: -0.0511; xg_per_shot: 0.0511; carries: 15; carries_successful: 15; accelerations: 0; carries_xt: 0.4594; ball_runs_xt: 0.3368; dribbles_xt: 0.2118; ball_progression_xt: 0.3701; box_entries: 4; touches: 47; touches_in_box: 5; goals_per_box_touch: 0.0; xg_per_box_touch: 0.0102; xg_plus_xa_per_100_touches: 0.2191; dribbles: 11; dribbles_successful: 6; dribbles_success_pct: 0.5455; interceptions: 4; ball_recoveries: 0; high_recoveries: 0; possessions_won: 2; possessions_won_per_opponent_possession: 0.0086; num_opponent_possessions: 232; num_team_possessions: 225; possession_count: 457; clearances: 0; defensive_duels: 11; defensive_duels_won: 4; defensive_duels_won_pct: 0.3636; true_tackles: 10; true_tackles_won: 4; tackle_success_pct: 0.4; defensive_intensity: 12; defensive_actions: 6; defensive_line_height_m: 58.99; aerials: 1; aerials_won: 1; aerials_won_pct: 1.0; attacking_aerials: 1; attacking_aerials_won: 1; attacking_aerials_won_pct: 1.0; defensive_aerials: 1; defensive_aerials_won: 1; defensive_aerials_won_pct: 1.0; headed_plays: 0; losses: 13; high_turnovers: 0; num_low_turnovers: 0; high_turnovers_per_low_reception: 0.0; num_low_turnovers_per_low_reception: 0.0; carries_xt_per_100_receptions: 1.0441; passes_xt_per_100_receptions: 0.3775; corners: 0; free_kicks: 2; goal_kicks: 0; penalties_taken: 0; penalties_scored: 0; fouls_committed: 3; fouls_suffered: 4; yellow_cards: 0; red_cards: 0; defending_1v1: 1; successful_1v1: 0; defending_1v1_pct: 0.0; under_pressure_actions: 9; under_pressure_retention: 4; pressure_resistance_pct: 0.4444; counterpressing: 3; num_counterpresses: 3; num_counterpresses_leading_to_recovery: 0; xg_created: 0.0519; xg_dribble: 0.1029; xg_buildup: 0.104; xg_chain: 0.2069; xg_chain_per_possession: 0.0044; num_possessions_involved: 47
+
+From Twelve's data (get_player_match_metrics_defence):
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LWB; defensive_area_m2: 1230.07; opp_successful_passes_into_defensive_area_pct: 0.7459999918937683; opp_pass_success_pct_into_defensive_area: 0.7459999918937683; opp_progressive_passes_from_defensive_area_pct: 0.16820000112056732; opp_xg_after_defensive_action: 0.0; opp_xg_from_defensive_area: 0.754; opp_xg_from_defensive_area_per_100_possessions: 1.0189; opp_xt_from_defensive_area: 1.1464; opp_xt_from_defensive_area_per_100_passes: 1.0714; opp_xt_into_defensive_area: 1.1742; opp_xt_into_defensive_area_per_100_passes: 1.8638; num_opp_passes_into_defensive_area: 63; passes_into_defensive_area: 63; num_opp_successful_passes_into_defensive_area: 47; successful_passes_into_defensive_area: 47; num_opp_progressive_passes_from_defensive_area: 18; progressive_passes_inside: 18; num_opp_possessions_in_defensive_area: 74; opp_possessions_in_defensive_area: 74; num_opp_passes_from_defensive_area: 107; xt_into_defensive_area: 1.1742; start_inside: 107; num_opp_passes_into_defensive_area_poss_adj: 792.4; num_opp_successful_passes_into_defensive_area_poss_adj: 580.48; num_opp_passes_from_defensive_area_poss_adj: 1132.91; num_opp_progressive_passes_from_defensive_area_poss_adj: 180.31; num_opp_possessions_in_defensive_area_poss_adj: 922.36; opp_xt_from_defensive_area_poss_adj: 12.9126; opp_xt_into_defensive_area_poss_adj: 17.3919; opp_xg_from_defensive_area_poss_adj: 10.2719; num_defensive_actions: 21; opp_xg_after_defensive_action_per_100_possessions: 0.0
+competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RWB; defensive_area_m2: 728.59; opp_successful_passes_into_defensive_area_pct: 0.964900016784668; opp_pass_success_pct_into_defensive_area: 0.964900016784668; opp_progressive_passes_from_defensive_area_pct: 0.25; opp_xg_after_defensive_action: 0.0; opp_xg_from_defensive_area: 0.0; opp_xg_from_defensive_area_per_100_possessions: 0.0; opp_xt_from_defensive_area: 0.9328; opp_xt_from_defensive_area_per_100_passes: 1.06; opp_xt_into_defensive_area: 0.4398; opp_xt_into_defensive_area_per_100_passes: 0.7716; num_opp_passes_into_defensive_area: 57; passes_into_defensive_area: 57; num_opp_successful_passes_into_defensive_area: 55; successful_passes_into_defensive_area: 55; num_opp_progressive_passes_from_defensive_area: 22; progressive_passes_inside: 22; num_opp_possessions_in_defensive_area: 57; opp_possessions_in_defensive_area: 57; num_opp_passes_from_defensive_area: 88; xt_into_defensive_area: 0.4398; start_inside: 88; num_opp_passes_into_defensive_area_poss_adj: 836.56; num_opp_successful_passes_into_defensive_area_poss_adj: 801.74; num_opp_passes_from_defensive_area_poss_adj: 1272.42; num_opp_progressive_passes_from_defensive_area_poss_adj: 331.07; num_opp_possessions_in_defensive_area_poss_adj: 797.66; opp_xt_from_defensive_area_poss_adj: 14.1895; opp_xt_into_defensive_area_poss_adj: 6.3354; opp_xg_from_defensive_area_poss_adj: 0.0; num_defensive_actions: 18; opp_xg_after_defensive_action_per_100_possessions: 0.0
+
+From Twelve's data (get_player_match_metrics_by_zone):
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: AMF; team_events: 4; receptions: 0; losses: 2; passes_xt: 0.0315; passes: 3; playmaking_passes: 1; carries_xt: 0.0185; carries: 1; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.3049; xg_chain: 0.3049; xg_chain_per_possession: 0.1016; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LAMF; team_events: 2; receptions: 0; losses: 0; passes_xt: 0.0805; passes: 2; playmaking_passes: 1; carries_xt: 0.0; carries: 0; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 1; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; defensive_intensity: 1; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 2; under_pressure_actions: 2; pressure_resistance_pct: 1.0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LCMF; team_events: 1; receptions: 4; losses: 0; passes_xt: 0.0; passes: 0; playmaking_passes: 0; carries_xt: 0.0032; carries: 1; dribbles_xt: 0.0353; dribbles: 1; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 1; attacking_aerials_won: 1; attacking_aerials_won_pct: 1.0; aerials: 1; ball_recoveries: 0; under_pressure_retention: 2; under_pressure_actions: 2; pressure_resistance_pct: 1.0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LW; team_events: 10; receptions: 7; losses: 1; passes_xt: 0.0891; passes: 8; playmaking_passes: 0; carries_xt: 0.0475; carries: 2; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 1; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; defensive_intensity: 0; defensive_aerials: 1; defensive_aerials_won: 1; defensive_aerials_won_pct: 1.0; attacking_aerials: 2; attacking_aerials_won: 1; attacking_aerials_won_pct: 0.5; aerials: 2; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0886; xg_chain_per_possession: 0.0148; xg_created: 0.2044; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LWB; team_events: 6; receptions: 3; losses: 2; passes_xt: 0.027; passes: 6; playmaking_passes: 0; carries_xt: 0.0; carries: 0; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 1; defensive_duels: 1; defensive_duels_won: 1; defensive_duels_won_pct: 1.0; defensive_intensity: 1; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LWF; team_events: 3; receptions: 3; losses: 0; passes_xt: 0.0143; passes: 2; playmaking_passes: 0; carries_xt: 0.0364; carries: 1; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RCMF3; team_events: 0; receptions: 1; losses: 1; passes_xt: 0.0; passes: 0; playmaking_passes: 0; carries_xt: 0.0; carries: 0; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RWB; team_events: 1; receptions: 0; losses: 0; passes_xt: 0.0145; passes: 1; playmaking_passes: 1; carries_xt: 0.0; carries: 0; dribbles_xt: 0.0; dribbles: 0; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0838; xg_chain: 0.0838; xg_chain_per_possession: 0.0838; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_HALF_SPACE; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: RWF; team_events: 3; receptions: 2; losses: 1; passes_xt: 0.0041; passes: 2; playmaking_passes: 0; carries_xt: 0.0762; carries: 1; dribbles_xt: 0.0335; dribbles: 1; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 0; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 0; under_pressure_actions: 0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0511
+zone: ATT_HALF_LEFT_WING; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: AMF; team_events: 9; receptions: 0; losses: 3; passes_xt: 0.0428; passes: 9; playmaking_passes: 0; carries_xt: 0.0; carries: 0; dribbles_xt: 0.038; dribbles: 1; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 1; defensive_duels: 0; defensive_duels_won: 0; defensive_intensity: 1; defensive_aerials: 0; defensive_aerials_won: 0; attacking_aerials: 0; attacking_aerials_won: 0; aerials: 0; ball_recoveries: 0; under_pressure_retention: 1; under_pressure_actions: 1; pressure_resistance_pct: 1.0; xg_buildup: 0.0; xg_chain: 0.0; xg_chain_per_possession: 0.0; xg_created: 0.0; xg_dribble: 0.0
+zone: ATT_HALF_LEFT_WING; competition_id: 43383; season: 2026; team_id: 66196; player_id: 1207356; player_position: LAMF; team_events: 18; receptions: 16; losses: 4; passes_xt: 0.1258; passes: 12; playmaking_passes: 1; carries_xt: 0.0852; carries: 6; dribbles_xt: 0.0454; dribbles: 2; xg: 0.0; xg_on_target: 0.0; np_shots: 0; shots_np: 0; goals_np: 0; defensive_actions: 0; defensive_duels: 3; defensive_duels_won: 0; defensive_duels_won_pct: 0.0; defensive_intensity: 1; defensive_aerials: 0; defensive_aerial
+(cut)
+
+## Question 1: Give me a summary of Makai Wells's season.
+
+### What the data means
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+### Rule-based description of this player's data for this question
+Makai Wells is a unknown footed 17-year-old winger (more specifically a left winger) playing for New England II in the MLS Next Pro. He is below average at finishing compared to other wingers. He performs poorly in xgot. He is below average at box threat compared to other wingers. He is average in every metric in box threat. He is below average at providing teammates compared to other wingers. He performs poorly in deep completions. He is below average at effectiveness compared to other wingers. He performs poorly in passes (xt) per 100 receptions. He is average at dribbling compared to other wingers. He is average in every metric in dribbling. He is average at run quality compared to other wingers. He is average in every metric in run quality. He is poor at passing quality compared to other wingers. In passing quality, he is weakest in passes (xt). He is average at pressing compared to other wingers. He is average in every metric in pressing. He is below average at involvement compared to other wingers. He is average in every metric in involvement.
+
+## Question 2: What are Makai Wells's strengths and weaknesses?
+
+### What the data means
+(none)
+
+### Rule-based description of this player's data for this question
+Makai Wells is a unknown footed 17-year-old winger (more specifically a left winger) playing for New England II in the MLS Next Pro. Let's take a look at the strengths of Makai Wells. 
+
+The best skill of Makai Wells  is aerial threat. He is good at aerial threat compared to other wingers. He performs well in Attacking aerials won %. Here is some useful information about what it means for a player to be strong in aerial threat:How would we describe a player who is outstanding at aerial threat?
+An outstanding player in this area is highly effective in winning aerial battles, arriving with good timing to balls from crosses, and contributing significantly to aerial dominance.
+
+What does it mean for a player to be an aerial threat?
+Players who rank highly in aerial threat are threatining in the air offensively. They win a high percentage of their aerial duels, especially in the attacking 60 % of the field, and frequently make headed passes or headed shots.
+
+What does it mean for a player to have a low aerial threat?
+Players who rank badly in aerial threat rarely win offensive aerial duels and usually do not pose a goal-scoring danger in the air.
+
+How would we describe a player who is average at aerial threat?
+This player shows moderate ability in aerial challenges, occasionally winning headers but may lack consistency or physical dominance in these aerial duels.
+
+The second best skill of Makai Wells  is dribbling. He is average at dribbling compared to other wingers. He is average in every metric in dribbling. Here is some useful information about what it means for a player to be strong in dribbling:What does it mean for a player to be good in dribbling?
+Players who are good in dribbling consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+What makes a good dribler?
+Good dribblers consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+What metrics tell us that a winger is strong in dribbling?
+A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+What does it mean for a player to be bad in dribbling?
+Players who are bad in dribbling either struggle to dribble past defenders or do not attempt to do so.
+
+The third best skill of Makai Wells  is run quality. He is average at run quality compared to other wingers. He is average in every metric in run quality. Here is some useful information about what it means for a player to be strong in run quality:What does it mean for a player to have high run quality?
+Players with high run quality make threatening runs with and without the ball, and receive the ball behind the defensive line. These players tend to be fast runners, since they can take advantage of their pace. 
+
+What can we infer from a winger that is good in terms of  run quality?
+Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+What does it mean for a player to have low run quality?
+Players who have low run quality do not generate danger with their runs behind the defensive line. These players tend to prefer to pass the ball instead of carrying it, often because of lack of pace.
+
+What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Let's take a look at the weaknesses of Makai Wells. 
+
+Makai Wells weakest quality lies in passing quality. Indeed, he is poor at passing quality compared to other wingers. In passing quality, he is weakest in Passes (xT). Here is some useful information about what it means for a player to be weak in passing quality:What does it mean for a player to have bad passing quality?
+Players with bad passing quality often choose safer passing options and struggle to deliver threatening passes.
+
+What does it mean for a player to have good passing quality?
+Players with good passing quality have the ability to consistently deliver different types of passes that pose a significant threat to the opposition's defense. Their passes often lead to goal-scoring opportunities or advantageous positions for their teammates. 
+
+What is the connection between a player's involvement and their passing quality?
+Players who are good at passing often have high involvement in the game. Their ability to distribute the ball accurately and effectively ensures that they are integral to maintaining possession and building attacks.
+
+How does passing quality affect a player's ability to provide teammates?
+Players who are good at passing can effectively provide for their teammates by delivering accurate and timely passes. Their ability to distribute the ball sets up scoring opportunities and maintains the flow of the game.
+
+Makai Wells second weakest quality lies in providing teammates. He is below average at providing teammates compared to other wingers. He performs poorly in Deep completions. Here is some useful information about what it means for a player to be weak in providing teammates:What does it mean for a player to rank badly in providing teammates?
+Players who rank badly in providing teammates rarely make one of the final passes preceding shots. These players often play further away from the goal or play safer passes. 
+
+What does it mean for a player to be good in providing teammates?
+Players who are good in providing teammates are able to create many goal-scoring opportunities for their teammates.
+
+How does a player's involvement impact their ability to provide for teammates?
+High involvement with poor passing quality leads to possession but ineffective play. Players with both high involvement and passing quality dictate game flow, enhancing team cohesion and attack.
+
+What does a high ranking in xA but low ranking in Assists indicate about a player's providing teammates ability?
+A player who ranks highly in xA but poorly in Assists is creating a lot of high quality chances for teammates, but the player shooting is unable to score. xA is a great predictor of a player's chance creation ability, as it takes into account both the quality and quanitity of their shot creating actions, while assists is more reliant on the receiving player's finishing ability.
+
+Makai Wells third weakest quality lies in finishing. He is below average at finishing compared to other wingers. He performs poorly in xGOT. Here is some useful information about what it means for a player to be weak in finishing:What does it mean for a player to be bad in finishing?
+Players who are bad in finishing struggle to score goals from their chances. This means that they have a low shot conversion % and generally also score less than expected given their chances, that is, they underperform their expected goals.
+
+What does it mean for a player to be good in finishing?
+Players who are good in finishing make the most out of their goal-scoring opportunities. This means that they have a high shot conversion % and generally also score more than expected given their chances, that is, they outperform their expected goals.
+
+What makes a winger a strong finisher?
+Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Are expected goals important when measuring if a player is a good finisher?
+It is important to look at a players expected goals when you are measuring the players finishing ability. A good finisher often overperforms his expected goals.
+
+Use this information to answer the user about the football player. Remember the user wants to know: What are Makai Wells's strengths and weaknesses?. Answer this query in 2 sentences using the information above. Explain in detail what these strengths and weaknesses mean about what we can expect from the player in terms of style of play and contributions to the team. If the user asks about weaknesses of the player focus only on that, do not write about strengths unless asked. Likewise, if they are interested in strengths focus only on that and not weaknesses. If they do ask specifically about both your answer can be 3 sentences, but otherwise it should be 2 sentences. Make sure to explain what the player's strengths mean in terms of how the player contributes to the team and what weaknesses show about what we should be concerned about in footballing terms. 
+
+## Question 3: How good is Makai Wells at passing?
+
+### What the data means
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: What does it mean for a player to have a high passes (xT)?
+A: A player with a high passes (xT) is able to create a lot of expected threat from passes, and is adept at progressing the ball into more dangerous positions.
+
+Q: How is passing quality calculated?
+A: Passing quality is calculated as the weighted sum of the z-scores of players in passes (xT) (30%), crosses (xT) (20%),  passes into the final third (20 %), passes in the final third (20%) and chance creating passes (10%), among other players who play the same position.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: What does it mean for a player to have good passing quality?
+A: Players with good passing quality have the ability to consistently deliver different types of passes that pose a significant threat to the opposition's defense. Their passes often lead to goal-scoring opportunities or advantageous positions for their teammates.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: What does it indicate about a player's passing quality when they have high passes in the final third (xT) but low passes into the final third (xT)?
+A: When a player has high passes in the final third (xT) but a low passes into the final third (xT), it suggests that they are proficient in operating within the attacking third of the field, particularly in the build-up to goal-scoring opportunities. However, their involvement in progressing the ball into those advanced areas might be limited.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: Would you expect a player with a high amount of chance creating passes to also have a high amount of passes (xT)?
+A: You would expect a player with a high amount of chance creating passes to also have a high amount of passes (xT), as chance creating passes often find teammates in good positions, which inherently generate expected threat. If a player ranks highly in chance creating passes but not in passes (xT), then they are likely getting themselves into difficult positions often, and rely on their passing vision to find any teammate, even if the receiver is not in a more threatening position.
+
+Q: What does it mean for a player to have a low crosses (xT)?
+A: A player who has a low crosses (xT) is not creating much threat from their crosses. However, they can still be dangerous passers if they rank highly in other passing xT metrics. For instance, there are many excellent chance creators who rarely cross the ball, but rather create threat from central positions.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: What is passing quality?
+A: Passing quality refers to a player's ability to deliver a variety of passes that pose a significant threat to the opposition's defense, leading to goal-scoring opportunities or advantageous positions for the receiving player. It is evaluated by how threatening the passes are, rather than the quantity.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: How is passing quality measured?
+A: Passing quality is a weighted sum of a players performance compared to other players in the same position in passes (xT) (30%), crosses (xT) (20%),  passes into the final third (20 %), passes in the final third (20%) and chance passes (10%).
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What does it indicate about a player's passing quality when they have high passes into the final third (xT) but low passes in the final third (xT)?
+A: When a player has high passes into the final third (xT) but a low passes in the final third (xT), it may suggest that they excel in progressing the ball into dangerous areas but may not frequently participate in the final stages of the attacking build-up or goal-scoring opportunities. Their strength lies in initiating attacking moves, often creating opportunities for their teammates to take advantage of the advanced positions they help establish.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What does it mean for a player to have bad passing quality?
+A: Players with bad passing quality often choose safer passing options and struggle to deliver threatening passes.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: What do you say about a player when they have below average Passes (xT) adj in the attacking left wing?
+A: When a player has below average Passes (xT) adj in the attacking left wing, they are unable to create too many good passes from wide left. They either choose to run with the ball or find safer, more lateral, options to lay the ball off to.
+
+Q: What do you say about a player when they have average Passes (xT) adj in the attacking right wing?
+A: When a player has average Passes (xT) adj in the attacking right wing, they are just about alright from the right wing but not a creative force. They can sometimes find threatening passes into more dangerous areas, but have the tendency to fall into safety too.
+
+Q: What does it show when a player has poor Passes (xT) adj in the defensive central midfield?
+A: If a player has poor Passes (xT) adj in the defensive central midfield, they are less than ideal while playing as a deep-lying playmaker. They have a tendency to play lateral or reverse passes, and are not very good with breaking opposition lines, either diagonally or vertically, from that space.
+
+Q: If a player has good Passes (xT) adj in the defensive left half-space, what does it mean?
+A: When a player has a good Passes (xT) adj in the defensive left half-space, it means that they able to progress the ball from the narrow left zones of their half. They are probably a defensive player with good build-up attributes and help their team move the game forward from deeper areas.
+
+Q: What does outstanding Passes (xT) adj in the attacking left half-space tell us about a player?
+A: Outstanding Passes (xT) adj in the attacking left half-space tells us that a player is amongst the best in their league at creating chances from the left channel. They take up those dangerous zones in the pockets and often find wingers or fullbacks overlapping, or find a way to send passes to the centre-forward.
+
+Q: What does it say about a player when they have excellent Passes (xT) adj in the defensive right half-space?
+A: When a player has excellent Passes (xT) adj in the defensive right half-space, they are great in the narrow right zone while moving the game forward. They often allow their team to increase the tempo by playing vertical passes that move the ball into more dangerous areas.
+
+Q: How do you describe a player when they have average Passes (xT) adj in the defensive right wing?
+A: If a player has average Passes (xT) adj in the defensive right wing, they are solid from the full-back zone without being a threat to the opposition. They can play the dangerous pass here and there, but just as often choose safer options.
+
+Q: What does poor Passes (xT) adj in the attacking central midfield tell us about a player?
+A: Poor passes (xT) adj in the attacking central midfield shows that a player is not a good attacking midfielder from the central spaces. They are not able to play enough line-breaking passes or progress the game even from an advanced area of the pitch, and thus slow their team's tempo down by playing it safe.
+
+Q: What does excellent Passes (xT) adj in the opposition penalty area show about a player?
+A: Excellent Passes (xT) adj in the opposition penalty area tells us that a player is able to find deft passes even in the tightest of spaces and under most amount of attention. It points to a great vision and close control, not only keeping the ball but creating chances in a zone where the opposition is already crowding.
+
+Q: What does below average Passes (xT) adj in the defensive left wing show about a player?
+A: Below average Passes (xT) adj on the defensive left wing shows that a player is not good with finding diagonal or vertical passes from that zone. They are probably not comfortable when moved to the left back position and often find themselves struggling to find options for circulating possession.
+
+Q: When a player has good Passes (xT) adj in the attacking right half-space, what does it mean?
+A: if a player has good Passes (xT) in the attacking right half-space, it tells us that they are solid from the right channels. They are a good outlet for their team to craft chances or second-assists by finding the runs of more attacking players.
+
+### Rule-based description of this player's data for this question
+Makai Wells is poor at passing quality compared to other wingers. He is average at crosses (xt) compared to other wingers. He is below average at expected threat from passes into the final third compared to other wingers. He is poor at chance creating passes, expected threat from passes inside of the final third and expected threat from passes compared to other wingers.
+
+Makai Wells's passes_xt was good in the defensive left half-space and attacking left wing compared to other wingers. Makai Wells performed average in the defensive left wing. Makai Wells performed below average in the defensive right wing, attacking left half-space, defensive central midfield, attacking right wing, own penalty area and opposition penalty area. Makai Wells performed poor in the attacking right half-space, defensive right half-space and attacking central midfield.
+
+## Question 4: How good is Makai Wells at dribbling?
+
+### What the data means
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What makes a good dribler?
+A: Good dribblers consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+Q: What does it mean for a player to be bad in dribbling?
+A: Players who are bad in dribbling either struggle to dribble past defenders or do not attempt to do so.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: How is dribbling calculated?
+A: Dribbling is calculated as the weighted sum of the z-scores of players in dribbles success % (20%), dribbles (xT) (40%), expected goals created with dribbles (25%) and pressure resistance % (15%), among other players who play the same position.
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What does it mean for a player to be good in dribbling?
+A: Players who are good in dribbling consistently and successfully generate threat by beating their markers in one-on-one situations. These players are typically very skillful and able to retain possession under pressure.
+
+Q: Why is dribbling not a part of run quality?
+A: Run quality assesses the ability of players to make threatening runs without taking on players. Dribbling past players is a separate quality which is not necessarily correlated with run quality. However, the best players can do both and therefore pose a greater threat.
+
+Q: What is dribbling?
+A: Dribbling involves the skill of taking on opposing players one-on-one. It's the ability of maneuvering the ball past defenders while maintaining control, often through quick changes in direction, feints, and close ball control.
+
+Q: How is dribbling measured?
+A: Dribbling is a weighted sum of a players performance compared to other players in the same position in dribbles success % (20%), dribbles (xT) (40%), expected goals created with dribbles (25%) and pressure resistance % (15%).
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: How would we describe a player who has good dribbles (xT)  in the central area in front of goal?
+A: A player who has good dribbles (xT)  in the central area in front of goal is a serious threat in the final third. They have the ability to cut through the opposition and open up passing options for the left and right half-spaces.
+
+Q: How would we describe a player who has a high number dribbles (xT) on the right attacking wing?
+A: A player who has a high number dribbles (xT) on the right attacking wing is able to create a lot of threat from carrying the ball to wide areas and drawing in the opposition. They should be able to beat players wide then cut the ball in to underlapping midfielders or forwards. Having high dribbles (xT) on one of the wings usually means they can take one or more opposition defenders along with them which opens up space for their team to craft a dangerous chance.
+
+Q: How would we describe a player who has mostly average numbers in different areas on the pitch for dribbles (xT)?
+A: A player who has mostly average numbers in different areas on the pitch for dribbles (xT) doesn't show much creativity in dribbling past the opposition. They would rather look for passing options or lay the ball off to others who have the skills to attack the opposition.
+
+Q: How would we describe a player who has low dribbles (xT) in the central attacking area in front of goal?
+A: A player who has who has low dribbles (xT) in the central attacking area in front of goal is ineffective as an attacking option centrally. They are not proficient at running at the opposition defence.
+
+Q: How would we describe a player who has good dribbles (xT)  in the penalty box?
+A: A player who has a high number idribbles (xT) in the penalty box is exceptional at carving out opportunities in the box. These players are able to dribble expertly in tight spaces and often can find a final pass that can generate a shot.
+
+Q: How would we describe a player who has a good dribbles (xT) in the left half space?
+A: A player who has good dribbles (xT) in the left half space can get inside and threaten the box.
+
+Q: How would we describe a player who has poor dribbles (xT)  on the attacking left wing?
+A: A player who has poor poor dribbles (xT)  the attacking left wing is not able to get past players in the wide areas. The player is not particularly a threat on the wing.
+
+### Rule-based description of this player's data for this question
+Makai Wells is average at dribbling compared to other wingers. He is good at expected threat from dribbles compared to other wingers. He is average at expected goals created with dribbles and dribble success % compared to other wingers. He is below average at pressure resistance % compared to other wingers.
+
+Makai Wells's dribbles_xt was excellent in the defensive left wing compared to other wingers. Makai Wells performed good in the attacking left wing and opposition penalty area. Makai Wells performed average in the attacking left half-space, defensive right wing, own penalty area, attacking right wing and attacking right half-space. Makai Wells performed below average in the defensive right half-space, defensive left half-space, defensive central midfield and attacking central midfield.
+
+## Question 5: Is Makai Wells a threat in the box?
+
+### What the data means
+Q: What is box threat?
+A: Box threat assesses a player's ability to make an impact in and around the opposition's penalty area. It considers both the goal-scoring threat and the involvement of players inside of the penalty area.  This quality is particularly relevant for players in attacking roles.
+
+Q: How do you describe a player with high np xG per 90?
+A: A player with high np xG per 90 creates a lot of high-quality chances for themselves in the penalty box. This makes them a goal-scoring threat and a constant worry for the opponent defenders.
+
+Q: What do you say about a player with high box entries from carries per 90?
+A: A player with high box entries from carries per 90 constantly finds themselves in the penalty box by carrying the ball or It makes them a danger for the opposition because they are in a position to create threatening chances from close to the goal.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: Why are expected assists not a part of box threat?
+A: Box threat focuses on the goal-scoring threat and involvement of players inside of the penalty are, rather than their creation. Metrics such as assists, expected assists and key passes are represented in the quality providing teammates.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: What does it mean for a player to have a low box threat?
+A: Players with a low box threat do not pose a significant goal-scoring threat and have limited involvement inside of the opposition's penalty area. Players that have a more defensive roles can be expected to have lower box threat.
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What do you say about a player with average box touches per 90?
+A: A player with average touches in box per 90 takes a typical amount of touches in the opposition penalty box. They aren't a marauding attacking midfielder who constantly bombs the box, but they get into the box whenever necessary.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: How is box threat calculated?
+A: Box threat is calculated as the weighted sum of the z-scores of players in touches in box (20%), box entries from carries (10%), non-penalty goals (25%), non-penalty expected goals (25%) and box receptions (20%), among other players who play the same position.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: How do you describe a player with low np goals per 90?
+A: A player with low np goals per 90 does not score too many goals.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: Why are assists not a part of box threat?
+A: Box threat focuses on the goal-scoring threat and involvement of players inside of the penalty are, rather than their creation. Metrics such as assists, expected assists and key passes are represented in the quality providing teammates.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: How is box threat measured?
+A: Box threat is a weighted sum of a players performance compared to other players in the same position in touches in box (20%), box entries from carries (10%), goals (25%), expected goals (25%) and penalty area receptions (20%).
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: What does it mean for a player to have low box receptions per 90?
+A: A player with low box receptions per 90 is not a constant presence in the opposition penalty box. They are more comfortable playing deeper, possibly as a pivot or playmaker instead of a creative edge high in the midfield.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What does it mean for a player to have a high box threat?
+A: Players with a high box threat are often considered goal-scoring threats and highly involved in the final actions of attacks.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: How do you describe a player with high np xG per 90 but low goals per 90?
+A: A player with high np xG per 90 and low goals per 90 creates and gets a lot of chances for themselves but is not clinical with converting them into goals.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: How do you describe a player with good xG adj from outside of the box?
+A: A player with good xG adj from outside the box is very good at taking long shots. They fancy themselves to beat the opposition goalkeeper from distance and are a serious threat when left with space to shoot.
+
+Q: How do you describe a player who has average xG adj from the left side of the box?
+A: A player who has average xG adj from the left side of the box is a solid shot-taker from the left channel. They are able to move into decent angles to take their shots, either by running into that zone from deeper areas or moving diagonally from within the box.
+
+Q: How do you describe a player who has poor xG adj from the left side of the box?
+A: A player who has poor xG adj from the left side of the box is not very adept at opening up high quality chances from the left channel. They are probably unable to receive the ball in those zones while carrying a leap on the opposition defenders.
+
+Q: How do you describe a player who has Outstanding xG adj in the right side of the box?
+A: A player who has outstanding xG adj in the right side of the box is an exceptional attacking threat in the right channels. They like receiving the ball past the opposition defense line and taking shots. It points at great movement and high speed.
+
+Q: How do you describe a player who has outstanding xG adj from the golden zone and six yard box?
+A: A player who has outstanding xG adj from the golden zone is a high-quality poacher who gets into great positions to receive chances centrally within the penalty box.
+
+Q: How do you describe a player who has poor xG adj in the golden zone?
+A: A player who has poor xG adj in the golden zone is not very good at finding clear chances in the penalty box. Over a long term, this points at a problem with their off-the-ball movement and stealing a step on the opposition defenders.
+
+Q: How do you describe a player with below average xG adj from outside of the box?
+A: A player who has below average xG adj from outside of the box does find themselves with too many clear shots from distance. They probably get tightly marked, and when they do get the ball, prefer either passing it to an open attacker over shooting from afar.
+
+### Rule-based description of this player's data for this question
+Makai Wells is below average at box threat compared to other wingers. He is average at box entries from carries and touches in the box compared to other wingers. He is below average at penalty area receptions, np expected goals and np goals compared to other wingers.
+
+Makai Wells's xg was average in the left side of the box and golden zone compared to other wingers. Makai Wells performed below average in the outside of the box and six yard box.
+
+## Question 6: Where on the pitch does Makai Wells win the ball back?
+
+### What the data means
+Q: How do you describe a player who has below average defensive actions won in the attacking left wing?
+A: A player who has below average defensive actions in the attacking left wing is a wide player who doesn't quite contest opposition full backs out of possession. They have a tendency to be slightly lazy without the ball and don't close down or tackle opposition players enough in those areas.
+
+Q: How do you describe a player who has poor defensive actions won in the attacking left half-space?
+A: A player who has poor defensive actions in the attacking left half-space does not engage in too many defensive duels in the left channel. They are probably a forward or a left-sided wide player who don't actively hunt down opposition defensive players during build up.
+
+Q: How do you describe a player who has a high defensive actions won in attacking right half-space?
+A: A player who has a high defensive actions in the attacking right half-space is a fiesty attacking player when out of possession. They tend to chase down opposition defenders and defensive midfielders during build-up and engage in a lot of tackles and pressures.
+
+Q: How do you describe a player who has excellent defensive actions won in the attacking right wing?
+A: A player who has a excellent defensive actions in the attacking right wing is a winger with an exceptional defensive work rate. They tackle opposition full backs, winning the ball often, and don't let them just circulate the ball easily.
+
+Q: How do you describe a player who has poor defensive actions won in their defensive left wing?
+A: A player who has poor defensive actions in their defensive left wing is not suited to a left full back role. They are probably more effective defensively in central zones and have a tendency to not make too many defensive duels in the left wide area.
+
+Q: How do you describe a player who has excellent defensive actions won in their Own penalty area?
+A: A player who has excellent defensive actions in their own penalty area engages in a lot of defensive duels inside their box. They are a defensive player (a central defender or a defensive midfielder) and are adept at engaging with opposition attackers when they penetrate into the box.
+
+Q: How do you describe a player who has excellent defensive actions in the Defensive central midfield?
+A: A player who has a excellent defensive actions in the defensive central midfield breaks the opposition play before they reach the more dangerous areas. They probably operate as defensive midfielders who are asked to shield the defence during an opposition attacking move.
+
+Q: How do you describe a player who has excellent defensive actions on the defensive right wing?
+A: A player who has excellent defensive actions won in the defensive right wing is a combative full back. They engage heavily with opposition wingers and like their 1v1 duels.
+
+Q: How do you describe a player who has below average defensive actions won in the Defensive right half-space?
+A: A player who has below average defensive actions in the defensive right half space is not a good defender in the right-sided channels. They may be more efficient centrally or out wide but let opposition attackers past them in the channels.
+
+Q: How do you describe a player who has outstanding defensive actions won in the opposition penalty area?
+A: A player who has outstanding defensive actions in the opposition penalty area is an aggressive pressing forward. They take on the opposition defenders during the build-up play and force them into playing harried passes.
+
+Q: How do you describe a player who has excellent defensive actions in the attacking central midfield?
+A: A player who has a excellent defensive actions in the attacking central midfield is an aggressive central midfielder who fights hard for the ball in the middle of the park. They are usually an asset to their team in breaking up opposition build-up.
+
+Q: How do you describe a player who has average defensive actions won in the Defensive left half-space?
+A: A player who has average defensive actions in the defensive left half space is a sturdy defender in the channels. They are probably not stationed there at all points, but engage in defensive duels when necessary.
+
+### Rule-based description of this player's data for this question
+Makai Wells's defensive_actions was excellent in the attacking left wing compared to other wingers. Makai Wells performed good in the defensive left wing. Makai Wells performed average in the attacking right wing, defensive left half-space, defensive central midfield, own penalty area and defensive right wing. Makai Wells performed below average in the defensive right half-space, attacking left half-space, attacking right half-space, attacking central midfield and opposition penalty area.
+
+## Question 7: Could Makai Wells play in a different position?
+
+### What the data means
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+### Rule-based description of this player's data for this question
+Makai Wells is a unknown footed 17-year-old winger (more specifically a left winger) playing for New England II in the MLS Next Pro. He is below average at finishing compared to other wingers. He performs poorly in xgot. He is below average at box threat compared to other wingers. He is average in every metric in box threat. He is below average at providing teammates compared to other wingers. He performs poorly in deep completions. He is below average at effectiveness compared to other wingers. He performs poorly in passes (xt) per 100 receptions. He is average at dribbling compared to other wingers. He is average in every metric in dribbling. He is average at run quality compared to other wingers. He is average in every metric in run quality. He is poor at passing quality compared to other wingers. In passing quality, he is weakest in passes (xt). He is average at pressing compared to other wingers. He is average in every metric in pressing. He is below average at involvement compared to other wingers. He is average in every metric in involvement.
+
+## Question 8: How good is Makai Wells at pressing?
+
+### What the data means
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: What does it mean for a player to be good in pressing?
+A: Players who are good in pressing have a high defensive work rate and are skilled in winning possession high up on the pitch, which can generate dangerous offensive transitions.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What does it mean for a player to have a high amount of counterpressures but low defensive intensity?
+A: A player with a high amount of counterpressures but low defensive intensity is likely making a lot of defensive efforts immediately after their team loses possession, but overall they do not make many on ball defensive actions.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: How is pressing calculated?
+A: Pressing is calculated as the weighted sum of the z-scores of players in defensive intensity (25%), high recoveries (35%), interceptions (10%) and counterpressing recoveries (30%), among other players who play the same position.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: Why are high recoveries a part of pressing?
+A: The primary reason teams adopt a pressing playing style is that winning the ball high up the pitch often generates threatening situations. Consequently, high recoveries are of great importance when measuring pressing. Equally important is contributing to the press without recovering the ball, but the current dataset lacks information about these efforts.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: How is pressing  measured?
+A: Pressing  is a weighted sum of a players performance compared to other players in the same position in defensive intensity (25%), high recoveries (35%), interceptions (10%) and counterpressing recoveries (30%).
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What does it mean for a player to rank highly in counterpressures and defensive intensity?
+A: A player who ranks highly in counterpressures and defensive intensity has a high defensive engagement and agresssion, and has a good work rate to attempt win the ball back.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: What does it mean for a player to be bad in pressing?
+A: Players who struggle with pressing may contribute less defensively and find it challenging to disrupt the opponent's play, which isn't solely linked to their defensive work rate, as it can result from unsuccessful efforts.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: What is the relationship between high recoveries and counterpressures?
+A: Counterpressures are often performed after the team loses possession high up the pitch, so a successfull counterpressure usually results in an interception from that player or a teammate.
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: What about players that don't win the ball but participate in the press?
+A: Pressing is a team effort and, therefore, it cannot be fully attributed to the individual. However, the current dataset does not include information about the players who contribute to the pressure but don't make a defensive action. As a result, their efforts cannot be measured.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: What is pressing?
+A: Pressing assesses players' proactive defensive efforts to close down, pressure, or engage an opponent with the ball. It takes into account the number of defensive actions players perform, with an emphasis on counterpressing and high recoveries.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: How do you describe a player who has below average defensive intensity in the attacking left wing?
+A: A player with below average defensive intensity in the attacking right wing is a right-sided wide player who barely engages with opposition full backs. They mostly let the play pass them by, only rarely getting into tackles and pressures on that side.
+
+Q: How do you describe a player who shows poor defensive intensity in the attacking central midfield?
+A: A player who shows poor defensive intensity in the attacking central midfield may struggle to effectively contribute to the team's defensive shape high in the central areas. They are often being bypassed or outmaneuvered by opponents, highlighting a critical area for improvement in their overall defensive game.
+
+Q: How do you describe a player with outstanding defensive intensity in the defensive central midfield?
+A: A player with outstanding defensive intensity in the defensive central midfield is the heart of the team's defensive efforts in the attacking third, showing exceptional work rate, fierce tackling, and determination to recover possession.
+
+Q: What does poor defensive intensity in the defensive right wing tell us about a player?
+A: When a player has poor defensive intensity in the defensive right wing, they are quite passive when opposition attacks from their left hand side. They are probably right-sided midfielders or wingers who are somewhat lazy at tracking opposition runners and retrieving the ball.
+
+Q: How do you describe a player who has excellent defensive intensity in the attacking left wing?
+A: A player with excellent defensive intensity in the attacking left wing is a wide player with excellent work rate. They track opposition fullbacks and defenders with vigor and engage in duels whenever possible.
+
+Q: When a player has average defensive intensity in the attacking right half space, what does it mean?
+A: If a player has average defensive intensity in the attacking right half-space, it means that they are quick to press opposition players in the right channels without necessarily being relentless. They are not lazy, and indeed press, but once the ball is played past them, might cool off.
+
+Q: What does excellent defensive intensity in the defensive left wing tell us about a player?
+A: Excellent defensive intensity in the left wing tells us that a player engages in a lot of tackles and pressures from the left back area. They are a dominant defensive presence in the team and don't let opponents go past without a fight.
+
+Q: How do you describe a player with below-average defensive intensity in the opposition penalty area?
+A: A player with below-average defensive intensity in the opposition penalty area may not apply sufficient pressure on opposition defenders, potentially allowing them more space and time to make decisive passes, which could lead to build-up opportunities.
+
+Q: How do you describe a player with excellent defensive intensity in the attacking left half-space?
+A: A player with excellent defensive intensity in the attacking left half-space is good at defending vigorously in the left channel, using their energy and tactical intelligence to disrupt the opposition's right-sided defenders any rhythm and regain control of the ball.
+
+### Rule-based description of this player's data for this question
+Makai Wells is average at pressing compared to other wingers. He is good at interceptions compared to other wingers. He is average at defensive intensity and high recoveries compared to other wingers. He is below average at counterpressing actions compared to other wingers.
+
+Makai Wells's defensive_intensity was excellent in the attacking left wing compared to other wingers. Makai Wells performed good in the defensive left wing. Makai Wells performed average in the defensive left half-space, attacking right wing, opposition penalty area, defensive right half-space, defensive central midfield, own penalty area, defensive right wing, attacking left half-space and attacking right half-space. Makai Wells performed poor in the attacking central midfield.
+
+## Question 9: How good is Makai Wells in the air?
+
+### What the data means
+Q: What makes a winger a strong finisher?
+A: Wingers with excellent finishing skills tend to exhibit a notably high shot conversion percentage. Furthermore, another sign of their prowess in finishing is when they surpass their expected goals by scoring more frequently or consistently placing their shots in optimal positions, indicating a superior ability to convert opportunities compared to their expected goal values.
+
+Q: Why are aerials won a part of aerial threat?
+A: While aerial threat primarily assesses a player's offensive danger in the air, it's important to consider their overall aerial strength. Players who consistently win aerial duels demonstrate greater aerial prowess and, consequently, a heightened aerial threat.
+
+Q: What are the most important metrics for a winger?
+A: How often they contribute and are expected to contribute goals (np goals per ninety, assists per ninety, np expected goals per ninety, expected assists per ninety, chances created per ninety) as well as how good they are at running with the ball (progressive runs per ninety) are generally the most important data-points for a winger.
+
+Q: What makes a winger strong technically?
+A: A winger who is good in providing for their teammates and dribbling would be defined as strong technically. A winger who is bad in providing for teammates and dribbling would be defined as poor technically.
+
+Q: How would you describe a winger who is not above average in any metrics?
+A: A winger who is not above average in any metrics could be described as not being a standout in any area.
+
+Q: What qualities do we use to evaluate a winger?
+A: We evaluate wingers by their involvement, their passing quality, their ability to provide for teammates, their box threat, their finishing, their dribbling, their run quality and their pressing.
+
+Q: What can we infer from a winger that is good in both making runs and dribbling?
+A: Players who are strong in both making runs and dribbling are likely to be faster and more agile, along with having the technical ability to carry the ball long distances and retain it.
+
+Q: What metrics tell us that a winger is good at pressing?
+A: A winger who presses well has lots high recoveries and makes interceptions. They have a high defence intensity and engage in counterpressing.
+
+Q: How important are 'attacking aerials won' for a player's aerial threat?
+A: Attacking aerials won'  are crucial for a player, indicating their ability to win headers in offensive situations, particularly in creating scoring opportunities or directing headers on target.
+
+Q: Why are headed plays a part of aerial threat?
+A: A player's ability to successfully pass the ball with their head and head the ball towards the goal is indicative of their aerial threat. It shows that they are able to control the ball with their head and to get into goal-scoring positions.
+
+Q: How would you describe a winger who  is good in almost all metrics?
+A: A winger who is good in all metrics could be described as well-rounded.
+
+Q: What are some attributes of a winger with a good run quality?
+A: The key to a winger's run quality is making threatening runs with and without the ball and carrying the ball forward. Wingers who are good at runs take the ball into the box themselves and have a high number of penalty area receptions.
+
+Q: What are the most important attributes for a winger?
+A: There is no undeniable most important attribute for a winger. Some would argue that dribbling is most important. Others would argue that it is goal scoring and assisting. In some systems, perhaps progressing the ball and pressing is most important if they play a more reserved role.
+
+Q: What can we infer from a winger that is good in terms of  run quality?
+A: Players who rank highly in making runs tend to be faster, as they use their pace to make threatening runs and receive the ball behind the defensive line.
+
+Q: What measurements would convince us that a winger has a high aerial threat?
+A: A winger who wins aerial duels, who ranks highly in attacking aerials in particular is considered to have aerial threat. They will tend to head the ball a lot.
+
+Q: What is aerial threat?
+A: Aerial threat refers to a player's ability to pose a danger and get into scoring opportunities in the air, often in set-pieces.
+
+Q: What is a winger?
+A: A winger is the football player whose primary role is to receive the ball on the wide channels and create goal threat via dribbling, passing, and shooting.  Wingers have a variety of roles. Inverted wingers are tasked to cut-inside from the wing towards the goal and either shoot or pass. Traditional wingers are expected to dribble down the sideline before passing (or crossing) the ball into the box. In many teams, wingers have the responsibility of being one of the main creative outlets, as well as the fastest and most technically-gifted player.
+
+Q: What does it mean for a player to be an aerial threat?
+A: Players who rank highly in aerial threat are threatining in the air offensively. They win a high percentage of their aerial duels, especially in the attacking 60 % of the field, and frequently make headed passes or headed shots.
+
+Q: What does it mean for a winger to be good in ball retention?
+A: A winger with good ball retention is able to keep the ball at a high rate when they attempt dribbles. They rarely lose the ball and are trusted to receive and push the ball into dangerous and tight spaces.
+
+Q: What are the important attributes of a winger who has good involvement?
+A: A winger is considered to have good involvement if they are active defensively, have lots of touches on the ball and are involved in play leading up to a shot.
+
+Q: What are some attributes of a winger with a good passing?
+A: Wingers who have a strong passing ability are able to make various types of dangerous passes. They can cross the ball, progress the ball into the final third and complete passes within the final third.
+
+Q: How is aerial threat measured?
+A: Aerial threat is a weighted sum of a players performance compared to other players in the same position in aerials won (10%), aerials won % (15%), attacking aerials won (20%), attacking aerials won % (35%) and headed plays (20%).
+
+Q: What are the metric which measure if a winger has box threat?
+A: The key to a wingers having high box threat is that they get in to the box with the ball and receive the balls in the penalty area. Additionally they should touch the ball alot in the box, score goals and have high expected goal shots.
+
+Q: What does it mean for a player to have a low aerial threat?
+A: Players who rank badly in aerial threat rarely win offensive aerial duels and usually do not pose a goal-scoring danger in the air.
+
+Q: How do 'attacking aerials won' and 'attacking aerials won %' together shape a player's aerial profile in front of the goal?
+A: Together, these aspects shape a player's aerial profile in front of the goal by highlighting their effectiveness and efficiency in offensive aerial situations, crucial for scoring or creating chances in the air.
+
+Q: What are the important metrics for a winger who is good at finishing?
+A: The primary quality of a good finisher is that they score goals at high rate per ninety. But it is also important to look at how often they convert the chances they get and if they have high quality chances on target.
+
+Q: What can we infer from a winger who is good in providing for teammates but not ranked highly in run quality?
+A: A winger who is good in providing for teammates but not ranked highly in run quality is selfless but does not make himself available in return. We see this happen with wingers make good passes but then hide (in that they don't find a way to receive) or don't dare to make their own runs.
+
+Q: How would we describe a player who is outstanding at aerial threat?
+A: An outstanding player in this area is highly effective in winning aerial battles, arriving with good timing to balls from crosses, and contributing significantly to aerial dominance.
+
+Q: What are the qualities of a goal scoring winger?
+A: The primary quality of a goal scoring winger is that they score goals at high rate per ninety. But it is also important to look at how many chances they get (even if they don't score), which we measure with the expected goals and expected goals on target per ninety metrics.
+
+Q: How does a player's overall 'aerial threat' influence their role in set-pieces?
+A: A player's overall 'aerial threat' directly influences their role in set-pieces. Players with high skill in aerial threat are often targeted in offensive set-pieces for headers.
+
+Q: How would we describe a player who is average at aerial threat?
+A: This player shows moderate ability in aerial challenges, occasionally winning headers but may lack consistency or physical dominance in these aerial duels.
+
+Q: How is aerial threat calculated?
+A: Aerial threat is calculated as the weighted sum of the z-scores of players in aerials won (10%), aerials won % (15%), attacking aerials won (20%), attacking aerials won % (35%) and headed plays (20%), among other players who play the same position.
+
+Q: What do clubs look for when scouting wingers?
+A: Simply put, good wingers increase their team's chances of scoring a goal. This can be done in a variety of ways, such as dribbling, passing, and shooting. The best wingers in the world can do all three at a high level. Additionally, it is an added benefit if the player is both good at making runs, as well as pressing.
+
+Q: How important is dribbling for a winger?
+A: Dribbling can be an important attribute for a winger, as they are expected to often create threat out of nothing using their pace and technical ability. Wingers can make up for low ranking in dribbling with other skills.
+
+Q: Why is it important to have a winger with a high level of pressing?
+A: Wingers with high pressing are typically harder-working and are able to help the team's defence by spearheading their pressing attempts. They are very important to modern attacks which rely on pressing and counterpressing to win the ball back.
+
+Q: What metrics tell us that a winger is strong in dribbling?
+A: A good dribbling winger provides attacking threat with their dribbles. They will have a high dribbling success and have high expected threat (xT) from their dribbles. They will also have high expected goals created with dribbles, which measures whether their dribbles lead to good quality shots.
+
+Q: How do we measure if a winger provides for their teammates?
+A: A winger who provides for their teammates ﻿makes a lot of key passes, assists and second assists. They will rank highly in expected goals created and expected assists. Deep completions are also important.
+
+Q: What does excellent attacking aerials won adj in the attacking left half-space tell us about a player?
+A: A player with excellent attacking aerials won adj in the attacking left half-space is highly effective at leveraging their aerial strength to gain control and create opportunities, often setting up chances or scoring goals from aerial situations from second balls.
+
+Q: How do you describe a player with below average attacking aerials won adj in the opposition penalty area?
+A: A player with below average attacking aerials won adj in the opposition penalty area might struggle with the physical or technical aspects of aerial play, often getting outmatched by defenders, which diminishes their effectiveness in creating scoring opportunities.
+
+Q: What does poor attacking aerials won adj in the attacking central midfield and good attacking aerials won adj in the opposition penalty box show us about a player?
+A: Poor attacking aerials won adj in the attacking central midfield and good attacking aerials won adj in the opposition penalty box shows that a player is comfortable contesting 1v1 headers from deep crosses, but might struggle to play as a target forward who receives the ball high on the pitch from lofted deliveries. It could be down to a comfort from lateral movement of the ball compared to the more vertical movement of a long ball from the defence.
+
+Q: How do you describe a player who has poor attacking aerials won adj in the attacking central midfield?
+A: A player who has poor attacking aerials won adj in the attacking central midfield may not effectively utilize their aerial opportunities to advance play or might be physically outmatched, resulting in a loss of key battles that could otherwise pivot the game in their team's favor.
+
+### Rule-based description of this player's data for this question
+Makai Wells is good at aerial threat compared to other wingers. He is outstanding at attacking aerials won % compared to other wingers. He is good at aerials won % compared to other wingers. He is average at headed plays, aerials won and attacking aerials won compared to other wingers.
+
+Makai Wells's attacking_aerials_won was outstanding in the attacking left half-space compared to other wingers. Makai Wells performed average in the attacking right wing, attacking left wing, defensive left half-space, defensive right half-space, defensive central midfield, defensive left wing, defensive right wing and attacking central midfield. Makai Wells performed below average in the attacking right half-space and opposition penalty area.
+
+## Question 10: Does Makai Wells get involved in games?
+
+### What the data means
+(none)
+
+### Rule-based description of this player's data for this question
+(none)
+
+## Answers to rate
+
+### Answer b10-fdbac4 (to question 1)
+Makai Wells is a young winger still finding his footing in the competitive landscape of MLS Next Pro. Despite his age, he shows potential but has struggled to make a meaningful impact in numerous areas of his game. He has below-average finishing skills, reflected in his low expected goals, and he also doesn't contribute significantly to creating chances for teammates, particularly in deep completions. Additionally, his passing quality has been a weakness, particularly in terms of progressive passes, which hampers his overall effectiveness. On the positive side, he is average in dribbling, run quality, and pressing, which offers glimpses of his ability to navigate the game. As a 17-year-old winger, Wells has time to develop, but he will need to improve his impact in key offensive metrics to become a more prominent contributor moving forward.
+
+### Answer b10-07844a (to question 5)
+Unfortunately, the collected data does not provide the specific statistics for Makai Wells (player ID: 1207356) and his shooting threat in the box for the given season. 
+
+Without the exact player data for his shot zones, we can't definitively assess his threat near the opposition's goal (inside the box or six-yard box). If you'd like, I can try a different approach to fetch his specific data.
+
+### Answer b10-38fea7 (to question 6)
+Makai Wells barely registers ball recoveries in the 2026 MLS Next Pro data: I found just two, one in the attacking-half left wing (playing as a left-centre midfielder) and one in the middle of his own half (as a left wing-back), so there's no clear pressing zone to point to. His defensive work is mostly on the left touchline, where he made 10 defensive actions in his own-half left wing (5 each at left winger and left wing-back) and at least 9 in the attacking-half left wing. The first query was cut off, though, so I only saw complete figures for his left-winger and left wing-back minutes and may have missed a few recoveries from his shorter spells in other positions.
+
+### Answer b10-421225 (to question 2)
+Strengths: Across about 700 minutes in the 2026 MLS Next Pro season, Wells has been an excellent ball-carrier: every recorded carry was successful, he completed about 27 of roughly 30 dribbles, and his passing was clean at about 85% accuracy, with his best progression and creation coming from left wing-back (2 assists in total, 0.57 xA). Weaknesses: His end product is still thin, with 1 goal from about 1.4 xG, only 3 of 11 shots on target and 5 of 16 crosses completed, and his defending is patchy, with about 47% of defensive duels won (just 37.5% when playing as a left winger), plus he lost the ball under pressure as a forward and has already picked up a red card.
+
+### Answer b10-d3d85d (to question 1)
+Makai Wells is a 17-year-old American who has played about 700 tracked minutes for his MLS Next Pro side in 2026 (the data output was cut off, so treat every total here as a minimum). He has been used all over the left side, mostly at left wing-back (about 197 minutes) and left winger (about 194 minutes), with shorter spells at left attacking midfield, left forward, attacking midfield and central midfield. His output is 1 goal and 2 assists from roughly 11 shots, against about 1.4 expected goals (xG) and 0.57 expected assists (xA), so he has finished slightly below the quality of his chances. His standout skill is carrying the ball: he completed around 27 of 30 dribbles, lost none of his carries, and made his most dangerous runs from wing-back. His passing is tidy rather than incisive, at roughly 85% accuracy on about 200 passes with only a handful of key passes, and his tackling depends on the role (9 of 13 won at wing-back but only 6 of 16 on the wing). Overall it is a promising, versatile first season for a teenager, though he needs to finish better and stay disciplined, having picked up 2 yellow cards and 1 red card, the red at wing-back.
+
+### Answer b10-d3e25b (to question 4)
+Makai Wells has been highly effective at dribbling in the 2026 MLS Next Pro season, achieving a 100% dribble success rate with all six of his attempted dribbles being successful. His total carries (19) also underscore his ability to hold and move with the ball, contributing positively to his team's progression. Additionally, he generated a total of 0.19 expected threat (xT) from his dribbling and completed significant box entries through his runs. Overall, Wells shows strong dribbling precision, though relatively limited volume compared to higher output wingers.
+
+### Answer b10-171730 (to question 4)
+Makai Wells is an average dribbler among wingers, yet he possesses the ability to create threat from his dribbles effectively. However, he struggles to maintain possession under pressure, which can limit his impact in tight situations.
+
+Makai Wells excelled in his dribbling from the defensive left wing, showcasing a strong ability to retain possession and beat opponents. His performance was solid in both the attacking left wing and the opposition penalty area, where he appeared capable of influencing the game positively, although he struggled considerably in central and half-space areas, limiting his overall impact.
+
+### Answer b10-2efd53 (to question 3)
+Across about 700 MLS Next Pro minutes in 2026, Makai Wells is a tidy, reliable passer: he has completed roughly 171 of 201 passes (about 85%), and his accuracy stays at 80–89% at left wing, left wing-back and in central midfield. He doesn't pass much or very ambitiously, though, with only about 26 passes per 90 minutes and around 19 progressive passes in total (about 2.4 per 90). His chance creation is thin: 3 key passes, 2 assists and about 0.57 expected assists, with roughly 0.23 expected threat from his passes per 90. His crossing is the clear weak spot, with only 5 of 16 crosses finding a teammate (about 31%), so he looks like a secure ball-keeper rather than a creative passer, though this is a small sample spread over several positions.
+
+### Answer b10-28c369 (to question 6)
+Makai Wells showcases a commendable defensive presence, particularly in the attacking left wing, where he excels at disrupting opposition plays. He also contributes effectively from the defensive left wing but lacks engagement in various other positions, especially on the right side and central areas, suggesting a preference or tactical instruction to operate more on the left flank.
+
+### Answer b10-6913c0 (to question 6)
+Makai Wells primarily wins the ball back in the attacking half, focusing on the left wing and left half-space zones. These areas align with his winger role, leveraging his positioning near the opposition's defense.
+
+### Answer b10-a145ef (to question 1)
+Makai Wells is a 17-year-old winger currently playing in the MLS Next Pro 2026 season for team ID 66196. Across various positions, he has accumulated nearly 1,095 minutes this season, showcasing versatility by appearing both as an attacking and defensive winger among others. His standout contribution came from the left-wing-back role with 197 minutes, where he demonstrated defensive stability and playmaking ability, tallying an assist and effective dribbling success (78.57%).
+
+Despite playing in attacking positions like left winger and right winger, Wells managed only one goal throughout the season, reflecting room for growth in his finishing capabilities. His ball-carrying capability and chance-creation skills were notable, where he achieved measurable expected threat values. His youth and adaptability signify promise for further development in future campaigns.
+
+### Answer b10-a8b4e1 (to question 3)
+Makai Wells demonstrates solid passing capabilities, achieving an overall accuracy rate of 88.5% as a winger primarily positioned on the left flank. His progressive passes and passes into the final third show moderate involvement in advancing play, but he's less impactful with through balls and smart passes, as none were registered during the season. With 52 total passes and 10 playmaking passes across the season, his performance in creating direct chances is limited, as he has no assists or key passes. Therefore, while Wells is reliable in retaining the ball and linking play, his capacity for creating high-value opportunities is an area for future improvement.
+
+### Answer b10-b0ab90 (to question 10)
+Yes, Makai Wells is actively involved in games, contributing across multiple zones with significant offensive and defensive actions, including passes, dribbles, receptions, and defensive duels.
+
+### Answer b10-5a54e4 (to question 7)
+Makai Wells has demonstrated versatility by playing multiple positions during the 2026 MLS Next Pro season, including winger roles such as LW and RW, as well as LWB, RWB, LWF, RWF, and various attacking and central midfield positions. His minutes distribution suggests he is flexible across wide roles like LWB and RWB, and left-sided positions like LWF and LAMF. Therefore, Wells could effectively adapt to different positions, particularly across the wing and attacking midfield roles.
+
+### Answer b10-dde906 (to question 8)
+1. Makai Wells is not much of a presser on the evidence available: across roughly 700 minutes of MLS Next Pro 2026, he has only about 2 high recoveries and 4 counterpresses, and none of those counterpresses won the ball back.
+2. His share of ball-winning is also small, with about 12 possessions won in total, which works out to only around 1–2% of opponent possessions in each role (0.9% in his 194 minutes at left wing).
+3. He is busier in individual defending, with about 24 interceptions and 47 defensive duels (around 6–7 per 90), but he wins only about 47% of those duels, and as a winger his average defensive position sits deep at about 41 m from his own goal.
+4. This makes him a willing defender who drops back rather than one who wins the ball high up the pitch, though the minutes are small and spread across several positions (left wing, left wing-back, attacking and central midfield), so treat this as an early read.
+
+### Answer b10-7b0b8c (to question 3)
+Wells struggles significantly in terms of passing quality, lacking the ability to create impactful scoring opportunities for his teammates. While he manages to be average in crosses, the overall threat he poses in both the final third and through chance creation is disappointing.
+
+Makai Wells has shown good ability with his passes from the defensive left half-space and the attacking left wing. However, he struggles to make an impact in his passing throughout the rest of the pitch, particularly in central roles and the right-side areas, where his contributions are notably poor.
+
+### Answer b10-631ebc (to question 9)
+Makai Wells is a solid aerial threat among wingers, showcasing an exceptional ability to win attacking aerial duels with a high success rate. While his overall involvement in aerial contests and headed plays is typical, his efficiency in winning headers is a standout feature of his game.
+
+Makai Wells stands out as an exceptional aerial presence in the attacking left half-space, significantly outpacing other wingers in that area. While he maintains a solid aerial performance across various other positions, he does struggle to make an impact in the opposition penalty area and the attacking right half-space.
+
+### Answer b10-5b27db (to question 4)
+Makai Wells looks like a very efficient dribbler who doesn't attempt many take-ons, but the sample is still small. Across about 670 MLS Next Pro minutes in 2026 (one short central-midfield spell isn't counted because that data was cut off), he completed 27 of 30 dribbles, a 90% success rate, which works out to roughly 4 attempts per 90. His best sample came at left wing-back, with 11 of 14 dribbles completed over about 197 minutes, and he didn't fail a dribble in any other position; he also kept the ball on all 64 of his carries. His dribbling also leads to real threat: it added about 0.91 expected threat and 0.70 xG from chances that followed his dribbles, mostly from the left. I didn't compare him with other players in the league, so I can't say how he ranks, and 30 attempts is too few to call the success rate reliable.
+
+### Answer b10-cf6bf6 (to question 7)
+Yes. In fact, Makai Wells is already playing several positions this season. Of his roughly 1,095 MLS Next Pro minutes in 2026, only about 42% have come as a wide forward (LW, RWF, LWF, RW), while about 34% have come at wing-back (LWB 18%, RWB 16%) and about 24% in central or attacking midfield (LAMF 11%, plus some AMF, LCMF and RCMF). That suggests wing-back on either side is his most realistic other position, with a left-sided attacking midfield or No. 10 role as a second option. He's only 17, though, and these figures cover where he played, not how well he did there, so his stats in each role should be checked before moving him permanently.
+
+### Answer b10-e00447 (to question 2)
+Makai Wells's strengths lie primarily in his aerial threat, where he excels in winning aerial duels and poses a significant threat in the attacking third, which can contribute to the team's ability to create scoring opportunities from set pieces and crosses. However, his weaknesses in passing quality and providing teammates indicate that he struggles to deliver threatening passes and make key contributions to goal-scoring plays, which may limit his overall effectiveness in linking up play and creating opportunities for others.
+
+### Answer b10-5b709d (to question 2)
+Makai Wells excels at dribbling with a high success rate, ball progression, and pressure resistance, particularly when operating from the left-wing and left-half spaces. However, he struggles with shot efficiency, recording low conversion rates and minimal impact from his offensive aerial duels.
+
+### Answer b10-f485a9 (to question 7)
+Makai Wells has potential strengths as a winger, particularly in dribbling, run quality, and pressing, where he demonstrates average performance compared to his peers, suggesting a foundational ability to operate effectively on the flanks. However, his finishing, box threat, and passing quality are significant weaknesses, as he ranks below average in these crucial areas, meaning he might struggle to convert opportunities and support teammates effectively in goal-scoring scenarios. In making this assessment, it's important to note that I have compared Wells' current performance as a left winger with the requirements of the same position; the differences in skills, such as finishing ability and passing effectiveness, are critical to thriving as a winger.
+
+### Answer b10-e176c8 (to question 9)
+Makai Wells, playing predominantly as a winger in MLS Next Pro's 2026 season, shows a limited impact in aerial duels according to match statistics. Across multiple appearances, he participated in five aerial duels but won only three, resulting in a win rate of 60%. Most of his aerial success came in attacking positions rather than defensive ones. Based on these metrics, while Wells isn't extremely dominant in the air, he still demonstrates some capability in offensive aerial battles.
+
+### Answer b10-27806d (to question 10)
+There was an error getting the data.
+
+### Answer b10-e45eda (to question 8)
+Makai Wells showcases a reliable ability to intercept the ball, making him a valuable asset defensively among his peers. While he maintains average levels in defensive intensity and high recoveries, he could improve his impact by stepping up his counterpressing efforts.
+
+Makai Wells has excelled defensively on the attacking left wing, demonstrating his ability to impact the game from that position. He also contributes well on the defensive left flank, but his performance drops significantly in central areas and when covering the right side of the pitch, particularly in attacking central midfield where he struggles to make a meaningful impact.
+
+### Answer b10-f1fdab (to question 5)
+Makai Wells struggles to make a significant impact in the box as a winger, showing below-average metrics across several key areas including penalty area receptions and goal scoring. While his box entries from carries and touches in the box are average, he lacks the finishing prowess and presence needed to elevate his box threat.
+
+Makai Wells is fairly competent in creating chances from the left side of the box and within the golden zone. However, he has struggled to find his scoring touch in the outside of the box and has not been a significant threat in the six-yard box.
+
+### Answer b10-efa6dd (to question 5)
+Not really, at least not yet: in about 700 MLS Next Pro minutes in 2026 he has 11 shots, 1 goal and about 1.43 xG. That works out to roughly 1.4 shots and 0.18 xG per 90, which is modest for a winger. He touches the ball in the box only about 3 times per 90 (24 in total), and just 2 of his 11 shots were on target. He looked most dangerous at left wing, with 0.70 xG, his only goal and 7 box touches in about 194 minutes, but most of his other minutes came at left wing-back and in midfield, where he did more passing, carrying and crossing (2 assists, about 0.57 xA) than finishing.
+
+### Answer b10-73e204 (to question 8)
+Makai Wells' pressing effectiveness in the 2026 MLS Next Pro season appears to be limited. Across multiple matches, he recorded a defensive intensity ranging from 1 to 8, executed very few defensive actions per game (mostly ≤ 2), and had low possession-winning metrics (0–1 per match). Additionally, his counter-pressing actions are nearly non-existent, suggesting inactive involvement in pressing to regain possession after his team loses the ball. While there were some defensive contributions like interceptions and defensive duels won, they were not prominent features of his performance.
+
+### Answer b10-e5205a (to question 9)
+Makai Wells barely contests the ball in the air, so heading is a minor part of his game rather than a strength. Across about 700 MLS Next Pro minutes in 2026 at seven positions, from left wing to left wing-back, he has been in roughly 11 aerial duels and won about 5 (around 45%). That works out to only about 1.4 aerials per 90 minutes, which is a very small sample. Most of his duels came at left wing, where he won 2 of 4 (including 2 of 4 attacking ones), and at left wing-back, where he won 2 of 4 defensive ones. At 17, with no listed height, he is better judged as a carrier and dribbler: he completed all 26 of his carries at wing-back and won 11 of 14 dribbles, so he should not be counted on as an aerial outlet or to defend high balls at the back post.
+
+### Answer b10-3782da (to question 10)
+Only moderately: over about 700 minutes across seven positions (mostly LW and LWB) in MLS Next Pro 2026, Wells has had about 261 touches (around 33 per 90), 226 receptions (around 29 per 90) and 201 passes (around 26 per 90), which is only about 4% of his team's on-ball events, so he is a useful outlet rather than a focal point, though he is tidy and effective when he does get the ball (85–88% passing, 27 of 30 dribbles completed, 1 goal and 2 assists).
+
+## Results file
+Write your ratings to: /Users/davsu428/GitHub/vivid-report/papers/0002-twelve-earpiece/Code/outputs/wordalisation-test/agent-judge/results-10.jsonl

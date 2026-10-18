@@ -1,0 +1,1802 @@
+{
+ "b01-51296f": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b01-d012c0": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b01-7736f9": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b01-3726ca": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b01-6a26af": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b01-c7d2cb": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b01-620e0b": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b01-46ef2c": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b01-44f16b": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b01-fc922f": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b01-35939e": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b01-ea8811": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b01-038f97": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b01-e8b434": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b01-f5a260": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b01-3d5642": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b01-f5dbe9": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b01-fcedd2": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b01-bcf6f1": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b01-db4a27": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b01-5df3a4": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b01-0177c3": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b01-7d6160": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b01-2edd2a": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b01-0d4073": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b01-ee949c": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b01-c0d33d": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b01-e75287": {
+  "system": "earpiece",
+  "player_id": "1050108",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b01-3a3167": {
+  "system": "gpt4o",
+  "player_id": "1050108",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b01-869fc5": {
+  "system": "claude",
+  "player_id": "1050108",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b02-2697ab": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b02-2b92e4": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b02-40b3ec": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b02-579f8c": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b02-dc377b": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b02-9259b2": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b02-ef1fdc": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b02-39753b": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b02-67d3c4": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b02-f0786c": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b02-22cdc4": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b02-db91bf": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b02-4e6ff3": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b02-047d74": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b02-c4f745": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b02-945cf6": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b02-142092": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b02-b6924b": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b02-818918": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b02-6bd740": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b02-874ff3": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b02-a2870b": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b02-1f82a8": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b02-0c935f": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b02-8fd3c9": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b02-6bd19f": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b02-20d9fc": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b02-64e80d": {
+  "system": "earpiece",
+  "player_id": "865853",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b02-9675f9": {
+  "system": "claude",
+  "player_id": "865853",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b02-ee94dc": {
+  "system": "gpt4o",
+  "player_id": "865853",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b03-a8c267": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b03-bd2399": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b03-5fc8c3": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b03-e3f708": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b03-a9d0e2": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b03-30700e": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b03-e645c6": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b03-d389d4": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b03-14de41": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b03-b94356": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b03-2ff5d4": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b03-a24dd4": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b03-dfb119": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b03-bbf198": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b03-ea7355": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b03-bbf4e9": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b03-17035f": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b03-976faa": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b03-86263f": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b03-8c6d27": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b03-2d3981": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b03-73f284": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b03-c8a105": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b03-10439e": {
+  "system": "gpt4o",
+  "player_id": "1068210",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b03-573e2d": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b03-54cbcc": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b03-f09673": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b03-36b86d": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b03-2e99f1": {
+  "system": "claude",
+  "player_id": "1068210",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b03-12a829": {
+  "system": "earpiece",
+  "player_id": "1068210",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b04-7b634c": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b04-844d01": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b04-466e33": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b04-b15e7c": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b04-eba822": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b04-712c6e": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b04-e5199b": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b04-9baa63": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b04-1e8f86": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b04-e05821": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b04-3f37ca": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b04-61731b": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b04-20a6ae": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b04-fc8e0f": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b04-407be5": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b04-c5eddf": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b04-8fd7bf": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b04-fa4f1f": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b04-b359bb": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b04-e7f8ea": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b04-1971ce": {
+  "system": "gpt4o",
+  "player_id": "1313790",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b04-d9ee0b": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b04-0d8b70": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b04-7367f7": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b04-9e68ae": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b04-7ccbbb": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b04-34b72c": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b04-cca5da": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b04-d58071": {
+  "system": "claude",
+  "player_id": "1313790",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b04-45c98b": {
+  "system": "earpiece",
+  "player_id": "1313790",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b05-587f08": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b05-daa428": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b05-09af9e": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b05-89aa15": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b05-fac20f": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b05-aa5bf0": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b05-7f8046": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b05-9e0637": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b05-5c4fb1": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b05-242288": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b05-9bd9a8": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b05-0d5035": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b05-3e378e": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b05-251ad1": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b05-18f2cd": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b05-2d1690": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b05-eaa5f3": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b05-204800": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b05-120899": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b05-2ff662": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b05-c31280": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b05-fbc815": {
+  "system": "earpiece",
+  "player_id": "688425",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b05-9ee988": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b05-beb490": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b05-ac5ff2": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b05-8ffdc6": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b05-4c03ef": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b05-3d383a": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b05-1c7f9e": {
+  "system": "gpt4o",
+  "player_id": "688425",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b05-165149": {
+  "system": "claude",
+  "player_id": "688425",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b06-5eda9a": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b06-556bb8": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b06-c43a18": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b06-570fac": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b06-2367e2": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b06-6001bc": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b06-80a76e": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b06-347cc4": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b06-5417a0": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b06-f9a8df": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b06-d4cca5": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b06-6a06c2": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b06-251a56": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b06-dfdc37": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b06-b1b366": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b06-60e5cf": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b06-a287fc": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b06-4dccb6": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b06-631e8e": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b06-065227": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b06-154564": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b06-869ac2": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b06-9d6aa9": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b06-d9efe5": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b06-efbd8d": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b06-5f9611": {
+  "system": "claude",
+  "player_id": "562015",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b06-21b9f4": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b06-cf6889": {
+  "system": "earpiece",
+  "player_id": "562015",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b06-0c6b30": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b06-e4a2eb": {
+  "system": "gpt4o",
+  "player_id": "562015",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b07-bd197c": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b07-37999e": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b07-f73780": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b07-15827e": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b07-4a238c": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b07-0be941": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b07-f700f8": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b07-515d3e": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b07-aad3df": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b07-f97997": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b07-e062b2": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b07-4d3ea6": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b07-8c83cd": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b07-415c4f": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b07-909696": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b07-a840f5": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b07-9c947f": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b07-f9b300": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b07-c5d5d7": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b07-950408": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b07-cd3d50": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b07-c60a91": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b07-0a0ff9": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b07-745aba": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b07-676556": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b07-ba4ac6": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b07-5535a2": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b07-610582": {
+  "system": "claude",
+  "player_id": "511593",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b07-06b44d": {
+  "system": "gpt4o",
+  "player_id": "511593",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b07-43ad5a": {
+  "system": "earpiece",
+  "player_id": "511593",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b08-c0a432": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b08-fcd1c8": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b08-ac7189": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b08-5cf4c5": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b08-a7f55b": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b08-b4d1f9": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b08-11306a": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b08-d9cf6f": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b08-ec8c18": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b08-8d91ac": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b08-2abcea": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b08-e2651b": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b08-284a19": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b08-a4dda4": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b08-fe5eab": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b08-11960c": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b08-443811": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b08-6ce9d3": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b08-bb43c3": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b08-44477b": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b08-cf1227": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b08-e12a50": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b08-86ea82": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b08-a15cfc": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b08-5a6d69": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b08-7cf40b": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b08-fa175f": {
+  "system": "gpt4o",
+  "player_id": "261048",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b08-0e26fa": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b08-57d67d": {
+  "system": "claude",
+  "player_id": "261048",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b08-ed1b1c": {
+  "system": "earpiece",
+  "player_id": "261048",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b09-8509ac": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b09-478f68": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b09-24e53f": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b09-bab73c": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b09-bba840": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b09-045aa9": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b09-d6384f": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b09-99c1a5": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b09-93c1b1": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b09-e10af8": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b09-5c95f9": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b09-f227cf": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b09-eb32fc": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b09-7419d4": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b09-ae6f7b": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b09-ff711c": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b09-942e68": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b09-1d4637": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b09-7a1dc3": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b09-bd6f8b": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b09-3d2451": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b09-b80ce8": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b09-e6648f": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b09-2353a0": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b09-7d4992": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b09-e8fad1": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b09-ebbd85": {
+  "system": "gpt4o",
+  "player_id": "603648",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b09-4c8947": {
+  "system": "claude",
+  "player_id": "603648",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b09-339b63": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b09-869f78": {
+  "system": "earpiece",
+  "player_id": "603648",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b10-fdbac4": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b10-07844a": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b10-38fea7": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b10-421225": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b10-d3d85d": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b10-d3e25b": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b10-171730": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b10-2efd53": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b10-28c369": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b10-6913c0": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 6,
+  "repeat": 1
+ },
+ "b10-a145ef": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 1,
+  "repeat": 1
+ },
+ "b10-a8b4e1": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b10-b0ab90": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b10-5a54e4": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b10-dde906": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b10-7b0b8c": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 3,
+  "repeat": 1
+ },
+ "b10-631ebc": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b10-5b27db": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 4,
+  "repeat": 1
+ },
+ "b10-cf6bf6": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b10-e00447": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b10-5b709d": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 2,
+  "repeat": 1
+ },
+ "b10-f485a9": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 7,
+  "repeat": 1
+ },
+ "b10-e176c8": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b10-27806d": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 10,
+  "repeat": 1
+ },
+ "b10-e45eda": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b10-f1fdab": {
+  "system": "earpiece",
+  "player_id": "1207356",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b10-efa6dd": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 5,
+  "repeat": 1
+ },
+ "b10-73e204": {
+  "system": "gpt4o",
+  "player_id": "1207356",
+  "question_id": 8,
+  "repeat": 1
+ },
+ "b10-e5205a": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 9,
+  "repeat": 1
+ },
+ "b10-3782da": {
+  "system": "claude",
+  "player_id": "1207356",
+  "question_id": 10,
+  "repeat": 1
+ }
+}
