@@ -61,11 +61,63 @@ line per answer, in this form:
 """
 
 
-def build_full() -> None:
+#: The control (David, 19 October 2026): the batch method with the first judgement's
+#: criteria, undefined, worded as in wt_judge.JUDGE_SYSTEM.
+INSTRUCTIONS_CONTROL = """# Judging task
+
+You are judging answers written for a scout at a football club, who asked questions
+about one player. Below are the information about the player, the questions, and then
+the answers, each with an id.
+
+Rate each answer on its own, against the information for its question. Do not compare
+answers with each other, and do not try to work out who wrote them.
+
+Rate three criteria, each from 1 (very poor) to 5 (very good):
+- faithfulness: how faithfully the answer represents the information given;
+- engagement: how engaging the answer is to read;
+- usefulness: how useful the answer is for understanding the player or for making a
+  decision about them.
+Also list every hallucination in the answer, that is every unsupported or fabricated claim:
+a statement the information does not support or that contradicts it. Quote each briefly.
+
+Write your ratings to the results file named at the end, one JSON object per line, one
+line for each answer, in this form:
+{"id": "...", "faithfulness": 1-5, "engagement": 1-5, "usefulness": 1-5, "hallucinations": ["..."], "reason": "one or two sentences"}
+"""
+
+#: Level 4 (David, 19 October 2026): faithfulness against Earpiece's synthetic text alone,
+#: as in Caut et al.'s LLM-as-a-judge ("not supported by the statistical description").
+INSTRUCTIONS_LEVEL4 = """# Judging task
+
+You are judging answers written for a scout at a football club, who asked questions
+about one player. For each question you are given a rule-based description of the
+player's data. Then come the answers, each with an id.
+
+Rate each answer on its own, against the rule-based description for its question. Do not
+compare answers with each other, and do not try to work out who wrote them.
+
+Rate one criterion, from 1 (very poor) to 5 (very good):
+- faithfulness: how faithfully the answer represents the information given.
+Also list every hallucination in the answer, that is every unsupported or fabricated claim:
+a statement the rule-based description does not support or that contradicts it. Quote
+each briefly.
+
+Write your ratings to the results file named at the end, one JSON object per line, one
+line for each answer, in this form:
+{"id": "...", "faithfulness": 1-5, "hallucinations": ["..."], "reason": "one or two sentences"}
+"""
+
+
+def build_full(variant: str = "defined") -> None:
     """All 1,800 answers at all three levels: one batch per player and level, with up to
     90 answers (10 questions x 3 repeats x 3 systems) shuffled under opaque ids."""
-    rng = random.Random(SEED)
-    out = DIR / "agent-judge-full"
+    rng = random.Random(SEED + (0 if variant == "defined" else 1))
+    out = DIR / ("agent-judge-full" if variant == "defined" else "agent-judge-control")
+    instructions = {"defined": INSTRUCTIONS.replace("30 answers", "the answers").replace(
+                        "one line for each of the 30", "one line for each"),
+                    "control": INSTRUCTIONS_CONTROL, "level4": INSTRUCTIONS_LEVEL4}[variant]
+    levels = (4,) if variant == "level4" else (1, 2, 3)
+    key_path = out / ("key-level4.json" if variant == "level4" else "key.json")
     raw = json.loads((DIR / "rawdata.json").read_text())
     players = list(csv.DictReader((DIR / "players.csv").open(encoding="utf-8")))
     answers = {s: {(a["player_id"], a["question_id"], a["repeat"]): a
@@ -75,18 +127,21 @@ def build_full() -> None:
     key = {}
     for p in players:
         pid = p["player_id"]
-        for level in (1, 2, 3):
-            parts = [INSTRUCTIONS.replace("30 answers", "the answers").replace(
-                         "one line for each of the 30", "one line for each"),
-                     "## Data about the player\n" + J.raw_text(raw[pid])]
+        for level in levels:
+            parts = [instructions]
+            if level <= 3:
+                parts.append("## Data about the player\n" + J.raw_text(raw[pid]))
             items = []
             for q in range(1, 11):
                 ear = answers["earpiece"][(pid, q, 1)]
                 knowledge, synthetic = J.knowledge_and_synthetic(ear)
                 block = f"## Question {q}: {ear['question']}"
-                if level >= 2:
+                if level == 4:
+                    block += (f"\n\n### Rule-based description of this player's data for this "
+                              f"question\n{synthetic or '(none)'}")
+                elif level >= 2:
                     block += f"\n\n### What the data means\n{knowledge or '(none)'}"
-                if level >= 3:
+                if level == 3:
                     block += (f"\n\n### Rule-based description of this player's data for this "
                               f"question\n{synthetic or '(none)'}")
                 parts.append(block)
@@ -107,15 +162,25 @@ def build_full() -> None:
             (out / f"batch-{name}.md").write_text("\n\n".join(parts), encoding="utf-8")
             print(f"batch-{name}: {p['name']}, level {level}, {len(items)} answers,",
                   f"{len(chr(10).join(parts))} characters")
-    (out / "key.json").write_text(json.dumps(key, indent=1))
-    print(len(key), "answers in", len(players) * 3, "batches")
+    key_path.write_text(json.dumps(key, indent=1))
+    print(len(key), "answers in", len(players) * len(levels), "batches")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--full", action="store_true", help="all answers at all three levels")
-    if ap.parse_args().full:
-        build_full()
+    ap.add_argument("--control", action="store_true",
+                    help="the control: batch method, undefined criteria, levels 1-3")
+    ap.add_argument("--level4", action="store_true",
+                    help="faithfulness against the synthetic text alone")
+    a = ap.parse_args()
+    if a.full or a.control or a.level4:
+        if a.full:
+            build_full("defined")
+        if a.control:
+            build_full("control")
+        if a.level4:
+            build_full("level4")
         return
     rng = random.Random(SEED)
     raw = json.loads((DIR / "rawdata.json").read_text())

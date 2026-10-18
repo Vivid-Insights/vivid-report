@@ -75,12 +75,15 @@ def figures_per_sentence(text):
     return len(re.findall(r"\d+(?:[.,]\d+)?%?", text)) / len(sentences)
 
 
-def collect_full() -> None:
-    """The full second judgement (all answers, all levels) in the first judgement's format."""
-    aj = DIR / "agent-judge-full"
-    key = json.loads((aj / "key.json").read_text())
+def collect_full(folder="agent-judge-full", key_name="key.json",
+                 out_name="judgments-defined-agents-full.jsonl", variant="defined-agents") -> None:
+    """A batch judgement (all answers) in the first judgement's format."""
+    aj = DIR / folder
+    key = json.loads((aj / key_name).read_text())
+    level4 = key_name == "key-level4.json"
     rows, problems, seen = [], [], set()
-    for f in sorted(aj.glob("results-*.jsonl")):
+    pattern = "results-*-L4.jsonl" if level4 else "results-*-L[123].jsonl"
+    for f in sorted(aj.glob(pattern)):
         for line in f.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
@@ -90,26 +93,40 @@ def collect_full() -> None:
                 if r["id"] in seen:
                     continue
                 seen.add(r["id"])
-                rows.append({**k, "variant": "defined-agents",
-                             "faithfulness": int(r["faithfulness"]), "engagement": int(r["engagement"]),
-                             "usefulness": int(r["usefulness"]),
-                             "hallucinations": list(r.get("hallucinations") or []),
-                             "reason": r.get("reason", "")})
+                rec = {**k, "variant": variant, "faithfulness": int(r["faithfulness"]),
+                       "hallucinations": list(r.get("hallucinations") or []),
+                       "reason": r.get("reason", "")}
+                if not level4:
+                    rec.update(engagement=int(r["engagement"]), usefulness=int(r["usefulness"]))
+                rows.append(rec)
             except Exception as err:  # pylint: disable=broad-except
                 problems.append(f"{f.name}: {type(err).__name__} {err}")
-    with (DIR / "judgments-defined-agents-full.jsonl").open("w", encoding="utf-8") as f:
+    with (DIR / out_name).open("w", encoding="utf-8") as f:
         for j in rows:
             f.write(json.dumps(j, ensure_ascii=False) + "\n")
     missing = sorted(set(key) - seen)
     batches = sorted({m.rsplit("-", 1)[0] for m in missing})
-    print(len(rows), "of", len(key), "judged;", len(problems), "problems;",
+    print(out_name, ":", len(rows), "of", len(key), "judged;", len(problems), "problems;",
           len(missing), "missing in", len(batches), "batches", batches[:20])
+    if level4:
+        summary = {s: {c: ci([j for j in rows if j["system"] == s], c)
+                       for c in ("faithfulness", "hallucinations")} for s in SYSTEMS}
+        (DIR / "summary-level4-agents.json").write_text(json.dumps(summary, indent=1))
+        for s_, b in summary.items():
+            print(f"  level 4 {s_:<9} faith {b['faithfulness']['mean']:.2f} {b['faithfulness']['ci95']}"
+                  f"  hallu {b['hallucinations']['mean']:.2f} {b['hallucinations']['ci95']}")
 
 
 def main() -> None:
     import sys
     if "--full" in sys.argv:
         collect_full()
+        return
+    if "--control" in sys.argv:
+        collect_full("agent-judge-control", "key.json", "judgments-control-agents-full.jsonl",
+                     "control-agents")
+        collect_full("agent-judge-control", "key-level4.json", "judgments-level4-agents.jsonl",
+                     "level4-agents")
         return
     key = json.loads((AJ / "key.json").read_text())
     second, problems = [], []
