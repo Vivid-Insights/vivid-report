@@ -407,3 +407,102 @@
   number: "2404.12272"
   url: https://arxiv.org/abs/2404.12272
   note: Preprint, not peer reviewed.
+
+- id: dale2016
+  type: article
+  author: ["Dale, Robert"]
+  title: "The return of the chatbots"
+  year: 2016
+  container: Natural Language Engineering
+  volume: "22"
+  issue: "5"
+  pages: "811–817"
+  doi: 10.1017/S1351324916000243
+
+- id: dale2020
+  type: article
+  author: ["Dale, Robert"]
+  title: "Natural language generation: The commercial state of the art in 2020"
+  year: 2020
+  container: Natural Language Engineering
+  volume: "26"
+  issue: "4"
+  pages: "481–487"
+  doi: 10.1017/S135132492000025X
+
+- id: dale2021
+  type: article
+  author: ["Dale, Robert"]
+  title: "GPT-3: What's it good for?"
+  year: 2021
+  container: Natural Language Engineering
+  volume: "27"
+  issue: "1"
+  pages: "113–118"
+  doi: 10.1017/S1351324920000601
+
+- id: dale2023
+  type: article
+  author: ["Dale, Robert"]
+  title: "Navigating the text generation revolution: Traditional data-to-text NLG companies and the rise of ChatGPT"
+  year: 2023
+  container: Natural Language Engineering
+  volume: "29"
+  issue: "4"
+  pages: "1188–1197"
+  doi: 10.1017/S1351324923000347
+
+- id: church2023smooth
+  type: article
+  author: ["Church, Kenneth Ward", "Yue, Richard"]
+  title: "Emerging trends: Smooth-talking machines"
+  year: 2023
+  container: Natural Language Engineering
+  volume: "29"
+  issue: "5"
+  pages: "1402–1410"
+  doi: 10.1017/S1351324923000463
+
+- id: church2024rag
+  type: article
+  author: ["Church, Kenneth Ward", "Sun, Jiameng", "Yue, Richard", "Vickers, Peter", "Saba, Walid", "Chandrasekar, Raman"]
+  title: "Emerging trends: A gentle introduction to RAG"
+  year: 2024
+  container: Natural Language Engineering
+  volume: "30"
+  issue: "4"
+  pages: "870–881"
+  doi: 10.1017/S1351324924000044
+
+- id: church2024eval
+  type: article
+  author: ["Church, Kenneth Ward", "Alonso, Omar"]
+  title: "Emerging trends: Evaluating general purpose foundation models"
+  year: 2024
+  container: Natural Language Engineering
+  volume: "30"
+  issue: "6"
+  pages: "1323–1335"
+  doi: 10.1017/S1351324924000068
+
+- id: schuff2023
+  type: article
+  author: ["Schuff, Hendrik", "Vanderlyn, Lindsey", "Adel, Heike", "Vu, Ngoc Thang"]
+  title: "How to do human evaluation: A brief introduction to user studies in NLP"
+  year: 2023
+  container: Natural Language Engineering
+  volume: "29"
+  issue: "5"
+  pages: "1199–1222"
+  doi: 10.1017/S1351324922000535
+
+- id: higgins2024
+  type: article
+  author: ["Higgins, Michael", "Widdows, Dominic", "Hockey, Beth Ann", "Hazare, Akshay", "Howell, Kristen", "others"]
+  title: "Actionable conversational quality indicators for improving task-oriented dialog systems"
+  year: 2024
+  container: Natural Language Engineering
+  volume: "30"
+  issue: "6"
+  pages: "1229–1254"
+  doi: 10.1017/S1351324923000372
