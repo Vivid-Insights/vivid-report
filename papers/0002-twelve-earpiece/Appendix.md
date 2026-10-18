@@ -90,6 +90,8 @@ Agreed with David, 18 October 2026: the same questions put to Earpiece and to ag
 
   Under the undefined criteria the batch method raises faithfulness and lowers the hallucination count for all three systems, and leaves the Claude agent ahead on engagement and usefulness, by more than in the first judgement. The reversal on engagement and usefulness comes with David's definitions. Intervals in the summary files.
 
+- Examples in the Discussion (@fig-examples; David, 18 October 2026: "add a table with 3 examples of Earpiece texts and Claude texts"): drawn by `Code/wt_examples.py`, seed 7: players and questions shuffled and paired, first repeat, Earpiece's error or empty answers skipped; the first three pairs kept (Krioutchenkov, dribbling; Ortolan, winning the ball back; Dengler, passing), with their ratings under both instructions with the raw data, explanations and synthetic text. Quoted from `outputs/wordalisation-test/examples.json`. Shown as a figure of panels because a table cannot hold quotes the build checks.
+
 ### Name test (Contexts and names)
 
 Agreed with David, 17 October 2026: 400 players (300 men, 100 women) from less-known leagues, each asked about with a misspelled name and, as a control, correctly spelled, to see whether the receptionist's redirect reaches the right player.
@@ -138,6 +140,7 @@ Agreed with David, 17 October 2026: 400 players (300 men, 100 women) from less-k
 | `Code/wt_export.py` | Writes the wordalisation test's answers (three systems side by side) and judgements as CSV for reading by hand. Workspace environment. | writes `outputs/wordalisation-test/answers.csv`, `judgments.csv` |
 | `Code/wt_agent_batches.py`, `Code/wt_agent_collect.py` | Build the subagent batches for the second judgement (`--full`), the control (`--control`) and level 4 (`--level4`), and collect them (`--full`, `--control`). Earpiece API environment, then workspace environment. `wt_summary.py` and `wt_export.py` take `--variant defined-agents-full` or `control-agents-full`. | `agent-judge*/batch-*.md`, `key*.json`; `judgments-{defined,control,level4}-agents*.jsonl`, `summary-*.json` |
 | `Code/wt_tables.py` | The numbers in the report's Tables tab-faithfulness and tab-engagement: the second judgement (detailed instructions) at levels 1–3 and level 4; the control (basic instructions) against the second at levels 1–3; means ± standard deviation over answers, and how often Earpiece's or the Claude agent's answer to the same question was rated higher; Earpiece's error answers left out. Workspace environment. | writes `outputs/wordalisation-test/tables.json` |
+| `Code/wt_examples.py` | Draws the Discussion's three pairs of answers by a stated rule (seed 7) with their ratings. Workspace environment. | writes `outputs/wordalisation-test/examples.json` |
 | `Code/name_test_summary.py` | Outcome rates with 95% Wilson intervals. Workspace environment. | writes `outputs/name-test/summary.json` |
 
 ## References
