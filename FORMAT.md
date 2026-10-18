@@ -118,6 +118,7 @@ The text exactly as generated.
 ```
 
 - `key` points into a JSON file: dots between keys, numbers for list positions. The text must equal that value. Without `key`, the text must appear somewhere in the file.
+- The page shows neither the file nor the model: under the block it says only "Quoted word for word from a saved output". `source=` and `key=` are still checked by the build, and `model=` may stay in the Markdown as a note for the appendix, but the model is stated in the `Methods` (`instructions.md`).
 - `prompt` is the same block for prompt text, shown in a monospaced face.
 - `source="hand-written"` for an example written by a person. The page labels it "hand-written example". There is no other way to put text in one of these blocks.
 

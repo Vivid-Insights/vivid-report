@@ -607,9 +607,10 @@ class Builder:
                 self.issue("error", "conversation block has no 'Speaker: text' lines", where)
         if not hand and source != "unknown":
             self.verify_quote(source, a.get("key"), [t[1] for t in turns] if turns else [text], where)
+        # The page names neither the model nor the file: models belong in the Methods,
+        # and where an output is saved belongs in the appendix (instructions.md).
+        # `model=` and `source=` stay in the Markdown, and `source=` is still checked.
         bits = [word if not hand else f"{word} · hand-written example"]
-        if a.get("model"):
-            bits.append(esc(a["model"]))
         label = f'<div class="vr-quote-head"><span>{bits[0]}</span><span>{" · ".join(bits[1:])}</span></div>'
         if kind == "conversation":
             bot = a.get("assistant", "assistant").lower()
@@ -622,7 +623,7 @@ class Builder:
         else:
             paras = "".join(f"<p>{esc(p.strip())}</p>" for p in re.split(r"\n\s*\n", text) if p.strip())
             body = f'<div class="vr-quote-body">{paras}</div>'
-        src_line = "" if hand else f'<div class="vr-quote-source">Quoted word for word from <code>{esc(source)}</code>{(" · " + esc(a["key"])) if a.get("key") else ""}</div>'
+        src_line = "" if hand else '<div class="vr-quote-source">Quoted word for word from a saved output</div>'
         cap = ""
         ident = a.get("id")
         if ident:
