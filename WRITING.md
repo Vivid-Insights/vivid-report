@@ -93,6 +93,13 @@ Within a paragraph, and in the `Results`, open on the real example and let the g
 
 **Nothing in the report body is bold.** Not a sentence, a phrase or a run-in heading. Bold makes the argument for the reader; the prose has to earn its emphasis through sentence order and word choice. The bold labels the build adds — *Figure 1.*, *Definition 1.* — are labels, not emphasis. `Appendix.md` and the working documents are scanned rather than read, and bold lead-ins are fine there.
 
+## Numbers
+
+**Numbers go in tables; the text says what they mean.** A paragraph that lists means and ranges is a table written out badly. Put the numbers in the table and write about what it shows: who came out ahead, when, and how the order changed. Do not repeat a table's numbers in the prose. A number the argument needs that is not in any table may stay.
+
+> **Before:** With the detailed instructions the order reversed: Earpiece scored 3.50 to 3.78 on engagement against the agent's 3.15 to 3.34, and 3.09 to 3.35 on usefulness against 2.26 to 2.38.
+> **After:** With the detailed instructions the order reversed, and Earpiece's answers were rated more engaging and more useful whatever information the judge had.
+
 ## Honesty and grounding
 
 **Every number, finding and quotation comes from a file in this workspace or a cited source.** `[CHECK: …]` or `[TO WRITE: …]` beats a plausible invention. The release build refuses to publish with either in place.
@@ -143,6 +150,8 @@ Use these consistently. If an author changes one, change it here in the same tur
 ## Corrections log
 
 New rules from the authors' corrections go here, newest first, each with the date, who made it, and the sentence before and after. Say whether it was seen once or recurs.
+
+- **18 October 2026, David: numbers in tables, meaning in the text.** "This section is again too number heavy. FRAMEWORK Numbers should primarily be in tables and the text should explain what they mean." Before: "with usefulness between 4.16 and 4.39 against Earpiece's 2.66 to 2.95. With the detailed instructions the order reversed: Earpiece scored 3.50 to 3.78 on engagement against the agent's 3.15 to 3.34…" After: the paragraph says which answers were rated higher under which instructions, and the numbers stay in the table. Earlier the same day: "Avoid repeating numbers, just explain what the results show in the table." `Numbers` above; `Step 5` in `instructions.md`. *Recurs.*
 
 - **18 October 2026, David: no provenance in the article; models in the Methods.** "FRAMEWORK Never say what git submission and where the model is saved etc. in the article, unless asked. Also GPT version and software used used should be in methods. Not the results." Before (Results): "through Earpiece's own code (commit `736867f5`) … The analysts ran on GPT-4o and the functions on GPT-4o-mini. … Every model call is saved in `Code/outputs/function-examples/`." After: commits and save locations go in the appendix; models and software are stated once in the `Methods`; quoted blocks on the page no longer show their file or model. `Step 4` and `Step 5` in `instructions.md`. *Seen once.*
 
