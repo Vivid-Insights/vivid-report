@@ -184,7 +184,7 @@ async def main():
                    "repeat": a["repeat"], "level": level, "judge_model": JUDGE_MODEL}
             for attempt in range(3):
                 try:
-                    r = await client.messages.create(model=JUDGE_MODEL, max_tokens=1500,
+                    r = await client.messages.create(model=JUDGE_MODEL, max_tokens=3000,
                                                      system=JUDGE_SYSTEM,
                                                      messages=[{"role": "user", "content": content}])
                     text = "".join(b.text for b in r.content if b.type == "text")

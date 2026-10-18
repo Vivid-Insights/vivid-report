@@ -6,7 +6,8 @@ information and each system, the mean faithfulness, engagement and usefulness
 (1-5) and the mean number of hallucinations per answer, with 95% intervals from a
 bootstrap over players (answers about the same player are not independent); how
 often each system scores highest on a question for a player in a repeat; and the
-same by question and by women and men.
+same by question and by women and men; and the mean length of each system's
+answers, in characters and sentences.
 
 Every figure is given twice: with all answers, and leaving out Earpiece's answers
 that were its error message or empty ("Earpiece without its error answers"); the
@@ -20,6 +21,7 @@ from __future__ import annotations
 import csv
 import json
 import random
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -102,8 +104,16 @@ def main() -> None:
             errors.add((a["player_id"], a["question_id"], a["repeat"]))
     without = [j for j in rows if not (j["system"] == "earpiece"
                                       and (j["player_id"], j["question_id"], j["repeat"]) in errors)]
+    lengths = {}
+    for sname in SYSTEMS:
+        ans = [json.loads(l) for l in (DIR / f"answers-{sname}.jsonl").open(encoding="utf-8")]
+        ans = [a["answer"] for a in ans if a["answer"].strip()]
+        sent = [len([x for x in re.split(r"(?<=[.!?])\s+", a.strip()) if x.strip()]) for a in ans]
+        lengths[sname] = {"answers": len(ans), "mean_characters": round(sum(map(len, ans)) / len(ans)),
+                          "mean_sentences": round(sum(sent) / len(sent), 2)}
     summary = {
         "judgements": len(rows),
+        "answer_length": lengths,
         "earpiece_error_or_empty_answers": len(errors),
         "all_answers": describe(rows),
         "earpiece_without_error_answers": describe(without),
@@ -114,6 +124,7 @@ def main() -> None:
     }
     (DIR / "summary.json").write_text(json.dumps(summary, indent=1))
     print(len(rows), "judgements;", len(errors), "Earpiece error or empty answers")
+    print("answer length:", lengths)
     for name in ("all_answers", "earpiece_without_error_answers"):
         print("\n==", name)
         for level, d in summary[name].items():
