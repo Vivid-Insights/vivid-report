@@ -293,3 +293,117 @@
   pages: "1256–1265"
   publisher: Association for Computational Linguistics
   url: https://aclanthology.org/D10-1122/
+
+- id: jurafsky2026frames
+  type: chapter
+  author: ["Jurafsky, Daniel", "Martin, James H."]
+  title: "Frame-based dialogue systems"
+  year: 2026
+  container: "Speech and Language Processing, 3rd edition draft, Appendix K"
+  url: https://web.stanford.edu/~jurafsky/slp3/K.pdf
+  note: Draft of 19 August 2026; read 18 October 2026.
+
+- id: hudecek2023
+  type: chapter
+  author: ["Hudeček, Vojtěch", "Dušek, Ondřej"]
+  title: "Are LLMs all you need for task-oriented dialogue?"
+  year: 2023
+  container: "Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL)"
+  url: https://arxiv.org/abs/2304.06556
+
+- id: bocklisch2024
+  type: preprint
+  author: ["Bocklisch, Tom", "Werkmeister, Thomas", "Varshneya, Daksh", "Nichol, Alan"]
+  title: "Task-oriented dialogue with in-context learning"
+  year: 2024
+  container: arXiv
+  number: "2402.12234"
+  url: https://arxiv.org/abs/2402.12234
+  note: Preprint, not peer reviewed.
+
+- id: openaiagents2026
+  type: web
+  author: ["OpenAI"]
+  title: "Handoffs"
+  year: 2026
+  publisher: OpenAI Agents SDK documentation
+  url: https://openai.github.io/openai-agents-python/handoffs/
+  note: Accessed 18 October 2026.
+
+- id: schluntz2024
+  type: web
+  author: ["Schluntz, Erik", "Zhang, Barry"]
+  title: "Building effective agents"
+  year: 2024
+  publisher: Anthropic
+  url: https://www.anthropic.com/research/building-effective-agents
+  note: Published 19 December 2024; the page gives the first author as "Erik S.".
+
+- id: reiter1997
+  type: article
+  author: ["Reiter, Ehud", "Dale, Robert"]
+  title: "Building applied natural language generation systems"
+  year: 1997
+  container: Natural Language Engineering
+  volume: "3"
+  issue: "1"
+  pages: "57–87"
+  doi: 10.1017/S1351324997001502
+
+- id: kuhn2022
+  type: preprint
+  author: ["Kuhn, Lorenz", "Gal, Yarin", "Farquhar, Sebastian"]
+  title: "CLAM: Selective clarification for ambiguous questions with generative language models"
+  year: 2022
+  container: arXiv
+  number: "2212.07769"
+  url: https://arxiv.org/abs/2212.07769
+  note: Preprint, not peer reviewed.
+
+- id: chen2021
+  type: preprint
+  author: ["Chen, Anthony", "Gudipati, Pallavi", "Longpre, Shayne", "Ling, Xiao", "Singh, Sameer"]
+  title: "Evaluating entity disambiguation and the role of popularity in retrieval-based NLP"
+  year: 2021
+  container: arXiv
+  number: "2106.06830"
+  url: https://arxiv.org/abs/2106.06830
+  note: Preprint, not peer reviewed.
+
+- id: martens2025
+  type: article
+  author: ["Martens, David", "Hinns, James", "Dams, Camille", "Vergouwen, Mark", "Evgeniou, Theodoros"]
+  title: "Tell me a story! Narrative-driven XAI with large language models"
+  year: 2025
+  container: Decision Support Systems
+  volume: "191"
+  pages: "114402"
+  doi: 10.1016/j.dss.2025.114402
+
+- id: zheng2023
+  type: chapter
+  author: ["Zheng, Lianmin", "Chiang, Wei-Lin", "Sheng, Ying", "Zhuang, Siyuan", "Wu, Zhanghao", "others"]
+  title: "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena"
+  year: 2023
+  container: "Advances in Neural Information Processing Systems 36, Datasets and Benchmarks Track"
+  url: https://arxiv.org/abs/2306.05685
+
+- id: panickssery2024
+  type: preprint
+  author: ["Panickssery, Arjun", "Bowman, Samuel R.", "Feng, Shi"]
+  title: "LLM evaluators recognize and favor their own generations"
+  year: 2024
+  container: arXiv
+  number: "2404.13076"
+  url: https://arxiv.org/abs/2404.13076
+  note: Preprint, not peer reviewed.
+
+- id: shankar2024
+  type: preprint
+  author: ["Shankar, Shreya", "Zamfirescu-Pereira, J. D.", "Hartmann, Björn", "Parameswaran, Aditya G.", "Arawjo, Ian"]
+  title: "Who validates the validators? Aligning LLM-assisted evaluation of LLM outputs with human preferences"
+  year: 2024
+  container: arXiv
+  number: "2404.12272"
+  url: https://arxiv.org/abs/2404.12272
+  note: Preprint, not peer reviewed.
