@@ -321,7 +321,49 @@ Asked "Can you find players similar to her?", the Scout called `find_similar_pla
 
 All three runs end with the offer.
 
+### Answer Evaluation
+
+We put ten questions that the Scout is designed to answer, about each of 20 players (10 women and 10 men), to Earpiece and to a Claude agent that had Twelve's data tools but none of Earpiece's descriptions and was asked to answer in as many sentences as Earpiece had. Each system answered every question three times. A further Claude judged every answer without being told which system wrote it, on the criteria of the evaluation by @caut2025: faithfulness, engagement and usefulness, each from 1 to 5, and a list of the claims the information did not support. A GPT-4o agent, set up as the Claude agent, was judged in the same way and scored lowest on faithfulness, engagement and usefulness throughout. The 27 of Earpiece's 600 answers that were an error message or empty are left out.
+
+#### Faithfulness
+
+The judge rated faithfulness four times, each time given a different set of information about the player (@tab-faithfulness).
+
+::: table {#tab-faithfulness width=wide}
+Faithfulness of the answers, judged with four sets of information about the player. Faithfulness is the mean rating from 1 to 5; unsupported claims is the mean number per answer. Each is given ± the standard deviation over answers. Won: the share of the 573 questions, players and repeats on which Earpiece's answer was rated more faithful than the Claude agent's, and less; the rest were tied. Judged with the detailed instructions of @tab-engagement.
+| Information | What the judge was given | Earpiece faithfulness | Claude agent faithfulness | Won, Earpiece / Claude agent | Earpiece unsupported claims | Claude agent unsupported claims |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Raw data | The player's quality and metric scores against players in the same position, the scores by zone of the pitch, and what a fixed set of the agent's data tools return about the player | 3.78 ± 0.72 | 4.21 ± 0.81 | 20% / 48% | 0.56 ± 0.67 | 0.75 ± 0.97 |
+| Raw data and explanations | The raw data, and the explanations of the data in the prompt of the Earpiece function that answered | 3.82 ± 0.75 | 4.17 ± 0.81 | 24% / 45% | 0.70 ± 0.77 | 0.86 ± 1.08 |
+| Raw data, explanations and synthetic text | The raw data and explanations, and Earpiece's synthetic text for the question | 4.03 ± 0.69 | 4.04 ± 0.83 | 34% / 35% | 0.55 ± 0.61 | 0.89 ± 0.99 |
+| Synthetic text only | Earpiece's synthetic text for the question, and nothing else | 4.02 ± 0.69 | 1.58 ± 0.49 | 99% / 0% | 0.96 ± 0.83 | 5.87 ± 2.17 |
+:::
+
+Given the raw data, the judge rated the Claude agent's answers more faithful than Earpiece's. The more of Earpiece's own material the judge was given, the higher Earpiece scored and the lower the agent, until, given the synthetic text as well, the two were level. Earpiece's answers had fewer unsupported claims whatever the judge was given. Against the synthetic text alone, which is how Caut and colleagues' judge works, nearly every Earpiece answer was rated more faithful than the agent's, and the agent's answers had several times as many unsupported claims. Judging against the synthetic text alone favours Earpiece by its design: the synthetic text is what Earpiece wrote from, so a correct statement the agent took from other data counts as unsupported. The GPT-4o agent had the most unsupported claims whenever the judge had the raw data, and fewer than the Claude agent against the synthetic text alone.
+
+#### Engagement and Usefulness
+
+Engagement and usefulness were judged under two sets of instructions, with each of the three sets of information that include the raw data (@tab-engagement). With the basic instructions, the judge was asked how engaging the answer is to read and how useful it is for understanding the player or making a decision about them. With the detailed instructions, it was told that an engaging answer tells the scout about the player in footballing terms without overwhelming them with numbers, giving a number only in comparison with other players, and that an answer is useful only if it compares the player with similar players and explains what any numbers mean.
+
+::: table {#tab-engagement width=wide}
+Engagement and usefulness under basic and detailed instructions to the judge, with each of the three sets of information in @tab-faithfulness that include the raw data. Mean ratings from 1 to 5, ± the standard deviation over answers. Won: the share of the 573 questions, players and repeats on which Earpiece's answer was rated higher than the Claude agent's, and lower; the rest were tied.
+| Instructions | Information | Earpiece engagement | Claude agent engagement | Engagement won, Earpiece / Claude agent | Earpiece usefulness | Claude agent usefulness | Usefulness won, Earpiece / Claude agent |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Basic | Raw data | 2.83 ± 0.40 | 3.92 ± 0.35 | 0% / 94% | 2.66 ± 0.57 | 4.38 ± 0.60 | <1% / 96% |
+| Basic | Raw data and explanations | 2.92 ± 0.37 | 3.93 ± 0.29 | 0% / 93% | 2.91 ± 0.62 | 4.39 ± 0.63 | 1% / 90% |
+| Basic | Raw data, explanations and synthetic text | 3.00 ± 0.39 | 3.94 ± 0.30 | <1% / 88% | 2.95 ± 0.59 | 4.16 ± 0.66 | 2% / 84% |
+| Detailed | Raw data | 3.50 ± 0.57 | 3.34 ± 0.52 | 42% / 27% | 3.09 ± 0.71 | 2.30 ± 0.50 | 67% / 11% |
+| Detailed | Raw data and explanations | 3.78 ± 0.47 | 3.27 ± 0.54 | 60% / 12% | 3.31 ± 0.67 | 2.38 ± 0.53 | 76% / 7% |
+| Detailed | Raw data, explanations and synthetic text | 3.74 ± 0.51 | 3.15 ± 0.51 | 65% / 11% | 3.35 ± 0.67 | 2.26 ± 0.48 | 84% / 4% |
+:::
+
+With the basic instructions, the judge rated the Claude agent's answers more engaging and more useful than Earpiece's whatever information it was given, with usefulness between 4.16 and 4.39 against Earpiece's 2.66 to 2.95. With the detailed instructions the order reversed: Earpiece scored 3.50 to 3.78 on engagement against the agent's 3.15 to 3.34, and 3.09 to 3.35 on usefulness against 2.26 to 2.38. In a sample of 300 of the answers, the agent's gave 4.8 figures per sentence and Earpiece's almost none.
+
 ## Discussion
+
+The choose-your-own-adventure architecture which we have described here relies as much on coded  than  
+
+Most of the structure which ensures  Earpiece reliable is done in code rather than in prompts. Small sets of values are listed for the model and large ones looked up afterwards; access and the end of a chain are enforced by not offering functions; a name is resolved once per chat. Prompts are still where the boundaries between analysts are drawn, and those boundaries grow with the number of analysts.
 
 Most of what keeps Earpiece reliable is done in code rather than in prompts. Small sets of values are listed for the model and large ones looked up afterwards; access and the end of a chain are enforced by not offering functions; a name is resolved once per chat. Prompts are still where the boundaries between analysts are drawn, and those boundaries grow with the number of analysts.
 
