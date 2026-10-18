@@ -506,3 +506,46 @@
   issue: "6"
   pages: "1229–1254"
   doi: 10.1017/S1351324923000372
+
+- id: kale2020
+  type: chapter
+  author: ["Kale, Mihir", "Rastogi, Abhinav"]
+  title: "Template guided text generation for task-oriented dialogue"
+  year: 2020
+  container: "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+  pages: "6505–6520"
+  doi: 10.18653/v1/2020.emnlp-main.527
+
+- id: kasner2020
+  type: chapter
+  author: ["Kasner, Zdeněk", "Dušek, Ondřej"]
+  title: "Data-to-text generation with iterative text editing"
+  year: 2020
+  container: "Proceedings of the 13th International Conference on Natural Language Generation (INLG)"
+  pages: "60–67"
+  doi: 10.18653/v1/2020.inlg-1.9
+
+- id: kim2018
+  type: chapter
+  author: ["Kim, Young-Bum", "Kim, Dongchan", "Kim, Joo-Kyung", "Sarikaya, Ruhi"]
+  title: "A scalable neural shortlisting-reranking approach for large-scale domain classification in natural language understanding"
+  year: 2018
+  container: "Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)"
+  url: https://arxiv.org/abs/1804.08064
+
+- id: shrimal2024
+  type: chapter
+  author: ["Shrimal, Anubhav", "Kanagaraj, Stanley", "Biswas, Kriti", "Raghuraman, Swarnalatha", "Nediyanchath, Anish", "others"]
+  title: "MARCO: Multi-agent real-time chat orchestration"
+  year: 2024
+  container: "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track"
+  url: https://arxiv.org/abs/2410.21784
+
+- id: chiang2024badge
+  type: chapter
+  author: ["Chiang, Shang-Hsuan", "Chao, Lin-Wei", "Wang, Kuang-Da", "Wang, Chih-Chuan", "Peng, Wen-Chih"]
+  title: "BADGE: BADminton report generation and evaluation with LLM"
+  year: 2024
+  container: "IJCAI 2024 Workshop on Intelligent Technologies for Precision Sports Science (IT4PSS)"
+  url: https://arxiv.org/abs/2406.18116
+  note: Workshop paper.
