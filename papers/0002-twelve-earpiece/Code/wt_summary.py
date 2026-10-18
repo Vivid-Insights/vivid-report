@@ -90,9 +90,9 @@ def describe(rows):
 def main() -> None:
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", choices=["caut", "defined"], default="caut")
+    ap.add_argument("--variant", choices=["caut", "defined", "defined-agents-full"], default="caut")
     variant = ap.parse_args().variant
-    suffix = "" if variant == "caut" else "-defined"
+    suffix = "" if variant == "caut" else f"-{variant}"
     players = {r["player_id"]: r for r in csv.DictReader((DIR / "players.csv").open(encoding="utf-8"))}
     J = [json.loads(l) for l in (DIR / f"judgments{suffix}.jsonl").open(encoding="utf-8")]
     J = [j for j in J if "faithfulness" in j]

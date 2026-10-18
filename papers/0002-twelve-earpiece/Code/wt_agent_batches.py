@@ -14,8 +14,13 @@ Runs in the Earpiece API's environment (it reuses `wt_judge.py`'s functions):
     PYTHONPATH=src .venv/bin/python <path>/Code/wt_agent_batches.py
 
 Writes `outputs/wordalisation-test/agent-judge/batch-NN.md` and `key.json`.
+
+With `--full` (David, 19 October 2026: "run the full test"): all 1,800 answers at all
+three levels, one batch per player and level (60 batches of up to 90 answers), in
+`outputs/wordalisation-test/agent-judge-full/`.
 """
 
+import argparse
 import csv
 import importlib.util
 import json
@@ -56,7 +61,62 @@ line per answer, in this form:
 """
 
 
+def build_full() -> None:
+    """All 1,800 answers at all three levels: one batch per player and level, with up to
+    90 answers (10 questions x 3 repeats x 3 systems) shuffled under opaque ids."""
+    rng = random.Random(SEED)
+    out = DIR / "agent-judge-full"
+    raw = json.loads((DIR / "rawdata.json").read_text())
+    players = list(csv.DictReader((DIR / "players.csv").open(encoding="utf-8")))
+    answers = {s: {(a["player_id"], a["question_id"], a["repeat"]): a
+                   for a in map(json.loads, (DIR / f"answers-{s}.jsonl").open(encoding="utf-8"))}
+               for s in J.SYSTEMS}
+    out.mkdir(parents=True, exist_ok=True)
+    key = {}
+    for p in players:
+        pid = p["player_id"]
+        for level in (1, 2, 3):
+            parts = [INSTRUCTIONS.replace("30 answers", "the answers").replace(
+                         "one line for each of the 30", "one line for each"),
+                     "## Data about the player\n" + J.raw_text(raw[pid])]
+            items = []
+            for q in range(1, 11):
+                ear = answers["earpiece"][(pid, q, 1)]
+                knowledge, synthetic = J.knowledge_and_synthetic(ear)
+                block = f"## Question {q}: {ear['question']}"
+                if level >= 2:
+                    block += f"\n\n### What the data means\n{knowledge or '(none)'}"
+                if level >= 3:
+                    block += (f"\n\n### Rule-based description of this player's data for this "
+                              f"question\n{synthetic or '(none)'}")
+                parts.append(block)
+                for s in J.SYSTEMS:
+                    for r in (1, 2, 3):
+                        a = answers[s].get((pid, q, r))
+                        if a and a["answer"].strip():
+                            items.append((s, q, r, a))
+            rng.shuffle(items)
+            name = f"{pid}-L{level}"
+            parts.append("## Answers to rate")
+            for s, q, r, a in items:
+                item_id = f"{name}-{rng.randrange(16**8):08x}"
+                key[item_id] = {"system": s, "player_id": pid, "question_id": q, "repeat": r,
+                                "level": level}
+                parts.append(f"### Answer {item_id} (to question {q})\n{J.strip_markdown(a['answer'])}")
+            parts.append(f"## Results file\nWrite your ratings to: {out / f'results-{name}.jsonl'}")
+            (out / f"batch-{name}.md").write_text("\n\n".join(parts), encoding="utf-8")
+            print(f"batch-{name}: {p['name']}, level {level}, {len(items)} answers,",
+                  f"{len(chr(10).join(parts))} characters")
+    (out / "key.json").write_text(json.dumps(key, indent=1))
+    print(len(key), "answers in", len(players) * 3, "batches")
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--full", action="store_true", help="all answers at all three levels")
+    if ap.parse_args().full:
+        build_full()
+        return
     rng = random.Random(SEED)
     raw = json.loads((DIR / "rawdata.json").read_text())
     players = list(csv.DictReader((DIR / "players.csv").open(encoding="utf-8")))

@@ -10,7 +10,11 @@ bootstrap over players, the share of question-player cells in which each system
 scores highest, and the number of figures per sentence in each system's answers
 (digits, counted by script, no model).
 
-    cd Code && uv run python ../papers/0002-twelve-earpiece/Code/wt_agent_collect.py
+    cd Code && uv run python ../papers/0002-twelve-earpiece/Code/wt_agent_collect.py [--full]
+
+With `--full`: collects `agent-judge-full/results-*.jsonl` into
+`judgments-defined-agents-full.jsonl`, in the first judgement's format, for
+`wt_summary.py --variant defined-agents-full`.
 """
 
 import json
@@ -71,7 +75,42 @@ def figures_per_sentence(text):
     return len(re.findall(r"\d+(?:[.,]\d+)?%?", text)) / len(sentences)
 
 
+def collect_full() -> None:
+    """The full second judgement (all answers, all levels) in the first judgement's format."""
+    aj = DIR / "agent-judge-full"
+    key = json.loads((aj / "key.json").read_text())
+    rows, problems, seen = [], [], set()
+    for f in sorted(aj.glob("results-*.jsonl")):
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                r = json.loads(line)
+                k = key[r["id"]]
+                if r["id"] in seen:
+                    continue
+                seen.add(r["id"])
+                rows.append({**k, "variant": "defined-agents",
+                             "faithfulness": int(r["faithfulness"]), "engagement": int(r["engagement"]),
+                             "usefulness": int(r["usefulness"]),
+                             "hallucinations": list(r.get("hallucinations") or []),
+                             "reason": r.get("reason", "")})
+            except Exception as err:  # pylint: disable=broad-except
+                problems.append(f"{f.name}: {type(err).__name__} {err}")
+    with (DIR / "judgments-defined-agents-full.jsonl").open("w", encoding="utf-8") as f:
+        for j in rows:
+            f.write(json.dumps(j, ensure_ascii=False) + "\n")
+    missing = sorted(set(key) - seen)
+    batches = sorted({m.rsplit("-", 1)[0] for m in missing})
+    print(len(rows), "of", len(key), "judged;", len(problems), "problems;",
+          len(missing), "missing in", len(batches), "batches", batches[:20])
+
+
 def main() -> None:
+    import sys
+    if "--full" in sys.argv:
+        collect_full()
+        return
     key = json.loads((AJ / "key.json").read_text())
     second, problems = [], []
     for f in sorted(AJ.glob("results-*.jsonl")):
