@@ -36,6 +36,7 @@ Reads `players.csv`, `rawdata.json`, `answers-*.jsonl`; appends to `judgments.js
 from __future__ import annotations
 
 import argparse
+import os
 import asyncio
 import csv
 import json
@@ -46,6 +47,20 @@ from pathlib import Path
 import anthropic
 
 from config import config
+
+
+def workspace_anthropic_key() -> str:
+    """The Anthropic key of the report workspace: ANTHROPIC_API_KEY from the environment,
+    or from the `.env` at the top of the workspace (not committed). Never Twelve's key."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    env = Path(__file__).resolve().parents[3] / ".env"
+    if not key and env.exists():
+        for line in env.read_text().splitlines():
+            if line.strip().startswith("ANTHROPIC_API_KEY="):
+                key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if not key:
+        raise SystemExit("Set ANTHROPIC_API_KEY in the environment or in the workspace's .env")
+    return key
 
 DIR = Path(__file__).resolve().parent / "outputs" / "wordalisation-test"
 JUDGE_MODEL = "claude-opus-5-5"
@@ -145,9 +160,7 @@ async def main():
     ap.add_argument("--concurrency", type=int, default=10)
     args = ap.parse_args()
 
-    key = next(c for c in config.llm.models if c.alias == "anthropic-opus")
-    client = anthropic.AsyncAnthropic(api_key=key.api_key, base_url=key.base_url or None,
-                                      max_retries=6)
+    client = anthropic.AsyncAnthropic(api_key=workspace_anthropic_key(), max_retries=6)
     raw = json.loads((DIR / "rawdata.json").read_text())
     answers = {s: [json.loads(l) for l in (DIR / f"answers-{s}.jsonl").open(encoding="utf-8")]
                for s in SYSTEMS if (DIR / f"answers-{s}.jsonl").exists()}

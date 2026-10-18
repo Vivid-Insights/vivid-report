@@ -33,6 +33,7 @@ Appends to `outputs/wordalisation-test/answers-<system>.jsonl`.
 from __future__ import annotations
 
 import argparse
+import os
 import asyncio
 import importlib.util
 import re
@@ -60,6 +61,20 @@ from services.mcp_integration.mcp_client import MCPClientManager
 from services.workspaces_integration import WorkspacesClient, RegistryManager
 from services.workspaces_integration.registry_manager import set_registry_manager
 from analysts.player.scout.analyst import Scout
+
+
+def workspace_anthropic_key() -> str:
+    """The Anthropic key of the report workspace: ANTHROPIC_API_KEY from the environment,
+    or from the `.env` at the top of the workspace (not committed). Never Twelve's key."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    env = Path(__file__).resolve().parents[3] / ".env"
+    if not key and env.exists():
+        for line in env.read_text().splitlines():
+            if line.strip().startswith("ANTHROPIC_API_KEY="):
+                key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if not key:
+        raise SystemExit("Set ANTHROPIC_API_KEY in the environment or in the workspace's .env")
+    return key
 
 DIR = Path(__file__).resolve().parent / "outputs" / "wordalisation-test"
 WORKSPACE = "wksp_aWsUNyFPMrVh5N"
@@ -273,8 +288,7 @@ async def main():
             sentences[(r["player_id"], r["question_id"], r["repeat"])] = count_sentences(r["answer"])
         env["sentences"] = sentences
         if args.system == "claude":
-            key = next(c for c in config.llm.models if c.alias == "anthropic-opus")
-            env["anthropic"] = anthropic.AsyncAnthropic(api_key=key.api_key, base_url=key.base_url or None)
+            env["anthropic"] = anthropic.AsyncAnthropic(api_key=workspace_anthropic_key())
             env["anthropic_tools"] = [{"name": t["function"]["name"],
                                        "description": t["function"].get("description", "")[:1000],
                                        "input_schema": t["function"]["parameters"]} for t in openai_tools]
