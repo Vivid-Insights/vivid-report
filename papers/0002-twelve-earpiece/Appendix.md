@@ -120,6 +120,7 @@ Agreed with David, 17 October 2026: 400 players (300 men, 100 women) from less-k
 | `Code/name_test_run.py` | Asks the receptionist about each player, misspelled and correct, and scores the redirect; resumable. Earpiece API environment. | appends to `outputs/name-test/runs.jsonl` |
 | `Code/name_test_wrong_players.py` | Names the player each wrong-player run resolved to (full and playing name, team). Earpiece API environment. | reads `runs-name.jsonl`, `runs-team.jsonl`; writes `wrong-players.csv` |
 | `Code/wt_answers.py` and `Code/wt_judge.py` | The wordalisation test's answers (Earpiece, Claude agent, GPT-4o agent) and blind judgements; see `Workings`. Earpiece API environment. Claude calls use the workspace's own key, `ANTHROPIC_API_KEY` from the environment or the workspace's `.env`, never Twelve's. | writes `outputs/wordalisation-test/answers-*.jsonl`, `judgments.jsonl` |
+| `Code/wt_export.py` | Writes the wordalisation test's answers (three systems side by side) and judgements as CSV for reading by hand. Workspace environment. | writes `outputs/wordalisation-test/answers.csv`, `judgments.csv` |
 | `Code/name_test_summary.py` | Outcome rates with 95% Wilson intervals. Workspace environment. | writes `outputs/name-test/summary.json` |
 
 ## References
