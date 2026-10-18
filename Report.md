@@ -251,7 +251,7 @@ Outcomes of the name test. Each column is one question per player: the name alon
 | Players | 400 | 400 | 397 | 397 |
 :::
 
-Spelled correctly but without a team, 26 of the 400 names led to another player, each known by the same or a similar name. Players known by one name were most affected: 11 of 19, Robinho among them. With the team named, 396 of 397 led to the right player. Misspelled, 62% of names alone reached the right player and 27% another player, against 84% and 7% with the team. A missing or abbreviated name word gained most from the team, from 45% right to 79%, and single-letter errors went from 77% to 90%. The hard misspellings reached the right player in 42% of cases without the team and 61% with it; even with the team, 19 of these 100 led to another player, about as many as were asked to clarify. Each question was asked once, and the shares of error kinds come from hospital records, not from scouts typing names.
+Spelled correctly but without a team, the names that led to another player each belonged to someone known by the same or a similar name. Players known by one name were most affected: 11 of 19, Robinho among them. With the team named, all but one led to the right player. Misspelled, a name alone often led to another player; with the team named, far fewer did. A missing or abbreviated name word gained most from the team, from 45% right to 79%, and single-letter errors went from 77% to 90%. The hard misspellings reached the right player in 42% of cases without the team and 61% with it; even with the team, 19 of these 100 led to another player, about as many as were asked to clarify. Each question was asked once, and the shares of error kinds come from hospital records, not from scouts typing names.
 
 ### Functions
 
@@ -365,7 +365,7 @@ Engagement and usefulness under basic and detailed instructions to the judge, wi
 | Detailed | Raw data, explanations and synthetic text | 3.74 ± 0.51 | 3.15 ± 0.51 | 65% / 11% | 3.35 ± 0.67 | 2.26 ± 0.48 | 84% / 4% |
 :::
 
-With the basic instructions, the judge rated the Claude agent's answers more engaging and more useful than Earpiece's whatever information it was given, with usefulness between 4.16 and 4.39 against Earpiece's 2.66 to 2.95. With the detailed instructions the order reversed: Earpiece scored 3.50 to 3.78 on engagement against the agent's 3.15 to 3.34, and 3.09 to 3.35 on usefulness against 2.26 to 2.38. In a sample of 300 of the answers, the agent's gave 4.8 figures per sentence and Earpiece's almost none.
+With the basic instructions, the judge rated the Claude agent's answer more engaging and more useful than Earpiece's to nearly every question, whatever information it was given. With the detailed instructions the order reversed: Earpiece's answers were rated more engaging and more useful, and its lead on usefulness grew the more of Earpiece's material the judge had. In a sample of the answers, the agent's gave several figures in each sentence and Earpiece's almost none.
 
 ## Discussion
 
