@@ -22,6 +22,10 @@ SYSTEMS = ["earpiece", "claude", "gpt4o"]
 
 
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--variant", choices=["caut", "defined"], default="caut")
+    suffix = "" if ap.parse_args().variant == "caut" else "-defined"
     players = {r["player_id"]: r for r in csv.DictReader((DIR / "players.csv").open(encoding="utf-8"))}
     answers = {s: {(a["player_id"], a["question_id"], a["repeat"]): a
                    for a in map(json.loads, (DIR / f"answers-{s}.jsonl").open(encoding="utf-8"))}
@@ -41,12 +45,12 @@ def main() -> None:
                         e.get("answer", ""), c.get("answer", ""), g.get("answer", "")])
 
     seen = set()
-    with (DIR / "judgments.csv").open("w", newline="", encoding="utf-8") as f:
+    with (DIR / f"judgments{suffix}.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["system", "player", "gender", "question_id", "question", "repeat", "level",
                     "faithfulness", "engagement", "usefulness", "n_hallucinations",
                     "hallucinations", "reason"])
-        for j in map(json.loads, (DIR / "judgments.jsonl").open(encoding="utf-8")):
+        for j in map(json.loads, (DIR / f"judgments{suffix}.jsonl").open(encoding="utf-8")):
             key = (j["system"], j["player_id"], j["question_id"], j["repeat"], j["level"])
             if "faithfulness" not in j or key in seen:
                 continue
@@ -57,7 +61,7 @@ def main() -> None:
                         j["level"], j["faithfulness"], j["engagement"], j["usefulness"],
                         len(j["hallucinations"]), " | ".join(j["hallucinations"]),
                         j.get("reason", "")])
-    print("wrote", DIR / "answers.csv", "and", DIR / "judgments.csv", f"({len(seen)} judgements)")
+    print("wrote", DIR / "answers.csv", "and", DIR / f"judgments{suffix}.csv", f"({len(seen)} judgements)")
 
 
 if __name__ == "__main__":

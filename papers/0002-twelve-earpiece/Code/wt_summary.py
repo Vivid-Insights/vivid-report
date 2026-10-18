@@ -13,7 +13,7 @@ Every figure is given twice: with all answers, and leaving out Earpiece's answer
 that were its error message or empty ("Earpiece without its error answers"); the
 agents' answers are the same in both.
 
-    cd Code && uv run python ../papers/0002-twelve-earpiece/Code/wt_summary.py
+    cd Code && uv run python ../papers/0002-twelve-earpiece/Code/wt_summary.py [--variant defined]
 """
 
 from __future__ import annotations
@@ -88,8 +88,13 @@ def describe(rows):
 
 
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--variant", choices=["caut", "defined"], default="caut")
+    variant = ap.parse_args().variant
+    suffix = "" if variant == "caut" else "-defined"
     players = {r["player_id"]: r for r in csv.DictReader((DIR / "players.csv").open(encoding="utf-8"))}
-    J = [json.loads(l) for l in (DIR / "judgments.jsonl").open(encoding="utf-8")]
+    J = [json.loads(l) for l in (DIR / f"judgments{suffix}.jsonl").open(encoding="utf-8")]
     J = [j for j in J if "faithfulness" in j]
     seen, rows = set(), []
     for j in J:
@@ -122,7 +127,7 @@ def main() -> None:
         "by_gender": {g: describe([j for j in without if players[j["player_id"]]["gender"] == g])
                       for g in ("female", "male")},
     }
-    (DIR / "summary.json").write_text(json.dumps(summary, indent=1))
+    (DIR / f"summary{suffix}.json").write_text(json.dumps(summary, indent=1))
     print(len(rows), "judgements;", len(errors), "Earpiece error or empty answers")
     print("answer length:", lengths)
     for name in ("all_answers", "earpiece_without_error_answers"):

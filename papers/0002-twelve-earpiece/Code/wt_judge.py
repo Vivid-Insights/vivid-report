@@ -30,7 +30,15 @@ Runs in the Earpiece API's environment (for the Anthropic key) and can be resume
     cd ~/GitHub/twelve-earpiece-api
     PYTHONPATH=src .venv/bin/python <path>/Code/wt_judge.py [--limit N] [--concurrency 10]
 
-Reads `players.csv`, `rawdata.json`, `answers-*.jsonl`; appends to `judgments.jsonl`.
+With `--variant defined` the judge is given David's definitions of engagement and
+usefulness (19 October 2026): "an engaging text is one which tells the scout about
+the player in footballing terms without overwhelming with numbers and stats. If it
+provides a number it should do so in context of comparing to other players. A text
+is only useful if it compares a player to other similar players. If it provides
+numbers it should explain what they mean."
+
+Reads `players.csv`, `rawdata.json`, `answers-*.jsonl`; appends to `judgments.jsonl`
+(or `judgments-defined.jsonl`).
 """
 
 from __future__ import annotations
@@ -82,6 +90,29 @@ JUDGE_SYSTEM = (
     '{"faithfulness": 1-5, "engagement": 1-5, "usefulness": 1-5, '
     '"hallucinations": ["..."], "reason": "one or two sentences"}'
 )
+
+
+#: The second judgement (David, 19 October 2026): engagement and usefulness defined
+#: in his words; faithfulness and hallucinations as before.
+JUDGE_SYSTEM_DEFINED = (
+    "You are evaluating one answer written for a scout at a football club, who asked a "
+    "question about a player. You are given information about the player, the question and "
+    "the answer. Rate the answer on three criteria, each from 1 (very poor) to 5 (very good):\n"
+    "- faithfulness: how faithfully the answer represents the information given;\n"
+    "- engagement: an engaging answer tells the scout about the player in footballing terms, "
+    "without overwhelming them with numbers and statistics. If it gives a number, it does so "
+    "in the context of comparing the player with other players;\n"
+    "- usefulness: an answer is only useful if it compares the player with other, similar "
+    "players. If it gives numbers, it explains what they mean.\n"
+    "Also list every hallucination in the answer, that is every unsupported or fabricated claim: "
+    "a statement the information does not support or that contradicts it. Quote each one "
+    "briefly. Judge only this answer against the information given.\n"
+    "Reply with JSON only, in this form: "
+    '{"faithfulness": 1-5, "engagement": 1-5, "usefulness": 1-5, '
+    '"hallucinations": ["..."], "reason": "one or two sentences"}'
+)
+VARIANTS = {"caut": (JUDGE_SYSTEM, "judgments.jsonl"),
+            "defined": (JUDGE_SYSTEM_DEFINED, "judgments-defined.jsonl")}
 
 
 def strip_markdown(text: str) -> str:
@@ -158,6 +189,8 @@ async def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--concurrency", type=int, default=10)
+    ap.add_argument("--variant", choices=list(VARIANTS), default="caut",
+                    help="caut: Caut et al.'s criteria undefined; defined: David's definitions")
     args = ap.parse_args()
 
     client = anthropic.AsyncAnthropic(api_key=workspace_anthropic_key(), max_retries=6)
@@ -166,7 +199,8 @@ async def main():
                for s in SYSTEMS if (DIR / f"answers-{s}.jsonl").exists()}
     ear1 = {(r["player_id"], r["question_id"]): r for r in answers["earpiece"] if r["repeat"] == 1}
 
-    out = DIR / "judgments.jsonl"
+    system_prompt, out_name = VARIANTS[args.variant]
+    out = DIR / out_name
     done = set()
     if out.exists():
         for line in out.open(encoding="utf-8"):
@@ -194,11 +228,12 @@ async def main():
                        {"type": "text", "text": f"## Question\n{a['question']}\n\n## Answer\n"
                                                 f"{strip_markdown(a['answer'])}"}]
             rec = {"system": system, "player_id": a["player_id"], "question_id": a["question_id"],
-                   "repeat": a["repeat"], "level": level, "judge_model": JUDGE_MODEL}
+                   "repeat": a["repeat"], "level": level, "judge_model": JUDGE_MODEL,
+                   "variant": args.variant}
             for attempt in range(3):
                 try:
                     r = await client.messages.create(model=JUDGE_MODEL, max_tokens=3000,
-                                                     system=JUDGE_SYSTEM,
+                                                     system=system_prompt,
                                                      messages=[{"role": "user", "content": content}])
                     text = "".join(b.text for b in r.content if b.type == "text")
                     rec.update(parse(text), raw_reply=text,
