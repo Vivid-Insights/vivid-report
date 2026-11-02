@@ -73,9 +73,30 @@ My reading of the sources above, assembled 2 November 2026 so David can correct 
 
 How this meets David's sentence. Positions 1, 3 and 4 are *how we use and interpret models*. Position 2 is *how we build systems which communicate the conclusions from models*. Positions 5 and 6 are what changed, and are the reason the two halves now belong in one journal rather than two literatures.
 
+### David's third note, 2 November 2026
+
+The journal's scope is wider than David's own position. His position is one within a variety of positions on this area. What he wants is a forum to discuss different positions and approaches of this type.
+
+This changes what the paper has to do. The six positions above are then the editor's position, not the journal's line, and the paper's job is to say what the *area* is — the thing these are positions about — and what makes a position one of them. The material gathered so far is almost all David's own side of it.
+
+### Axes of disagreement already present in the material
+
+Where the sources themselves record someone holding the other view. Candidates for the variety the forum would hold, not a decision.
+
+| Axis | One side | The other |
+| --- | --- | --- |
+| Mechanism or data | Build a model of how the system works and interpret it | Breiman's second culture: treat the mechanism as unknown and predict well. Named as the opening move in *Building models* and lesson 4 |
+| Is the modelling cycle still needed | Formulate, fit, predict, refine | *Building models*: "some researchers have even questioned whether such a modelling cycle is needed at all in the age of AI" |
+| Interpretable or explained after the fact | Rudin: build interpretable models for high-stakes decisions | Post-hoc explanation of a black box, SHAP on gradient boosting, used as the contrast case in lesson 4 |
+| Who chooses the next step | The code offers options and the model picks: Earpiece's choose-your-own-adventure | The agent directs its own use of tools. Schluntz and colleagues' distinction, cited in paper 0003 |
+| How much the LLM writes | Wordalisation: the LLM writes every text from a synthetic text the code generates | Dale and colleagues: keep the templates, because reliability is what sets them apart, and use the LLM to help a person write them. Cited in paper 0003 |
+| How far automation goes | The steps automate; the judgement does not (2.7) | Fully automated research as a goal; the benchmark literature 2.7 draws on |
+| What a model is for | A model in serious use is made largely true of the world (*Coherence*) | Box: all models are wrong, some are useful — the position argued against in *Most models are true* |
+
 ### Questions this raises
 
-- The five article types in David's first note are broader than this line — "applications of large language models" and "tutorials" are topics, not positions. Is the journal's scope the argument above, or a list of subject areas with the argument as its editorial?
+- Superseded by David's third note: the journal's scope is wider than the argument above. Open instead: what is the area, stated so that someone who disagrees with David still recognises their work as belonging in it?
+- Where do the other positions come from? Everything gathered so far is David's side. A forum paper needs the people it is inviting.
 - The first note says the steps of statistical analysis are "nearly fully automated". The benchmark in 2.7 supports it for the steps and contradicts it for the analysis as a whole. Which does the paper claim?
 - Chapter 2.7's finding — that a decision procedure transfers and domain content does not — cuts slightly against the Twelve philosophy's emphasis on stakeholders' normative knowledge. Both may be right, but the paper would have to say how.
 
@@ -112,6 +133,7 @@ How this meets David's sentence. Positions 1, 3 and 4 are *how we use and interp
 | 2 | Step 1 begun. David's starting note on the journal's concept and its five article types recorded in `Framing`; `agentic-ai-for-statistics-and-data-science` recorded in `Source Material` at commit `3d858b6`, not yet read. `Report.md` untouched. | this file |
 | 3 | Step 1 continued. David's second note recorded in `Framing`: the journal is about how we use and interpret models and how we build systems that communicate the conclusions from models. Four further sources opened and described in `Source Material`: Twelve's `Algorithms and Models` and its `Modelling Philosophy` page (marked do not share externally), the `Models and AI` folder of David's vault, the `context-engineering` course at commit `dc7c387`, and the workspace's first two papers. `Report.md` untouched. | this file |
 | 4 | Step 1 continued. David granted permission for the Twelve and vault material. Six source files copied unchanged into `Attachments/` with checksums. `agentic-ai-for-statistics-and-data-science` read (Overview, 1.1, 1.3, 1.5, 1.7, 2.7) and described. A reading of David's position across all the sources written into `Framing` as `The picture from David's previous writing`, for him to correct. `Report.md` untouched. | this file, `Attachments/` |
+| 5 | Step 1 continued. David set the scope: the journal is a forum for a variety of positions on the area, and his own position is one of them. Recorded in `Framing` with the axes of disagreement already present in the material. The six positions recorded in entry 4 stand as the editor's position, not the journal's line. `Report.md` untouched. | this file |
 
 ## Code Summary
 
