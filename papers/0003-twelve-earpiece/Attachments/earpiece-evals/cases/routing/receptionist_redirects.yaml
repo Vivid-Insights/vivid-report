@@ -1,0 +1,108 @@
+suite: receptionist/redirects
+threshold: 0.93
+analyst: receptionist
+
+cases:
+  - id: bare-player-name
+    query: "Messi"
+    summary: "The user is asking about the football player Messi"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Messi, Lionel Messi]
+
+  - id: player-plus-competition
+    query: "Messi, MLS"
+    summary: "The user is asking about the football player Messi in the MLS"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Messi, Lionel Messi]
+        competition.name: [MLS]
+
+  - id: player-plus-team
+    query: "Messi, Inter Miami"
+    summary: "The user is asking about the football player Messi in Inter Miami"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Messi, Lionel Messi]
+        team.name: [Inter Miami]
+
+  - id: surname-plus-team-burnley
+    query: "Gudmundsson Burnley"
+    summary: "The user is asking about the football player Gudmundsson in Burnley"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Gudmundsson]
+        team.name: [Burnley]
+
+  - id: surname-plus-team-fiorentina
+    query: "Gudmundsson Fiorentina"
+    summary: "The user is asking about the football player Gudmundsson in Fiorentina"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Gudmundsson]
+        team.name: [Fiorentina]
+
+  - id: full-name-plus-competition
+    query: "Lamine Yamal La Liga"
+    summary: "The user is asking about the football player Lamine Yamal playing in La Liga"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Lamine Yamal]
+        competition.name: [La Liga]
+
+  - id: full-name-plus-team
+    query: "Lamine Yamal Barcelona"
+    summary: "The user is asking about the football player Lamine Yamal in Barcelona"
+    expect:
+      tool: redirect_to_scout
+      args:
+        player.name: [Lamine Yamal]
+        team.name: [Barcelona]
+
+  - id: explicit-comparison
+    query: "How does Haaland compare to Mbappé?"
+    expect:
+      tool: redirect_to_comparison
+      args:
+        player.name: [Haaland, Erling Haaland]
+
+  - id: two-bare-names-is-a-comparison
+    query: "Haaland Mbappé"
+    expect: {tool: redirect_to_comparison}
+
+  - id: transfer-to-another-league
+    query: "How would Alexander Isak perform in La Liga?"
+    expect:
+      tool: redirect_to_transfer
+      args:
+        player.name: [Alexander Isak, Isak]
+
+  - id: team-fit
+    query: "How would Bruno Fernandes fit in at Real Madrid?"
+    expect: {tool: redirect_to_team_fit}
+
+  - id: multi-season-development-is-scout-not-comparison
+    query: "How has Bukayo Saka developed over the last three seasons?"
+    expect: {tool: redirect_to_scout}
+
+  - id: single-match
+    query: "How did Arsenal play against Liverpool in the Premier League in 2024/25?"
+    expect: {tool: redirect_to_match_analyst}
+
+  - id: team-season
+    query: "How has Arsenal performed this season?"
+    expect: {tool: redirect_to_season_analyst}
+
+  - id: platform-question
+    query: "What can this platform actually do?"
+    expect: {tool: explain_data_analysis}
+
+  - id: metric-definition-question
+    query: "What does xT mean?"
+    expect: {tool: explain_data_analysis}

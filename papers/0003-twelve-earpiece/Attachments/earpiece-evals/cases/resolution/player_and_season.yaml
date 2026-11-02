@@ -1,0 +1,40 @@
+suite: resolution/player-and-season
+threshold: 0.95
+analyst: receptionist
+
+cases:
+  - id: rassmussen-2024
+    query: "Milan Rassmussen, 2024"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 577581, competition_id: [818], competition_year: [2024, 2025]}
+
+  - id: pritchard-2023-24
+    query: "Alex Pritchard in 2023/24"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 8290, competition_id: [346], competition_year: [2023]}
+
+  - id: messi-2022-23
+    query: "Messi in 2022/23"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 3359, competition_id: [412], competition_year: [2022]}
+
+  - id: magnusson-2023
+    query: "How did Hördur Bjorgvin Magnusson perform in 2023?"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 135207, competition_id: [448], competition_year: [2023, 2024, 2025]}
+
+  - id: dembele-2022-23
+    query: "How did Moussa dembele play in 2022/23?"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 256994, competition_id: [412, 741], competition_year: [2022, 2023]}
+
+  - id: tounekti-2025
+    query: "Sebastian Tounekti 2025"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 564156, competition_id: [808, 750, 843], competition_year: [2025]}

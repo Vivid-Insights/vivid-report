@@ -1,0 +1,1033 @@
+{
+  "players": 400,
+  "runs": 794,
+  "groups": {
+    "correct / all": {
+      "n": 397,
+      "right": {
+        "count": 396,
+        "rate": 0.997,
+        "ci95": [
+          0.986,
+          1.0
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.01
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.01
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.003,
+        "ci95": [
+          0.0,
+          0.014
+        ]
+      }
+    },
+    "correct / female": {
+      "n": 98,
+      "right": {
+        "count": 98,
+        "rate": 1.0,
+        "ci95": [
+          0.962,
+          1.0
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.038
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.038
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.038
+        ]
+      }
+    },
+    "correct / male": {
+      "n": 299,
+      "right": {
+        "count": 298,
+        "rate": 0.997,
+        "ci95": [
+          0.981,
+          0.999
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.013
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.013
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.003,
+        "ci95": [
+          0.001,
+          0.019
+        ]
+      }
+    },
+    "correct / one-word name": {
+      "n": 19,
+      "right": {
+        "count": 19,
+        "rate": 1.0,
+        "ci95": [
+          0.832,
+          1.0
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.168
+        ]
+      }
+    },
+    "misspelled / all": {
+      "n": 397,
+      "right": {
+        "count": 334,
+        "rate": 0.841,
+        "ci95": [
+          0.802,
+          0.874
+        ]
+      },
+      "asked the user": {
+        "count": 29,
+        "rate": 0.073,
+        "ci95": [
+          0.051,
+          0.103
+        ]
+      },
+      "wrong player": {
+        "count": 29,
+        "rate": 0.073,
+        "ci95": [
+          0.051,
+          0.103
+        ]
+      },
+      "other": {
+        "count": 5,
+        "rate": 0.013,
+        "ci95": [
+          0.005,
+          0.029
+        ]
+      }
+    },
+    "misspelled / distance 0": {
+      "n": 15,
+      "right": {
+        "count": 15,
+        "rate": 1.0,
+        "ci95": [
+          0.796,
+          1.0
+        ]
+      },
+      "asked the user": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.204
+        ]
+      },
+      "wrong player": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.204
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.204
+        ]
+      }
+    },
+    "misspelled / distance 1": {
+      "n": 162,
+      "right": {
+        "count": 150,
+        "rate": 0.926,
+        "ci95": [
+          0.875,
+          0.957
+        ]
+      },
+      "asked the user": {
+        "count": 7,
+        "rate": 0.043,
+        "ci95": [
+          0.021,
+          0.086
+        ]
+      },
+      "wrong player": {
+        "count": 4,
+        "rate": 0.025,
+        "ci95": [
+          0.01,
+          0.062
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.006,
+        "ci95": [
+          0.001,
+          0.034
+        ]
+      }
+    },
+    "misspelled / distance 2": {
+      "n": 32,
+      "right": {
+        "count": 22,
+        "rate": 0.688,
+        "ci95": [
+          0.514,
+          0.82
+        ]
+      },
+      "asked the user": {
+        "count": 4,
+        "rate": 0.125,
+        "ci95": [
+          0.05,
+          0.281
+        ]
+      },
+      "wrong player": {
+        "count": 6,
+        "rate": 0.188,
+        "ci95": [
+          0.089,
+          0.353
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.107
+        ]
+      }
+    },
+    "misspelled / distance 3": {
+      "n": 77,
+      "right": {
+        "count": 56,
+        "rate": 0.727,
+        "ci95": [
+          0.619,
+          0.814
+        ]
+      },
+      "asked the user": {
+        "count": 7,
+        "rate": 0.091,
+        "ci95": [
+          0.045,
+          0.176
+        ]
+      },
+      "wrong player": {
+        "count": 13,
+        "rate": 0.169,
+        "ci95": [
+          0.101,
+          0.268
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.013,
+        "ci95": [
+          0.002,
+          0.07
+        ]
+      }
+    },
+    "misspelled / distance 4+": {
+      "n": 111,
+      "right": {
+        "count": 91,
+        "rate": 0.82,
+        "ci95": [
+          0.738,
+          0.88
+        ]
+      },
+      "asked the user": {
+        "count": 11,
+        "rate": 0.099,
+        "ci95": [
+          0.056,
+          0.169
+        ]
+      },
+      "wrong player": {
+        "count": 6,
+        "rate": 0.054,
+        "ci95": [
+          0.025,
+          0.113
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.027,
+        "ci95": [
+          0.009,
+          0.076
+        ]
+      }
+    },
+    "misspelled / female": {
+      "n": 98,
+      "right": {
+        "count": 85,
+        "rate": 0.867,
+        "ci95": [
+          0.786,
+          0.921
+        ]
+      },
+      "asked the user": {
+        "count": 5,
+        "rate": 0.051,
+        "ci95": [
+          0.022,
+          0.114
+        ]
+      },
+      "wrong player": {
+        "count": 7,
+        "rate": 0.071,
+        "ci95": [
+          0.035,
+          0.14
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.01,
+        "ci95": [
+          0.002,
+          0.056
+        ]
+      }
+    },
+    "misspelled / hard": {
+      "n": 100,
+      "right": {
+        "count": 61,
+        "rate": 0.61,
+        "ci95": [
+          0.512,
+          0.7
+        ]
+      },
+      "asked the user": {
+        "count": 18,
+        "rate": 0.18,
+        "ci95": [
+          0.117,
+          0.267
+        ]
+      },
+      "wrong player": {
+        "count": 19,
+        "rate": 0.19,
+        "ci95": [
+          0.125,
+          0.278
+        ]
+      },
+      "other": {
+        "count": 2,
+        "rate": 0.02,
+        "ci95": [
+          0.006,
+          0.07
+        ]
+      }
+    },
+    "misspelled / male": {
+      "n": 299,
+      "right": {
+        "count": 249,
+        "rate": 0.833,
+        "ci95": [
+          0.786,
+          0.871
+        ]
+      },
+      "asked the user": {
+        "count": 24,
+        "rate": 0.08,
+        "ci95": [
+          0.055,
+          0.117
+        ]
+      },
+      "wrong player": {
+        "count": 22,
+        "rate": 0.074,
+        "ci95": [
+          0.049,
+          0.109
+        ]
+      },
+      "other": {
+        "count": 4,
+        "rate": 0.013,
+        "ci95": [
+          0.005,
+          0.034
+        ]
+      }
+    },
+    "misspelled / name words": {
+      "n": 138,
+      "right": {
+        "count": 109,
+        "rate": 0.79,
+        "ci95": [
+          0.714,
+          0.85
+        ]
+      },
+      "asked the user": {
+        "count": 12,
+        "rate": 0.087,
+        "ci95": [
+          0.05,
+          0.146
+        ]
+      },
+      "wrong player": {
+        "count": 13,
+        "rate": 0.094,
+        "ci95": [
+          0.056,
+          0.155
+        ]
+      },
+      "other": {
+        "count": 4,
+        "rate": 0.029,
+        "ci95": [
+          0.011,
+          0.072
+        ]
+      }
+    },
+    "misspelled / normal": {
+      "n": 297,
+      "right": {
+        "count": 273,
+        "rate": 0.919,
+        "ci95": [
+          0.883,
+          0.945
+        ]
+      },
+      "asked the user": {
+        "count": 11,
+        "rate": 0.037,
+        "ci95": [
+          0.021,
+          0.065
+        ]
+      },
+      "wrong player": {
+        "count": 10,
+        "rate": 0.034,
+        "ci95": [
+          0.018,
+          0.061
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.01,
+        "ci95": [
+          0.003,
+          0.029
+        ]
+      }
+    },
+    "misspelled / one-word name": {
+      "n": 19,
+      "right": {
+        "count": 9,
+        "rate": 0.474,
+        "ci95": [
+          0.273,
+          0.683
+        ]
+      },
+      "asked the user": {
+        "count": 4,
+        "rate": 0.211,
+        "ci95": [
+          0.085,
+          0.433
+        ]
+      },
+      "wrong player": {
+        "count": 5,
+        "rate": 0.263,
+        "ci95": [
+          0.118,
+          0.488
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.053,
+        "ci95": [
+          0.009,
+          0.246
+        ]
+      }
+    },
+    "misspelled / punctuation, spacing, accents": {
+      "n": 50,
+      "right": {
+        "count": 40,
+        "rate": 0.8,
+        "ci95": [
+          0.67,
+          0.888
+        ]
+      },
+      "asked the user": {
+        "count": 5,
+        "rate": 0.1,
+        "ci95": [
+          0.043,
+          0.214
+        ]
+      },
+      "wrong player": {
+        "count": 5,
+        "rate": 0.1,
+        "ci95": [
+          0.043,
+          0.214
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.071
+        ]
+      }
+    },
+    "misspelled / single typing error": {
+      "n": 157,
+      "right": {
+        "count": 142,
+        "rate": 0.904,
+        "ci95": [
+          0.848,
+          0.941
+        ]
+      },
+      "asked the user": {
+        "count": 8,
+        "rate": 0.051,
+        "ci95": [
+          0.026,
+          0.097
+        ]
+      },
+      "wrong player": {
+        "count": 6,
+        "rate": 0.038,
+        "ci95": [
+          0.018,
+          0.081
+        ]
+      },
+      "other": {
+        "count": 1,
+        "rate": 0.006,
+        "ci95": [
+          0.001,
+          0.035
+        ]
+      }
+    },
+    "misspelled / spelling variant": {
+      "n": 52,
+      "right": {
+        "count": 43,
+        "rate": 0.827,
+        "ci95": [
+          0.703,
+          0.906
+        ]
+      },
+      "asked the user": {
+        "count": 4,
+        "rate": 0.077,
+        "ci95": [
+          0.03,
+          0.182
+        ]
+      },
+      "wrong player": {
+        "count": 5,
+        "rate": 0.096,
+        "ci95": [
+          0.042,
+          0.206
+        ]
+      },
+      "other": {
+        "count": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.069
+        ]
+      }
+    },
+    "misspelled / team informal name": {
+      "n": 123,
+      "right": {
+        "count": 103,
+        "rate": 0.837,
+        "ci95": [
+          0.762,
+          0.892
+        ]
+      },
+      "asked the user": {
+        "count": 7,
+        "rate": 0.057,
+        "ci95": [
+          0.028,
+          0.113
+        ]
+      },
+      "wrong player": {
+        "count": 11,
+        "rate": 0.089,
+        "ci95": [
+          0.051,
+          0.153
+        ]
+      },
+      "other": {
+        "count": 2,
+        "rate": 0.016,
+        "ci95": [
+          0.004,
+          0.057
+        ]
+      }
+    },
+    "misspelled / team misspelled": {
+      "n": 274,
+      "right": {
+        "count": 231,
+        "rate": 0.843,
+        "ci95": [
+          0.795,
+          0.881
+        ]
+      },
+      "asked the user": {
+        "count": 22,
+        "rate": 0.08,
+        "ci95": [
+          0.054,
+          0.119
+        ]
+      },
+      "wrong player": {
+        "count": 18,
+        "rate": 0.066,
+        "ci95": [
+          0.042,
+          0.101
+        ]
+      },
+      "other": {
+        "count": 3,
+        "rate": 0.011,
+        "ci95": [
+          0.004,
+          0.032
+        ]
+      }
+    }
+  },
+  "correct_right_misspelled_wrong_player": [
+    {
+      "player_id": 563223,
+      "name": "Nikoloz Talakhadze",
+      "misspelled": "Talakhadze",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Georgian Erovnuli Liga 2"
+    },
+    {
+      "player_id": 1180059,
+      "name": "David Chapman",
+      "misspelled": "davydkhqapman",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | single typing error: insertion | spelling variant: i>y c>k",
+      "gender": "male",
+      "competition": "American NCAA D1 Sun Belt"
+    },
+    {
+      "player_id": 145074,
+      "name": "Brandon O'Neill",
+      "misspelled": "Brendon O'Niell",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: a>e ei>ie",
+      "gender": "male",
+      "competition": "Australian Western Australia NPL"
+    },
+    {
+      "player_id": 397161,
+      "name": "Tom Sang",
+      "misspelled": "Tum zang",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: s>z o>u",
+      "gender": "male",
+      "competition": "English League Two"
+    },
+    {
+      "player_id": 1207356,
+      "name": "Makai Wells",
+      "misspelled": "Macai vellz",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: s>z w>v | spelling variant: k>c",
+      "gender": "male",
+      "competition": "American MLS Next Pro"
+    },
+    {
+      "player_id": 518856,
+      "name": "Robinho",
+      "misspelled": "rubinhu",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | spelling variant: o>u | spelling variant: o>u",
+      "gender": "male",
+      "competition": "Portuguese Primeira Liga"
+    },
+    {
+      "player_id": 597072,
+      "name": "Hugo Moura",
+      "misspelled": "Hugu Mure",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | spelling variant: o>u a>e",
+      "gender": "male",
+      "competition": "Brazilian Baiano 1"
+    },
+    {
+      "player_id": 1306700,
+      "name": "Joseph-Albert Ndakala",
+      "misspelled": "Joseph-Afertndakala",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: deletion | punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "male",
+      "competition": "Estonian A.LeCoq Premium Liiga"
+    },
+    {
+      "player_id": 802053,
+      "name": "Kauê",
+      "misspelled": "Kau",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: deletion",
+      "gender": "male",
+      "competition": "Brazilian Sul-Matogrossense"
+    },
+    {
+      "player_id": 116492,
+      "name": "Diego Vera",
+      "misspelled": "Vera",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: surname only",
+      "gender": "male",
+      "competition": "Uruguayan Segunda División"
+    },
+    {
+      "player_id": 972259,
+      "name": "Maddox Driver",
+      "misspelled": "maddosdryver",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: substitution | punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: i>y z>s",
+      "gender": "male",
+      "competition": "American NCAA D2 Conference Carolinas"
+    },
+    {
+      "player_id": 821646,
+      "name": "Adam Stroud",
+      "misspelled": "Adsmstrod",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: deletion | single typing error: substitution",
+      "gender": "male",
+      "competition": "Finnish Veikkausliiga"
+    },
+    {
+      "player_id": 682962,
+      "name": "Marcus Ryberg",
+      "misspelled": "Marcusryfbdrg",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution | single typing error: insertion",
+      "gender": "male",
+      "competition": "Danish 1st Division"
+    },
+    {
+      "player_id": 1273612,
+      "name": "Brian Ouru",
+      "misspelled": "Brianouri",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "male",
+      "competition": "Premier League"
+    },
+    {
+      "player_id": 887193,
+      "name": "Roger",
+      "misspelled": "Rogeg",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: substitution",
+      "gender": "male",
+      "competition": "Brazilian Paulista A4"
+    },
+    {
+      "player_id": 597960,
+      "name": "Kaio",
+      "misspelled": "kko",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | single typing error: substitution | single typing error: deletion",
+      "gender": "male",
+      "competition": "Brazilian Paulista A4"
+    },
+    {
+      "player_id": 606183,
+      "name": "David Kochem",
+      "misspelled": "kuchwm",
+      "category": "name words",
+      "hard": "True",
+      "steps": "single typing error: transposition | punctuation, spacing, accents: lower case | single typing error: substitution | spelling variant: o>u | name words: surname only",
+      "gender": "male",
+      "competition": "Brazilian Paulista A4"
+    },
+    {
+      "player_id": 395625,
+      "name": "Ariel Sant'Anna",
+      "misspelled": "Sxnt'Ana",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: e>a nn>n | single typing error: substitution | name words: surname only",
+      "gender": "male",
+      "competition": "Brazilian Paulista A1"
+    },
+    {
+      "player_id": 807705,
+      "name": "Rodrigo Llano",
+      "misspelled": "Rodrigollano",
+      "category": "punctuation, spacing, accents",
+      "hard": "False",
+      "steps": "punctuation, spacing, accents: words joined",
+      "gender": "male",
+      "competition": "Bolivian LFPB"
+    },
+    {
+      "player_id": 650635,
+      "name": "Dudu",
+      "misspelled": "Dydu",
+      "category": "single typing error",
+      "hard": "False",
+      "steps": "single typing error: substitution",
+      "gender": "male",
+      "competition": "Russian Premier League"
+    },
+    {
+      "player_id": 363788,
+      "name": "Joan Castro",
+      "misspelled": "J. Castro",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "male",
+      "competition": "Colombian Liga BetPlay"
+    },
+    {
+      "player_id": 770285,
+      "name": "Anthony Vásquez",
+      "misspelled": "Antony Vásquaz",
+      "category": "spelling variant",
+      "hard": "False",
+      "steps": "spelling variant: e>a th>t",
+      "gender": "male",
+      "competition": "Colombian Liga BetPlay"
+    },
+    {
+      "player_id": 968378,
+      "name": "Carstyn Anderson",
+      "misspelled": "carstynendarson",
+      "category": "name words",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: lower case | punctuation, spacing, accents: words joined | spelling variant: e>a a>e",
+      "gender": "female",
+      "competition": "American NAIA Kansas Collegiate Athletic Conference (W)"
+    },
+    {
+      "player_id": 762113,
+      "name": "Colby Barnett",
+      "misspelled": "Colbybarbatt",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: e>a | single typing error: substitution | punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "Canadian Northern Super League"
+    },
+    {
+      "player_id": 760325,
+      "name": "Marissa Garcia",
+      "misspelled": "M. Garcia",
+      "category": "name words",
+      "hard": "False",
+      "steps": "name words: initial for first name",
+      "gender": "female",
+      "competition": "Mexican Liga MX Femenil"
+    },
+    {
+      "player_id": 1276117,
+      "name": "Ammarah Ali",
+      "misspelled": "Ammaerahaly",
+      "category": "name words",
+      "hard": "True",
+      "steps": "spelling variant: i>y | punctuation, spacing, accents: words joined | single typing error: insertion",
+      "gender": "female",
+      "competition": "English Eastern Region Women's Football League"
+    },
+    {
+      "player_id": 1162253,
+      "name": "Amber Provan",
+      "misspelled": "Amberpruven",
+      "category": "spelling variant",
+      "hard": "True",
+      "steps": "spelling variant: a>e o>u | punctuation, spacing, accents: words joined",
+      "gender": "female",
+      "competition": "English Eastern Region Women's Football League"
+    },
+    {
+      "player_id": 1313790,
+      "name": "Amelia Hallberg",
+      "misspelled": "Ameliahallhsrg",
+      "category": "single typing error",
+      "hard": "True",
+      "steps": "single typing error: substitution | punctuation, spacing, accents: words joined | single typing error: substitution",
+      "gender": "female",
+      "competition": "Swedish Elitettan"
+    },
+    {
+      "player_id": 861153,
+      "name": "Martha Langskov",
+      "misspelled": "Marthalanfskuv",
+      "category": "punctuation, spacing, accents",
+      "hard": "True",
+      "steps": "punctuation, spacing, accents: words joined | single typing error: substitution | spelling variant: o>u",
+      "gender": "female",
+      "competition": "Danish Women's Play-offs 2/3"
+    }
+  ]
+}

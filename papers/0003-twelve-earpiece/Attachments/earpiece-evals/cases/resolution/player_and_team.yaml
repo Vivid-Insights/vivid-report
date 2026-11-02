@@ -1,0 +1,46 @@
+suite: resolution/player-and-team
+threshold: 0.95
+analyst: receptionist
+
+cases:
+  - id: morata-milan
+    query: "Alvaro Morata, Milan"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 3324, competition_id: [524]}
+
+  - id: vasic-brommapojkarna
+    query: "Nicola Vasic, Brommapojkarna"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 389018, competition_id: [808]}
+
+  - id: sissoko-bochum
+    query: "Ibrahima Sissoko, Bochum"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 366785, competition_id: [426, 423]}
+
+  - id: bernardo-silva-man-city
+    query: "Bernardo Silva, Manchester City"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 265673, competition_id: [364]}
+
+  - id: sarmiento-brighton
+    query: "Jeremy Sarmiento, Brighton"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 525621, competition_id: [364]}
+
+  - id: pierotti-lecce
+    query: "Santiago Pierotti, Lecce"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 607713, competition_id: [524]}
+
+  - id: godfrey-atalanta
+    query: "Ben Godfrey, Atalanta"
+    expect:
+      tool: redirect_to_scout
+      resolved: {player_id: 12379, competition_id: [524]}

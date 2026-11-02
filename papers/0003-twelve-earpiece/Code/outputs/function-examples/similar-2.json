@@ -1,0 +1,570 @@
+{
+  "example": "similar",
+  "run": 2,
+  "question": "Can you find players similar to her?",
+  "analyst": "SCOUT",
+  "context": {
+    "version": "1",
+    "competition": {
+      "id": 809,
+      "year": 2026
+    },
+    "player": {
+      "id": 545691,
+      "position": "MIDFIELDER"
+    }
+  },
+  "date": "2026-10-14T04:25:46+00:00",
+  "earpiece_api_commit": "736867f5",
+  "workspace": "wksp_aWsUNyFPMrVh5N",
+  "standin_workspace": null,
+  "functions_offered": [
+    "redirect_to_receptionist",
+    "redirect_to_scout",
+    "redirect_to_transfer",
+    "redirect_to_comparison",
+    "redirect_to_complex_player_questions",
+    "redirect_to_team_fit",
+    "short_description",
+    "short_summary",
+    "short_strengths",
+    "short_weaknesses",
+    "short_visualization",
+    "player_quality_description",
+    "player_answer_skills_question",
+    "strengths_and_weaknesses",
+    "switch_position",
+    "player_pitch_description",
+    "save_scout_report",
+    "explain_data_analysis",
+    "get_data_coverage",
+    "get_team_fixtures",
+    "player_summary_description",
+    "get_complete_player_data",
+    "redirect_to_talent_discovery",
+    "find_similar_players"
+  ],
+  "tool_calls": [
+    {
+      "id": "call_joEur4XoMQT8DtNooGGvdqjE",
+      "type": "function",
+      "function": {
+        "name": "find_similar_players",
+        "arguments": "{}"
+      }
+    }
+  ],
+  "tool_results": [
+    {
+      "index": 3,
+      "role": "tool",
+      "content": "Vilma Koivisto is a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan. Let's take a look at the strengths of Vilma Koivisto. \n\nThe best skill of Vilma Koivisto  is involvement. Indeed, She is outstanding at involvement compared to other midfielders. In involvement, she is strongest in xGBuildup. \n\nThe second best skill of Vilma Koivisto  is passing quality. Indeed, She is outstanding at passing quality compared to other midfielders. In passing quality, she is strongest in Passes (xT). \n\nThe third best skill of Vilma Koivisto  is active defence. Indeed, She is outstanding at active defence compared to other midfielders. In active defence, she is strongest in Recoveries. \n\n The user is interested in finding a similar player to Vilma Koivisto. You should help them by writing two sentences. The first sentence should summarise, briefly, what the player is best at. The second sentence should explicitly list the three qualities (Involvement, Passing Quality and Active Defence) that the player is best at. Those three names are already written in the language you are responding in -- use them as given, and do not translate them back into English. You should then ask the user if they want to find similar players based on these qualities. If they do, you should call the redirect_to_talent_discovery function with this information, passing the qualities as INVOLVEMENT, PASSING_QUALITY, ACTIVE_DEFENCE. ",
+      "bundle_id": "d5466f1a-9165-45dd-aa54-017fb67e9f5c",
+      "tool_call_id": "call_joEur4XoMQT8DtNooGGvdqjE"
+    }
+  ],
+  "reply_shown_to_user": "Vilma Koivisto excels in involvement, passing quality, and active defence, making her a standout midfielder. Specifically, her strengths lie in xGBuildup, Passes (xT), and Recoveries.\n\nWould you like me to find similar players based on these qualities: Involvement, Passing Quality, and Active Defence?",
+  "replies": [
+    "Vilma Koivisto excels in involvement, passing quality, and active defence, making her a standout midfielder. Specifically, her strengths lie in xGBuildup, Passes (xT), and Recoveries.\n\nWould you like me to find similar players based on these qualities: Involvement, Passing Quality, and Active Defence?"
+  ],
+  "model_calls": [
+    {
+      "kind": "stream",
+      "model": "azure_openai/gpt-4o (alias azure-4o)",
+      "temperature": 0.2,
+      "tools": [],
+      "messages": [
+        {
+          "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Scouting Analyst, a part of the Twelve Earpiece football data analysis platform. You are interacting with a user of the platform. The reason you were initially called was that the user wrote: 'None'  Here's a summary of the previous conversation: 'None'  You have a number of functions available. As a first course of action you should call one of these functions. If the user has started out with an empty message, you should not ask them for more information, but rely on the previous conversation to make a decision about which function to call.  You should continue to call functions for each user query (unless the query is really simple, and/or no function is appropriate). Here are the conditions for when to call each function in response to a user query (the initial one, or any follow-ups): - If the user has ONLY given the name of a player (either with or without competition, team or season information) and has NOT asked any specific question about the player, you should call the short_description function. Examples: 'Alexander Isak', 'Tell me about Salah', 'Isak in Premier League'. Do NOT call short_description if the user asks about any attribute such as position, transfer value, age, height, weight, contract, minutes played, or any metric — use get_complete_player_data for those. - If the user has asked about a player's specific quality such passing quality, active defence, etc, you should call the player_quality_description *and* player_pitch_description functions at the same time -- in parallel. - If the user has requested a summary of the player you should call player_summary_description. - If the user has asked a question about a player that is general in nature, you should call the player_answer_skills_question function. - If the user has asked about *which* skills in which the player standout in or lack, then you should call the strengths_and_weaknesses function. - If the user has asked if the player can play in another position, or how the player would perform in another position, you should call the switch_position function. - If the user seems to think there is an error in the data or questions your analysis, you should call the get_complete_player_data function. - If the user has asked where on the pitch, for example in the attacking third of the pitch or in the half space, a player carries out actions then call the player_pitch_description function. - If the user has requested general information about the player, such as their transfer value, age, gender, height, weight, position, team, best foot, contract details, or top-line performance information like minutes played or number of red/yellow cards, you should call the get_complete_player_data function. - If the user has requested to know the value of a specific metric, you should call the get_complete_player_data function. - If the user has asked a general question about about football data analysis and metrics, qualities, unrelated to a specific player, you should call the explain_data_analysis function. - If the user has asked a question about how this platform works, or what its capabilities are, or asks for information about Twelve Football (the company behind the platform), you should call explain_data_analysis. - If the user has asked for instructions or how to use the platform, you should also call explain_data_analysis. - If the user makes a search query for players in one or more leagues, you should call redirect_to_talent_discovery. - If the user wants to know which other players are *similar* to this player, either in the player's league or another league, you should call the find_similar_players function. - If the user asks about how the player would perform in a different league as a hypothetical transfer, you should call redirect_to_transfer.        Ensure you differentiate between a hypothetical transfer and performance analysis before choosing whether to call redirect_to_transfer or redirect_to_scout. - If the user asks about how the player would perform in a different team as a hypothetical transfer, you should call redirect_to_team_fit. - If the user asks about how the player compares to another player (but not how they compare to themselves in another season) you should call redirect_to_comparison. - If the user asks a complex, multi-step question about this player that goes beyond what your other functions can answer — such as questions about trends over time, comparing performance across seasons, specific match-level statistics, career progression, form analysis, or any question requiring multi-step data gathering — you MUST call redirect_to_complex_player_questions.        Examples of questions for redirect_to_complex_player_questions: 'How has Salah's goal output changed over the last 3 seasons?', 'What was Mbappe's pass completion in his last 5 matches?', 'Is Bellingham improving this season compared to last?', 'How does Haaland perform in Champions League vs domestic matches?' - If the user asks about a different football player (i.e. they mention a different name than what they initially queried), you should call the redirect_to_scout function. - If the user asks about a player's past or current performance in another league or team, call redirect_to_scout with the updated team or league - If the user asks about a different player than the one you already found, you should call redirect_to_scout with an updated player name. - If the user asks about a different season for the same player, you should call redirect_to_scout with the updated information, but if the user only specified this in the PREVIOUS conversation (in the summary above), you should just call short_description. - If the user appears frustrated or confused then apologise and tell them that you are going to start again from the beginning and call redirect_to_receptionist. The user may ask a question which does not relate to a single player, or a comparison between two players, or a transfer. In these cases, you should call redirect_to_receptionist. Examples of such questions include, but are not limited to: - Questions about how a player performed in a match, or how a team performed in a match. - Questions about how a team performed in a season. - Questions about the style of play of a team. Remember, if the user does not ask about the performance of a specific player, or a comparison between two players, or a transfer, you should call redirect_to_receptionist. If the user asks any question about how the platform works, what it can do, how it makes its analyses, or how something is defined, make sure that you always call explain_data_analysis instead of answering yourself. For any question about football data, metrics, definitions, or platform functionality, ALWAYS call explain_data_analysis — even if this function was already called earlier in the conversation. Never answer these questions from the conversation history. Pay careful attention if the user is trying to switch to another player, or if they are asking about a different player, or have just written a name. Always call redirect_to_scout in these cases. These are all the available functions. Remember to always use them (unless the query is really simple). Remeber that the user query was: None Pay close attention to the intent of the user query and make sure to call the correct function accordingly. That is whether the user asks about a player, a transfer, a team fit, a comparison or something else. \n## Visualizations\nYour functions produce visualizations (radar charts, pitch heatmaps, distribution charts) that are automatically displayed to the user alongside your text response. You do not need to do anything extra to show them — they appear when you call the function. Each function's description notes what visual it produces.\nThe user has selected the following competition: The 2026 season of the Damallsvenskan, a men's division 1 competition in Sweden\nThe user has selected the following player: Vilma Koivisto, a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan.",
+          "role": "system",
+          "bundle_id": "2208f60a-3eae-4c21-bf04-36fc992af390"
+        },
+        {
+          "content": "Can you find players similar to her?",
+          "role": "user",
+          "bundle_id": "ac608545-c32e-4910-9dcf-896b0e80f4a9"
+        }
+      ],
+      "output": "",
+      "tool_calls": []
+    },
+    {
+      "kind": "stream",
+      "model": "azure_openai/gpt-4o (alias azure-4o)",
+      "temperature": 0.2,
+      "tools": [],
+      "messages": [
+        {
+          "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Scouting Analyst, a part of the Twelve Earpiece football data analysis platform. You are interacting with a user of the platform. The reason you were initially called was that the user wrote: 'None'  Here's a summary of the previous conversation: 'None'  You have a number of functions available. As a first course of action you should call one of these functions. If the user has started out with an empty message, you should not ask them for more information, but rely on the previous conversation to make a decision about which function to call.  You should continue to call functions for each user query (unless the query is really simple, and/or no function is appropriate). Here are the conditions for when to call each function in response to a user query (the initial one, or any follow-ups): - If the user has ONLY given the name of a player (either with or without competition, team or season information) and has NOT asked any specific question about the player, you should call the short_description function. Examples: 'Alexander Isak', 'Tell me about Salah', 'Isak in Premier League'. Do NOT call short_description if the user asks about any attribute such as position, transfer value, age, height, weight, contract, minutes played, or any metric — use get_complete_player_data for those. - If the user has asked about a player's specific quality such passing quality, active defence, etc, you should call the player_quality_description *and* player_pitch_description functions at the same time -- in parallel. - If the user has requested a summary of the player you should call player_summary_description. - If the user has asked a question about a player that is general in nature, you should call the player_answer_skills_question function. - If the user has asked about *which* skills in which the player standout in or lack, then you should call the strengths_and_weaknesses function. - If the user has asked if the player can play in another position, or how the player would perform in another position, you should call the switch_position function. - If the user seems to think there is an error in the data or questions your analysis, you should call the get_complete_player_data function. - If the user has asked where on the pitch, for example in the attacking third of the pitch or in the half space, a player carries out actions then call the player_pitch_description function. - If the user has requested general information about the player, such as their transfer value, age, gender, height, weight, position, team, best foot, contract details, or top-line performance information like minutes played or number of red/yellow cards, you should call the get_complete_player_data function. - If the user has requested to know the value of a specific metric, you should call the get_complete_player_data function. - If the user has asked a general question about about football data analysis and metrics, qualities, unrelated to a specific player, you should call the explain_data_analysis function. - If the user has asked a question about how this platform works, or what its capabilities are, or asks for information about Twelve Football (the company behind the platform), you should call explain_data_analysis. - If the user has asked for instructions or how to use the platform, you should also call explain_data_analysis. - If the user makes a search query for players in one or more leagues, you should call redirect_to_talent_discovery. - If the user wants to know which other players are *similar* to this player, either in the player's league or another league, you should call the find_similar_players function. - If the user asks about how the player would perform in a different league as a hypothetical transfer, you should call redirect_to_transfer.        Ensure you differentiate between a hypothetical transfer and performance analysis before choosing whether to call redirect_to_transfer or redirect_to_scout. - If the user asks about how the player would perform in a different team as a hypothetical transfer, you should call redirect_to_team_fit. - If the user asks about how the player compares to another player (but not how they compare to themselves in another season) you should call redirect_to_comparison. - If the user asks a complex, multi-step question about this player that goes beyond what your other functions can answer — such as questions about trends over time, comparing performance across seasons, specific match-level statistics, career progression, form analysis, or any question requiring multi-step data gathering — you MUST call redirect_to_complex_player_questions.        Examples of questions for redirect_to_complex_player_questions: 'How has Salah's goal output changed over the last 3 seasons?', 'What was Mbappe's pass completion in his last 5 matches?', 'Is Bellingham improving this season compared to last?', 'How does Haaland perform in Champions League vs domestic matches?' - If the user asks about a different football player (i.e. they mention a different name than what they initially queried), you should call the redirect_to_scout function. - If the user asks about a player's past or current performance in another league or team, call redirect_to_scout with the updated team or league - If the user asks about a different player than the one you already found, you should call redirect_to_scout with an updated player name. - If the user asks about a different season for the same player, you should call redirect_to_scout with the updated information, but if the user only specified this in the PREVIOUS conversation (in the summary above), you should just call short_description. - If the user appears frustrated or confused then apologise and tell them that you are going to start again from the beginning and call redirect_to_receptionist. The user may ask a question which does not relate to a single player, or a comparison between two players, or a transfer. In these cases, you should call redirect_to_receptionist. Examples of such questions include, but are not limited to: - Questions about how a player performed in a match, or how a team performed in a match. - Questions about how a team performed in a season. - Questions about the style of play of a team. Remember, if the user does not ask about the performance of a specific player, or a comparison between two players, or a transfer, you should call redirect_to_receptionist. If the user asks any question about how the platform works, what it can do, how it makes its analyses, or how something is defined, make sure that you always call explain_data_analysis instead of answering yourself. For any question about football data, metrics, definitions, or platform functionality, ALWAYS call explain_data_analysis — even if this function was already called earlier in the conversation. Never answer these questions from the conversation history. Pay careful attention if the user is trying to switch to another player, or if they are asking about a different player, or have just written a name. Always call redirect_to_scout in these cases. These are all the available functions. Remember to always use them (unless the query is really simple). Remeber that the user query was: None Pay close attention to the intent of the user query and make sure to call the correct function accordingly. That is whether the user asks about a player, a transfer, a team fit, a comparison or something else. \n## Visualizations\nYour functions produce visualizations (radar charts, pitch heatmaps, distribution charts) that are automatically displayed to the user alongside your text response. You do not need to do anything extra to show them — they appear when you call the function. Each function's description notes what visual it produces.\nThe user has selected the following competition: The 2026 season of the Damallsvenskan, a men's division 1 competition in Sweden\nThe user has selected the following player: Vilma Koivisto, a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan.",
+          "role": "system",
+          "bundle_id": "2208f60a-3eae-4c21-bf04-36fc992af390"
+        },
+        {
+          "content": "Can you find players similar to her?",
+          "role": "user",
+          "bundle_id": "ac608545-c32e-4910-9dcf-896b0e80f4a9"
+        },
+        {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "id": "call_joEur4XoMQT8DtNooGGvdqjE",
+              "type": "function",
+              "function": {
+                "name": "find_similar_players",
+                "arguments": "{}"
+              }
+            }
+          ],
+          "bundle_id": "f2de3c77-b459-4e36-9191-b92e0c2af77b"
+        },
+        {
+          "content": "Vilma Koivisto is a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan. Let's take a look at the strengths of Vilma Koivisto. \n\nThe best skill of Vilma Koivisto  is involvement. Indeed, She is outstanding at involvement compared to other midfielders. In involvement, she is strongest in xGBuildup. \n\nThe second best skill of Vilma Koivisto  is passing quality. Indeed, She is outstanding at passing quality compared to other midfielders. In passing quality, she is strongest in Passes (xT). \n\nThe third best skill of Vilma Koivisto  is active defence. Indeed, She is outstanding at active defence compared to other midfielders. In active defence, she is strongest in Recoveries. \n\n The user is interested in finding a similar player to Vilma Koivisto. You should help them by writing two sentences. The first sentence should summarise, briefly, what the player is best at. The second sentence should explicitly list the three qualities (Involvement, Passing Quality and Active Defence) that the player is best at. Those three names are already written in the language you are responding in -- use them as given, and do not translate them back into English. You should then ask the user if they want to find similar players based on these qualities. If they do, you should call the redirect_to_talent_discovery function with this information, passing the qualities as INVOLVEMENT, PASSING_QUALITY, ACTIVE_DEFENCE. ",
+          "role": "tool",
+          "tool_call_id": "call_joEur4XoMQT8DtNooGGvdqjE",
+          "bundle_id": "93c1d2a1-969a-4dd4-bd2a-1aa4ac61ea19"
+        }
+      ],
+      "output": "Vilma Koivisto excels in involvement, passing quality, and active defence, making her a standout midfielder. Specifically, her strengths lie in xGBuildup, Passes (xT), and Recoveries.\n\nWould you like me to find similar players based on these qualities: Involvement, Passing Quality, and Active Defence?",
+      "tool_calls": []
+    }
+  ],
+  "stream": [
+    {
+      "index": 0,
+      "role": "system",
+      "content": "Today's date is October 14, 2026 and you have access to data up until this date.\n\nYou are the Scouting Analyst, a part of the Twelve Earpiece football data analysis platform. You are interacting with a user of the platform. The reason you were initially called was that the user wrote: 'None'  Here's a summary of the previous conversation: 'None'  You have a number of functions available. As a first course of action you should call one of these functions. If the user has started out with an empty message, you should not ask them for more information, but rely on the previous conversation to make a decision about which function to call.  You should continue to call functions for each user query (unless the query is really simple, and/or no function is appropriate). Here are the conditions for when to call each function in response to a user query (the initial one, or any follow-ups): - If the user has ONLY given the name of a player (either with or without competition, team or season information) and has NOT asked any specific question about the player, you should call the short_description function. Examples: 'Alexander Isak', 'Tell me about Salah', 'Isak in Premier League'. Do NOT call short_description if the user asks about any attribute such as position, transfer value, age, height, weight, contract, minutes played, or any metric — use get_complete_player_data for those. - If the user has asked about a player's specific quality such passing quality, active defence, etc, you should call the player_quality_description *and* player_pitch_description functions at the same time -- in parallel. - If the user has requested a summary of the player you should call player_summary_description. - If the user has asked a question about a player that is general in nature, you should call the player_answer_skills_question function. - If the user has asked about *which* skills in which the player standout in or lack, then you should call the strengths_and_weaknesses function. - If the user has asked if the player can play in another position, or how the player would perform in another position, you should call the switch_position function. - If the user seems to think there is an error in the data or questions your analysis, you should call the get_complete_player_data function. - If the user has asked where on the pitch, for example in the attacking third of the pitch or in the half space, a player carries out actions then call the player_pitch_description function. - If the user has requested general information about the player, such as their transfer value, age, gender, height, weight, position, team, best foot, contract details, or top-line performance information like minutes played or number of red/yellow cards, you should call the get_complete_player_data function. - If the user has requested to know the value of a specific metric, you should call the get_complete_player_data function. - If the user has asked a general question about about football data analysis and metrics, qualities, unrelated to a specific player, you should call the explain_data_analysis function. - If the user has asked a question about how this platform works, or what its capabilities are, or asks for information about Twelve Football (the company behind the platform), you should call explain_data_analysis. - If the user has asked for instructions or how to use the platform, you should also call explain_data_analysis. - If the user makes a search query for players in one or more leagues, you should call redirect_to_talent_discovery. - If the user wants to know which other players are *similar* to this player, either in the player's league or another league, you should call the find_similar_players function. - If the user asks about how the player would perform in a different league as a hypothetical transfer, you should call redirect_to_transfer.        Ensure you differentiate between a hypothetical transfer and performance analysis before choosing whether to call redirect_to_transfer or redirect_to_scout. - If the user asks about how the player would perform in a different team as a hypothetical transfer, you should call redirect_to_team_fit. - If the user asks about how the player compares to another player (but not how they compare to themselves in another season) you should call redirect_to_comparison. - If the user asks a complex, multi-step question about this player that goes beyond what your other functions can answer — such as questions about trends over time, comparing performance across seasons, specific match-level statistics, career progression, form analysis, or any question requiring multi-step data gathering — you MUST call redirect_to_complex_player_questions.        Examples of questions for redirect_to_complex_player_questions: 'How has Salah's goal output changed over the last 3 seasons?', 'What was Mbappe's pass completion in his last 5 matches?', 'Is Bellingham improving this season compared to last?', 'How does Haaland perform in Champions League vs domestic matches?' - If the user asks about a different football player (i.e. they mention a different name than what they initially queried), you should call the redirect_to_scout function. - If the user asks about a player's past or current performance in another league or team, call redirect_to_scout with the updated team or league - If the user asks about a different player than the one you already found, you should call redirect_to_scout with an updated player name. - If the user asks about a different season for the same player, you should call redirect_to_scout with the updated information, but if the user only specified this in the PREVIOUS conversation (in the summary above), you should just call short_description. - If the user appears frustrated or confused then apologise and tell them that you are going to start again from the beginning and call redirect_to_receptionist. The user may ask a question which does not relate to a single player, or a comparison between two players, or a transfer. In these cases, you should call redirect_to_receptionist. Examples of such questions include, but are not limited to: - Questions about how a player performed in a match, or how a team performed in a match. - Questions about how a team performed in a season. - Questions about the style of play of a team. Remember, if the user does not ask about the performance of a specific player, or a comparison between two players, or a transfer, you should call redirect_to_receptionist. If the user asks any question about how the platform works, what it can do, how it makes its analyses, or how something is defined, make sure that you always call explain_data_analysis instead of answering yourself. For any question about football data, metrics, definitions, or platform functionality, ALWAYS call explain_data_analysis — even if this function was already called earlier in the conversation. Never answer these questions from the conversation history. Pay careful attention if the user is trying to switch to another player, or if they are asking about a different player, or have just written a name. Always call redirect_to_scout in these cases. These are all the available functions. Remember to always use them (unless the query is really simple). Remeber that the user query was: None Pay close attention to the intent of the user query and make sure to call the correct function accordingly. That is whether the user asks about a player, a transfer, a team fit, a comparison or something else. \n## Visualizations\nYour functions produce visualizations (radar charts, pitch heatmaps, distribution charts) that are automatically displayed to the user alongside your text response. You do not need to do anything extra to show them — they appear when you call the function. Each function's description notes what visual it produces.\nThe user has selected the following competition: The 2026 season of the Damallsvenskan, a men's division 1 competition in Sweden\nThe user has selected the following player: Vilma Koivisto, a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan.",
+      "bundle_id": "af56a45a-c909-4fbd-8795-94da5978e67e"
+    },
+    {
+      "index": 0,
+      "role": "user",
+      "content": "Can you find players similar to her?",
+      "bundle_id": "297c662f-413c-4a4d-909a-d729ae92e88a"
+    },
+    {
+      "index": 2,
+      "role": "assistant",
+      "bundle_id": "f388eba2-df10-4ae2-bc1d-ff28a6aa418b",
+      "tool_calls": [
+        {
+          "id": "call_joEur4XoMQT8DtNooGGvdqjE",
+          "type": "function",
+          "function": {
+            "name": "find_similar_players",
+            "arguments": "{}"
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "content": "Vilma Koivisto is a unknown footed 23-year-old midfielder (more specifically a defensive midfielder) playing for Hammarby in the Damallsvenskan. Let's take a look at the strengths of Vilma Koivisto. \n\nThe best skill of Vilma Koivisto  is involvement. Indeed, She is outstanding at involvement compared to other midfielders. In involvement, she is strongest in xGBuildup. \n\nThe second best skill of Vilma Koivisto  is passing quality. Indeed, She is outstanding at passing quality compared to other midfielders. In passing quality, she is strongest in Passes (xT). \n\nThe third best skill of Vilma Koivisto  is active defence. Indeed, She is outstanding at active defence compared to other midfielders. In active defence, she is strongest in Recoveries. \n\n The user is interested in finding a similar player to Vilma Koivisto. You should help them by writing two sentences. The first sentence should summarise, briefly, what the player is best at. The second sentence should explicitly list the three qualities (Involvement, Passing Quality and Active Defence) that the player is best at. Those three names are already written in the language you are responding in -- use them as given, and do not translate them back into English. You should then ask the user if they want to find similar players based on these qualities. If they do, you should call the redirect_to_talent_discovery function with this information, passing the qualities as INVOLVEMENT, PASSING_QUALITY, ACTIVE_DEFENCE. ",
+      "bundle_id": "d5466f1a-9165-45dd-aa54-017fb67e9f5c",
+      "tool_call_id": "call_joEur4XoMQT8DtNooGGvdqjE"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "Vil",
+      "bundle_id": "f1a849ef-0481-4e61-8a26-99d3c1e4d725"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "ma",
+      "bundle_id": "eeb1c30d-3c92-4e7d-95dc-4d7d17dc1d7a"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Ko",
+      "bundle_id": "e4fd9b0b-a94e-4faa-ac95-af30f87494e9"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "iv",
+      "bundle_id": "628751a0-5683-4835-83f9-b6b1b95035ca"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "isto",
+      "bundle_id": "af46d631-893b-42a0-9f39-714a92c8da0f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " excels",
+      "bundle_id": "4ba3831e-b6d8-4cdd-b54a-0444863a04f5"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "7c2d63d7-a63e-4446-b9aa-ffaedf13a5d1"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " involvement",
+      "bundle_id": "2c7e3b45-6c8e-4826-9216-60ad6015ce83"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "42dc942b-9c71-4aa6-9411-312c2163f65b"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " passing",
+      "bundle_id": "6c0a9b7c-2a52-4a1b-969d-3f6addd3ac94"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " quality",
+      "bundle_id": "a1010cb1-1b95-4501-99ae-ea95ff32a65a"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "3e68ea9b-bf8b-454e-9f8f-bbb38de076f5"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " and",
+      "bundle_id": "a28e09dc-fa2d-4315-97bc-346e9bcd88cd"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " active",
+      "bundle_id": "40e168ed-22f2-4d3f-824a-5525d9e10135"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " defence",
+      "bundle_id": "98fe1857-8b8c-4d8a-8859-e3fac25f1a37"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "4d9652d9-3d71-4e91-8ed7-6ef8181742bc"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " making",
+      "bundle_id": "6bd550e7-4518-4f78-9020-90eab3070832"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " her",
+      "bundle_id": "24beedb9-1e09-4c4b-9876-1f1c63d4c34d"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " a",
+      "bundle_id": "e941f182-98ce-44d9-996d-df86bbd67c82"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " standout",
+      "bundle_id": "beba56ee-28cd-478e-944c-f760dbec7090"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " midfielder",
+      "bundle_id": "65c020f4-7772-4577-a732-28953c9086cd"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ".",
+      "bundle_id": "48216afa-9fab-4340-99fa-5f3ffceec394"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Specifically",
+      "bundle_id": "324ab5db-68de-43cd-86b2-8d9077f61e81"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "dcd5821d-8838-4289-af61-9951c28edc0d"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " her",
+      "bundle_id": "b4533890-d7f1-4bc8-b568-b69973514651"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " strengths",
+      "bundle_id": "5abc09a1-51b6-43cc-8bb0-49aaea63f4ef"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " lie",
+      "bundle_id": "09a40d7d-d69c-4826-982f-b989e9986da9"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " in",
+      "bundle_id": "254cbd00-1d9e-48fa-b982-e743ae979ed9"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " x",
+      "bundle_id": "5515c7b8-adb0-4a32-9984-e7c434ca3a07"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "GB",
+      "bundle_id": "87ffa1ce-e759-4021-863b-b8ebd27e39c8"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "uil",
+      "bundle_id": "29443d6b-934d-4051-8c6b-c21a0fcbcebd"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "dup",
+      "bundle_id": "cf8faa24-af8a-4c70-ad99-cd2858c763e3"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "92022238-a033-4bfa-9635-4b7738ce2e94"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Pass",
+      "bundle_id": "8e0b009c-12c3-4003-a4f4-a27659b89af8"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "es",
+      "bundle_id": "10b97d27-c38f-43cc-b728-617a88c93c74"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " (",
+      "bundle_id": "bd4e1037-40c4-4ae6-9006-43614b52158d"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "x",
+      "bundle_id": "51a45d06-cd5c-4c68-a213-6b9bfb677a9e"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "T",
+      "bundle_id": "4456230c-f3e8-4c55-9be9-4c616d037396"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "),",
+      "bundle_id": "287352f4-83ef-4379-85ce-49fb7892a3e0"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " and",
+      "bundle_id": "233815a7-fd7e-471a-9264-4e0b87f27895"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Recover",
+      "bundle_id": "12d4c0af-51bb-4100-ac0d-ea49e7674cff"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "ies",
+      "bundle_id": "754efa0f-74fb-4dd4-89dc-7bd2ca92ed54"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ".\n\n",
+      "bundle_id": "65ced7dc-c212-4cd3-bf68-d218b387d1bc"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "Would",
+      "bundle_id": "9e4bd5cb-b3d7-48d7-83ce-986f2d260387"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " you",
+      "bundle_id": "19ac1db9-69c7-4c3c-b524-4eea28a4fb39"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " like",
+      "bundle_id": "736c1479-55af-4416-9a48-605d1f0e4a9c"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " me",
+      "bundle_id": "f275f303-893b-4a2c-9f26-8095de6310ea"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " to",
+      "bundle_id": "e4d2fa75-a7fa-4f72-b427-fab9f30e800b"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " find",
+      "bundle_id": "1055620c-7c7c-42ba-919c-a4a31622f8a2"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " similar",
+      "bundle_id": "f4b4e7f5-7c2d-4677-9902-b5c08a4bbae6"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " players",
+      "bundle_id": "c5565db9-d384-407e-89ba-40f0273bceab"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " based",
+      "bundle_id": "56df0205-208d-4395-bcc2-8090aa06f59f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " on",
+      "bundle_id": "ee0748ed-0553-41bf-bd50-816702c06b11"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " these",
+      "bundle_id": "9f4e462b-42a5-4af8-800f-abca0d967539"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " qualities",
+      "bundle_id": "599e164f-f21c-4fef-8a1f-a10fe78f9390"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ":",
+      "bundle_id": "39c46fa8-d63b-46c9-8ad2-8900b618e72c"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " In",
+      "bundle_id": "140e0963-6293-4730-a970-fb6d29f8239c"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "vol",
+      "bundle_id": "6620fca3-84ac-420c-848c-77252e34e3a5"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "vement",
+      "bundle_id": "30f71484-b811-4679-be77-9a9ee7a681f6"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "fd9a68e4-47b5-4d2e-bdf3-f213919c8b4a"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Passing",
+      "bundle_id": "f7e3937d-1e4b-4fec-a448-f94cd25ceb7c"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Quality",
+      "bundle_id": "bd2e2707-e163-42c5-9daf-b570a4aba5c0"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": ",",
+      "bundle_id": "5432794e-b5c2-489e-836b-aa4b7341469f"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " and",
+      "bundle_id": "f6cbded7-890b-43a7-b38b-24e3a8f99039"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Active",
+      "bundle_id": "bc013e67-c9fa-4f2e-9ac2-755cdc589fc8"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": " Defence",
+      "bundle_id": "ef677bbb-26b5-4c7f-9684-8f6a002126be"
+    },
+    {
+      "index": 4,
+      "role": "assistant",
+      "content": "?",
+      "bundle_id": "93c913d1-ec2f-41c8-abde-64768e3b33ec"
+    }
+  ]
+}

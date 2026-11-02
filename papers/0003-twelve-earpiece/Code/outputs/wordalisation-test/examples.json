@@ -1,0 +1,92 @@
+[
+ {
+  "player": "Denis Krioutchenkov",
+  "gender": "male",
+  "position": "STRIKER",
+  "competition": "American USL League 1",
+  "season": "2026",
+  "question": "How good is Denis Krioutchenkov at dribbling?",
+  "earpiece": "Denis Krioutchenkov is a dynamic striker who can create dangerous opportunities through his dribbling, demonstrating strong ability at generating expected goals with his carries. While he's effective in the attacking third, he struggles slightly when facing pressure, which can limit his overall impact in tight situations.\n\nDenis Krioutchenkov showcased his dribbling prowess in the attacking central midfield, where he stood out as a key playmaker. He also demonstrated good abilities in the attacking half-spaces and the opposition penalty area, effectively creating opportunities for himself and his teammates. However, his performances in defensive areas, particularly on both wings and half-spaces, were below average, which may limit his overall impact on his team's transitions.",
+  "claude": "Denis Krioutchenkov is an efficient dribbler rather than a high-volume one, and his dribbles often lead to real chances. Across about 1,970 USL League 1 minutes in 2026 he tried 45 dribbles and completed 36, an 80% success rate, which is very high for a striker. That works out to only about 2 attempts per 90 minutes (about 1.6 successful), so he picks his moments instead of taking players on all the time. Most of it comes as a centre-forward (27 of 34 completed, 79%), where his dribbles added 1.25 expected threat (xT, a measure of how much an action raises the chance of scoring) and fed into 2.10 xG (expected goals) worth of shots. He also kept the ball 62.5% of the time when pressed, but I haven't compared any of this with other League 1 strikers, so how he ranks in the league is untested.",
+  "basic": {
+   "earpiece": {
+    "engagement": 3,
+    "usefulness": 3
+   },
+   "claude": {
+    "engagement": 4,
+    "usefulness": 4
+   }
+  },
+  "detailed": {
+   "earpiece": {
+    "engagement": 4,
+    "usefulness": 3
+   },
+   "claude": {
+    "engagement": 4,
+    "usefulness": 2
+   }
+  }
+ },
+ {
+  "player": "Dani Ortolan",
+  "gender": "female",
+  "position": "STRIKER",
+  "competition": "Brazilian Brasileiro Women",
+  "season": "2026",
+  "question": "Where on the pitch does Dani Ortolan win the ball back?",
+  "earpiece": "Daniela Maria Lopes Ortolan shows a commendable ability to defend effectively in her own penalty area for a striker. However, her contributions drop off significantly in other areas of the pitch, particularly in the attacking third and on the right side. Overall, while she excels in protecting her goal, her defensive effectiveness diminishes as she moves further up the field. ",
+  "claude": "Dani Ortolan wins the ball back very rarely: in the zones I could see, she has only 2 recorded ball recoveries all season, one on the attacking-half left wing (as a second striker) and one on the attacking-half right wing (as a centre-forward). Most of her defensive work happens on the attacking-half left wing, with 6 defensive actions and 4 of 7 defensive duels won (as CF, LW and SS), plus 3 defensive actions in the attacking central zone and 5 in her own box, the box ones mostly aerial duels at defensive set pieces. The data output was cut off, so I couldn't check the penalty box or her own-half zones beyond her own box, but the visible numbers point to a forward who presses mainly down the left in the opposition half.",
+  "basic": {
+   "earpiece": {
+    "engagement": 3,
+    "usefulness": 3
+   },
+   "claude": {
+    "engagement": 4,
+    "usefulness": 3
+   }
+  },
+  "detailed": {
+   "earpiece": {
+    "engagement": 3,
+    "usefulness": 3
+   },
+   "claude": {
+    "engagement": 4,
+    "usefulness": 2
+   }
+  }
+ },
+ {
+  "player": "Jake Dengler",
+  "gender": "male",
+  "position": "CENTRAL_DEFENDER",
+  "competition": "American USL League 1",
+  "season": "2026",
+  "question": "How good is Jake Dengler at passing?",
+  "earpiece": "Dengler shines in passing quality, particularly noted for his ability to generate expected threat from passes and moving the ball effectively into the final third. While he is competent in crosses, his contributions in terms of chance-creating passes and passes in the final third suggest there's room for growth in those areas.\n\nDengler excels in central areas, particularly in defensive and attacking midfield roles, showcasing his ability to distribute the ball effectively from deep. However, his passing contribution wanes significantly in wider positions and the opposition's penalty area, indicating he is less influential outside the central zones.",
+  "claude": "I'd rate Jake Dengler as a strong passing centre-back for USL League 1: he combines high volume, accuracy and progression better than any of the few other centre-backs I could compare him with. In 2026 he made 1,516 passes in about 2,341 minutes as a central defender (roughly 58 per 90) and completed 89.5% of them. He also played about 269 minutes on the left of a centre-back pair, where he hit 91% from 170 passes. Per 90 minutes he made about 6.8 progressive passes, 5.6 passes into the final third and 0.50 expected threat from his passes (a measure of how much his passes raise the chance of scoring), against roughly 1.4–3.2, 0.9–2.4 and 0.20–0.33 for the three regular centre-backs I could see. The league-wide data came back cut off, so I only saw a small sample of peers rather than a full ranking, and he creates very little in the final third (1 key pass, 0.15 expected assists); his value is in building play from deep, with 239 playmaking passes and 12.5 expected goals from build-up.",
+  "basic": {
+   "earpiece": {
+    "engagement": 3,
+    "usefulness": 3
+   },
+   "claude": {
+    "engagement": 4,
+    "usefulness": 5
+   }
+  },
+  "detailed": {
+   "earpiece": {
+    "engagement": 4,
+    "usefulness": 4
+   },
+   "claude": {
+    "engagement": 3,
+    "usefulness": 4
+   }
+  }
+ }
+]

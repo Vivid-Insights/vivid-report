@@ -1,0 +1,401 @@
+player_id,name,gender,competition_id,season,competition,country,division,position,minutes
+974715,Cristian Alfieri,male,43609,2026,Canadian U-Sports Ontario University Athletics,Canada,1,MIDFIELDER,554
+1112889,Karl Espiro,male,43609,2026,Canadian U-Sports Ontario University Athletics,Canada,1,WINGER,870
+1114399,Romain Sordet,male,43609,2026,Canadian U-Sports Ontario University Athletics,Canada,1,MIDFIELDER,745
+516383,Davo,male,705,2026,Portuguese Segunda Liga,Portugal,2,WINGER,532
+809318,João Fonseca,male,705,2026,Portuguese Segunda Liga,Portugal,2,CENTRAL_DEFENDER,688
+834360,Silvino,male,705,2026,Portuguese Segunda Liga,Portugal,2,CENTRAL_DEFENDER,600
+837054,Timotej Kudlička,male,775,2026,Slovak Niké Liga,Slovakia,1,WINGER,880
+218904,Lukáš Skovajsa,male,775,2026,Slovak Niké Liga,Slovakia,1,FULL_BACK,655
+406092,Markus Poom,male,775,2026,Slovak Niké Liga,Slovakia,1,MIDFIELDER,727
+783785,Trent Kone-Doherty,male,669,2026,Norwegian Eliteserien,Norway,1,WINGER,722
+629771,Ole Blomberg,male,669,2026,Norwegian Eliteserien,Norway,1,STRIKER,1777
+54548,Martin Linnes,male,669,2026,Norwegian Eliteserien,Norway,1,FULL_BACK,974
+557378,Rhaldney,male,852,2026,Turkish Süper Lig,Turkey,1,MIDFIELDER,525
+370093,Elisha Owusu,male,852,2026,Turkish Süper Lig,Turkey,1,MIDFIELDER,547
+128587,Marko Jevtović,male,852,2026,Turkish Süper Lig,Turkey,1,MIDFIELDER,495
+1295727,Charles Yemi Oderinde,male,607,2026,Maltese Premier League,Malta,1,MIDFIELDER,461
+237149,Dunstan Vella,male,607,2026,Maltese Premier League,Malta,1,MIDFIELDER,489
+280398,Yuri,male,607,2026,Maltese Premier League,Malta,1,STRIKER,643
+727032,Dimitrios Keramitsis,male,692,2026,Polish Ekstraklasa,Poland,1,CENTRAL_DEFENDER,888
+240034,Mateusz Grzybek,male,692,2026,Polish Ekstraklasa,Poland,1,FULL_BACK,548
+237036,Lisandro Semedo,male,692,2026,Polish Ekstraklasa,Poland,1,WINGER,728
+122895,Ali Al Zaqan,male,739,2026,Saudi Arabian Division 1,Saudi Arabia,2,STRIKER,450
+349467,Hassan Al Habib,male,739,2026,Saudi Arabian Division 1,Saudi Arabia,2,MIDFIELDER,482
+1360013,Mohammed Zamzami,male,739,2026,Saudi Arabian Division 1,Saudi Arabia,2,FULL_BACK,464
+581049,Phil Harres,male,423,2026,German 2. Bundesliga,Germany,2,STRIKER,774
+527135,Jannik Rochelt,male,423,2026,German 2. Bundesliga,Germany,2,WINGER,505
+224483,Paul Seguin,male,423,2026,German 2. Bundesliga,Germany,2,MIDFIELDER,631
+1071016,Narek Poghosyan,male,148,2026,Armenian First League,Armenia,2,CENTRAL_DEFENDER,452
+1078986,Edmond Hayrapetyan,male,148,2026,Armenian First League,Armenia,2,CENTRAL_DEFENDER,627
+826492,Armen Arakelyan,male,148,2026,Armenian First League,Armenia,2,FULL_BACK,472
+891041,Elie Mpanzu Kibisawala,male,835,2025,Ligi kuu Bara,Tanzania,1,STRIKER,1107
+631332,Anicet Oura,male,835,2025,Ligi kuu Bara,Tanzania,1,WINGER,1450
+1170312,Selemani Mwalimu,male,835,2025,Ligi kuu Bara,Tanzania,1,STRIKER,1088
+648767,Lukas Kaĉavenda,male,302,2026,Croatian Superleague,Croatia,1,MIDFIELDER,517
+546834,Aleksa Latković,male,302,2026,Croatian Superleague,Croatia,1,WINGER,718
+680581,Patrik Mijić,male,302,2026,Croatian Superleague,Croatia,1,STRIKER,731
+611798,Giorgi Gvishiani,male,419,2026,Georgian Erovnuli Liga 2,Georgia,2,FULL_BACK,480
+387111,Levan Tsotsonava,male,419,2026,Georgian Erovnuli Liga 2,Georgia,2,WINGER,512
+563223,Nikoloz Talakhadze,male,419,2026,Georgian Erovnuli Liga 2,Georgia,2,MIDFIELDER,972
+810074,Tsubasa Kasayanagi,male,202,2026,Belgian Challenger Pro League,Belgium,2,WINGER,636
+37764,Lukas Van Eenoo,male,202,2026,Belgian Challenger Pro League,Belgium,2,MIDFIELDER,674
+858699,Andreas Spegelaere,male,202,2026,Belgian Challenger Pro League,Belgium,2,CENTRAL_DEFENDER,515
+1282506,Abdelrahman El Khamisi,male,342,2026,Egyptian Premier League,Egypt,1,MIDFIELDER,495
+874446,Mahmoud Mamdouh,male,342,2026,Egyptian Premier League,Egypt,1,STRIKER,551
+1200374,Isaac Saviour,male,342,2026,Egyptian Premier League,Egypt,1,MIDFIELDER,590
+1227285,Theo Butterworth,male,43223,2026,American NCAA D1 Sun Belt,United States,1,CENTRAL_DEFENDER,458
+1180059,David Chapman,male,43223,2026,American NCAA D1 Sun Belt,United States,1,CENTRAL_DEFENDER,473
+1087224,Baxter Hurt,male,43223,2026,American NCAA D1 Sun Belt,United States,1,CENTRAL_DEFENDER,459
+1160026,Ulises Micael Villan,male,301,2026,Costa Rican Primera División,Costa Rica,1,MIDFIELDER,1073
+141434,Yosel Piedra,male,301,2026,Costa Rican Primera División,Costa Rica,1,CENTRAL_DEFENDER,717
+329207,Randal Cordero,male,301,2026,Costa Rican Primera División,Costa Rica,1,CENTRAL_DEFENDER,473
+217086,Alexander Zetterström,male,818,2026,Swedish Superettan,Sweden,2,CENTRAL_DEFENDER,2279
+51631,Dennis Widgren,male,818,2026,Swedish Superettan,Sweden,2,CENTRAL_DEFENDER,2301
+676713,Mohammed Abubakari,male,818,2026,Swedish Superettan,Sweden,2,FULL_BACK,1454
+685366,Songchai Thongcham,male,836,2026,Thai League 2,Thailand,2,MIDFIELDER,472
+654119,Caio Tailândia,male,836,2026,Thai League 2,Thailand,2,WINGER,516
+545152,Elias,male,836,2026,Thai League 2,Thailand,2,STRIKER,495
+863808,Ayan Zhakaiym,male,544,2026,Kazakhstani 1. Division,Kazakhstan,2,MIDFIELDER,809
+1323905,Diaz Kushkumbaev,male,544,2026,Kazakhstani 1. Division,Kazakhstan,2,STRIKER,1490
+914491,Meyrdzhan Zhumadilov,male,544,2026,Kazakhstani 1. Division,Kazakhstan,2,MIDFIELDER,1811
+425786,Matthew Baldisimo,male,43123,2026,Canadian Premier League,Canada,1,MIDFIELDER,505
+377073,Frank Sturing,male,43123,2026,Canadian Premier League,Canada,1,CENTRAL_DEFENDER,1428
+502947,Julian Dunn,male,43123,2026,Canadian Premier League,Canada,1,CENTRAL_DEFENDER,470
+1060925,Santiago Flores,male,165,2026,Australian Western Australia NPL,Australia,1,WINGER,850
+145074,Brandon O'Neill,male,165,2026,Australian Western Australia NPL,Australia,1,MIDFIELDER,849
+1199681,Liam Murray,male,165,2026,Australian Western Australia NPL,Australia,1,WINGER,943
+932421,Tate Lampman,male,43206,2026,American NCAA D1 Big East,United States,1,CENTRAL_DEFENDER,497
+849535,Oliver Stafford,male,43206,2026,American NCAA D1 Big East,United States,1,CENTRAL_DEFENDER,476
+1356262,Gerard Lorente,male,43206,2026,American NCAA D1 Big East,United States,1,STRIKER,510
+235456,Samed Kılıç,male,414,2026,French Ligue 3,France,3,MIDFIELDER,803
+26084,Lionel Carole,male,414,2026,French Ligue 3,France,3,CENTRAL_DEFENDER,698
+1277746,Nassim Douce,male,414,2026,French Ligue 3,France,3,CENTRAL_DEFENDER,561
+397161,Tom Sang,male,359,2026,English League Two,England,4,MIDFIELDER,921
+545290,Keenan Appiah-Forson,male,359,2026,English League Two,England,4,MIDFIELDER,874
+13315,Omar Beckles,male,359,2026,English League Two,England,4,CENTRAL_DEFENDER,991
+640133,Filipe Batucissa,male,43952,2026,Segundona,Angola,2,WINGER,456
+1342656,Paulo Gaspar,male,43952,2026,Segundona,Angola,2,CENTRAL_DEFENDER,594
+1342616,Arnaldo Dielo,male,43952,2026,Segundona,Angola,2,MIDFIELDER,466
+775201,Precious Ugwu,male,633,2026,Dutch Eerste Divisie,Netherlands,2,FULL_BACK,754
+1064586,Driss Laaouina,male,633,2026,Dutch Eerste Divisie,Netherlands,2,MIDFIELDER,766
+750164,Labinot Bajrami,male,633,2026,Dutch Eerste Divisie,Netherlands,2,STRIKER,504
+1290718,Christian Belotti,male,43621,2026,Italian Serie D - Girone B,Italy,4,WINGER,650
+481057,Alberto Boschetti,male,43621,2026,Italian Serie D - Girone B,Italy,4,MIDFIELDER,615
+694332,Andrea Carbone,male,43621,2026,Italian Serie D - Girone B,Italy,4,FULL_BACK,454
+381492,Arthur Cabral,male,255,2026,Brazilian Serie A,Brazil,1,STRIKER,2208
+434105,Raniele,male,255,2026,Brazilian Serie A,Brazil,1,MIDFIELDER,2230
+293251,Yeferson Soteldo,male,255,2026,Brazilian Serie A,Brazil,1,WINGER,1187
+903697,Idan Weinberg,male,506,2026,Israeli Liga Leumit,Israel,2,CENTRAL_DEFENDER,503
+892008,Asil Kanani,male,506,2026,Israeli Liga Leumit,Israel,2,STRIKER,678
+1123416,Ahmad Khalaila,male,506,2026,Israeli Liga Leumit,Israel,2,STRIKER,707
+1185545,Erick Londoño Viafara,male,43383,2026,American MLS Next Pro,United States,2,CENTRAL_DEFENDER,651
+1343623,Jeremy Djieze,male,43383,2026,American MLS Next Pro,United States,2,WINGER,545
+1207356,Makai Wells,male,43383,2026,American MLS Next Pro,United States,2,WINGER,1095
+614616,Ian Luccas,male,707,2026,Portuguese Primeira Liga,Portugal,1,MIDFIELDER,478
+518856,Robinho,male,707,2026,Portuguese Primeira Liga,Portugal,1,FULL_BACK,750
+494369,Naïs Djouahra,male,707,2026,Portuguese Primeira Liga,Portugal,1,WINGER,717
+1377423,Álvaro Velaz,male,43338,2026,Spanish Segunda Division RFEF,Spain,4,FULL_BACK,554
+769915,Juande García,male,43338,2026,Spanish Segunda Division RFEF,Spain,4,CENTRAL_DEFENDER,594
+531551,Álex Carrascal,male,43338,2026,Spanish Segunda Division RFEF,Spain,4,MIDFIELDER,470
+804276,Dominik Vott,male,317,2026,Czech Chance National Liga,Czech Republic,2,WINGER,724
+82447,Dominik Simerský,male,317,2026,Czech Chance National Liga,Czech Republic,2,CENTRAL_DEFENDER,760
+617176,David Jurčenko,male,317,2026,Czech Chance National Liga,Czech Republic,2,STRIKER,913
+1208436,Gandi Samuel Sle,male,621,2026,Moldovan Super Liga,Moldova,1,STRIKER,480
+1277411,Philip Odubia,male,621,2026,Moldovan Super Liga,Moldova,1,STRIKER,932
+807891,Andrei Sosnovschii,male,621,2026,Moldovan Super Liga,Moldova,1,CENTRAL_DEFENDER,458
+597072,Hugo Moura,male,219,2026,Brazilian Baiano 1,Brazil,1,FULL_BACK,933
+47566,Rafael Mineiro,male,219,2026,Brazilian Baiano 1,Brazil,1,WINGER,836
+1194845,Kauê Junior,male,219,2026,Brazilian Baiano 1,Brazil,1,WINGER,469
+435470,Christian Bonacchi,male,43624,2026,Italian Serie D - Girone E,Italy,4,CENTRAL_DEFENDER,579
+323460,Tommaso Degl'innocenti,male,43624,2026,Italian Serie D - Girone E,Italy,4,CENTRAL_DEFENDER,556
+548581,Andrea Conti,male,43624,2026,Italian Serie D - Girone E,Italy,4,CENTRAL_DEFENDER,577
+522209,Leon Dajaku,male,425,2026,German 3. Liga,Germany,3,WINGER,564
+687790,Antonio Tikvić,male,425,2026,German 3. Liga,Germany,3,CENTRAL_DEFENDER,722
+1084613,Nico Thier,male,425,2026,German 3. Liga,Germany,3,MIDFIELDER,567
+609813,Sten Viidas,male,374,2026,Estonian A.LeCoq Premium Liiga,Estonia,1,WINGER,1788
+370186,Michael Lilander,male,374,2026,Estonian A.LeCoq Premium Liiga,Estonia,1,FULL_BACK,2360
+1306700,Joseph-Albert Ndakala,male,374,2026,Estonian A.LeCoq Premium Liiga,Estonia,1,STRIKER,716
+254333,Nininho,male,259,2026,Brazilian Sul-Matogrossense,Brazil,1,FULL_BACK,486
+40965,João Lucas,male,259,2026,Brazilian Sul-Matogrossense,Brazil,1,FULL_BACK,465
+802053,Kauê,male,259,2026,Brazilian Sul-Matogrossense,Brazil,1,CENTRAL_DEFENDER,573
+449867,Lorik Boshnjaku,male,1448,2026,Kosovan Superliga,Kosovo,1,MIDFIELDER,564
+822682,Arianit Hasani,male,1448,2026,Kosovan Superliga,Kosovo,1,MIDFIELDER,692
+478240,Jorgo Pëllumbi,male,1448,2026,Kosovan Superliga,Kosovo,1,CENTRAL_DEFENDER,486
+1351233,Ciaran William Banks,male,361,2026,English Non League Premier,England,5,FULL_BACK,896
+143808,Jordan Thewlis,male,361,2026,English Non League Premier,England,5,WINGER,519
+1098999,Charlie Naylor,male,361,2026,English Non League Premier,England,5,CENTRAL_DEFENDER,860
+596736,Luis Felipe,male,837,2026,Thai League,Thailand,1,FULL_BACK,473
+379227,Mohammed Osman,male,837,2026,Thai League,Thailand,1,WINGER,489
+602897,Chatmongkol Tongkiri,male,837,2026,Thai League,Thailand,1,MIDFIELDER,489
+1285776,Doran Farrell,male,43949,2026,American NCAA D1 Mountain West,United States,1,CENTRAL_DEFENDER,459
+1228332,Martin Luala,male,43949,2026,American NCAA D1 Mountain West,United States,1,MIDFIELDER,477
+964759,Tanner Dutra,male,43949,2026,American NCAA D1 Mountain West,United States,1,CENTRAL_DEFENDER,527
+638684,Hlynur Karlsson,male,480,2026,Icelandic Besta-deild karla,Iceland,1,MIDFIELDER,1032
+216567,Gísli Eyjólfsson,male,480,2026,Icelandic Besta-deild karla,Iceland,1,MIDFIELDER,1838
+135187,Elías Már Ómarsson,male,480,2026,Icelandic Besta-deild karla,Iceland,1,STRIKER,1007
+559684,Jesper Karlsson,male,401,2026,Finnish Ykkösliiga,Finland,2,MIDFIELDER,1635
+867899,Urho Huhtamäki,male,401,2026,Finnish Ykkösliiga,Finland,2,CENTRAL_DEFENDER,2223
+830257,Rasmus Sipi,male,401,2026,Finnish Ykkösliiga,Finland,2,CENTRAL_DEFENDER,2163
+1100998,Valentin Fontaine,male,43201,2026,American NCAA D1 ASUN,United States,1,MIDFIELDER,633
+915098,Afonso Conde,male,43201,2026,American NCAA D1 ASUN,United States,1,STRIKER,475
+950163,Mikhail Keise,male,43201,2026,American NCAA D1 ASUN,United States,1,CENTRAL_DEFENDER,590
+116492,Diego Vera,male,880,2026,Uruguayan Segunda División,Uruguay,2,STRIKER,661
+520587,Francisco Ibáñez,male,880,2026,Uruguayan Segunda División,Uruguay,2,CENTRAL_DEFENDER,496
+492677,Owen Falconis,male,880,2026,Uruguayan Segunda División,Uruguay,2,WINGER,627
+891524,Marcus Younis,male,335,2026,Danish Superliga,Denmark,1,WINGER,660
+451410,Mads Emil Madsen,male,335,2026,Danish Superliga,Denmark,1,MIDFIELDER,488
+619642,Oliver Ross,male,335,2026,Danish Superliga,Denmark,1,MIDFIELDER,659
+433100,Lukas Mai,male,830,2026,Swiss Super League,Switzerland,1,CENTRAL_DEFENDER,772
+492092,Hugo Vandermersch,male,830,2026,Swiss Super League,Switzerland,1,FULL_BACK,682
+272233,Pius Dorn,male,830,2026,Swiss Super League,Switzerland,1,FULL_BACK,540
+1108027,Oskar Lindegård,male,43539,2026,American NCAA D2 Conference Carolinas,United States,2,FULL_BACK,715
+972259,Maddox Driver,male,43539,2026,American NCAA D2 Conference Carolinas,United States,2,STRIKER,538
+1364095,Jacob Monroy,male,43539,2026,American NCAA D2 Conference Carolinas,United States,2,MIDFIELDER,1012
+821646,Adam Stroud,male,400,2026,Finnish Veikkausliiga,Finland,1,WINGER,955
+15025,Alexander Ring,male,400,2026,Finnish Veikkausliiga,Finland,1,MIDFIELDER,1510
+1077209,Goudouss Bamba,male,400,2026,Finnish Veikkausliiga,Finland,1,FULL_BACK,828
+1066030,Åsmund Roppen,male,665,2026,Norwegian Obos Ligaen,Norway,2,FULL_BACK,876
+853704,Mirza Mulac,male,665,2026,Norwegian Obos Ligaen,Norway,2,CENTRAL_DEFENDER,2256
+779349,Filip Botnen,male,665,2026,Norwegian Obos Ligaen,Norway,2,CENTRAL_DEFENDER,995
+682962,Marcus Ryberg,male,328,2026,Danish 1st Division,Denmark,2,MIDFIELDER,708
+678062,Sebastian Lodberg,male,328,2026,Danish 1st Division,Denmark,2,WINGER,535
+776258,Elison Makolli,male,328,2026,Danish 1st Division,Denmark,2,CENTRAL_DEFENDER,964
+1336021,David Kolacek,male,319,2026,Czech 3. liga,Czech Republic,3,STRIKER,710
+913212,Dominik Němec,male,319,2026,Czech 3. liga,Czech Republic,3,MIDFIELDER,666
+584998,Kryštof Krátký,male,319,2026,Czech 3. liga,Czech Republic,3,STRIKER,664
+644927,Iker Bravo,male,346,2026,English Championship,England,2,MIDFIELDER,720
+546111,Lorent Tolaj,male,346,2026,English Championship,England,2,STRIKER,572
+10303,Sonny Bradley,male,346,2026,English Championship,England,2,CENTRAL_DEFENDER,516
+1273612,Brian Ouru,male,548,2025,Premier League,Kenya,5,MIDFIELDER,487
+1273629,Ian Omondi,male,548,2025,Premier League,Kenya,5,CENTRAL_DEFENDER,487
+887193,Roger,male,43759,2026,Brazilian Paulista A4,Brazil,4,FULL_BACK,710
+597960,Kaio,male,43759,2026,Brazilian Paulista A4,Brazil,4,CENTRAL_DEFENDER,1596
+606183,David Kochem,male,43759,2026,Brazilian Paulista A4,Brazil,4,CENTRAL_DEFENDER,1012
+84477,Marius Briceag,male,720,2026,Romanian Liga II,Romania,2,FULL_BACK,672
+327214,Rareş Lazăr,male,720,2026,Romanian Liga II,Romania,2,MIDFIELDER,581
+961054,Eduard Croitoru,male,720,2026,Romanian Liga II,Romania,2,FULL_BACK,555
+1365653,Chamou Karaboue,male,496,2026,Iraqi League,Iraq,1,CENTRAL_DEFENDER,645
+1365864,Mohammed Muhsen,male,496,2026,Iraqi League,Iraq,1,MIDFIELDER,612
+1365619,Mohammed Jasim,male,496,2026,Iraqi League,Iraq,1,CENTRAL_DEFENDER,554
+121621,Grant Kekana,male,789,2026,South African PSL,South Africa,1,CENTRAL_DEFENDER,532
+763477,Tshepang Morena,male,789,2026,South African PSL,South Africa,1,WINGER,469
+292529,Mbhazima Rikhotso,male,789,2026,South African PSL,South Africa,1,CENTRAL_DEFENDER,481
+573691,Adonis Frías,male,244,2026,Brazilian Paulista A1,Brazil,1,CENTRAL_DEFENDER,706
+493492,Marcos Antônio,male,244,2026,Brazilian Paulista A1,Brazil,1,MIDFIELDER,825
+395625,Ariel Sant'Anna,male,244,2026,Brazilian Paulista A1,Brazil,1,FULL_BACK,479
+447353,Reece Myles-Meekums,male,350,2026,English National League N / S,England,5,WINGER,477
+601849,Dylan Stephenson,male,350,2026,English National League N / S,England,5,MIDFIELDER,761
+406683,Kyle Howkins,male,350,2026,English National League N / S,England,5,CENTRAL_DEFENDER,875
+337093,Xuan Han,male,286,2026,Chinese China League One,China PR,2,CENTRAL_DEFENDER,2113
+603648,Dilyimit Tudi,male,286,2026,Chinese China League One,China PR,2,MIDFIELDER,993
+1053996,Liu Shiming,male,286,2026,Chinese China League One,China PR,2,CENTRAL_DEFENDER,1439
+213966,Leandro Corulo,male,209,2026,Bolivian LFPB,Bolivia,1,CENTRAL_DEFENDER,1479
+90785,Jhord Garcés,male,209,2026,Bolivian LFPB,Bolivia,1,STRIKER,1219
+807705,Rodrigo Llano,male,209,2026,Bolivian LFPB,Bolivia,1,STRIKER,935
+426372,Raul Palmes,male,719,2026,Romanian Superliga,Romania,1,CENTRAL_DEFENDER,1064
+779381,Flavius Iacob,male,719,2026,Romanian Superliga,Romania,1,FULL_BACK,1063
+477398,Taylor Luvambo,male,719,2026,Romanian Superliga,Romania,1,STRIKER,754
+336450,Charles Morren,male,585,2026,Luxembourgish National Division,Luxembourg,1,MIDFIELDER,641
+787968,Benjamin Romeyns,male,585,2026,Luxembourgish National Division,Luxembourg,1,STRIKER,769
+1346398,Ken Schmitz,male,585,2026,Luxembourgish National Division,Luxembourg,1,STRIKER,624
+814426,Artem Nagirnyi,male,667,2026,Norwegian 2. Division,Norway,3,FULL_BACK,680
+560972,Hugo Svensson,male,667,2026,Norwegian 2. Division,Norway,3,STRIKER,478
+829428,Sondre Halvorsen,male,667,2026,Norwegian 2. Division,Norway,3,STRIKER,818
+650635,Dudu,male,729,2026,Russian Premier League,Russia,1,WINGER,489
+447218,Iker Pozo,male,729,2026,Russian Premier League,Russia,1,MIDFIELDER,557
+537822,Maksim Petrov,male,729,2026,Russian Premier League,Russia,1,WINGER,611
+1329107,Niko Skrlec,male,304,2026,Croatian Second NL,Croatia,3,MIDFIELDER,504
+771873,Marko Mady,male,304,2026,Croatian Second NL,Croatia,3,FULL_BACK,498
+919231,Dario Sivonjić,male,304,2026,Croatian Second NL,Croatia,3,MIDFIELDER,472
+818358,Jack McInally,male,160,2026,Australian Queensland NPL,Australia,1,CENTRAL_DEFENDER,2311
+478251,Jayden Prasad,male,160,2026,Australian Queensland NPL,Australia,1,WINGER,740
+448322,Marcus Barnes,male,160,2026,Australian Queensland NPL,Australia,1,STRIKER,1677
+285529,Ryoma Watanabe,male,43864,2026,Japanese J1 100 Year Vision League,Japan,1,MIDFIELDER,1716
+739665,Kota Kudo,male,43864,2026,Japanese J1 100 Year Vision League,Japan,1,CENTRAL_DEFENDER,653
+560238,Matheus Bueno,male,43864,2026,Japanese J1 100 Year Vision League,Japan,1,MIDFIELDER,1624
+363788,Joan Castro,male,295,2026,Colombian Liga BetPlay,Colombia,1,FULL_BACK,2556
+896720,Juan Viveros,male,295,2026,Colombian Liga BetPlay,Colombia,1,CENTRAL_DEFENDER,2686
+770285,Anthony Vásquez,male,295,2026,Colombian Liga BetPlay,Colombia,1,STRIKER,828
+1069891,Jonas Sundli-Härdig,male,43203,2026,NCAA D1 American Athletic,United States,1,MIDFIELDER,464
+851324,Emil Lausten,male,43203,2026,NCAA D1 American Athletic,United States,1,CENTRAL_DEFENDER,464
+1108150,Luc Haller,male,43203,2026,NCAA D1 American Athletic,United States,1,MIDFIELDER,474
+900157,Yuma Kato,male,43865,2026,Japanese J2/J3 100 Year Vision League,Japan,1,FULL_BACK,1415
+1049587,Soichiro Tsutsumi,male,43865,2026,Japanese J2/J3 100 Year Vision League,Japan,1,FULL_BACK,1643
+1167409,Ren Sugimoto,male,43865,2026,Japanese J2/J3 100 Year Vision League,Japan,1,WINGER,1341
+633967,Arnar Gunnarsson,male,473,2026,Icelandic 1. Deild,Iceland,2,WINGER,498
+613503,Andre Solorzano,male,473,2026,Icelandic 1. Deild,Iceland,2,MIDFIELDER,453
+1192059,Tómas Bjarni Baldursson,male,473,2026,Icelandic 1. Deild,Iceland,2,WINGER,940
+597230,Danielzinho,male,230,2026,Brazilian Gaúcho 1,Brazil,1,WINGER,500
+699206,Braian Aguirre,male,230,2026,Brazilian Gaúcho 1,Brazil,1,FULL_BACK,524
+486024,Romércio,male,230,2026,Brazilian Gaúcho 1,Brazil,1,CENTRAL_DEFENDER,765
+636592,Saer Diop,male,520,2026,Italian Serie C,Italy,3,CENTRAL_DEFENDER,702
+600085,Ebrima Darboe,male,520,2026,Italian Serie C,Italy,3,MIDFIELDER,527
+411305,Marco Toscano,male,520,2026,Italian Serie C,Italy,3,MIDFIELDER,640
+336432,Wilson Pineda,male,451,2026,Guatemalan Liga Nacional,Guatemala,1,FULL_BACK,489
+743978,Brayan Castaneda,male,451,2026,Guatemalan Liga Nacional,Guatemala,1,MIDFIELDER,464
+363782,Yilton Díaz,male,451,2026,Guatemalan Liga Nacional,Guatemala,1,WINGER,456
+1314312,Kongzhi Zhang,male,3341,2026,Chinese China League Two,China PR,3,WINGER,760
+1178599,Jianhua Ding,male,3341,2026,Chinese China League Two,China PR,3,MIDFIELDER,525
+831901,Kamiran Halimurat,male,3341,2026,Chinese China League Two,China PR,3,MIDFIELDER,1995
+707369,Shakhzod Toirov,male,883,2026,Uzbekistani Super League,Uzbekistan,1,CENTRAL_DEFENDER,786
+814089,Makhmud Makhamadzhonov,male,883,2026,Uzbekistani Super League,Uzbekistan,1,FULL_BACK,1770
+770525,Ibrokhimkhalil Yuldoshev,male,883,2026,Uzbekistani Super League,Uzbekistan,1,FULL_BACK,1560
+445102,Jamie Brandon,male,750,2026,Scottish Premiership,Scotland,1,FULL_BACK,475
+357712,Cameron Carter-Vickers,male,750,2026,Scottish Premiership,Scotland,1,CENTRAL_DEFENDER,573
+610791,Josh Mulligan,male,750,2026,Scottish Premiership,Scotland,1,MIDFIELDER,754
+774155,Kevin Lebersorger,male,174,2026,Austrian Regionalliga,Austria,3,FULL_BACK,921
+1193979,Naël Lamine Kane,male,174,2026,Austrian Regionalliga,Austria,3,WINGER,525
+1306066,Amin Ibrahim,male,174,2026,Austrian Regionalliga,Austria,3,CENTRAL_DEFENDER,672
+683128,Muhammad Faudzi,male,602,2026,Malaysian Super League,Malaysia,1,CENTRAL_DEFENDER,478
+424382,Pedro Santos,male,602,2026,Malaysian Super League,Malaysia,1,MIDFIELDER,483
+1293341,Niam Mulhassan Alias,male,602,2026,Malaysian Super League,Malaysia,1,MIDFIELDER,521
+835628,Sander Sybrandy,male,1434,2026,Gibraltar Football League,Gibraltar,1,WINGER,476
+1358732,Denis Cabeza,male,1434,2026,Gibraltar Football League,Gibraltar,1,STRIKER,582
+1367667,Juan Pérez Jiménez,male,1434,2026,Gibraltar Football League,Gibraltar,1,CENTRAL_DEFENDER,468
+805322,Denis Krioutchenkov,male,43114,2026,American USL League 1,United States,3,STRIKER,1972
+654929,Eli Conway,male,43114,2026,American USL League 1,United States,3,WINGER,904
+511593,Jake Dengler,male,43114,2026,American USL League 1,United States,3,CENTRAL_DEFENDER,2610
+786330,Domi Massoumou,male,149,2026,Armenian IDBank Premier League,Armenia,1,WINGER,701
+906039,Gor Abrahamyan,male,149,2026,Armenian IDBank Premier League,Armenia,1,MIDFIELDER,665
+566353,Sead Islamović,male,149,2026,Armenian IDBank Premier League,Armenia,1,MIDFIELDER,825
+619496,Samuel Pedro,male,862,2025,Emirati Division 1,United Arab Emirates,2,WINGER,2188
+703425,Miles Fenton,male,862,2025,Emirati Division 1,United Arab Emirates,2,MIDFIELDER,694
+576846,Moustapha Name,male,862,2025,Emirati Division 1,United Arab Emirates,2,MIDFIELDER,2440
+1184901,Ivan Vladimirov Pavlov,male,268,2025,Bulgarian Third League,Bulgaria,3,STRIKER,959
+1053138,David Lukanov,male,268,2025,Bulgarian Third League,Bulgaria,3,CENTRAL_DEFENDER,1019
+1177818,Nikolay Iliev,male,268,2025,Bulgarian Third League,Bulgaria,3,CENTRAL_DEFENDER,1113
+683410,Sebastian Mai,male,43799,2026,German Regionalliga West,Germany,4,STRIKER,775
+949434,Elias Vali Fard,male,43799,2026,German Regionalliga West,Germany,4,CENTRAL_DEFENDER,735
+775807,Arne Wessels,male,43799,2026,German Regionalliga West,Germany,4,WINGER,689
+1356189,Jeremiah McGuire,male,43220,2026,American NCAA D1 Patriot League,United States,1,CENTRAL_DEFENDER,505
+1088407,Kiko Hidalgo,male,43220,2026,American NCAA D1 Patriot League,United States,1,CENTRAL_DEFENDER,479
+700287,Jack Beerling,male,43220,2026,American NCAA D1 Patriot League,United States,1,MIDFIELDER,482
+1181631,Alfred Levin Nyrén,male,43537,2026,American NCAA D2 Northeast-10 Conference,United States,2,CENTRAL_DEFENDER,508
+1366799,Dani Arias,male,43537,2026,American NCAA D2 Northeast-10 Conference,United States,2,CENTRAL_DEFENDER,488
+1038792,Gonçalo Nolasco,male,43537,2026,American NCAA D2 Northeast-10 Conference,United States,2,CENTRAL_DEFENDER,480
+447185,Wesley Harding,male,358,2026,English League One,England,3,FULL_BACK,966
+192775,Cauley Woodrow,male,358,2026,English League One,England,3,STRIKER,532
+736990,Nathan Moriah-Welsh,male,358,2026,English League One,England,3,FULL_BACK,500
+1027144,Julian Hussauf,male,166,2026,Austrian 2. Liga,Austria,2,FULL_BACK,708
+1356042,Lars de Wit,male,166,2026,Austrian 2. Liga,Austria,2,CENTRAL_DEFENDER,569
+1186721,Christian Huetz,male,166,2026,Austrian 2. Liga,Austria,2,MIDFIELDER,602
+490692,Wilkson,male,227,2026,Brazilian Cearense 1,Brazil,1,STRIKER,542
+651061,Lucca,male,227,2026,Brazilian Cearense 1,Brazil,1,STRIKER,620
+597256,Ramires,male,227,2026,Brazilian Cearense 1,Brazil,1,FULL_BACK,865
+1252587,Israel Contioso Mora,male,800,2026,Spanish Tercera Division RFEF,Spain,4,CENTRAL_DEFENDER,456
+626227,David Pecellín,male,800,2026,Spanish Tercera Division RFEF,Spain,4,STRIKER,466
+1389490,Raúl Mesa Jiménez,male,800,2026,Spanish Tercera Division RFEF,Spain,4,MIDFIELDER,452
+483762,Zé Ricardo,male,256,2026,Brazilian Serie B,Brazil,2,MIDFIELDER,2157
+801190,Tavinho,male,256,2026,Brazilian Serie B,Brazil,2,WINGER,778
+261048,Gegé,male,256,2026,Brazilian Serie B,Brazil,2,WINGER,1061
+91155,Leonardo Becerra,male,682,2026,Panamanian LPF,Panama,1,STRIKER,878
+588211,Wesley Cabrera,male,682,2026,Panamanian LPF,Panama,1,FULL_BACK,906
+890865,Yeyson Vásquez,male,682,2026,Panamanian LPF,Panama,1,MIDFIELDER,922
+562015,Gian Trasante,male,879,2026,Uruguayan Primera División,Uruguay,1,FULL_BACK,1557
+350675,Brian Lozano,male,879,2026,Uruguayan Primera División,Uruguay,1,MIDFIELDER,869
+661144,Lucas Ferreira,male,879,2026,Uruguayan Primera División,Uruguay,1,CENTRAL_DEFENDER,2621
+693423,Jhonnatan Lethieri,male,246,2026,Brazilian Paulista A3,Brazil,3,CENTRAL_DEFENDER,1177
+750616,Ruan Marcos,male,246,2026,Brazilian Paulista A3,Brazil,3,MIDFIELDER,1069
+735094,Gabriel Neto,male,246,2026,Brazilian Paulista A3,Brazil,3,FULL_BACK,785
+976775,Mohamed Chaouch,male,841,2026,Tunisian Ligue 1,Tunisia,1,FULL_BACK,505
+1228923,Sofia Shabarshina,female,731,2026,Russian Super League,Russia,1,STRIKER,778
+672442,Yana Ray,female,731,2026,Russian Super League,Russia,1,MIDFIELDER,777
+682716,Tatyana Morina,female,731,2026,Russian Super League,Russia,1,STRIKER,1502
+865853,Josefine Lefdal,female,666,2026,Norwegian 1. Division Women,Norway,2,CENTRAL_DEFENDER,925
+677470,Sofie Bjørnsen,female,666,2026,Norwegian 1. Division Women,Norway,2,MIDFIELDER,1564
+1311539,Marthine Bjorland,female,666,2026,Norwegian 1. Division Women,Norway,2,MIDFIELDER,631
+968378,Carstyn Anderson,female,43600,2025,American NAIA Kansas Collegiate Athletic Conference (W),United States,0,MIDFIELDER,1150
+1093920,Abigail Jensen,female,43600,2025,American NAIA Kansas Collegiate Athletic Conference (W),United States,0,MIDFIELDER,493
+1093947,Emma Gervy,female,43600,2025,American NAIA Kansas Collegiate Athletic Conference (W),United States,0,STRIKER,723
+1058613,Victoria Ostapiv,female,860,2026,Ukrainian Premier League Women,Ukraine,1,WINGER,867
+992328,Alina Savka,female,860,2026,Ukrainian Premier League Women,Ukraine,1,CENTRAL_DEFENDER,742
+851337,Alina Horodetska,female,860,2026,Ukrainian Premier League Women,Ukraine,1,MIDFIELDER,962
+930570,Neelia Pitko,female,395,2026,Finnish Kansallinen Liiga,Finland,1,WINGER,1426
+481522,Monica Hagström,female,395,2026,Finnish Kansallinen Liiga,Finland,1,WINGER,1955
+926359,Hertta Laurinkoski,female,395,2026,Finnish Kansallinen Liiga,Finland,1,MIDFIELDER,592
+844859,Emilie Langhorn,female,327,2026,Danish B-Liga Women,Denmark,2,WINGER,508
+530101,Silke Bonnén,female,327,2026,Danish B-Liga Women,Denmark,2,MIDFIELDER,479
+1057295,Janne Brouer,female,327,2026,Danish B-Liga Women,Denmark,2,CENTRAL_DEFENDER,477
+944529,Sanna Øvstebø,female,43911,2026,Norwegian 2. Division Women,Norway,2,CENTRAL_DEFENDER,823
+1319405,Sanne Holmvik,female,43911,2026,Norwegian 2. Division Women,Norway,2,WINGER,482
+1080791,Ane Fagerheim,female,43911,2026,Norwegian 2. Division Women,Norway,2,MIDFIELDER,1137
+761007,Noemi Paquin,female,43767,2026,Canadian Northern Super League,Canada,1,WINGER,829
+762113,Colby Barnett,female,43767,2026,Canadian Northern Super League,Canada,1,FULL_BACK,1986
+481873,Taylor Otto,female,43767,2026,Canadian Northern Super League,Canada,1,CENTRAL_DEFENDER,978
+760325,Marissa Garcia,female,43058,2026,Mexican Liga MX Femenil,Mexico,1,WINGER,642
+571418,Daniela Monroy,female,43058,2026,Mexican Liga MX Femenil,Mexico,1,FULL_BACK,667
+572196,Ximena Rios,female,43058,2026,Mexican Liga MX Femenil,Mexico,1,FULL_BACK,653
+1382869,Sophie Campbell,female,43610,2026,Canadian U-Sports Ontario University Athletics (W),Canada,1,STRIKER,455
+1239809,Regan Adams,female,43610,2026,Canadian U-Sports Ontario University Athletics (W),Canada,1,CENTRAL_DEFENDER,477
+997445,Lily Coish,female,43610,2026,Canadian U-Sports Ontario University Athletics (W),Canada,1,FULL_BACK,477
+1239117,Savanna Clark,female,43543,2025,American NCAA D2 Lone Star Conference (W),United States,2,FULL_BACK,923
+1239130,Carson Glenn,female,43543,2025,American NCAA D2 Lone Star Conference (W),United States,2,MIDFIELDER,748
+1114897,Ella Anderson,female,43543,2025,American NCAA D2 Lone Star Conference (W),United States,2,WINGER,832
+1100058,Madeline Bracy,female,43586,2026,American NCAA D2 Mid-America Intercollegiate Athletics Association (W),United States,2,MIDFIELDER,520
+1241884,Lilly Gibler,female,43586,2026,American NCAA D2 Mid-America Intercollegiate Athletics Association (W),United States,2,FULL_BACK,459
+1100063,Megan Kephart,female,43586,2026,American NCAA D2 Mid-America Intercollegiate Athletics Association (W),United States,2,STRIKER,508
+1008262,Julianna Brekovszki,female,469,2026,Hungarian NB I Women,Hungary,1,CENTRAL_DEFENDER,684
+1153174,Melania Mezossy,female,469,2026,Hungarian NB I Women,Hungary,1,MIDFIELDER,455
+1269206,Nagy Panna,female,469,2026,Hungarian NB I Women,Hungary,1,STRIKER,838
+1276117,Ammarah Ali,female,43848,2025,English Eastern Region Women's Football League,England,5,WINGER,812
+1276107,Jada McGibbon,female,43848,2025,English Eastern Region Women's Football League,England,5,FULL_BACK,1016
+1162253,Amber Provan,female,43848,2025,English Eastern Region Women's Football League,England,5,MIDFIELDER,947
+1176515,Mollie Josefsson,female,811,2026,Swedish Elitettan,Sweden,2,STRIKER,512
+1064518,Wilma Dahlgren,female,811,2026,Swedish Elitettan,Sweden,2,FULL_BACK,1377
+1313790,Amelia Hallberg,female,811,2026,Swedish Elitettan,Sweden,2,WINGER,1089
+1093500,Carissa Iriarte,female,43538,2026,American NCAA D2 Conference Carolinas (W) ,United States,2,WINGER,663
+1362814,Breanna McWilliams,female,43538,2026,American NCAA D2 Conference Carolinas (W) ,United States,2,CENTRAL_DEFENDER,488
+1233581,Taylin Gimbel,female,43538,2026,American NCAA D2 Conference Carolinas (W) ,United States,2,CENTRAL_DEFENDER,735
+1199755,Paige Taylor,female,43451,2026,Australian Queensland NPL Women,Australia,1,FULL_BACK,1526
+797508,Rie Kitano,female,43451,2026,Australian Queensland NPL Women,Australia,1,MIDFIELDER,1432
+644813,Holly McQueen,female,43451,2026,Australian Queensland NPL Women,Australia,1,CENTRAL_DEFENDER,1905
+1006131,Brylee Rivera,female,43735,2026,American NCAA D2 Great Lakes Valley Conference (W),United States,2,MIDFIELDER,606
+1125977,Madi Riege,female,43735,2026,American NCAA D2 Great Lakes Valley Conference (W),United States,2,CENTRAL_DEFENDER,861
+984728,Bella Hernandez,female,43735,2026,American NCAA D2 Great Lakes Valley Conference (W),United States,2,STRIKER,559
+1088731,Kaleigh Hart,female,43534,2026,American NCAA D2 Non-conference matches (W),United States,2,MIDFIELDER,1366
+1212848,Campbell Morgan,female,43534,2026,American NCAA D2 Non-conference matches (W),United States,2,MIDFIELDER,856
+1391507,Gabi Dover,female,43534,2026,American NCAA D2 Non-conference matches (W),United States,2,MIDFIELDER,546
+1334145,Elizabeth Danso,female,43930,2025,GARFA Women’s Division One,Ghana,2,STRIKER,816
+1334140,Bernice Asomaniwaa,female,43930,2025,GARFA Women’s Division One,Ghana,2,CENTRAL_DEFENDER,600
+1334143,Juliet Gapson,female,43930,2025,GARFA Women’s Division One,Ghana,2,WINGER,512
+835750,Livia Pertl,female,43961,2026,American NAIA Southern States Athletic Conference (W),United States,4,CENTRAL_DEFENDER,553
+1374167,Alba Aguado,female,43961,2026,American NAIA Southern States Athletic Conference (W),United States,4,CENTRAL_DEFENDER,452
+1113042,Emerson Iacovelli,female,43809,2026,American NCAA D3 Conference of New England (W),United States,3,CENTRAL_DEFENDER,649
+1231280,Catherine Groth,female,43809,2026,American NCAA D3 Conference of New England (W),United States,3,CENTRAL_DEFENDER,532
+1231283,Kailea Silva,female,43809,2026,American NCAA D3 Conference of New England (W),United States,3,FULL_BACK,540
+1392127,Abigail Davis,female,43535,2026,American NCAA D3 Non-conference matches (W),United States,3,MIDFIELDER,480
+820884,Laura Casamachín,female,3330,2026,Colombian Liga Femenina BetPlay,Colombia,1,MIDFIELDER,580
+1050108,María Torres,female,3330,2026,Colombian Liga Femenina BetPlay,Colombia,1,CENTRAL_DEFENDER,2130
+1050077,Kendri Rentería Camacho,female,3330,2026,Colombian Liga Femenina BetPlay,Colombia,1,STRIKER,747
+1068210,Débora Bebê,female,1468,2026,Brazilian Brasileiro Women,Brazil,1,MIDFIELDER,935
+225419,Mariana Larroquette,female,1468,2026,Brazilian Brasileiro Women,Brazil,1,WINGER,674
+688425,Dani Ortolan,female,1468,2026,Brazilian Brasileiro Women,Brazil,1,STRIKER,1253
+694788,Fenna Meijer,female,644,2026,Dutch Eredivisie Women,Netherlands,1,CENTRAL_DEFENDER,624
+1357259,Kiki Heshof,female,644,2026,Dutch Eredivisie Women,Netherlands,1,FULL_BACK,459
+862297,Felice Hermans,female,644,2026,Dutch Eredivisie Women,Netherlands,1,CENTRAL_DEFENDER,662
+1099052,Maria Ostopinka,female,693,2026,Polish Ekstraliga Women,Poland,1,CENTRAL_DEFENDER,477
+908855,Zofia Dubiel,female,693,2026,Polish Ekstraliga Women,Poland,1,MIDFIELDER,633
+281864,Dominika Grabowska,female,693,2026,Polish Ekstraliga Women,Poland,1,MIDFIELDER,478
+1187270,Nikoleta Kurja,female,717,2026,Romanian Superliga Feminina,Romania,1,MIDFIELDER,616
+767176,Cristina Botojel,female,717,2026,Romanian Superliga Feminina,Romania,1,MIDFIELDER,523
+777182,Florentina Ancăș,female,717,2026,Romanian Superliga Feminina,Romania,1,CENTRAL_DEFENDER,513
+861153,Martha Langskov,female,43907,2026,Danish Women's Play-offs 2/3,Denmark,0,CENTRAL_DEFENDER,821
+546304,Marta Grosso,female,43907,2026,Danish Women's Play-offs 2/3,Denmark,0,MIDFIELDER,904
+1114709,Ida Hansen,female,43907,2026,Danish Women's Play-offs 2/3,Denmark,0,MIDFIELDER,724
+1120500,Keali Foster,female,43730,2026,American NCAA D2 Peach Belt Conference (W),United States,2,CENTRAL_DEFENDER,780
+1085248,Isabella Franco,female,43730,2026,American NCAA D2 Peach Belt Conference (W),United States,2,CENTRAL_DEFENDER,459
+1372142,Ava Scott,female,43730,2026,American NCAA D2 Peach Belt Conference (W),United States,2,MIDFIELDER,506
+1070161,Mia Power,female,1624,2026,Australian Victoria NPL Women,Australia,1,FULL_BACK,2209
+415528,Tyla Vlajnic,female,1624,2026,Australian Victoria NPL Women,Australia,1,WINGER,1214
+1070126,Bridie Cooling,female,1624,2026,Australian Victoria NPL Women,Australia,1,CENTRAL_DEFENDER,2082
+879230,Vilde Raabel Svensen,female,43501,2025,Norwegian 3. Division Women,Norway,3,MIDFIELDER,1085
+1187004,Synnøve Tollånes,female,43501,2025,Norwegian 3. Division Women,Norway,3,FULL_BACK,1802
+918586,Madelen Rønvik,female,43501,2025,Norwegian 3. Division Women,Norway,3,MIDFIELDER,2031
+1232282,Ryley Winrich,female,43548,2025,American NCAA D2 Great Lakes Intercollegiate Athletic Conference (W),United States,2,FULL_BACK,731
+1232315,Sophie Rater,female,43548,2025,American NCAA D2 Great Lakes Intercollegiate Athletic Conference (W),United States,2,WINGER,750
+1232279,Allison Millina,female,43548,2025,American NCAA D2 Great Lakes Intercollegiate Athletic Conference (W),United States,2,MIDFIELDER,1000
+813031,Siun Murdiff,female,504,2026,Irish Women's Premier League,Ireland Republic,1,STRIKER,859
+258370,Rachel Doyle,female,504,2026,Irish Women's Premier League,Ireland Republic,1,MIDFIELDER,543
+679862,Fiona Donnelly,female,504,2026,Irish Women's Premier League,Ireland Republic,1,MIDFIELDER,1515
+1325663,Leah Craig,female,663,2026,Northern Irish Premiership Women,Northern Ireland,1,CENTRAL_DEFENDER,2371

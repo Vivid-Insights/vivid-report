@@ -1,8 +1,8 @@
 ---
 title: "A choose your own adventure approach to context engineering"
 slug: "twelve-earpiece"
-folder: "papers/0002-twelve-earpiece"
-report-number: "0002"
+folder: "papers/0003-twelve-earpiece"
+report-number: "0003"
 authors:
   - name: David J. T. Sumpter
     affiliation: [1]
@@ -67,7 +67,7 @@ Twelve Earpiece answers questions about football data in conversation, for scout
 
 
 ::: figure {#fig-walk src="Code/outputs/figures/fig_conversation_walk.png" width=wide alt="Four screenshots of Earpiece in a two by two grid, each headed by the question asked and the analyst that answered it: the Scout on a player, the Transfer analyst on a move to the WSL, the Transfer analyst on Arsenal's midfielders, and the Season analyst on Arsenal's season."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/fig_conversation_walk.png]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/fig_conversation_walk.png]]
 Four questions, three analysts. Each panel is one screen of the same conversation, headed by the question the user typed and the analyst that answered it. The player is resolved once, in the first question, and carried through the second and third without being named again. The fourth question names a team instead, and the context switches from the player to Arsenal in the Women's Super League.
 :::
 
@@ -76,7 +76,7 @@ Four questions, three analysts. Each panel is one screen of the same conversatio
 Earpiece is built around two constraints that every application based on LLM services has. The first is that the services are stateless [@patil2025]. Each request is treated as new, so a conversation exists only because the application stores every message and sends the whole chat again on every turn (@fig-stateless).  The second is that a model knows nothing beyond its training data, which has a cut-off date and none of a club's data. The application has to bring the right information into the conversation, at the right moment, in a form the model can use. We now describe how we deal with these limitations in certain settings.
 
 ::: figure {#fig-stateless src="Code/outputs/figures/diagram_stateless.svg" width=wide alt="The client sends a chat id and a new message to the Earpiece API, which reads the stored chat from its database and sends the whole chat to the LLM API, which returns the next message."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_stateless.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_stateless.svg]]
 Where the state lives. The client sends only the chat's identifier and the new message. The Earpiece API reads the stored chat from its database and sends all of it to the LLM API, which returns the next message.
 :::
 
@@ -89,7 +89,7 @@ Earpiece is a web service written in Python with FastAPI. For the examples and t
 An analyst is the part of Earpiece the user talks to. It has a system prompt, a context and a list of functions, and these map directly onto a chat-completion request: the prompt and a description of the context become the system message, and the functions become the tools the model may call. The Scout's context is a player in a competition and season; the Match Analyst's is one team in one match. There are twelve analysts, among them the Scout, a comparison of two players, a prediction of a player's performance in another league or team, a search for players, and analysts of a match, a season and an opponent. The user meets six (@fig-receptionist): the receptionist, and the five subjects it can hand over to — a player, a match, a search for players, a season and an opponent. The rest are sub-analysts within those subjects. Four analysts share the player subject, the Scout among them, and two share the match subject, so a user who asks about a player is handed to one of four without choosing between them. Most offer the model between 8 and 16 functions, depending on what the user has access to; the Scout offers 24. 
 
 ::: figure {#fig-receptionist src="Code/outputs/figures/diagram_receptionist.svg" width=wide alt="The receptionist in the centre, connected by two-way arrows to the player analysts, the match analysts, Talent Discovery or Search, the Season Analyst and the Opposition Analyst. A dashed arrow joins the player analysts and Talent Discovery directly."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_receptionist.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_receptionist.svg]]
 How the analysts are connected. Each box is a subject the receptionist can hand the user to, and the analysts inside it are the sub-analysts that share that subject. Each solid arrow is a pair of redirects: from the receptionist into an analyst's context, and back to the receptionist when the user changes subject. Analysts in the same box hand over to each other directly, as do the player analysts and the player search (dashed).
 :::
 
@@ -98,7 +98,7 @@ How the analysts are connected. Each box is a subject the receptionist can hand 
 A user always starts with the receptionist (@fig-receptionist). Its functions are three general ones — explaining how the platform works, which leagues are covered, and a team's fixtures — and one redirect function for each analyst the user may use, at most twelve in all. A redirect function is generated from its target analyst: its name is `redirect_to_` and the analyst's name, its description is the analyst's own description of what it does, and its parameters ask for the names the analyst needs, such as a player, a team, a competition and a season. When the model calls it, the names are resolved to identifiers and a new chat is opened with that analyst in that context (@fig-redirect).
 
 ::: figure {#fig-redirect src="Code/outputs/figures/diagram_context_switch.svg" width=wide alt="Three boxes: the user names a player; the model calls a redirect function; a new chat with the Scout in a resolved player context. Below each, the messages, the tool call and the resulting context."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_context_switch.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_context_switch.svg]]
 A context switch. Left: the system message tells the model to call `redirect_to_scout` when the user names a player, and the user does. Middle: the model's tool call, with the player's name among its arguments (abbreviated). Right: the context the Scout then works in, with identifiers in place of names. The identifiers are the examples given in Earpiece's own schemas.
 :::
 
@@ -130,7 +130,7 @@ The same principle enforces access. An analyst only offers redirects to analysts
 The model fills a redirect's parameters from what the user wrote, and where the set of possible values is small, it is shown the whole set: the positions and qualities a club uses are listed as the only allowed values. Strict mode, in which the provider checks every tool call against its schema, stops the model inventing values outside such a list. Players, teams and matches are far too many to list, so the model gives a name as text and the name is resolved afterwards, in four steps (@fig-resolve). A full-text search over names, which also favours players with higher market values, returns up to 20 candidates; if it finds none it tries again without the team, then without the competition. The candidates are written out as sentences — the player, the team, the competition — and a second model call, given the user's own words, picks one. It is told: "If you cannot confidently determine a match, do not guess." If nothing is picked, the redirect fails, and the model is told to ask the user for the missing or incorrect information.
 
 ::: figure {#fig-resolve src="Code/outputs/figures/diagram_resolve_names.svg" width=wide alt="Four boxes in sequence: the model gives the name as text; full-text search returns up to 20 candidates; the model picks one, or none if unsure; the context is set, or the user is asked."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_resolve_names.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_resolve_names.svg]]
 Resolving a name. The tool call gives the name as text, a database search finds candidates, and a second model call chooses one, or none, in which case the user is asked.
 :::
 
@@ -139,7 +139,7 @@ Resolving a name. The tool call gives the name as text, a database search finds 
 A resolved context is stored with its chat, written into the analyst's system message, and shown to the user in a side pane, so they know what the analyst is working on before they ask anything (@fig-contexts). Every function of the analyst reads its identifiers to fetch data; the model never writes a database query.
 
 ::: figure {#fig-contexts src="Code/outputs/figures/diagram_contexts.svg" width=wide alt="Three rows: we're talking about a player, a match, a team; each points to a context object with its identifiers."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_contexts.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_contexts.svg]]
 Contexts for a player, a match and a team, as Earpiece stores them (abbreviated). The identifiers are the examples given in Earpiece's own schemas.
 :::
 
@@ -191,7 +191,7 @@ The majority of pre-defined functions answer questions that can be anticipated f
 The structure of the answers is already tightly defined. Once the question is identified, the code fetches the data for the context and writes a synthetic text from it, with fixed rules turning values into words. The function then makes a chat-completion call of its own, outside the conversation, and builds its prompt in the four steps of @caut2025.  Figure @fig-prompt illustrates these steps: a system message tells the model who it is; it is told what it knows in the form of a long list of human expert-written question and answer pairs; a second system message and worked few-shot examples of a synthetic text and the reply we want tell it how to answer; and the synthetic text for the player in the context comes last, telling it what data to use.  The reply is streamed straight to the user, usually beside a chart. 
 
 ::: figure {#fig-prompt src="Code/outputs/figures/diagram_prompt_structure.svg" width=wide alt="Four rows, one per step. Each names the step and how many messages it contributes, and shows an excerpt of those messages: the system message, a question-answer pair about box threat, a worked example for another player, and the synthetic text for Vilma Koivisto."}
-![[papers/0002-twelve-earpiece/Code/outputs/figures/diagram_prompt_structure.svg]]
+![[papers/0003-twelve-earpiece/Code/outputs/figures/diagram_prompt_structure.svg]]
 The prompt of the transfer function, in the four steps of @caut2025, as it was sent for the Hammarby player of @fig-walk. The excerpts are from the saved call; the counts of question–answer and worked pairs are read from the same call. The last step, highlighted, is the synthetic text for this player.
 :::
 

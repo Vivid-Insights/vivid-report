@@ -1,0 +1,735 @@
+{
+ "earpiece_error_answers_left_out": 27,
+ "faithfulness": {
+  "level 1": {
+   "earpiece": {
+    "faithfulness": {
+     "mean": 3.78,
+     "ci95": [
+      3.66,
+      3.89
+     ],
+     "n": 573,
+     "sd": 0.72
+    },
+    "hallucinations": {
+     "mean": 0.56,
+     "ci95": [
+      0.46,
+      0.66
+     ],
+     "n": 573,
+     "sd": 0.67
+    }
+   },
+   "claude": {
+    "faithfulness": {
+     "mean": 4.21,
+     "ci95": [
+      4.02,
+      4.39
+     ],
+     "n": 600,
+     "sd": 0.81
+    },
+    "hallucinations": {
+     "mean": 0.75,
+     "ci95": [
+      0.55,
+      0.99
+     ],
+     "n": 600,
+     "sd": 0.97
+    }
+   },
+   "gpt4o": {
+    "faithfulness": {
+     "mean": 2.45,
+     "ci95": [
+      2.32,
+      2.59
+     ],
+     "n": 600,
+     "sd": 1.2
+    },
+    "hallucinations": {
+     "mean": 1.3,
+     "ci95": [
+      1.19,
+      1.42
+     ],
+     "n": 600,
+     "sd": 1.04
+    }
+   },
+   "head_to_head": {
+    "earpiece_won": 0.202,
+    "claude_won": 0.48,
+    "tied": 0.318,
+    "pairs": 573
+   }
+  },
+  "level 2": {
+   "earpiece": {
+    "faithfulness": {
+     "mean": 3.82,
+     "ci95": [
+      3.69,
+      3.95
+     ],
+     "n": 573,
+     "sd": 0.75
+    },
+    "hallucinations": {
+     "mean": 0.7,
+     "ci95": [
+      0.57,
+      0.85
+     ],
+     "n": 573,
+     "sd": 0.77
+    }
+   },
+   "claude": {
+    "faithfulness": {
+     "mean": 4.17,
+     "ci95": [
+      3.98,
+      4.34
+     ],
+     "n": 600,
+     "sd": 0.81
+    },
+    "hallucinations": {
+     "mean": 0.86,
+     "ci95": [
+      0.63,
+      1.17
+     ],
+     "n": 600,
+     "sd": 1.08
+    }
+   },
+   "gpt4o": {
+    "faithfulness": {
+     "mean": 2.44,
+     "ci95": [
+      2.33,
+      2.56
+     ],
+     "n": 600,
+     "sd": 1.2
+    },
+    "hallucinations": {
+     "mean": 1.41,
+     "ci95": [
+      1.3,
+      1.52
+     ],
+     "n": 600,
+     "sd": 1.04
+    }
+   },
+   "head_to_head": {
+    "earpiece_won": 0.236,
+    "claude_won": 0.454,
+    "tied": 0.311,
+    "pairs": 573
+   }
+  },
+  "level 3": {
+   "earpiece": {
+    "faithfulness": {
+     "mean": 4.03,
+     "ci95": [
+      3.94,
+      4.11
+     ],
+     "n": 573,
+     "sd": 0.69
+    },
+    "hallucinations": {
+     "mean": 0.55,
+     "ci95": [
+      0.49,
+      0.62
+     ],
+     "n": 573,
+     "sd": 0.61
+    }
+   },
+   "claude": {
+    "faithfulness": {
+     "mean": 4.04,
+     "ci95": [
+      3.9,
+      4.19
+     ],
+     "n": 600,
+     "sd": 0.83
+    },
+    "hallucinations": {
+     "mean": 0.89,
+     "ci95": [
+      0.73,
+      1.07
+     ],
+     "n": 600,
+     "sd": 0.99
+    }
+   },
+   "gpt4o": {
+    "faithfulness": {
+     "mean": 2.38,
+     "ci95": [
+      2.25,
+      2.51
+     ],
+     "n": 600,
+     "sd": 1.18
+    },
+    "hallucinations": {
+     "mean": 1.5,
+     "ci95": [
+      1.37,
+      1.64
+     ],
+     "n": 600,
+     "sd": 1.13
+    }
+   },
+   "head_to_head": {
+    "earpiece_won": 0.34,
+    "claude_won": 0.354,
+    "tied": 0.305,
+    "pairs": 573
+   }
+  },
+  "level 4": {
+   "earpiece": {
+    "faithfulness": {
+     "mean": 4.02,
+     "ci95": [
+      3.93,
+      4.11
+     ],
+     "n": 573,
+     "sd": 0.69
+    },
+    "hallucinations": {
+     "mean": 0.96,
+     "ci95": [
+      0.83,
+      1.09
+     ],
+     "n": 573,
+     "sd": 0.83
+    }
+   },
+   "claude": {
+    "faithfulness": {
+     "mean": 1.58,
+     "ci95": [
+      1.46,
+      1.71
+     ],
+     "n": 600,
+     "sd": 0.49
+    },
+    "hallucinations": {
+     "mean": 5.87,
+     "ci95": [
+      5.35,
+      6.49
+     ],
+     "n": 600,
+     "sd": 2.17
+    }
+   },
+   "gpt4o": {
+    "faithfulness": {
+     "mean": 1.47,
+     "ci95": [
+      1.37,
+      1.56
+     ],
+     "n": 600,
+     "sd": 0.65
+    },
+    "hallucinations": {
+     "mean": 2.87,
+     "ci95": [
+      2.63,
+      3.12
+     ],
+     "n": 600,
+     "sd": 1.68
+    }
+   },
+   "head_to_head": {
+    "earpiece_won": 0.988,
+    "claude_won": 0.0,
+    "tied": 0.012,
+    "pairs": 573
+   }
+  }
+ },
+ "engagement_usefulness": {
+  "basic level 1": {
+   "earpiece": {
+    "engagement": {
+     "mean": 2.83,
+     "ci95": [
+      2.76,
+      2.9
+     ],
+     "n": 573,
+     "sd": 0.4
+    },
+    "usefulness": {
+     "mean": 2.66,
+     "ci95": [
+      2.57,
+      2.74
+     ],
+     "n": 573,
+     "sd": 0.57
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.92,
+     "ci95": [
+      3.88,
+      3.96
+     ],
+     "n": 600,
+     "sd": 0.35
+    },
+    "usefulness": {
+     "mean": 4.38,
+     "ci95": [
+      4.25,
+      4.49
+     ],
+     "n": 600,
+     "sd": 0.6
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.14,
+     "ci95": [
+      2.03,
+      2.24
+     ],
+     "n": 600,
+     "sd": 0.71
+    },
+    "usefulness": {
+     "mean": 2.0,
+     "ci95": [
+      1.9,
+      2.1
+     ],
+     "n": 600,
+     "sd": 0.76
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.0,
+     "claude_won": 0.935,
+     "tied": 0.065,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.005,
+     "claude_won": 0.955,
+     "tied": 0.04,
+     "pairs": 573
+    }
+   }
+  },
+  "basic level 2": {
+   "earpiece": {
+    "engagement": {
+     "mean": 2.92,
+     "ci95": [
+      2.87,
+      2.97
+     ],
+     "n": 573,
+     "sd": 0.37
+    },
+    "usefulness": {
+     "mean": 2.91,
+     "ci95": [
+      2.82,
+      3.01
+     ],
+     "n": 573,
+     "sd": 0.62
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.93,
+     "ci95": [
+      3.89,
+      3.97
+     ],
+     "n": 600,
+     "sd": 0.29
+    },
+    "usefulness": {
+     "mean": 4.39,
+     "ci95": [
+      4.24,
+      4.53
+     ],
+     "n": 600,
+     "sd": 0.63
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.21,
+     "ci95": [
+      2.09,
+      2.33
+     ],
+     "n": 600,
+     "sd": 0.73
+    },
+    "usefulness": {
+     "mean": 2.01,
+     "ci95": [
+      1.91,
+      2.12
+     ],
+     "n": 600,
+     "sd": 0.79
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.0,
+     "claude_won": 0.927,
+     "tied": 0.073,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.009,
+     "claude_won": 0.899,
+     "tied": 0.092,
+     "pairs": 573
+    }
+   }
+  },
+  "basic level 3": {
+   "earpiece": {
+    "engagement": {
+     "mean": 3.0,
+     "ci95": [
+      2.94,
+      3.1
+     ],
+     "n": 573,
+     "sd": 0.39
+    },
+    "usefulness": {
+     "mean": 2.95,
+     "ci95": [
+      2.87,
+      3.02
+     ],
+     "n": 573,
+     "sd": 0.59
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.94,
+     "ci95": [
+      3.9,
+      3.97
+     ],
+     "n": 600,
+     "sd": 0.3
+    },
+    "usefulness": {
+     "mean": 4.16,
+     "ci95": [
+      4.03,
+      4.3
+     ],
+     "n": 600,
+     "sd": 0.66
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.24,
+     "ci95": [
+      2.13,
+      2.33
+     ],
+     "n": 600,
+     "sd": 0.72
+    },
+    "usefulness": {
+     "mean": 1.93,
+     "ci95": [
+      1.84,
+      2.01
+     ],
+     "n": 600,
+     "sd": 0.77
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.003,
+     "claude_won": 0.876,
+     "tied": 0.12,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.024,
+     "claude_won": 0.836,
+     "tied": 0.14,
+     "pairs": 573
+    }
+   }
+  },
+  "detailed level 1": {
+   "earpiece": {
+    "engagement": {
+     "mean": 3.5,
+     "ci95": [
+      3.35,
+      3.64
+     ],
+     "n": 573,
+     "sd": 0.57
+    },
+    "usefulness": {
+     "mean": 3.09,
+     "ci95": [
+      2.94,
+      3.23
+     ],
+     "n": 573,
+     "sd": 0.71
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.34,
+     "ci95": [
+      3.21,
+      3.48
+     ],
+     "n": 600,
+     "sd": 0.52
+    },
+    "usefulness": {
+     "mean": 2.3,
+     "ci95": [
+      2.16,
+      2.46
+     ],
+     "n": 600,
+     "sd": 0.5
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.2,
+     "ci95": [
+      2.08,
+      2.3
+     ],
+     "n": 600,
+     "sd": 0.72
+    },
+    "usefulness": {
+     "mean": 1.4,
+     "ci95": [
+      1.33,
+      1.48
+     ],
+     "n": 600,
+     "sd": 0.5
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.419,
+     "claude_won": 0.267,
+     "tied": 0.314,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.67,
+     "claude_won": 0.105,
+     "tied": 0.225,
+     "pairs": 573
+    }
+   }
+  },
+  "detailed level 2": {
+   "earpiece": {
+    "engagement": {
+     "mean": 3.78,
+     "ci95": [
+      3.7,
+      3.85
+     ],
+     "n": 573,
+     "sd": 0.47
+    },
+    "usefulness": {
+     "mean": 3.31,
+     "ci95": [
+      3.2,
+      3.42
+     ],
+     "n": 573,
+     "sd": 0.67
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.27,
+     "ci95": [
+      3.11,
+      3.42
+     ],
+     "n": 600,
+     "sd": 0.54
+    },
+    "usefulness": {
+     "mean": 2.38,
+     "ci95": [
+      2.25,
+      2.52
+     ],
+     "n": 600,
+     "sd": 0.53
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.29,
+     "ci95": [
+      2.15,
+      2.4
+     ],
+     "n": 600,
+     "sd": 0.76
+    },
+    "usefulness": {
+     "mean": 1.49,
+     "ci95": [
+      1.41,
+      1.57
+     ],
+     "n": 600,
+     "sd": 0.54
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.602,
+     "claude_won": 0.117,
+     "tied": 0.281,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.761,
+     "claude_won": 0.07,
+     "tied": 0.169,
+     "pairs": 573
+    }
+   }
+  },
+  "detailed level 3": {
+   "earpiece": {
+    "engagement": {
+     "mean": 3.74,
+     "ci95": [
+      3.67,
+      3.81
+     ],
+     "n": 573,
+     "sd": 0.51
+    },
+    "usefulness": {
+     "mean": 3.35,
+     "ci95": [
+      3.19,
+      3.5
+     ],
+     "n": 573,
+     "sd": 0.67
+    }
+   },
+   "claude": {
+    "engagement": {
+     "mean": 3.15,
+     "ci95": [
+      3.04,
+      3.27
+     ],
+     "n": 600,
+     "sd": 0.51
+    },
+    "usefulness": {
+     "mean": 2.26,
+     "ci95": [
+      2.16,
+      2.38
+     ],
+     "n": 600,
+     "sd": 0.48
+    }
+   },
+   "gpt4o": {
+    "engagement": {
+     "mean": 2.27,
+     "ci95": [
+      2.13,
+      2.39
+     ],
+     "n": 600,
+     "sd": 0.76
+    },
+    "usefulness": {
+     "mean": 1.44,
+     "ci95": [
+      1.36,
+      1.52
+     ],
+     "n": 600,
+     "sd": 0.52
+    }
+   },
+   "head_to_head": {
+    "engagement": {
+     "earpiece_won": 0.653,
+     "claude_won": 0.108,
+     "tied": 0.239,
+     "pairs": 573
+    },
+    "usefulness": {
+     "earpiece_won": 0.843,
+     "claude_won": 0.037,
+     "tied": 0.12,
+     "pairs": 573
+    }
+   }
+  }
+ }
+}
