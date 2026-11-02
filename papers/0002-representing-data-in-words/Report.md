@@ -1,8 +1,8 @@
 ---
 title: "Representing data in words: A context engineering approach"
 slug: representing-data-in-words
-folder: papers/0001-representing-data-in-words
-report-number: "0001"
+folder: papers/0002-representing-data-in-words
+report-number: "0002"
 authors:
   - name: Amandine M. Caut
     affiliation: [1]

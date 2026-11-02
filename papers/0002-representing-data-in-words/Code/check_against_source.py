@@ -1,6 +1,6 @@
 """Check that the built page says exactly what the paper's LaTeX source says.
 
-    cd Code && uv run python tools/build.py && uv run python ../papers/0001-representing-data-in-words/Code/check_against_source.py
+    cd Code && uv run python tools/build.py && uv run python ../papers/0002-representing-data-in-words/Code/check_against_source.py
 
 Extracts the words of `Attachments/wordalisation-paper/neurips_2026.tex` (abstract to bibliography;
 comments, the NeurIPS checklist and LaTeX markup removed) and the words of the built page (title
