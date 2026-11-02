@@ -10,7 +10,20 @@
 
 **This workspace** — `instructions.md`, `WRITING.md`, `FORMAT.md`, `REVIEW.md`, `README.md`, `review/reviewers.yml`, `templates/`, `site/` and the specimen paper are the working description of how a Models and Words article is written and reviewed. Candidate source, not yet confirmed by David.
 
-**The other papers in the workspace** — `papers/0002-representing-data-in-words/` and `papers/0003-twelve-earpiece/` are the first two articles, and are what the journal's scope would have to cover. Candidate source, not yet confirmed.
+**`Davids-Vault/Twelve Models (do not share externally)/Algorithms and Models`** — Twelve's internal index of its models, exported from Notion. The hub page states three principles: models are explainable in football terms ("understandable"), they relate to goals scored and conceded ("help teams win"), and each problem gets the best motivated approach ("advanced AI"). Its child page `Modelling Philosophy` is the closest thing in the material to a statement of the journal's position: it separates the **mathematical model** of the data from the **normative model** that says what the model means in words, defines normative as setting a standard for judging behaviour or outcomes, says stakeholders define the norms, and argues against black-box methods on Rudin's grounds that high-stakes decisions need interpretable models rather than post-hoc explanations. Other child pages: `Building a Twelve Analyst`, `Qualities, Metrics and Summaries`, `Wordalisations`, `Visualisations`, `Context Engineering for Football`, `Automated documentation`, and the model pages (transfer, team strength, league strength, Total Football, financial, zonal threat, zonal xG, Twelve Index, player name search, van Dijk metrics, coach analysis). **Permission: the folder is marked "do not share externally". Nothing from it can be quoted or paraphrased in the report without David confirming Twelve's agreement.**
+
+**`Davids-Vault/Models and AI/`** — David's own writing on modelling, and the academic framing the Twelve philosophy points back to. Four pieces bear on the journal's concept:
+
+- *Building models in the age of machine learning and AI* — research notes. Machine learning gives the biggest recent advances but no mechanistic understanding, which challenges the traditional modelling cycle of formulating a mechanism, fitting it and predicting. Proposes integrative pluralism: many models of the same system rather than one. Opens on Breiman's two cultures; uses football and complex-systems models (cellular automata, self-propelled particles, current-reinforced oscillators) as the two extremes.
+- *The Lost Art of Mathematical Modelling* — Gyllingberg, Birhane and Sumpter. Published; PDF at `Attachments/Lost art.pdf`. Of the three modelling activities — formulating, analysing, fitting — researchers over-invest in analysing at the cost of formulating.
+- *Coherence, charity and triangulation in statistical modelling* — Sumpter, August 2025. Uses Davidson's third dogma to argue that model and data are parts of one belief system, and that a belief system should be coherent, charitable and triangulated.
+- *Most models are true, because they are useful* — short note against Box's aphorism: a model is judged by its assumptions, how it relates to earlier models, the view of the world it constructs and the consequences for those who take that view.
+
+Permission: David's own unpublished writing, except *The Lost Art*, which is published.
+
+**`context-engineering`** — the course repository beside the vault, at `~/GitHub/context-engineering`, commit `dc7c387`. Seven lessons: `0. Context Engineering` (hub), `1. Introduction`, `2. Prompting and Parroting`, `3. Wordalisation`, `4. Interpretable Models`, `5. Embedding, annotation and function calling`, `6. Conversational context`, plus `List of Projects` and `Transcripts/`. The hub states the course's claim: build a data context for any question a user poses, then turn the data into insight, for building AI analysts that advise users making decisions — "the examples are from football … but the methodology can be applied to any complex system where decisions are made". Lesson 4 opens on Breiman's two cultures and works the mechanistic and data-driven approaches to expected goals side by side. Lesson 1 opens on having a mission, and says what a person needs before building an analyst: a reason, competence in the area, and access to the data decisions rest on. The accompanying code is in a separate repository, `Context-Engineering-Course`. Not yet read in full; lessons 0, 1 and 4 opened.
+
+**The first two papers in the workspace** — named by David as giving the flavour of the journal. `papers/0002-representing-data-in-words/` introduces wordalisation: a method for generating narratives from data, applied to football scouting, personality tests and international survey data, evaluated by LLM-as-a-judge and human-as-a-judge, with a section on open and transparent development of communication about data. `papers/0003-twelve-earpiece/` describes a conversational football analyst built as a choose-your-own-adventure: specialised analysts with redirects, name resolution, wordalisation functions and embedding search, tested on a hand-written set of queries and judged blind against a general coding agent. Both are in the workspace and are the journal's own output.
 
 ## Framing
 
@@ -35,6 +48,10 @@ The types of article the journal is interested in:
 - Tutorials about models and — left unfinished by David.
 
 Publisher: Vivid Insights remains the responsible publisher of the journal's articles.
+
+### David's second note, 2 November 2026
+
+Brainstorming, recorded as given. The paper could start the way David wrote it in *Algorithms and Models*, in the Twelve section of his vault: that this is a journal about **how we use and interpret models, and how we build systems which can communicate the conclusions from models**. The context engineering course may give further ideas, and the workspace's first two papers give the flavour of what the journal publishes.
 
 ### Open
 
@@ -67,6 +84,7 @@ Publisher: Vivid Insights remains the responsible publisher of the journal's art
 | --- | --- | --- |
 | 1 | Paper created. The workspace was renumbered so this paper could take 0001: the wordalisation paper moved to `papers/0002-representing-data-in-words/` and the Earpiece paper to `papers/0003-twelve-earpiece/`, each with its front matter, script run commands and appendix paths updated. This paper was copied from `templates/paper/` and opened as `Report.md`. | `papers/0001-what-is-models-and-words/` |
 | 2 | Step 1 begun. David's starting note on the journal's concept and its five article types recorded in `Framing`; `agentic-ai-for-statistics-and-data-science` recorded in `Source Material` at commit `3d858b6`, not yet read. `Report.md` untouched. | this file |
+| 3 | Step 1 continued. David's second note recorded in `Framing`: the journal is about how we use and interpret models and how we build systems that communicate the conclusions from models. Four further sources opened and described in `Source Material`: Twelve's `Algorithms and Models` and its `Modelling Philosophy` page (marked do not share externally), the `Models and AI` folder of David's vault, the `context-engineering` course at commit `dc7c387`, and the workspace's first two papers. `Report.md` untouched. | this file |
 
 ## Code Summary
 
