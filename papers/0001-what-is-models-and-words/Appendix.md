@@ -15,7 +15,13 @@
 
 Permission: granted by David, 2 November 2026.
 
-**This workspace** — `instructions.md`, `WRITING.md`, `FORMAT.md`, `REVIEW.md`, `README.md`, `review/reviewers.yml`, `templates/`, `site/` and the specimen paper are the working description of how a Models and Words article is written and reviewed. Candidate source, not yet confirmed by David.
+**This workspace** — confirmed by David as material, 2 November 2026: the article also presents how articles will be written here. What the files hold:
+
+- `instructions.md` — the working contract. One paper per folder; every report has the structure Abstract, optional What We Have Built, Introduction, Methods, Results, Discussion, built on three points called A, B and C that thread through every section in the same order. Six phases from David's drafting order — sketch, sketch the abstract, revise, write the start and end together, revise the abstract, simplify and revise — carried out as ten steps. The friction rules: the user's decisions, pre-commitment through an abstract written before any section, the user goes first, propose and wait, one unit at a time. Cites Mitchell, Ghosh and Passi (2026) for why.
+- `WRITING.md` — how the prose is written, each rule with the correction that produced it: first person plural, the concrete case first, no "not X, it's Y", no grading the evidence, nothing bold, numbers in tables and meaning in the text, draft at about half the length that seems natural. Ends in a dated corrections log.
+- `REVIEW.md` and `review/reviewers.yml` — every report is reviewed before publication. A content hash over `Report.md`, `references.yaml` and every file the page shows or quotes; a reviewer approves one hash; `publish.py` refuses anything else. Two approvals, one from an editor, authors may not approve. The agent may not write reviews or approvals, enforced by a hook as well as by the contract. **`reviewers.yml` currently lists one person, David, and carries a `[CHECK:]` saying `review.py request` refuses until at least two are listed.**
+- `FORMAT.md` — the Markdown the report is written in. Not yet read.
+- The specimen, `papers/0000-specimen/`, uses every kind of block and is what a step is compared against from step 3 onwards.
 
 **`Davids-Vault/Twelve Models (do not share externally)/Algorithms and Models`** — Twelve's internal index of its models, exported from Notion. The hub page states three principles: models are explainable in football terms ("understandable"), they relate to goals scored and conceded ("help teams win"), and each problem gets the best motivated approach ("advanced AI"). Its child page `Modelling Philosophy` is the closest thing in the material to a statement of the journal's position: it separates the **mathematical model** of the data from the **normative model** that says what the model means in words, defines normative as setting a standard for judging behaviour or outcomes, says stakeholders define the norms, and argues against black-box methods on Rudin's grounds that high-stakes decisions need interpretable models rather than post-hoc explanations. Other child pages: `Building a Twelve Analyst`, `Qualities, Metrics and Summaries`, `Wordalisations`, `Visualisations`, `Context Engineering for Football`, `Automated documentation`, and the model pages (transfer, team strength, league strength, Total Football, financial, zonal threat, zonal xG, Twelve Index, player name search, van Dijk metrics, coach analysis). **Permission: granted by David, 2 November 2026, although the folder is marked "do not share externally". Named individuals and clubs still need care.** Copied unchanged to `Attachments/twelve-algorithms-and-models/`: `Algorithms and Models.md` (sha256 `ed842073…`) and `Modelling Philosophy.md` (sha256 `64829c72…`).
 
@@ -79,6 +85,12 @@ The journal's scope is wider than David's own position. His position is one with
 
 This changes what the paper has to do. The six positions above are then the editor's position, not the journal's line, and the paper's job is to say what the *area* is — the thing these are positions about — and what makes a position one of them. The material gathered so far is almost all David's own side of it.
 
+### David's fourth note, 2 November 2026
+
+The article is also a presentation of how more articles will be written, using the approach in this folder.
+
+So it has two jobs: say what the area is and that the journal is a forum for positions within it, and present the writing method. How those sit together — whether the method is one of the paper's three points, its `What We Have Built` section, or the frame around the whole thing — is a step 2 decision.
+
 ### Axes of disagreement already present in the material
 
 Where the sources themselves record someone holding the other view. Candidates for the variety the forum would hold, not a decision.
@@ -97,6 +109,7 @@ Where the sources themselves record someone holding the other view. Candidates f
 
 - Superseded by David's third note: the journal's scope is wider than the argument above. Open instead: what is the area, stated so that someone who disagrees with David still recognises their work as belonging in it?
 - Where do the other positions come from? Everything gathered so far is David's side. A forum paper needs the people it is inviting.
+- The review process the article would describe cannot currently run: `reviewers.yml` lists one person and the policy needs two approvals with one from an editor. This blocks step 9 of this paper as well as the article's account of the process.
 - The first note says the steps of statistical analysis are "nearly fully automated". The benchmark in 2.7 supports it for the steps and contradicts it for the analysis as a whole. Which does the paper claim?
 - Chapter 2.7's finding — that a decision procedure transfers and domain content does not — cuts slightly against the Twelve philosophy's emphasis on stakeholders' normative knowledge. Both may be right, but the paper would have to say how.
 
@@ -134,6 +147,7 @@ Where the sources themselves record someone holding the other view. Candidates f
 | 3 | Step 1 continued. David's second note recorded in `Framing`: the journal is about how we use and interpret models and how we build systems that communicate the conclusions from models. Four further sources opened and described in `Source Material`: Twelve's `Algorithms and Models` and its `Modelling Philosophy` page (marked do not share externally), the `Models and AI` folder of David's vault, the `context-engineering` course at commit `dc7c387`, and the workspace's first two papers. `Report.md` untouched. | this file |
 | 4 | Step 1 continued. David granted permission for the Twelve and vault material. Six source files copied unchanged into `Attachments/` with checksums. `agentic-ai-for-statistics-and-data-science` read (Overview, 1.1, 1.3, 1.5, 1.7, 2.7) and described. A reading of David's position across all the sources written into `Framing` as `The picture from David's previous writing`, for him to correct. `Report.md` untouched. | this file, `Attachments/` |
 | 5 | Step 1 continued. David set the scope: the journal is a forum for a variety of positions on the area, and his own position is one of them. Recorded in `Framing` with the axes of disagreement already present in the material. The six positions recorded in entry 4 stand as the editor's position, not the journal's line. `Report.md` untouched. | this file |
+| 6 | Step 1 continued. David confirmed the workspace's own contract files as material: the article also presents how further articles will be written here. `instructions.md`, `WRITING.md`, `REVIEW.md` and `reviewers.yml` read and described in `Source Material`. Noted that `reviewers.yml` lists one person and the review policy needs two. `Report.md` untouched. | this file |
 
 ## Code Summary
 
