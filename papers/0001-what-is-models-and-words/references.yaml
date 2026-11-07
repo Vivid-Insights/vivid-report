@@ -460,3 +460,47 @@
   container: Proceedings of the 12th MIT Sloan Sports Analytics Conference
   url: https://www.researchgate.net/publication/327139841_Beyond_Expected_Goals
   note: Conference paper.
+
+- id: tessler2024
+  type: article
+  author: ["Tessler, Michael Henry", "Bakker, Michiel A.", "Jarrett, Daniel", "Sheahan, Hannah", "Chadwick, Martin J.", "Koster, Raphael", "Evans, Georgina", "Campbell-Gillingham, Lucy", "Collins, Tantum", "Parkes, David C.", "Botvinick, Matthew", "Summerfield, Christopher"]
+  title: "AI can help humans find common ground in democratic deliberation"
+  year: 2024
+  container: Science
+  volume: "386"
+  issue: "6719"
+  pages: "eadq2852"
+  doi: 10.1126/science.adq2852
+
+- id: costello2024
+  type: article
+  author: ["Costello, Thomas H.", "Pennycook, Gordon", "Rand, David G."]
+  title: "Durably reducing conspiracy beliefs through dialogues with AI"
+  year: 2024
+  container: Science
+  volume: "385"
+  issue: "6714"
+  pages: "eadq1814"
+  doi: 10.1126/science.adq1814
+
+- id: binz2025
+  type: article
+  author: ["Binz, Marcel", "Akata, Elif", "Bethge, Matthias", "Brändle, Franziska", "Callaway, Fred", "Coda-Forno, Julian", "others"]
+  title: "A foundation model to predict and capture human cognition"
+  year: 2025
+  container: Nature
+  volume: "644"
+  issue: "8078"
+  pages: "1002–1009"
+  doi: 10.1038/s41586-025-09215-4
+
+- id: kestin2025
+  type: article
+  author: ["Kestin, Greg", "Miller, Kelly", "Klales, Anna", "Milbourne, Timothy", "Ponti, Gregorio"]
+  title: "AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting"
+  year: 2025
+  container: Scientific Reports
+  volume: "15"
+  issue: "1"
+  pages: "17458"
+  doi: 10.1038/s41598-025-97652-6
