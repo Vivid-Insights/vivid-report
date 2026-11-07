@@ -161,6 +161,8 @@ Two changes from his version: the application is one thing an article may do rat
 
 **The review agent.** David, 7 November 2026: a review agent will be built later, in a separate GitHub repository accessible only to the editors. So semi-automated review is a plan, not something the workspace does today. In the article the claim is therefore written as a plan, and what the reader is told about review as it stands now is: two approvals with at least one from an editor, the version frozen by a content hash, the agent blocked from writing reviews or approvals, and reviewers writing their own. `review/reviewers.yml` still lists one person, which blocks a round being opened for this paper.
 
+**The working abstract accepted as it stands.** David, 7 November 2026: "This is ok as is. Even if A, B and C have short descriptions in the abstract this is OK." The list of three kinds of contribution stays inside the abstract for now, and B and C keep their short mentions in the agent paragraph. To be read again in step 7.
+
 ### The material, in summary — step 1 closed, 7 November 2026
 
 Given to David in this form and open to his correction. The kinds of material, not the file list:
