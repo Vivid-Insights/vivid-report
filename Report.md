@@ -36,6 +36,12 @@ Models and Words is itself an AI agent. Submissions are written together with an
 
 *Step 4: the body of the editorial, with one sub-heading per point, A, B and C, in the order of the Introduction, and the examples for each point under its sub-heading. An editorial has no Results.*
 
+### The articles we are looking for
+
+### Writing your article with the agent
+
+### How articles are reviewed
+
 ## Discussion
 
 *Step 6: where the three points are answered. Ideally five paragraphs and no sub-headings: one per point in the order of the Methods, then the limitations, then looking ahead, linking back to the literature in the Introduction.*
