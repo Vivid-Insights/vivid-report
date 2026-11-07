@@ -16,7 +16,7 @@ references: references.yaml
 
 ## Abstract
 
-*Step 2 drafts this early: one paragraph stating the three points of the paper, in order. It is the template for every other section. Step 7 revises it against the finished report.*
+*Step 2 drafts this early, stating the three points of the paper in order. It is the template for every other section. Step 7 revises it against the finished report. Keep this note below the working abstract until then.*
 
 ## Introduction
 

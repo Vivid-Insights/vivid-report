@@ -58,7 +58,7 @@ Every report has the same structure, in this order. The section names are fixed.
 
 | Section | What it holds |
 | --- | --- |
-| `Abstract` | One paragraph that states the three points of the paper. Drafted in step 2 and used as the template for everything else; revised in step 7. |
+| `Abstract` | States the three points of the paper. Drafted in step 2 and used as the template for everything else; revised in step 7. |
 | `What We Have Built` | Optional. A short, unnumbered description of the app, converser or tool the report is about, for a reader who wants to see the thing before the argument. It does not replace any part of the `Methods`. |
 | `Introduction` | A review of the area in four to six paragraphs, citing at least 20 papers. It builds from the general to the specific and gives the background for the three points, one paragraph each, in order. |
 | `Methods` | What was built and how, thoroughly, written from the code and repository where there is one. It covers the three points in the order of the `Introduction`. |
@@ -74,11 +74,11 @@ The three points thread through every section: stated in the `Abstract`, given t
 
 ### The shape of each section
 
-These are David's paragraph plans. Follow them unless the user says otherwise.
+These are David's paragraph plans. Follow them unless the user says otherwise. The plan for the `Abstract` is the loosest of them (`The abstract is a suggestion` below).
 
 | Section | Paragraphs |
 | --- | --- |
-| `Abstract` | One paragraph in seven moves: the general area; a specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. |
+| `Abstract` | A suggestion, not a rule: one paragraph in seven moves — the general area; a specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. What matters is that it reads well and gets the points of the paper across. |
 | `Introduction` | Five paragraphs: introduce the area; background to A; background to B; background to C; roughly what this report does, in the order A, B, C. |
 | `Discussion` | Five paragraphs, with no sub-headings: what was found about A and B, then C; what is good about it; the problems with it; looking forward. |
 
@@ -176,8 +176,10 @@ Agree what the paper says before writing any of it. This is the pre-commitment t
 - **Agree what kind of report it is**: a method (what it is, how it works, what choices it involves), an application (a method used for a purpose, and what happened), an evaluation (how well it works, by some measure), an editorial (what the journal is for, or what an area is, written on behalf of the publication), or an opinion (a position argued by its authors, which the journal publishes without taking as its own). Many are a method with one application.
 - **Find the three points of the paper with the user.** Ask them first what they think the paper says, before offering anything of your own. Then question each point: is it one point or two, could a reader disagree with it, and what in the material will show it — a part of the method, a worked example, a figure, a quoted output, an evaluation. A point with nothing to show it is a claim, and gets cut or becomes a limitation. Three is the usual number; if the material insists on two or four, say so and let the user decide.
 - **Explain the three points to the author, and read them out of what they wrote.** The three points are a suggestion for writing, not something the author has to arrive at unaided. Say what they are for: stated in the `Abstract`, given a background paragraph each in the `Introduction`, built in the `Methods`, shown in the `Results` and answered in the `Discussion`, always in the same order. Then name the three the author's own text implies, quote where each came from, say what in the material would show it, and let them adjust. Suggesting is not deciding: the author changes a point, swaps one out, or says the paper has a different three.
-- **Get the `Abstract` drafted now, in `Report.md`.** Encourage the user to write it themselves, one paragraph that states the three points in order, and offer to read it against the material. Draft it only if they ask. It is the template for every later step.
+- **Get the `Abstract` drafted now, in `Report.md`.** Encourage the user to write it themselves, stating the three points in order, and offer to read it against the material. Draft it only if they ask. It is the template for every later step.
 - **Put the user's own statement of what the paper says into the `Abstract` as soon as they have written it**, in their words, and edit it there with them. Do this before the three points are settled and while the text is still rough: a working abstract in the report is what this step is for. Revisions and alternatives belong in the `Abstract` too, not in `Appendix.md` — a sentence proposed in the appendix is one the user cannot see in place. Each time something changes, say what changed and why, and ask them to work on it with you. `Framing` keeps the decisions and what was set aside, not the drafting.
+- **The abstract is a suggestion, not a form to fill.** The seven moves and the single paragraph are a guide. The test is whether it reads well and gets the points of the paper across; a list inside it, two paragraphs, or a short mention of a point are fine if the author is happy with them. Do not hold an abstract open, or raise it as unfinished, because it departs from the shape.
+- **Keep the italic step note under the `Abstract`.** The template's note saying step 7 revises the abstract stays below the working text until step 7, so the page shows the abstract will be revised later. Do not delete it when the abstract is first written.
 - **Ask whether the report needs a `What We Have Built` section**, and leave it out unless the user wants one.
 - Record the outcome in `Framing` in `Appendix.md`: the reader, the kind of report, the three points and what will show each, the decision on `What We Have Built`, and what was considered and set aside.
 
@@ -252,7 +254,7 @@ The `Discussion` is where the three points are answered, in five paragraphs: wha
 ### Step 7 — Abstract, title and front matter
 
 - **Read the working abstract against the report as it now stands**, point by point, and tell the user where they differ: a point the `Discussion` answered differently, a result the abstract does not mention, a claim the report no longer supports. The user revises it; you draft only if asked.
-- **The final `Abstract` is one paragraph in the seven moves above**: the area; the specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. Short sentences, no numbers unless the user wants one, no method plumbing, nothing that is not in the report.
+- **The seven moves are a suggestion for the final `Abstract`**: the area; the specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. Offer them where they would help; the test is that it reads well and states the points of the paper. Nothing that is not in the report. Remove the italic step note when the abstract is settled.
 - **If the report has a `What We Have Built` section**, read it against the `Methods` and say where they disagree.
 - **Suggest two or three titles.** Plain and literal. The user chooses.
 - **Fill in the front matter**: `keywords`, `report-number` (ask the user; the series is `VI-<year>-<nnn>`), `version`.
@@ -264,7 +266,7 @@ The `Discussion` is where the three points are answered, in five paragraphs: wha
 Read the finished report from beginning to end, in the built page, as a reader would, and list what is wrong with it. This is where the report gets shorter: phase 6 is simplify and revise, and cutting length comes before anything else.
 
 - **Read it in one pass, in order.** A term defined twice, a claim in the `Results` contradicted in the `Discussion`, a figure discussed before it appears.
-- **Check the three points run end to end.** Each is stated in the `Abstract`, has its background paragraph in the `Introduction`, its sub-heading in the `Methods` and `Results`, in the same order everywhere, and is answered in its own paragraph of the `Discussion`, in that same order and without a sub-heading. Check the structure is the one in `The Structure of a Report`, and that the `Introduction` cites at least 20 works.
+- **Check the three points run end to end.** Each is in the `Abstract`, has its background paragraph in the `Introduction`, its sub-heading in the `Methods` and `Results`, in the same order everywhere, and is answered in its own paragraph of the `Discussion`, in that same order and without a sub-heading. Check the structure is the one in `The Structure of a Report`, and that the `Introduction` cites at least 20 works.
 - **Re-check everything that goes stale**: every quoted output against its file (the build does this), every fact about the method against the code at the commit recorded, every number against its output, every cross-reference.
 - **Check nothing is orphaned**: a figure never referred to, a reference never cited (the build warns of both), a term used once.
 - **Check the references properly**: each cited where it is used, each detail verified against the source, each link resolving.
