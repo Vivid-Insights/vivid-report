@@ -18,7 +18,7 @@ references: references.yaml
 
 ## Abstract
 
-Articles in Models and Words are about understanding social, biological and technological systems, about the models we build of them, and about how those models relate to the words we use about them. We are looking for three types of contributions:
+Articles in Models and Words are about understanding society, biology, sporting and technological systems, about the models we build of them, and about how those models relate to the words we use about them. We are looking for three types of contributions:
 
 1. Applications which combine models and words to produce insight for stakeholders.
 2. Methodological and theoretical contributions where models and words are combined.

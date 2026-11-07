@@ -215,6 +215,32 @@ Recorded 2 November as "axes of disagreement"; superseded as a framing by David'
 
 | Work | Point or paragraph | Found by | Read | Cited |
 | --- | --- | --- | --- | --- |
+| kasirzadeh2026 | 1 | David | Essay, via fetch summary and quotes | Yes |
+| breiman2001 | 1 | Agent | Abstract | Yes |
+| rudin2019 | 1, 3 | Agent | Abstract (arXiv) | Yes |
+| gyllingberg2023 | 1 | David's material | Local copy | Yes |
+| caut2025, rahimian2025 | 1 | Earlier papers | Verified in 0002/0003 | Yes |
+| reiter2005 | 2 | Agent | Abstract (repository page) | Yes |
+| gigerenzer2007 | 2 | Agent | Abstract paraphrase | Yes |
+| spiegelhalter2017 | 2 | Agent | Abstract paraphrase | Yes |
+| green2016 | 3 | Agent | Landing-page abstract; author name to confirm on PDF | Yes |
+| zytek2024, bereska2024, zhou2024 | 3 | Agent | Abstract | Yes |
+| messeri2024 | 3 | Agent | Abstract (Europe PMC) | Yes |
+| schluntz2024 | 4 | Agent | Full blog post | Yes |
+| shneiderman2020, bansal2021 | 4 | Agent | Abstract (arXiv) | Yes |
+| jabbour2023 | 4 | Agent | Abstract | Yes |
+| homeoffice2025 | 4 | Agent | Report page | Yes |
+| doughtystreet2026 | 4 | Agent | News item; Opinion itself not opened | Yes |
+| liang2024monitoring, liang2024mapping | 5 | Agent | Abstract | Yes |
+| liang2024feedback | 5 | Agent | arXiv version 2310.01783 | Yes |
+| lu2024, agents4science2025, maciocci2019 | 5 | Agent | Abstract / site | Yes |
+| jakesch2023 | 5 | Agent | Abstract (arXiv) | Yes |
+| knuth1984 | 5 | Agent | Abstract only | Yes |
+| mitchell2026 | 6 | Contract | Abstract | Yes |
+| bucinca2021, lee2025, kosmyna2025 | 6 | Agent | Abstract | Yes |
+| portet2009, spiegelhalter2011, weisberg2013, morgan1999, wang2024 | — | Agent | Not opened enough | No |
+| bainbridge1983, parasuraman1997, dellacqua2023 | 6 | Agent | Blocked (403); PDF needed | No |
+| Nature, Science and COPE AI-authorship policies | 5 | Agent | Blocked; PDF needed | No |
 
 ## Method Facts
 

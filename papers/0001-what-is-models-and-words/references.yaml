@@ -1,4 +1,309 @@
 # Works cited in Report.md. The reference list on the page is generated from this file.
 # Format and fields: FORMAT.md, "Citations and references". Every entry needs a doi or a url,
 # checked to resolve, and is cited only after it has been opened and read.
-[]
+# Looked up 7 November 2026; what was opened, and how far, is in the Literature table in Appendix.md.
+
+- id: kasirzadeh2026
+  type: web
+  author: ["Kasirzadeh, Atoosa"]
+  title: "A new dawn for mathematical progress"
+  year: 2026
+  container: Noema
+  url: https://www.noemamag.com/a-new-dawn-for-mathematical-progress/
+  note: Magazine essay, 29 October 2026.
+
+- id: gyllingberg2023
+  type: article
+  author: ["Gyllingberg, Linnéa", "Birhane, Abeba", "Sumpter, David J. T."]
+  title: "The lost art of mathematical modelling"
+  year: 2023
+  container: Mathematical Biosciences
+  volume: "362"
+  pages: "109033"
+  doi: 10.1016/j.mbs.2023.109033
+
+- id: breiman2001
+  type: article
+  author: ["Breiman, Leo"]
+  title: "Statistical modeling: The two cultures"
+  year: 2001
+  container: Statistical Science
+  volume: "16"
+  issue: "3"
+  pages: "199–231"
+  doi: 10.1214/ss/1009213726
+
+- id: rudin2019
+  type: article
+  author: ["Rudin, Cynthia"]
+  title: "Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead"
+  year: 2019
+  container: Nature Machine Intelligence
+  volume: "1"
+  issue: "5"
+  pages: "206–215"
+  doi: 10.1038/s42256-019-0048-x
+
+- id: caut2025
+  type: preprint
+  author: ["Caut, Amandine M.", "Rouillard, Amy", "Zenebe, Beimnet", "Green, Matthias", "Morthens, Ágúst Pálmason", "Sumpter, David J. T."]
+  title: "Representing data in words: A context engineering approach"
+  year: 2025
+  container: arXiv
+  number: "2503.15509"
+  url: https://arxiv.org/abs/2503.15509
+  note: Preprint, not peer reviewed.
+
+- id: rahimian2025
+  type: article
+  author: ["Rahimian, Pegah", "Flisar, Jernej", "Sumpter, David J. T."]
+  title: "Automated explanation of machine learning models of footballing actions in words"
+  year: 2025
+  container: Journal of Sports Analytics
+  volume: "11"
+  doi: 10.1177/22150218251353089
+
+- id: reiter2005
+  type: article
+  author: ["Reiter, Ehud", "Sripada, Somayajulu", "Hunter, Jim", "Yu, Jin", "Davy, Ian"]
+  title: "Choosing words in computer-generated weather forecasts"
+  year: 2005
+  container: Artificial Intelligence
+  volume: "167"
+  issue: "1–2"
+  pages: "137–169"
+  doi: 10.1016/j.artint.2005.06.006
+
+- id: gigerenzer2007
+  type: article
+  author: ["Gigerenzer, Gerd", "Gaissmaier, Wolfgang", "Kurz-Milcke, Elke", "Schwartz, Lisa M.", "Woloshin, Steven"]
+  title: "Helping doctors and patients make sense of health statistics"
+  year: 2007
+  container: Psychological Science in the Public Interest
+  volume: "8"
+  issue: "2"
+  pages: "53–96"
+  doi: 10.1111/j.1539-6053.2008.00033.x
+
+- id: spiegelhalter2017
+  type: article
+  author: ["Spiegelhalter, David"]
+  title: "Risk and uncertainty communication"
+  year: 2017
+  container: Annual Review of Statistics and Its Application
+  volume: "4"
+  pages: "31–60"
+  doi: 10.1146/annurev-statistics-010814-020148
+
+- id: green2016
+  type: article
+  author: ["Green, Sara", "Jones, Nicholaos"]
+  title: "Constraint-based reasoning for search and explanation: Strategies for understanding variation and patterns in biology"
+  year: 2016
+  container: Dialectica
+  volume: "70"
+  issue: "3"
+  pages: "343–374"
+  doi: 10.1111/1746-8361.12145
+
+- id: messeri2024
+  type: article
+  author: ["Messeri, Lisa", "Crockett, M. J."]
+  title: "Artificial intelligence and illusions of understanding in scientific research"
+  year: 2024
+  container: Nature
+  volume: "627"
+  issue: "8002"
+  pages: "49–58"
+  doi: 10.1038/s41586-024-07146-0
+
+- id: zhou2024
+  type: preprint
+  author: ["Zhou, Yangqiaoyu", "Liu, Haokun", "Srivastava, Tejes", "Mei, Hongyuan", "Tan, Chenhao"]
+  title: "Hypothesis generation with large language models"
+  year: 2024
+  container: arXiv
+  number: "2404.04326"
+  url: https://arxiv.org/abs/2404.04326
+  note: Workshop paper, NLP4Science at EMNLP 2024.
+
+- id: zytek2024
+  type: preprint
+  author: ["Zytek, Alexandra", "Pidò, Sara", "Veeramachaneni, Kalyan"]
+  title: "LLMs for XAI: Future directions for explaining explanations"
+  year: 2024
+  container: arXiv
+  number: "2405.06064"
+  url: https://arxiv.org/abs/2405.06064
+  note: Preprint, not peer reviewed.
+
+- id: bereska2024
+  type: article
+  author: ["Bereska, Leonard", "Gavves, Efstratios"]
+  title: "Mechanistic interpretability for AI safety: A review"
+  year: 2024
+  container: Transactions on Machine Learning Research
+  url: https://arxiv.org/abs/2404.14082
+
+- id: schluntz2024
+  type: web
+  author: ["Schluntz, Erik", "Zhang, Barry"]
+  title: "Building effective agents"
+  year: 2024
+  container: Anthropic Engineering
+  url: https://www.anthropic.com/engineering/building-effective-agents
+  note: Blog post, not peer reviewed.
+
+- id: shneiderman2020
+  type: preprint
+  author: ["Shneiderman, Ben"]
+  title: "Human-centered artificial intelligence: Reliable, safe & trustworthy"
+  year: 2020
+  container: arXiv
+  number: "2002.04087"
+  url: https://arxiv.org/abs/2002.04087
+
+- id: bansal2021
+  type: article
+  author: ["Bansal, Gagan", "Wu, Tongshuang", "Zhou, Joyce", "Fok, Raymond", "Nushi, Besmira", "Kamar, Ece", "Ribeiro, Marco Tulio", "Weld, Daniel S."]
+  title: "Does the whole exceed its parts? The effect of AI explanations on complementary team performance"
+  year: 2021
+  container: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems
+  url: https://arxiv.org/abs/2006.14779
+
+- id: jabbour2023
+  type: article
+  author: ["Jabbour, Sarah", "Fouhey, David", "Shepard, Stephanie", "Valley, Thomas S.", "Kazerooni, Ella A.", "Banovic, Nikola", "Wiens, Jenna", "Sjoding, Michael W."]
+  title: "Measuring the impact of AI in the diagnosis of hospitalized patients: A randomized clinical vignette survey study"
+  year: 2023
+  container: JAMA
+  volume: "330"
+  issue: "23"
+  pages: "2275–2284"
+  doi: 10.1001/jama.2023.22295
+
+- id: homeoffice2025
+  type: report
+  author: ["Home Office"]
+  title: "Evaluation of AI trials in the asylum decision making process"
+  year: 2025
+  publisher: GOV.UK
+  url: https://www.gov.uk/government/publications/evaluation-of-ai-trials-in-the-asylum-decision-making-process
+
+- id: doughtystreet2026
+  type: web
+  author: ["Doughty Street Chambers"]
+  title: "Home Office use of AI in asylum decision-making at significant risk of being unlawful, legal Opinion finds"
+  year: 2026
+  url: https://www.doughtystreet.co.uk/news/home-office-use-ai-asylum-decision-making-significant-risk-being-unlawful-legal-opinion-finds
+  note: News item on an Opinion for Open Rights Group, 18 March 2026.
+
+- id: liang2024monitoring
+  type: article
+  author: ["Liang, Weixin", "Izzo, Zachary", "Zhang, Yaohui", "Lepp, Haley", "Cao, Hancheng", "Zhao, Xuandong", "Chen, Lingjiao", "Ye, Haotian", "Liu, Sheng", "Huang, Zhi", "McFarland, Daniel A.", "Zou, James Y."]
+  title: "Monitoring AI-modified content at scale: A case study on the impact of ChatGPT on AI conference peer reviews"
+  year: 2024
+  container: Proceedings of the 41st International Conference on Machine Learning
+  url: https://arxiv.org/abs/2403.07183
+
+- id: liang2024mapping
+  type: preprint
+  author: ["Liang, Weixin", "Zhang, Yaohui", "Wu, Zhengxuan", "Lepp, Haley", "others"]
+  title: "Mapping the increasing use of LLMs in scientific papers"
+  year: 2024
+  container: arXiv
+  number: "2404.01268"
+  url: https://arxiv.org/abs/2404.01268
+  note: Preprint, not peer reviewed.
+
+- id: liang2024feedback
+  type: article
+  author: ["Liang, Weixin", "Zhang, Yuhui", "Cao, Hancheng", "others"]
+  title: "Can large language models provide useful feedback on research papers? A large-scale empirical analysis"
+  year: 2024
+  container: NEJM AI
+  doi: 10.1056/AIoa2400196
+
+- id: lu2024
+  type: preprint
+  author: ["Lu, Chris", "Lu, Cong", "Lange, Robert Tjarko", "Foerster, Jakob", "Clune, Jeff", "Ha, David"]
+  title: "The AI Scientist: Towards fully automated open-ended scientific discovery"
+  year: 2024
+  container: arXiv
+  number: "2408.06292"
+  url: https://arxiv.org/abs/2408.06292
+  note: Preprint, not peer reviewed.
+
+- id: agents4science2025
+  type: web
+  author: ["Zou, James", "Queen, Owen", "Thakkar, Nitya", "Sun, Eric", "Bianchi, Federico"]
+  title: "Agents4Science 2025: Open Conference of AI Agents for Science"
+  year: 2025
+  url: https://agents4science.stanford.edu/
+
+- id: jakesch2023
+  type: article
+  author: ["Jakesch, Maurice", "Bhat, Advait", "Buschek, Daniel", "Zalmanson, Lior", "Naaman, Mor"]
+  title: "Co-writing with opinionated language models affects users' views"
+  year: 2023
+  container: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems
+  doi: 10.1145/3544548.3581196
+
+- id: knuth1984
+  type: article
+  author: ["Knuth, Donald E."]
+  title: "Literate programming"
+  year: 1984
+  container: The Computer Journal
+  volume: "27"
+  issue: "2"
+  pages: "97–111"
+  doi: 10.1093/comjnl/27.2.97
+
+- id: maciocci2019
+  type: web
+  author: ["Maciocci, Giuliano", "Aufreiter, Michael", "Bentley, Nokome"]
+  title: "Introducing eLife's first computationally reproducible article"
+  year: 2019
+  container: eLife Labs
+  url: https://elifesciences.org/labs/ad58f08d/introducing-elife-s-first-computationally-reproducible-article
+
+- id: mitchell2026
+  type: preprint
+  author: ["Mitchell, Margaret", "Ghosh, Avijit", "Passi, Samir"]
+  title: "AI agents push humans out of the loop"
+  year: 2026
+  container: arXiv
+  number: "2608.23642"
+  url: https://arxiv.org/abs/2608.23642
+  note: Preprint, not peer reviewed.
+
+- id: bucinca2021
+  type: article
+  author: ["Buçinca, Zana", "Malaya, Maja Barbara", "Gajos, Krzysztof Z."]
+  title: "To trust or to think: Cognitive forcing functions can reduce overreliance on AI in AI-assisted decision-making"
+  year: 2021
+  container: Proceedings of the ACM on Human-Computer Interaction
+  volume: "5"
+  issue: "CSCW1"
+  pages: "1–21"
+  doi: 10.1145/3449287
+
+- id: lee2025
+  type: article
+  author: ["Lee, Hao-Ping", "Sarkar, Advait", "Tankelevitch, Lev", "Drosos, Ian", "Rintel, Sean", "Banks, Richard", "Wilson, Nicholas"]
+  title: "The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers"
+  year: 2025
+  container: Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems
+  pages: "1–22"
+  doi: 10.1145/3706598.3713778
+
+- id: kosmyna2025
+  type: preprint
+  author: ["Kosmyna, Nataliya", "Hauptmann, Eugene", "Yuan, Ye Tong", "Situ, Jessica", "Liao, Xian-Hao", "Beresnitzky, Ashly Vivian", "Braunstein, Iris", "Maes, Pattie"]
+  title: "Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task"
+  year: 2025
+  container: arXiv
+  number: "2506.08872"
+  url: https://arxiv.org/abs/2506.08872
+  note: Preprint, not peer reviewed.
