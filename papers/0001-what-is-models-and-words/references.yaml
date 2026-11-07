@@ -287,17 +287,6 @@
   pages: "37–72"
   doi: 10.1098/rstb.1952.0012
 
-- id: hodgkin1952
-  type: article
-  author: ["Hodgkin, A. L.", "Huxley, A. F."]
-  title: "A quantitative description of membrane current and its application to conduction and excitation in nerve"
-  year: 1952
-  container: The Journal of Physiology
-  volume: "117"
-  issue: "4"
-  pages: "500–544"
-  doi: 10.1113/jphysiol.1952.sp004764
-
 - id: schelling1971
   type: article
   author: ["Schelling, Thomas C."]
@@ -440,3 +429,25 @@
   issue: "6777"
   pages: "eaea3884"
   doi: 10.1126/science.aea3884
+
+- id: vicsek1995
+  type: article
+  author: ["Vicsek, Tamás", "Czirók, András", "Ben-Jacob, Eshel", "Cohen, Inon", "Shochet, Ofer"]
+  title: "Novel type of phase transition in a system of self-driven particles"
+  year: 1995
+  container: Physical Review Letters
+  volume: "75"
+  issue: "6"
+  pages: "1226–1229"
+  doi: 10.1103/PhysRevLett.75.1226
+
+- id: couzin2002
+  type: article
+  author: ["Couzin, Iain D.", "Krause, Jens", "James, Richard", "Ruxton, Graeme D.", "Franks, Nigel R."]
+  title: "Collective memory and spatial sorting in animal groups"
+  year: 2002
+  container: Journal of Theoretical Biology
+  volume: "218"
+  issue: "1"
+  pages: "1–11"
+  doi: 10.1006/jtbi.2002.3065
