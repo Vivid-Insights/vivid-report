@@ -38,6 +38,28 @@ Permission: granted by David, 2 November 2026. All four copied unchanged to `Att
 
 **The first two papers in the workspace** — named by David as giving the flavour of the journal. `papers/0002-representing-data-in-words/` introduces wordalisation: a method for generating narratives from data, applied to football scouting, personality tests and international survey data, evaluated by LLM-as-a-judge and human-as-a-judge, with a section on open and transparent development of communication about data. `papers/0003-twelve-earpiece/` describes a conversational football analyst built as a choose-your-own-adventure: specialised analysts with redirects, name resolution, wordalisation functions and embedding search, tested on a hand-written set of queries and judged blind against a general coding agent. Both are in the workspace and are the journal's own output.
 
+**The CONTEXT MSCA Doctoral Network application** — at `~/GitHub/MSCA doctoral network`, commit `d138195`, a live application to HORIZON-MSCA-2026-DN-01-01 with Uppsala as coordinator and David as the coordinating applicant, for submission 20 November 2026, declaring interest in RAISE. Fifteen doctoral candidates at eight universities (Uppsala, Groningen, Luxembourg, Stellenbosch, Makerere, Addis Ababa, Lagos, Coventry), with Because She Can, ForensiFAI, Twelve Football AB, NC3 and Nithub as associated partners. Read: `README.md`, `Overview and Plan.md`, `03 Part B1/1.1 Quality and pertinence…`, and one doctoral one-pager (Bissyandé's, from `~/Downloads/Re__MSCA_doctoral_school.zip`). What the network is trying to achieve:
+
+- **One definition, three properties.** "A language system is trustworthy to the extent that it signals when it is likely to be wrong, ties what it asserts to identifiable evidence, and is evaluated by the people who live with its consequences." The first is calibration and selective prediction, the second attribution and verification, the third participatory method, consent and governance. The fifteen projects are an attempt to establish all three on the same artefacts and systems, so that each thesis reports one of the three measures on a shared logged object.
+- **Two senses of context, evaluated on the same systems.** In the engineering sense, context is what a system knows at the moment of answering, held in an inspectable *context object* to which each assertion can be traced. In the Afrofeminist sense, it is the social, linguistic and economic setting that decides whether a technically sound system deserves trust. The proposal states that a system can be faithful to its context object and still fail the second test.
+- **The layer above the model.** The stated position is that the frontier laboratories are elsewhere, and that Europe's and Africa's prospects lie in making tools that analyse specific data dependably: laboratory instruments, health records, field imagery, and speech in the languages people actually use.
+- **Why the problem is structural.** Next-token pretraining and accuracy-scored evaluation both reward a confident guess over abstention (Kalai and colleagues, *Nature* 2026; Zhou and colleagues, *Nature* 2024); retrieval moves the question to whether what was retrieved suffices, and strong models answer rather than abstain when it does not (Joren and colleagues, ICLR 2025). The margin is thinnest in under-resourced languages: Ethiopic script costs seven to nine times the tokens of English, cutting the effective context window to as little as 11%.
+- **Six objectives.** Measurable, actionable error in frozen models; an open toolkit in which every assertion is traceable (the context object, wordalisation, prompt cards, program analysis of generated code); testing where trust is hardest (a maternal and newborn health assistant that knows when to refer, microscopy description tied to measured uncertainty, gendered hate speech in Amharic and Afaan Oromoo, football tactics explained to the coaches who use them); evaluation by those affected made continuous and binding; carrying components into use (a crop-disease advisory with calibrated referral); and RO6, a pre-registered test of whether uncertainty-triggered referral and clause-level attribution actually change how affected users judge a system.
+
+What it gives this paper. It is the first source in the material that is not David's own position: fifteen projects and about twenty researchers across machine learning, speech, vision, software verification, law, gender studies and governance, each with their own approach to how models and words relate. It also supplies a definition of trustworthiness and of the context object that the journal's area could be stated against, and a second meaning of "context" that the context-engineering material does not carry. RO2(c) — whether documentation quality or benchmark score better predicts field reliability — asks the same question as chapter 2.7 of the statistics course, from the other end.
+
+**Permission: not yet given.** This is an unsubmitted application with named individuals, partner commitments and David's declared financial interest in Twelve. Nothing has been copied into `Attachments/`; the entry rests on the repository at the commit above. David decides what, if anything, of it the article may use.
+
+**`mechanisms-and-constraints`** — *Mechanisms and constraints in behavioural ecology*, by Malou Bastiaanse (Cambridge), Linnéa Gyllingberg (KTH), James E. Herbert-Read (Cambridge), Kathryn Nave (Edinburgh) and David Sumpter (Uppsala), listed alphabetically. At `~/GitHub/mechanisms-and-constraints`, commit `5c502a3`; a draft, front matter dated 7 August 2026, with the Discussion still in note form. Named by David, 7 November 2026, as **an example of a theory contribution to this journal**. Read: `README.md`, `AGENTS.md`, the article's abstract, Introduction, Theory, Discussion and its note on agentic AI.
+
+- **What it argues.** Sara Green distinguishes mechanistic explanations, which say how a system works by naming its parts and their organisation, from constraint-based explanations, which say what a whole class of systems can and cannot do whatever their parts are made of. The paper crosses that with Mayr's proximate and ultimate — how it works against why it is there — which is David's extension and not Green's, and adds a third family, **predictive explanation**, for accounts whose content lies in a model learned from data. Six types, each with a template: an ordered list of the parts an explanation of that kind must have. The claim is that several long-running debates in behavioural ecology are not disagreements about the world but about what kind of explanation is being offered, and that saying which kind dissolves them. Worked cases: marching locusts, the origin of eusociality, niche construction, worker policing.
+- **Why it is the example.** It is the fifth note worked out for another field, with a mechanism rather than a sentiment: different approaches answer different questions, improve in different directions, and are mistaken for rivals. It also puts machine learning inside the scheme rather than beside it — Breiman's two cultures again, but as a third family of explanation whose content is a learned model, which is the question this journal is about.
+- **The classification is done by a language model.** The templates are filled by an agent applying a written procedure to pairs of papers, over a corpus of more than 150 read in full from their PDFs; the procedure, the corpus and the checking scripts go in the supplementary material. So the paper is also an application of the journal's own subject to a theory problem.
+- **Its note on the use of agentic AI** is a precedent for this workspace's `Disclaimer`: what the model did (retrieval, classification, drafting), what it did not ("It was not used to decide what the paper argues… several were adopted over the model's stated objection"), the three checks that were necessary, and the errors reported rather than concealed — papers reported as filed that were not, guessed identifiers returning unrelated work, a cautionary passage inside a positive account read as that account's thesis, and a sentence that reads as a finding and cannot be checked. "None would have been caught by reading the output and finding it plausible."
+- **Four of the five authors are not David**, from zoology, computational science and philosophy. It is the second source, after CONTEXT, that carries approaches other than his.
+
+Permission: the repository is private and its `Attachments/` holds 153 PDFs shared among the five authors only. Nothing copied into `Attachments/` here. The paper is an unpublished draft with four co-authors, so what this article may say about it, and whether it can be cited before it appears, is David's to settle with them.
+
 ## Framing
 
 *Step 2. The reader, the kind of report (method, application, evaluation), the three points of the paper and what will show each, whether the report has a `What We Have Built` section, and what was considered and set aside.*
@@ -91,11 +113,66 @@ The article is also a presentation of how more articles will be written, using t
 
 So it has two jobs: say what the area is and that the journal is a forum for positions within it, and present the writing method. How those sit together — whether the method is one of the paper's three points, its `What We Have Built` section, or the frame around the whole thing — is a step 2 decision.
 
-### Axes of disagreement already present in the material
+### David's fifth note, 7 November 2026
 
-Where the sources themselves record someone holding the other view. Candidates for the variety the forum would hold, not a decision.
+The journal is not organised around disagreement. What the forum holds is a diversity of approaches within the context of using models and words to understand the world. Two people working differently are not two sides of an argument.
 
-| Axis | One side | The other |
+This changes what the paper has to state: not the axes along which positions oppose each other, but the thing the approaches are approaches to, and what makes one of them belong. CONTEXT is an example of that diversity rather than of disagreement — fifteen projects taking different routes to the same object.
+
+### Step 2 — what kind of report, 7 November 2026
+
+**The reader: a researcher deciding whether to submit.** David's decision, 7 November 2026. The reader is weighing their own work against the journal, so the paper has to leave them able to say whether what they do belongs here. That is the same job the fifth note set — state what the approaches are approaches to — now with a reader attached to it. What else the reader should be able to do is not yet settled.
+
+**This paper is an editorial.** David's decision, 7 November 2026, with the contract changed in the same turn so that editorial and opinion are kinds of paper alongside method, application and evaluation: an editorial says what the journal is for, or what an area is, and is written on behalf of the publication; an opinion is a position argued by its authors, which the journal publishes without taking as its own.
+
+Open, raised with David and not yet decided: `The Structure of a Report` fixes the sections as Abstract, optional What We Have Built, Introduction, Methods, Results, Discussion, built on three points. An editorial has no method it carried out and no results it obtained in that sense.
+
+### What the paper says — David, 7 November 2026
+
+Recorded as written, in his words, before any questioning. This is what step 2 works from.
+
+> Articles in model and words are about understanding social, biological and technological systems and building applications which help people make descisions about those systems. Agentic AI provides new opportunities and presents new challenges in how we build models: writing code and mathematical analysis of models is greatly simplified by these tools, but finding the clearest insight when these models generate vast quantities of text and calculations can be more challenging. We are looking for three types of contributions
+> 1, Applications which combine models and words to produce insight for stakeholders.
+> 2, Methodological and theoretical contributions where models and words are combined.
+> 3, Description of Agentic AI solutions, where human decision-making is placed in the centre.
+> Models and words is itself an AI agent. Submissions are written together with an agent, reviews are semi-automated and it can provide help and support to application builders and researchers. In this article, we outline the type of article we are looking for, how to work with the model-and-words agent to write your article and how the paper will be reviewed.
+
+Raised with David in reply, not yet settled:
+
+- There are now two triples — the three kinds of contribution and the paper's three points — and they are different axes.
+- "Reviews are semi-automated" overstates what the workspace does. `review/reviewers.yml` lists one person and the policy needs two with one of them an editor; a hook in `.claude/settings.json` blocks the agent from writing in the reviews and approvals folders or running the reviewers' own commands. What is automated is the release check, the content hash and the build. The judgement is not.
+- Whether the opening scope sentence is meant to admit approaches that differ from David's, as the fifth note requires.
+
+**The scope sentence is to be open.** David, 7 November 2026: the opening sentence should be open and must not imply certain methods; how explicit the openness needs to be is undecided. Read against that aim, the sentence as written is narrower than the list of three kinds of contribution that follows it, because "building applications which help people make decisions" asks every contribution to ship an application — which the constraints paper, named by David the same day as the example of a theory contribution, does not.
+
+**The scope sentence, revised at David's instruction, 7 November 2026.** He asked for the defect fixed and confirmed that understanding models, and in particular how they relate to words, is part of the scope. Written by the agent, not yet in `Report.md`, and open to his edit:
+
+> Articles in Models and Words are about understanding social, biological and technological systems, about the models we build of them, and about how those models relate to the words we use about them. Some articles stay with the model and what it says; others build applications which help people make decisions about these systems.
+
+Two changes from his version: the application is one thing an article may do rather than something every article must do, which lets the constraints paper in as a theory contribution; and the models themselves, with their relation to words, are named as an object of study.
+
+**The review agent.** David, 7 November 2026: a review agent will be built later, in a separate GitHub repository accessible only to the editors. So semi-automated review is a plan, not something the workspace does today. In the article the claim is therefore written as a plan, and what the reader is told about review as it stands now is: two approvals with at least one from an editor, the version frozen by a content hash, the agent blocked from writing reviews or approvals, and reviewers writing their own. `review/reviewers.yml` still lists one person, which blocks a round being opened for this paper.
+
+### The material, in summary — step 1 closed, 7 November 2026
+
+Given to David in this form and open to his correction. The kinds of material, not the file list:
+
+- **David's own writing on what a model is and what it is for.** The four `Models and AI` pieces, and Twelve's modelling philosophy, which separates the mathematical model of the data from the normative model that says what it means in words.
+- **A theory paper, written with four other people, on what counts as an explanation.** The constraints paper: six kinds of explanation, each with a template, with machine learning placed inside the scheme as a third family rather than beside it.
+- **Courses on doing this work with an agent.** The statistics course and the context engineering course — one on handing the steps of an analysis to an agent, one on building the data context an AI analyst answers from.
+- **Working systems that turn data into words.** Wordalisation and Earpiece, both already written up as papers in this workspace, and the Twelve models behind them.
+- **A funding application carrying fifteen other researchers' projects.** CONTEXT, with its definition of a trustworthy language system and its two senses of context.
+- **The rules this workspace runs on.** The contract, the writing rules, the review process, and the two papers written under them.
+
+How they relate. The first two kinds are about models and what they explain; the fourth is about getting a model's conclusions into words someone can act on. That pair is David's sentence in *Algorithms and Models*, and it is the journal's subject. The courses sit between them, and they are also where the evidence is that the steps of an analysis automate while the judgement does not. CONTEXT and the constraints paper are the only material carrying approaches other than David's: CONTEXT brings about twenty working researchers, the constraints paper a way of saying why different approaches are not rivals, which is what the fifth note asked for. The workspace rules are a different kind of thing — not the subject but the method — and they are material because the article presents them too. They rest on the same argument as the statistics course, so the two halves of the paper have one source in common. The two newest sources are also the two whose permission is unsettled.
+
+Left open when step 1 closed: whether an example exists in David's folders for each of the other kinds of contribution the journal would publish; a talk where the argument has been given; an email thread, referee report or collaborator's draft putting another approach; an earlier attempt at the journal; and any application other than CONTEXT that states what this area is.
+
+### Approaches present in the material
+
+Recorded 2 November as "axes of disagreement"; superseded as a framing by David's fifth note. The rows stay as a record of where the material shows more than one way of working, read as approaches that coexist rather than as sides.
+
+| Where the material differs | One approach | Another |
 | --- | --- | --- |
 | Mechanism or data | Build a model of how the system works and interpret it | Breiman's second culture: treat the mechanism as unknown and predict well. Named as the opening move in *Building models* and lesson 4 |
 | Is the modelling cycle still needed | Formulate, fit, predict, refine | *Building models*: "some researchers have even questioned whether such a modelling cycle is needed at all in the age of AI" |
@@ -108,7 +185,7 @@ Where the sources themselves record someone holding the other view. Candidates f
 ### Questions this raises
 
 - Superseded by David's third note: the journal's scope is wider than the argument above. Open instead: what is the area, stated so that someone who disagrees with David still recognises their work as belonging in it?
-- Where do the other positions come from? Everything gathered so far is David's side. A forum paper needs the people it is inviting.
+- Where do the other approaches come from? Until CONTEXT, everything gathered was David's own. A forum paper needs the people it is inviting.
 - The review process the article would describe cannot currently run: `reviewers.yml` lists one person and the policy needs two approvals with one from an editor. This blocks step 9 of this paper as well as the article's account of the process.
 - The first note says the steps of statistical analysis are "nearly fully automated". The benchmark in 2.7 supports it for the steps and contradicts it for the analysis as a whole. Which does the paper claim?
 - Chapter 2.7's finding — that a decision procedure transfers and domain content does not — cuts slightly against the Twelve philosophy's emphasis on stakeholders' normative knowledge. Both may be right, but the paper would have to say how.
@@ -148,6 +225,12 @@ Where the sources themselves record someone holding the other view. Candidates f
 | 4 | Step 1 continued. David granted permission for the Twelve and vault material. Six source files copied unchanged into `Attachments/` with checksums. `agentic-ai-for-statistics-and-data-science` read (Overview, 1.1, 1.3, 1.5, 1.7, 2.7) and described. A reading of David's position across all the sources written into `Framing` as `The picture from David's previous writing`, for him to correct. `Report.md` untouched. | this file, `Attachments/` |
 | 5 | Step 1 continued. David set the scope: the journal is a forum for a variety of positions on the area, and his own position is one of them. Recorded in `Framing` with the axes of disagreement already present in the material. The six positions recorded in entry 4 stand as the editor's position, not the journal's line. `Report.md` untouched. | this file |
 | 6 | Step 1 continued. David confirmed the workspace's own contract files as material: the article also presents how further articles will be written here. `instructions.md`, `WRITING.md`, `REVIEW.md` and `reviewers.yml` read and described in `Source Material`. Noted that `reviewers.yml` lists one person and the review policy needs two. `Report.md` untouched. | this file |
+| 7 | Step 1 continued. David named the CONTEXT MSCA Doctoral Network application as further material. The application repository read at commit `d138195` (README, `Overview and Plan.md`, §1.1) and described in `Source Material`, with what the network is trying to achieve and what it gives this paper. Permission not yet given and nothing copied into `Attachments/`. `Report.md` untouched. | this file |
+| 8 | Step 1 continued. David set the framing: the journal holds a diversity of approaches within the context of using models and words to understand the world, not a set of disagreements. Recorded in `Framing` as his fifth note; the table of 2 November kept as a record of where the material shows more than one way of working, marked superseded as a framing. `Report.md` untouched. | this file |
+| 9 | Step 1 continued. FRAMEWORK: step 1 now keeps probing for material and offers to search the user's folders (`instructions.md`, committed separately as `490ee61`). The search was run and candidates brought. David named `mechanisms-and-constraints` as an example of a theory contribution to the journal; read at commit `5c502a3` and recorded in `Source Material`. Permission unsettled: private repository, four co-authors, unpublished draft. `Report.md` untouched. | this file |
+| 10 | FRAMEWORK: step 1 now closes with a plain summary of the kinds of material and how they relate (`instructions.md`, committed separately as `5dbc420`). The summary was given to David and is recorded in `Framing`. **David closed step 1.** `Report.md` untouched. | this file |
+| 11 | Step 2 begun. David: the paper is an editorial, and editorial and opinion were added to the contract as kinds of paper (committed separately as `f4ca2f9`). Recorded in `Framing`. The question of what the fixed section structure means for an editorial raised and left to David. `Report.md` untouched. | this file |
+| 12 | Step 2 continued. The reader set: a researcher deciding whether to submit. David wrote what the paper says, recorded verbatim in `Framing`, with three kinds of contribution sought and the claim that Models and Words is itself an AI agent. Questions put back to him on the two triples, on what is actually automated in review, and on whether the scope sentence admits other approaches. `Report.md` untouched. | this file |
 
 ## Code Summary
 
