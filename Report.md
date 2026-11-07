@@ -58,7 +58,13 @@ A  difficulty is keeping the human in the loop. @mitchell2026 argue that current
 
 ## Writing your article with the agent
 
+Each article is written in a shared repository, in one folder that holds the article, its references, its code and the material it rests on. The author works with an AI coding agent, and the article is a single Markdown file that both of them edit and that is built into the published page. Every change is committed, so the history of the article, including which sentences the agent wrote and which the author changed, can be read back.
 
+Writing follows six phases: sketch, sketch the abstract, revise, write the start and end together, revise the abstract, and simplify and revise. In the first, the agent gathers the material the article will rest on, such as code, saved model outputs, earlier papers and notes, and records where each came from. In the second, author and agent agree the three points the article makes and put them into a working abstract. The abstract is then the template that each later section is checked against: the Introduction gives one paragraph of background to each point, the Methods and Results take them in the same order, and the Discussion answers them.
+
+The agent is instructed to keep the author's judgement at the centre, following @mitchell2026. The author decides what the article says, and is asked to go first: to name the point of a paragraph before it is drafted, the papers they know before a search, and what they expected before a result is written up. The agent writes its drafts directly into the article, where the author edits them, and reads the author's edits before its next change. It works one step at a time and stops, so that each step can be read before the next begins.
+
+The agent checks the writing as it goes. Every quoted model output is taken from its saved file, and the build checks it word for word. Every cited work is one the agent has opened, and when a paper cannot be opened the author is asked to download it. Every number comes from a saved output. When the author corrects how the agent writes or works, the correction is added, with the sentence that prompted it, to a set of writing rules that every later article follows. This article was written that way, and its history is in its repository.
 
 ## How articles are reviewed
 
