@@ -22,17 +22,6 @@
   pages: "109033"
   doi: 10.1016/j.mbs.2023.109033
 
-- id: breiman2001
-  type: article
-  author: ["Breiman, Leo"]
-  title: "Statistical modeling: The two cultures"
-  year: 2001
-  container: Statistical Science
-  volume: "16"
-  issue: "3"
-  pages: "199–231"
-  doi: 10.1214/ss/1009213726
-
 - id: rudin2019
   type: article
   author: ["Rudin, Cynthia"]
@@ -307,3 +296,91 @@
   number: "2506.08872"
   url: https://arxiv.org/abs/2506.08872
   note: Preprint, not peer reviewed.
+
+- id: kermack1927
+  type: article
+  author: ["Kermack, William Ogilvy", "McKendrick, A. G."]
+  title: "A contribution to the mathematical theory of epidemics"
+  year: 1927
+  container: Proceedings of the Royal Society of London. Series A
+  volume: "115"
+  issue: "772"
+  pages: "700–721"
+  doi: 10.1098/rspa.1927.0118
+
+- id: turing1952
+  type: article
+  author: ["Turing, Alan Mathison"]
+  title: "The chemical basis of morphogenesis"
+  year: 1952
+  container: Philosophical Transactions of the Royal Society of London. Series B
+  volume: "237"
+  issue: "641"
+  pages: "37–72"
+  doi: 10.1098/rstb.1952.0012
+
+- id: hodgkin1952
+  type: article
+  author: ["Hodgkin, A. L.", "Huxley, A. F."]
+  title: "A quantitative description of membrane current and its application to conduction and excitation in nerve"
+  year: 1952
+  container: The Journal of Physiology
+  volume: "117"
+  issue: "4"
+  pages: "500–544"
+  doi: 10.1113/jphysiol.1952.sp004764
+
+- id: schelling1971
+  type: article
+  author: ["Schelling, Thomas C."]
+  title: "Dynamic models of segregation"
+  year: 1971
+  container: The Journal of Mathematical Sociology
+  volume: "1"
+  issue: "2"
+  pages: "143–186"
+  doi: 10.1080/0022250X.1971.9989794
+
+- id: farmer2009
+  type: article
+  author: ["Farmer, J. Doyne", "Foley, Duncan"]
+  title: "The economy needs agent-based modelling"
+  year: 2009
+  container: Nature
+  volume: "460"
+  issue: "7256"
+  pages: "685–686"
+  doi: 10.1038/460685a
+
+- id: axtell2025
+  type: article
+  author: ["Axtell, Robert L.", "Farmer, J. Doyne"]
+  title: "Agent-based modeling in economics and finance: Past, present, and future"
+  year: 2025
+  container: Journal of Economic Literature
+  volume: "63"
+  issue: "1"
+  pages: "197–287"
+  doi: 10.1257/jel.20221319
+
+- id: cervone2016
+  type: article
+  author: ["Cervone, Daniel", "D'Amour, Alex", "Bornn, Luke", "Goldsberry, Kirk"]
+  title: "A multiresolution stochastic process model for predicting basketball possession outcomes"
+  year: 2016
+  container: Journal of the American Statistical Association
+  volume: "111"
+  issue: "514"
+  pages: "585–599"
+  doi: 10.1080/01621459.2016.1141685
+
+- id: dantzig2002
+  type: article
+  author: ["Dantzig, George B."]
+  title: "Linear programming"
+  year: 2002
+  container: Operations Research
+  volume: "50"
+  issue: "1"
+  pages: "42–47"
+  doi: 10.1287/opre.50.1.42.17798
