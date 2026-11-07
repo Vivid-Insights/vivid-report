@@ -563,3 +563,46 @@
   number: "2602.18710"
   url: https://arxiv.org/abs/2602.18710
   note: Preprint, not peer reviewed.
+
+- id: guest2021
+  type: article
+  author: ["Guest, Olivia", "Martin, Andrea E."]
+  title: "How computational modeling can force theory building in psychological science"
+  year: 2021
+  container: Perspectives on Psychological Science
+  volume: "16"
+  issue: "4"
+  pages: "789–802"
+  doi: 10.1177/1745691620970585
+
+- id: robinaugh2021
+  type: article
+  author: ["Robinaugh, Donald J.", "Haslbeck, Jonas M. B.", "Ryan, Oisín", "Fried, Eiko I.", "Waldorp, Lourens J."]
+  title: "Invisible hands and fine calipers: A call to use formal theory as a toolkit for theory construction"
+  year: 2021
+  container: Perspectives on Psychological Science
+  volume: "16"
+  issue: "4"
+  pages: "725–743"
+  doi: 10.1177/1745691620974697
+
+- id: ashokkumar2026
+  type: article
+  author: ["Ashokkumar, Ashwini", "Hewitt, Luke", "Ghezae, Isaias", "Willer, Robb"]
+  title: "Large language models can predict the results of social science experiments"
+  year: 2026
+  container: Nature
+  volume: "656"
+  issue: "8126"
+  pages: "115–122"
+  doi: 10.1038/s41586-026-10742-x
+
+- id: manning2024
+  type: preprint
+  author: ["Manning, Benjamin S.", "Zhu, Kehang", "Horton, John J."]
+  title: "Automated social science: Language models as scientist and subjects"
+  year: 2024
+  container: arXiv
+  number: "2404.11794"
+  url: https://arxiv.org/abs/2404.11794
+  note: Preprint, not peer reviewed.
