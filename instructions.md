@@ -332,7 +332,7 @@ Run all Python through the workspace environment: `cd Code && ./setup_env.sh` to
 
 ### Getting hold of paywalled sources
 
-A `403` from a publisher is a bot block, not a dead link. Ask the user for the download rather than substituting a preprint. Send a short list — title, DOI link, one line on what the citation needs — and ask them to save the files to `Downloads` and say when. Move them to `Attachments/literature/`, which is not committed. Note in the `Log` which sources were read in full and which rest on an abstract.
+A `403` from a publisher is a bot block, not a dead link. Ask the user for the download rather than substituting a preprint. **Every time a paper cannot be downloaded or read** — a 403, a login wall, a page that will not render — tell the user in the same reply to download it, and give a clickable link for each: the DOI link, and an open copy (arXiv, PsyArXiv, PubMed Central, an author page) where one exists. Never only report that a source was blocked. Send a short list — title, DOI link, one line on what the citation needs — and ask them to save the files to `Downloads` and say when. Move them to `Attachments/literature/`, which is not committed. Note in the `Log` which sources were read in full and which rest on an abstract.
 
 ## The Specimen
 
