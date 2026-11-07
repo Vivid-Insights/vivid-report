@@ -606,3 +606,19 @@
   number: "2404.11794"
   url: https://arxiv.org/abs/2404.11794
   note: Preprint, not peer reviewed.
+
+- id: majumder2025
+  type: article
+  author: ["Majumder, Bodhisattwa Prasad", "Surana, Harshit", "Agarwal, Dhruv", "Dalvi Mishra, Bhavana", "Meena, Abhijeetsingh", "Prakhar, Aryan", "Vora, Tirth", "Khot, Tushar", "Sabharwal, Ashish", "Clark, Peter"]
+  title: "DiscoveryBench: Towards data-driven discovery with large language models"
+  year: 2025
+  container: International Conference on Learning Representations (ICLR)
+  url: https://arxiv.org/abs/2407.01725
+
+- id: chen2025
+  type: article
+  author: ["Chen, Ziru", "Chen, Shijie", "Ning, Yuting", "Zhang, Qianheng", "Wang, Boshi", "others"]
+  title: "ScienceAgentBench: Toward rigorous assessment of language agents for data-driven scientific discovery"
+  year: 2025
+  container: International Conference on Learning Representations (ICLR)
+  url: https://arxiv.org/abs/2410.05080
