@@ -35,10 +35,10 @@ The reason is the argument of Mitchell, Ghosh and Passi (2026), [*AI Agents Push
 - **Pre-commitment: the three points and the abstract come first.** Before any section is written, work with the user to find the three points of the paper and get them into a drafted `Abstract` (step 2). The abstract is then the template. Each section is checked against it, and when the writing changes what the paper says, the user changes the abstract first.
 - **Talk in terms of the three points.** Name them when you open a step, when you propose a paragraph, and when you check a section: *"this paragraph is the background for the second point"*, *"the Results have nothing yet for the third point"*. Remind the user of them when the writing drifts away from them.
 - **Cognitive forcing: the user goes first.** Before you draft a paragraph, ask the user what its one point is. Before you search the literature, ask which papers they already know and which fields they have not looked in. Before a result is written up, ask what they expected it to show. Encourage them to write the first draft of a paragraph themselves; you then read it and say what is wrong with it. Doing the work unaided keeps the skill that judging your work depends on.
-- **Action gating: propose, then wait.** The structure of a section, the paragraph plan, the list of sources, a figure, an example: say what you propose and why, and produce it only once the user has agreed.
+- **Action gating: propose, then wait.** The structure of a section, the paragraph plan, the list of sources, a figure, an example: say what you propose and why, and produce it only once the user has agreed. Where the proposal is text — a paragraph plan, a draft paragraph, a revised sentence — put it in its section of `Report.md` so the user judges it in place.
 - **Batch review: one unit at a time.** Surface a whole section plan, or a whole paragraph, so the user judges related decisions together. Never a stream of small edits to approve one by one.
 - **Question what is written.** Read the user's text, and your own, against the code, the saved outputs and the literature you have read. Say where a claim goes beyond its source, where a cited paper says something different, where a paper you have read disagrees, and where a point has no support yet. Separate an error from a phrasing you would not have chosen.
-- **Write report text only when asked.** "Add that", "write it", "draft the paragraph" are instructions to write; agreeing with a proposal is not. When you write, say which of the three points the text serves and where it sits.
+- **Write together, in `Report.md`.** The report is written by the user and the agent together in `Report.md`, the way David worked in `human-agentic-data-analysis`. When a step reaches the part of the report it owns, or the user asks for text, write it straight into its section: do not hold it back in chat, in `outputs/` or in the appendix, and do not ask first. Then say what changed, which of the three points it serves, and invite the user to edit it in place or ask for changes. The user's edits in the file are part of the conversation: read them (`git diff`) before the next change and build on them. The friction is in the decisions — which points, which papers, what a paragraph says — and the user settles those by editing the text as much as by answering.
 
 ### What the friction is for
 
@@ -103,8 +103,7 @@ This workspace is for writing a report **one step at a time, with the user direc
 - **`Report.md` is built up as the work proceeds.** Each step adds only its own part. Interim workings go in `Appendix.md`.
 - **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 10 will not publish until the user has confirmed they have read it.
 - **Do not leave markers in the report for work that was not done.** If an example is dropped or an evaluation abandoned, take it out of `Report.md` completely and record it in the `Log`.
-- **Text the user asked for goes in `Report.md`, where they can see it.** A requested draft is written into its section of the report, never parked in `outputs/` or the appendix. If the user's editor saves over it, or the file changes while you work, commit their version, put the draft back in `Report.md` around their changes, and tell them what happened.
-- **Add report text when the user asks for it, and not before.** Then say what you changed, which of the three points it serves, and invite the user to edit it or ask for changes.
+- **Text goes in `Report.md`, where the user can see it.** At the stage where a section is the step's to write, write it there without asking; never park a draft in `outputs/` or the appendix. Then say what you changed, which of the three points it serves, and invite the user to edit it or ask for changes. If the user's editor saves over it, or the file changes while you work, commit their version, put the draft back in `Report.md` around their changes, and tell them what happened.
 - **Never undo the user's changes.** They edit these documents directly, often while you are working.
   - Re-read a file from disk immediately before editing it.
   - Never revert, overwrite, reformat or "tidy" text the user wrote. If what you need to write conflicts with theirs, keep theirs and raise the conflict.
@@ -192,7 +191,7 @@ Agree what the paper says before writing any of it. This is the pre-commitment t
 
 A review of the area in five paragraphs, citing at least 20 papers, building from the general to the specific: the area; the background to A; the background to B; the background to C; and roughly what this report does.
 
-- **Propose the paragraph plan first.** The five paragraphs above, each named for the point it gives the background to. Each paragraph names its one point in a sentence before it is written. Agree the plan with the user.
+- **Put the paragraph plan in the `Introduction` first.** One line per paragraph, each naming the point it gives the background to, written into the section itself; the user edits it there, and the drafts replace the lines one by one.
 - **The user's reading comes first.** Ask which papers they already know for each paragraph and record them in `Literature` in `Appendix.md`. Then help with the search, and push them to widen it: other fields that have met the same problem (human–computer interaction, medicine, education, sports science, linguistics, statistics), work that disagrees with the report's position, older work the recent papers forgot, and work from outside the user's own group. Say where the list is thin, such as a point with two papers behind it or a paragraph citing only the authors.
 - **Bring the sources before the prose.** For each source: what it found, in a sentence, from having opened it, and which paragraph it belongs to. The user chooses which to use. `References and Citation` applies in full; never cite a work you have not opened.
 - **Question what is written, from your own reading.** When the user writes a sentence about a paper, read it against the paper. Say where it overstates, where the paper's sample or method limits what it can show, and where another paper says otherwise.
@@ -239,7 +238,7 @@ Show the method working, and say how well it works if the report claims that it 
 - **Every number comes from a saved output**, never from memory, never read off a figure. Report the estimate, its uncertainty and the sample. A judge score from twenty texts is a small sample, and the report says so.
 - **Numbers go in tables; the text says what they mean.** When a result has more than a number or two, put the numbers in a table and write the paragraph about what the table shows: which system came out ahead, under what conditions, how the order changed. Do not repeat the table's numbers in the prose. A number the table does not hold, and that the argument needs, may stay in the text.
 - **Say plainly when the evidence is thin**, or when an evaluation has not been done. *"We have not tested whether readers understand these texts better than the numbers"* is a sentence a reader needs.
-- **Put each result into `Report.md` when the user asks for it**, under its point's sub-heading, with a numbered caption. Diagnostics and alternative analyses go in `Workings`.
+- **Put each result into `Report.md` as soon as it exists**, under its point's sub-heading, with a numbered caption. Diagnostics and alternative analyses go in `Workings`.
 
 ## Phase 4 — Write the start and end together
 
@@ -314,7 +313,7 @@ A changed prompt, a refit model, a new configuration or a regenerated output mak
 1. Inspect the relevant material before making claims about it.
 2. Put all code that makes a figure, a video, an interactive or a number in `Code/`, one script per output, reading only saved inputs.
 3. Record the work in `Appendix.md` as it happens, from the first step, and only what serves the writing: sources, framing, method facts, how each example was made, decisions and their reasons. Bugs, setup problems, workarounds and debugging met along the way are not recorded there, in the `Log` or in the report. If one bears on what the report can claim, say so once in the reply and let the user decide.
-4. Write `Report.md` only as the steps direct.
+4. Write `Report.md` as the steps direct: each step writes its own part into the report, in place, and the user edits it there.
 5. Update the `Code Summary` whenever code is added or changed: what each file does, how to run it, what it reads and produces.
 
 ## Python Environment

@@ -12,7 +12,7 @@ They are adapted from three places: the article rules in `communicating-individu
 
 ## Editing the report
 
-**Only edit `Report.md` when an author asks for the edit in that turn.** Agreeing that a proposal is good, or saying "yes", is not the instruction to write it in. Wait for "add that", "make the edit", "do it". No step makes a section yours to write: you help the user write, and they decide (`Helping the User Write` in `instructions.md`).
+**Write in `Report.md`, together with the author.** Drafts, plans and revisions go into their section of the report as the step reaches them, so the author reads and edits them in place, as in `human-agentic-data-analysis`. The author decides what the paper says, and does so by editing the text as much as by answering. Text the author has written is theirs: change it only when they ask, and then as narrowly as the rules below say.
 
 **When someone asks for a change, make that change and nothing else.** The failure has a shape: it starts from a real defect, such as a number that is now wrong, and instead of repairing it rewrites the surrounding prose so the repair sits comfortably. The result reads well, which is why it slips past. Reading well is not the test.
 
@@ -150,6 +150,8 @@ Use these consistently. If an author changes one, change it here in the same tur
 ## Corrections log
 
 New rules from the authors' corrections go here, newest first, each with the date, who made it, and the sentence before and after. Say whether it was seen once or recurs.
+
+- **7 November 2026, David: we write together in `Report.md`.** "FRAMEWORK The whole point of the report is that we write together here. Check how I worked in human-agentic-data-analysis to see how this interactive approach works." Before: the contract said to write report text only when asked, so drafts were held in chat or `outputs/` and the user saw them second-hand. After: as in `human-agentic-data-analysis`, each step writes its part straight into `Report.md` without asking, says what changed and invites edits; the user's edits in the file are read and built on; the decisions stay the user's. `Helping the User Write`, `Step-by-Step Working`, `Step 3`, `Step 5` and `Working Method` in `instructions.md`; `Editing the report` here; `CLAUDE.md`. *Recurs* (see the entries on the working abstract and on visibility).
 
 - **7 November 2026, David: what was written must be visible in `Report.md`.** "FRAMEWORK I should be able to see what you have written in Report.md". Before: when David's editor saved an older copy over the drafted Introduction, the agent put the draft in `outputs/introduction-draft.md` and asked him to reload before it went back. After: a requested draft always goes into `Report.md`; if it is overwritten, commit the user's version, put the draft back around their changes and say what happened. `Step-by-Step Working` in `instructions.md`. *Seen once.*
 
