@@ -34,7 +34,7 @@ references: references.yaml
 
 ## Sections
 
-Every report has the same sections, in this order: `Abstract`, an optional `What We Have Built`, `Introduction`, `Methods`, `Results`, `Discussion`, `Data and code availability`, `Disclaimer`, `References`. The `Methods` and `Results` share their `###` sub-headings, one per point of the paper. The `Discussion` has no sub-headings: it is continuous prose, one paragraph per point in the same order, then the limitations, then looking ahead. `instructions.md` (`The Structure of a Report`) says what goes in each.
+Every report has the same sections, in this order: `Abstract`, an optional `What We Have Built`, `Introduction`, `Methods`, `Results`, `Discussion`, `Data and code availability`, `Disclaimer`, `References`. The `Methods` and `Results` share their `###` sub-headings, one per point of the paper. The `Discussion` has no sub-headings: it is continuous prose, one paragraph per point in the same order, then the limitations, then looking ahead. An editorial has no `Results`; its A, B and C are `###` sub-headings of the `Methods`. `instructions.md` (`The Structure of a Report`) says what goes in each.
 
 `##` is a numbered section, `###` a numbered sub-section, `####` an unnumbered heading. These are never numbered: `Abstract`, `What We Have Built`, `Disclaimer`, `References`, `Acknowledgements`, `Appendix`, `Data and code availability`, `Funding`. Add `{-}` to the end of any other heading to leave it unnumbered, and `{#sec-name}` to give it an id for cross-references.
 
