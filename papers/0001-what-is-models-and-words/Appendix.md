@@ -145,6 +145,14 @@ Raised with David in reply, not yet settled:
 
 **The scope sentence is to be open.** David, 7 November 2026: the opening sentence should be open and must not imply certain methods; how explicit the openness needs to be is undecided. Read against that aim, the sentence as written is narrower than the list of three kinds of contribution that follows it, because "building applications which help people make decisions" asks every contribution to ship an application — which the constraints paper, named by David the same day as the example of a theory contribution, does not.
 
+**The three points.** David, 7 November 2026: the three after "In this article," — **A**, the type of article we are looking for; **B**, how to work with the Models and Words agent to write your article; **C**, how the paper will be reviewed. The three kinds of contribution sit inside A, so the two triples nest rather than compete. What will show each: for A the three kinds with one example apiece (applications by the wordalisation and Earpiece papers; methodological and theoretical by the constraints paper; agentic AI solutions with human decision-making at the centre — example not settled, the asylum case assistant put to David as a candidate); for B the contract, the six phases and ten steps, the writing rules, and this paper's own `Log`; for C the content hash, two approvals with one from an editor, the agent blocked from writing reviews, and the editors-only review agent still to be built.
+
+**Keep the editorial timeless.** David, 7 November 2026: "We should make the editorial as timeless as possible and avoid too much talk of exactly what is happening now." On his instruction the sentence beginning "Agentic AI provides new opportunities…" was cut from the `Abstract` and belongs in the `Introduction` instead:
+
+> Agentic AI provides new opportunities and presents new challenges in how we build models: writing code and mathematical analysis of models is greatly simplified by these tools, but finding the clearest insight when these models generate vast quantities of text and calculations can be more challenging.
+
+A paper-level rule for now; it can be promoted to `WRITING.md` if it is to hold for every paper.
+
 **The scope sentence, revised at David's instruction, 7 November 2026.** He asked for the defect fixed and confirmed that understanding models, and in particular how they relate to words, is part of the scope. Written by the agent, not yet in `Report.md`, and open to his edit:
 
 > Articles in Models and Words are about understanding social, biological and technological systems, about the models we build of them, and about how those models relate to the words we use about them. Some articles stay with the model and what it says; others build applications which help people make decisions about these systems.
@@ -231,6 +239,7 @@ Recorded 2 November as "axes of disagreement"; superseded as a framing by David'
 | 10 | FRAMEWORK: step 1 now closes with a plain summary of the kinds of material and how they relate (`instructions.md`, committed separately as `5dbc420`). The summary was given to David and is recorded in `Framing`. **David closed step 1.** `Report.md` untouched. | this file |
 | 11 | Step 2 begun. David: the paper is an editorial, and editorial and opinion were added to the contract as kinds of paper (committed separately as `f4ca2f9`). Recorded in `Framing`. The question of what the fixed section structure means for an editorial raised and left to David. `Report.md` untouched. | this file |
 | 12 | Step 2 continued. The reader set: a researcher deciding whether to submit. David wrote what the paper says, recorded verbatim in `Framing`, with three kinds of contribution sought and the claim that Models and Words is itself an AI agent. Questions put back to him on the two triples, on what is actually automated in review, and on whether the scope sentence admits other approaches. `Report.md` untouched. | this file |
+| 13 | Step 2 continued. FRAMEWORK: the working abstract now lives in `Report.md` and is edited there (`d1f4d6a`); the three points are explained to the author and suggested from their own text (`8cb7152`). David's statement went into the `Abstract`; he set the three points as the three after "In this article,"; and on his instruction the agentic-AI sentence was cut from the `Abstract` and parked for the `Introduction`, under a rule to keep the editorial timeless. | `Report.md`, this file |
 
 ## Code Summary
 
