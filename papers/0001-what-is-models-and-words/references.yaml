@@ -504,3 +504,22 @@
   issue: "1"
   pages: "17458"
   doi: 10.1038/s41598-025-97652-6
+
+- id: jimenez2024
+  type: article
+  author: ["Jimenez, Carlos E.", "Yang, John", "Wettig, Alexander", "Yao, Shunyu", "Pei, Kexin", "Press, Ofir", "Narasimhan, Karthik"]
+  title: "SWE-bench: Can language models resolve real-world GitHub issues?"
+  year: 2024
+  container: International Conference on Learning Representations (ICLR)
+  url: https://arxiv.org/abs/2310.06770
+
+- id: daniotti2025
+  type: preprint
+  author: ["Daniotti, Simone", "Wachs, Johannes", "Feng, Xiangnan", "Neffke, Frank"]
+  title: "Who is using AI to code? Global diffusion and impact of generative AI"
+  year: 2025
+  container: arXiv
+  number: "2506.08945"
+  version: "v2"
+  url: https://arxiv.org/abs/2506.08945
+  note: Preprint, not peer reviewed.
