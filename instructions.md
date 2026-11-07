@@ -103,6 +103,7 @@ This workspace is for writing a report **one step at a time, with the user direc
 - **`Report.md` is built up as the work proceeds.** Each step adds only its own part. Interim workings go in `Appendix.md`.
 - **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 10 will not publish until the user has confirmed they have read it.
 - **Do not leave markers in the report for work that was not done.** If an example is dropped or an evaluation abandoned, take it out of `Report.md` completely and record it in the `Log`.
+- **Text the user asked for goes in `Report.md`, where they can see it.** A requested draft is written into its section of the report, never parked in `outputs/` or the appendix. If the user's editor saves over it, or the file changes while you work, commit their version, put the draft back in `Report.md` around their changes, and tell them what happened.
 - **Add report text when the user asks for it, and not before.** Then say what you changed, which of the three points it serves, and invite the user to edit it or ask for changes.
 - **Never undo the user's changes.** They edit these documents directly, often while you are working.
   - Re-read a file from disk immediately before editing it.
