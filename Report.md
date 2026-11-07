@@ -18,7 +18,7 @@ references: references.yaml
 
 ## Abstract
 
-Articles in Models and Words are about understanding society, biology, sporting and technological systems, about the models we build of them, and about how those models relate to the words we use about them. We are looking for three types of contributions:
+Articles in Models and Words are about understanding social, biological, sporting and technological systems, about the models we build of them, and about how those models relate to the words we use to describe them. We are looking for three types of contributions:
 
 1. Applications which combine models and words to produce insight for stakeholders.
 2. Methodological and theoretical contributions where models and words are combined.
@@ -32,13 +32,15 @@ Models and Words is itself an AI agent. Submissions are written together with an
 
 *Step 3: a review of the area in four to six paragraphs, citing at least 20 papers, building from the general to the specific, with one paragraph of background for each of the three points, in order.*
 
-## The articles we are looking for
+## Methods
 
-*Step 4: the body of the editorial, one section per point, A, B and C, in the order of the Introduction, with the examples for each point in its section.*
+*Step 4: the body of the editorial, with one sub-heading per point, A, B and C, in the order of the Introduction, and the examples for each point under its sub-heading. An editorial has no Results.*
 
-## Writing your article with the agent
+### The articles we are looking for
 
-## How articles are reviewed
+### Writing your article with the agent
+
+### How articles are reviewed
 
 ## Discussion
 
