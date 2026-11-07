@@ -163,6 +163,8 @@ Two changes from his version: the application is one thing an article may do rat
 
 **The working abstract accepted as it stands.** David, 7 November 2026: "This is ok as is. Even if A, B and C have short descriptions in the abstract this is OK." The list of three kinds of contribution stays inside the abstract for now, and B and C keep their short mentions in the agent paragraph. To be read again in step 7.
 
+**Step 2 closed.** David, 7 November 2026: "Step 2 is done." No `What We Have Built` section was asked for, so there is none. Left as they stand: the editorial keeps the standard sections for now, and the example for contribution type 3 is not chosen.
+
 ### The material, in summary — step 1 closed, 7 November 2026
 
 Given to David in this form and open to his correction. The kinds of material, not the file list:

@@ -26,7 +26,7 @@ Articles in Models and Words are about understanding social, biological and tech
 
 Models and Words is itself an AI agent. Submissions are written together with an agent, reviews will be semi-automated and the repository itself can provide help and support to application builders and researchers.
 
-*Step 2 drafts this early, stating the three points of the paper in order. It is the template for every other section. Step 7 revises it against the finished report. Keep this note below the working abstract until then.*
+*Step 7 revises it against the finished report. Keep this note below the working abstract until then.*
 
 ## Introduction
 
