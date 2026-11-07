@@ -52,38 +52,6 @@
   volume: "11"
   doi: 10.1177/22150218251353089
 
-- id: reiter2005
-  type: article
-  author: ["Reiter, Ehud", "Sripada, Somayajulu", "Hunter, Jim", "Yu, Jin", "Davy, Ian"]
-  title: "Choosing words in computer-generated weather forecasts"
-  year: 2005
-  container: Artificial Intelligence
-  volume: "167"
-  issue: "1–2"
-  pages: "137–169"
-  doi: 10.1016/j.artint.2005.06.006
-
-- id: gigerenzer2007
-  type: article
-  author: ["Gigerenzer, Gerd", "Gaissmaier, Wolfgang", "Kurz-Milcke, Elke", "Schwartz, Lisa M.", "Woloshin, Steven"]
-  title: "Helping doctors and patients make sense of health statistics"
-  year: 2007
-  container: Psychological Science in the Public Interest
-  volume: "8"
-  issue: "2"
-  pages: "53–96"
-  doi: 10.1111/j.1539-6053.2008.00033.x
-
-- id: spiegelhalter2017
-  type: article
-  author: ["Spiegelhalter, David"]
-  title: "Risk and uncertainty communication"
-  year: 2017
-  container: Annual Review of Statistics and Its Application
-  volume: "4"
-  pages: "31–60"
-  doi: 10.1146/annurev-statistics-010814-020148
-
 - id: green2016
   type: article
   author: ["Green, Sara", "Jones, Nicholaos"]
@@ -384,3 +352,91 @@
   issue: "1"
   pages: "42–47"
   doi: 10.1287/opre.50.1.42.17798
+
+- id: sumpter2026earpiece
+  type: report
+  author: ["Sumpter, David J. T.", "Green, Matthias", "Ekman, Lars", "Pálmason, Ágúst"]
+  title: "A choose your own adventure approach to context engineering"
+  year: 2026
+  container: Vivid Insights report
+  number: "0003"
+  publisher: Vivid Insights
+  url: https://github.com/Vivid-Insights/vivid-report/tree/main/papers/0003-twelve-earpiece
+  note: In preparation.
+
+- id: gottweis2026
+  type: article
+  author: ["Gottweis, Juraj", "Weng, Wei-Hung", "Daryin, Alexander", "others"]
+  title: "Accelerating scientific discovery with Co-Scientist"
+  year: 2026
+  container: Nature
+  volume: "655"
+  issue: "8122"
+  pages: "487–496"
+  doi: 10.1038/s41586-026-10644-y
+
+- id: ghareeb2026
+  type: article
+  author: ["Ghareeb, Ali E.", "Chang, Benjamin", "Mitchener, Ludovico", "others"]
+  title: "A multi-agent system for automating scientific discovery"
+  year: 2026
+  container: Nature
+  volume: "655"
+  issue: "8122"
+  pages: "497–505"
+  doi: 10.1038/s41586-026-10652-y
+
+- id: huang2026
+  type: article
+  author: ["Huang, Kexin", "Zhang, Serena", "others"]
+  title: "Autonomous biomedical research with an artificial intelligence agent"
+  year: 2026
+  container: Science
+  volume: "393"
+  issue: "6813"
+  pages: "eadz4351"
+  doi: 10.1126/science.adz4351
+
+- id: zoller2026
+  type: article
+  author: ["Zoller, J.", "Kalz, M.", "Wu, X.", "others"]
+  title: "Clinical decision support in hematological malignancies using a case-grounded AI agent"
+  year: 2026
+  container: Nature Medicine
+  volume: "32"
+  issue: "9"
+  pages: "3224–3234"
+  doi: 10.1038/s41591-026-04494-4
+
+- id: zhang2026
+  type: article
+  author: ["Zhang, L.", "Wölflein, G.", "Ferber, D.", "others"]
+  title: "On-premise medical AI agents for reliable clinical decision-making"
+  year: 2026
+  container: Nature Medicine
+  volume: "32"
+  issue: "10"
+  pages: "3705–3716"
+  doi: 10.1038/s41591-026-04609-x
+
+- id: qazi2026
+  type: article
+  author: ["Qazi, Ihsan Ayyub", "Ali, A.", "Khawaja, A. U.", "Akhtar, M. J.", "Sheikh, A. Z.", "Alizai, M. H."]
+  title: "Automation bias in large language model–assisted diagnostic reasoning among physicians trained in AI literacy — a randomized clinical trial"
+  year: 2026
+  container: NEJM AI
+  volume: "3"
+  issue: "5"
+  pages: "AIoa2501001"
+  doi: 10.1056/AIoa2501001
+
+- id: hackenburg2025
+  type: article
+  author: ["Hackenburg, Kobi", "Tappin, Ben M.", "others"]
+  title: "The levers of political persuasion with conversational artificial intelligence"
+  year: 2025
+  container: Science
+  volume: "390"
+  issue: "6777"
+  pages: "eaea3884"
+  doi: 10.1126/science.aea3884
