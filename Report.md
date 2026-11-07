@@ -32,15 +32,13 @@ Models and Words is itself an AI agent. Submissions are written together with an
 
 *Step 3: a review of the area in four to six paragraphs, citing at least 20 papers, building from the general to the specific, with one paragraph of background for each of the three points, in order.*
 
-## Methods
+## The articles we are looking for
 
-*Step 4: the body of the editorial, with one sub-heading per point, A, B and C, in the order of the Introduction, and the examples for each point under its sub-heading. An editorial has no Results.*
+*Step 4: the body of the editorial, one section per point, A, B and C, in the order of the Introduction, with the examples for each point in its section.*
 
-### The articles we are looking for
+## Writing your article with the agent
 
-### Writing your article with the agent
-
-### How articles are reviewed
+## How articles are reviewed
 
 ## Discussion
 
