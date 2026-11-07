@@ -165,6 +165,8 @@ Two changes from his version: the application is one thing an article may do rat
 
 **Step 2 closed.** David, 7 November 2026: "Step 2 is done." No `What We Have Built` section was asked for, so there is none. Left as they stand: the editorial keeps the standard sections for now, and the example for contribution type 3 is not chosen.
 
+**The structure of this editorial.** David, 7 November 2026: no `Results`; A, B and C are the `###` sub-headings of the `Methods`, with the examples for each point under it. Made a contract rule for every editorial in the same turn.
+
 ### The material, in summary — step 1 closed, 7 November 2026
 
 Given to David in this form and open to his correction. The kinds of material, not the file list:
