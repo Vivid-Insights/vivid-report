@@ -18,7 +18,13 @@ references: references.yaml
 
 ## Abstract
 
-*Step 2 drafts this early: one paragraph stating the three points of the paper, in order. It is the template for every other section. Step 7 revises it against the finished report.*
+Articles in Models and Words are about understanding social, biological and technological systems, about the models we build of them, and about how those models relate to the words we use about them. Some articles stay with the model and what it says; others build applications which help people make decisions about these systems. Agentic AI provides new opportunities and presents new challenges in how we build models: writing code and mathematical analysis of models is greatly simplified by these tools, but finding the clearest insight when these models generate vast quantities of text and calculations can be more challenging. We are looking for three types of contributions:
+
+1. Applications which combine models and words to produce insight for stakeholders.
+2. Methodological and theoretical contributions where models and words are combined.
+3. Description of Agentic AI solutions, where human decision-making is placed in the centre.
+
+Models and Words is itself an AI agent. Submissions are written together with an agent, reviews will be semi-automated and it can provide help and support to application builders and researchers. In this article, we outline the type of article we are looking for, how to work with the Models and Words agent to write your article and how the paper will be reviewed.
 
 ## Introduction
 
