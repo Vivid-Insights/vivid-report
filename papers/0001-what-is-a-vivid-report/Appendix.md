@@ -75,6 +75,8 @@ Permission: the repository is private and its `Attachments/` holds 153 PDFs shar
 
 ## Framing
 
+**Reframed as a report series, 8 November 2026.** David: "I want to go back to what I had before and call these Vivid Reports. Drop the Model and Words framing. Reframe everything around Vivid Insights report." The paper now introduces Vivid Reports, a report series published by Vivid Insights, not a journal called Models and Words. Its title is "What is a Vivid Report", its folder `papers/0001-what-is-a-vivid-report`, and "report" replaces "article" throughout. Everything below that speaks of "the journal", "Models and Words" or "articles" is the record of the earlier framing and is kept as history; read "journal" as "report series".
+
 *Step 2. The reader, the kind of report (method, application, evaluation), the three points of the paper and what will show each, whether the report has a `What We Have Built` section, and what was considered and set aside.*
 
 ### David's starting note, 2 November 2026

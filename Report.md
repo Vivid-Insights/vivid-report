@@ -1,7 +1,7 @@
 ---
 title: "What is a Vivid Report"
-slug: "what-is-models-and-words"
-folder: "papers/0001-what-is-models-and-words"
+slug: "what-is-a-vivid-report"
+folder: "papers/0001-what-is-a-vivid-report"
 report-number: "0001"
 authors:
   - name: David J. T. Sumpter
