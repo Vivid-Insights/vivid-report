@@ -60,6 +60,19 @@ What it gives this paper. It is the first source in the material that is not Dav
 
 Permission: the repository is private and its `Attachments/` holds 153 PDFs shared among the five authors only. Nothing copied into `Attachments/` here. The paper is an unpublished draft with four co-authors, so what this article may say about it, and whether it can be cited before it appears, is David's to settle with them.
 
+**Planned reports in the series** — named by David, 8 November 2026, as the first articles after this one. Not yet written; each will be added to the workspace as it is. Referred to by number in `What we aim to publish`. Read only as far as each repository's README (commit given).
+
+| No. | Working title | Authors | Repository | Type | What the repository holds |
+| --- | --- | --- | --- | --- | --- |
+| 0004 | Building a vibe coding application | Mahi | `football-application-builder` (`b9c29bd`) | 3 | A football app built by a coding agent from short agent specs, with a README teaching the agent pattern so others can copy it. |
+| 0005 | Creating storyboards for reliable chatbots | Sena, Lisan | `Storyboard-Generator` (`b6e5f38`) | 2 | A tool that asks about a planned converser and writes a plain-language storyboard page: scope, flow, triggers, grounding data. |
+| 0006 | Keeping the data scientist in the loop | Robin, David, AI team | `agentic-ai-for-statistics-and-data-science` (`3d858b6`) | 3 | The Uppsala course on doing statistics with an agent, one step at a time. |
+| 0007 | Creating a supportive agentic AI mentor | Hilina | `bscascendbot-test` (`044fbb2`), Because She Can | 1 | Ascendency, a mentorship platform for African women in tech with an AI career-coach chatbot (two personas). Permission to be confirmed. |
+| 0008 | Creating specialised data science agents | Mahi, Florentine | `Agentic-ML-Advisor` (`7d01339`) | 3 | An Obsidian vault in which an agent guides model choice step by step, with a decision record for each choice. |
+| 0009 | A workshop on using generative AI to help assess asylum cases | Ernest, David, Rebecca | `asylum-case-assistant` (`73f6066`) | 1 | A research prototype in which the AI questions a caseworker's reasoning on a fictional case and never recommends the decision. |
+| 0010 | Communicating individual health risk | — | `communicating-individual-health risk` (`1b58320`) | 2 | The article and the Ask Afya apps: wordalisation of population health models. |
+| 0011 | Explainable ECG | Victoria | not found on disk | 1 | — |
+
 ## Framing
 
 *Step 2. The reader, the kind of report (method, application, evaluation), the three points of the paper and what will show each, whether the report has a `What We Have Built` section, and what was considered and set aside.*
