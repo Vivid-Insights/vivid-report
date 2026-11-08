@@ -18,7 +18,7 @@ references: references.yaml
 
 ## Abstract
 
-Vivid Reports are about understanding social, biological, medical, sporting and technological systems, about the models we build of them, and about how those models relate to the words we use to describe them. We are looking for three types of contributions:
+Vivid Reports are about understanding social, biological, medical, sporting and technological systems, about the models we build of them, and about how those models relate to the words we use to describe them. We publish three types of resources:
 
 1. Applications which combine models and words to produce insight.
 2. Methodological and theoretical contributions where models and words are combined.
