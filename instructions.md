@@ -24,7 +24,7 @@ One paper per folder. Everything belonging to a paper is in its folder, `papers/
 | `site/` | Shared: the Vivid Insights report design, and `site.yml`, which says where papers are published. |
 | `build/` | Built pages. Generated, never edited, not committed. |
 
-Move between papers only with `tools/paper.py`: `list` shows every paper and which is open, `open <number>` puts the open paper back in its folder and brings another one to the top, `park` puts the open paper away, and `new <slug>` creates the next numbered paper from `templates/paper/` and opens it. It never overwrites a file. Never copy a paper's Markdown by hand: two copies of the same paper drift apart.
+Move between papers only with `tools/paper.py`: `list` shows every paper and which is open, `open <number>` puts the open paper back in its folder and brings another one to the top, `park` puts the open paper away, and `new <slug>` creates the next numbered paper from `templates/paper/` and opens it (`--number 9` gives it a number already planned for it instead). It never overwrites a file. Never copy a paper's Markdown by hand: two copies of the same paper drift apart.
 
 ## Helping the User Write
 

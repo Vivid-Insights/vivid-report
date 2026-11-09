@@ -96,10 +96,15 @@ def cmd_open(which: str) -> int:
     return 0
 
 
-def cmd_new(slug: str, title: str | None) -> int:
+def cmd_new(slug: str, title: str | None, number: str | None = None) -> int:
     slug = re.sub(r"[^a-z0-9-]+", "-", slug.lower()).strip("-")
     numbers = [int(p.name[:4]) for p in papers()]
-    number = f"{(max(numbers) + 1) if numbers else 1:04d}"
+    if number is not None:   # a number already given to the paper in a plan, e.g. 0009
+        if int(number) in numbers:
+            raise SystemExit(f"Paper {int(number):04d} already exists.")
+        number = f"{int(number):04d}"
+    else:
+        number = f"{(max(numbers) + 1) if numbers else 1:04d}"
     folder = PAPERS / f"{number}-{slug}"
     if folder.exists():
         raise SystemExit(f"{rel(folder)} already exists.")
@@ -125,6 +130,7 @@ def main(argv=None):
     n = sub.add_parser("new")
     n.add_argument("slug")
     n.add_argument("--title")
+    n.add_argument("--number", help="use this report number instead of the next free one")
     a = ap.parse_args(argv)
     if a.cmd == "list":
         return cmd_list()
@@ -132,7 +138,7 @@ def main(argv=None):
         return cmd_park()
     if a.cmd == "open":
         return cmd_open(a.paper)
-    return cmd_new(a.slug, a.title)
+    return cmd_new(a.slug, a.title, a.number)
 
 
 if __name__ == "__main__":
