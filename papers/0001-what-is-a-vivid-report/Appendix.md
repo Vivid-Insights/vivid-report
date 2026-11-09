@@ -288,10 +288,13 @@ Recorded 2 November as "axes of disagreement"; superseded as a framing by David'
 | 12 | Step 2 continued. The reader set: a researcher deciding whether to submit. David wrote what the paper says, recorded verbatim in `Framing`, with three kinds of contribution sought and the claim that Models and Words is itself an AI agent. Questions put back to him on the two triples, on what is actually automated in review, and on whether the scope sentence admits other approaches. `Report.md` untouched. | this file |
 | 13 | Step 2 continued. FRAMEWORK: the working abstract now lives in `Report.md` and is edited there (`d1f4d6a`); the three points are explained to the author and suggested from their own text (`8cb7152`). David's statement went into the `Abstract`; he set the three points as the three after "In this article,"; and on his instruction the agentic-AI sentence was cut from the `Abstract` and parked for the `Introduction`, under a rule to keep the editorial timeless. | `Report.md`, this file |
 | 14 | Step 2 continued. The `Abstract` states A, B and C in order — the three kinds of contribution (A), then submissions written with an agent (B), then review (C) — so the closing sentence that named them again was cut as a repeat. David then moved to Obsidian to edit the `Abstract` himself; the state before his pass is committed, and nothing is to be changed in `Report.md` until he says he is done. | `Report.md`, this file |
+| 15 | 9 November 2026. Siler (2026, PNAS) added to the Introduction alongside Daniotti et al. and Liang et al.; the Daniotti paragraph, deleted by accident, merged into the Liang paragraph. Siler read at abstract and metadata level only (Crossref, Europe PMC); the full text was blocked. David will revise this paper once the other papers are written. | `Report.md`, `references.yaml` |
 
 ## Code Summary
 
 *Kept current whenever code is added or changed: what each script does, how to run it, what it reads and produces, and any model, prompt, seed or setting that affects the result. Installation belongs in [Setup.md](Setup.md).*
+
+- `Code/fig_writing_process.py` draws Figure 1, the writing process: six phases with their steps, and what author and agent do in each, taken from `instructions.md` (`The Six Phases and the Ten Steps`). Reads no data. Writes `Code/outputs/figures/writing_process.png` and its dark version. Run: `cd Code && uv run python ../papers/0001-what-is-a-vivid-report/Code/fig_writing_process.py`.
 
 ## References
 

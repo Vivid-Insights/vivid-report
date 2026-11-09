@@ -622,3 +622,14 @@
   year: 2025
   container: International Conference on Learning Representations (ICLR)
   url: https://arxiv.org/abs/2410.05080
+
+- id: siler2026
+  type: article
+  author: ["Siler, Kyle"]
+  title: "The diffusion of large language models in published academic articles"
+  year: 2026
+  container: Proceedings of the National Academy of Sciences
+  volume: "123"
+  number: "22"
+  pages: "e2605754123"
+  doi: 10.1073/pnas.2605754123
