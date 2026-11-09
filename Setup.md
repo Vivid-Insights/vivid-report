@@ -77,7 +77,7 @@ uv run python tools/review.py approve <your-id>
 | imageio | 2.38.1 | video figures |
 | imageio-ffmpeg | 0.6.0 | video encoding (bundled ffmpeg 7.1) |
 
-Verified by `uv run python check_env.py` on 9 October 2026. The page itself loads KaTeX 0.16.11 from jsDelivr when a report has maths, and the Space Grotesk, Inter and IBM Plex Mono fonts from Google Fonts. Latin Modern, the body font, is included in `site/assets/fonts/` under the GUST Font License.
+Verified by `uv run python check_env.py` on 9 October 2026. The page itself loads KaTeX 0.16.11 from jsDelivr when a report has maths, and the Space Grotesk, Inter and IBM Plex Mono fonts from Google Fonts. Latin Modern, the body font, is included in `site/assets/fonts/` under the GUST Font License. The figures are drawn with the same three sans-serif fonts, included as TTF files in `Code/fonts/` under the SIL Open Font License (Inter 4.1, Space Grotesk, IBM Plex Mono), so a figure looks the same on every machine.
 
 ## Troubleshooting
 
