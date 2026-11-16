@@ -24,7 +24,7 @@ inp = data.get("tool_input", {}) or {}
 
 def block(why):
     print(f"Blocked by the Vivid review guard: {why} Reviews and approvals are written by the reviewers "
-          "themselves (REVIEW.md, instructions.md step 9). Tell the user what you were trying to do instead.",
+          "themselves (REVIEW.md, instructions.md step 10). Tell the user what you were trying to do instead.",
           file=sys.stderr)
     sys.exit(2)
 

@@ -12,21 +12,21 @@
 
 ## Literature
 
-*Step 3, and step 6 for anything new. One row per work considered: which of the three points or which paragraph it belongs to, who found it (the user or the agent), whether it was opened in full or rests on an abstract, and whether it is cited.*
+*Step 6, and step 7 for anything new. One row per work considered: which of the three points or which paragraph it belongs to, who found it (the user or the agent), whether it was opened in full or rests on an abstract, and whether it is cited.*
 
 | Work | Point or paragraph | Found by | Read | Cited |
 | --- | --- | --- | --- | --- |
 
 ## Method Facts
 
-*Step 4. One row per fact the report states about the method, with the place in the code that makes it true. Re-checked in step 8 against the commit recorded here.*
+*Steps 3 to 5, one point at a time. One row per fact the report states about the method, with the place in the code that makes it true. Re-checked in step 9 against the commit recorded here.*
 
 | Fact | Where in the code | Commit |
 | --- | --- | --- |
 
 ## Workings
 
-*Step 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration. Only what serves the writing: no bugs, set-up problems or debugging.*
+*Steps 3 to 5. One sub-heading per example or evaluation: how each case was chosen, which outputs were generated with what model, prompt and configuration. Only what serves the writing: no bugs, set-up problems or debugging.*
 
 ## Log
 

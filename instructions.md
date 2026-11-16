@@ -58,7 +58,7 @@ Every report has the same structure, in this order. The section names are fixed.
 
 | Section | What it holds |
 | --- | --- |
-| `Abstract` | States the three points of the paper. Drafted in step 2 and used as the template for everything else; revised in step 7. |
+| `Abstract` | States the three points of the paper. Drafted in step 2 and used as the template for everything else; revised in step 8. |
 | `What We Have Built` | Optional. A short, unnumbered description of the app, converser or tool the report is about, for a reader who wants to see the thing before the argument. It does not replace any part of the `Methods`. |
 | `Introduction` | A review of the area in four to six paragraphs, citing at least 20 papers. It builds from the general to the specific and gives the background for the three points, one paragraph each, in order. |
 | `Methods` | What was built and how, thoroughly, written from the code and repository where there is one. It covers the three points in the order of the `Introduction`. |
@@ -68,7 +68,7 @@ Every report has the same structure, in this order. The section names are fixed.
 
 The three points thread through every section: stated in the `Abstract`, given their background in the `Introduction`, built in the `Methods`, shown in the `Results`, answered in the `Discussion`, always in the same order. The `Methods` and `Results` share their sub-headings, one `###` per point. The `Discussion` has no sub-headings: it answers the points in the same order, as continuous prose, one paragraph each. The `Methods` may open with one sub-heading for what all three points share, such as the data or the system as a whole, and finer divisions go under a point as `####`. Do not add other top-level sections. If material does not fit, it belongs in a sub-section, the appendix, or nowhere.
 
-**An editorial has no `Results`.** It carried out no method and obtained no results, so its structure is `Abstract`, `Introduction`, `Methods`, `Discussion` and the back matter. The `Methods` holds the body of the editorial, with one `###` sub-heading per point, A, B and C, in the order of the `Introduction`; what each point needs to show — the examples, the process, the rules — goes under its sub-heading there. Step 5 is skipped, and step 4 is written from the material rather than from a repository where there is none. The rest of the structure, including the `Discussion`, is as for any report. Decided in step 2, when the kind of paper is agreed.
+**An editorial has no `Results`.** It carried out no method and obtained no results, so its structure is `Abstract`, `Introduction`, `Methods`, `Discussion` and the back matter. The `Methods` holds the body of the editorial, with one `###` sub-heading per point, A, B and C, in the order of the `Introduction`; what each point needs to show — the examples, the process, the rules — goes under its sub-heading there. In steps 3, 4 and 5 each point's sub-section of the `Methods` is written from the material rather than from a repository where there is none, and there is no `Results` to write. The rest of the structure, including the `Discussion`, is as for any report. Decided in step 2, when the kind of paper is agreed.
 
 **Treat the three points as equal by default.** Call them A, B and C when planning, and give each the same room: one background paragraph, one `###` in each of the `Methods` and `Results`, one paragraph in the `Discussion`.
 
@@ -98,10 +98,10 @@ This workspace is for writing a report **one step at a time, with the user direc
   - **Name the next step only after the user has closed the current one**, then say what it involves and wait again.
   - **Being ready to move on is not a reason to move on.**
   - **Wait for an answer rather than an absence of objection.** A user who replies about one item has not closed the others.
-- **From step 3 onwards, compare with the specimen before asking.** Open the part of `papers/0000-specimen/Report.md` and its built page that corresponds to the step just finished — the citations for step 3, the definition and equation for step 4, the figures, video, interactive and quoted outputs for step 5, the discussion and its limitations for step 6, the abstract for step 7, the whole page for step 8 — and compare the form with what this report now has: how much a caption explains, whether a generated text is quoted as an `output` block from its file, whether a video has a poster and an interactive a fallback, where a limitation sits. Compare the shape, never the content. A difference is not a fault; say what the comparison found, including when it found nothing, and leave the decision to the user.
+- **From step 3 onwards, compare with the specimen before asking.** Open the part of `papers/0000-specimen/Report.md` and its built page that corresponds to the step just finished — the definition, equation, figures, video, interactive and quoted outputs for steps 3 to 5, the citations for step 6, the discussion and its limitations for step 7, the abstract for step 8, the whole page for step 9 — and compare the form with what this report now has: how much a caption explains, whether a generated text is quoted as an `output` block from its file, whether a video has a poster and an interactive a fallback, where a limitation sits. Compare the shape, never the content. A difference is not a fault; say what the comparison found, including when it found nothing, and leave the decision to the user.
 - **Agree the approach before applying it.** For a figure, an example, an evaluation or a new section structure, say what you propose and why, and get agreement before producing it. These are claims the report makes. Formatting, tooling and file layout are not: do those when asked.
 - **`Report.md` is built up as the work proceeds.** Each step adds only its own part. Interim workings go in `Appendix.md`.
-- **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 10 will not publish until the user has confirmed they have read it.
+- **The `Disclaimer` section is already written, and it stays.** It says the report was written with the help of agentic AI at every stage. Do not remove it, soften it or move it down. If the user rewrites it, keep their wording. Step 11 will not publish until the user has confirmed they have read it.
 - **Do not leave markers in the report for work that was not done.** If an example is dropped or an evaluation abandoned, take it out of `Report.md` completely and record it in the `Log`.
 - **Text goes in `Report.md`, where the user can see it.** At the stage where a section is the step's to write, write it there without asking; never park a draft in `outputs/` or the appendix. Then say what you changed, which of the three points it serves, and invite the user to edit it or ask for changes. If the user's editor saves over it, or the file changes while you work, commit their version, put the draft back in `Report.md` around their changes, and tell them what happened.
 - **Never undo the user's changes.** They edit these documents directly, often while you are working.
@@ -133,18 +133,18 @@ All papers live together on `main`, one folder each. A change to something share
 - **Corrections in `WRITING.md`** are shared when they are about how the user writes. A paper's own terms go in its `Appendix.md`.
 - **Say what was committed**, and whether it was pushed. Push only when the user asks.
 
-## The Six Phases and the Ten Steps
+## The Six Phases and the Eleven Steps
 
-Writing a report has six phases, which are David's drafting order: **sketch, sketch the abstract, revise, write the start and end together, revise the abstract, simplify and revise.** The ten steps are how that order is carried out in this workspace, and each sits inside one of the phases. The phases say what kind of work is being done; the steps say what to do and when to stop.
+Writing a report has six phases, which are David's drafting order: **sketch, sketch the abstract, revise, write the start and end together, revise the abstract, simplify and revise.** The eleven steps are how that order is carried out in this workspace, and each sits inside one of the phases. The phases say what kind of work is being done; the steps say what to do and when to stop.
 
 | Phase | Steps | What the phase is for |
 | --- | --- | --- |
 | 1. Sketch | 1 | Find out what is there, from the material rather than from memory. |
 | 2. Sketch the abstract | 2 | Fix what the paper says before any of it is written. |
-| 3. Revise | 3, 4, 5 | Build the body: the background, what was built, what it shows. |
-| 4. Write the start and end together | 6 | The `Discussion` is written against the `Introduction`, in one pass, so the paper answers what it asked. |
-| 5. Revise the abstract | 7 | Read the working abstract against the report as it now stands, and settle the title and front matter. |
-| 6. Simplify and revise | 8, 9, 10 | Cut the length, read it through, take it through review and publish it. |
+| 3. Revise | 3, 4, 5 | Build the body one point at a time: the `Methods` and `Results` for A, then for B, then for C. |
+| 4. Write the start and end together | 6, 7 | The `Introduction`, once the body says what the report does, then the `Discussion` against it, so the paper answers what it asked. |
+| 5. Revise the abstract | 8 | Read the working abstract against the report as it now stands, and settle the title and front matter. |
+| 6. Simplify and revise | 9, 10, 11 | Cut the length, read it through, take it through review and publish it. |
 
 **Cut down the length at the end.** Phase 6 is where a report gets shorter, not longer. `Length` in `WRITING.md` applies to the whole report as well as to each paragraph.
 
@@ -181,46 +181,43 @@ Agree what the paper says before writing any of it. This is the pre-commitment t
 - **Get the `Abstract` drafted now, in `Report.md`.** Encourage the user to write it themselves, stating the three points in order, and offer to read it against the material. Draft it only if they ask. It is the template for every later step.
 - **Put the user's own statement of what the paper says into the `Abstract` as soon as they have written it**, in their words, and edit it there with them. Do this before the three points are settled and while the text is still rough: a working abstract in the report is what this step is for. Revisions and alternatives belong in the `Abstract` too, not in `Appendix.md` — a sentence proposed in the appendix is one the user cannot see in place. Each time something changes, say what changed and why, and ask them to work on it with you. `Framing` keeps the decisions and what was set aside, not the drafting.
 - **The abstract is a suggestion, not a form to fill.** The seven moves and the single paragraph are a guide. The test is whether it reads well and gets the points of the paper across; a list inside it, two paragraphs, or a short mention of a point are fine if the author is happy with them. Do not hold an abstract open, or raise it as unfinished, because it departs from the shape.
-- **Keep the italic step note under the `Abstract`.** The template's note saying step 7 revises the abstract stays below the working text until step 7, so the page shows the abstract will be revised later. Do not delete it when the abstract is first written. When step 2 is closed, cut the note to its last two sentences: *"Step 7 revises it against the finished report. Keep this note below the working abstract until then."*
+- **Keep the italic step note under the `Abstract`.** The template's note saying step 8 revises the abstract stays below the working text until step 8, so the page shows the abstract will be revised later. Do not delete it when the abstract is first written. When step 2 is closed, cut the note to its last two sentences: *"Step 8 revises it against the finished report. Keep this note below the working abstract until then."*
 - **Ask whether the report needs a `What We Have Built` section**, and leave it out unless the user wants one.
 - Record the outcome in `Framing` in `Appendix.md`: the reader, the kind of report, the three points and what will show each, the decision on `What We Have Built`, and what was considered and set aside.
 
 ## Phase 3 — Revise
 
-### Step 3 — Introduction
+The body of the report is built one point at a time. Steps 3, 4 and 5 take the points in order — A, then B, then C — and each writes the point's `Methods` sub-section and its `Results` sub-section together, so that what was built for a point and what it shows are written side by side, under the same sub-heading. The `Introduction` waits for phase 4, when what the report does is known.
 
-A review of the area in five paragraphs, citing at least 20 papers, building from the general to the specific: the area; the background to A; the background to B; the background to C; and roughly what this report does.
+This order is the default, not a rule. An author may take the points in another order, write two of them in one step, or want the `Introduction` sooner; agree it with them, say which step is being done, and record the departure in the `Log`.
 
-- **Put the paragraph plan in the `Introduction` first.** One line per paragraph, each naming the point it gives the background to, written into the section itself; the user edits it there, and the drafts replace the lines one by one.
-- **The user's reading comes first.** Ask which papers they already know for each paragraph and record them in `Literature` in `Appendix.md`. Then help with the search, and push them to widen it: other fields that have met the same problem (human–computer interaction, medicine, education, sports science, linguistics, statistics), work that disagrees with the report's position, older work the recent papers forgot, and work from outside the user's own group. Say where the list is thin, such as a point with two papers behind it or a paragraph citing only the authors.
-- **Bring the sources before the prose.** For each source: what it found, in a sentence, from having opened it, and which paragraph it belongs to. The user chooses which to use. `References and Citation` applies in full; never cite a work you have not opened.
-- **Question what is written, from your own reading.** When the user writes a sentence about a paper, read it against the paper. Say where it overstates, where the paper's sample or method limits what it can show, and where another paper says otherwise.
-- **The `Introduction` never anticipates its conclusions.** It says what is known and what this report addresses, not what it found. The test: would the sentence have to change if the results had come out differently?
-- **Do not open on the report.** *"This report presents a framework for…"* describes the document. Open on the area, and let the paragraphs narrow to the three points.
-- Count the distinct works cited when the step is done and tell the user the number. Fewer than 20 is something to raise, not to fix by padding.
+### Steps 3, 4 and 5 — Methods and Results, one point at a time
 
-### Step 4 — Methods
+Step 3 is point A, step 4 is point B and step 5 is point C. Each step writes that point's `###` sub-section in the `Methods` and the `###` with the same name in the `Results`. Open each step by naming the point and saying what in the material will show it, as recorded in `Framing`.
 
-Write the `Methods` thoroughly, from the code, covering the three points in the order of the `Introduction`, one `###` sub-heading each.
+An editorial has no `Results`: each of these steps writes the point's sub-section of the `Methods`, with the examples, the process or the rules that show it, written from the material where there is no repository.
+
+#### Before the first point
+
+At the start of step 3, before anything is written for point A:
 
 - **Propose the sub-headings first**, named after the three points, with an opening sub-heading for what they share if it is needed. These sub-headings will be reused in the `Results`, so agree them carefully. The `Discussion` does not use them: it is continuous prose.
+- **Write the shared opening sub-heading, if there is one, in step 3**: the data, the system as a whole or a model all three points use.
+- **State the models and software used, here and only here.** Which LLM and version each part ran on, the provider, and the main software, once in the `Methods`, in the step that first needs them. The `Results` do not repeat them.
+- **Use `definition` blocks for the two or three terms the report depends on**, and keep the same term for the same thing throughout. Add each to the `Terms` table in `WRITING.md`.
+
+#### The point's Methods
+
 - **Build on the repository.** Where there is a GitHub repository for what was built, the `Methods` is written from it: its structure, its prompts, its configuration, its data flow. Thorough means a reader could rebuild the method from the section and the repository together, not that the sentences are long.
 - **Describe the method in its authors' terms and order.** Where the method has published stages — the wordalisation steps of Caut and colleagues: the statistical model, the normative model and synthetic text, tell it who it is, what it knows, what data to use, how to answer — follow them, and attribute them. Other people's methods stay theirs.
 - **Every fact about the method has one place in the code.** Before writing, or checking, a sentence about what the method does, find where the code does it. Record each in `Method Facts` in `Appendix.md`: the fact, the file and line or function, and the commit. Name the file next to the fact.
 - **Name the normative choices.** Where a person chose a threshold, a wording, a comparison group, a persona, a routing rule or a few-shot example, say that it was a choice, what the alternatives were and what was chosen. These are what a reader most needs to know and what an app hides best.
 - **Settings in the report are settings in the app.** If the app offers an option the report does not mention, either add it to the report or say why it is left out. If the report describes an option the app does not have, one of them is wrong: find out which before changing either.
 - **Propose the method figure before drawing it.** Usually a diagram of the stages, with what flows between them. Draw it with a script or as SVG in `Code/`, not by hand in an editor, so it can be regenerated.
-- **State the models and software used, here and only here.** Which LLM and version each part ran on, the provider, and the main software, once in the `Methods`. The `Results` do not repeat them.
-- **Use `definition` blocks for the two or three terms the report depends on**, and keep the same term for the same thing throughout. Add each to the `Terms` table in `WRITING.md`.
-- **Read the `Methods` against the code, and the code against the `Methods`,** before asking whether the step is done. List every difference without changing anything, then decide with the user, one by one, which side to fix.
 
-### Step 5 — Results
+#### The point's Results
 
-Not done for an editorial, which has no `Results`; the examples for each point go under its sub-heading in the `Methods`.
-
-Show the method working, and say how well it works if the report claims that it does. The `Results` use the `Methods` sub-headings, in the same order, so each point's results sit under its name.
-
-- **Ask the user what each point's results should show before proposing anything.** Then propose, one at a time, the examples and evaluations that would show it.
+- **Ask the user what this point's results should show before proposing anything.** Then propose, one at a time, the examples and evaluations that would show it.
 - **The concrete case comes first.** A report about wordalisation shows a player, a patient or a mentee and the text written about them, before it says anything general.
 - **Propose each example before making it**: which case, chosen by what rule, shown how. *"Three held-out patients, not few-shot examples, chosen to differ in risk"* is a rule. Say the rule in the report.
 - **Quote generated text, never write it.** Every LLM output, prompt and conversation in the report is an `output`, `prompt` or `conversation` block that names its source file; the build checks that it is word for word. A hand-written example is marked `source="hand-written"` and the page labels it so. Never paraphrase an output and present it as what the model wrote.
@@ -238,13 +235,34 @@ Show the method working, and say how well it works if the report claims that it 
 - **Every number comes from a saved output**, never from memory, never read off a figure. Report the estimate, its uncertainty and the sample. A judge score from twenty texts is a small sample, and the report says so.
 - **Numbers go in tables; the text says what they mean.** When a result has more than a number or two, put the numbers in a table and write the paragraph about what the table shows: which system came out ahead, under what conditions, how the order changed. Do not repeat the table's numbers in the prose. A number the table does not hold, and that the argument needs, may stay in the text.
 - **Say plainly when the evidence is thin**, or when an evaluation has not been done. *"We have not tested whether readers understand these texts better than the numbers"* is a sentence a reader needs.
-- **Put each result into `Report.md` as soon as it exists**, under its point's sub-heading, with a numbered caption. Diagnostics and alternative analyses go in `Workings`.
+- **Put each result into `Report.md` as soon as it exists**, under its point's sub-heading in the `Results`, with a numbered caption. Diagnostics and alternative analyses go in `Workings`.
+
+#### Closing the point's step
+
+- **Read the `Methods` against the code, and the code against the `Methods`,** for this point before asking whether its step is done. List every difference without changing anything, then decide with the user, one by one, which side to fix.
+- **Ask whether the point is finished** before moving to the next one, naming what its `Methods` and `Results` now hold and what has not been discussed. The next point is a new step.
 
 ## Phase 4 — Write the start and end together
 
-### Step 6 — Discussion
+The `Introduction` and the `Discussion` are written as a pair, after the body, so that the report asks the questions it answers. Step 6 writes the `Introduction`, now that the `Methods` and `Results` say what the report does; step 7 writes the `Discussion` with the `Introduction` open beside it.
 
-The `Discussion` is where the three points are answered, in five paragraphs: what was found about A and B, then C, in the order of the `Methods`; what is good about it; the limitations; looking ahead. It has no sub-headings — the paragraphs run on, and each one's subject is clear from its first sentence. Write it together with the `Introduction` open beside it (phase 4), so the paper answers what it asked.
+### Step 6 — Introduction
+
+A review of the area in five paragraphs, citing at least 20 papers, building from the general to the specific: the area; the background to A; the background to B; the background to C; and roughly what this report does.
+
+- **Put the paragraph plan in the `Introduction` first.** One line per paragraph, each naming the point it gives the background to, written into the section itself; the user edits it there, and the drafts replace the lines one by one.
+- **The user's reading comes first.** Ask which papers they already know for each paragraph and record them in `Literature` in `Appendix.md`. Then help with the search, and push them to widen it: other fields that have met the same problem (human–computer interaction, medicine, education, sports science, linguistics, statistics), work that disagrees with the report's position, older work the recent papers forgot, and work from outside the user's own group. Say where the list is thin, such as a point with two papers behind it or a paragraph citing only the authors.
+- **Bring the sources before the prose.** For each source: what it found, in a sentence, from having opened it, and which paragraph it belongs to. The user chooses which to use. `References and Citation` applies in full; never cite a work you have not opened.
+- **Question what is written, from your own reading.** When the user writes a sentence about a paper, read it against the paper. Say where it overstates, where the paper's sample or method limits what it can show, and where another paper says otherwise.
+- **Written last, it still says nothing of what was found.** The `Methods` and `Results` now exist, which tells you what each background paragraph must lead to; use that to choose the literature, not to preview the results.
+- **The `Introduction` never anticipates its conclusions.** It says what is known and what this report addresses, not what it found. The test: would the sentence have to change if the results had come out differently?
+- **Do not open on the report.** *"This report presents a framework for…"* describes the document. Open on the area, and let the paragraphs narrow to the three points.
+- Count the distinct works cited when the step is done and tell the user the number. Fewer than 20 is something to raise, not to fix by padding.
+
+
+### Step 7 — Discussion
+
+The `Discussion` is where the three points are answered, in five paragraphs: what was found about A and B, then C, in the order of the `Methods`; what is good about it; the limitations; looking ahead. It has no sub-headings — the paragraphs run on, and each one's subject is clear from its first sentence. Write it straight after the `Introduction`, with it open beside it, so the paper answers what it asked.
 
 - **Ask the user to say, in a sentence each, how they would now answer the three points**, before anything is drafted. Then read their answers against the `Results` and say where an answer goes beyond what was shown.
 - **Each point's paragraph links back to the `Introduction`.** It says what the result means against the literature its background paragraph cited: which papers it agrees with, which it qualifies, which it contradicts. New literature may come in here when a result makes it relevant; the same rules for finding and reading sources apply.
@@ -255,7 +273,7 @@ The `Discussion` is where the three points are answered, in five paragraphs: wha
 
 ## Phase 5 — Revise the abstract
 
-### Step 7 — Abstract, title and front matter
+### Step 8 — Abstract, title and front matter
 
 - **Read the working abstract against the report as it now stands**, point by point, and tell the user where they differ: a point the `Discussion` answered differently, a result the abstract does not mention, a claim the report no longer supports. The user revises it; you draft only if asked.
 - **The seven moves are a suggestion for the final `Abstract`**: the area; the specific problem; A, B and C, each with what was done and what was found; the good and bad of what was found; looking forward. Offer them where they would help; the test is that it reads well and states the points of the paper. Nothing that is not in the report. Remove the italic step note when the abstract is settled.
@@ -265,7 +283,7 @@ The `Discussion` is where the three points are answered, in five paragraphs: wha
 
 ## Phase 6 — Simplify and revise
 
-### Step 8 — Read through
+### Step 9 — Read through
 
 Read the finished report from beginning to end, in the built page, as a reader would, and list what is wrong with it. This is where the report gets shorter: phase 6 is simplify and revise, and cutting length comes before anything else.
 
@@ -277,11 +295,11 @@ Read the finished report from beginning to end, in the built page, as a reader w
 - **Run the release check**: `cd Code && uv run python tools/check.py --release`. Every error must be resolved; every style hint must be read.
 - **Report the list; do not fix as you go.** Record the outcome in the `Log`, including when nothing was found.
 
-### Step 9 — Review
+### Step 10 — Review
 
 Every report is reviewed by the Vivid Insights team before it is published. `REVIEW.md` describes the process; this is the agent's part in it.
 
-- **Request review only when the user asks**, after step 8. Commit the report first, then run `cd Code && uv run python tools/review.py request`. It refuses if the release check fails or the report is uncommitted, freezes the version by its content hash, opens `review/round-NN/`, and builds a review copy. Tell the user the hash, where the review copy is, and who `reviewers.yml` says must review it.
+- **Request review only when the user asks**, after step 9. Commit the report first, then run `cd Code && uv run python tools/review.py request`. It refuses if the release check fails or the report is uncommitted, freezes the version by its content hash, opens `review/round-NN/`, and builds a review copy. Tell the user the hash, where the review copy is, and who `reviewers.yml` says must review it.
 - **Do not edit the report while a round is open.** Any change to the report, its references or any file it shows or quotes changes the content hash, and an approval only counts for the hash it names. If the user wants to change something during review, say so before doing it.
 - **Never write in `review/*/reviews/` or `review/*/approvals/`, and never run `review.py form` or `review.py approve`.** Those belong to the reviewers. A hook in `.claude/` blocks it; the rule stands whether or not the hook does. Do not create, edit, move or delete a review or an approval, do not commit one, and do not impersonate a reviewer in git.
 - **When reviews arrive, read them all, then list every point** — each with the reviewer, a quote, and what it asks for. Propose for each whether to change the report, and how, or why not. The user decides.
@@ -289,7 +307,7 @@ Every report is reviewed by the Vivid Insights team before it is published. `REV
 - **Then request the next round.** Reviewers approve the revised version, not the one they first read.
 - `cd Code && uv run python tools/review.py status` says where the report stands and why. Use it rather than reading the folder.
 
-### Step 10 — Publish
+### Step 11 — Publish
 
 - **Before anything else, have the user confirm they have read the `Disclaimer`.** Quote it to them in full, ask them to confirm, and wait. Nothing earlier counts. If they change it, the content hash changes and the report goes back to its reviewers. If they decline, do not publish. Record the confirmation in the `Log`.
 - **Run `cd Code && uv run python tools/publish.py`.** It refuses unless the current version carries enough valid approvals, each committed to git by the reviewer who gave it. Do not try to get round a refusal: report it to the user with the reasons it gave.

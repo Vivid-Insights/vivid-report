@@ -42,10 +42,10 @@ def cmd_status(report: Path) -> int:
         print(f"  ! {p}")
     if not members:
         print("  ! review/reviewers.yml lists nobody: add the team before requesting review")
-    nxt = {"draft": "finish the read-through (step 8), then `review.py request`",
+    nxt = {"draft": "finish the read-through (step 9), then `review.py request`",
            "in-review": "wait for the written reviews; do not edit the report while reviewers are reading it",
            "changes-requested": "revise, write review/round-NN/response.md, then `review.py request` for the next round",
-           "approved": "step 10: confirm the disclaimer with the author, then `publish.py`",
+           "approved": "step 11: confirm the disclaimer with the author, then `publish.py`",
            "published": "nothing: the published page matches the approved version"}
     print(f"Next:          {nxt.get(st['state'], '')}")
     return 0

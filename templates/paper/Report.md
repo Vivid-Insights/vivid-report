@@ -1,5 +1,5 @@
 ---
-title: "[TO WRITE: suggested in step 7, once the argument is settled]"
+title: "[TO WRITE: suggested in step 8, once the argument is settled]"
 slug: "{{slug}}"
 folder: "{{folder}}"
 report-number: "{{number}}"
@@ -16,27 +16,27 @@ references: references.yaml
 
 ## Abstract
 
-*Step 2 drafts this early, stating the three points of the paper in order. It is the template for every other section. Step 7 revises it against the finished report. Keep this note below the working abstract until then.*
+*Step 2 drafts this early, stating the three points of the paper in order. It is the template for every other section. Step 8 revises it against the finished report. Keep this note below the working abstract until then.*
 
 ## Introduction
 
-*Step 3: a review of the area in four to six paragraphs, citing at least 20 papers, building from the general to the specific, with one paragraph of background for each of the three points, in order.*
+*Step 6, written after the Methods and Results: a review of the area in four to six paragraphs, citing at least 20 papers, building from the general to the specific, with one paragraph of background for each of the three points, in order.*
 
 ## Methods
 
-*Step 4: written from the code and repository, thoroughly, with one sub-heading per point in the order of the Introduction, and every normative choice named.*
+*Steps 3, 4 and 5, one point each — A, then B, then C — each written together with its Results: from the code and repository, thoroughly, with one sub-heading per point in the order of the Introduction, and every normative choice named.*
 
 ## Results
 
-*Step 5: the examples and evidence, under the same sub-headings as the Methods.*
+*Steps 3, 4 and 5: the examples and evidence for each point, under the same sub-headings as the Methods, written in the same step as the point's Methods.*
 
 ## Discussion
 
-*Step 6: where the three points are answered. Ideally five paragraphs and no sub-headings: one per point in the order of the Methods, then the limitations, then looking ahead, linking back to the literature in the Introduction.*
+*Step 7, written straight after the Introduction: where the three points are answered. Ideally five paragraphs and no sub-headings: one per point in the order of the Methods, then the limitations, then looking ahead, linking back to the literature in the Introduction.*
 
 ## Data and code availability
 
-*Step 10 states where the code, prompts and saved outputs behind the report can be found, and under what terms.*
+*Step 11 states where the code, prompts and saved outputs behind the report can be found, and under what terms.*
 
 ## Disclaimer
 

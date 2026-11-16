@@ -45,7 +45,7 @@ uv run python tools/obsidian.py                   # show the open paper's figure
 uv run python tools/check.py                      # errors, warnings and writing-style hints
 uv run python tools/check.py --release            # as review and publishing will: unfinished work is an error
 uv run python tools/review.py status              # where the report stands in review
-uv run python tools/review.py request             # open a review round (after step 8, committed)
+uv run python tools/review.py request             # open a review round (after step 9, committed)
 uv run python tools/publish.py                    # publish an approved report to the site
 uv run python my_figure.py                        # a figure script
 uv add <package>                                  # add a dependency, updating uv.lock
