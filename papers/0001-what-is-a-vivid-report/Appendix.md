@@ -72,6 +72,9 @@ Permission: the repository is private and its `Attachments/` holds 153 PDFs shar
 | 0009 | A workshop on using generative AI to help assess asylum cases | Ernest, David, Rebecca | `asylum-case-assistant` (`73f6066`) | 1 | A research prototype in which the AI questions a caseworker's reasoning on a fictional case and never recommends the decision. |
 | 0010 | Communicating individual health risk | — | `communicating-individual-health risk` (`1b58320`) | 2 | The article and the Ask Afya apps: wordalisation of population health models. |
 | 0011 | Explainable ECG | Victoria | not found on disk | 1 | — |
+| 0012 | Title to come from the author | Mwaniki | — | — | Added by David, 16 November 2026. |
+| 0013 | Title to come from the author | Halimat | — | — | Added by David, 16 November 2026. |
+| 0014 | Title to come from the author | Axsumwit | — | — | Added by David, 16 November 2026. |
 
 ## Framing
 
