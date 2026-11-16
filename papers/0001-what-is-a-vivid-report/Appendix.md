@@ -297,7 +297,7 @@ Recorded 2 November as "axes of disagreement"; superseded as a framing by David'
 
 *Kept current whenever code is added or changed: what each script does, how to run it, what it reads and produces, and any model, prompt, seed or setting that affects the result. Installation belongs in [Setup.md](Setup.md).*
 
-- `Code/fig_writing_process.py` draws Figure 1, the writing process: six phases with their steps, and what author and agent do in each, taken from `instructions.md` (`The Six Phases and the Ten Steps`). Reads no data. Writes `Code/outputs/figures/writing_process.png` and its dark version. Run: `cd Code && uv run python ../papers/0001-what-is-a-vivid-report/Code/fig_writing_process.py`.
+- `Code/fig_writing_process.py` draws Figure 1, the writing process: six phases with their steps, and what author and agent do in each, taken from `instructions.md` (`The Six Phases and the Eleven Steps`; steps 3–5 are the Methods and Results of A, B and C, steps 6–7 the Introduction and Discussion). Reads no data. Writes `Code/outputs/figures/writing_process.png` and its dark version. Run: `cd Code && uv run python ../papers/0001-what-is-a-vivid-report/Code/fig_writing_process.py`.
 
 ## References
 
