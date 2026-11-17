@@ -1,0 +1,10 @@
+{
+  "_source": "storyboard dataSources[2] says this file is PLANNED and filled in by the school from its website. It lists only 'Library, Reception, IT Helpdesk and other offices'. Every value is [TBD]: no hours were given.",
+  "places": [
+    {"name": "the library", "keywords": ["library"], "hours": "[TBD]", "owningOffice": "Reception"},
+    {"name": "Reception", "keywords": ["reception", "front desk", "school office", "main office"], "hours": "[TBD]", "owningOffice": "Reception"},
+    {"name": "the IT Helpdesk", "keywords": ["it helpdesk", "helpdesk", "help desk", "it desk"], "hours": "[TBD]", "owningOffice": "Reception"},
+    {"name": "the Sixth Form Office", "keywords": ["sixth form office"], "hours": "[TBD]", "owningOffice": "Reception"},
+    {"name": "the school", "keywords": ["school"], "hours": "[TBD]", "owningOffice": "Reception"}
+  ]
+}

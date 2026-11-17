@@ -1,0 +1,152 @@
+{
+  "_source": "storyboard dataSources[3] (PLANNED). Roles are the ones the storyboard names; 'what' texts are taken from storyboard facets/few-shot rows only. Every contact route and every name is [TBD]: the storyboard confirms none, and CONSTRAINT-6 forbids names unless the school publishes them. 'what' is a verb phrase that follows the role name.",
+  "roles": [
+    {
+      "role": "the Designated Safeguarding Lead (DSL)",
+      "keywords": [
+        "dsl",
+        "designated safeguarding",
+        "safeguarding lead",
+        "safeguarding"
+      ],
+      "what": "is the member of staff to talk to if you or someone else might not be safe.",
+      "contact": "[TBD: name/how to find them]",
+      "publishedName": null
+    },
+    {
+      "role": "the SENCO",
+      "keywords": [
+        "senco",
+        "special educational",
+        "send",
+        "ehcp",
+        "extra time",
+        "access arrangement",
+        "additional needs"
+      ],
+      "what": "handles assessments for access arrangements such as extra time, and support for special educational needs.",
+      "contact": "[TBD: office/contact route]",
+      "publishedName": null
+    },
+    {
+      "role": "the Exams Officer",
+      "keywords": [
+        "exams officer",
+        "exam entries",
+        "exam entry",
+        "results",
+        "resit",
+        "re-mark",
+        "remark",
+        "review of marking",
+        "special consideration"
+      ],
+      "what": "handles exam entries, special consideration, resits and reviews of marking.",
+      "contact": "[TBD: contact route]",
+      "publishedName": null
+    },
+    {
+      "role": "the Attendance Officer",
+      "keywords": [
+        "attendance officer",
+        "absence",
+        "absent",
+        "attendance line",
+        "term-time leave",
+        "term time leave",
+        "holiday"
+      ],
+      "what": "handles absence reporting and attendance.",
+      "contact": "[TBD: number]",
+      "publishedName": null
+    },
+    {
+      "role": "the Head of Sixth Form / Sixth Form Office",
+      "keywords": [
+        "head of sixth form",
+        "sixth form",
+        "a-level",
+        "a level",
+        "alevel",
+        "year 12",
+        "year 13"
+      ],
+      "what": "handle Sixth Form applications and A-level subject changes.",
+      "contact": "[TBD: contact route]",
+      "publishedName": null
+    },
+    {
+      "role": "your Head of Year",
+      "keywords": [
+        "head of year",
+        "options",
+        "gcse options",
+        "subject change"
+      ],
+      "what": "handles GCSE options and changes, and is the next step after your tutor.",
+      "contact": "[TBD: contact route]",
+      "publishedName": null
+    },
+    {
+      "role": "your tutor",
+      "keywords": [
+        "tutor",
+        "form tutor"
+      ],
+      "what": "is your first point of contact for most things.",
+      "contact": "tutor time",
+      "publishedName": null
+    },
+    {
+      "role": "the careers adviser",
+      "keywords": [
+        "careers",
+        "career",
+        "university",
+        "ucas",
+        "apprenticeship"
+      ],
+      "what": "helps you think through choices that affect your future plans.",
+      "contact": "[TBD: how to book]",
+      "publishedName": null
+    },
+    {
+      "role": "the IT Helpdesk",
+      "keywords": [
+        "it helpdesk",
+        "password",
+        "login",
+        "log in",
+        "microsoft 365",
+        "account"
+      ],
+      "what": "sets up student accounts and resets Microsoft 365 passwords.",
+      "contact": "[TBD: location/how to contact]",
+      "publishedName": null
+    },
+    {
+      "role": "Reception / admissions",
+      "keywords": [
+        "reception",
+        "admissions",
+        "join",
+        "transfer",
+        "moving"
+      ],
+      "what": "can point you to the right person for anything, and handle admissions questions.",
+      "contact": "[TBD: number]",
+      "publishedName": null
+    },
+    {
+      "role": "the headteacher",
+      "keywords": [
+        "headteacher",
+        "head teacher",
+        "principal"
+      ],
+      "what": "decides term-time leave requests.",
+      "contact": "[TBD: via which office]",
+      "publishedName": null
+    }
+  ]
+}

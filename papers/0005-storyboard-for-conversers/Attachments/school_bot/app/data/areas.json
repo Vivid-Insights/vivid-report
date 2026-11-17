@@ -1,0 +1,478 @@
+{
+  "_source": "Copied verbatim from storyboard.json areas[] (plus owningOffice/shortName added by the builder).",
+  "areas": [
+    {
+      "name": "Processes · Subject choices",
+      "shortName": "Subject choices",
+      "summary": "Choosing GCSE options (Year 9) or A-level subjects (OUR OWN Year 11 students applying to the Sixth Form), and changing or dropping a subject afterwards. Students from other schools go to 'Joining the school'. Sign-off owner: Head of Year / Head of Sixth Form.",
+      "owningOffice": "your Head of Year or the Sixth Form Office",
+      "_owningOfficeSource": "BUILD GUESS from areas[].summary 'Sign-off owner' (see BUILD_NOTES G4)",
+      "status": "PROPOSED",
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      },
+      "stages": [
+        {
+          "name": "Choosing",
+          "description": "Before the options or A-level deadline. Nothing is submitted yet, so the material is about how to choose, what's compulsory, and the form and deadline, not about changes."
+        },
+        {
+          "name": "Change window",
+          "description": "Choices are submitted, but changes are still allowed. The material is about who to ask, whether there's space, and the cut-off, not about how to choose from scratch."
+        },
+        {
+          "name": "After the cut-off",
+          "description": "Changes are exceptional only. Unlike the change window, the material is about who decides and what to talk through first, and never promises an outcome."
+        }
+      ],
+      "facets": [
+        {
+          "id": "sc-what-are-options",
+          "question": "What are options, and which subjects are compulsory?",
+          "answer": "Options are the GCSE subjects chosen for Years 10–11. Core subjects are compulsory [TBD: confirm core list]. You choose [TBD: number] more.",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-how-to-choose",
+          "question": "How do I decide which subjects to pick?",
+          "answer": "Think about what you enjoy, what you're good at and future plans. Talk to your tutor, subject teachers and the careers adviser. The bot doesn't recommend specific subjects.",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-submit-deadline",
+          "question": "How and when do I hand in my choices?",
+          "answer": "GCSE: Options Form to your Head of Year by [TBD]. Year 11 into Sixth Form: Sixth Form application to the Sixth Form Office by [TBD]. Entry requirements are [TBD].",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-subject-full",
+          "question": "What if a subject I want is full or doesn't run?",
+          "answer": "Your reserve choice is used, and your Head of Year (or the Sixth Form Office) will talk it through with you. No promises of a place.",
+          "stageRefs": [
+            "Choosing",
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-change-how",
+          "question": "How do I change or drop a subject?",
+          "answer": "GCSE: ask your Head of Year. A-level: ask the Sixth Form Office / Head of Sixth Form. It depends on space and the timetable. The cut-off is [TBD].",
+          "stageRefs": [
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-drop-alevel-impact",
+          "question": "What happens if I drop an A-level?",
+          "answer": "You must keep at least [TBD: minimum subjects/hours]. Talk to the Head of Sixth Form first, and the careers adviser if it affects university plans.",
+          "stageRefs": [
+            "Change window",
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-after-cutoff",
+          "question": "It's past the cut-off. Can I still change?",
+          "answer": "Only in exceptional circumstances, decided by [TBD: Head of Year / Head of Sixth Form]. Ask them. The bot can't say whether it will be allowed.",
+          "stageRefs": [
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-struggling-midyear",
+          "question": "I'm struggling in a subject and want to drop it. What should I do first?",
+          "answer": "Talk to your subject teacher and tutor first, because support may be available before any change is considered. Then the Head of Year / Head of Sixth Form decides [TBD]. The bot doesn't advise staying or dropping.",
+          "stageRefs": [
+            "After the cut-off",
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-late-change-impact",
+          "question": "Will changing late affect my predicted grades or university application?",
+          "answer": "Talk to the Head of Sixth Form and the careers adviser, who can look at your situation. The bot can't judge this.",
+          "stageRefs": [
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ]
+    },
+    {
+      "name": "Processes · Exams",
+      "shortName": "Exams",
+      "summary": "Exam entries, access arrangements (e.g. extra time), illness on the day and special consideration, results, resits and reviews of marking. Sign-off owners: Exams Officer and SENCO.",
+      "owningOffice": "the Exams Officer",
+      "_owningOfficeSource": "BUILD GUESS from areas[].summary 'Sign-off owner' (see BUILD_NOTES G4)",
+      "status": "PROPOSED",
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      },
+      "stages": [
+        {
+          "name": "Before entries close",
+          "description": "Entries, tiers and access arrangements are still being set up. Unlike later stages, the material is about deadlines and the SENCO/Exams Officer process, not what happens on the day."
+        },
+        {
+          "name": "Exam season",
+          "description": "Exams are under way. The material is about the day itself: illness, special consideration and exam-room rules. It separates internal mocks (handled by teachers) from real GCSE/A-level exams (handled by the Exams Officer)."
+        },
+        {
+          "name": "After results",
+          "description": "Exams are over. The material is about results day, resits and reviews of marking, plus who to contact while school is closed in August [TBD: summer contact arrangements]."
+        }
+      ],
+      "facets": [
+        {
+          "id": "ex-entries",
+          "question": "How do exam entries work? Do I need to do anything?",
+          "answer": "The school enters you. Check the entry statement from the Exams Officer by [TBD] and report mistakes. Tiers (foundation or higher), where a subject has them, are decided by the school [TBD: confirm who].",
+          "stageRefs": [
+            "Before entries close"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-access-arrangements",
+          "question": "How do I get extra time or other access arrangements?",
+          "answer": "Talk to the SENCO. Arrangements depend on an assessment and evidence, and the Exams Officer applies. The deadline is [TBD]. They are never guaranteed.",
+          "stageRefs": [
+            "Before entries close"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-mocks-vs-real",
+          "question": "Are mocks the same as real exams?",
+          "answer": "Mocks are internal practice run by teachers. Real GCSE/A-level exams are run by the Exams Officer under exam-board rules.",
+          "stageRefs": [
+            "Before entries close",
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-ill-on-day",
+          "question": "What if I'm ill on the day of an exam?",
+          "answer": "Real exam: tell the Exams Officer on the day; you may be eligible for special consideration. Mock: tell your teacher, who will say what happens next.",
+          "stageRefs": [
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-exam-rules",
+          "question": "What can I take into the exam room?",
+          "answer": "No phones or smartwatches. Bring a clear pencil case. Full rules: [TBD: school's exam rules sheet].",
+          "stageRefs": [
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-results-day",
+          "question": "When and how do I get my results?",
+          "answer": "Results day is [TBD: date], and you collect them [TBD: in person / other]. Summer contacts: [TBD: summer contact arrangements].",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-resits",
+          "question": "How do resits work?",
+          "answer": "Ask the Exams Officer. Resit windows and fees are [TBD]. Post-16 English and maths rules: [TBD: confirm].",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-review-marking",
+          "question": "Can I get my exam re-marked?",
+          "answer": "You can request a review of marking through the Exams Officer by [TBD]. A fee may apply [TBD]. The grade can go up or down. Reviews are requested by the school with your consent, so you can't contact the exam board directly.",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ]
+    },
+    {
+      "name": "Processes · Absence & leave",
+      "shortName": "Absence & leave",
+      "summary": "Reporting an absence, medical/dental appointments, the lateness procedure (signing in; the lateness RULE is ExplainSchoolRule), and term-time leave requests. Sign-off owner: Attendance Officer.",
+      "owningOffice": "the Attendance Officer",
+      "_owningOfficeSource": "BUILD GUESS from areas[].summary 'Sign-off owner' (see BUILD_NOTES G4)",
+      "status": "PROPOSED",
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      },
+      "stages": [
+        {
+          "name": "Unplanned absence",
+          "description": "Illness or an emergency, today. Unlike the other two stages there's no advance notice, so the material is same-day reporting steps (by a parent/carer in Years 7–11) and evidence for long absences."
+        },
+        {
+          "name": "Planned appointment",
+          "description": "A medical or dental appointment known in advance. Unlike term-time leave, it is normally just reported with notice. No headteacher decision and no 'exceptional circumstances' test."
+        },
+        {
+          "name": "Term-time leave request",
+          "description": "Holiday-type leave during term. Unlike an appointment, it needs a request the headteacher decides, granted only in exceptional circumstances. The bot never implies approval."
+        }
+      ],
+      "facets": [
+        {
+          "id": "ab-report-illness",
+          "question": "How do I report an illness absence?",
+          "answer": "In Years 7–11, a parent or carer reports the absence: before [TBD: time], call the attendance line on [TBD: number] or [TBD: confirm whether the parent app has an absence-reporting option]. Give the child's full name, tutor group and the reason. Repeat it each day. The bot can't record it.",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-long-absence",
+          "question": "What if my child is off for several days?",
+          "answer": "Medical evidence may be requested after [TBD] days. Work arrangements: [TBD].",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-sixth-form-own",
+          "question": "I'm in Sixth Form. Do I report my own absence?",
+          "answer": "[TBD: Sixth Form absence procedure].",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-late-procedure",
+          "question": "What do I do if I arrive late?",
+          "answer": "Sign in at Reception. (The rule and sanctions on lateness come from ExplainSchoolRule. This facet must match it.)",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-appointment",
+          "question": "How do I tell school about a medical or dental appointment?",
+          "answer": "Tell the attendance office in advance by [TBD: how]. [TBD: whether evidence such as an appointment card is needed]. Sign out and back in at Reception. Where possible, book routine appointments outside school hours.",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leaving-site",
+          "question": "Can I leave school on my own for an appointment?",
+          "answer": "[TBD: policy, e.g. whether younger students must be collected by a parent/carer, and what applies to Sixth Form]. Always sign out at Reception.",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-appointment-attendance",
+          "question": "Does an appointment count against attendance?",
+          "answer": "[TBD: how the school records notified medical appointments].",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leave-request",
+          "question": "How do I request term-time leave?",
+          "answer": "Complete the leave request form [TBD: where] and submit it to [TBD] at least [TBD] in advance. The headteacher decides, and leave is only granted in exceptional circumstances. The bot can't say whether a request will be approved.",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leave-unauthorised",
+          "question": "What happens if leave isn't approved and we go anyway?",
+          "answer": "The absence is recorded as unauthorised and may lead to a penalty notice [TBD: details].",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-exceptional",
+          "question": "What counts as exceptional circumstances?",
+          "answer": "Only the headteacher decides, case by case. The bot does not give examples that might sound like approval. Policy wording: [TBD].",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-religious-observance",
+          "question": "We need a day off for a religious festival. Is that term-time leave?",
+          "answer": "[TBD: school's procedure for religious observance]. Tell the school in advance.",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ]
+    },
+    {
+      "name": "Processes · Joining the school",
+      "shortName": "Joining the school",
+      "summary": "For students coming from OTHER schools only: applying for Year 7, in-year transfers, applying to the Sixth Form from elsewhere, and the first weeks after joining. Our own Year 11 students applying to the Sixth Form go to 'Subject choices'. Sign-off owner: admissions/Reception.",
+      "owningOffice": "Reception",
+      "_owningOfficeSource": "BUILD GUESS from areas[].summary 'Sign-off owner' (see BUILD_NOTES G4)",
+      "status": "PROPOSED",
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      },
+      "stages": [
+        {
+          "name": "Applying",
+          "description": "No place yet. The material is the application route (Year 7, in-year, or Sixth Form from another school), not practicalities of being at Ashbourne."
+        },
+        {
+          "name": "Just joined",
+          "description": "A place is confirmed or the student has started. Unlike Applying, the material is first-week practicalities (uniform, accounts, who to ask) and settling in."
+        }
+      ],
+      "facets": [
+        {
+          "id": "jn-year7",
+          "question": "How do I apply for a Year 7 place?",
+          "answer": "Usually through the local council's coordinated admissions [TBD: confirm], by [TBD].",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-in-year",
+          "question": "We're moving. How do we transfer mid-year?",
+          "answer": "An in-year application via [TBD: council or school]. Contact Reception/admissions for the current process.",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-sixth-external",
+          "question": "I'm at another school. How do I apply to the Sixth Form?",
+          "answer": "Sixth Form application form [TBD: where], by [TBD]. Entry requirements are [TBD].",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-send",
+          "question": "My child has special educational needs or an EHCP. What happens when they join?",
+          "answer": "Contact the SENCO before or as soon as they join. Placements with an EHCP go through the local council [TBD: confirm].",
+          "stageRefs": [
+            "Applying",
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-first-week",
+          "question": "What do I need for my first week?",
+          "answer": "Uniform [TBD: supplier], an IT account from the IT Helpdesk, and your tutor group and timetable on day one [TBD].",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-who-to-ask",
+          "question": "Who do I go to if I'm lost or have a problem?",
+          "answer": "Your tutor first, then your Head of Year. Reception can point you anywhere.",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-accounts",
+          "question": "How do I get my school Microsoft 365 login / get on the parent app?",
+          "answer": "The IT Helpdesk sets up student accounts. Parent app access: [TBD].",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-settling",
+          "question": "I'm finding it hard to settle in. Who can help?",
+          "answer": "Your tutor, your Head of Year and school counselling [TBD: how to access]. The safeguarding override applies first if there's any sign of risk.",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ]
+    }
+  ]
+}

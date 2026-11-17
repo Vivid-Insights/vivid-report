@@ -1,0 +1,10 @@
+{
+  "_source": "storyboard dataSources[4] (PLANNED): 'phones, uniform, lateness rule, homework'. The storyboard gives NO policy content, so every summary is [TBD]. Lateness: the rule is unknown; the only confirmed-in-draft procedure is facet ab-late-procedure ('Sign in at Reception'), which is repeated here so the two cannot conflict (ISSUE-6).",
+  "policies": [
+    {"name": "phones", "keywords": ["phone", "phones", "mobile", "smartwatch"], "summary": "[TBD: the school's published phone policy, in plain language]", "owningOffice": "your tutor"},
+    {"name": "uniform", "keywords": ["uniform", "blazer", "tie", "shoes", "trainers", "jewellery", "jewelry", "makeup", "make-up", "hair"], "summary": "[TBD: the school's published uniform policy, in plain language]", "owningOffice": "your tutor"},
+    {"name": "lateness", "keywords": ["late", "lateness", "detention for being late"], "summary": "[TBD: the school's lateness rule and sanctions]. If you arrive late, sign in at Reception.", "owningOffice": "your Head of Year"},
+    {"name": "homework", "keywords": ["homework policy", "homework rule", "how much homework", "homework late", "late homework"], "summary": "[TBD: the school's published homework policy, in plain language]", "owningOffice": "your tutor"},
+    {"name": "behaviour", "keywords": ["rule", "rules", "allowed", "banned", "detention", "sanction", "behaviour policy", "behavior policy"], "summary": "[TBD: the school's published behaviour policy, in plain language]", "owningOffice": "your tutor"}
+  ]
+}

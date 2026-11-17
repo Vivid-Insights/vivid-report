@@ -1,0 +1,31 @@
+# Works cited in Report.md. The reference list on the page is generated from this file.
+# Format and fields: FORMAT.md, "Citations and references". Every entry needs a doi or a url,
+# checked to resolve, and is cited only after it has been opened and read.
+# Looked up on 3 November 2026. Opened so far: the abstract and metadata of each entry (see Literature in Appendix.md).
+
+- id: silva2022
+  type: article
+  author: ["Silva, Geovana", "Canedo, Edna"]
+  title: "Requirements engineering challenges and techniques in building chatbots"
+  year: 2022
+  container: "Proceedings of the 14th International Conference on Agents and Artificial Intelligence (ICAART 2022), Volume 1"
+  pages: "180-187"
+  doi: 10.5220/0010801800003116
+
+- id: goncalves2024
+  type: article
+  author: ["Gonçalves, Larissa Pereira", "Silva, Geovana Ramos Sousa", "Canedo, Edna Dias"]
+  title: "Documentation artifacts for conversation-related requirements specification in chatbots"
+  year: 2024
+  container: "27th Workshop on Requirements Engineering (WER 2024)"
+  doi: 10.29327/1407529.27-19
+
+- id: yang2025
+  type: preprint
+  author: ["Yang, Chenyang", "Shi, Yike", "Ma, Qianou", "Liu, Michael Xieyang", "Kästner, Christian", "Wu, Tongshuang"]
+  title: "What prompts don't say: Understanding and managing underspecification in LLM prompts"
+  year: 2025
+  container: arXiv
+  number: "2505.13360"
+  url: https://arxiv.org/abs/2505.13360
+  note: Preprint, not peer reviewed. Version 3, 24 April 2026.

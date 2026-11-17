@@ -1,0 +1,54 @@
+# Paper 0005 only. The workspace's own .gitignore at the top already covers build/, __pycache__/,
+# .pytest_cache/, .env, secrets.toml, .DS_Store and papers/*/Attachments/literature/; those are
+# repeated here where this paper depends on them.
+
+# Literature: licensed PDFs, cited but not redistributed
+Attachments/literature/
+Attachments/**/*.pdf
+
+# Test files from the Ask Ashbourne build (the log and the build report describe the tests)
+Attachments/school_bot/app/tests/
+Attachments/school_bot/**/.pytest_cache/
+Attachments/school_bot/**/__pycache__/
+*.py[cod]
+
+# Generator files: the generator is not part of this paper
+Attachments/school_bot/CLAUDE.md
+Attachments/school_bot/.storyboard-config.json
+
+# Secrets, in case a copy of an app brings them along
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.toml
+
+# Editor, system and temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+~$*
+*.tmp
+*.bak
+.trash/
+
+# Screen recordings: over about 20 MB they go on YouTube or Vimeo instead
+Attachments/media/**/*.mov
+Attachments/media/**/*.mp4
+Attachments/media/**/*.mkv
+
+# Archives of downloads
+*.zip
+*.7z
+
+# Slides and Word files kept alongside the paper
+*.pptx
+*.docx
+
+# Logs and local environments, if code is added
+*.log
+node_modules/
+.venv/

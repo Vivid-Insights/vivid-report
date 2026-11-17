@@ -1,0 +1,60 @@
+{
+  "_source": "Texts copied from storyboard.json unless marked BUILD GUESS. See BUILD_NOTES.md.",
+  "projectTitle": "Ask Ashbourne",
+  "tagline": "A school information chatbot that walks Ashbourne High School students (and their parents) through school processes, rules and where to get help.",
+  "disclaimer": "Ask Ashbourne gives general information about school processes and policies. It can't see your records or act for you. Always check important dates and decisions with the school. If you or someone else is in danger, call 999.",
+  "personas": [
+    {"label": "Student", "tone": "Adaptive: plain and friendly by default, with short sentences, numbered steps and school terms explained the first time; a bit more detailed if the student mentions Sixth Form/A-levels. No emoji. Never jokey."},
+    {"label": "Parent / carer", "tone": "Same as students: no separate tuning in v1"}
+  ],
+
+  "safeguardingResponse": "I'm really sorry that's happening. You don't have to deal with it on your own. Please talk to an adult you trust at school, like your tutor or Head of Year, or the school's Designated Safeguarding Lead. You can also call Childline free on 0800 1111, any time. If you're in danger right now, call 999.",
+  "_safeguardingResponseSource": "testConversation.liveMode.systemPrompt (the version WITHOUT the '[TBD: name/how to find them]' that mechanismExamples[0] and the few-shot CSV carry). DRAFT pending DSL approval (ISSUE-1).",
+
+  "safeguardingContactsLine": "If you need to talk to someone, your tutor or Head of Year can help, or you can call Childline free on 0800 1111.",
+  "_safeguardingContactsLineSource": "BUILD GUESS wording. Storyboard only says 'ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111)' (areas[*].lifecycle.note).",
+
+  "unconfirmedFallback": "I don't have that detail confirmed yet. Please check with {office}{orReception}.",
+  "_unconfirmedFallbackSource": "flows[1].steps[5] + tests[6].transcript ('Please check with the Exams Officer (or Reception).')",
+  "inlineUnconfirmedMarker": "(not confirmed yet)",
+
+  "redirects": {
+    "records": "I can't see anyone's grades, attendance or behaviour records. I don't have access to them. Students: ask your tutor or Head of Year. Parents and carers: check the parent app or contact Reception on [TBD: number].",
+    "schoolwork": "I can't do homework or coursework for you, but I can point you to help: homework club [TBD: confirm it exists, and when/where], the library, or asking your teacher to go over it again.",
+    "actingOnBehalf": "I can't contact staff, submit forms or book anything for you. I can tell you exactly how to do it yourself.",
+    "catchAll": "I'm Ask Ashbourne. I can help with school processes (like options, absences and exams), school rules, and where to find help in school. I can't help with that one. Try asking me something about school, or contact Reception on [TBD: number]."
+  },
+  "_redirectsSource": "overview.scope.cannotAnswer[*].response and overview.outOfScope.message, with the designer notes '(It then gives the steps for that specific case.)' and '(Never used for anything that might be a safeguarding concern...)' REMOVED because they are instructions, not user-facing text.",
+
+  "actingOnBehalfNoTopic": "Tell me what you need to do and I'll explain the steps.",
+  "_actingOnBehalfNoTopicSource": "BUILD GUESS: used when an acting-on-behalf request has no recognisable underlying task.",
+
+  "greeting": "Hi, I'm Ask Ashbourne. I can help with school processes (like options, absences and exams), school rules, and where to find help in school. What would you like to know?",
+  "_greetingSource": "BUILD GUESS, built from the first sentence of overview.outOfScope.message. The storyboard has no greeting text.",
+
+  "medicalSignpost": "I can't give medical advice, including whether a child is well enough for school. The school's illness guidance [TBD: whether the school publishes it], NHS 111 or a GP can help with that.",
+  "_medicalSignpostSource": "BUILD GUESS wording of overview.constraints[7] (CONSTRAINT-8).",
+
+  "noPredictionPrefix": "I can't say how that will be decided.",
+  "_noPredictionPrefixSource": "BUILD GUESS wording for CONSTRAINT-4 when a user pushes for reassurance (tests[5]).",
+
+  "sixthFormQuestion": "Are you in Sixth Form? The process is slightly different.",
+  "_sixthFormQuestionSource": "overview.mechanismExamples[0].messages[1]",
+
+  "voiceRewrites": [
+    ["The bot doesn't recommend specific subjects\\.", "I can't recommend specific subjects."],
+    ["The bot doesn't advise staying or dropping\\.", "I can't advise whether to stay or drop."],
+    ["The bot does not give examples that might sound like approval\\.", "I can't give examples that might sound like approval."],
+    ["The bot can't say whether a request will be approved\\.", "I can't say whether a request will be approved."],
+    ["The bot can't say whether it will be allowed\\.", "I can't say whether it will be allowed."],
+    ["The bot can't judge this\\.", "I can't judge this."],
+    ["The bot can't record it\\.", "I can't record it for you."],
+    ["\\s*\\(The rule and sanctions on lateness come from ExplainSchoolRule\\. This facet must match it\\.\\)", ""],
+    ["\\s*The safeguarding override applies first if there's any sign of risk\\.", ""],
+    ["No promises of a place\\.", "I can't promise a place."]
+  ],
+  "_voiceRewritesSource": "BUILD DECISION: several areas[*].facets[*].answer texts contain designer notes written about 'the bot' in the third person, or cross-references to function names. They are rewritten into first person or removed before reaching users.",
+
+  "areaFollowUpNoMatch": "I can help with more on this topic. Try one of the suggestions below, or ask your question another way.",
+  "_areaFollowUpNoMatchSource": "BUILD GUESS."
+}

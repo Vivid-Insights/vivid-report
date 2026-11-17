@@ -1,0 +1,339 @@
+{
+  "_source": "BUILD GUESS. The storyboard specifies WHAT each flow handles (overview.capabilities[*].trigger, flows[*].trigger) but not HOW to classify a message. These regex lists are the builder's classifier. In both modes the code classifies; the LLM only writes the reply.",
+  "medical": [
+    "should i send (him|her|them|my (son|daughter|child))",
+    "should i send (him|her|them) in",
+    "well enough",
+    "contagious",
+    "symptom",
+    "should (he|she|they|i) (go|come) (in|to school)",
+    "keep (him|her|them) (off|home)\\?"
+  ],
+  "records": [
+    "\\bmy (son'?s |daughter'?s |child'?s )?(attendance|grades?|marks?|timetable|behaviou?r|detentions?|points)\\b",
+    "what (grade|mark|score) did (i|he|she|they) get",
+    "\\b(his|her) (attendance|grades?|behaviou?r|timetable)\\b",
+    "how many (detentions|behaviour points|absences) (do|have|has)"
+  ],
+  "schoolwork": [
+    "\\b(do|write|finish|complete|solve)\\b.*\\b(homework|essay|coursework|assignment|worksheet)\\b",
+    "answers (to|for) (my|the|this) (homework|worksheet|test|quiz|questions)",
+    "\\b(homework|essay|coursework)\\b.*\\bfor me\\b"
+  ],
+  "actingOnBehalf": [
+    "\\b(can|could|will|would|pls|please)\\b( you)?.*\\b(email|e-mail|message|text|contact|ring|book|submit|send|inform|record|register|sign me|change my|tell (?!me\\b)|let (him|her|them|the|my|mr|mrs|ms|miss)\\b.*\\bknow)\\b",
+    "^(please )?(email|e-mail|message|text|contact|ring|phone|tell|inform) (mr|mrs|ms|miss|dr|sir|my|the|him|her|them)\\b",
+    "\\b(email|e-mail|message|contact|book|submit|send)\\b.*\\bfor me\\b"
+  ],
+  "actingOnBehalfSubjectGuard": "\\b(can|could|will|would) (i|we|my|he|she|they)\\b",
+  "reassurance": [
+    "(it'?ll|it will|that'?ll|that will|they'?ll|they will) (be fine|be ok|be okay|say yes|approve|allow)",
+    "\\b(fine|ok|okay|alright)\\s+right\\??$",
+    "will (it|they|he|she|this|that) (be )?(approved|allowed|accepted|ok|okay|fine)",
+    "(surely|probably|likely) (be )?(fine|ok|approved|allowed)",
+    "what are the chances",
+    "(will|would) i (definitely )?get (it|in|a place|extra time)"
+  ],
+  "greeting": [
+    "^(hi|hello|hey|hiya|good (morning|afternoon|evening))( there)?[!. ]*$"
+  ],
+  "whoToContact": [
+    "\\bwho (do|should|can|would) (i|we) (talk|speak|go|ask|contact|tell|see)",
+    "\\bwho (is|'s) (the|my|our)\\b",
+    "\\bwhos (the|my|our)\\b",
+    "\\bhow (do|can) (i|we) contact\\b",
+    "\\bcontact details\\b"
+  ],
+  "openingHours": [
+    "\\b(is|are) (the )?[\\w ]{0,25}\\bopen\\b",
+    "\\bopening (hours|times)\\b",
+    "\\bwhat time does\\b.*\\b(open|close|shut)\\b",
+    "\\bwhen (is|does) [\\w ]{0,25}\\b(open|close|shut)\\b",
+    "\\bclosing time\\b"
+  ],
+  "findSupport": [
+    "counsell?or|counsell?ing",
+    "password|log ?in\\b|microsoft 365|office 365",
+    "revision (help|session|class)|where can i (get|find) (help|support)|homework club|revision",
+    "careers adviser|careers advice|careers advisor",
+    "\\blibrary\\b"
+  ],
+  "schoolRule": [
+    "\\b(rule|rules|allowed|banned|policy)\\b",
+    "can i (use|have|bring|wear) (my )?(phone|mobile|smartwatch)",
+    "\\buniform\\b",
+    "what happens if (i'?m|i am|im|you'?re|you are) late",
+    "what happens if i (arrive|come|turn up) late",
+    "\\b(jewellery|jewelry|makeup|make-up|trainers)\\b"
+  ],
+  "areas": {
+    "Processes · Subject choices": {
+      "keywords": [
+        "options?",
+        "gcse options",
+        "a-?levels?",
+        "a levels?",
+        "alevels?",
+        "subjects?",
+        "drop",
+        "dropping",
+        "swap",
+        "pick",
+        "choose",
+        "choosing",
+        "further maths",
+        "options evening",
+        "options form",
+        "options booklet",
+        "reserve",
+        "cut[- ]?off"
+      ],
+      "stages": {
+        "Choosing": [
+          "how do i (pick|choose)",
+          "options evening",
+          "booklet",
+          "which subjects",
+          "compulsory",
+          "options due",
+          "when are options",
+          "what are options",
+          "decide",
+          "full",
+          "doesn'?t run",
+          "entry requirements",
+          "apply (to|for) (the )?sixth form",
+          "choose my options",
+          "pick my"
+        ],
+        "Change window": [
+          "handed (it|my form|my options|my form) in",
+          "handed .* in",
+          "already (submitted|handed|chose|picked)",
+          "submitted",
+          "swap",
+          "change",
+          "changing",
+          "drop",
+          "dropping",
+          "switch",
+          "changed my mind"
+        ],
+        "After the cut-off": [
+          "(deadline|cut[- ]?off).{0,25}(passed|gone|over)",
+          "(past|after) the (deadline|cut[- ]?off)",
+          "missed the (deadline|cut[- ]?off)",
+          "too late",
+          "struggling",
+          "predicted grades",
+          "university application"
+        ]
+      }
+    },
+    "Processes · Exams": {
+      "keywords": [
+        "exams?",
+        "mocks?",
+        "gcse (english|maths|science)",
+        "extra time",
+        "access arrangements?",
+        "results?",
+        "results day",
+        "resits?",
+        "re-?mark(ed)?",
+        "review of marking",
+        "entries",
+        "entry statement",
+        "tiers?",
+        "foundation",
+        "special consideration",
+        "exam room",
+        "pencil case"
+      ],
+      "stages": {
+        "Before entries close": [
+          "entr(y|ies)",
+          "extra time",
+          "access arrangement",
+          "tier",
+          "foundation",
+          "higher"
+        ],
+        "Exam season": [
+          "\\bill\\b",
+          "sick",
+          "today",
+          "on the day",
+          "exam room",
+          "take into",
+          "bring into",
+          "pencil case",
+          "smartwatch",
+          "special consideration",
+          "tomorrow"
+        ],
+        "After results": [
+          "results?",
+          "resits?",
+          "re-?mark",
+          "review of marking",
+          "august"
+        ]
+      }
+    },
+    "Processes · Absence & leave": {
+      "keywords": [
+        "absent",
+        "absence",
+        "\\bill\\b",
+        "sick",
+        "unwell",
+        "off school",
+        "off today",
+        "off sick",
+        "being off",
+        "won'?t be in",
+        "wont be in",
+        "not coming in",
+        "temperature",
+        "appointment",
+        "dentist",
+        "doctor",
+        "orthodontist",
+        "hospital",
+        "holiday",
+        "term[- ]time",
+        "leave request",
+        "\\blate\\b",
+        "sign (in|out)",
+        "religious",
+        "festival",
+        "\\beid\\b",
+        "diwali",
+        "exceptional",
+        "unauthorised",
+        "penalty",
+        "for a week",
+        "cheaper",
+        "take (him|her|them) out",
+        "go away",
+        "spain",
+        "abroad",
+        "off for",
+        "report .*off",
+        "im off",
+        "i'?m off"
+      ],
+      "stages": {
+        "Unplanned absence": [
+          "\\bill\\b",
+          "sick",
+          "unwell",
+          "temperature",
+          "today",
+          "won'?t be in",
+          "wont be in",
+          "being off",
+          "off sick",
+          "emergency",
+          "off for \\d+",
+          "several days",
+          "\\d+ days",
+          "\\blate\\b",
+          "sign in",
+          "report .*off"
+        ],
+        "Planned appointment": [
+          "appointment",
+          "dentist",
+          "doctor",
+          "orthodontist",
+          "hospital",
+          "leave school (on my own|for)",
+          "sign out"
+        ],
+        "Term-time leave request": [
+          "holiday",
+          "term[- ]time",
+          "leave request",
+          "for a week",
+          "cheaper",
+          "spain",
+          "abroad",
+          "go away",
+          "take (him|her|them) out",
+          "religious",
+          "festival",
+          "\\beid\\b",
+          "diwali",
+          "exceptional",
+          "unauthorised",
+          "penalty"
+        ]
+      }
+    },
+    "Processes · Joining the school": {
+      "keywords": [
+        "join",
+        "joining",
+        "transfer",
+        "moving",
+        "move to the area",
+        "new school",
+        "year 7 place",
+        "admissions?",
+        "apply for a place",
+        "new student",
+        "first week",
+        "first day",
+        "settle",
+        "settling",
+        "ehcp",
+        "(from|at) another school",
+        "parent app"
+      ],
+      "stages": {
+        "Applying": [
+          "apply",
+          "application",
+          "transfer",
+          "moving",
+          "year 7 place",
+          "admission",
+          "another school",
+          "join"
+        ],
+        "Just joined": [
+          "first week",
+          "first day",
+          "just (joined|started)",
+          "new here",
+          "settle",
+          "settling",
+          "lost",
+          "login",
+          "parent app"
+        ]
+      }
+    }
+  },
+  "sixthFormHints": [
+    "sixth form",
+    "year 1[23]",
+    "yr ?1[23]",
+    "\\by1[23]\\b",
+    "a-?levels?",
+    "a levels?"
+  ],
+  "lowerSchoolHints": [
+    "year (7|8|9|10|11)\\b",
+    "yr ?(7|8|9|10|11)\\b",
+    "\\by(7|8|9|10|11)\\b",
+    "\\b(7|8|9|10|11)[a-z]\\b"
+  ],
+  "chipExcludeFacets": [
+    "jn-settling",
+    "sc-struggling-midyear"
+  ],
+  "_chipExcludeFacetsSource": "BUILD GUESS of 'never sensitive topics' (pageSettings.replyMode)."
+}

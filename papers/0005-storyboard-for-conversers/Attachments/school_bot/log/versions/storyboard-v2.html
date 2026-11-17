@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ask Ashbourne · Storyboard</title>
+
+<style>
+  /* ── Reset & base ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f5f0;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+
+  /* ── Colour tokens ──────────────────────────────────────────────────────── */
+  /* --green* is this project's detected/chosen brand color (see bin/render.py's
+     derive_palette()) — everything else is a fixed semantic color (status/
+     priority) that stays the same regardless of brand, on purpose. */
+  :root {
+    --green:       #0d4d2d;
+    --green-mid:   #186f44;
+    --green-light: #e7f3ed;
+    --green-pale:  #f2f7f5;
+    --amber:       #b45309;
+    --amber-light: #fef3c7;
+    --red:         #991b1b;
+    --red-light:   #fee2e2;
+    --blue:        #1e40af;
+    --blue-light:  #dbeafe;
+    --gray:        #6b7280;
+    --border:      #d1d5db;
+    --white:       #ffffff;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────────────── */
+  .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── Header ─────────────────────────────────────────────────────────────── */
+  .header {
+    background: var(--green); color: var(--white);
+    padding: 48px 40px; border-radius: 16px; margin-bottom: 40px;
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+  .header p  { font-size: 1.05rem; opacity: 0.85; max-width: 600px; }
+  .header .badge {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25); padding: 4px 14px; border-radius: 20px;
+    font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ── Section headings ───────────────────────────────────────────────────── */
+  .section { margin-bottom: 48px; }
+  .section-title {
+    font-size: 1.3rem; font-weight: 700; color: var(--green);
+    margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--green-light);
+  }
+  .tab-intro { font-size: 0.84rem; color: var(--gray); margin-bottom: 16px; }
+  .empty-note {
+    background: var(--white); border: 1px dashed var(--border); border-radius: 10px;
+    padding: 24px; text-align: center; color: var(--gray); font-size: 0.9rem;
+  }
+
+  /* ── Personas (Overview tab) ────────────────────────────────────────────── */
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .persona-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px; border-top: 4px solid var(--green);
+  }
+  .persona-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--green); }
+  .persona-card .persona-summary { font-size: 0.88rem; color: #374151; margin-bottom: 10px; }
+  .persona-card .persona-tone { font-size: 0.8rem; color: var(--gray); font-style: italic; margin-bottom: 10px; }
+  .persona-card ul { list-style: none; }
+  .persona-card ul li { font-size: 0.85rem; padding: 3px 0 3px 16px; position: relative; color: #4b5563; }
+  .persona-card ul li::before { content: "→"; position: absolute; left: 0; color: var(--gray); }
+
+  .flow-steps-inline { display: flex; flex-direction: column; gap: 10px; }
+  .flow-step-box {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px;
+  }
+  .flow-step-box .flow-step-num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--green);
+    color: var(--white); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .flow-step-box p { font-size: 0.85rem; color: #4b5563; margin-top: 2px; }
+
+  /* ── Conversation flow / states (Overview tab, converser-specific) ──────── */
+  .convo-flow { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; display: flex; align-items: flex-start; gap: 0; }
+  .convo-state { flex: 1; text-align: center; }
+  .convo-state-box { background: var(--green-light); border: 2px solid var(--green); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  .convo-state-box h4 { font-size: 0.9rem; font-weight: 700; color: var(--green); }
+  .convo-state-box p { font-size: 0.8rem; color: #374151; margin-top: 4px; }
+  .convo-state ul { list-style: none; text-align: left; font-size: 0.82rem; color: #374151; }
+  .convo-state ul li { padding: 3px 0 3px 16px; position: relative; }
+  .convo-state ul li::before { content: "·"; position: absolute; left: 4px; font-size: 1.2rem; line-height: 1; color: var(--green); }
+  .convo-arrow { flex: 0 0 70px; text-align: center; padding-top: 28px; color: var(--green); font-size: 1.4rem; }
+  .convo-arrow .arrow-label { font-size: 0.7rem; color: var(--gray); margin-top: 4px; }
+
+  /* ── Example conversations (Overview tab, converser-specific) ───────────── */
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .story-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .story-header { padding: 12px 16px; font-size: 0.85rem; font-weight: 700; background: var(--green-light); color: var(--green); display: flex; align-items: center; gap: 8px; }
+  .story-header .scenario { font-weight: 400; opacity: 0.8; }
+  .chat-window { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .bubble { max-width: 88%; padding: 10px 14px; border-radius: 14px; font-size: 0.84rem; line-height: 1.5; }
+  .bubble.user { align-self: flex-end; background: var(--green); color: var(--white); border-bottom-right-radius: 4px; }
+  .bubble.bot { align-self: flex-start; background: #f3f4f6; color: #1a1a1a; border-bottom-left-radius: 4px; border: 1px solid var(--border); }
+  .bubble .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.65; margin-bottom: 4px; }
+
+  /* ── Capability / flow type badges (converser-specific taxonomy) ─────────── */
+  .badge-change    { background: var(--amber-light); color: var(--amber); }
+  .badge-wordalise { background: var(--green-light); color: var(--green); }
+  .badge-instruct  { background: #ede9fe; color: #5b21b6; }
+  .ftype { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: 700; background: rgba(0,0,0,0.08); }
+
+  /* ── Scope: can / cannot answer (Overview tab, converser-specific) ───────── */
+  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .scope-card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .scope-card .scope-head { padding: 14px 20px; font-size: 0.9rem; font-weight: 700; }
+  .scope-card.can  .scope-head { background: var(--green-light); color: var(--green); }
+  .scope-card.cant .scope-head { background: var(--red-light);   color: var(--red); }
+  .scope-card .scope-body { padding: 6px 20px; }
+  .scope-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.86rem; }
+  .scope-item:last-child { border-bottom: none; }
+  .scope-item .text { color: #374151; }
+  .scope-item .example { font-size: 0.78rem; color: var(--gray); font-style: italic; margin-top: 2px; }
+
+  /* ── Disclaimer (Overview tab, converser-specific) ───────────────────────── */
+  .disclaimer { background: var(--amber-light); border: 1px solid #fde68a; border-radius: 10px; padding: 16px 20px; font-size: 0.84rem; color: #78350f; }
+
+  /* ── Test Conversation (converser-specific sandbox) ──────────────────────── */
+  .issue-field input[type="password"] {
+    width: 100%; font-size: 0.84rem; border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; outline: none; font-family: inherit; transition: border-color 0.15s;
+  }
+  .issue-field input[type="password"]:focus { border-color: var(--green); }
+  .tc-inspect { margin-top: 6px; font-size: 0.75rem; }
+  .tc-inspect summary { cursor: pointer; color: var(--gray); font-weight: 600; }
+  .tc-inspect pre {
+    background: #0b1020; color: #d4d4d8; padding: 10px 12px; border-radius: 8px;
+    overflow-x: auto; margin-top: 6px; font-size: 0.72rem; line-height: 1.5; white-space: pre-wrap;
+  }
+  .tc-live-badge { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 8px; margin-left: 6px; letter-spacing: 0.03em; }
+  .tc-live-badge.illustrative { background: #f3f4f6; color: var(--gray); }
+  .tc-live-badge.real { background: var(--blue-light); color: var(--blue); }
+  .tc-error { color: var(--red); font-style: italic; }
+
+  /* ── Planned-test previews (Tests & Results tab, converser-specific) ────── */
+  .test-preview { background: #fafafa; border-radius: 8px; padding: 12px 14px; }
+  .test-preview p { font-size: 0.82rem; color: #374151; margin-bottom: 8px; }
+  .test-preview-field-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 4px; margin-top: 8px; }
+  .test-preview-field-value { font-size: 0.8rem; color: #1a1a1a; background: var(--white); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border); white-space: pre-wrap; }
+
+  /* ── Tables (Pages, Tests, Data Sources) ─────────────────────────────────── */
+  table {
+    width: 100%; border-collapse: collapse; font-size: 0.86rem;
+    background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+  }
+  th {
+    background: var(--green); color: var(--white); padding: 12px 16px; text-align: left;
+    font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  td { padding: 12px 16px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
+
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 10px;
+    font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .badge-ideal        { background: #dcfce7; color: #166534; }   /* done / pass */
+  .badge-intermediate { background: var(--amber-light); color: var(--amber); } /* in-progress */
+  .badge-poor         { background: var(--red-light); color: var(--red); }    /* fail */
+  .badge-datafit      { background: var(--blue-light); color: var(--blue); }  /* planned */
+  .badge-unchanged    { background: #f3f4f6; color: var(--gray); }            /* placeholder / no-tests */
+
+  /* ── Data source example cards & how-to-edit section (converser-specific) ── */
+  .ds-examples-block { margin-top: 14px; margin-bottom: 28px; }
+  .ds-examples-title { font-size: 0.86rem; font-weight: 700; color: var(--green); margin-bottom: 10px; }
+  .ds-example-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
+  .ds-example-header { background: var(--amber-light); padding: 8px 16px; font-size: 0.78rem; font-weight: 700; color: var(--amber); }
+  .ds-example-grid { padding: 14px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ds-example-field-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 5px; }
+  .ds-example-field-value { font-size: 0.83rem; color: #1a1a1a; background: #f9fafb; padding: 9px; border-radius: 6px; }
+  .ds-example-knowledge { grid-column: 1 / -1; font-size: 0.76rem; color: var(--gray); background: #f3f4f6; padding: 9px; border-radius: 6px; font-family: monospace; }
+  @media (max-width: 680px) { .ds-example-grid { grid-template-columns: 1fr; } }
+
+  /* ── Page settings summary (Pages & Features tab, converser-specific) ────── */
+  .page-settings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .page-settings-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .page-settings-card .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 6px; }
+  .page-settings-card .value { font-size: 0.88rem; color: #1a1a1a; }
+  .page-settings-card .value ul { list-style: none; margin-top: 2px; }
+  .page-settings-card .value ul li { padding: 2px 0; }
+  @media (max-width: 680px) { .page-settings-grid { grid-template-columns: 1fr; } }
+
+  /* ── Buttons ─────────────────────────────────────────────────────────────── */
+  .btn {
+    padding: 9px 18px; border-radius: 8px; border: none; background: var(--green);
+    color: white; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+  .btn:hover { background: var(--green-mid); }
+  .btn.secondary { background: var(--white); color: var(--green); border: 1px solid var(--green); }
+  .btn.secondary:hover { background: var(--green-light); }
+  .btn.small { padding: 5px 12px; font-size: 0.78rem; }
+
+  /* ── Tab navigation ──────────────────────────────────────────────────────── */
+  .tab-bar {
+    display: flex; gap: 4px; margin-bottom: 36px; flex-wrap: wrap;
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 6px;
+  }
+  .tab-btn {
+    flex: 1; min-width: 120px; padding: 10px 16px; border: none; border-radius: 8px;
+    font-size: 0.88rem; font-weight: 600; cursor: pointer; background: transparent;
+    color: var(--gray); transition: all 0.15s;
+  }
+  .tab-btn:hover { background: var(--green-light); color: var(--green); }
+  .tab-btn.active { background: var(--green); color: var(--white); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Function Flows ──────────────────────────────────────────────────────── */
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .legend-swatch.input, .flow-step.input       { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .legend-swatch.routing, .flow-step.routing   { background: #f5f3ff; border: 1px solid #ddd6fe; }
+  .legend-swatch.function, .flow-step.function { background: var(--green-light); border: 1px solid #86efac; }
+  .legend-swatch.data, .flow-step.data         { background: #fff7ed; border: 1px solid #fed7aa; }
+  .legend-swatch.output, .flow-step.output     { background: #f0fdf4; border: 1px solid #86efac; }
+  .legend-swatch.state, .flow-step.state-change{ background: #f0f9ff; border: 1px solid #7dd3fc; }
+  .legend-swatch.decline, .flow-step.decline   { background: var(--red-light); border: 1px solid #fca5a5; }
+
+  .flows-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .flow-diagram { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .flow-diagram-header {
+    padding: 14px 20px; font-size: 0.9rem; font-weight: 700; color: var(--green);
+    background: var(--green-light); display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .flow-diagram-header .flow-trigger { font-size: 0.72rem; font-weight: 400; color: var(--gray); }
+  .flow-io { display: flex; gap: 20px; padding: 12px 20px; border-bottom: 1px solid var(--border); background: #fafafa; flex-wrap: wrap; }
+  .flow-io-group { flex: 1; min-width: 140px; }
+  .flow-io-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 5px; }
+  .flow-io-badges { display: flex; flex-wrap: wrap; gap: 5px; }
+  .flow-io-badge { font-size: 0.74rem; background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 3px 9px; color: #374151; }
+  .flow-steps { padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .flow-step { width: 100%; border-radius: 8px; padding: 10px 14px; font-size: 0.82rem; }
+  .flow-step .step-title { font-weight: 700; font-size: 0.8rem; margin-bottom: 2px; color: #1a1a1a; }
+  .flow-step .step-desc { color: #4b5563; font-size: 0.78rem; line-height: 1.4; }
+  .flow-connector { width: 2px; height: 18px; background: var(--border); margin: 2px auto; }
+
+  /* ── Issues tab ──────────────────────────────────────────────────────────── */
+  .issue-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .issue-card.priority-high   { border-left: 4px solid var(--red); }
+  .issue-card.priority-medium { border-left: 4px solid var(--amber); }
+  .issue-card.priority-low    { border-left: 4px solid var(--gray); }
+  .issue-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 16px 20px 12px; gap: 16px; }
+  .issue-id { font-size: 0.72rem; font-weight: 700; color: var(--gray); letter-spacing: 0.05em; flex-shrink: 0; margin-top: 2px; }
+  .issue-title { font-size: 0.95rem; font-weight: 700; color: #1a1a1a; flex: 1; }
+  .issue-priority { font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.04em; }
+  .issue-priority.high   { background: var(--red-light);   color: var(--red); }
+  .issue-priority.medium { background: var(--amber-light); color: var(--amber); }
+  .issue-priority.low    { background: #f3f4f6; color: var(--gray); }
+  .issue-body { padding: 0 20px 16px; }
+  .issue-desc { font-size: 0.86rem; color: #374151; line-height: 1.6; margin-bottom: 12px; }
+  .issue-files { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .issue-file { font-size: 0.73rem; background: #f3f4f6; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-family: monospace; color: #374151; }
+  .issue-meta { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid #f3f4f6; }
+  .issue-field label { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 4px; }
+  .issue-field select, .issue-field input[type="text"] {
+    width: 100%; font-size: 0.84rem; border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; outline: none; font-family: inherit; transition: border-color 0.15s;
+  }
+  .issue-field select:focus, .issue-field input:focus { border-color: var(--green); }
+  .status-open     { color: var(--red);   font-weight: 700; }
+  .status-progress { color: var(--blue); font-weight: 700; }
+  .status-resolved { color: var(--green); font-weight: 700; }
+  .issue-footer { font-size: 0.74rem; color: var(--gray); padding: 8px 20px; background: #fafafa; border-top: 1px solid #f3f4f6; display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* ── Responsive ──────────────────────────────────────────────────────────── */
+  @media (max-width: 680px) {
+    .persona-grid, .flows-grid, .story-grid, .scope-grid { grid-template-columns: 1fr; }
+    .issue-meta { grid-template-columns: 1fr; }
+    .convo-flow { flex-direction: column; }
+    .convo-arrow { padding: 8px 0; transform: rotate(90deg); align-self: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('overview', this)">Overview</button>
+    <button class="tab-btn" onclick="switchTab('pages', this)">Pages & Features</button>
+    <button class="tab-btn" id="issues-tab-btn" onclick="switchTab('issues', this)">Issues To Check</button>
+    <button class="tab-btn" onclick="switchTab('tests', this)">Tests & Results</button>
+    <button class="tab-btn" onclick="switchTab('flows', this)">Function Flows</button>
+    <button class="tab-btn" onclick="switchTab('areas', this)">Areas & Coverage</button>
+    <button class="tab-btn" onclick="switchTab('test-conversation', this)">Test Conversation</button>
+    <button class="tab-btn" onclick="switchTab('data-sources', this)">Data Sources & Training Data</button>
+  </div>
+
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="header">
+    <div class="badge">Project Storyboard</div>
+    <h1 id="overview-title" style="margin-top:14px"></h1>
+    <p id="overview-tagline"></p>
+  </div>
+
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-overview"></div>
+
+  <!-- NEW (additive, optional): only appears if at least one capability/area/flow sets a status.
+       Absent entirely on any storyboard that doesn't use this field — see storyboard.schema.json,
+       overview.capabilities[].status. -->
+  <div class="section" id="overview-status-legend-section" style="display:none;">
+    <div id="overview-status-legend" style="background:white; border:1px solid var(--border); border-radius:10px; padding:14px 20px; display:flex; flex-wrap:wrap; align-items:center; gap:14px; font-size:0.8rem;"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What this is</div>
+    <p id="overview-pitch" style="font-size:0.95rem;color:#374151;line-height:1.7;"></p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Who uses it</div>
+    <div id="overview-personas" class="persona-grid"></div>
+  </div>
+
+  <div class="section" id="overview-flow-section" style="display:none;">
+    <div class="section-title">High-level flow</div>
+    <div id="overview-flow" class="flow-steps-inline"></div>
+  </div>
+
+  <div class="section" id="overview-states-section" style="display:none;">
+    <div class="section-title">Conversation flow</div>
+    <div id="overview-states" class="convo-flow"></div>
+  </div>
+
+  <div class="section" id="overview-examples-section" style="display:none;">
+    <div class="section-title">Example conversations</div>
+    <div id="overview-examples" class="story-grid"></div>
+  </div>
+
+  <!-- NEW (additive, optional): only appears if overview.mechanismExamples is non-empty. Distinct
+       from the typical examples above — each one exists to prove a specific point. -->
+  <div class="section" id="overview-mechanism-section" style="display:none;">
+    <div class="section-title">Worked example</div>
+    <p class="tab-intro">Not a typical exchange — each one below exists to demonstrate a specific, often non-obvious point about how the converser behaves.</p>
+    <div id="overview-mechanism" class="story-grid"></div>
+  </div>
+
+  <div class="section" id="overview-capabilities-section" style="display:none;">
+    <div class="section-title">How the bot decides what to do</div>
+    <div id="overview-capabilities"></div>
+  </div>
+
+  <div class="section" id="overview-scope-section" style="display:none;">
+    <div class="section-title">Scope — what the bot can and cannot answer</div>
+    <div id="overview-scope" class="scope-grid"></div>
+  </div>
+
+  <!-- NEW (additive, optional): only appears if overview.constraints is non-empty. Behavioral
+       rules (HOW it answers), distinct from scope above (WHICH topics it covers). -->
+  <div class="section" id="overview-constraints-section" style="display:none;">
+    <div class="section-title">Constraints — rules it always follows</div>
+    <p class="tab-intro">
+      Orthogonal to scope: these bind how an in-scope answer gets produced, not which topics are
+      covered.
+    </p>
+    <div id="overview-constraints"></div>
+  </div>
+
+  <div class="section" id="overview-outofscope-section" style="display:none;">
+    <div class="section-title">When a question is out of scope</div>
+    <div id="overview-outofscope" class="empty-note" style="text-align:left;"></div>
+  </div>
+
+  <div class="section" id="overview-disclaimer-section" style="display:none;">
+    <div id="overview-disclaimer" class="disclaimer"></div>
+  </div>
+
+</div>
+
+<div id="tab-pages" class="tab-panel">
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-pages"></div>
+  <div class="section" id="page-settings-section" style="display:none;">
+    <div class="section-title">How People Access It</div>
+    <div id="page-settings" class="page-settings-grid"></div>
+  </div>
+  <div class="section">
+    <div class="section-title">Pages &amp; Features</div>
+    <p class="tab-intro">Inventory of screens, routes, endpoints, and major components found in the codebase.</p>
+    <div id="pages-list"></div>
+  </div>
+</div>
+
+<div id="tab-issues" class="tab-panel">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px;">
+    <div>
+      <div class="section-title" style="border:none;margin:0;padding:0;">Issues To Check</div>
+      <p class="tab-intro" style="margin-top:4px;">Status, assigned, and responsible fields are editable and auto-saved in this browser (localStorage).</p>
+    </div>
+    <div style="display:flex;gap:8px;font-size:0.8rem;">
+      <span id="count-open" style="padding:4px 12px;border-radius:12px;background:var(--red-light);color:var(--red);font-weight:700;"></span>
+      <span id="count-prog" style="padding:4px 12px;border-radius:12px;background:#dbeafe;color:#1e40af;font-weight:700;"></span>
+      <span id="count-done" style="padding:4px 12px;border-radius:12px;background:var(--green-light);color:var(--green);font-weight:700;"></span>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:20px;">
+    <button class="btn secondary small" onclick="exportIssueState()">Export tracker state</button>
+    <label class="btn secondary small" style="cursor:pointer;">
+      Import tracker state
+      <input type="file" accept="application/json" style="display:none;" onchange="importIssueState(event)" />
+    </label>
+  </div>
+
+  <div id="issues-list" style="display:flex;flex-direction:column;gap:16px;"></div>
+
+</div>
+
+<div id="tab-tests" class="tab-panel">
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-tests"></div>
+  <div class="section">
+    <div class="section-title">Tests &amp; Results</div>
+    <div id="tests-list"></div>
+    <!-- NEW (additive, optional): only appears if testsNotCovered is set -->
+    <div id="tests-not-covered" style="display:none;"></div>
+  </div>
+</div>
+
+<div id="tab-flows" class="tab-panel">
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-flows"></div>
+  <div class="section">
+    <div class="section-title">Function Flows</div>
+    <div style="background:white; border:1px solid var(--border); border-radius:10px; padding:16px 20px; display:flex; flex-wrap:wrap; gap:12px; font-size:0.8rem; margin-bottom:24px;">
+      <span class="legend-item"><span class="legend-swatch input"></span> Input</span>
+      <span class="legend-item"><span class="legend-swatch routing"></span> Routing</span>
+      <span class="legend-item"><span class="legend-swatch function"></span> Function</span>
+      <span class="legend-item"><span class="legend-swatch data"></span> Data / external call</span>
+      <span class="legend-item"><span class="legend-swatch output"></span> Output</span>
+      <span class="legend-item"><span class="legend-swatch state"></span> State change</span>
+      <span class="legend-item"><span class="legend-swatch decline"></span> Decline / guard</span>
+    </div>
+    <div id="flows-list" class="flows-grid"></div>
+  </div>
+</div>
+
+<div id="tab-areas" class="tab-panel">
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-areas"></div>
+  <div class="section">
+    <div class="section-title">Areas &amp; Coverage</div>
+    <p class="tab-intro">
+      For topics grounded in examples rather than a fixed procedure, the unit of design is the
+      <strong>area</strong> — a subject the conversation stays in over several turns. A stage
+      classifies where the user is; the coverage map below shows which facets (answerable
+      sub-questions) each stage can draw on. This is a map of what material is available, not a
+      flowchart of steps — nothing here is sequential.
+    </p>
+    <div id="areas-list"></div>
+  </div>
+</div>
+
+<div id="tab-test-conversation" class="tab-panel">
+
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-test-conversation"></div>
+
+  <div class="header">
+    <div class="badge">Sandbox</div>
+    <h1 style="margin-top:14px">Test Conversation</h1>
+    <p>Try out the converser's main flows before it's built for real.</p>
+  </div>
+
+  <div class="disclaimer" style="margin-bottom:24px;">
+    <strong>This is a rough sandbox, not the final product.</strong>
+    <span id="tc-disclaimer-text"></span>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Watch a sample conversation</div>
+    <p class="tab-intro">Pre-written for a quick feel — the bot plays the customer here, no setup needed.</p>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap;">
+      <select id="tc-script-select" onchange="tcSelectScript(this.value)"></select>
+      <button class="btn secondary small" id="tc-go-btn" onclick="tcPlayScript()">▶ Go</button>
+      <button class="btn secondary small" onclick="tcResetScript()">Reset</button>
+    </div>
+    <div class="story-card">
+      <div class="chat-window" id="tc-script-window"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Try it yourself</div>
+    <p class="tab-intro" id="tc-live-caveat"></p>
+    <p id="tc-live-disabled-note" class="empty-note" style="display:none;text-align:left;"></p>
+
+    <div id="tc-live-setup">
+      <div class="issue-meta" style="margin-bottom:8px;">
+        <div class="issue-field">
+          <label>Provider</label>
+          <select id="tc-provider" onchange="tcProviderChanged()"></select>
+        </div>
+        <div class="issue-field" style="flex:2;">
+          <label>Your API key</label>
+          <input type="password" id="tc-api-key" placeholder="sk-..." autocomplete="off" />
+        </div>
+      </div>
+      <p class="tab-intro" style="margin-top:0;margin-bottom:16px;">
+        Kept only in this browser tab for this session — never saved to disk, never sent anywhere but
+        directly to the provider you picked above. Anyone with developer tools open on this tab could
+        read it back, so don't use a key you wouldn't want exposed that way. This mode also won't work
+        if you're viewing this page as a published Claude Artifact (its content policy blocks direct
+        calls to other providers) — open the plain HTML file instead.
+      </p>
+
+      <div class="story-card">
+        <div class="chat-window" id="tc-live-window"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <input type="text" id="tc-live-input" placeholder="Type a message as the customer…"
+          onkeydown="if(event.key==='Enter'){tcSendLive();}" style="flex:1;" />
+        <button class="btn small" onclick="tcSendLive()">Send</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="tab-data-sources" class="tab-panel">
+  <!-- NEW (additive, optional): reverse link from a blocking issue, see issues[].blocksSection -->
+  <div id="blocking-banner-data-sources"></div>
+  <div class="section">
+    <div class="section-title">Data Sources &amp; Training Data</div>
+    <div id="data-sources-list"></div>
+  </div>
+  <div class="section" id="data-sources-help-section" style="display:none;">
+    <div class="section-title">How to Add or Edit Examples</div>
+    <div id="data-sources-help"></div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+  const STORYBOARD_DATA = {
+  "meta": {
+    "projectTitle": "Ask Ashbourne",
+    "tagline": "A school information chatbot that walks Ashbourne High School students (and their parents) through school processes, rules and where to get help.",
+    "generatedAt": "2026-11-09",
+    "projectNameSource": "user-provided",
+    "includeAreasTab": true,
+    "includeFlowsTab": true,
+    "includeTestConversationTab": true,
+    "includeDataSourcesTab": true,
+    "includeThresholdsTab": false,
+    "includePromptsTab": false,
+    "tabDecisionNotes": "VERSION 2 (after rounds 1\u201310). Areas ON: AF1 = Mixed. Flows ON: O8 produced a plan, and F1\u2013F2 approved 7 flows. Test Conversation ON: it follows Flows. Data Sources ON: F3 wrote data/few_shot_examples.csv (synthetic) and D1 = no existing database, so planned reference files are listed. Thresholds OFF: T1 asked directly, answer 'No' (no scoring; the bot can't see records). Prompts OFF: Step 1 found no real system prompt in code. The proposed prompt lives only in testConversation.liveMode.systemPrompt. Tests and Issues are still empty in this version (X1\u2013X3 and I1\u2013I2 come last)."
+  },
+  "overview": {
+    "pitch": "Ask Ashbourne is a help chatbot on the Ashbourne High School website, powered by a hosted LLM (GPT/Claude) grounded only in the school's own published material. Ashbourne is a fictional state secondary school in England (Years 7\u201311 and a Sixth Form, ages 11\u201318). Students, and parents/carers too, can ask it the questions that Reception, the Heads of Year and the Sixth Form Office answer over and over. Its main job is explaining school processes step by step: who to contact, which form, which deadline. It covers choosing and changing subjects, exams, absence and leave, and joining the school. It also explains school rules in plain language and points people to support. It can't see anyone's records, never acts on anyone's behalf, and treats any sign that a student is at risk as overriding everything else.",
+    "personas": [
+      {
+        "label": "Student",
+        "summary": "I'm in Year 9 and have to pick my GCSE options, but I don't understand how it works or when it's due.",
+        "tone": "Adaptive: plain and friendly by default, with short sentences, numbered steps and school terms explained the first time; a bit more detailed if the student mentions Sixth Form/A-levels \u00b7 No emoji \u00b7 Never jokey (it also handles safeguarding)",
+        "traits": [
+          "Ages 11\u201318 (Years 7\u201313), so the tone must not be too young for Sixth Formers",
+          "Main persona chosen at O4a: Year 9, age 13\u201314",
+          "No login; the bot knows nothing about them unless they say it"
+        ]
+      },
+      {
+        "label": "Parent / carer",
+        "summary": "My child is ill today and I need to report the absence the right way.",
+        "tone": "Same as students: no separate tuning in v1",
+        "traits": [
+          "'Partly' supported in v1: can use it, but it's written for students (O4b)",
+          "In practice the ones who report absences and request term-time leave",
+          "Revisit as a separately tuned audience after launch"
+        ]
+      }
+    ],
+    "exampleConversations": [
+      {
+        "persona": "Student",
+        "scenario": "Year 9 student choosing GCSE options",
+        "messages": [
+          {
+            "speaker": "user",
+            "text": "how do i pick my gcse options"
+          },
+          {
+            "speaker": "bot",
+            "label": "Ask Ashbourne \u00b7 Subject choices",
+            "text": "\"Options\" are the GCSE subjects you choose to study in Years 10 and 11. English, maths and science are compulsory, and you pick the rest. Here's how it works at Ashbourne:\n1. Come to Options Evening on [TBD: date]. Each subject explains what it involves.\n2. Read the Options Booklet. It's on the school website [TBD: confirm it's also sent through the parent app].\n3. Fill in the Options Form with your choices and one reserve subject.\n4. Hand it to your Head of Year by [TBD: deadline].\nWould you like tips on choosing between subjects, or to know what happens if a subject is full? For advice on your own choices, your tutor and the school's careers adviser can help."
+          },
+          {
+            "speaker": "user",
+            "text": "what if i change my mind after"
+          },
+          {
+            "speaker": "bot",
+            "label": "Ask Ashbourne \u00b7 Subject choices",
+            "text": "You can ask to change until [TBD: options change cut-off]. Speak to your Head of Year, who will check whether there's space in the new subject. After that date, changes are only made in exceptional cases. I can't change your choices for you, but your Head of Year can."
+          }
+        ]
+      },
+      {
+        "persona": "Parent / carer",
+        "scenario": "Reporting an illness absence",
+        "messages": [
+          {
+            "speaker": "user",
+            "text": "my son is ill and won't be in today, what do i do"
+          },
+          {
+            "speaker": "bot",
+            "label": "Ask Ashbourne \u00b7 Absence & leave",
+            "text": "Sorry he's unwell. To report the absence:\n1. Before [TBD: time], call the attendance line on [TBD: number] or [TBD: confirm whether the parent app has an absence-reporting option].\n2. Give his full name, tutor group and the reason he's off.\n3. Repeat this on every day he's off, unless the Attendance Officer tells you otherwise.\nIf he's off for more than [TBD: number] days, you may be asked for medical evidence. I can't record the absence for you. It has to go through the attendance line or the app."
+          },
+          {
+            "speaker": "user",
+            "text": "he has a mock exam tomorrow, does that matter"
+          },
+          {
+            "speaker": "bot",
+            "label": "Ask Ashbourne \u00b7 Exams",
+            "text": "Report the absence the same way. Mock exams are internal, so his teachers will let him know what happens next. If it were a real GCSE or A-level exam, you should also tell the Exams Officer on the day of the exam, because he may be eligible for \"special consideration\" (an adjustment when illness affects an exam)."
+          }
+        ]
+      }
+    ],
+    "mechanismExamples": [
+      {
+        "title": "Why a mid-conversation absence question switches to the safeguarding response",
+        "explanation": "The student was still inside the Absence & leave area, and the message could be read as another absence question. The safeguarding override runs before area routing, so the risk signal ('what people keep doing to me') wins. The bot doesn't continue the absence steps or ask follow-up questions about the bullying, and doesn't try to counsel. Second point: in Years 7\u201311 a parent/carer reports absences, so even if the conversation had continued, the bot would not have helped the student report it themselves.",
+        "messages": [
+          {
+            "speaker": "user",
+            "text": "how do i report being off sick tomorrow"
+          },
+          {
+            "speaker": "bot",
+            "label": "Absence & leave \u00b7 Unplanned absence",
+            "text": "[Normal absence steps\u2026] Are you in Sixth Form? The process is slightly different."
+          },
+          {
+            "speaker": "user",
+            "text": "no year 10. honestly i just dont want to come in because of what people keep doing to me"
+          },
+          {
+            "speaker": "bot",
+            "label": "Safeguarding override",
+            "text": "I'm really sorry that's happening. You don't have to deal with it on your own. Please talk to an adult you trust at school, like your tutor or Head of Year, or the school's Designated Safeguarding Lead [TBD: name/how to find them]. You can also call Childline free on 0800 1111, any time. If you're in danger right now, call 999."
+          }
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "trigger": "Any process question: 'how do I\u2026', 'can I still\u2026' (subject choices, exams, absence & leave, joining)",
+        "functionName": "OpenProcessArea",
+        "type": "CHANGE_CONTEXT",
+        "status": "PROPOSED",
+        "description": "Works out which process area and stage the user is in, and remembers it for the following turns (within this conversation only). The area's matching facets are then given to the model. See the Areas & Coverage tab. The safeguarding risk check still runs first on every follow-up inside an area (round 9, F1)."
+      },
+      {
+        "trigger": "'Is the library open after school?' / 'When is Reception open?'",
+        "functionName": "GetOpeningHours",
+        "type": "WORDALISE",
+        "status": "PROPOSED",
+        "description": "Answers from the school's opening-hours list ([TBD] until filled in)."
+      },
+      {
+        "trigger": "'Who do I talk to about\u2026?' / 'Who is the DSL?'",
+        "functionName": "WhoToContact",
+        "type": "WORDALISE",
+        "status": "PROPOSED",
+        "description": "Names the right office or role and how to reach it. A role holder's name only if the school publishes it. Never a staff member's personal email or phone."
+      },
+      {
+        "trigger": "'Can I use my phone at lunch?' / 'What's the uniform rule?' / 'What happens if I'm late?'",
+        "functionName": "ExplainSchoolRule",
+        "type": "WORDALISE",
+        "status": "PROPOSED",
+        "description": "Explains a published school policy in plain language. Covers the lateness RULE (e.g. sanctions). The lateness PROCEDURE (signing in) lives in Absence & leave, and the two must never conflict."
+      },
+      {
+        "trigger": "'Where can I get revision help?' / 'How do I see the counsellor?' / 'I forgot my password'",
+        "functionName": "FindSupport",
+        "type": "WORDALISE",
+        "status": "PROPOSED",
+        "description": "Points to the right resource (library, revision sessions, counselling, careers, IT Helpdesk) and how to access it. Counselling questions pass the safeguarding check first: 'how do I see the counsellor?' is a lookup, 'I can't cope' is not."
+      },
+      {
+        "trigger": "Personal records, doing schoolwork, acting on someone's behalf, or anything unrelated",
+        "functionName": "RedirectOutOfScope",
+        "type": "INSTRUCTIONS",
+        "status": "PROPOSED",
+        "description": "Gives the fixed redirect for that category (see Scope). Never used for anything that might be a safeguarding concern."
+      }
+    ],
+    "scope": {
+      "canAnswer": [
+        {
+          "category": "Subject choices: GCSE options, A-level subjects, changing or dropping a subject",
+          "example": "'Can I drop one of my A-levels in Year 12?'"
+        },
+        {
+          "category": "Exams: entries, access arrangements, illness on the day, results, resits, reviews of marking",
+          "example": "'How do I get extra time in my exams?'"
+        },
+        {
+          "category": "Absence & leave: reporting absence, appointments, lateness procedure, term-time leave requests",
+          "example": "'Can we take a family holiday in term time?'"
+        },
+        {
+          "category": "Joining the school (students from other schools): Year 7, in-year transfers, Sixth Form, first weeks",
+          "example": "'We're moving. How do we transfer mid-year?'"
+        },
+        {
+          "category": "Opening hours and who to contact",
+          "example": "'Who is the Designated Safeguarding Lead?'"
+        },
+        {
+          "category": "School rules explained in plain language",
+          "example": "'Can I use my phone at lunch?'"
+        },
+        {
+          "category": "Support and resources: library, revision help, counselling, careers, IT Helpdesk",
+          "example": "'How do I reset my school Microsoft 365 password?'"
+        },
+        {
+          "category": "Safeguarding concerns: always answered, with the fixed safeguarding response (an override, not a topic)",
+          "example": "'I'm being bullied and I don't know what to do.'"
+        }
+      ],
+      "cannotAnswer": [
+        {
+          "category": "Personal records (grades, attendance, behaviour, timetables)",
+          "example": "'What grade did I get in my mock?'",
+          "response": "I can't see anyone's grades, attendance or behaviour records. I don't have access to them. Students: ask your tutor or Head of Year. Parents and carers: check the parent app or contact Reception on [TBD: number]."
+        },
+        {
+          "category": "Doing schoolwork for them (homework, coursework, answers)",
+          "example": "'Can you do my maths homework?'",
+          "response": "I can't do homework or coursework for you, but I can point you to help: homework club [TBD: confirm it exists, and when/where], the library, or asking your teacher to go over it again."
+        },
+        {
+          "category": "Acting on someone's behalf (emailing staff, submitting forms, booking or changing anything)",
+          "example": "'Can you email Mr Patel and tell him I'll be late?'",
+          "response": "I can't contact staff, submit forms or book anything for you. I can tell you exactly how to do it yourself. (It then gives the steps for that specific case.)"
+        }
+      ]
+    },
+    "outOfScope": {
+      "mode": "fixed",
+      "message": "I'm Ask Ashbourne. I can help with school processes (like options, absences and exams), school rules, and where to find help in school. I can't help with that one. Try asking me something about school, or contact Reception on [TBD: number]. (Never used for anything that might be a safeguarding concern; that gets the safeguarding response instead.)"
+    },
+    "disclaimer": "Ask Ashbourne gives general information about school processes and policies. It can't see your records or act for you. Always check important dates and decisions with the school. If you or someone else is in danger, call 999.",
+    "constraints": [
+      {
+        "id": "CONSTRAINT-1",
+        "text": "Safeguarding override: if any message suggests a student may be at risk (harm, abuse, bullying, self-harm, not coping), drop the current topic and give the fixed safeguarding response: a trusted adult or the Designated Safeguarding Lead, Childline 0800 1111, and 999 if in immediate danger. Runs before any routing, in any area, and overrides the out-of-scope catch-all. If in doubt, over-trigger. Enforced by BOTH a code check and the prompt. Response wording must be approved by the DSL before go-live. The safeguarding response text is a DRAFT pending DSL approval (round 10, TC2).",
+        "enforcement": "code",
+        "enforcedBy": "[TBD: pre-routing safeguarding risk check, not yet built] + system prompt"
+      },
+      {
+        "id": "CONSTRAINT-2",
+        "text": "Grounding: never state a date, deadline, time, number, name, form or procedural detail (who decides, what evidence is needed) unless it's in the approved school material. If something is [TBD] or missing, say so and point to the office that owns it. Enforced by the prompt plus a code check.",
+        "enforcement": "code",
+        "enforcedBy": "[TBD: output filter that blocks '[TBD' placeholder text from reaching users, not yet built] + system prompt"
+      },
+      {
+        "id": "CONSTRAINT-3",
+        "text": "Honesty about capability: never say or imply the bot has submitted, booked, recorded, sent or contacted anything. Explain how the user does it themselves.",
+        "enforcement": "prompt"
+      },
+      {
+        "id": "CONSTRAINT-4",
+        "text": "No implied approvals: never predict or imply the outcome of a staff decision (term-time leave, access arrangements, late subject changes, places, reviews of marking). Say who decides.",
+        "enforcement": "prompt"
+      },
+      {
+        "id": "CONSTRAINT-5",
+        "text": "Minimal personal data: never ask for names or other identifying details. Ask for year group or student/parent only when the answer depends on it. If a user volunteers a name or personal details, don't repeat them back. Data retention and privacy notice: [TBD: check with the school's Data Protection Officer].",
+        "enforcement": "prompt"
+      },
+      {
+        "id": "CONSTRAINT-6",
+        "text": "Role contacts only: give office or role contacts. A named role holder (e.g. the SENCO's name) may be given only if the school publishes it. Never give an individual staff member's personal email or phone number.",
+        "enforcement": "prompt"
+      },
+      {
+        "id": "CONSTRAINT-7",
+        "text": "School material only: no web search, and no general knowledge stated as Ashbourne policy. National rules (e.g. exam-board rules) are only stated where the school's material includes them.",
+        "enforcement": "prompt"
+      },
+      {
+        "id": "CONSTRAINT-8",
+        "text": "No medical advice: never advise on whether a child is well enough for school or on symptoms. Point to the school's attendance/illness guidance if published [TBD], or to NHS 111 or a GP.",
+        "enforcement": "prompt"
+      }
+    ]
+  },
+  "areas": [
+    {
+      "name": "Processes \u00b7 Subject choices",
+      "summary": "Choosing GCSE options (Year 9) or A-level subjects (OUR OWN Year 11 students applying to the Sixth Form), and changing or dropping a subject afterwards. Students from other schools go to 'Joining the school'. Sign-off owner: Head of Year / Head of Sixth Form.",
+      "status": "PROPOSED",
+      "stages": [
+        {
+          "name": "Choosing",
+          "description": "Before the options or A-level deadline. Nothing is submitted yet, so the material is about how to choose, what's compulsory, and the form and deadline, not about changes."
+        },
+        {
+          "name": "Change window",
+          "description": "Choices are submitted, but changes are still allowed. The material is about who to ask, whether there's space, and the cut-off, not about how to choose from scratch."
+        },
+        {
+          "name": "After the cut-off",
+          "description": "Changes are exceptional only. Unlike the change window, the material is about who decides and what to talk through first, and never promises an outcome."
+        }
+      ],
+      "facets": [
+        {
+          "id": "sc-what-are-options",
+          "question": "What are options, and which subjects are compulsory?",
+          "answer": "Options are the GCSE subjects chosen for Years 10\u201311. Core subjects are compulsory [TBD: confirm core list]. You choose [TBD: number] more.",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-how-to-choose",
+          "question": "How do I decide which subjects to pick?",
+          "answer": "Think about what you enjoy, what you're good at and future plans. Talk to your tutor, subject teachers and the careers adviser. The bot doesn't recommend specific subjects.",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-submit-deadline",
+          "question": "How and when do I hand in my choices?",
+          "answer": "GCSE: Options Form to your Head of Year by [TBD]. Year 11 into Sixth Form: Sixth Form application to the Sixth Form Office by [TBD]. Entry requirements are [TBD].",
+          "stageRefs": [
+            "Choosing"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-subject-full",
+          "question": "What if a subject I want is full or doesn't run?",
+          "answer": "Your reserve choice is used, and your Head of Year (or the Sixth Form Office) will talk it through with you. No promises of a place.",
+          "stageRefs": [
+            "Choosing",
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-change-how",
+          "question": "How do I change or drop a subject?",
+          "answer": "GCSE: ask your Head of Year. A-level: ask the Sixth Form Office / Head of Sixth Form. It depends on space and the timetable. The cut-off is [TBD].",
+          "stageRefs": [
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-drop-alevel-impact",
+          "question": "What happens if I drop an A-level?",
+          "answer": "You must keep at least [TBD: minimum subjects/hours]. Talk to the Head of Sixth Form first, and the careers adviser if it affects university plans.",
+          "stageRefs": [
+            "Change window",
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-after-cutoff",
+          "question": "It's past the cut-off. Can I still change?",
+          "answer": "Only in exceptional circumstances, decided by [TBD: Head of Year / Head of Sixth Form]. Ask them. The bot can't say whether it will be allowed.",
+          "stageRefs": [
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-struggling-midyear",
+          "question": "I'm struggling in a subject and want to drop it. What should I do first?",
+          "answer": "Talk to your subject teacher and tutor first, because support may be available before any change is considered. Then the Head of Year / Head of Sixth Form decides [TBD]. The bot doesn't advise staying or dropping.",
+          "stageRefs": [
+            "After the cut-off",
+            "Change window"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "sc-late-change-impact",
+          "question": "Will changing late affect my predicted grades or university application?",
+          "answer": "Talk to the Head of Sixth Form and the careers adviser, who can look at your situation. The bot can't judge this.",
+          "stageRefs": [
+            "After the cut-off"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ],
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      }
+    },
+    {
+      "name": "Processes \u00b7 Exams",
+      "summary": "Exam entries, access arrangements (e.g. extra time), illness on the day and special consideration, results, resits and reviews of marking. Sign-off owners: Exams Officer and SENCO.",
+      "status": "PROPOSED",
+      "stages": [
+        {
+          "name": "Before entries close",
+          "description": "Entries, tiers and access arrangements are still being set up. Unlike later stages, the material is about deadlines and the SENCO/Exams Officer process, not what happens on the day."
+        },
+        {
+          "name": "Exam season",
+          "description": "Exams are under way. The material is about the day itself: illness, special consideration and exam-room rules. It separates internal mocks (handled by teachers) from real GCSE/A-level exams (handled by the Exams Officer)."
+        },
+        {
+          "name": "After results",
+          "description": "Exams are over. The material is about results day, resits and reviews of marking, plus who to contact while school is closed in August [TBD: summer contact arrangements]."
+        }
+      ],
+      "facets": [
+        {
+          "id": "ex-entries",
+          "question": "How do exam entries work? Do I need to do anything?",
+          "answer": "The school enters you. Check the entry statement from the Exams Officer by [TBD] and report mistakes. Tiers (foundation or higher), where a subject has them, are decided by the school [TBD: confirm who].",
+          "stageRefs": [
+            "Before entries close"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-access-arrangements",
+          "question": "How do I get extra time or other access arrangements?",
+          "answer": "Talk to the SENCO. Arrangements depend on an assessment and evidence, and the Exams Officer applies. The deadline is [TBD]. They are never guaranteed.",
+          "stageRefs": [
+            "Before entries close"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-mocks-vs-real",
+          "question": "Are mocks the same as real exams?",
+          "answer": "Mocks are internal practice run by teachers. Real GCSE/A-level exams are run by the Exams Officer under exam-board rules.",
+          "stageRefs": [
+            "Before entries close",
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-ill-on-day",
+          "question": "What if I'm ill on the day of an exam?",
+          "answer": "Real exam: tell the Exams Officer on the day; you may be eligible for special consideration. Mock: tell your teacher, who will say what happens next.",
+          "stageRefs": [
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-exam-rules",
+          "question": "What can I take into the exam room?",
+          "answer": "No phones or smartwatches. Bring a clear pencil case. Full rules: [TBD: school's exam rules sheet].",
+          "stageRefs": [
+            "Exam season"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-results-day",
+          "question": "When and how do I get my results?",
+          "answer": "Results day is [TBD: date], and you collect them [TBD: in person / other]. Summer contacts: [TBD: summer contact arrangements].",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-resits",
+          "question": "How do resits work?",
+          "answer": "Ask the Exams Officer. Resit windows and fees are [TBD]. Post-16 English and maths rules: [TBD: confirm].",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ex-review-marking",
+          "question": "Can I get my exam re-marked?",
+          "answer": "You can request a review of marking through the Exams Officer by [TBD]. A fee may apply [TBD]. The grade can go up or down. Reviews are requested by the school with your consent, so you can't contact the exam board directly.",
+          "stageRefs": [
+            "After results"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ],
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      }
+    },
+    {
+      "name": "Processes \u00b7 Absence & leave",
+      "summary": "Reporting an absence, medical/dental appointments, the lateness procedure (signing in; the lateness RULE is ExplainSchoolRule), and term-time leave requests. Sign-off owner: Attendance Officer.",
+      "status": "PROPOSED",
+      "stages": [
+        {
+          "name": "Unplanned absence",
+          "description": "Illness or an emergency, today. Unlike the other two stages there's no advance notice, so the material is same-day reporting steps (by a parent/carer in Years 7\u201311) and evidence for long absences."
+        },
+        {
+          "name": "Planned appointment",
+          "description": "A medical or dental appointment known in advance. Unlike term-time leave, it is normally just reported with notice. No headteacher decision and no 'exceptional circumstances' test."
+        },
+        {
+          "name": "Term-time leave request",
+          "description": "Holiday-type leave during term. Unlike an appointment, it needs a request the headteacher decides, granted only in exceptional circumstances. The bot never implies approval."
+        }
+      ],
+      "facets": [
+        {
+          "id": "ab-report-illness",
+          "question": "How do I report an illness absence?",
+          "answer": "In Years 7\u201311, a parent or carer reports the absence: before [TBD: time], call the attendance line on [TBD: number] or [TBD: confirm whether the parent app has an absence-reporting option]. Give the child's full name, tutor group and the reason. Repeat it each day. The bot can't record it.",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-long-absence",
+          "question": "What if my child is off for several days?",
+          "answer": "Medical evidence may be requested after [TBD] days. Work arrangements: [TBD].",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-sixth-form-own",
+          "question": "I'm in Sixth Form. Do I report my own absence?",
+          "answer": "[TBD: Sixth Form absence procedure].",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-late-procedure",
+          "question": "What do I do if I arrive late?",
+          "answer": "Sign in at Reception. (The rule and sanctions on lateness come from ExplainSchoolRule. This facet must match it.)",
+          "stageRefs": [
+            "Unplanned absence"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-appointment",
+          "question": "How do I tell school about a medical or dental appointment?",
+          "answer": "Tell the attendance office in advance by [TBD: how]. [TBD: whether evidence such as an appointment card is needed]. Sign out and back in at Reception. Where possible, book routine appointments outside school hours.",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leaving-site",
+          "question": "Can I leave school on my own for an appointment?",
+          "answer": "[TBD: policy, e.g. whether younger students must be collected by a parent/carer, and what applies to Sixth Form]. Always sign out at Reception.",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-appointment-attendance",
+          "question": "Does an appointment count against attendance?",
+          "answer": "[TBD: how the school records notified medical appointments].",
+          "stageRefs": [
+            "Planned appointment"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leave-request",
+          "question": "How do I request term-time leave?",
+          "answer": "Complete the leave request form [TBD: where] and submit it to [TBD] at least [TBD] in advance. The headteacher decides, and leave is only granted in exceptional circumstances. The bot can't say whether a request will be approved.",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-leave-unauthorised",
+          "question": "What happens if leave isn't approved and we go anyway?",
+          "answer": "The absence is recorded as unauthorised and may lead to a penalty notice [TBD: details].",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-exceptional",
+          "question": "What counts as exceptional circumstances?",
+          "answer": "Only the headteacher decides, case by case. The bot does not give examples that might sound like approval. Policy wording: [TBD].",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "ab-religious-observance",
+          "question": "We need a day off for a religious festival. Is that term-time leave?",
+          "answer": "[TBD: school's procedure for religious observance]. Tell the school in advance.",
+          "stageRefs": [
+            "Term-time leave request"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ],
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      }
+    },
+    {
+      "name": "Processes \u00b7 Joining the school",
+      "summary": "For students coming from OTHER schools only: applying for Year 7, in-year transfers, applying to the Sixth Form from elsewhere, and the first weeks after joining. Our own Year 11 students applying to the Sixth Form go to 'Subject choices'. Sign-off owner: admissions/Reception.",
+      "status": "PROPOSED",
+      "stages": [
+        {
+          "name": "Applying",
+          "description": "No place yet. The material is the application route (Year 7, in-year, or Sixth Form from another school), not practicalities of being at Ashbourne."
+        },
+        {
+          "name": "Just joined",
+          "description": "A place is confirmed or the student has started. Unlike Applying, the material is first-week practicalities (uniform, accounts, who to ask) and settling in."
+        }
+      ],
+      "facets": [
+        {
+          "id": "jn-year7",
+          "question": "How do I apply for a Year 7 place?",
+          "answer": "Usually through the local council's coordinated admissions [TBD: confirm], by [TBD].",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-in-year",
+          "question": "We're moving. How do we transfer mid-year?",
+          "answer": "An in-year application via [TBD: council or school]. Contact Reception/admissions for the current process.",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-sixth-external",
+          "question": "I'm at another school. How do I apply to the Sixth Form?",
+          "answer": "Sixth Form application form [TBD: where], by [TBD]. Entry requirements are [TBD].",
+          "stageRefs": [
+            "Applying"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-send",
+          "question": "My child has special educational needs or an EHCP. What happens when they join?",
+          "answer": "Contact the SENCO before or as soon as they join. Placements with an EHCP go through the local council [TBD: confirm].",
+          "stageRefs": [
+            "Applying",
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-first-week",
+          "question": "What do I need for my first week?",
+          "answer": "Uniform [TBD: supplier], an IT account from the IT Helpdesk, and your tutor group and timetable on day one [TBD].",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-who-to-ask",
+          "question": "Who do I go to if I'm lost or have a problem?",
+          "answer": "Your tutor first, then your Head of Year. Reception can point you anywhere.",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-accounts",
+          "question": "How do I get my school Microsoft 365 login / get on the parent app?",
+          "answer": "The IT Helpdesk sets up student accounts. Parent app access: [TBD].",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        },
+        {
+          "id": "jn-settling",
+          "question": "I'm finding it hard to settle in. Who can help?",
+          "answer": "Your tutor, your Head of Year and school counselling [TBD: how to access]. The safeguarding override applies first if there's any sign of risk.",
+          "stageRefs": [
+            "Just joined"
+          ],
+          "origin": "drafted",
+          "reviewStatus": "needs-review"
+        }
+      ],
+      "lifecycle": {
+        "remembersCoveredAreas": true,
+        "note": "Within the same conversation only: returning to this area resumes where it left off. Nothing is remembered between visits (data minimisation). If the safeguarding override interrupts this area and the user then returns to their question, the bot answers it normally and adds ONE line repeating the contacts (tutor, Head of Year, Childline 0800 1111), once only, and never raises the concern again."
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "Ask Ashbourne chat widget",
+      "type": "component",
+      "path": "School website (all pages) [TBD: placement]",
+      "description": "The chat itself: text input, replies with numbered steps, process follow-up chips, and the disclaimer shown on the page.",
+      "status": "planned"
+    },
+    {
+      "name": "Link out: school policies page",
+      "type": "page",
+      "path": "[TBD: URL]",
+      "description": "The bot links here for full policy wording (P1).",
+      "status": "planned"
+    },
+    {
+      "name": "Link out: school calendar page",
+      "type": "page",
+      "path": "[TBD: URL]",
+      "description": "The bot links here for term dates and deadlines once confirmed (P1).",
+      "status": "planned"
+    }
+  ],
+  "issues": [],
+  "tests": [],
+  "flows": [
+    {
+      "name": "Safeguarding override",
+      "trigger": "Any message suggesting someone may be at risk (harm, abuse, bullying, self-harm, not coping), at any point, in any area. If in doubt, it fires.",
+      "type": "INSTRUCTIONS",
+      "status": "PROPOSED",
+      "inputs": [
+        "user message",
+        "current area (if any)"
+      ],
+      "outputs": [
+        "fixed safeguarding response (draft, pending DSL approval)"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Any user message.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Drop current topic",
+          "description": "The area/stage is paused, not deleted. No chips are shown afterwards.",
+          "kind": "state-change"
+        },
+        {
+          "title": "Fixed response",
+          "description": "Trusted adult (tutor, Head of Year) or the DSL, Childline 0800 1111, and 999 if in immediate danger. No probing, no counselling.",
+          "kind": "output"
+        },
+        {
+          "title": "If the user returns to the original question",
+          "description": "Answer it normally and add one line repeating the contacts, once only. Never raise the concern again.",
+          "kind": "state-change"
+        }
+      ]
+    },
+    {
+      "name": "OpenProcessArea",
+      "trigger": "Any process question: 'how do I\u2026', 'can I still\u2026' (subject choices, exams, absence & leave, joining)",
+      "type": "CHANGE_CONTEXT",
+      "status": "PROPOSED",
+      "inputs": [
+        "user message",
+        "remembered area, stage and covered facets (this conversation only)"
+      ],
+      "outputs": [
+        "reply",
+        "stored current area + stage + facets covered"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "A process question or a follow-up inside an open area.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Classify into area + stage",
+          "description": "Ask for year group or student/parent ONLY if the answer depends on it. Never ask for names.",
+          "kind": "routing"
+        },
+        {
+          "title": "Inject that stage's facets",
+          "description": "Only the facets mapped to this stage (see the Areas & Coverage tab).",
+          "kind": "data"
+        },
+        {
+          "title": "Model replies",
+          "description": "In the persona tone, with numbered steps. Optional process follow-up chips.",
+          "kind": "external-call"
+        },
+        {
+          "title": "Output check",
+          "description": "Blocks any '[TBD' text. Replaced with \"I don't have that detail confirmed yet. Please check with [owning office]\", or Reception if the office is also unconfirmed. Never a guess.",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "GetOpeningHours",
+      "trigger": "'Is the library open after school?' / 'When is Reception open?'",
+      "type": "WORDALISE",
+      "status": "PROPOSED",
+      "inputs": [
+        "the place asked about"
+      ],
+      "outputs": [
+        "reply"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Opening-hours question.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Look up hours",
+          "description": "From data/opening_hours (planned).",
+          "kind": "data"
+        },
+        {
+          "title": "Reply",
+          "description": "Plain-language answer.",
+          "kind": "output"
+        },
+        {
+          "title": "Output check",
+          "description": "Blocks any '[TBD' text. Replaced with \"I don't have that detail confirmed yet. Please check with [owning office]\", or Reception if the office is also unconfirmed. Never a guess.",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "WhoToContact",
+      "trigger": "'Who do I talk to about\u2026?' / 'Who is the DSL?'",
+      "type": "WORDALISE",
+      "status": "PROPOSED",
+      "inputs": [
+        "the topic"
+      ],
+      "outputs": [
+        "reply with a role/office contact"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Who-to-contact question.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Look up role directory",
+          "description": "From data/role_contacts (planned). Role holder names only if published.",
+          "kind": "data"
+        },
+        {
+          "title": "Reply",
+          "description": "Office/role and how to reach it. Never personal contact details.",
+          "kind": "output"
+        },
+        {
+          "title": "Output check",
+          "description": "Blocks any '[TBD' text. Replaced with \"I don't have that detail confirmed yet. Please check with [owning office]\", or Reception if the office is also unconfirmed. Never a guess.",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "ExplainSchoolRule",
+      "trigger": "'Can I use my phone at lunch?' / 'What's the uniform rule?' / 'What happens if I'm late?'",
+      "type": "WORDALISE",
+      "status": "PROPOSED",
+      "inputs": [
+        "the rule asked about"
+      ],
+      "outputs": [
+        "plain-language explanation"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Rule/policy question.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Look up policy summary",
+          "description": "From data/policy_summaries (planned). The lateness rule must match the Absence & leave procedure.",
+          "kind": "data"
+        },
+        {
+          "title": "Model explains",
+          "description": "Plain language, no added rules.",
+          "kind": "external-call"
+        },
+        {
+          "title": "Output check",
+          "description": "Blocks any '[TBD' text. Replaced with \"I don't have that detail confirmed yet. Please check with [owning office]\", or Reception if the office is also unconfirmed. Never a guess.",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "FindSupport",
+      "trigger": "'Where can I get revision help?' / 'How do I see the counsellor?' / 'I forgot my password'",
+      "type": "WORDALISE",
+      "status": "PROPOSED",
+      "inputs": [
+        "the need"
+      ],
+      "outputs": [
+        "the resource and how to access it"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Support/resource question.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Look up resources",
+          "description": "From data/resources (planned): library, revision, counselling, careers, IT Helpdesk.",
+          "kind": "data"
+        },
+        {
+          "title": "Reply",
+          "description": "How to access it. Can't reset passwords or book appointments.",
+          "kind": "output"
+        },
+        {
+          "title": "Output check",
+          "description": "Blocks any '[TBD' text. Replaced with \"I don't have that detail confirmed yet. Please check with [owning office]\", or Reception if the office is also unconfirmed. Never a guess.",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "RedirectOutOfScope",
+      "trigger": "Personal records, doing schoolwork, acting on someone's behalf, or anything unrelated",
+      "type": "INSTRUCTIONS",
+      "status": "PROPOSED",
+      "inputs": [
+        "user message"
+      ],
+      "outputs": [
+        "fixed redirect"
+      ],
+      "steps": [
+        {
+          "title": "Message in",
+          "description": "Out-of-scope message.",
+          "kind": "input"
+        },
+        {
+          "title": "Safeguarding risk check",
+          "description": "Runs on EVERY message, including follow-ups inside an area, before any routing. Code check + prompt.",
+          "kind": "routing"
+        },
+        {
+          "title": "Match category",
+          "description": "Records / schoolwork / acting on behalf / other.",
+          "kind": "routing"
+        },
+        {
+          "title": "Fixed redirect",
+          "description": "That category's wording (Overview \u2192 Scope). For 'acting on behalf', also the self-service steps. Never used for a possible safeguarding concern.",
+          "kind": "decline"
+        }
+      ]
+    }
+  ],
+  "testConversation": {
+    "disclaimer": "This is a sandbox preview built from the storyboard, not the real Ask Ashbourne. Answers here aren't checked by the school, and placeholders like [cut-off date] are still unconfirmed. Full, live testing needs at least a first version of the chatbot, generated by the connected converser generator. Please don't type real names or personal information into this preview.",
+    "scriptedConversations": [
+      {
+        "label": "Dropping an A-level",
+        "persona": "Student",
+        "flowName": "OpenProcessArea",
+        "turns": [
+          {
+            "speaker": "user",
+            "text": "im in year 12 and want to drop further maths, how"
+          },
+          {
+            "speaker": "bot",
+            "text": "Talk to the Sixth Form Office or the Head of Sixth Form. Whether you can drop it depends on space and the timetable, and you'll need to keep at least [minimum confirmed by the school]. Changes close on [cut-off date]. If it might affect your university plans, the careers adviser can help you think it through.",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: sc-change-how, sc-drop-alevel-impact, sc-subject-full]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"im in year 12 and want to drop further maths, how\"\n    }\n  ]\n}"
+          },
+          {
+            "speaker": "user",
+            "text": "what if its after the cut off"
+          },
+          {
+            "speaker": "bot",
+            "text": "After the cut-off, changes are only made in exceptional circumstances, and the Head of Sixth Form decides. Talk to your Further Maths teacher and your tutor first. There may be support that helps. I can't tell you whether a change would be allowed.",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: sc-after-cutoff, sc-struggling-midyear, sc-late-change-impact, sc-drop-alevel-impact]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"what if its after the cut off\"\n    }\n  ]\n}"
+          }
+        ]
+      },
+      {
+        "label": "Term-time holiday",
+        "persona": "Parent / carer",
+        "flowName": "OpenProcessArea",
+        "turns": [
+          {
+            "speaker": "user",
+            "text": "can we take him out for a week in june for a family holiday"
+          },
+          {
+            "speaker": "bot",
+            "text": "Leave during term time has to be requested in advance.\n1. Complete the leave request form [where to find it].\n2. Submit it to [office] at least [notice period] before the dates.\nThe headteacher decides each request, and leave is only granted in exceptional circumstances, so I can't say whether this one would be approved. If leave is taken without approval, it's recorded as unauthorised and may lead to a penalty notice [details].",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: ab-leave-request, ab-leave-unauthorised, ab-exceptional, ab-religious-observance]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"can we take him out for a week in june for a family holiday\"\n    }\n  ]\n}"
+          },
+          {
+            "speaker": "user",
+            "text": "what counts as exceptional"
+          },
+          {
+            "speaker": "bot",
+            "text": "Only the headteacher decides, case by case, so I can't give examples that might sound like approval. The school's policy wording is [policy wording]. If you're not sure, contact [the office that handles leave requests, TBD].",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: ab-exceptional, ab-leave-request]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"what counts as exceptional\"\n    }\n  ]\n}"
+          }
+        ]
+      },
+      {
+        "label": "Extra time in exams",
+        "persona": "Student",
+        "flowName": "OpenProcessArea \u2192 WhoToContact",
+        "turns": [
+          {
+            "speaker": "user",
+            "text": "how do i get extra time in my exams"
+          },
+          {
+            "speaker": "bot",
+            "text": "Extra time is one kind of \"access arrangement\". Start by talking to the SENCO. Arrangements depend on an assessment and evidence, and the Exams Officer applies for them by [deadline]. They aren't guaranteed. The assessment decides what's appropriate.",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: ex-access-arrangements, ex-entries, ex-mocks-vs-real]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"how do i get extra time in my exams\"\n    }\n  ]\n}"
+          },
+          {
+            "speaker": "user",
+            "text": "who is the senco"
+          },
+          {
+            "speaker": "bot",
+            "text": "You can contact the SENCO through [contact route]. [SENCO's name, if the school confirms it can be shared.]",
+            "requestPayload": "{\n  \"_note\": \"ILLUSTRATIVE example only. Not a real captured call.\",\n  \"model\": \"claude-sonnet-5-5\",\n  \"system\": \"<live-mode system prompt> + [Injected facets: (WhoToContact: role directory lookup)]\",\n  \"max_tokens\": 600,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"who is the senco\"\n    }\n  ]\n}"
+          }
+        ]
+      }
+    ],
+    "liveMode": {
+      "enabled": true,
+      "provider": "anthropic",
+      "systemPrompt": "You are Ask Ashbourne, the help chatbot for Ashbourne High School, a state secondary school in England with Years 7\u201311 and a Sixth Form (ages 11\u201318). You help students, and parents/carers too, understand school processes step by step (choosing and changing subjects, exams, absence and leave, joining the school), explain school rules in plain language, and point people to support.\n\nSAFEGUARDING COMES FIRST: if any message suggests someone may be at risk (harm, abuse, bullying, self-harm, not coping), stop the current topic and reply only: \"I'm really sorry that's happening. You don't have to deal with it on your own. Please talk to an adult you trust at school, like your tutor or Head of Year, or the school's Designated Safeguarding Lead. You can also call Childline free on 0800 1111, any time. If you're in danger right now, call 999.\" Don't probe or counsel. If in doubt, use this response. If the user then returns to their original question, answer it and add one line repeating the contacts, once only.\n\nTone: plain and friendly, short sentences, numbered steps, explain school terms the first time, no emoji. Give a bit more detail for Sixth Form questions.\n\nRules: only use the school information you are given; never invent dates, numbers, names, forms or who decides what. If a detail isn't confirmed, say \"I don't have that detail confirmed yet \u2014 please check with [office]\" (or Reception). Don't state national or exam-board rules unless they're in the school information you're given. You can't see anyone's records and can't submit, book, record or contact anything; explain how the user does it themselves. Never imply a staff decision will go a certain way. Don't recommend which subjects someone should choose; point them to their tutor, teachers and the careers adviser. Never ask for names; ask for year group or student/parent only when the answer depends on it, and don't repeat personal details back. Give office/role contacts only (a role holder's name only if published; never personal emails or phone numbers). No medical advice (NHS 111 or a GP if asked). In Years 7\u201311, parents/carers report absences.\n\nOut of scope: personal records, doing homework/coursework, acting on someone's behalf \u2192 use the matching redirect. Anything else \u2192 \"I'm Ask Ashbourne. I can help with school processes, school rules and where to find help in school. I can't help with that one\u2026\" (never for anything that might be a safeguarding concern).\n\nThe page shows the disclaimer. Don't repeat it in replies."
+    }
+  },
+  "dataSources": [
+    {
+      "name": "Few-shot examples",
+      "type": "few-shot examples",
+      "location": "data/few_shot_examples.csv",
+      "usedBy": "Every flow (examples of ideal answers)",
+      "description": "16 example messages with ideal answers, covering every flow and all four process areas. Written by the generator (F3) and reviewed row by row by the builder in round 9 (row 5 corrected, 3 rows added). All school specifics are still [TBD].",
+      "origin": "synthetic",
+      "reviewRequired": true,
+      "examples": [
+        {
+          "question": "how do i get extra time in my exams",
+          "answer": "Extra time is one kind of \"access arrangement\". Start by talking to the SENCO. Arrangements depend on an assessment and evidence, and the Exams Officer applies for them by [TBD: deadline]. They aren't guaranteed."
+        },
+        {
+          "question": "can we take him out for a week in june for a family holiday",
+          "answer": "Leave during term time has to be requested in advance\u2026 The headteacher decides each request, and leave is only granted in exceptional circumstances, so I can't say whether this one would be approved."
+        },
+        {
+          "question": "can you email mr patel and tell him ill be late",
+          "answer": "I can't contact staff, submit forms or book anything for you. I can tell you exactly how to do it yourself. If you're going to be late, sign in at Reception when you arrive\u2026"
+        }
+      ]
+    },
+    {
+      "name": "Facet answers (4 process areas)",
+      "type": "knowledge (area facets)",
+      "location": "data/facets.json (planned; currently held in this storyboard's Areas tab)",
+      "usedBy": "OpenProcessArea",
+      "description": "36 facet answers injected by area and stage. All drafted and needing review. Each area is signed off by its owner (Head of Year / Head of Sixth Form; Exams Officer + SENCO; Attendance Officer; admissions/Reception).",
+      "origin": "planned",
+      "reviewRequired": true
+    },
+    {
+      "name": "Opening hours",
+      "type": "reference list",
+      "location": "data/opening_hours (planned)",
+      "usedBy": "GetOpeningHours",
+      "description": "Library, Reception, IT Helpdesk and other offices. The school fills it in from the website.",
+      "origin": "planned",
+      "reviewRequired": true
+    },
+    {
+      "name": "Role contacts",
+      "type": "reference list",
+      "location": "data/role_contacts (planned)",
+      "usedBy": "WhoToContact",
+      "description": "Office/role \u2192 how to reach it. Role holder names only where the school publishes them. No personal emails or phones.",
+      "origin": "planned",
+      "reviewRequired": true
+    },
+    {
+      "name": "Policy summaries",
+      "type": "reference list",
+      "location": "data/policy_summaries (planned)",
+      "usedBy": "ExplainSchoolRule",
+      "description": "Plain-language summaries of published policies (phones, uniform, lateness rule, homework). The lateness rule must match the Absence & leave facet ab-late-procedure.",
+      "origin": "planned",
+      "reviewRequired": true
+    },
+    {
+      "name": "Support resources",
+      "type": "reference list",
+      "location": "data/resources (planned)",
+      "usedBy": "FindSupport",
+      "description": "Library, revision help, counselling access, careers, IT Helpdesk, and how to reach each one.",
+      "origin": "planned",
+      "reviewRequired": true
+    }
+  ],
+  "dataSourcesHelp": [
+    {
+      "file": "data/few_shot_examples.csv",
+      "columns": "flow ; area ; stage ; user_message ; ideal_answer",
+      "whenToEdit": "When an example answer is wrong, off-tone, or a [TBD] has been confirmed by the school."
+    },
+    {
+      "file": "data/facets.json (planned)",
+      "columns": "id ; area ; stageRefs ; question ; answer ; reviewStatus",
+      "whenToEdit": "When the area's owner confirms or corrects an answer. Only 'approved' facets should ground real answers."
+    },
+    {
+      "file": "data/opening_hours, role_contacts, policy_summaries, resources (planned)",
+      "columns": "name ; detail ; source URL",
+      "whenToEdit": "Whenever the school website changes, at least each term."
+    }
+  ],
+  "pageSettings": {
+    "authModel": "No sign-in \u2014 fully open",
+    "audienceInputMethods": [
+      "Through text (no up-front data; O6)"
+    ],
+    "replyMode": "Text with suggestion chips (process follow-ups only; never after a safeguarding response; never sensitive topics)"
+  }
+};
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str == null ? '' : String(str);
+    return div.innerHTML;
+  }
+
+  // ── Overview ────────────────────────────────────────────────────────────────
+  function renderOverview() {
+    const o = STORYBOARD_DATA.overview || {};
+    const meta = STORYBOARD_DATA.meta || {};
+    const titleEl = document.getElementById('overview-title');
+    const taglineEl = document.getElementById('overview-tagline');
+    const pitchEl = document.getElementById('overview-pitch');
+    if (titleEl) titleEl.textContent = meta.projectTitle || '';
+    if (taglineEl) taglineEl.textContent = meta.tagline || '';
+    if (pitchEl) pitchEl.textContent = o.pitch || '';
+
+    const personaContainer = document.getElementById('overview-personas');
+    if (personaContainer) {
+      personaContainer.innerHTML = '';
+      (o.personas || []).forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'persona-card';
+        const traits = (p.traits || []).map(t => `<li>${escapeHtml(t)}</li>`).join('');
+        card.innerHTML = `<h3>${escapeHtml(p.label)}</h3><p class="persona-summary">${escapeHtml(p.summary)}</p>` +
+          (p.tone ? `<p class="persona-tone">Tone: ${escapeHtml(p.tone)}</p>` : '') +
+          (traits ? `<ul>${traits}</ul>` : '');
+        personaContainer.appendChild(card);
+      });
+    }
+
+    const flowSection = document.getElementById('overview-flow-section');
+    const flowContainer = document.getElementById('overview-flow');
+    if (flowSection && flowContainer) {
+      const steps = o.highLevelFlow || [];
+      if (steps.length) {
+        flowSection.style.display = '';
+        flowContainer.innerHTML = steps.map((s, i) => `
+          <div class="flow-step-box">
+            <div class="flow-step-num">${i + 1}</div>
+            <div><strong>${escapeHtml(s.title)}</strong><p>${escapeHtml(s.description)}</p></div>
+          </div>
+        `).join('');
+      } else {
+        flowSection.style.display = 'none';
+      }
+    }
+
+    renderConversationStates(o.conversationStates || []);
+    renderExampleConversations(o.exampleConversations || []);
+    renderMechanismExamples(o.mechanismExamples || []);
+    renderCapabilities(o.capabilities || []);
+    renderScope(o.scope || {});
+    renderConstraints(o.constraints || []);
+    renderOutOfScope(o.outOfScope || {});
+    renderDisclaimer(o.disclaimer || '');
+    renderStatusLegend();
+  }
+
+  // ── Status legend: LIVE / CHANGED / PROPOSED (NEW, additive, optional) ──────
+  // Only shown when at least one capability/area/flow in the WHOLE document sets a `status`.
+  // Storyboards that never use this field render identically to before it existed.
+  const STATUS_BADGE = { LIVE: 'badge-ideal', CHANGED: 'badge-intermediate', PROPOSED: 'badge-datafit' };
+  const STATUS_MEANING = {
+    LIVE: 'Deployed and working today — trust it, leave it alone',
+    CHANGED: 'Exists, but should behave differently',
+    PROPOSED: "Doesn't exist yet — needs building",
+  };
+  function statusBadge(status) {
+    if (!status) return '';
+    return `<span class="badge ${STATUS_BADGE[status] || 'badge-unchanged'}" style="margin-left:8px;">${escapeHtml(status)}</span>`;
+  }
+  function renderStatusLegend() {
+    const section = document.getElementById('overview-status-legend-section');
+    const container = document.getElementById('overview-status-legend');
+    if (!section || !container) return;
+    const o = STORYBOARD_DATA.overview || {};
+    const used = new Set();
+    (o.capabilities || []).forEach(c => c.status && used.add(c.status));
+    (STORYBOARD_DATA.areas || []).forEach(a => a.status && used.add(a.status));
+    (STORYBOARD_DATA.flows || []).forEach(f => f.status && used.add(f.status));
+    if (used.size === 0) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const order = ['LIVE', 'CHANGED', 'PROPOSED'];
+    container.innerHTML = order.filter(s => used.has(s)).map(s => `
+      <span><span class="badge ${STATUS_BADGE[s]}">${s}</span>
+      <span style="color:var(--gray); margin-left:6px;">${escapeHtml(STATUS_MEANING[s])}</span></span>
+    `).join('');
+  }
+
+  // ── Constraints: behavioral rules, orthogonal to scope (NEW, additive, optional) ─
+  function renderConstraints(constraints) {
+    const section = document.getElementById('overview-constraints-section');
+    const container = document.getElementById('overview-constraints');
+    if (!section || !container) return;
+    if (!constraints.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const enforceBadge = { prompt: 'badge-unchanged', code: 'badge-ideal' };
+    container.innerHTML = `
+      <table>
+        <thead><tr><th>Rule</th><th>Enforced by</th></tr></thead>
+        <tbody>
+          ${constraints.map(c => `
+            <tr>
+              <td>${escapeHtml(c.text || '')}</td>
+              <td>
+                <span class="badge ${enforceBadge[c.enforcement] || 'badge-unchanged'}">${escapeHtml(c.enforcement || '')}</span>
+                ${c.enforcedBy ? `<div style="margin-top:4px;font-size:0.78rem;color:#4b5563;">${escapeHtml(c.enforcedBy)}</div>` : ''}
+                ${c.migrationNote ? `<div style="margin-top:4px;font-size:0.78rem;color:var(--gray);"><em>${escapeHtml(c.migrationNote)}</em></div>` : ''}
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // ── Conversation flow / states (converser-specific) ─────────────────────────
+  function renderConversationStates(states) {
+    const section = document.getElementById('overview-states-section');
+    const container = document.getElementById('overview-states');
+    if (!section || !container) return;
+    if (!states.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const parts = [];
+    states.forEach((s, i) => {
+      parts.push(`
+        <div class="convo-state">
+          <div class="convo-state-box">
+            <h4>${escapeHtml(s.name)}</h4>
+            <p>${escapeHtml(s.description || '')}</p>
+          </div>
+          <ul>${(s.behaviors || []).map(b => `<li>${escapeHtml(b)}</li>`).join('')}</ul>
+        </div>
+      `);
+      if (i < states.length - 1) {
+        parts.push(`
+          <div class="convo-arrow">
+            →
+            <div class="arrow-label">${escapeHtml(s.transitionTrigger || '')}</div>
+          </div>
+        `);
+      }
+    });
+    container.innerHTML = parts.join('');
+  }
+
+  // ── Example conversations (converser-specific) ──────────────────────────────
+  function renderExampleConversations(examples) {
+    const section = document.getElementById('overview-examples-section');
+    const container = document.getElementById('overview-examples');
+    if (!section || !container) return;
+    if (!examples.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    container.innerHTML = examples.map(ex => `
+      <div class="story-card">
+        <div class="story-header">
+          ${escapeHtml(ex.persona || '')} &nbsp;<span class="scenario">— ${escapeHtml(ex.scenario || '')}</span>
+        </div>
+        <div class="chat-window">
+          ${(ex.messages || []).map(m => `
+            <div class="bubble ${m.speaker === 'user' ? 'user' : 'bot'}">
+              ${m.label ? `<div class="label">${escapeHtml(m.label)}</div>` : ''}
+              ${escapeHtml(m.text)}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Worked example (NEW, optional — proves one specific point, not typical) ──
+  function renderMechanismExamples(examples) {
+    const section = document.getElementById('overview-mechanism-section');
+    const container = document.getElementById('overview-mechanism');
+    if (!section || !container) return;
+    if (!examples.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    container.innerHTML = examples.map(ex => `
+      <div class="story-card">
+        <div class="story-header">${escapeHtml(ex.title || '')}</div>
+        <div style="padding:10px 16px; font-size:0.82rem; color:#374151; background:var(--green-light);">
+          <strong>What this shows:</strong> ${escapeHtml(ex.explanation || '')}
+        </div>
+        <div class="chat-window">
+          ${(ex.messages || []).map(m => `
+            <div class="bubble ${m.speaker === 'user' ? 'user' : 'bot'}">
+              ${m.label ? `<div class="label">${escapeHtml(m.label)}</div>` : ''}
+              ${escapeHtml(m.text)}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Capabilities / routing table (converser-specific) ───────────────────────
+  function renderCapabilities(capabilities) {
+    const section = document.getElementById('overview-capabilities-section');
+    const container = document.getElementById('overview-capabilities');
+    if (!section || !container) return;
+    if (!capabilities.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const typeBadge = { CHANGE_CONTEXT: 'badge-change', WORDALISE: 'badge-wordalise', INSTRUCTIONS: 'badge-instruct' };
+    container.innerHTML = `
+      <table>
+        <thead><tr><th>What the user says</th><th>Function called</th><th>Type</th><th>What happens</th></tr></thead>
+        <tbody>
+          ${capabilities.map(c => `
+            <tr>
+              <td>${escapeHtml(c.trigger || '')}</td>
+              <td><strong>${escapeHtml(c.functionName || '')}</strong>${statusBadge(c.status)}</td>
+              <td>${c.type ? `<span class="badge ${typeBadge[c.type] || 'badge-unchanged'}">${escapeHtml(c.type)}</span>` : ''}</td>
+              <td>${escapeHtml(c.description || '')}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // ── Scope: can / cannot answer (converser-specific) ─────────────────────────
+  function renderScope(scope) {
+    const section = document.getElementById('overview-scope-section');
+    const container = document.getElementById('overview-scope');
+    if (!section || !container) return;
+    const canAnswer = scope.canAnswer || [];
+    const cannotAnswer = scope.cannotAnswer || [];
+    if (!canAnswer.length && !cannotAnswer.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const renderItems = items => items.map(it => `
+      <div class="scope-item">
+        <div>
+          <div class="text"><strong>${escapeHtml(it.category || '')}</strong></div>
+          ${it.example ? `<div class="example">${escapeHtml(it.example)}</div>` : ''}
+          ${it.response ? `<div style="margin-top:6px;font-size:0.82rem;color:#374151;"><em>Says:</em> "${escapeHtml(it.response)}"</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+    container.innerHTML = `
+      <div class="scope-card can">
+        <div class="scope-head">Can Answer</div>
+        <div class="scope-body">${canAnswer.length ? renderItems(canAnswer) : '<div class="empty-note">None specified.</div>'}</div>
+      </div>
+      <div class="scope-card cant">
+        <div class="scope-head">Cannot Answer</div>
+        <div class="scope-body">${cannotAnswer.length ? renderItems(cannotAnswer) : '<div class="empty-note">None specified.</div>'}</div>
+      </div>
+    `;
+  }
+
+  // ── Out-of-scope handling (converser-specific) ──────────────────────────────
+  function renderOutOfScope(outOfScope) {
+    const section = document.getElementById('overview-outofscope-section');
+    const container = document.getElementById('overview-outofscope');
+    if (!section || !container) return;
+    if (!outOfScope.message) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    const modeNote = outOfScope.mode === 'generated'
+      ? 'Generated by the model within guardrails — example response:'
+      : 'Fixed response — shown exactly as below every time:';
+    container.innerHTML = `<p style="margin-bottom:10px;color:var(--gray);font-size:0.82rem;">${modeNote}</p><p style="color:#374151;">${escapeHtml(outOfScope.message)}</p>`;
+  }
+
+  // ── Disclaimer (converser-specific) ──────────────────────────────────────────
+  function renderDisclaimer(disclaimer) {
+    const section = document.getElementById('overview-disclaimer-section');
+    const container = document.getElementById('overview-disclaimer');
+    if (!section || !container) return;
+    if (!disclaimer) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    container.innerHTML = `<strong>Disclaimer.</strong> ${escapeHtml(disclaimer)}`;
+  }
+
+  // ── Pages & Features ────────────────────────────────────────────────────────
+  function renderPages() {
+    const list = document.getElementById('pages-list');
+    if (!list) return;
+    const pages = STORYBOARD_DATA.pages || [];
+    if (pages.length === 0) {
+      list.innerHTML = '<div class="empty-note">No pages, routes, or features were confidently identified.</div>';
+      return;
+    }
+    const statusClass = { done: 'badge-ideal', 'in-progress': 'badge-intermediate', placeholder: 'badge-unchanged', planned: 'badge-datafit' };
+    list.innerHTML = `
+      <table>
+        <thead><tr><th>Name</th><th>Type</th><th>Path</th><th>Description</th><th>Status</th></tr></thead>
+        <tbody>
+          ${pages.map(p => `
+            <tr>
+              <td><strong>${escapeHtml(p.name)}</strong></td>
+              <td>${escapeHtml(p.type || '')}</td>
+              <td>${p.path ? `<code>${escapeHtml(p.path)}</code>` : ''}</td>
+              <td>${escapeHtml(p.description || '')}</td>
+              <td><span class="badge ${statusClass[p.status] || 'badge-unchanged'}">${escapeHtml(p.status || '')}</span></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // ── Page settings summary (converser-specific) ──────────────────────────────
+  function renderPageSettings() {
+    const section = document.getElementById('page-settings-section');
+    const container = document.getElementById('page-settings');
+    if (!section || !container) return;
+    const s = STORYBOARD_DATA.pageSettings || {};
+    const methods = s.audienceInputMethods || [];
+    if (!s.authModel && !methods.length && !s.replyMode) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    container.innerHTML = `
+      <div class="page-settings-card">
+        <div class="label">Sign-in</div>
+        <div class="value">${escapeHtml(s.authModel || '—')}</div>
+      </div>
+      <div class="page-settings-card">
+        <div class="label">How the audience provides data</div>
+        <div class="value">${methods.length ? `<ul>${methods.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul>` : '—'}</div>
+      </div>
+      <div class="page-settings-card">
+        <div class="label">Reply mode</div>
+        <div class="value">${escapeHtml(s.replyMode || '—')}</div>
+      </div>
+    `;
+  }
+
+  // ── Tests & Results ─────────────────────────────────────────────────────────
+  function renderTests() {
+    const list = document.getElementById('tests-list');
+    if (!list) return;
+    const tests = STORYBOARD_DATA.tests || [];
+    if (tests.length === 0) {
+      list.innerHTML = '<div class="empty-note">No tests were found in this project.</div>';
+      return;
+    }
+    const statusClass = { pass: 'badge-ideal', fail: 'badge-poor', 'no-tests': 'badge-unchanged', planned: 'badge-datafit' };
+    list.innerHTML = `
+      <table>
+        <thead><tr><th>Name</th><th>Type</th><th>Status</th><th>Last run</th><th>Notes</th></tr></thead>
+        <tbody>
+          ${tests.map(t => {
+            const hasPreview = t.sampleInput || t.sampleOutput || t.plannedNote || t.claimTested || (t.transcript || []).length;
+            const preview = hasPreview ? `
+              <tr>
+                <td colspan="5">
+                  <div class="test-preview">
+                    ${t.claimTested ? `<p><strong>Claim tested:</strong> ${escapeHtml(t.claimTested)}</p>` : ''}
+                    ${t.plannedNote ? `<p>${escapeHtml(t.plannedNote)}</p>` : ''}
+                    ${t.sampleInput ? `
+                      <div class="test-preview-field-label">Sample input</div>
+                      <div class="test-preview-field-value">${escapeHtml(t.sampleInput)}</div>
+                    ` : ''}
+                    ${t.sampleOutput ? `
+                      <div class="test-preview-field-label">Sample output</div>
+                      <div class="test-preview-field-value">${escapeHtml(t.sampleOutput)}</div>
+                    ` : ''}
+                    ${(t.transcript || []).length ? `
+                      <details class="tc-inspect" style="margin-top:10px;">
+                        <summary>Transcript (${t.transcript.length} turn${t.transcript.length === 1 ? '' : 's'})</summary>
+                        <div class="chat-window" style="margin-top:8px;">
+                          ${t.transcript.map(m => `
+                            <div class="bubble ${m.speaker === 'user' ? 'user' : 'bot'}">${escapeHtml(m.text)}</div>
+                          `).join('')}
+                        </div>
+                      </details>
+                    ` : ''}
+                  </div>
+                </td>
+              </tr>
+            ` : '';
+            return `
+              <tr>
+                <td><strong>${escapeHtml(t.name)}</strong></td>
+                <td>${escapeHtml(t.type || '')}</td>
+                <td><span class="badge ${statusClass[t.status] || 'badge-unchanged'}">${escapeHtml(t.status || '')}</span></td>
+                <td>${escapeHtml(t.lastRun || '—')}</td>
+                <td>${escapeHtml(t.notes || '')}</td>
+              </tr>
+              ${preview}
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+    `;
+
+    const notCoveredEl = document.getElementById('tests-not-covered');
+    if (notCoveredEl) {
+      const notCovered = STORYBOARD_DATA.testsNotCovered;
+      if (notCovered) {
+        notCoveredEl.style.display = '';
+        notCoveredEl.innerHTML = `
+          <div style="margin-top:16px; background:#f3f4f6; border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:0.85rem; color:#374151;">
+            <strong>Not covered by these tests:</strong> ${escapeHtml(notCovered)}
+          </div>
+        `;
+      } else {
+        notCoveredEl.style.display = 'none';
+        notCoveredEl.innerHTML = '';
+      }
+    }
+  }
+
+  // ── Function Flows (conditional tab) ────────────────────────────────────────
+  function renderFlows() {
+    const container = document.getElementById('flows-list');
+    if (!container) return;
+    const flows = STORYBOARD_DATA.flows || [];
+    if (flows.length === 0) {
+      container.innerHTML = '<div class="empty-note">No significant branching logic was identified.</div>';
+      return;
+    }
+    container.innerHTML = flows.map(flow => {
+      const stepsHtml = flow.steps.map((step, i) => {
+        const connector = i < flow.steps.length - 1 ? '<div class="flow-connector"></div>' : '';
+        return `<div class="flow-step ${escapeHtml(step.kind || 'function')}">
+          <div class="step-title">${escapeHtml(step.title)}</div>
+          <div class="step-desc">${escapeHtml(step.description)}</div>
+        </div>${connector}`;
+      }).join('');
+      const inputs = flow.inputs || [];
+      const outputs = flow.outputs || [];
+      const ioHtml = (inputs.length || outputs.length) ? `
+        <div class="flow-io">
+          ${inputs.length ? `
+            <div class="flow-io-group">
+              <div class="flow-io-label">Inputs</div>
+              <div class="flow-io-badges">${inputs.map(i => `<span class="flow-io-badge">${escapeHtml(i)}</span>`).join('')}</div>
+            </div>
+          ` : ''}
+          ${outputs.length ? `
+            <div class="flow-io-group">
+              <div class="flow-io-label">Outputs</div>
+              <div class="flow-io-badges">${outputs.map(o => `<span class="flow-io-badge">${escapeHtml(o)}</span>`).join('')}</div>
+            </div>
+          ` : ''}
+        </div>
+      ` : '';
+      return `
+        <div class="flow-diagram">
+          <div class="flow-diagram-header">
+            <span>${escapeHtml(flow.name)}${statusBadge(flow.status)}</span>
+            <span style="display:flex;align-items:center;gap:8px;">
+              ${flow.trigger ? `<span class="flow-trigger">${escapeHtml(flow.trigger)}</span>` : ''}
+              ${flow.type ? `<span class="ftype">${escapeHtml(flow.type)}</span>` : ''}
+            </span>
+          </div>
+          ${ioHtml}
+          <div class="flow-steps">${stepsHtml}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── Areas & Coverage (conditional tab — example-grounded topics, not routing) ──
+  function renderAreas() {
+    const container = document.getElementById('areas-list');
+    if (!container) return;
+    const areas = STORYBOARD_DATA.areas || [];
+    if (areas.length === 0) {
+      container.innerHTML = '<div class="empty-note">No areas were defined for this converser.</div>';
+      return;
+    }
+    const originBadge = { real: 'badge-ideal', drafted: 'badge-datafit' };
+    const reviewBadge = { approved: 'badge-ideal', 'needs-review': 'badge-intermediate' };
+
+    container.innerHTML = areas.map(area => {
+      const stages = area.stages || [];
+      const facets = area.facets || [];
+      const facetCountByStage = {};
+      facets.forEach(f => (f.stageRefs || []).forEach(s => {
+        facetCountByStage[s] = (facetCountByStage[s] || 0) + 1;
+      }));
+
+      const stagesHtml = stages.length ? `
+        <div class="flow-io-group" style="flex:1 1 100%;">
+          <div class="flow-io-label">Stages</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
+            ${stages.map(s => {
+              const count = facetCountByStage[s.name] || 0;
+              const thin = count > 0 && count <= 2;
+              return `
+                <div style="font-size:0.82rem;">
+                  <strong>${escapeHtml(s.name)}</strong>
+                  ${thin ? '<span class="badge badge-intermediate" style="margin-left:6px;">Thin — needs more facets</span>' : ''}
+                  <div style="color:#4b5563; font-size:0.78rem; margin-top:2px;">${escapeHtml(s.description)}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      ` : `
+        <div class="flow-io-group" style="flex:1 1 100%;">
+          <div class="flow-io-label">Stages</div>
+          <div style="font-size:0.82rem; color:#4b5563; margin-top:6px;">One continuous conversation — no stages.</div>
+        </div>
+      `;
+
+      const facetsHtml = facets.length ? `
+        <table style="margin-top:14px;">
+          <thead><tr><th>Facet</th><th>Stages</th><th>Origin</th><th>Review</th></tr></thead>
+          <tbody>
+            ${facets.map(f => `
+              <tr>
+                <td><strong>${escapeHtml(f.question)}</strong>${f.answer ? `<div style="color:#4b5563; font-size:0.78rem; margin-top:2px;">${escapeHtml(f.answer)}</div>` : ''}</td>
+                <td>${(f.stageRefs || []).map(s => `<span class="flow-io-badge">${escapeHtml(s)}</span>`).join(' ') || '<span class="flow-io-badge">All stages</span>'}</td>
+                <td><span class="badge ${originBadge[f.origin] || 'badge-unchanged'}">${escapeHtml(f.origin || '')}</span></td>
+                <td><span class="badge ${reviewBadge[f.reviewStatus] || 'badge-intermediate'}">${escapeHtml(f.reviewStatus || 'needs-review')}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      ` : '<div class="empty-note" style="margin-top:14px;">No facets defined yet.</div>';
+
+      const lifecycle = area.lifecycle || {};
+      const lifecycleHtml = (lifecycle.note || lifecycle.remembersCoveredAreas !== undefined) ? `
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:0.82rem; color:#4b5563;">
+          ${lifecycle.remembersCoveredAreas !== undefined
+            ? `<strong>${lifecycle.remembersCoveredAreas ? 'Remembers covered areas' : 'Starts fresh each time'}.</strong> `
+            : ''}
+          ${lifecycle.note ? escapeHtml(lifecycle.note) : ''}
+        </div>
+      ` : '';
+
+      return `
+        <div class="flow-diagram" style="margin-bottom:20px;">
+          <div class="flow-diagram-header">
+            <span>${escapeHtml(area.name)}${statusBadge(area.status)}</span>
+          </div>
+          <div style="padding:16px 20px;">
+            <p style="font-size:0.85rem; color:#374151; margin-bottom:10px;">${escapeHtml(area.summary || '')}</p>
+            <div class="flow-io">${stagesHtml}</div>
+            ${facetsHtml}
+            ${lifecycleHtml}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── Prompts (conditional tab, NEW — verbatim system-prompt text) ────────────
+  function renderPrompts() {
+    const container = document.getElementById('prompts-list');
+    if (!container) return;
+    const prompts = STORYBOARD_DATA.prompts || [];
+    if (prompts.length === 0) {
+      container.innerHTML = '<div class="empty-note">No prompts were found in this project.</div>';
+      return;
+    }
+    container.innerHTML = prompts.map(p => `
+      <div class="flow-diagram" style="margin-bottom:20px;">
+        <div class="flow-diagram-header">
+          <span>${escapeHtml(p.name)}</span>
+          ${p.source ? `<span class="flow-trigger">${escapeHtml(p.source)}</span>` : ''}
+        </div>
+        <div style="padding:16px 20px;">
+          ${p.stalenessNote ? `
+            <div style="background:var(--amber-light); border:1px solid #fde68a; border-radius:8px; padding:10px 14px; margin-bottom:14px; font-size:0.82rem; color:#78350f;">
+              ⚠ ${escapeHtml(p.stalenessNote)}
+            </div>
+          ` : ''}
+          <details class="tc-inspect" open>
+            <summary>Verbatim text</summary>
+            <pre>${escapeHtml(p.text)}</pre>
+          </details>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Test Conversation (conditional tab, converser-specific sandbox) ─────────
+  const TC_DEFAULT_MODEL = { anthropic: 'claude-sonnet-5', openai: 'gpt-4o' };
+  let tcScripts = [];
+  let tcScriptIndex = 0;
+  let tcPlayToken = 0;
+  let tcLiveHistory = []; // [{role:'user'|'assistant', content:string}]
+
+  function renderTestConversation() {
+    const tc = STORYBOARD_DATA.testConversation || {};
+
+    const disclaimerEl = document.getElementById('tc-disclaimer-text');
+    if (disclaimerEl) {
+      const generatorName = (STORYBOARD_DATA.meta && STORYBOARD_DATA.meta.converserGeneratorName) ||
+        'the connected converser generator';
+      disclaimerEl.textContent = tc.disclaimer ||
+        ` It's a sandbox to get a feel for the flow — full, live testing needs at least a first ` +
+        `version of the converser, generated by ${generatorName}.`;
+    }
+
+    tcScripts = tc.scriptedConversations || [];
+    const select = document.getElementById('tc-script-select');
+    const goBtn = document.getElementById('tc-go-btn');
+    if (select) {
+      select.innerHTML = tcScripts.length
+        ? tcScripts.map((s, i) => `<option value="${i}">${escapeHtml(s.label)}</option>`).join('')
+        : '<option value="">No sample conversations were generated</option>';
+      select.disabled = tcScripts.length === 0;
+    }
+    if (goBtn) goBtn.disabled = tcScripts.length === 0;
+    tcSelectScript(0);
+
+    const live = tc.liveMode || {};
+    const setup = document.getElementById('tc-live-setup');
+    const disabledNote = document.getElementById('tc-live-disabled-note');
+    if (live.enabled === false) {
+      if (setup) setup.style.display = 'none';
+      if (disabledNote) {
+        disabledNote.style.display = '';
+        disabledNote.textContent = live.disabledReason ||
+          "Live testing isn't available for this converser.";
+      }
+      return;
+    }
+    if (setup) setup.style.display = '';
+    if (disabledNote) disabledNote.style.display = 'none';
+
+    const providerSelect = document.getElementById('tc-provider');
+    if (providerSelect) {
+      const providers = [
+        { v: 'anthropic', l: 'Anthropic (Claude)' },
+        { v: 'openai', l: 'OpenAI (GPT)' }
+      ];
+      providerSelect.innerHTML = providers.map(p =>
+        `<option value="${p.v}" ${live.provider === p.v ? 'selected' : ''}>${escapeHtml(p.l)}</option>`
+      ).join('');
+    }
+    const caveat = document.getElementById('tc-live-caveat');
+    if (caveat) {
+      caveat.textContent = 'Type as the customer and get a real reply from the provider you pick ' +
+        "below — responses reflect the flows on this page, not the final tuned product.";
+    }
+  }
+
+  function tcSelectScript(i) {
+    tcScriptIndex = Number(i) || 0;
+    tcPlayToken++; // invalidates any in-flight setTimeout from a previous playback
+    const win = document.getElementById('tc-script-window');
+    if (win) win.innerHTML = '';
+    const goBtn = document.getElementById('tc-go-btn');
+    if (goBtn && tcScripts.length) { goBtn.disabled = false; goBtn.textContent = '▶ Go'; }
+  }
+
+  function tcResetScript() { tcSelectScript(tcScriptIndex); }
+
+  function tcPlayScript() {
+    const script = tcScripts[tcScriptIndex];
+    const win = document.getElementById('tc-script-window');
+    const goBtn = document.getElementById('tc-go-btn');
+    if (!script || !win || !goBtn || goBtn.disabled) return;
+
+    win.innerHTML = '';
+    goBtn.disabled = true;
+    goBtn.textContent = 'Playing…';
+    const myToken = ++tcPlayToken;
+    let turnIndex = 0;
+
+    const step = () => {
+      if (myToken !== tcPlayToken) return; // reset/reselected since this was scheduled
+      if (turnIndex >= script.turns.length) {
+        goBtn.disabled = false;
+        goBtn.textContent = '▶ Go';
+        return;
+      }
+      const turn = script.turns[turnIndex++];
+      win.insertAdjacentHTML('beforeend', tcRenderTurn(turn, false));
+      win.scrollTop = win.scrollHeight;
+      setTimeout(step, 650);
+    };
+    step();
+  }
+
+  function tcRenderTurn(turn, isLive) {
+    const bubbleClass = turn.speaker === 'user' ? 'user' : 'bot';
+    const inspect = turn.requestPayload ? `
+      <details class="tc-inspect">
+        <summary>Inspect request
+          <span class="tc-live-badge ${isLive ? 'real' : 'illustrative'}">${isLive ? 'Live' : 'Illustrative'}</span>
+        </summary>
+        <pre>${escapeHtml(turn.requestPayload)}</pre>
+      </details>` : '';
+    return `<div class="bubble ${bubbleClass}">${escapeHtml(turn.text)}${inspect}</div>`;
+  }
+
+  function tcProviderChanged() {
+    if (!tcLiveHistory.length) return;
+    tcLiveHistory = [];
+    const win = document.getElementById('tc-live-window');
+    if (win) win.innerHTML = '<div class="empty-note">Switched providers — starting a fresh conversation.</div>';
+  }
+
+  async function tcSendLive() {
+    const input = document.getElementById('tc-live-input');
+    const keyInput = document.getElementById('tc-api-key');
+    const providerSelect = document.getElementById('tc-provider');
+    const win = document.getElementById('tc-live-window');
+    if (!input || !keyInput || !providerSelect || !win) return;
+
+    const text = (input.value || '').trim();
+    const key = (keyInput.value || '').trim();
+    const provider = providerSelect.value;
+    if (!text || !key) return;
+
+    input.value = '';
+    const firstNote = win.querySelector('.empty-note');
+    if (firstNote) firstNote.remove();
+    tcLiveHistory.push({ role: 'user', content: text });
+    win.insertAdjacentHTML('beforeend', tcRenderTurn({ speaker: 'user', text }, true));
+    win.scrollTop = win.scrollHeight;
+
+    const tc = STORYBOARD_DATA.testConversation || {};
+    const live = tc.liveMode || {};
+    const system = live.systemPrompt || (STORYBOARD_DATA.overview && STORYBOARD_DATA.overview.pitch) || '';
+
+    const thinking = document.createElement('div');
+    thinking.className = 'bubble bot';
+    thinking.textContent = '…';
+    win.appendChild(thinking);
+    win.scrollTop = win.scrollHeight;
+
+    try {
+      const { reply, requestPayload } = await tcCallProvider(provider, key, live.model, system, tcLiveHistory);
+      tcLiveHistory.push({ role: 'assistant', content: reply });
+      thinking.outerHTML = tcRenderTurn({ speaker: 'bot', text: reply, requestPayload }, true);
+    } catch (err) {
+      const message = provider === 'openai'
+        ? "OpenAI doesn't allow direct browser calls from a page like this one — that's expected here, " +
+          "not a bug. Try the Anthropic option instead, or the sample conversation above."
+        : `Couldn't reach the model directly from this page (${escapeHtml(err.message)}). Check your ` +
+          'API key, or try the sample conversation above.';
+      thinking.className = 'bubble bot tc-error';
+      thinking.textContent = '';
+      thinking.innerHTML = message;
+    }
+    win.scrollTop = win.scrollHeight;
+  }
+
+  async function tcCallProvider(provider, key, modelOverride, system, history) {
+    const redactedKey = key.length > 6 ? key.slice(0, 6) + '…redacted…' : '…redacted…';
+
+    if (provider === 'anthropic') {
+      const model = modelOverride || TC_DEFAULT_MODEL.anthropic;
+      const body = {
+        model,
+        max_tokens: 512,
+        system,
+        messages: history.map(h => ({ role: h.role, content: h.content }))
+      };
+      const headers = {
+        'content-type': 'application/json',
+        'x-api-key': key,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      };
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST', headers, body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      const reply = (json.content || []).map(c => c.text || '').join('') || '[no reply]';
+      const displayHeaders = Object.assign({}, headers, { 'x-api-key': redactedKey });
+      return {
+        reply,
+        requestPayload: JSON.stringify(
+          { url: 'https://api.anthropic.com/v1/messages', headers: displayHeaders, body }, null, 2)
+      };
+    }
+
+    if (provider === 'openai') {
+      const model = modelOverride || TC_DEFAULT_MODEL.openai;
+      const body = {
+        model,
+        messages: [{ role: 'system', content: system }].concat(
+          history.map(h => ({ role: h.role === 'assistant' ? 'assistant' : 'user', content: h.content })))
+      };
+      const headers = { 'content-type': 'application/json', authorization: 'Bearer ' + key };
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST', headers, body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      const reply = (json.choices && json.choices[0] && json.choices[0].message.content) || '[no reply]';
+      const displayHeaders = Object.assign({}, headers, { authorization: 'Bearer ' + redactedKey });
+      return {
+        reply,
+        requestPayload: JSON.stringify(
+          { url: 'https://api.openai.com/v1/chat/completions', headers: displayHeaders, body }, null, 2)
+      };
+    }
+
+    throw new Error('Unknown provider: ' + provider);
+  }
+
+  // ── Data Sources (conditional tab) ──────────────────────────────────────────
+  function renderDataSources() {
+    const list = document.getElementById('data-sources-list');
+    if (!list) return;
+    const sources = STORYBOARD_DATA.dataSources || [];
+    if (sources.length === 0) {
+      list.innerHTML = '<div class="empty-note">No datasets or model files were found.</div>';
+      return;
+    }
+    const tableHtml = `
+      <table>
+        <thead><tr><th>Name</th><th>Type</th><th>Location</th><th>Used by</th><th>Description</th></tr></thead>
+        <tbody>
+          ${sources.map(s => `
+            <tr>
+              <td><strong>${escapeHtml(s.name)}</strong></td>
+              <td>${escapeHtml(s.type || '')}</td>
+              <td>${s.location ? `<code>${escapeHtml(s.location)}</code>` : ''}</td>
+              <td>${escapeHtml(s.usedBy || '')}</td>
+              <td>${escapeHtml(s.description || '')}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+    const examplesHtml = sources.filter(s => (s.examples || []).length).map(s => `
+      <div class="ds-examples-block">
+        <div class="ds-examples-title">${escapeHtml(s.name)} — ${s.examples.length} example${s.examples.length === 1 ? '' : 's'}</div>
+        ${s.examples.map((ex, i) => `
+          <div class="ds-example-card">
+            <div class="ds-example-header">Example ${i + 1}</div>
+            <div class="ds-example-grid">
+              <div>
+                <div class="ds-example-field-label">Question</div>
+                <div class="ds-example-field-value">${escapeHtml(ex.question)}</div>
+              </div>
+              <div>
+                <div class="ds-example-field-label">Answer</div>
+                <div class="ds-example-field-value">${escapeHtml(ex.answer)}</div>
+              </div>
+              ${ex.knowledge ? `
+                <div style="grid-column:1/-1;">
+                  <div class="ds-example-field-label">Knowledge</div>
+                  <div class="ds-example-knowledge">${escapeHtml(ex.knowledge)}</div>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+    list.innerHTML = tableHtml + examplesHtml;
+  }
+
+  function renderDataSourcesHelp() {
+    const section = document.getElementById('data-sources-help-section');
+    const container = document.getElementById('data-sources-help');
+    if (!section || !container) return;
+    const rows = STORYBOARD_DATA.dataSourcesHelp || [];
+    if (!rows.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    container.innerHTML = `
+      <table>
+        <thead><tr><th>File</th><th>Columns</th><th>When to edit</th></tr></thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td><code>${escapeHtml(r.file)}</code></td>
+              <td>${r.columns ? `<code>${escapeHtml(r.columns)}</code>` : ''}</td>
+              <td>${escapeHtml(r.whenToEdit)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // ── Threshold & Calculation Changes (conditional tab, converser-specific) ───
+  function renderThresholds() {
+    const list = document.getElementById('thresholds-list');
+    if (!list) return;
+    const thresholds = STORYBOARD_DATA.thresholds || [];
+    if (thresholds.length === 0) {
+      list.innerHTML = '<div class="empty-note">No calculation thresholds were defined for this converser.</div>';
+      return;
+    }
+    list.innerHTML = `
+      <table>
+        <thead><tr><th>Metric</th><th>Before</th><th>Now</th><th>Did the numbers change?</th></tr></thead>
+        <tbody>
+          ${thresholds.map(t => `
+            <tr>
+              <td><strong>${escapeHtml(t.metric)}</strong></td>
+              <td>${t.before ? escapeHtml(t.before) : '<span class="badge badge-unchanged">Not previously classified</span>'}</td>
+              <td>${escapeHtml(t.after || '')}</td>
+              <td>
+                ${t.changedNumbers
+                  ? '<span class="badge badge-poor">Yes</span>'
+                  : '<span class="badge badge-unchanged">No / wording only</span>'}
+                ${t.notes ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--gray);">${escapeHtml(t.notes)}</div>` : ''}
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // ── Issues To Check (editable, localStorage-persisted) ──────────────────────
+  const STORAGE_KEY_ISSUES = 'storyboard_issues_state';
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY_ISSUES) || '{}'); }
+    catch { return {}; }
+  }
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY_ISSUES, JSON.stringify(state));
+  }
+
+  function updateIssueCounts() {
+    const issues = STORYBOARD_DATA.issues || [];
+    const state = loadState();
+    let open = 0, prog = 0, done = 0;
+    issues.forEach(issue => {
+      const s = (state[issue.id] || {}).status || issue.status || 'open';
+      if (s === 'open') open++;
+      else if (s === 'in-progress') prog++;
+      else if (s === 'resolved') done++;
+    });
+    const elOpen = document.getElementById('count-open');
+    const elProg = document.getElementById('count-prog');
+    const elDone = document.getElementById('count-done');
+    if (elOpen) elOpen.textContent = open + ' Open';
+    if (elProg) elProg.textContent = prog + ' In Progress';
+    if (elDone) elDone.textContent = done + ' Resolved';
+
+    const btn = document.getElementById('issues-tab-btn');
+    if (btn) btn.textContent = open > 0 ? `Issues To Check (${open})` : 'Issues To Check';
+  }
+
+  function renderIssues() {
+    const issues = STORYBOARD_DATA.issues || [];
+    const state = loadState();
+    const list = document.getElementById('issues-list');
+    if (!list) return;
+    list.innerHTML = '';
+
+    if (issues.length === 0) {
+      list.innerHTML = '<div class="empty-note">No issues logged yet.</div>';
+      updateIssueCounts();
+      renderBlockingBanners();
+      return;
+    }
+
+    issues.forEach(issue => {
+      const saved = state[issue.id] || {};
+      const status = saved.status || issue.status || 'open';
+      const assigned = saved.assigned || '';
+      const responsible = saved.responsible || '';
+
+      const statusLabel = { open: 'Open', 'in-progress': 'In Progress', resolved: 'Resolved' };
+      const statusClass = { open: 'status-open', 'in-progress': 'status-progress', resolved: 'status-resolved' };
+
+      const card = document.createElement('div');
+      card.className = `issue-card priority-${issue.priority}`;
+      if (status === 'resolved') card.style.opacity = '0.6';
+
+      card.innerHTML = `
+        <div class="issue-header">
+          <div style="display:flex;align-items:flex-start;gap:10px;flex:1;">
+            <span class="issue-id">${escapeHtml(issue.id)}</span>
+            <span class="issue-title">${escapeHtml(issue.title)}</span>
+          </div>
+          <span class="issue-priority ${issue.priority}">${escapeHtml(issue.priority)}</span>
+        </div>
+        <div class="issue-body">
+          <p class="issue-desc">${escapeHtml(issue.description)}</p>
+          <div class="issue-files">
+            ${(issue.files || []).map(f => `<span class="issue-file">${escapeHtml(f)}</span>`).join('')}
+          </div>
+          <div class="issue-meta">
+            <div class="issue-field">
+              <label>Status</label>
+              <select onchange="updateIssueField('${issue.id}', 'status', this.value)">
+                <option value="open"        ${status === 'open'        ? 'selected' : ''}>Open</option>
+                <option value="in-progress" ${status === 'in-progress' ? 'selected' : ''}>In Progress</option>
+                <option value="resolved"    ${status === 'resolved'    ? 'selected' : ''}>Resolved</option>
+              </select>
+            </div>
+            <div class="issue-field">
+              <label>Assigned to</label>
+              <input type="text" placeholder="Name or initials" value="${escapeHtml(assigned)}"
+                onblur="updateIssueField('${issue.id}', 'assigned', this.value)"
+                onkeydown="if(event.key==='Enter')this.blur()" />
+            </div>
+            <div class="issue-field">
+              <label>Responsible</label>
+              <input type="text" placeholder="Team or person" value="${escapeHtml(responsible)}"
+                onblur="updateIssueField('${issue.id}', 'responsible', this.value)"
+                onkeydown="if(event.key==='Enter')this.blur()" />
+            </div>
+          </div>
+        </div>
+        <div class="issue-footer">
+          <span>Added: ${escapeHtml(issue.added || '')}</span>
+          <span>Phase: ${escapeHtml(issue.phase || '')}</span>
+          ${issue.transferability ? `<span class="badge ${issue.transferability === 'general' ? 'badge-datafit' : 'badge-unchanged'}">${escapeHtml(issue.transferability)}</span>` : ''}
+          ${issue.blocksSection ? `<span class="badge badge-poor">Blocks: ${escapeHtml(TAB_LABELS[issue.blocksSection] || issue.blocksSection)}</span>` : ''}
+          <span class="${statusClass[status]}">${statusLabel[status]}</span>
+        </div>
+      `;
+      list.appendChild(card);
+    });
+
+    updateIssueCounts();
+    renderBlockingBanners();
+  }
+
+  // ── Blocking banners: reverse link from a blocked tab back to its issue (NEW) ──
+  // Only shown when an issue sets `blocksSection` and is still open/in-progress. Reads the same
+  // localStorage-edited status renderIssues()/updateIssueCounts() use, so resolving an issue in the
+  // browser makes its banner disappear live, without a page reload.
+  const TAB_LABELS = {
+    overview: 'Overview', pages: 'Pages & Features', tests: 'Tests & Results', flows: 'Function Flows',
+    areas: 'Areas & Coverage', 'test-conversation': 'Test Conversation', 'data-sources': 'Data Sources & Training Data',
+    thresholds: 'Threshold & Calculation Changes', prompts: 'Prompts',
+  };
+  function renderBlockingBanners() {
+    const issues = STORYBOARD_DATA.issues || [];
+    const state = loadState();
+    Object.keys(TAB_LABELS).forEach(key => {
+      const el = document.getElementById('blocking-banner-' + key);
+      if (!el) return;
+      const blockers = issues.filter(i => {
+        if (i.blocksSection !== key) return false;
+        const s = (state[i.id] || {}).status || i.status || 'open';
+        return s !== 'resolved';
+      });
+      if (!blockers.length) { el.innerHTML = ''; el.style.display = 'none'; return; }
+      el.style.display = '';
+      el.innerHTML = blockers.map(i => `
+        <div style="background:var(--red-light); border:1px solid #fca5a5; border-radius:8px; padding:10px 16px; margin-bottom:16px; font-size:0.85rem; color:#7f1d1d;">
+          ⚠ Blocked by <strong>${escapeHtml(i.id)}</strong> — ${escapeHtml(i.title)}
+        </div>
+      `).join('');
+    });
+  }
+
+  function updateIssueField(id, field, value) {
+    const state = loadState();
+    state[id] = state[id] || {};
+    state[id][field] = value;
+    saveState(state);
+    renderIssues();
+  }
+
+  function exportIssueState() {
+    const state = loadState();
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'issue-tracker-state.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function importIssueState(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const imported = JSON.parse(e.target.result);
+        const current = loadState();
+        saveState(Object.assign({}, current, imported));
+        renderIssues();
+        alert('Tracker state imported.');
+      } catch (err) {
+        alert('Could not read that file as tracker state JSON.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  // ── Tabs ──────────────────────────────────────────────────────────────────────
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    if (id === 'issues') renderIssues();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Init ──────────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    renderOverview();
+    renderPageSettings();
+    renderPages();
+    renderIssues();
+    renderTests();
+    if (document.getElementById('tab-flows')) renderFlows();
+    if (document.getElementById('tab-areas')) renderAreas();
+    if (document.getElementById('tab-test-conversation')) renderTestConversation();
+    if (document.getElementById('tab-data-sources')) { renderDataSources(); renderDataSourcesHelp(); }
+    if (document.getElementById('tab-thresholds')) renderThresholds();
+    if (document.getElementById('tab-prompts')) renderPrompts();
+  });
+</script>
+</body>
+</html>
