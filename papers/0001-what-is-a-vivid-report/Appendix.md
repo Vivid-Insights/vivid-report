@@ -75,6 +75,7 @@ Permission: the repository is private and its `Attachments/` holds 153 PDFs shar
 | 0012 | Title to come from the author | Mwaniki | — | — | Added by David, 16 November 2026. |
 | 0013 | Title to come from the author | Halimat | — | — | Added by David, 16 November 2026. |
 | 0014 | Title to come from the author | Axsumwit | — | — | Added by David, 16 November 2026. |
+| 0015 | Using large language models to better understand arguments | Lily | — | — | Added by David, 18 November 2026; Lily will add it. |
 
 ## Framing
 
