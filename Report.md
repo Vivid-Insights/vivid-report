@@ -1,8 +1,8 @@
 ---
 title: "[TO WRITE: suggested in step 8, once the argument is settled]"
-slug: "understanding-arguments"
-folder: "papers/0015-understanding-arguments"
-report-number: "0015"
+slug: "xt-model-comparison"
+folder: "papers/0014-xt-model-comparison"
+report-number: "0014"
 authors:
   - name: "[TO WRITE: author]"
     affiliation: [1]
